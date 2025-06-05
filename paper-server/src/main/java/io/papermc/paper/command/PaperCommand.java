@@ -33,14 +33,12 @@ public final class PaperCommand {
     static final String DESCRIPTION = "Paper related commands";
 
     public static LiteralCommandNode<CommandSourceStack> create() {
+        // TODO: FIX ISSUES WITH COMMANDS
+        // TODO: TEST COMMANDS
+        
         final List<String> permissions = new ArrayList<>();
         permissions.add("bukkit.command.paper");
         permissions.addAll(SUBCOMMANDS.keySet().stream().map(s -> BASE_PERM + s).toList());
-
-        final PluginManager pluginManager = Bukkit.getServer().getPluginManager();
-        for (final String perm : permissions) {
-            pluginManager.addPermission(new Permission(perm, PermissionDefault.OP));
-        }
 
         LiteralArgumentBuilder<CommandSourceStack> rootNode = Commands.literal("paper")
             .requires(stack -> stack.getSender().hasPermission(String.join(";", permissions)))
@@ -52,6 +50,17 @@ public final class PaperCommand {
 
         SUBCOMMANDS.values().forEach(subs -> subs.forEach(rootNode::then));
         return rootNode.build();
+    }
+    
+    public static void registerPermissions() {
+        final List<String> permissions = new ArrayList<>();
+        permissions.add("bukkit.command.paper");
+        permissions.addAll(SUBCOMMANDS.keySet().stream().map(s -> BASE_PERM + s).toList());
+        
+        final PluginManager pluginManager = Bukkit.getServer().getPluginManager();
+        for (final String perm : permissions) {
+            pluginManager.addPermission(new Permission(perm, PermissionDefault.OP));
+        }
     }
 
     // subcommand label -> subcommand
