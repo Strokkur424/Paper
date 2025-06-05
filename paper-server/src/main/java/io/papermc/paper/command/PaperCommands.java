@@ -22,7 +22,6 @@ public final class PaperCommands {
     private static final Map<String, Command> COMMANDS = new HashMap<>();
 
     public static void registerCommands(final MinecraftServer server) {
-        COMMANDS.put("paper", new PaperCommand("paper"));
         COMMANDS.put("callback", new CallbackCommand("callback"));
         COMMANDS.put("mspt", new MSPTCommand("mspt"));
 
@@ -35,6 +34,7 @@ public final class PaperCommands {
     public static void registerCommands() {
         // Paper commands go here
         registerInternalCommand(PaperVersionCommand.create(), "bukkit", PaperVersionCommand.DESCRIPTION, List.of("ver", "about"), Set.of());
+        registerInternalCommand(PaperCommand.create(), "paper", PaperCommand.DESCRIPTION, List.of(), Set.of());
     }
 
     private static void registerInternalCommand(final LiteralCommandNode<CommandSourceStack> node, final String namespace, final String description, final List<String> aliases, final Set<CommandRegistrationFlag> flags) {
