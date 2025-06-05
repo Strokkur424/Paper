@@ -5,10 +5,10 @@ Subject: [PATCH] Anti-Xray
 
 
 diff --git a/io/papermc/paper/FeatureHooks.java b/io/papermc/paper/FeatureHooks.java
-index b9a838d638571bca1d00a620cedf169a3fa87e9d..329e9562e9c2b25228b04c21ff7353d2d8d6e5f6 100644
+index 57ef4577aa4d35d3507a0a083506845fad0c1585..53f4c4aad8f38bd8cc45685ed794cf35d59a29ba 100644
 --- a/io/papermc/paper/FeatureHooks.java
 +++ b/io/papermc/paper/FeatureHooks.java
-@@ -37,20 +37,25 @@ public final class FeatureHooks {
+@@ -38,20 +38,25 @@ public final class FeatureHooks {
      }
  
      public static LevelChunkSection createSection(final Registry<Biome> biomeRegistry, final Level level, final ChunkPos chunkPos, final int chunkSection) {
@@ -186,7 +186,7 @@ index 342bc843c384761e883de861044f4f8930ae8763..14878690a88fd4de3e2c127086607e6c
          if (io.papermc.paper.event.packet.PlayerChunkLoadEvent.getHandlerList().getRegisteredListeners().length > 0) {
              new io.papermc.paper.event.packet.PlayerChunkLoadEvent(new org.bukkit.craftbukkit.CraftChunk(chunk), packetListener.getPlayer().getBukkitEntity()).callEvent();
 diff --git a/net/minecraft/server/players/PlayerList.java b/net/minecraft/server/players/PlayerList.java
-index 9b2ee3e16e2c443e8ff03faec59dd55d729e9274..5ec9e3b37e575e9805bf9f0ce5cae5c1284461d8 100644
+index ed23e8e29d08d69ec1d0dca49193a3a6a3dc0dd0..eda176c96bcf3d67650722ffce33863edfbdea9e 100644
 --- a/net/minecraft/server/players/PlayerList.java
 +++ b/net/minecraft/server/players/PlayerList.java
 @@ -407,7 +407,7 @@ public abstract class PlayerList {
