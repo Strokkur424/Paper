@@ -1,0 +1,11 @@
+--- a/net/minecraft/network/protocol/game/ServerboundCommandSuggestionPacket.java
++++ b/net/minecraft/network/protocol/game/ServerboundCommandSuggestionPacket.java
+@@ -9,7 +_,7 @@
+ import net.minecraft.network.protocol.PacketType;
+ 
+ public record ServerboundCommandSuggestionPacket(int id, String command) implements Packet<ServerGamePacketListener> {
+-    public static final StreamCodec<ByteBuf, ServerboundCommandSuggestionPacket> STREAM_CODEC = createStreamCodec(32500);
++    public static final StreamCodec<ByteBuf, ServerboundCommandSuggestionPacket> STREAM_CODEC = createStreamCodec(2048); // Paper
+     public static final StreamCodec<ByteBuf, ServerboundCommandSuggestionPacket> CHAT_ONLY_STREAM_CODEC = new StreamCodec<ByteBuf, ServerboundCommandSuggestionPacket>() {
+         private final StreamCodec<ByteBuf, ServerboundCommandSuggestionPacket> downstream = ServerboundCommandSuggestionPacket.createStreamCodec(256);
+ 

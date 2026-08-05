@@ -1,14 +1,15 @@
 --- a/net/minecraft/network/protocol/game/ClientboundLevelChunkWithLightPacket.java
 +++ b/net/minecraft/network/protocol/game/ClientboundLevelChunkWithLightPacket.java
-@@ -18,6 +_,11 @@
-     private final int z;
-     private final ClientboundLevelChunkPacketData chunkData;
-     private final ClientboundLightUpdatePacketData lightData;
+@@ -40,6 +_,12 @@
+         );
+     }
+ 
 +    // Paper start - Anti-Xray
 +    public void setReady(final boolean ready) {
 +        // Empty hook, updated by feature patch
 +    }
 +    // Paper end - Anti-Xray
- 
-     public ClientboundLevelChunkWithLightPacket(
-         final LevelChunk levelChunk,
++
+     @Override
+     public PacketType<ClientboundLevelChunkWithLightPacket> type() {
+         return GamePacketTypes.CLIENTBOUND_LEVEL_CHUNK_WITH_LIGHT;
