@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/redstone/dispenser.json
++++ b/data/minecraft/advancement/recipes/redstone/dispenser.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:dispenser"
++        "recipe": "minecraft:dispenser"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

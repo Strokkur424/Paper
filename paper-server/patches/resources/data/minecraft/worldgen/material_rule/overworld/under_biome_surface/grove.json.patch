@@ -1,0 +1,13 @@
+--- a/data/minecraft/worldgen/material_rule/overworld/under_biome_surface/grove.json
++++ /dev/null
+@@ -1,10 +_,0 @@
+-{
+-  "type": "minecraft:sequence",
+-  "sequence": [
+-    "minecraft:overworld/powder_snow_under_surface",
+-    {
+-      "type": "minecraft:block",
+-      "result_state": "minecraft:dirt"
+-    }
+-  ]
+-}

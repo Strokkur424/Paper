@@ -1,0 +1,29 @@
+--- a/data/minecraft/advancement/husbandry/feed_snifflet.json
++++ b/data/minecraft/advancement/husbandry/feed_snifflet.json
+@@ -3,16 +_,18 @@
+   "criteria": {
+     "feed_snifflet": {
+       "conditions": {
+-        "entity": {
+-          "type": "minecraft:entity_properties",
+-          "entity": "this",
+-          "predicate": {
+-            "minecraft:entity_type": "minecraft:sniffer",
+-            "minecraft:flags": {
+-              "is_baby": true
++        "entity": [
++          {
++            "condition": "minecraft:entity_properties",
++            "entity": "this",
++            "predicate": {
++              "minecraft:entity_type": "minecraft:sniffer",
++              "minecraft:flags": {
++                "is_baby": true
++              }
+             }
+           }
+-        },
++        ],
+         "item": {
+           "items": "#minecraft:sniffer_food"
+         }

@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/building_blocks/smooth_basalt.json
++++ b/data/minecraft/advancement/recipes/building_blocks/smooth_basalt.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:smooth_basalt"
++        "recipe": "minecraft:smooth_basalt"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

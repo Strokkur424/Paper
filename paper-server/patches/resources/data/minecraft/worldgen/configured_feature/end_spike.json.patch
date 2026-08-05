@@ -1,0 +1,9 @@
+--- /dev/null
++++ b/data/minecraft/worldgen/configured_feature/end_spike.json
+@@ -1,0 +_,6 @@
++{
++  "type": "minecraft:end_spike",
++  "config": {
++    "spikes": []
++  }
++}

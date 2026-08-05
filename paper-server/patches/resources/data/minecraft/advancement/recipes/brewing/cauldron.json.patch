@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/brewing/cauldron.json
++++ b/data/minecraft/advancement/recipes/brewing/cauldron.json
+@@ -3,7 +_,7 @@
+   "criteria": {
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:cauldron"
++        "recipe": "minecraft:cauldron"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     },

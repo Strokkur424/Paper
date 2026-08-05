@@ -2,6 +2,6 @@
 # format:
 #     <artifactId> <fileName>
 # both fully qualified and a file based syntax are accepted for <fileName>:
-#     authlib com/mojang/authlib/yggdrasil/YggdrasilGameProfileRepository.java
+     authlib com.mojang.authlib.services.MinecraftServicesProfileRepository
 #     datafixerupper com.mojang.datafixers.DataFixerBuilder
 #     datafixerupper com/mojang/datafixers/util/Either.java

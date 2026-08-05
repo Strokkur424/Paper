@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/decorations/mud_brick_wall_from_mud_bricks_stonecutting.json
++++ b/data/minecraft/advancement/recipes/decorations/mud_brick_wall_from_mud_bricks_stonecutting.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:mud_brick_wall_from_mud_bricks_stonecutting"
++        "recipe": "minecraft:mud_brick_wall_from_mud_bricks_stonecutting"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

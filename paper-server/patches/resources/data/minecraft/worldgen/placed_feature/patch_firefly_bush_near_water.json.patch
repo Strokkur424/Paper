@@ -1,0 +1,40 @@
+--- a/data/minecraft/worldgen/placed_feature/patch_firefly_bush_near_water.json
++++ b/data/minecraft/worldgen/placed_feature/patch_firefly_bush_near_water.json
+@@ -26,7 +_,9 @@
+           },
+           {
+             "type": "minecraft:would_survive",
+-            "state": "minecraft:firefly_bush"
++            "state": {
++              "Name": "minecraft:firefly_bush"
++            }
+           },
+           {
+             "type": "minecraft:any_of",
+@@ -89,23 +_,17 @@
+       "count": 20
+     },
+     {
+-      "type": "minecraft:offset",
+-      "x": {
++      "type": "minecraft:random_offset",
++      "xz_spread": {
+         "type": "minecraft:trapezoid",
+         "max": 4,
+         "min": -4,
+         "plateau": 0
+       },
+-      "y": {
++      "y_spread": {
+         "type": "minecraft:trapezoid",
+         "max": 3,
+         "min": -3,
+-        "plateau": 0
+-      },
+-      "z": {
+-        "type": "minecraft:trapezoid",
+-        "max": 4,
+-        "min": -4,
+         "plateau": 0
+       }
+     },

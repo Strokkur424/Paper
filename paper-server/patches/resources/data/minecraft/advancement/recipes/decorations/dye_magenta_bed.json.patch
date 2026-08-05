@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/decorations/dye_magenta_bed.json
++++ b/data/minecraft/advancement/recipes/decorations/dye_magenta_bed.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:dye_magenta_bed"
++        "recipe": "minecraft:dye_magenta_bed"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

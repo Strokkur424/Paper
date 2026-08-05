@@ -1,0 +1,19 @@
+--- a/data/minecraft/loot_table/dispensers/trial_chambers/water.json
++++ b/data/minecraft/loot_table/dispensers/trial_chambers/water.json
+@@ -5,10 +_,12 @@
+       "entries": [
+         {
+           "type": "minecraft:item",
+-          "modifier": {
+-            "type": "minecraft:set_count",
+-            "count": 1.0
+-          },
++          "functions": [
++            {
++              "count": 1.0,
++              "function": "minecraft:set_count"
++            }
++          ],
+           "name": "minecraft:water_bucket"
+         }
+       ],

@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/combat/diamond_chestplate.json
++++ b/data/minecraft/advancement/recipes/combat/diamond_chestplate.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:diamond_chestplate"
++        "recipe": "minecraft:diamond_chestplate"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

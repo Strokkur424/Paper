@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/redstone/daylight_detector.json
++++ b/data/minecraft/advancement/recipes/redstone/daylight_detector.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:daylight_detector"
++        "recipe": "minecraft:daylight_detector"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

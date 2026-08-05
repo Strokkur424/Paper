@@ -1,0 +1,35 @@
+--- a/data/minecraft/loot_table/blocks/rose_bush.json
++++ b/data/minecraft/loot_table/blocks/rose_bush.json
+@@ -2,19 +_,23 @@
+   "type": "minecraft:block",
+   "pools": [
+     {
+-      "condition": {
+-        "type": "minecraft:survives_explosion"
+-      },
++      "conditions": [
++        {
++          "condition": "minecraft:survives_explosion"
++        }
++      ],
+       "entries": [
+         {
+           "type": "minecraft:item",
+-          "condition": {
+-            "type": "minecraft:match_block",
+-            "blocks": "minecraft:rose_bush",
+-            "state": {
+-              "half": "lower"
++          "conditions": [
++            {
++              "block": "minecraft:rose_bush",
++              "condition": "minecraft:block_state_property",
++              "properties": {
++                "half": "lower"
++              }
+             }
+-          },
++          ],
+           "name": "minecraft:rose_bush"
+         }
+       ],

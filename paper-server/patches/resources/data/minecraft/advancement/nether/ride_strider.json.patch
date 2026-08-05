@@ -1,0 +1,27 @@
+--- a/data/minecraft/advancement/nether/ride_strider.json
++++ b/data/minecraft/advancement/nether/ride_strider.json
+@@ -6,15 +_,17 @@
+         "item": {
+           "items": "minecraft:warped_fungus_on_a_stick"
+         },
+-        "player": {
+-          "type": "minecraft:entity_properties",
+-          "entity": "this",
+-          "predicate": {
+-            "minecraft:vehicle": {
+-              "minecraft:entity_type": "minecraft:strider"
++        "player": [
++          {
++            "condition": "minecraft:entity_properties",
++            "entity": "this",
++            "predicate": {
++              "minecraft:vehicle": {
++                "minecraft:entity_type": "minecraft:strider"
++              }
+             }
+           }
+-        }
++        ]
+       },
+       "trigger": "minecraft:item_durability_changed"
+     }

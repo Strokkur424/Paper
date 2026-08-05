@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/building_blocks/white_wool_from_string.json
++++ b/data/minecraft/advancement/recipes/building_blocks/white_wool_from_string.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:white_wool_from_string"
++        "recipe": "minecraft:white_wool_from_string"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

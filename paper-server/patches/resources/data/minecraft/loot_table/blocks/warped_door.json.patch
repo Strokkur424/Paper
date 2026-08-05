@@ -1,0 +1,35 @@
+--- a/data/minecraft/loot_table/blocks/warped_door.json
++++ b/data/minecraft/loot_table/blocks/warped_door.json
+@@ -2,19 +_,23 @@
+   "type": "minecraft:block",
+   "pools": [
+     {
+-      "condition": {
+-        "type": "minecraft:survives_explosion"
+-      },
++      "conditions": [
++        {
++          "condition": "minecraft:survives_explosion"
++        }
++      ],
+       "entries": [
+         {
+           "type": "minecraft:item",
+-          "condition": {
+-            "type": "minecraft:match_block",
+-            "blocks": "minecraft:warped_door",
+-            "state": {
+-              "half": "lower"
++          "conditions": [
++            {
++              "block": "minecraft:warped_door",
++              "condition": "minecraft:block_state_property",
++              "properties": {
++                "half": "lower"
++              }
+             }
+-          },
++          ],
+           "name": "minecraft:warped_door"
+         }
+       ],

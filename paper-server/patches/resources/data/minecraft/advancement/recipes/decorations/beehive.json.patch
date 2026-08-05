@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/decorations/beehive.json
++++ b/data/minecraft/advancement/recipes/decorations/beehive.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:beehive"
++        "recipe": "minecraft:beehive"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

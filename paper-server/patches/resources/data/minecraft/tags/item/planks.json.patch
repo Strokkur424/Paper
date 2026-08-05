@@ -1,0 +1,11 @@
+--- a/data/minecraft/tags/item/planks.json
++++ b/data/minecraft/tags/item/planks.json
+@@ -11,7 +_,6 @@
+     "minecraft:warped_planks",
+     "minecraft:mangrove_planks",
+     "minecraft:bamboo_planks",
+-    "minecraft:cherry_planks",
+-    "minecraft:poplar_planks"
++    "minecraft:cherry_planks"
+   ]
+ }

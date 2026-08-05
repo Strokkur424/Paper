@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/misc/diamond.json
++++ b/data/minecraft/advancement/recipes/misc/diamond.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:diamond"
++        "recipe": "minecraft:diamond"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

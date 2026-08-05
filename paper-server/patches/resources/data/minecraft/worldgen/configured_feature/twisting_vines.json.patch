@@ -1,0 +1,11 @@
+--- /dev/null
++++ b/data/minecraft/worldgen/configured_feature/twisting_vines.json
+@@ -1,0 +_,8 @@
++{
++  "type": "minecraft:twisting_vines",
++  "config": {
++    "max_height": 8,
++    "spread_height": 4,
++    "spread_width": 8
++  }
++}

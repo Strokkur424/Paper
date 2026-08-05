@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/decorations/torch.json
++++ b/data/minecraft/advancement/recipes/decorations/torch.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:torch"
++        "recipe": "minecraft:torch"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

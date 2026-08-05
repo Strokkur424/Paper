@@ -1,0 +1,18 @@
+--- a/data/minecraft/recipe/blue_concrete_slab.json
++++ /dev/null
+@@ -1,15 +_,0 @@
+-{
+-  "type": "minecraft:crafting_shaped",
+-  "category": "building",
+-  "group": "concrete_slab",
+-  "key": {
+-    "#": "minecraft:blue_concrete"
+-  },
+-  "pattern": [
+-    "###"
+-  ],
+-  "result": {
+-    "count": 6,
+-    "id": "minecraft:blue_concrete_slab"
+-  }
+-}

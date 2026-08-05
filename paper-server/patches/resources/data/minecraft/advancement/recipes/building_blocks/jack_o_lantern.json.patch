@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/building_blocks/jack_o_lantern.json
++++ b/data/minecraft/advancement/recipes/building_blocks/jack_o_lantern.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:jack_o_lantern"
++        "recipe": "minecraft:jack_o_lantern"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

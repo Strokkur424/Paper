@@ -1,0 +1,20 @@
+--- a/data/minecraft/recipe/poplar_stairs.json
++++ /dev/null
+@@ -1,17 +_,0 @@
+-{
+-  "type": "minecraft:crafting_shaped",
+-  "category": "building",
+-  "group": "wooden_stairs",
+-  "key": {
+-    "#": "minecraft:poplar_planks"
+-  },
+-  "pattern": [
+-    "#  ",
+-    "## ",
+-    "###"
+-  ],
+-  "result": {
+-    "count": 4,
+-    "id": "minecraft:poplar_stairs"
+-  }
+-}

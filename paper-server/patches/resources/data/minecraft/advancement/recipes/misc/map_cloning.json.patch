@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/misc/map_cloning.json
++++ b/data/minecraft/advancement/recipes/misc/map_cloning.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:map_cloning"
++        "recipe": "minecraft:map_cloning"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

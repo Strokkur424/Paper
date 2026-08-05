@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/combat/mace.json
++++ b/data/minecraft/advancement/recipes/combat/mace.json
+@@ -23,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:mace"
++        "recipe": "minecraft:mace"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

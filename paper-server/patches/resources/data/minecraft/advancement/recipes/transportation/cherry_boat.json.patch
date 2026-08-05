@@ -1,0 +1,18 @@
+--- a/data/minecraft/advancement/recipes/transportation/cherry_boat.json
++++ b/data/minecraft/advancement/recipes/transportation/cherry_boat.json
+@@ -3,13 +_,13 @@
+   "criteria": {
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:cherry_boat"
++        "recipe": "minecraft:cherry_boat"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     },
+     "in_water": {
+       "conditions": {
+-        "blocks": "minecraft:water"
++        "block": "minecraft:water"
+       },
+       "trigger": "minecraft:enter_block"
+     }

@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/redstone/lightning_rod.json
++++ b/data/minecraft/advancement/recipes/redstone/lightning_rod.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:lightning_rod"
++        "recipe": "minecraft:lightning_rod"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

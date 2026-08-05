@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/misc/firework_rocket_simple.json
++++ b/data/minecraft/advancement/recipes/misc/firework_rocket_simple.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:firework_rocket_simple"
++        "recipe": "minecraft:firework_rocket_simple"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

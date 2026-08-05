@@ -1,0 +1,133 @@
+--- a/data/minecraft/loot_table/chests/village/village_fisher.json
++++ b/data/minecraft/loot_table/chests/village/village_fisher.json
+@@ -9,76 +_,88 @@
+         },
+         {
+           "type": "minecraft:item",
+-          "modifier": {
+-            "type": "minecraft:set_count",
+-            "count": {
+-              "type": "minecraft:uniform",
+-              "max": 3.0,
+-              "min": 1.0
++          "functions": [
++            {
++              "count": {
++                "type": "minecraft:uniform",
++                "max": 3.0,
++                "min": 1.0
++              },
++              "function": "minecraft:set_count"
+             }
+-          },
++          ],
+           "name": "minecraft:cod",
+           "weight": 2
+         },
+         {
+           "type": "minecraft:item",
+-          "modifier": {
+-            "type": "minecraft:set_count",
+-            "count": {
+-              "type": "minecraft:uniform",
+-              "max": 3.0,
+-              "min": 1.0
++          "functions": [
++            {
++              "count": {
++                "type": "minecraft:uniform",
++                "max": 3.0,
++                "min": 1.0
++              },
++              "function": "minecraft:set_count"
+             }
+-          },
++          ],
+           "name": "minecraft:salmon"
+         },
+         {
+           "type": "minecraft:item",
+-          "modifier": {
+-            "type": "minecraft:set_count",
+-            "count": {
+-              "type": "minecraft:uniform",
+-              "max": 3.0,
+-              "min": 1.0
++          "functions": [
++            {
++              "count": {
++                "type": "minecraft:uniform",
++                "max": 3.0,
++                "min": 1.0
++              },
++              "function": "minecraft:set_count"
+             }
+-          },
++          ],
+           "name": "minecraft:water_bucket"
+         },
+         {
+           "type": "minecraft:item",
+-          "modifier": {
+-            "type": "minecraft:set_count",
+-            "count": {
+-              "type": "minecraft:uniform",
+-              "max": 3.0,
+-              "min": 1.0
++          "functions": [
++            {
++              "count": {
++                "type": "minecraft:uniform",
++                "max": 3.0,
++                "min": 1.0
++              },
++              "function": "minecraft:set_count"
+             }
+-          },
++          ],
+           "name": "minecraft:barrel"
+         },
+         {
+           "type": "minecraft:item",
+-          "modifier": {
+-            "type": "minecraft:set_count",
+-            "count": {
+-              "type": "minecraft:uniform",
+-              "max": 3.0,
+-              "min": 1.0
++          "functions": [
++            {
++              "count": {
++                "type": "minecraft:uniform",
++                "max": 3.0,
++                "min": 1.0
++              },
++              "function": "minecraft:set_count"
+             }
+-          },
++          ],
+           "name": "minecraft:wheat_seeds",
+           "weight": 3
+         },
+         {
+           "type": "minecraft:item",
+-          "modifier": {
+-            "type": "minecraft:set_count",
+-            "count": {
+-              "type": "minecraft:uniform",
+-              "max": 3.0,
+-              "min": 1.0
++          "functions": [
++            {
++              "count": {
++                "type": "minecraft:uniform",
++                "max": 3.0,
++                "min": 1.0
++              },
++              "function": "minecraft:set_count"
+             }
+-          },
++          ],
+           "name": "minecraft:coal",
+           "weight": 2
+         }

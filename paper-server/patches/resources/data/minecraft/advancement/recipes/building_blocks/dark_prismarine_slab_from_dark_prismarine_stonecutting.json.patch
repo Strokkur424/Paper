@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/building_blocks/dark_prismarine_slab_from_dark_prismarine_stonecutting.json
++++ b/data/minecraft/advancement/recipes/building_blocks/dark_prismarine_slab_from_dark_prismarine_stonecutting.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:dark_prismarine_slab_from_dark_prismarine_stonecutting"
++        "recipe": "minecraft:dark_prismarine_slab_from_dark_prismarine_stonecutting"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

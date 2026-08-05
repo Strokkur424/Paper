@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/building_blocks/brick_stairs_from_bricks_stonecutting.json
++++ b/data/minecraft/advancement/recipes/building_blocks/brick_stairs_from_bricks_stonecutting.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:brick_stairs_from_bricks_stonecutting"
++        "recipe": "minecraft:brick_stairs_from_bricks_stonecutting"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

@@ -1,0 +1,23 @@
+--- a/data/minecraft/recipe/brewing/splash_potion_awkward_slime_block.json
++++ /dev/null
+@@ -1,20 +_,0 @@
+-{
+-  "type": "minecraft:brewing",
+-  "input": {
+-    "item": "minecraft:splash_potion",
+-    "potion_contents": {
+-      "potions": "minecraft:awkward"
+-    }
+-  },
+-  "output": {
+-    "components": {
+-      "minecraft:potion_contents": {
+-        "potion": "minecraft:oozing"
+-      }
+-    },
+-    "id": "minecraft:splash_potion"
+-  },
+-  "reagent": {
+-    "item": "minecraft:slime_block"
+-  }
+-}

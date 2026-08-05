@@ -1,0 +1,48 @@
+--- a/data/minecraft/advancement/adventure/revaulting.json
++++ b/data/minecraft/advancement/adventure/revaulting.json
+@@ -3,28 +_,25 @@
+   "criteria": {
+     "revaulting": {
+       "conditions": {
+-        "location": {
+-          "type": "minecraft:all_of",
+-          "terms": [
+-            {
+-              "type": "minecraft:location_check",
+-              "predicate": {
+-                "block": {
+-                  "blocks": "minecraft:vault",
+-                  "state": {
+-                    "ominous": "true"
+-                  }
++        "location": [
++          {
++            "condition": "minecraft:location_check",
++            "predicate": {
++              "block": {
++                "blocks": "minecraft:vault",
++                "state": {
++                  "ominous": "true"
+                 }
+               }
+-            },
+-            {
+-              "type": "minecraft:match_tool",
+-              "predicate": {
+-                "items": "minecraft:ominous_trial_key"
+-              }
+-            }
+-          ]
+-        }
++            }
++          },
++          {
++            "condition": "minecraft:match_tool",
++            "predicate": {
++              "items": "minecraft:ominous_trial_key"
++            }
++          }
++        ]
+       },
+       "trigger": "minecraft:item_used_on_block"
+     }

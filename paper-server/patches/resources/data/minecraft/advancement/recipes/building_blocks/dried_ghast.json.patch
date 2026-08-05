@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/building_blocks/dried_ghast.json
++++ b/data/minecraft/advancement/recipes/building_blocks/dried_ghast.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:dried_ghast"
++        "recipe": "minecraft:dried_ghast"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

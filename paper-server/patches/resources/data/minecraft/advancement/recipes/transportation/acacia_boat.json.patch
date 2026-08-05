@@ -1,0 +1,18 @@
+--- a/data/minecraft/advancement/recipes/transportation/acacia_boat.json
++++ b/data/minecraft/advancement/recipes/transportation/acacia_boat.json
+@@ -3,13 +_,13 @@
+   "criteria": {
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:acacia_boat"
++        "recipe": "minecraft:acacia_boat"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     },
+     "in_water": {
+       "conditions": {
+-        "blocks": "minecraft:water"
++        "block": "minecraft:water"
+       },
+       "trigger": "minecraft:enter_block"
+     }

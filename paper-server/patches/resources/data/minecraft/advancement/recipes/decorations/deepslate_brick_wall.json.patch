@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/decorations/deepslate_brick_wall.json
++++ b/data/minecraft/advancement/recipes/decorations/deepslate_brick_wall.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:deepslate_brick_wall"
++        "recipe": "minecraft:deepslate_brick_wall"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

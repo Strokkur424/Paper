@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/misc/wheat.json
++++ b/data/minecraft/advancement/recipes/misc/wheat.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:wheat"
++        "recipe": "minecraft:wheat"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/tools/netherite_axe_smithing.json
++++ b/data/minecraft/advancement/recipes/tools/netherite_axe_smithing.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:netherite_axe_smithing"
++        "recipe": "minecraft:netherite_axe_smithing"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

@@ -1,0 +1,11 @@
+--- a/data/minecraft/tags/block/wooden_trapdoors.json
++++ b/data/minecraft/tags/block/wooden_trapdoors.json
+@@ -11,7 +_,6 @@
+     "minecraft:warped_trapdoor",
+     "minecraft:mangrove_trapdoor",
+     "minecraft:bamboo_trapdoor",
+-    "minecraft:cherry_trapdoor",
+-    "minecraft:poplar_trapdoor"
++    "minecraft:cherry_trapdoor"
+   ]
+ }

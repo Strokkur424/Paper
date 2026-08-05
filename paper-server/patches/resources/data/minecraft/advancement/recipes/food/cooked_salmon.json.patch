@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/food/cooked_salmon.json
++++ b/data/minecraft/advancement/recipes/food/cooked_salmon.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:cooked_salmon"
++        "recipe": "minecraft:cooked_salmon"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

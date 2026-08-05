@@ -1,0 +1,34 @@
+--- a/assets/minecraft/lang/deprecated.json
++++ b/assets/minecraft/lang/deprecated.json
+@@ -382,30 +_,7 @@
+     "telemetry.event.p2p_connection.description",
+     "telemetry.event.p2p_connection.title",
+     "options.exclusiveFullscreen.warningTooltip",
+-    "menu.multiplayerOptions.network.header",
+-    "commands.item.block.set.success",
+-    "commands.item.entity.set.success.multiple",
+-    "commands.item.entity.set.success.single",
+-    "commands.item.target.no_changed.known_item",
+-    "commands.item.target.no_changes",
+-    "commands.place.feature.invalid",
+-    "options.rawMouseInput",
+-    "item.minecraft.firework_rocket.flight",
+-    "menu.multiplayerOptions.title",
+-    "options.multiplayer.title",
+-    "menu.multiplayerOptions.otherPlayers.header",
+-    "options.improvedTransparency.tooltip",
+-    "filled_map.buried_treasure",
+-    "filled_map.explorer_jungle",
+-    "filled_map.explorer_swamp",
+-    "filled_map.mansion",
+-    "filled_map.monument",
+-    "filled_map.trial_chambers",
+-    "filled_map.village_desert",
+-    "filled_map.village_plains",
+-    "filled_map.village_savanna",
+-    "filled_map.village_snowy",
+-    "filled_map.village_taiga"
++    "menu.multiplayerOptions.network.header"
+   ],
+   "renamed": {
+     "item.minecraft.dune_armor_trim_smithing_template.new": "item.minecraft.dune_armor_trim_smithing_template",

@@ -1,0 +1,18 @@
+--- a/data/minecraft/worldgen/noise/temperature_large.json
++++ b/data/minecraft/worldgen/noise/temperature_large.json
+@@ -1,5 +_,5 @@
+ {
+-  "amplitude_modifiers": [
++  "amplitudes": [
+     1.5,
+     0.0,
+     1.0,
+@@ -7,7 +_,5 @@
+     0.0,
+     0.0
+   ],
+-  "base_amplitude": 1.2453007926713473,
+-  "base_octave": -12,
+-  "octave_count": 6
++  "firstOctave": -12
+ }

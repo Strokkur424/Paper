@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/combat/diamond_spear.json
++++ b/data/minecraft/advancement/recipes/combat/diamond_spear.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:diamond_spear"
++        "recipe": "minecraft:diamond_spear"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

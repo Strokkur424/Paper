@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/misc/iron_nugget.json
++++ b/data/minecraft/advancement/recipes/misc/iron_nugget.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:iron_nugget"
++        "recipe": "minecraft:iron_nugget"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

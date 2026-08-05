@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/tools/lime_bundle.json
++++ b/data/minecraft/advancement/recipes/tools/lime_bundle.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:lime_bundle"
++        "recipe": "minecraft:lime_bundle"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

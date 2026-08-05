@@ -1,0 +1,13 @@
+--- a/data/minecraft/recipe/map_extending.json
++++ b/data/minecraft/recipe/map_extending.json
+@@ -1,6 +_,8 @@
+ {
+   "type": "minecraft:crafting_special_mapextending",
+-  "map": "#minecraft:extendable_maps",
++  "map": "minecraft:filled_map",
+   "material": "minecraft:paper",
+-  "result": {}
++  "result": {
++    "id": "minecraft:filled_map"
++  }
+ }

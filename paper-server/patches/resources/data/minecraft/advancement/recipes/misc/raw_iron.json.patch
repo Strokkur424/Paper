@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/misc/raw_iron.json
++++ b/data/minecraft/advancement/recipes/misc/raw_iron.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:raw_iron"
++        "recipe": "minecraft:raw_iron"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

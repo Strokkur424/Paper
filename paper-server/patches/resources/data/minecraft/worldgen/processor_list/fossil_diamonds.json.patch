@@ -1,0 +1,13 @@
+--- a/data/minecraft/worldgen/processor_list/fossil_diamonds.json
++++ b/data/minecraft/worldgen/processor_list/fossil_diamonds.json
+@@ -15,7 +_,9 @@
+           "location_predicate": {
+             "predicate_type": "minecraft:always_true"
+           },
+-          "output_state": "minecraft:deepslate_diamond_ore"
++          "output_state": {
++            "Name": "minecraft:deepslate_diamond_ore"
++          }
+         }
+       ]
+     },

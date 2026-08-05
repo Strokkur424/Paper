@@ -1,0 +1,44 @@
+--- a/data/minecraft/loot_table/blocks/bee_nest.json
++++ b/data/minecraft/loot_table/blocks/bee_nest.json
+@@ -2,21 +_,37 @@
+   "type": "minecraft:block",
+   "pools": [
+     {
+-      "condition": "minecraft:tool/can_silk_touch",
++      "conditions": [
++        {
++          "condition": "minecraft:match_tool",
++          "predicate": {
++            "predicates": {
++              "minecraft:enchantments": [
++                {
++                  "enchantments": "minecraft:silk_touch",
++                  "levels": {
++                    "min": 1
++                  }
++                }
++              ]
++            }
++          }
++        }
++      ],
+       "entries": [
+         {
+           "type": "minecraft:item",
+-          "modifier": [
++          "functions": [
+             {
+-              "type": "minecraft:copy_components",
++              "function": "minecraft:copy_components",
+               "include": [
+                 "minecraft:bees"
+               ],
+               "source": "block_entity"
+             },
+             {
+-              "type": "minecraft:copy_state",
+               "block": "minecraft:bee_nest",
++              "function": "minecraft:copy_state",
+               "properties": [
+                 "honey_level"
+               ]

@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/misc/iron_ingot_from_blasting_iron_ore.json
++++ b/data/minecraft/advancement/recipes/misc/iron_ingot_from_blasting_iron_ore.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:iron_ingot_from_blasting_iron_ore"
++        "recipe": "minecraft:iron_ingot_from_blasting_iron_ore"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

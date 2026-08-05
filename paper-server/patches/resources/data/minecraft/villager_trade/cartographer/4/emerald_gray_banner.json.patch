@@ -1,0 +1,11 @@
+--- a/data/minecraft/villager_trade/cartographer/4/emerald_gray_banner.json
++++ b/data/minecraft/villager_trade/cartographer/4/emerald_gray_banner.json
+@@ -4,7 +_,7 @@
+   },
+   "max_uses": 12.0,
+   "merchant_predicate": {
+-    "type": "minecraft:entity_properties",
++    "condition": "minecraft:entity_properties",
+     "entity": "this",
+     "predicate": {
+       "minecraft:predicates": {

@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/tools/blue_bundle.json
++++ b/data/minecraft/advancement/recipes/tools/blue_bundle.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:blue_bundle"
++        "recipe": "minecraft:blue_bundle"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

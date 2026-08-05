@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/tools/white_bundle.json
++++ b/data/minecraft/advancement/recipes/tools/white_bundle.json
+@@ -3,7 +_,7 @@
+   "criteria": {
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:white_bundle"
++        "recipe": "minecraft:white_bundle"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     },

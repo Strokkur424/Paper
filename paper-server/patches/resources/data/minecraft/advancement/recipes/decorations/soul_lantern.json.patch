@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/decorations/soul_lantern.json
++++ b/data/minecraft/advancement/recipes/decorations/soul_lantern.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:soul_lantern"
++        "recipe": "minecraft:soul_lantern"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

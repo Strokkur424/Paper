@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/tools/name_tag.json
++++ b/data/minecraft/advancement/recipes/tools/name_tag.json
+@@ -33,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:name_tag"
++        "recipe": "minecraft:name_tag"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

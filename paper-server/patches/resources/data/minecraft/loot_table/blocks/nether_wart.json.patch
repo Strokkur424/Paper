@@ -1,0 +1,71 @@
+--- a/data/minecraft/loot_table/blocks/nether_wart.json
++++ b/data/minecraft/loot_table/blocks/nether_wart.json
+@@ -5,33 +_,37 @@
+       "entries": [
+         {
+           "type": "minecraft:item",
+-          "modifier": [
++          "functions": [
+             {
+-              "type": "minecraft:set_count",
+-              "condition": {
+-                "type": "minecraft:match_block",
+-                "blocks": "minecraft:nether_wart",
+-                "state": {
+-                  "age": "3"
++              "conditions": [
++                {
++                  "block": "minecraft:nether_wart",
++                  "condition": "minecraft:block_state_property",
++                  "properties": {
++                    "age": "3"
++                  }
+                 }
+-              },
++              ],
+               "count": {
+                 "type": "minecraft:uniform",
+                 "max": 4.0,
+                 "min": 2.0
+-              }
++              },
++              "function": "minecraft:set_count"
+             },
+             {
+-              "type": "minecraft:apply_bonus",
+-              "condition": {
+-                "type": "minecraft:match_block",
+-                "blocks": "minecraft:nether_wart",
+-                "state": {
+-                  "age": "3"
++              "conditions": [
++                {
++                  "block": "minecraft:nether_wart",
++                  "condition": "minecraft:block_state_property",
++                  "properties": {
++                    "age": "3"
++                  }
+                 }
+-              },
++              ],
+               "enchantment": "minecraft:fortune",
+               "formula": "minecraft:uniform_bonus_count",
++              "function": "minecraft:apply_bonus",
+               "parameters": {
+                 "bonusMultiplier": 1
+               }
+@@ -40,9 +_,11 @@
+           "name": "minecraft:nether_wart"
+         }
+       ],
+-      "modifier": {
+-        "type": "minecraft:explosion_decay"
+-      },
++      "functions": [
++        {
++          "function": "minecraft:explosion_decay"
++        }
++      ],
+       "rolls": 1.0
+     }
+   ],

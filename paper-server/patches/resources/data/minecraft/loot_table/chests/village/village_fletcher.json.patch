@@ -1,0 +1,114 @@
+--- a/data/minecraft/loot_table/chests/village/village_fletcher.json
++++ b/data/minecraft/loot_table/chests/village/village_fletcher.json
+@@ -9,66 +_,76 @@
+         },
+         {
+           "type": "minecraft:item",
+-          "modifier": {
+-            "type": "minecraft:set_count",
+-            "count": {
+-              "type": "minecraft:uniform",
+-              "max": 3.0,
+-              "min": 1.0
++          "functions": [
++            {
++              "count": {
++                "type": "minecraft:uniform",
++                "max": 3.0,
++                "min": 1.0
++              },
++              "function": "minecraft:set_count"
+             }
+-          },
++          ],
+           "name": "minecraft:arrow",
+           "weight": 2
+         },
+         {
+           "type": "minecraft:item",
+-          "modifier": {
+-            "type": "minecraft:set_count",
+-            "count": {
+-              "type": "minecraft:uniform",
+-              "max": 3.0,
+-              "min": 1.0
++          "functions": [
++            {
++              "count": {
++                "type": "minecraft:uniform",
++                "max": 3.0,
++                "min": 1.0
++              },
++              "function": "minecraft:set_count"
+             }
+-          },
++          ],
+           "name": "minecraft:feather",
+           "weight": 6
+         },
+         {
+           "type": "minecraft:item",
+-          "modifier": {
+-            "type": "minecraft:set_count",
+-            "count": {
+-              "type": "minecraft:uniform",
+-              "max": 3.0,
+-              "min": 1.0
++          "functions": [
++            {
++              "count": {
++                "type": "minecraft:uniform",
++                "max": 3.0,
++                "min": 1.0
++              },
++              "function": "minecraft:set_count"
+             }
+-          },
++          ],
+           "name": "minecraft:egg",
+           "weight": 2
+         },
+         {
+           "type": "minecraft:item",
+-          "modifier": {
+-            "type": "minecraft:set_count",
+-            "count": {
+-              "type": "minecraft:uniform",
+-              "max": 3.0,
+-              "min": 1.0
++          "functions": [
++            {
++              "count": {
++                "type": "minecraft:uniform",
++                "max": 3.0,
++                "min": 1.0
++              },
++              "function": "minecraft:set_count"
+             }
+-          },
++          ],
+           "name": "minecraft:flint",
+           "weight": 6
+         },
+         {
+           "type": "minecraft:item",
+-          "modifier": {
+-            "type": "minecraft:set_count",
+-            "count": {
+-              "type": "minecraft:uniform",
+-              "max": 3.0,
+-              "min": 1.0
++          "functions": [
++            {
++              "count": {
++                "type": "minecraft:uniform",
++                "max": 3.0,
++                "min": 1.0
++              },
++              "function": "minecraft:set_count"
+             }
+-          },
++          ],
+           "name": "minecraft:stick",
+           "weight": 6
+         }

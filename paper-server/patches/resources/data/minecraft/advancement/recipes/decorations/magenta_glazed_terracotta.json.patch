@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/decorations/magenta_glazed_terracotta.json
++++ b/data/minecraft/advancement/recipes/decorations/magenta_glazed_terracotta.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:magenta_glazed_terracotta"
++        "recipe": "minecraft:magenta_glazed_terracotta"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

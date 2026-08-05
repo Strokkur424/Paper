@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/decorations/crimson_fence.json
++++ b/data/minecraft/advancement/recipes/decorations/crimson_fence.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:crimson_fence"
++        "recipe": "minecraft:crimson_fence"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

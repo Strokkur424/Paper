@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/decorations/orange_stained_glass_pane_from_glass_pane.json
++++ b/data/minecraft/advancement/recipes/decorations/orange_stained_glass_pane_from_glass_pane.json
+@@ -23,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:orange_stained_glass_pane_from_glass_pane"
++        "recipe": "minecraft:orange_stained_glass_pane_from_glass_pane"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

@@ -1,0 +1,111 @@
+--- a/data/minecraft/loot_table/blocks/leaf_litter.json
++++ b/data/minecraft/loot_table/blocks/leaf_litter.json
+@@ -5,53 +_,61 @@
+       "entries": [
+         {
+           "type": "minecraft:item",
+-          "modifier": [
+-            {
+-              "type": "minecraft:set_count",
+-              "condition": {
+-                "type": "minecraft:match_block",
+-                "blocks": "minecraft:leaf_litter",
+-                "state": {
+-                  "segment_amount": "1"
+-                }
+-              },
+-              "count": 1.0
+-            },
+-            {
+-              "type": "minecraft:set_count",
+-              "condition": {
+-                "type": "minecraft:match_block",
+-                "blocks": "minecraft:leaf_litter",
+-                "state": {
+-                  "segment_amount": "2"
+-                }
+-              },
+-              "count": 2.0
+-            },
+-            {
+-              "type": "minecraft:set_count",
+-              "condition": {
+-                "type": "minecraft:match_block",
+-                "blocks": "minecraft:leaf_litter",
+-                "state": {
+-                  "segment_amount": "3"
+-                }
+-              },
+-              "count": 3.0
+-            },
+-            {
+-              "type": "minecraft:set_count",
+-              "condition": {
+-                "type": "minecraft:match_block",
+-                "blocks": "minecraft:leaf_litter",
+-                "state": {
+-                  "segment_amount": "4"
+-                }
+-              },
+-              "count": 4.0
+-            },
+-            {
+-              "type": "minecraft:explosion_decay"
++          "functions": [
++            {
++              "conditions": [
++                {
++                  "block": "minecraft:leaf_litter",
++                  "condition": "minecraft:block_state_property",
++                  "properties": {
++                    "segment_amount": "1"
++                  }
++                }
++              ],
++              "count": 1.0,
++              "function": "minecraft:set_count"
++            },
++            {
++              "conditions": [
++                {
++                  "block": "minecraft:leaf_litter",
++                  "condition": "minecraft:block_state_property",
++                  "properties": {
++                    "segment_amount": "2"
++                  }
++                }
++              ],
++              "count": 2.0,
++              "function": "minecraft:set_count"
++            },
++            {
++              "conditions": [
++                {
++                  "block": "minecraft:leaf_litter",
++                  "condition": "minecraft:block_state_property",
++                  "properties": {
++                    "segment_amount": "3"
++                  }
++                }
++              ],
++              "count": 3.0,
++              "function": "minecraft:set_count"
++            },
++            {
++              "conditions": [
++                {
++                  "block": "minecraft:leaf_litter",
++                  "condition": "minecraft:block_state_property",
++                  "properties": {
++                    "segment_amount": "4"
++                  }
++                }
++              ],
++              "count": 4.0,
++              "function": "minecraft:set_count"
++            },
++            {
++              "function": "minecraft:explosion_decay"
+             }
+           ],
+           "name": "minecraft:leaf_litter"

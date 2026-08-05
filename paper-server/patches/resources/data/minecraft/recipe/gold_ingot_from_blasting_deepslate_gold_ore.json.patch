@@ -1,0 +1,9 @@
+--- a/data/minecraft/recipe/gold_ingot_from_blasting_deepslate_gold_ore.json
++++ b/data/minecraft/recipe/gold_ingot_from_blasting_deepslate_gold_ore.json
+@@ -1,6 +_,5 @@
+ {
+   "type": "minecraft:blasting",
+-  "cookingtime": 200,
+   "experience": 1.0,
+   "group": "gold_ingot",
+   "ingredient": "minecraft:deepslate_gold_ore",

@@ -1,0 +1,9 @@
+--- a/data/minecraft/recipe/lapis_lazuli_from_blasting_deepslate_lapis_ore.json
++++ b/data/minecraft/recipe/lapis_lazuli_from_blasting_deepslate_lapis_ore.json
+@@ -1,6 +_,5 @@
+ {
+   "type": "minecraft:blasting",
+-  "cookingtime": 200,
+   "experience": 0.2,
+   "group": "lapis_lazuli",
+   "ingredient": "minecraft:deepslate_lapis_ore",

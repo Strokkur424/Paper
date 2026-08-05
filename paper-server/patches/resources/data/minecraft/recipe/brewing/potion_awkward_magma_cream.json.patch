@@ -1,0 +1,23 @@
+--- a/data/minecraft/recipe/brewing/potion_awkward_magma_cream.json
++++ /dev/null
+@@ -1,20 +_,0 @@
+-{
+-  "type": "minecraft:brewing",
+-  "input": {
+-    "item": "minecraft:potion",
+-    "potion_contents": {
+-      "potions": "minecraft:awkward"
+-    }
+-  },
+-  "output": {
+-    "components": {
+-      "minecraft:potion_contents": {
+-        "potion": "minecraft:fire_resistance"
+-      }
+-    },
+-    "id": "minecraft:potion"
+-  },
+-  "reagent": {
+-    "item": "minecraft:magma_cream"
+-  }
+-}

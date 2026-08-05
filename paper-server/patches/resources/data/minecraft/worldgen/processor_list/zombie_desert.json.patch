@@ -1,0 +1,118 @@
+--- a/data/minecraft/worldgen/processor_list/zombie_desert.json
++++ b/data/minecraft/worldgen/processor_list/zombie_desert.json
+@@ -11,7 +_,9 @@
+           "location_predicate": {
+             "predicate_type": "minecraft:always_true"
+           },
+-          "output_state": "minecraft:air"
++          "output_state": {
++            "Name": "minecraft:air"
++          }
+         },
+         {
+           "input_predicate": {
+@@ -21,7 +_,9 @@
+           "location_predicate": {
+             "predicate_type": "minecraft:always_true"
+           },
+-          "output_state": "minecraft:air"
++          "output_state": {
++            "Name": "minecraft:air"
++          }
+         },
+         {
+           "input_predicate": {
+@@ -31,7 +_,9 @@
+           "location_predicate": {
+             "predicate_type": "minecraft:always_true"
+           },
+-          "output_state": "minecraft:air"
++          "output_state": {
++            "Name": "minecraft:air"
++          }
+         },
+         {
+           "input_predicate": {
+@@ -42,7 +_,9 @@
+           "location_predicate": {
+             "predicate_type": "minecraft:always_true"
+           },
+-          "output_state": "minecraft:cobweb"
++          "output_state": {
++            "Name": "minecraft:cobweb"
++          }
+         },
+         {
+           "input_predicate": {
+@@ -53,7 +_,9 @@
+           "location_predicate": {
+             "predicate_type": "minecraft:always_true"
+           },
+-          "output_state": "minecraft:cobweb"
++          "output_state": {
++            "Name": "minecraft:cobweb"
++          }
+         },
+         {
+           "input_predicate": {
+@@ -64,7 +_,9 @@
+           "location_predicate": {
+             "predicate_type": "minecraft:always_true"
+           },
+-          "output_state": "minecraft:cobweb"
++          "output_state": {
++            "Name": "minecraft:cobweb"
++          }
+         },
+         {
+           "input_predicate": {
+@@ -75,7 +_,9 @@
+           "location_predicate": {
+             "predicate_type": "minecraft:always_true"
+           },
+-          "output_state": "minecraft:cobweb"
++          "output_state": {
++            "Name": "minecraft:cobweb"
++          }
+         },
+         {
+           "input_predicate": {
+@@ -86,7 +_,9 @@
+           "location_predicate": {
+             "predicate_type": "minecraft:always_true"
+           },
+-          "output_state": "minecraft:cobweb"
++          "output_state": {
++            "Name": "minecraft:cobweb"
++          }
+         },
+         {
+           "input_predicate": {
+@@ -97,7 +_,12 @@
+           "location_predicate": {
+             "predicate_type": "minecraft:always_true"
+           },
+-          "output_state": "minecraft:beetroots"
++          "output_state": {
++            "Name": "minecraft:beetroots",
++            "Properties": {
++              "age": "0"
++            }
++          }
+         },
+         {
+           "input_predicate": {
+@@ -108,7 +_,12 @@
+           "location_predicate": {
+             "predicate_type": "minecraft:always_true"
+           },
+-          "output_state": "minecraft:melon_stem"
++          "output_state": {
++            "Name": "minecraft:melon_stem",
++            "Properties": {
++              "age": "0"
++            }
++          }
+         }
+       ]
+     }

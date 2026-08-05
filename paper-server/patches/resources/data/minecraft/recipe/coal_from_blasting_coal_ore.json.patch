@@ -1,0 +1,9 @@
+--- a/data/minecraft/recipe/coal_from_blasting_coal_ore.json
++++ b/data/minecraft/recipe/coal_from_blasting_coal_ore.json
+@@ -1,6 +_,5 @@
+ {
+   "type": "minecraft:blasting",
+-  "cookingtime": 200,
+   "experience": 0.1,
+   "group": "coal",
+   "ingredient": "minecraft:coal_ore",

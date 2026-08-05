@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/tools/magenta_bundle.json
++++ b/data/minecraft/advancement/recipes/tools/magenta_bundle.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:magenta_bundle"
++        "recipe": "minecraft:magenta_bundle"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

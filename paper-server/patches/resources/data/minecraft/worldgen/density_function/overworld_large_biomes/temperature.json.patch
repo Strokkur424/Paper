@@ -1,0 +1,12 @@
+--- a/data/minecraft/worldgen/density_function/overworld_large_biomes/temperature.json
++++ /dev/null
+@@ -1,9 +_,0 @@
+-{
+-  "type": "minecraft:shifted_noise",
+-  "noise": "minecraft:temperature_large",
+-  "shift_x": "minecraft:shift_x",
+-  "shift_y": 0.0,
+-  "shift_z": "minecraft:shift_z",
+-  "xz_scale": 0.25,
+-  "y_scale": 0.0
+-}

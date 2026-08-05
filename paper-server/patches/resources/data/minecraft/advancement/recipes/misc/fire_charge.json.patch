@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/misc/fire_charge.json
++++ b/data/minecraft/advancement/recipes/misc/fire_charge.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:fire_charge"
++        "recipe": "minecraft:fire_charge"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

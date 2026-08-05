@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/redstone/acacia_button.json
++++ b/data/minecraft/advancement/recipes/redstone/acacia_button.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:acacia_button"
++        "recipe": "minecraft:acacia_button"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/misc/gold_ingot_from_blasting_raw_gold.json
++++ b/data/minecraft/advancement/recipes/misc/gold_ingot_from_blasting_raw_gold.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:gold_ingot_from_blasting_raw_gold"
++        "recipe": "minecraft:gold_ingot_from_blasting_raw_gold"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

@@ -1,0 +1,7 @@
+--- /dev/null
++++ b/data/minecraft/worldgen/configured_feature/monster_room.json
+@@ -1,0 +_,4 @@
++{
++  "type": "minecraft:monster_room",
++  "config": {}
++}

@@ -1,0 +1,10 @@
+--- a/data/minecraft/recipe/light_blue_carpet.json
++++ b/data/minecraft/recipe/light_blue_carpet.json
+@@ -1,6 +_,6 @@
+ {
+   "type": "minecraft:crafting_shaped",
+-  "group": "woolen_carpet",
++  "group": "carpet",
+   "key": {
+     "#": "minecraft:light_blue_wool"
+   },

@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/combat/stone_sword.json
++++ b/data/minecraft/advancement/recipes/combat/stone_sword.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:stone_sword"
++        "recipe": "minecraft:stone_sword"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

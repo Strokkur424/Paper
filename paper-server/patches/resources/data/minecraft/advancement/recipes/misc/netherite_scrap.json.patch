@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/misc/netherite_scrap.json
++++ b/data/minecraft/advancement/recipes/misc/netherite_scrap.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:netherite_scrap"
++        "recipe": "minecraft:netherite_scrap"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

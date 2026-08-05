@@ -1,0 +1,11 @@
+--- a/data/minecraft/tags/block/wall_signs.json
++++ b/data/minecraft/tags/block/wall_signs.json
+@@ -11,7 +_,6 @@
+     "minecraft:warped_wall_sign",
+     "minecraft:mangrove_wall_sign",
+     "minecraft:bamboo_wall_sign",
+-    "minecraft:cherry_wall_sign",
+-    "minecraft:poplar_wall_sign"
++    "minecraft:cherry_wall_sign"
+   ]
+ }

@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/misc/magenta_dye_from_blue_red_white_dye.json
++++ b/data/minecraft/advancement/recipes/misc/magenta_dye_from_blue_red_white_dye.json
+@@ -23,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:magenta_dye_from_blue_red_white_dye"
++        "recipe": "minecraft:magenta_dye_from_blue_red_white_dye"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     },

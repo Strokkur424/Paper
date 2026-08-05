@@ -1,0 +1,139 @@
+--- a/data/minecraft/loot_table/pots/trial_chambers/corridor.json
++++ b/data/minecraft/loot_table/pots/trial_chambers/corridor.json
+@@ -5,49 +_,57 @@
+       "entries": [
+         {
+           "type": "minecraft:item",
+-          "modifier": {
+-            "type": "minecraft:set_count",
+-            "count": {
+-              "type": "minecraft:uniform",
+-              "max": 3.0,
+-              "min": 1.0
++          "functions": [
++            {
++              "count": {
++                "type": "minecraft:uniform",
++                "max": 3.0,
++                "min": 1.0
++              },
++              "function": "minecraft:set_count"
+             }
+-          },
++          ],
+           "name": "minecraft:emerald",
+           "weight": 125
+         },
+         {
+           "type": "minecraft:item",
+-          "modifier": {
+-            "type": "minecraft:set_count",
+-            "count": {
+-              "type": "minecraft:uniform",
+-              "max": 8.0,
+-              "min": 2.0
++          "functions": [
++            {
++              "count": {
++                "type": "minecraft:uniform",
++                "max": 8.0,
++                "min": 2.0
++              },
++              "function": "minecraft:set_count"
+             }
+-          },
++          ],
+           "name": "minecraft:arrow",
+           "weight": 100
+         },
+         {
+           "type": "minecraft:item",
+-          "modifier": {
+-            "type": "minecraft:set_count",
+-            "count": {
+-              "type": "minecraft:uniform",
+-              "max": 2.0,
+-              "min": 1.0
++          "functions": [
++            {
++              "count": {
++                "type": "minecraft:uniform",
++                "max": 2.0,
++                "min": 1.0
++              },
++              "function": "minecraft:set_count"
+             }
+-          },
++          ],
+           "name": "minecraft:iron_ingot",
+           "weight": 100
+         },
+         {
+           "type": "minecraft:item",
+-          "modifier": {
+-            "type": "minecraft:set_count",
+-            "count": 1.0
+-          },
++          "functions": [
++            {
++              "count": 1.0,
++              "function": "minecraft:set_count"
++            }
++          ],
+           "name": "minecraft:trial_key",
+           "weight": 10
+         },
+@@ -58,32 +_,38 @@
+         },
+         {
+           "type": "minecraft:item",
+-          "modifier": {
+-            "type": "minecraft:set_count",
+-            "count": {
+-              "type": "minecraft:uniform",
+-              "max": 2.0,
+-              "min": 1.0
++          "functions": [
++            {
++              "count": {
++                "type": "minecraft:uniform",
++                "max": 2.0,
++                "min": 1.0
++              },
++              "function": "minecraft:set_count"
+             }
+-          },
++          ],
+           "name": "minecraft:diamond",
+           "weight": 5
+         },
+         {
+           "type": "minecraft:item",
+-          "modifier": {
+-            "type": "minecraft:set_count",
+-            "count": 1.0
+-          },
++          "functions": [
++            {
++              "count": 1.0,
++              "function": "minecraft:set_count"
++            }
++          ],
+           "name": "minecraft:emerald_block",
+           "weight": 5
+         },
+         {
+           "type": "minecraft:item",
+-          "modifier": {
+-            "type": "minecraft:set_count",
+-            "count": 1.0
+-          },
++          "functions": [
++            {
++              "count": 1.0,
++              "function": "minecraft:set_count"
++            }
++          ],
+           "name": "minecraft:diamond_block"
+         }
+       ],

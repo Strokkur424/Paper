@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/redstone/tnt.json
++++ b/data/minecraft/advancement/recipes/redstone/tnt.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:tnt"
++        "recipe": "minecraft:tnt"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

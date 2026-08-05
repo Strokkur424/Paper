@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/combat/wooden_sword.json
++++ b/data/minecraft/advancement/recipes/combat/wooden_sword.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:wooden_sword"
++        "recipe": "minecraft:wooden_sword"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

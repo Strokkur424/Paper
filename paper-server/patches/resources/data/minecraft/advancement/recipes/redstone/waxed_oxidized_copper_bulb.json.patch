@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/redstone/waxed_oxidized_copper_bulb.json
++++ b/data/minecraft/advancement/recipes/redstone/waxed_oxidized_copper_bulb.json
+@@ -3,7 +_,7 @@
+   "criteria": {
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:waxed_oxidized_copper_bulb"
++        "recipe": "minecraft:waxed_oxidized_copper_bulb"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     },

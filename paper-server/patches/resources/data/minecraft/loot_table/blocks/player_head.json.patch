@@ -1,0 +1,29 @@
+--- a/data/minecraft/loot_table/blocks/player_head.json
++++ b/data/minecraft/loot_table/blocks/player_head.json
+@@ -5,15 +_,17 @@
+       "entries": [
+         {
+           "type": "minecraft:item",
+-          "modifier": {
+-            "type": "minecraft:copy_components",
+-            "include": [
+-              "minecraft:profile",
+-              "minecraft:note_block_sound",
+-              "minecraft:custom_name"
+-            ],
+-            "source": "block_entity"
+-          },
++          "functions": [
++            {
++              "function": "minecraft:copy_components",
++              "include": [
++                "minecraft:profile",
++                "minecraft:note_block_sound",
++                "minecraft:custom_name"
++              ],
++              "source": "block_entity"
++            }
++          ],
+           "name": "minecraft:player_head"
+         }
+       ],

@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/redstone/cherry_door.json
++++ b/data/minecraft/advancement/recipes/redstone/cherry_door.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:cherry_door"
++        "recipe": "minecraft:cherry_door"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

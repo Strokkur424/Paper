@@ -1,0 +1,11 @@
+--- a/data/minecraft/tags/item/wooden_shelves.json
++++ b/data/minecraft/tags/item/wooden_shelves.json
+@@ -11,7 +_,6 @@
+     "minecraft:oak_shelf",
+     "minecraft:pale_oak_shelf",
+     "minecraft:spruce_shelf",
+-    "minecraft:warped_shelf",
+-    "minecraft:poplar_shelf"
++    "minecraft:warped_shelf"
+   ]
+ }

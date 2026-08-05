@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/combat/golden_spear.json
++++ b/data/minecraft/advancement/recipes/combat/golden_spear.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:golden_spear"
++        "recipe": "minecraft:golden_spear"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

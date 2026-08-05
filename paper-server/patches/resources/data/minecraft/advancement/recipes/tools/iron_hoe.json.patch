@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/tools/iron_hoe.json
++++ b/data/minecraft/advancement/recipes/tools/iron_hoe.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:iron_hoe"
++        "recipe": "minecraft:iron_hoe"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

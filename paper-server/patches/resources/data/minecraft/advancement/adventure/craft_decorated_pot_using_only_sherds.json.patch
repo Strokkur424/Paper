@@ -1,0 +1,32 @@
+--- a/data/minecraft/advancement/adventure/craft_decorated_pot_using_only_sherds.json
++++ b/data/minecraft/advancement/adventure/craft_decorated_pot_using_only_sherds.json
+@@ -17,7 +_,7 @@
+             "items": "#minecraft:decorated_pot_sherds"
+           }
+         ],
+-        "recipes": "minecraft:decorated_pot"
++        "recipe_id": "minecraft:decorated_pot"
+       },
+       "trigger": "minecraft:recipe_crafted"
+     }
+@@ -28,14 +_,12 @@
+     },
+     "icon": {
+       "components": {
+-        "minecraft:pot_decorations": {
+-          "front": {
+-            "id": "minecraft:explorer_pottery_sherd"
+-          },
+-          "left": {
+-            "id": "minecraft:heart_pottery_sherd"
+-          }
+-        }
++        "minecraft:pot_decorations": [
++          "minecraft:brick",
++          "minecraft:heart_pottery_sherd",
++          "minecraft:brick",
++          "minecraft:explorer_pottery_sherd"
++        ]
+       },
+       "id": "minecraft:decorated_pot"
+     },

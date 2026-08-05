@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/misc/purple_dye.json
++++ b/data/minecraft/advancement/recipes/misc/purple_dye.json
+@@ -23,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:purple_dye"
++        "recipe": "minecraft:purple_dye"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

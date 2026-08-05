@@ -1,0 +1,11 @@
+--- a/data/minecraft/tags/entity_type/boat.json
++++ b/data/minecraft/tags/entity_type/boat.json
+@@ -9,7 +_,6 @@
+     "minecraft:dark_oak_boat",
+     "minecraft:pale_oak_boat",
+     "minecraft:mangrove_boat",
+-    "minecraft:bamboo_raft",
+-    "minecraft:poplar_boat"
++    "minecraft:bamboo_raft"
+   ]
+ }

@@ -1,0 +1,39 @@
+--- a/data/minecraft/loot_table/equipment/trial_chamber_ranged.json
++++ b/data/minecraft/loot_table/equipment/trial_chamber_ranged.json
+@@ -19,22 +_,26 @@
+         },
+         {
+           "type": "minecraft:item",
+-          "modifier": {
+-            "type": "minecraft:set_enchantments",
+-            "enchantments": {
+-              "minecraft:power": 1.0
++          "functions": [
++            {
++              "enchantments": {
++                "minecraft:power": 1.0
++              },
++              "function": "minecraft:set_enchantments"
+             }
+-          },
++          ],
+           "name": "minecraft:bow"
+         },
+         {
+           "type": "minecraft:item",
+-          "modifier": {
+-            "type": "minecraft:set_enchantments",
+-            "enchantments": {
+-              "minecraft:punch": 1.0
++          "functions": [
++            {
++              "enchantments": {
++                "minecraft:punch": 1.0
++              },
++              "function": "minecraft:set_enchantments"
+             }
+-          },
++          ],
+           "name": "minecraft:bow"
+         }
+       ],

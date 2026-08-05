@@ -1,0 +1,28 @@
+--- a/data/minecraft/loot_table/blocks/straw_bed.json
++++ /dev/null
+@@ -1,25 +_,0 @@
+-{
+-  "type": "minecraft:block",
+-  "pools": [
+-    {
+-      "condition": {
+-        "type": "minecraft:survives_explosion"
+-      },
+-      "entries": [
+-        {
+-          "type": "minecraft:item",
+-          "condition": {
+-            "type": "minecraft:match_block",
+-            "blocks": "minecraft:straw_bed",
+-            "state": {
+-              "part": "head"
+-            }
+-          },
+-          "name": "minecraft:straw_bed"
+-        }
+-      ],
+-      "rolls": 1.0
+-    }
+-  ],
+-  "random_sequence": "minecraft:blocks/straw_bed"
+-}

@@ -1,0 +1,7 @@
+--- /dev/null
++++ b/data/minecraft/worldgen/configured_feature/end_island.json
+@@ -1,0 +_,4 @@
++{
++  "type": "minecraft:end_island",
++  "config": {}
++}

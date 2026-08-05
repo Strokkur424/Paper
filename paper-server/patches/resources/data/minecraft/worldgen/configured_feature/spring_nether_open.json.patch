@@ -1,0 +1,16 @@
+--- /dev/null
++++ b/data/minecraft/worldgen/configured_feature/spring_nether_open.json
+@@ -1,0 +_,13 @@
++{
++  "type": "minecraft:spring_feature",
++  "config": {
++    "requires_block_below": false,
++    "state": {
++      "Name": "minecraft:lava",
++      "Properties": {
++        "falling": "true"
++      }
++    },
++    "valid_blocks": "minecraft:netherrack"
++  }
++}

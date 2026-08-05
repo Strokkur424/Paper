@@ -1,0 +1,56 @@
+--- a/data/minecraft/advancement/husbandry/uh_oh.json
++++ b/data/minecraft/advancement/husbandry/uh_oh.json
+@@ -3,16 +_,18 @@
+   "criteria": {
+     "give_tnt_directly": {
+       "conditions": {
+-        "entity": {
+-          "type": "minecraft:entity_properties",
+-          "entity": "this",
+-          "predicate": {
+-            "minecraft:entity_type": "minecraft:sulfur_cube",
+-            "minecraft:flags": {
+-              "is_baby": false
++        "entity": [
++          {
++            "condition": "minecraft:entity_properties",
++            "entity": "this",
++            "predicate": {
++              "minecraft:entity_type": "minecraft:sulfur_cube",
++              "minecraft:flags": {
++                "is_baby": false
++              }
+             }
+           }
+-        },
++        ],
+         "item": {
+           "items": "#minecraft:sulfur_cube_archetype/explosive"
+         }
+@@ -21,16 +_,18 @@
+     },
+     "pick_up_dropped_tnt": {
+       "conditions": {
+-        "entity": {
+-          "type": "minecraft:entity_properties",
+-          "entity": "this",
+-          "predicate": {
+-            "minecraft:entity_type": "minecraft:sulfur_cube",
+-            "minecraft:flags": {
+-              "is_baby": false
++        "entity": [
++          {
++            "condition": "minecraft:entity_properties",
++            "entity": "this",
++            "predicate": {
++              "minecraft:entity_type": "minecraft:sulfur_cube",
++              "minecraft:flags": {
++                "is_baby": false
++              }
+             }
+           }
+-        },
++        ],
+         "item": {
+           "items": "#minecraft:sulfur_cube_archetype/explosive"
+         }

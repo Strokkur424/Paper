@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/misc/copper_nugget.json
++++ b/data/minecraft/advancement/recipes/misc/copper_nugget.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:copper_nugget"
++        "recipe": "minecraft:copper_nugget"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

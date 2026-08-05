@@ -1,0 +1,50 @@
+--- a/data/minecraft/loot_table/chests/village/village_mason.json
++++ b/data/minecraft/loot_table/chests/village/village_mason.json
+@@ -5,14 +_,16 @@
+       "entries": [
+         {
+           "type": "minecraft:item",
+-          "modifier": {
+-            "type": "minecraft:set_count",
+-            "count": {
+-              "type": "minecraft:uniform",
+-              "max": 3.0,
+-              "min": 1.0
++          "functions": [
++            {
++              "count": {
++                "type": "minecraft:uniform",
++                "max": 3.0,
++                "min": 1.0
++              },
++              "function": "minecraft:set_count"
+             }
+-          },
++          ],
+           "name": "minecraft:clay_ball"
+         },
+         {
+@@ -31,14 +_,16 @@
+         },
+         {
+           "type": "minecraft:item",
+-          "modifier": {
+-            "type": "minecraft:set_count",
+-            "count": {
+-              "type": "minecraft:uniform",
+-              "max": 4.0,
+-              "min": 1.0
++          "functions": [
++            {
++              "count": {
++                "type": "minecraft:uniform",
++                "max": 4.0,
++                "min": 1.0
++              },
++              "function": "minecraft:set_count"
+             }
+-          },
++          ],
+           "name": "minecraft:bread",
+           "weight": 4
+         },

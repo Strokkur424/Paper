@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/decorations/magenta_carpet.json
++++ b/data/minecraft/advancement/recipes/decorations/magenta_carpet.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:magenta_carpet"
++        "recipe": "minecraft:magenta_carpet"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

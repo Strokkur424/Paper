@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/building_blocks/deepslate_tiles.json
++++ b/data/minecraft/advancement/recipes/building_blocks/deepslate_tiles.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:deepslate_tiles"
++        "recipe": "minecraft:deepslate_tiles"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

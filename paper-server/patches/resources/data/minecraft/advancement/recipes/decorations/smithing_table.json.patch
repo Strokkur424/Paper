@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/decorations/smithing_table.json
++++ b/data/minecraft/advancement/recipes/decorations/smithing_table.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:smithing_table"
++        "recipe": "minecraft:smithing_table"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

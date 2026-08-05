@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/misc/popped_chorus_fruit.json
++++ b/data/minecraft/advancement/recipes/misc/popped_chorus_fruit.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:popped_chorus_fruit"
++        "recipe": "minecraft:popped_chorus_fruit"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

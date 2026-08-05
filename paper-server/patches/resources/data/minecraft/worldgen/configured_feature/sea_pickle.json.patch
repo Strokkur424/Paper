@@ -1,0 +1,9 @@
+--- /dev/null
++++ b/data/minecraft/worldgen/configured_feature/sea_pickle.json
+@@ -1,0 +_,6 @@
++{
++  "type": "minecraft:sea_pickle",
++  "config": {
++    "count": 20
++  }
++}

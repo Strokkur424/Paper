@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/decorations/orange_bed.json
++++ b/data/minecraft/advancement/recipes/decorations/orange_bed.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:orange_bed"
++        "recipe": "minecraft:orange_bed"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/decorations/lantern.json
++++ b/data/minecraft/advancement/recipes/decorations/lantern.json
+@@ -23,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:lantern"
++        "recipe": "minecraft:lantern"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

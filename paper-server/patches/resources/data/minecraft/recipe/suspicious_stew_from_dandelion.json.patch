@@ -1,0 +1,13 @@
+--- a/data/minecraft/recipe/suspicious_stew_from_dandelion.json
++++ b/data/minecraft/recipe/suspicious_stew_from_dandelion.json
+@@ -3,8 +_,8 @@
+   "group": "suspicious_stew",
+   "ingredients": [
+     "minecraft:bowl",
+-    "#minecraft:mushrooms",
+-    "#minecraft:mushrooms",
++    "minecraft:brown_mushroom",
++    "minecraft:red_mushroom",
+     "minecraft:dandelion"
+   ],
+   "result": {

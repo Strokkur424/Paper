@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/transportation/hopper_minecart.json
++++ b/data/minecraft/advancement/recipes/transportation/hopper_minecart.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:hopper_minecart"
++        "recipe": "minecraft:hopper_minecart"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

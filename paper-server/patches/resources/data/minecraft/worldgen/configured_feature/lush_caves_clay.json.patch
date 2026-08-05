@@ -1,0 +1,16 @@
+--- /dev/null
++++ b/data/minecraft/worldgen/configured_feature/lush_caves_clay.json
+@@ -1,0 +_,13 @@
++{
++  "type": "minecraft:random_boolean_selector",
++  "config": {
++    "feature_false": {
++      "feature": "minecraft:clay_pool_with_dripleaves",
++      "placement": []
++    },
++    "feature_true": {
++      "feature": "minecraft:clay_with_dripleaves",
++      "placement": []
++    }
++  }
++}

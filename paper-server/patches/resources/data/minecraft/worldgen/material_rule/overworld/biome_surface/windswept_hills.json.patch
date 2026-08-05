@@ -1,0 +1,16 @@
+--- a/data/minecraft/worldgen/material_rule/overworld/biome_surface/windswept_hills.json
++++ /dev/null
+@@ -1,13 +_,0 @@
+-{
+-  "type": "minecraft:condition",
+-  "if_true": {
+-    "type": "minecraft:noise_threshold",
+-    "max_threshold": 1.7976931348623157E308,
+-    "min_threshold": 0.12121212121212122,
+-    "noise": "minecraft:surface"
+-  },
+-  "then_run": {
+-    "type": "minecraft:block",
+-    "result_state": "minecraft:stone"
+-  }
+-}

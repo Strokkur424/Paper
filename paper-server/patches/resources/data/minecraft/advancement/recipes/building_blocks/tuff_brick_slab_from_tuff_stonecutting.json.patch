@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/building_blocks/tuff_brick_slab_from_tuff_stonecutting.json
++++ b/data/minecraft/advancement/recipes/building_blocks/tuff_brick_slab_from_tuff_stonecutting.json
+@@ -3,7 +_,7 @@
+   "criteria": {
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:tuff_brick_slab_from_tuff_stonecutting"
++        "recipe": "minecraft:tuff_brick_slab_from_tuff_stonecutting"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     },

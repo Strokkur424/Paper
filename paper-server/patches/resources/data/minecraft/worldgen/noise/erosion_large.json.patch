@@ -1,0 +1,17 @@
+--- a/data/minecraft/worldgen/noise/erosion_large.json
++++ b/data/minecraft/worldgen/noise/erosion_large.json
+@@ -1,12 +_,10 @@
+ {
+-  "amplitude_modifiers": [
++  "amplitudes": [
+     1.0,
+     1.0,
+     0.0,
+     1.0,
+     1.0
+   ],
+-  "base_amplitude": 1.063180125160734,
+-  "base_octave": -11,
+-  "octave_count": 5
++  "firstOctave": -11
+ }

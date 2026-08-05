@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/redstone/cherry_pressure_plate.json
++++ b/data/minecraft/advancement/recipes/redstone/cherry_pressure_plate.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:cherry_pressure_plate"
++        "recipe": "minecraft:cherry_pressure_plate"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

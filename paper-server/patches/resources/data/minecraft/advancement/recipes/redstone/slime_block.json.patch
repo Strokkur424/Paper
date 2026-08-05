@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/redstone/slime_block.json
++++ b/data/minecraft/advancement/recipes/redstone/slime_block.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:slime_block"
++        "recipe": "minecraft:slime_block"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

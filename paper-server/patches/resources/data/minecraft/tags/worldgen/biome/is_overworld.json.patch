@@ -1,0 +1,10 @@
+--- a/data/minecraft/tags/worldgen/biome/is_overworld.json
++++ b/data/minecraft/tags/worldgen/biome/is_overworld.json
+@@ -42,7 +_,6 @@
+     "minecraft:frozen_river",
+     "minecraft:river",
+     "minecraft:ice_spikes",
+-    "minecraft:dappled_forest",
+     "minecraft:old_growth_pine_taiga",
+     "minecraft:sunflower_plains",
+     "minecraft:old_growth_birch_forest",

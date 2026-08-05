@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/transportation/activator_rail.json
++++ b/data/minecraft/advancement/recipes/transportation/activator_rail.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:activator_rail"
++        "recipe": "minecraft:activator_rail"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

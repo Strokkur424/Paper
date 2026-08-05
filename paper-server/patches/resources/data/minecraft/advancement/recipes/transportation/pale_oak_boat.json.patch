@@ -1,0 +1,18 @@
+--- a/data/minecraft/advancement/recipes/transportation/pale_oak_boat.json
++++ b/data/minecraft/advancement/recipes/transportation/pale_oak_boat.json
+@@ -3,13 +_,13 @@
+   "criteria": {
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:pale_oak_boat"
++        "recipe": "minecraft:pale_oak_boat"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     },
+     "in_water": {
+       "conditions": {
+-        "blocks": "minecraft:water"
++        "block": "minecraft:water"
+       },
+       "trigger": "minecraft:enter_block"
+     }

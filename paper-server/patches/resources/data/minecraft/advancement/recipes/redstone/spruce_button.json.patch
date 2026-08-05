@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/redstone/spruce_button.json
++++ b/data/minecraft/advancement/recipes/redstone/spruce_button.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:spruce_button"
++        "recipe": "minecraft:spruce_button"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

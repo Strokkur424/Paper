@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/decorations/lodestone.json
++++ b/data/minecraft/advancement/recipes/decorations/lodestone.json
+@@ -23,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:lodestone"
++        "recipe": "minecraft:lodestone"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

@@ -1,0 +1,24 @@
+--- a/data/minecraft/advancement/husbandry/kill_axolotl_target.json
++++ b/data/minecraft/advancement/husbandry/kill_axolotl_target.json
+@@ -3,13 +_,15 @@
+   "criteria": {
+     "kill_axolotl_target": {
+       "conditions": {
+-        "source": {
+-          "type": "minecraft:entity_properties",
+-          "entity": "this",
+-          "predicate": {
+-            "minecraft:entity_type": "minecraft:axolotl"
++        "source": [
++          {
++            "condition": "minecraft:entity_properties",
++            "entity": "this",
++            "predicate": {
++              "minecraft:entity_type": "minecraft:axolotl"
++            }
+           }
+-        }
++        ]
+       },
+       "trigger": "minecraft:effects_changed"
+     }

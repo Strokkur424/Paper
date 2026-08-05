@@ -1,0 +1,10 @@
+--- a/data/minecraft/tags/block/turns_into_farmland.json
++++ /dev/null
+@@ -1,7 +_,0 @@
+-{
+-  "values": [
+-    "minecraft:grass_block",
+-    "minecraft:dirt_path",
+-    "minecraft:dirt"
+-  ]
+-}

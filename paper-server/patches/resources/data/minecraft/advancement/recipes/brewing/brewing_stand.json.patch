@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/brewing/brewing_stand.json
++++ b/data/minecraft/advancement/recipes/brewing/brewing_stand.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:brewing_stand"
++        "recipe": "minecraft:brewing_stand"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

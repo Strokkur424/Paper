@@ -1,0 +1,11 @@
+--- /dev/null
++++ b/data/minecraft/worldgen/configured_feature/twisting_vines_bonemeal.json
+@@ -1,0 +_,8 @@
++{
++  "type": "minecraft:twisting_vines",
++  "config": {
++    "max_height": 2,
++    "spread_height": 1,
++    "spread_width": 3
++  }
++}

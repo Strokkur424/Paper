@@ -1,0 +1,9 @@
+--- a/data/minecraft/recipe/netherite_scrap_from_blasting.json
++++ b/data/minecraft/recipe/netherite_scrap_from_blasting.json
+@@ -1,6 +_,5 @@
+ {
+   "type": "minecraft:blasting",
+-  "cookingtime": 200,
+   "experience": 2.0,
+   "ingredient": "minecraft:ancient_debris",
+   "result": {

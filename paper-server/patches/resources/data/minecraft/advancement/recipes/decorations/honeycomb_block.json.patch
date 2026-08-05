@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/decorations/honeycomb_block.json
++++ b/data/minecraft/advancement/recipes/decorations/honeycomb_block.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:honeycomb_block"
++        "recipe": "minecraft:honeycomb_block"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

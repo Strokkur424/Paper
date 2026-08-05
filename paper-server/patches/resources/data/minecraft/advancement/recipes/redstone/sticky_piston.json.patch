@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/redstone/sticky_piston.json
++++ b/data/minecraft/advancement/recipes/redstone/sticky_piston.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:sticky_piston"
++        "recipe": "minecraft:sticky_piston"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

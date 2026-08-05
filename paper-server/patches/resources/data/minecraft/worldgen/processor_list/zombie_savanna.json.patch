@@ -1,0 +1,178 @@
+--- a/data/minecraft/worldgen/processor_list/zombie_savanna.json
++++ b/data/minecraft/worldgen/processor_list/zombie_savanna.json
+@@ -11,7 +_,9 @@
+           "location_predicate": {
+             "predicate_type": "minecraft:always_true"
+           },
+-          "output_state": "minecraft:air"
++          "output_state": {
++            "Name": "minecraft:air"
++          }
+         },
+         {
+           "input_predicate": {
+@@ -21,7 +_,9 @@
+           "location_predicate": {
+             "predicate_type": "minecraft:always_true"
+           },
+-          "output_state": "minecraft:air"
++          "output_state": {
++            "Name": "minecraft:air"
++          }
+         },
+         {
+           "input_predicate": {
+@@ -31,7 +_,9 @@
+           "location_predicate": {
+             "predicate_type": "minecraft:always_true"
+           },
+-          "output_state": "minecraft:air"
++          "output_state": {
++            "Name": "minecraft:air"
++          }
+         },
+         {
+           "input_predicate": {
+@@ -42,7 +_,9 @@
+           "location_predicate": {
+             "predicate_type": "minecraft:always_true"
+           },
+-          "output_state": "minecraft:cobweb"
++          "output_state": {
++            "Name": "minecraft:cobweb"
++          }
+         },
+         {
+           "input_predicate": {
+@@ -53,7 +_,9 @@
+           "location_predicate": {
+             "predicate_type": "minecraft:always_true"
+           },
+-          "output_state": "minecraft:cobweb"
++          "output_state": {
++            "Name": "minecraft:cobweb"
++          }
+         },
+         {
+           "input_predicate": {
+@@ -64,7 +_,9 @@
+           "location_predicate": {
+             "predicate_type": "minecraft:always_true"
+           },
+-          "output_state": "minecraft:cobweb"
++          "output_state": {
++            "Name": "minecraft:cobweb"
++          }
+         },
+         {
+           "input_predicate": {
+@@ -75,7 +_,9 @@
+           "location_predicate": {
+             "predicate_type": "minecraft:always_true"
+           },
+-          "output_state": "minecraft:cobweb"
++          "output_state": {
++            "Name": "minecraft:cobweb"
++          }
+         },
+         {
+           "input_predicate": {
+@@ -86,7 +_,9 @@
+           "location_predicate": {
+             "predicate_type": "minecraft:always_true"
+           },
+-          "output_state": "minecraft:cobweb"
++          "output_state": {
++            "Name": "minecraft:cobweb"
++          }
+         },
+         {
+           "input_predicate": {
+@@ -97,7 +_,9 @@
+           "location_predicate": {
+             "predicate_type": "minecraft:always_true"
+           },
+-          "output_state": "minecraft:cobweb"
++          "output_state": {
++            "Name": "minecraft:cobweb"
++          }
+         },
+         {
+           "input_predicate": {
+@@ -108,7 +_,9 @@
+           "location_predicate": {
+             "predicate_type": "minecraft:always_true"
+           },
+-          "output_state": "minecraft:cobweb"
++          "output_state": {
++            "Name": "minecraft:cobweb"
++          }
+         },
+         {
+           "input_predicate": {
+@@ -119,13 +_,15 @@
+           "location_predicate": {
+             "predicate_type": "minecraft:always_true"
+           },
+-          "output_state": "minecraft:cobweb"
++          "output_state": {
++            "Name": "minecraft:cobweb"
++          }
+         },
+         {
+           "input_predicate": {
+             "block_state": {
+-              "id": "minecraft:glass_pane",
+-              "properties": {
++              "Name": "minecraft:glass_pane",
++              "Properties": {
+                 "east": "false",
+                 "north": "true",
+                 "south": "true",
+@@ -139,8 +_,8 @@
+             "predicate_type": "minecraft:always_true"
+           },
+           "output_state": {
+-            "id": "minecraft:brown_stained_glass_pane",
+-            "properties": {
++            "Name": "minecraft:brown_stained_glass_pane",
++            "Properties": {
+               "east": "false",
+               "north": "true",
+               "south": "true",
+@@ -152,8 +_,8 @@
+         {
+           "input_predicate": {
+             "block_state": {
+-              "id": "minecraft:glass_pane",
+-              "properties": {
++              "Name": "minecraft:glass_pane",
++              "Properties": {
+                 "east": "true",
+                 "north": "false",
+                 "south": "false",
+@@ -167,8 +_,8 @@
+             "predicate_type": "minecraft:always_true"
+           },
+           "output_state": {
+-            "id": "minecraft:brown_stained_glass_pane",
+-            "properties": {
++            "Name": "minecraft:brown_stained_glass_pane",
++            "Properties": {
+               "east": "true",
+               "north": "false",
+               "south": "false",
+@@ -186,7 +_,12 @@
+           "location_predicate": {
+             "predicate_type": "minecraft:always_true"
+           },
+-          "output_state": "minecraft:melon_stem"
++          "output_state": {
++            "Name": "minecraft:melon_stem",
++            "Properties": {
++              "age": "0"
++            }
++          }
+         }
+       ]
+     }

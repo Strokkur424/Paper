@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/decorations/soul_torch.json
++++ b/data/minecraft/advancement/recipes/decorations/soul_torch.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:soul_torch"
++        "recipe": "minecraft:soul_torch"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

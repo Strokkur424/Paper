@@ -1,0 +1,11 @@
+--- a/data/minecraft/tags/block/shears_major_breaking_speed.json
++++ b/data/minecraft/tags/block/shears_major_breaking_speed.json
+@@ -1,7 +_,5 @@
+ {
+   "values": [
+-    "#minecraft:wool",
+-    "#minecraft:wool_slabs",
+-    "#minecraft:wool_stairs"
++    "#minecraft:wool"
+   ]
+ }

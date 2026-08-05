@@ -1,0 +1,14 @@
+--- a/data/minecraft/trim_material/iron.json
++++ b/data/minecraft/trim_material/iron.json
+@@ -1,7 +_,10 @@
+ {
++  "asset_name": "iron",
+   "description": {
+     "color": "#ECECEC",
+     "translate": "trim_material.minecraft.iron"
+   },
+-  "palette_id": "minecraft:trim/iron"
++  "override_armor_assets": {
++    "minecraft:iron": "iron_darker"
++  }
+ }

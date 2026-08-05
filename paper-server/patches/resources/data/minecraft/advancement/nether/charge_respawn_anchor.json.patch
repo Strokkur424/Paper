@@ -1,0 +1,48 @@
+--- a/data/minecraft/advancement/nether/charge_respawn_anchor.json
++++ b/data/minecraft/advancement/nether/charge_respawn_anchor.json
+@@ -3,28 +_,25 @@
+   "criteria": {
+     "charge_respawn_anchor": {
+       "conditions": {
+-        "location": {
+-          "type": "minecraft:all_of",
+-          "terms": [
+-            {
+-              "type": "minecraft:location_check",
+-              "predicate": {
+-                "block": {
+-                  "blocks": "minecraft:respawn_anchor",
+-                  "state": {
+-                    "charges": "4"
+-                  }
++        "location": [
++          {
++            "condition": "minecraft:location_check",
++            "predicate": {
++              "block": {
++                "blocks": "minecraft:respawn_anchor",
++                "state": {
++                  "charges": "4"
+                 }
+               }
+-            },
+-            {
+-              "type": "minecraft:match_tool",
+-              "predicate": {
+-                "items": "minecraft:glowstone"
+-              }
+-            }
+-          ]
+-        }
++            }
++          },
++          {
++            "condition": "minecraft:match_tool",
++            "predicate": {
++              "items": "minecraft:glowstone"
++            }
++          }
++        ]
+       },
+       "trigger": "minecraft:item_used_on_block"
+     }

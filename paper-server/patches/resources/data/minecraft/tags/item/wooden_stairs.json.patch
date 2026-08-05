@@ -1,0 +1,11 @@
+--- a/data/minecraft/tags/item/wooden_stairs.json
++++ b/data/minecraft/tags/item/wooden_stairs.json
+@@ -11,7 +_,6 @@
+     "minecraft:warped_stairs",
+     "minecraft:mangrove_stairs",
+     "minecraft:bamboo_stairs",
+-    "minecraft:cherry_stairs",
+-    "minecraft:poplar_stairs"
++    "minecraft:cherry_stairs"
+   ]
+ }

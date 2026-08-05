@@ -1,0 +1,27 @@
+--- a/data/minecraft/loot_table/gameplay/fishing.json
++++ b/data/minecraft/loot_table/gameplay/fishing.json
+@@ -11,15 +_,17 @@
+         },
+         {
+           "type": "minecraft:loot_table",
+-          "condition": {
+-            "type": "minecraft:entity_properties",
+-            "entity": "this",
+-            "predicate": {
+-              "minecraft:type_specific/fishing_hook": {
+-                "in_open_water": true
++          "conditions": [
++            {
++              "condition": "minecraft:entity_properties",
++              "entity": "this",
++              "predicate": {
++                "minecraft:type_specific/fishing_hook": {
++                  "in_open_water": true
++                }
+               }
+             }
+-          },
++          ],
+           "quality": 2,
+           "value": "minecraft:gameplay/fishing/treasure",
+           "weight": 5

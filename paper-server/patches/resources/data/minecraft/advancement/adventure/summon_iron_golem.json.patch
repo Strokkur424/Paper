@@ -1,0 +1,24 @@
+--- a/data/minecraft/advancement/adventure/summon_iron_golem.json
++++ b/data/minecraft/advancement/adventure/summon_iron_golem.json
+@@ -3,13 +_,15 @@
+   "criteria": {
+     "summoned_golem": {
+       "conditions": {
+-        "entity": {
+-          "type": "minecraft:entity_properties",
+-          "entity": "this",
+-          "predicate": {
+-            "minecraft:entity_type": "minecraft:iron_golem"
++        "entity": [
++          {
++            "condition": "minecraft:entity_properties",
++            "entity": "this",
++            "predicate": {
++              "minecraft:entity_type": "minecraft:iron_golem"
++            }
+           }
+-        }
++        ]
+       },
+       "trigger": "minecraft:summoned_entity"
+     }

@@ -1,0 +1,10 @@
+--- a/data/minecraft/worldgen/material_condition/on_ceiling.json
++++ /dev/null
+@@ -1,7 +_,0 @@
+-{
+-  "type": "minecraft:stone_depth",
+-  "add_surface_depth": false,
+-  "offset": 0,
+-  "secondary_depth_range": 0,
+-  "surface_type": "ceiling"
+-}

@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/decorations/painting.json
++++ b/data/minecraft/advancement/recipes/decorations/painting.json
+@@ -3,7 +_,7 @@
+   "criteria": {
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:painting"
++        "recipe": "minecraft:painting"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     },

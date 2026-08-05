@@ -1,0 +1,37 @@
+--- a/data/minecraft/loot_table/blocks/dead_bush.json
++++ b/data/minecraft/loot_table/blocks/dead_bush.json
+@@ -8,22 +_,29 @@
+           "children": [
+             {
+               "type": "minecraft:item",
+-              "condition": "minecraft:tool/can_shear",
++              "conditions": [
++                {
++                  "condition": "minecraft:match_tool",
++                  "predicate": {
++                    "items": "minecraft:shears"
++                  }
++                }
++              ],
+               "name": "minecraft:dead_bush"
+             },
+             {
+               "type": "minecraft:item",
+-              "modifier": [
++              "functions": [
+                 {
+-                  "type": "minecraft:set_count",
+                   "count": {
+                     "type": "minecraft:uniform",
+                     "max": 2.0,
+                     "min": 0.0
+-                  }
++                  },
++                  "function": "minecraft:set_count"
+                 },
+                 {
+-                  "type": "minecraft:explosion_decay"
++                  "function": "minecraft:explosion_decay"
+                 }
+               ],
+               "name": "minecraft:stick"

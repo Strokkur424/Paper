@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/misc/resin_clump.json
++++ b/data/minecraft/advancement/recipes/misc/resin_clump.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:resin_clump"
++        "recipe": "minecraft:resin_clump"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

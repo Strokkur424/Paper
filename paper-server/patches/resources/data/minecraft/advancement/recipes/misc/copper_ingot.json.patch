@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/misc/copper_ingot.json
++++ b/data/minecraft/advancement/recipes/misc/copper_ingot.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:copper_ingot"
++        "recipe": "minecraft:copper_ingot"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

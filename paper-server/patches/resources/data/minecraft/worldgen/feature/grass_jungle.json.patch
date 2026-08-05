@@ -1,0 +1,19 @@
+--- a/data/minecraft/worldgen/feature/grass_jungle.json
++++ /dev/null
+@@ -1,16 +_,0 @@
+-{
+-  "type": "minecraft:simple_block",
+-  "to_place": {
+-    "type": "minecraft:weighted_state_provider",
+-    "entries": [
+-      {
+-        "data": "minecraft:short_grass",
+-        "weight": 3
+-      },
+-      {
+-        "data": "minecraft:fern",
+-        "weight": 1
+-      }
+-    ]
+-  }
+-}

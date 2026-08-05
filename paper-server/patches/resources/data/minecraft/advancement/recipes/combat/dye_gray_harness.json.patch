@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/combat/dye_gray_harness.json
++++ b/data/minecraft/advancement/recipes/combat/dye_gray_harness.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:dye_gray_harness"
++        "recipe": "minecraft:dye_gray_harness"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

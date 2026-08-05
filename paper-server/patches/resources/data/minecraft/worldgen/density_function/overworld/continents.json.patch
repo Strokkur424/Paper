@@ -1,0 +1,10 @@
+--- a/data/minecraft/worldgen/density_function/overworld/continents.json
++++ b/data/minecraft/worldgen/density_function/overworld/continents.json
+@@ -1,6 +_,6 @@
+ {
+   "type": "minecraft:flat_cache",
+-  "input": {
++  "argument": {
+     "type": "minecraft:shifted_noise",
+     "noise": "minecraft:continentalness",
+     "shift_x": "minecraft:shift_x",

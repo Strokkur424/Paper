@@ -1,0 +1,345 @@
+--- a/data/minecraft/loot_table/dispensers/trial_chambers/chamber.json
++++ b/data/minecraft/loot_table/dispensers/trial_chambers/chamber.json
+@@ -5,187 +_,197 @@
+       "entries": [
+         {
+           "type": "minecraft:item",
+-          "modifier": {
+-            "type": "minecraft:set_count",
+-            "count": 1.0
+-          },
++          "functions": [
++            {
++              "count": 1.0,
++              "function": "minecraft:set_count"
++            }
++          ],
+           "name": "minecraft:water_bucket",
+           "weight": 4
+         },
+         {
+           "type": "minecraft:item",
+-          "modifier": {
+-            "type": "minecraft:set_count",
+-            "count": {
+-              "type": "minecraft:uniform",
+-              "max": 8.0,
+-              "min": 4.0
++          "functions": [
++            {
++              "count": {
++                "type": "minecraft:uniform",
++                "max": 8.0,
++                "min": 4.0
++              },
++              "function": "minecraft:set_count"
+             }
+-          },
++          ],
+           "name": "minecraft:arrow",
+           "weight": 4
+         },
+         {
+           "type": "minecraft:item",
+-          "modifier": {
+-            "type": "minecraft:set_count",
+-            "count": {
+-              "type": "minecraft:uniform",
+-              "max": 8.0,
+-              "min": 4.0
++          "functions": [
++            {
++              "count": {
++                "type": "minecraft:uniform",
++                "max": 8.0,
++                "min": 4.0
++              },
++              "function": "minecraft:set_count"
+             }
+-          },
++          ],
+           "name": "minecraft:snowball",
+           "weight": 6
+         },
+         {
+           "type": "minecraft:item",
+-          "modifier": {
+-            "type": "minecraft:set_count",
+-            "count": {
+-              "type": "minecraft:uniform",
+-              "max": 8.0,
+-              "min": 4.0
++          "functions": [
++            {
++              "count": {
++                "type": "minecraft:uniform",
++                "max": 8.0,
++                "min": 4.0
++              },
++              "function": "minecraft:set_count"
+             }
+-          },
++          ],
+           "name": "minecraft:egg",
+           "weight": 2
+         },
+         {
+           "type": "minecraft:item",
+-          "modifier": {
+-            "type": "minecraft:set_count",
+-            "count": {
+-              "type": "minecraft:uniform",
+-              "max": 8.0,
+-              "min": 4.0
++          "functions": [
++            {
++              "count": {
++                "type": "minecraft:uniform",
++                "max": 8.0,
++                "min": 4.0
++              },
++              "function": "minecraft:set_count"
+             }
+-          },
++          ],
+           "name": "minecraft:fire_charge",
+           "weight": 6
+         },
+         {
+           "type": "minecraft:item",
+-          "modifier": [
+-            {
+-              "type": "minecraft:set_potion",
+-              "id": "minecraft:slowness"
+-            },
+-            {
+-              "type": "minecraft:set_count",
+-              "count": {
+-                "type": "minecraft:uniform",
+-                "max": 5.0,
+-                "min": 2.0
+-              }
+-            }
+-          ],
+-          "name": "minecraft:splash_potion"
+-        },
+-        {
+-          "type": "minecraft:item",
+-          "modifier": [
+-            {
+-              "type": "minecraft:set_potion",
+-              "id": "minecraft:poison"
+-            },
+-            {
+-              "type": "minecraft:set_count",
+-              "count": {
+-                "type": "minecraft:uniform",
+-                "max": 5.0,
+-                "min": 2.0
+-              }
+-            }
+-          ],
+-          "name": "minecraft:splash_potion"
+-        },
+-        {
+-          "type": "minecraft:item",
+-          "modifier": [
+-            {
+-              "type": "minecraft:set_potion",
+-              "id": "minecraft:weakness"
+-            },
+-            {
+-              "type": "minecraft:set_count",
+-              "count": {
+-                "type": "minecraft:uniform",
+-                "max": 5.0,
+-                "min": 2.0
+-              }
+-            }
+-          ],
+-          "name": "minecraft:splash_potion"
+-        },
+-        {
+-          "type": "minecraft:item",
+-          "modifier": [
+-            {
+-              "type": "minecraft:set_potion",
+-              "id": "minecraft:slowness"
+-            },
+-            {
+-              "type": "minecraft:set_count",
+-              "count": {
+-                "type": "minecraft:uniform",
+-                "max": 5.0,
+-                "min": 2.0
+-              }
+-            }
+-          ],
+-          "name": "minecraft:lingering_potion"
+-        },
+-        {
+-          "type": "minecraft:item",
+-          "modifier": [
+-            {
+-              "type": "minecraft:set_potion",
+-              "id": "minecraft:poison"
+-            },
+-            {
+-              "type": "minecraft:set_count",
+-              "count": {
+-                "type": "minecraft:uniform",
+-                "max": 5.0,
+-                "min": 2.0
+-              }
+-            }
+-          ],
+-          "name": "minecraft:lingering_potion"
+-        },
+-        {
+-          "type": "minecraft:item",
+-          "modifier": [
+-            {
+-              "type": "minecraft:set_potion",
+-              "id": "minecraft:weakness"
+-            },
+-            {
+-              "type": "minecraft:set_count",
+-              "count": {
+-                "type": "minecraft:uniform",
+-                "max": 5.0,
+-                "min": 2.0
+-              }
+-            }
+-          ],
+-          "name": "minecraft:lingering_potion"
+-        },
+-        {
+-          "type": "minecraft:item",
+-          "modifier": [
+-            {
+-              "type": "minecraft:set_potion",
++          "functions": [
++            {
++              "function": "minecraft:set_potion",
++              "id": "minecraft:slowness"
++            },
++            {
++              "count": {
++                "type": "minecraft:uniform",
++                "max": 5.0,
++                "min": 2.0
++              },
++              "function": "minecraft:set_count"
++            }
++          ],
++          "name": "minecraft:splash_potion"
++        },
++        {
++          "type": "minecraft:item",
++          "functions": [
++            {
++              "function": "minecraft:set_potion",
++              "id": "minecraft:poison"
++            },
++            {
++              "count": {
++                "type": "minecraft:uniform",
++                "max": 5.0,
++                "min": 2.0
++              },
++              "function": "minecraft:set_count"
++            }
++          ],
++          "name": "minecraft:splash_potion"
++        },
++        {
++          "type": "minecraft:item",
++          "functions": [
++            {
++              "function": "minecraft:set_potion",
++              "id": "minecraft:weakness"
++            },
++            {
++              "count": {
++                "type": "minecraft:uniform",
++                "max": 5.0,
++                "min": 2.0
++              },
++              "function": "minecraft:set_count"
++            }
++          ],
++          "name": "minecraft:splash_potion"
++        },
++        {
++          "type": "minecraft:item",
++          "functions": [
++            {
++              "function": "minecraft:set_potion",
++              "id": "minecraft:slowness"
++            },
++            {
++              "count": {
++                "type": "minecraft:uniform",
++                "max": 5.0,
++                "min": 2.0
++              },
++              "function": "minecraft:set_count"
++            }
++          ],
++          "name": "minecraft:lingering_potion"
++        },
++        {
++          "type": "minecraft:item",
++          "functions": [
++            {
++              "function": "minecraft:set_potion",
++              "id": "minecraft:poison"
++            },
++            {
++              "count": {
++                "type": "minecraft:uniform",
++                "max": 5.0,
++                "min": 2.0
++              },
++              "function": "minecraft:set_count"
++            }
++          ],
++          "name": "minecraft:lingering_potion"
++        },
++        {
++          "type": "minecraft:item",
++          "functions": [
++            {
++              "function": "minecraft:set_potion",
++              "id": "minecraft:weakness"
++            },
++            {
++              "count": {
++                "type": "minecraft:uniform",
++                "max": 5.0,
++                "min": 2.0
++              },
++              "function": "minecraft:set_count"
++            }
++          ],
++          "name": "minecraft:lingering_potion"
++        },
++        {
++          "type": "minecraft:item",
++          "functions": [
++            {
++              "function": "minecraft:set_potion",
+               "id": "minecraft:healing"
+             },
+             {
+-              "type": "minecraft:set_count",
+               "count": {
+                 "type": "minecraft:uniform",
+                 "max": 5.0,
+                 "min": 2.0
+-              }
++              },
++              "function": "minecraft:set_count"
+             }
+           ],
+           "name": "minecraft:lingering_potion"

@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/decorations/crimson_shelf.json
++++ b/data/minecraft/advancement/recipes/decorations/crimson_shelf.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:crimson_shelf"
++        "recipe": "minecraft:crimson_shelf"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

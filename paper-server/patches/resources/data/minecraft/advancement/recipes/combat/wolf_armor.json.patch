@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/combat/wolf_armor.json
++++ b/data/minecraft/advancement/recipes/combat/wolf_armor.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:wolf_armor"
++        "recipe": "minecraft:wolf_armor"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

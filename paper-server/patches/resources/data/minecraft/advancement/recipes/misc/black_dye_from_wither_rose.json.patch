@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/misc/black_dye_from_wither_rose.json
++++ b/data/minecraft/advancement/recipes/misc/black_dye_from_wither_rose.json
+@@ -3,7 +_,7 @@
+   "criteria": {
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:black_dye_from_wither_rose"
++        "recipe": "minecraft:black_dye_from_wither_rose"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     },

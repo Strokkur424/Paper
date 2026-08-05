@@ -1,0 +1,46 @@
+--- a/data/minecraft/advancement/husbandry/safely_harvest_honey.json
++++ b/data/minecraft/advancement/husbandry/safely_harvest_honey.json
+@@ -3,26 +_,23 @@
+   "criteria": {
+     "safely_harvest_honey": {
+       "conditions": {
+-        "location": {
+-          "type": "minecraft:all_of",
+-          "terms": [
+-            {
+-              "type": "minecraft:location_check",
+-              "predicate": {
+-                "block": {
+-                  "blocks": "#minecraft:beehives"
+-                },
+-                "smokey": true
+-              }
+-            },
+-            {
+-              "type": "minecraft:match_tool",
+-              "predicate": {
+-                "items": "minecraft:glass_bottle"
+-              }
+-            }
+-          ]
+-        }
++        "location": [
++          {
++            "condition": "minecraft:location_check",
++            "predicate": {
++              "block": {
++                "blocks": "#minecraft:beehives"
++              },
++              "smokey": true
++            }
++          },
++          {
++            "condition": "minecraft:match_tool",
++            "predicate": {
++              "items": "minecraft:glass_bottle"
++            }
++          }
++        ]
+       },
+       "trigger": "minecraft:item_used_on_block"
+     }

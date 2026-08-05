@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/transportation/furnace_minecart.json
++++ b/data/minecraft/advancement/recipes/transportation/furnace_minecart.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:furnace_minecart"
++        "recipe": "minecraft:furnace_minecart"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

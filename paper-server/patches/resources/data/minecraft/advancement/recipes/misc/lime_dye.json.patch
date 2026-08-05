@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/misc/lime_dye.json
++++ b/data/minecraft/advancement/recipes/misc/lime_dye.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:lime_dye"
++        "recipe": "minecraft:lime_dye"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     },

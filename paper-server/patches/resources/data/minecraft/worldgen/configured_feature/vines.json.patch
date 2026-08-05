@@ -1,0 +1,7 @@
+--- /dev/null
++++ b/data/minecraft/worldgen/configured_feature/vines.json
+@@ -1,0 +_,4 @@
++{
++  "type": "minecraft:vines",
++  "config": {}
++}

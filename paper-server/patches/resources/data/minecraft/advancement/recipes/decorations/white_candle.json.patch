@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/decorations/white_candle.json
++++ b/data/minecraft/advancement/recipes/decorations/white_candle.json
+@@ -3,7 +_,7 @@
+   "criteria": {
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:white_candle"
++        "recipe": "minecraft:white_candle"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     },

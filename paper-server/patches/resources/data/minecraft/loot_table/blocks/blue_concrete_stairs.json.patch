@@ -1,0 +1,21 @@
+--- a/data/minecraft/loot_table/blocks/blue_concrete_stairs.json
++++ /dev/null
+@@ -1,18 +_,0 @@
+-{
+-  "type": "minecraft:block",
+-  "pools": [
+-    {
+-      "condition": {
+-        "type": "minecraft:survives_explosion"
+-      },
+-      "entries": [
+-        {
+-          "type": "minecraft:item",
+-          "name": "minecraft:blue_concrete_stairs"
+-        }
+-      ],
+-      "rolls": 1.0
+-    }
+-  ],
+-  "random_sequence": "minecraft:blocks/blue_concrete_stairs"
+-}

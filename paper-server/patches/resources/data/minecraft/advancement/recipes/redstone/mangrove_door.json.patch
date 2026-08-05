@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/redstone/mangrove_door.json
++++ b/data/minecraft/advancement/recipes/redstone/mangrove_door.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:mangrove_door"
++        "recipe": "minecraft:mangrove_door"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

@@ -1,0 +1,8 @@
+--- a/data/minecraft/tags/worldgen/biome/has_structure/abandoned_camp_old_growth_birch_forest.json
++++ /dev/null
+@@ -1,5 +_,0 @@
+-{
+-  "values": [
+-    "minecraft:old_growth_birch_forest"
+-  ]
+-}

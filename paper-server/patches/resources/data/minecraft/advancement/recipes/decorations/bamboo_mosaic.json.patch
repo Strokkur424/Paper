@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/decorations/bamboo_mosaic.json
++++ b/data/minecraft/advancement/recipes/decorations/bamboo_mosaic.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:bamboo_mosaic"
++        "recipe": "minecraft:bamboo_mosaic"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

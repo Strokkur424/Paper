@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/combat/golden_helmet.json
++++ b/data/minecraft/advancement/recipes/combat/golden_helmet.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:golden_helmet"
++        "recipe": "minecraft:golden_helmet"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

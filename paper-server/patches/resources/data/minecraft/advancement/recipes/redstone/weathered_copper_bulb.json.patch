@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/redstone/weathered_copper_bulb.json
++++ b/data/minecraft/advancement/recipes/redstone/weathered_copper_bulb.json
+@@ -3,7 +_,7 @@
+   "criteria": {
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:weathered_copper_bulb"
++        "recipe": "minecraft:weathered_copper_bulb"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     },

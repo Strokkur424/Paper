@@ -1,0 +1,19 @@
+--- a/data/minecraft/loot_table/chests/trial_chambers/reward_ominous.json
++++ b/data/minecraft/loot_table/chests/trial_chambers/reward_ominous.json
+@@ -30,10 +_,12 @@
+       }
+     },
+     {
+-      "condition": {
+-        "type": "minecraft:random_chance",
+-        "chance": 0.75
+-      },
++      "conditions": [
++        {
++          "chance": 0.75,
++          "condition": "minecraft:random_chance"
++        }
++      ],
+       "entries": [
+         {
+           "type": "minecraft:loot_table",

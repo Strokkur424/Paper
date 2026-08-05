@@ -1,0 +1,8 @@
+--- /dev/null
++++ b/data/minecraft/tags/item/brewing_fuel.json
+@@ -1,0 +_,5 @@
++{
++  "values": [
++    "minecraft:blaze_powder"
++  ]
++}

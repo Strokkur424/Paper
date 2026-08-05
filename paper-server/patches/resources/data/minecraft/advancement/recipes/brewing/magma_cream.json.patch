@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/brewing/magma_cream.json
++++ b/data/minecraft/advancement/recipes/brewing/magma_cream.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:magma_cream"
++        "recipe": "minecraft:magma_cream"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

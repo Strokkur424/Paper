@@ -1,0 +1,90 @@
+--- a/data/minecraft/worldgen/density_function/overworld/caves/noodle.json
++++ b/data/minecraft/worldgen/density_function/overworld/caves/noodle.json
+@@ -2,7 +_,7 @@
+   "type": "minecraft:range_choice",
+   "input": {
+     "type": "minecraft:interpolated",
+-    "input": {
++    "argument": {
+       "type": "minecraft:range_choice",
+       "input": "minecraft:y",
+       "max_exclusive": 321.0,
+@@ -21,39 +_,40 @@
+   "when_in_range": 64.0,
+   "when_out_of_range": {
+     "type": "minecraft:add",
+-    "left": {
++    "argument1": {
+       "type": "minecraft:interpolated",
+-      "input": {
++      "argument": {
+         "type": "minecraft:range_choice",
+         "input": "minecraft:y",
+         "max_exclusive": 321.0,
+         "min_inclusive": -60.0,
+         "when_in_range": {
+           "type": "minecraft:add",
+-          "left": {
++          "argument1": -0.07500000000000001,
++          "argument2": {
+             "type": "minecraft:mul",
+-            "left": {
++            "argument1": -0.025,
++            "argument2": {
+               "type": "minecraft:noise",
+               "noise": "minecraft:noodle_thickness",
+               "xz_scale": 1.0,
+               "y_scale": 1.0
+-            },
+-            "right": -0.025
+-          },
+-          "right": -0.075
++            }
++          }
+         },
+         "when_out_of_range": 0.0
+       }
+     },
+-    "right": {
++    "argument2": {
+       "type": "minecraft:mul",
+-      "left": {
++      "argument1": 1.5,
++      "argument2": {
+         "type": "minecraft:max",
+-        "left": {
++        "argument1": {
+           "type": "minecraft:abs",
+-          "input": {
++          "argument": {
+             "type": "minecraft:interpolated",
+-            "input": {
++            "argument": {
+               "type": "minecraft:range_choice",
+               "input": "minecraft:y",
+               "max_exclusive": 321.0,
+@@ -68,11 +_,11 @@
+             }
+           }
+         },
+-        "right": {
++        "argument2": {
+           "type": "minecraft:abs",
+-          "input": {
++          "argument": {
+             "type": "minecraft:interpolated",
+-            "input": {
++            "argument": {
+               "type": "minecraft:range_choice",
+               "input": "minecraft:y",
+               "max_exclusive": 321.0,
+@@ -87,8 +_,7 @@
+             }
+           }
+         }
+-      },
+-      "right": 1.5
++      }
+     }
+   }
+ }

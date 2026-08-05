@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/redstone/redstone_lamp.json
++++ b/data/minecraft/advancement/recipes/redstone/redstone_lamp.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:redstone_lamp"
++        "recipe": "minecraft:redstone_lamp"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

@@ -1,0 +1,14 @@
+--- /dev/null
++++ b/data/minecraft/worldgen/configured_feature/small_basalt_columns.json
+@@ -1,0 +_,11 @@
++{
++  "type": "minecraft:basalt_columns",
++  "config": {
++    "height": {
++      "type": "minecraft:uniform",
++      "max_inclusive": 4,
++      "min_inclusive": 1
++    },
++    "reach": 1
++  }
++}

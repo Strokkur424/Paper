@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/building_blocks/andesite.json
++++ b/data/minecraft/advancement/recipes/building_blocks/andesite.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:andesite"
++        "recipe": "minecraft:andesite"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/combat/leather_boots.json
++++ b/data/minecraft/advancement/recipes/combat/leather_boots.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:leather_boots"
++        "recipe": "minecraft:leather_boots"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

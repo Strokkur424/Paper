@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/building_blocks/quartz_pillar.json
++++ b/data/minecraft/advancement/recipes/building_blocks/quartz_pillar.json
+@@ -33,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:quartz_pillar"
++        "recipe": "minecraft:quartz_pillar"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

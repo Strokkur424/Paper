@@ -1,0 +1,53 @@
+--- a/data/minecraft/loot_table/blocks/deepslate_copper_ore.json
++++ b/data/minecraft/loot_table/blocks/deepslate_copper_ore.json
+@@ -8,27 +_,43 @@
+           "children": [
+             {
+               "type": "minecraft:item",
+-              "condition": "minecraft:tool/can_silk_touch",
++              "conditions": [
++                {
++                  "condition": "minecraft:match_tool",
++                  "predicate": {
++                    "predicates": {
++                      "minecraft:enchantments": [
++                        {
++                          "enchantments": "minecraft:silk_touch",
++                          "levels": {
++                            "min": 1
++                          }
++                        }
++                      ]
++                    }
++                  }
++                }
++              ],
+               "name": "minecraft:deepslate_copper_ore"
+             },
+             {
+               "type": "minecraft:item",
+-              "modifier": [
++              "functions": [
+                 {
+-                  "type": "minecraft:set_count",
+                   "count": {
+                     "type": "minecraft:uniform",
+                     "max": 5.0,
+                     "min": 2.0
+-                  }
++                  },
++                  "function": "minecraft:set_count"
+                 },
+                 {
+-                  "type": "minecraft:apply_bonus",
+                   "enchantment": "minecraft:fortune",
+-                  "formula": "minecraft:ore_drops"
++                  "formula": "minecraft:ore_drops",
++                  "function": "minecraft:apply_bonus"
+                 },
+                 {
+-                  "type": "minecraft:explosion_decay"
++                  "function": "minecraft:explosion_decay"
+                 }
+               ],
+               "name": "minecraft:raw_copper"

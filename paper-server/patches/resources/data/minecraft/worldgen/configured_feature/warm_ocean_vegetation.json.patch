@@ -1,0 +1,31 @@
+--- /dev/null
++++ b/data/minecraft/worldgen/configured_feature/warm_ocean_vegetation.json
+@@ -1,0 +_,28 @@
++{
++  "type": "minecraft:simple_random_selector",
++  "config": {
++    "features": [
++      {
++        "feature": {
++          "type": "minecraft:coral_tree",
++          "config": {}
++        },
++        "placement": []
++      },
++      {
++        "feature": {
++          "type": "minecraft:coral_claw",
++          "config": {}
++        },
++        "placement": []
++      },
++      {
++        "feature": {
++          "type": "minecraft:coral_mushroom",
++          "config": {}
++        },
++        "placement": []
++      }
++    ]
++  }
++}

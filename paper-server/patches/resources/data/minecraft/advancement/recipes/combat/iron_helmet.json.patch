@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/combat/iron_helmet.json
++++ b/data/minecraft/advancement/recipes/combat/iron_helmet.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:iron_helmet"
++        "recipe": "minecraft:iron_helmet"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

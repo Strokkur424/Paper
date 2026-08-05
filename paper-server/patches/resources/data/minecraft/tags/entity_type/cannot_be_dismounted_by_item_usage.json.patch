@@ -1,0 +1,8 @@
+--- a/data/minecraft/tags/entity_type/cannot_be_dismounted_by_item_usage.json
++++ /dev/null
+@@ -1,5 +_,0 @@
+-{
+-  "values": [
+-    "minecraft:interaction"
+-  ]
+-}

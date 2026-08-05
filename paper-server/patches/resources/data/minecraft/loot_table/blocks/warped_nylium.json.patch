@@ -1,0 +1,39 @@
+--- a/data/minecraft/loot_table/blocks/warped_nylium.json
++++ b/data/minecraft/loot_table/blocks/warped_nylium.json
+@@ -8,14 +_,32 @@
+           "children": [
+             {
+               "type": "minecraft:item",
+-              "condition": "minecraft:tool/can_silk_touch",
++              "conditions": [
++                {
++                  "condition": "minecraft:match_tool",
++                  "predicate": {
++                    "predicates": {
++                      "minecraft:enchantments": [
++                        {
++                          "enchantments": "minecraft:silk_touch",
++                          "levels": {
++                            "min": 1
++                          }
++                        }
++                      ]
++                    }
++                  }
++                }
++              ],
+               "name": "minecraft:warped_nylium"
+             },
+             {
+               "type": "minecraft:item",
+-              "condition": {
+-                "type": "minecraft:survives_explosion"
+-              },
++              "conditions": [
++                {
++                  "condition": "minecraft:survives_explosion"
++                }
++              ],
+               "name": "minecraft:netherrack"
+             }
+           ]

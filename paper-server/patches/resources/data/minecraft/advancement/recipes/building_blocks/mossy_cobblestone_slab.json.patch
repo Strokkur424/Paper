@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/building_blocks/mossy_cobblestone_slab.json
++++ b/data/minecraft/advancement/recipes/building_blocks/mossy_cobblestone_slab.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:mossy_cobblestone_slab"
++        "recipe": "minecraft:mossy_cobblestone_slab"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

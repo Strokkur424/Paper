@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/misc/iron_nugget_from_smelting.json
++++ b/data/minecraft/advancement/recipes/misc/iron_nugget_from_smelting.json
+@@ -163,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:iron_nugget_from_smelting"
++        "recipe": "minecraft:iron_nugget_from_smelting"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

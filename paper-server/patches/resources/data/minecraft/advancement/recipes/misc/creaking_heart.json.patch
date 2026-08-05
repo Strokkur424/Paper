@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/misc/creaking_heart.json
++++ b/data/minecraft/advancement/recipes/misc/creaking_heart.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:creaking_heart"
++        "recipe": "minecraft:creaking_heart"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

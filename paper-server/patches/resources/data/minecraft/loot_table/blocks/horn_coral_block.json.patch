@@ -1,0 +1,39 @@
+--- a/data/minecraft/loot_table/blocks/horn_coral_block.json
++++ b/data/minecraft/loot_table/blocks/horn_coral_block.json
+@@ -8,14 +_,32 @@
+           "children": [
+             {
+               "type": "minecraft:item",
+-              "condition": "minecraft:tool/can_silk_touch",
++              "conditions": [
++                {
++                  "condition": "minecraft:match_tool",
++                  "predicate": {
++                    "predicates": {
++                      "minecraft:enchantments": [
++                        {
++                          "enchantments": "minecraft:silk_touch",
++                          "levels": {
++                            "min": 1
++                          }
++                        }
++                      ]
++                    }
++                  }
++                }
++              ],
+               "name": "minecraft:horn_coral_block"
+             },
+             {
+               "type": "minecraft:item",
+-              "condition": {
+-                "type": "minecraft:survives_explosion"
+-              },
++              "conditions": [
++                {
++                  "condition": "minecraft:survives_explosion"
++                }
++              ],
+               "name": "minecraft:dead_horn_coral_block"
+             }
+           ]

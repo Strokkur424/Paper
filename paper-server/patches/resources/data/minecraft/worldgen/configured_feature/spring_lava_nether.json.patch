@@ -1,0 +1,21 @@
+--- /dev/null
++++ b/data/minecraft/worldgen/configured_feature/spring_lava_nether.json
+@@ -1,0 +_,18 @@
++{
++  "type": "minecraft:spring_feature",
++  "config": {
++    "state": {
++      "Name": "minecraft:lava",
++      "Properties": {
++        "falling": "true"
++      }
++    },
++    "valid_blocks": [
++      "minecraft:netherrack",
++      "minecraft:soul_sand",
++      "minecraft:gravel",
++      "minecraft:magma_block",
++      "minecraft:blackstone"
++    ]
++  }
++}

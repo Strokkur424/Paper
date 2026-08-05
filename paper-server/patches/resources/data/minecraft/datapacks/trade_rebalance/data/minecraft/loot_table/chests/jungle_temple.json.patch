@@ -1,0 +1,211 @@
+--- a/data/minecraft/datapacks/trade_rebalance/data/minecraft/loot_table/chests/jungle_temple.json
++++ b/data/minecraft/datapacks/trade_rebalance/data/minecraft/loot_table/chests/jungle_temple.json
+@@ -5,92 +_,106 @@
+       "entries": [
+         {
+           "type": "minecraft:item",
+-          "modifier": {
+-            "type": "minecraft:set_count",
+-            "count": {
+-              "type": "minecraft:uniform",
+-              "max": 3.0,
+-              "min": 1.0
++          "functions": [
++            {
++              "count": {
++                "type": "minecraft:uniform",
++                "max": 3.0,
++                "min": 1.0
++              },
++              "function": "minecraft:set_count"
+             }
+-          },
++          ],
+           "name": "minecraft:diamond",
+           "weight": 3
+         },
+         {
+           "type": "minecraft:item",
+-          "modifier": {
+-            "type": "minecraft:set_count",
+-            "count": {
+-              "type": "minecraft:uniform",
+-              "max": 5.0,
+-              "min": 1.0
++          "functions": [
++            {
++              "count": {
++                "type": "minecraft:uniform",
++                "max": 5.0,
++                "min": 1.0
++              },
++              "function": "minecraft:set_count"
+             }
+-          },
++          ],
+           "name": "minecraft:iron_ingot",
+           "weight": 10
+         },
+         {
+           "type": "minecraft:item",
+-          "modifier": {
+-            "type": "minecraft:set_count",
+-            "count": {
+-              "type": "minecraft:uniform",
+-              "max": 7.0,
+-              "min": 2.0
++          "functions": [
++            {
++              "count": {
++                "type": "minecraft:uniform",
++                "max": 7.0,
++                "min": 2.0
++              },
++              "function": "minecraft:set_count"
+             }
+-          },
++          ],
+           "name": "minecraft:gold_ingot",
+           "weight": 15
+         },
+         {
+           "type": "minecraft:item",
+-          "modifier": {
+-            "type": "minecraft:set_count",
+-            "count": {
+-              "type": "minecraft:uniform",
+-              "max": 3.0,
+-              "min": 1.0
++          "functions": [
++            {
++              "count": {
++                "type": "minecraft:uniform",
++                "max": 3.0,
++                "min": 1.0
++              },
++              "function": "minecraft:set_count"
+             }
+-          },
++          ],
+           "name": "minecraft:bamboo",
+           "weight": 15
+         },
+         {
+           "type": "minecraft:item",
+-          "modifier": {
+-            "type": "minecraft:set_count",
+-            "count": {
+-              "type": "minecraft:uniform",
+-              "max": 3.0,
+-              "min": 1.0
++          "functions": [
++            {
++              "count": {
++                "type": "minecraft:uniform",
++                "max": 3.0,
++                "min": 1.0
++              },
++              "function": "minecraft:set_count"
+             }
+-          },
++          ],
+           "name": "minecraft:emerald",
+           "weight": 2
+         },
+         {
+           "type": "minecraft:item",
+-          "modifier": {
+-            "type": "minecraft:set_count",
+-            "count": {
+-              "type": "minecraft:uniform",
+-              "max": 6.0,
+-              "min": 4.0
++          "functions": [
++            {
++              "count": {
++                "type": "minecraft:uniform",
++                "max": 6.0,
++                "min": 4.0
++              },
++              "function": "minecraft:set_count"
+             }
+-          },
++          ],
+           "name": "minecraft:bone",
+           "weight": 20
+         },
+         {
+           "type": "minecraft:item",
+-          "modifier": {
+-            "type": "minecraft:set_count",
+-            "count": {
+-              "type": "minecraft:uniform",
+-              "max": 7.0,
+-              "min": 3.0
++          "functions": [
++            {
++              "count": {
++                "type": "minecraft:uniform",
++                "max": 7.0,
++                "min": 3.0
++              },
++              "function": "minecraft:set_count"
+             }
+-          },
++          ],
+           "name": "minecraft:rotten_flesh",
+           "weight": 16
+         },
+@@ -117,11 +_,13 @@
+         },
+         {
+           "type": "minecraft:item",
+-          "modifier": {
+-            "type": "minecraft:enchant_with_levels",
+-            "levels": 30.0,
+-            "options": "#minecraft:on_random_loot"
+-          },
++          "functions": [
++            {
++              "function": "minecraft:enchant_with_levels",
++              "levels": 30.0,
++              "options": "#minecraft:on_random_loot"
++            }
++          ],
+           "name": "minecraft:book"
+         }
+       ],
+@@ -139,10 +_,12 @@
+         },
+         {
+           "type": "minecraft:item",
+-          "modifier": {
+-            "type": "minecraft:set_count",
+-            "count": 2.0
+-          },
++          "functions": [
++            {
++              "count": 2.0,
++              "function": "minecraft:set_count"
++            }
++          ],
+           "name": "minecraft:wild_armor_trim_smithing_template"
+         }
+       ],
+@@ -155,10 +_,12 @@
+         },
+         {
+           "type": "minecraft:item",
+-          "modifier": {
+-            "type": "minecraft:enchant_randomly",
+-            "options": "minecraft:unbreaking"
+-          },
++          "functions": [
++            {
++              "function": "minecraft:enchant_randomly",
++              "options": "minecraft:unbreaking"
++            }
++          ],
+           "name": "minecraft:book"
+         }
+       ],

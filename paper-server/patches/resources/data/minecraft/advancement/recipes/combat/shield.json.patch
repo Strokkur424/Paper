@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/combat/shield.json
++++ b/data/minecraft/advancement/recipes/combat/shield.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:shield"
++        "recipe": "minecraft:shield"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

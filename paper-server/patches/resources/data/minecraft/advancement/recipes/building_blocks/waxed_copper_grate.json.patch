@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/building_blocks/waxed_copper_grate.json
++++ b/data/minecraft/advancement/recipes/building_blocks/waxed_copper_grate.json
+@@ -3,7 +_,7 @@
+   "criteria": {
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:waxed_copper_grate"
++        "recipe": "minecraft:waxed_copper_grate"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     },

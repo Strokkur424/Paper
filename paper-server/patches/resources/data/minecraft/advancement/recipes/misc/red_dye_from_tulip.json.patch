@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/misc/red_dye_from_tulip.json
++++ b/data/minecraft/advancement/recipes/misc/red_dye_from_tulip.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:red_dye_from_tulip"
++        "recipe": "minecraft:red_dye_from_tulip"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

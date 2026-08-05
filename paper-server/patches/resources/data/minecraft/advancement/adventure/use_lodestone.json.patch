@@ -1,0 +1,44 @@
+--- a/data/minecraft/advancement/adventure/use_lodestone.json
++++ b/data/minecraft/advancement/adventure/use_lodestone.json
+@@ -3,25 +_,22 @@
+   "criteria": {
+     "use_lodestone": {
+       "conditions": {
+-        "location": {
+-          "type": "minecraft:all_of",
+-          "terms": [
+-            {
+-              "type": "minecraft:location_check",
+-              "predicate": {
+-                "block": {
+-                  "blocks": "minecraft:lodestone"
+-                }
+-              }
+-            },
+-            {
+-              "type": "minecraft:match_tool",
+-              "predicate": {
+-                "items": "minecraft:compass"
+-              }
+-            }
+-          ]
+-        }
++        "location": [
++          {
++            "condition": "minecraft:location_check",
++            "predicate": {
++              "block": {
++                "blocks": "minecraft:lodestone"
++              }
++            }
++          },
++          {
++            "condition": "minecraft:match_tool",
++            "predicate": {
++              "items": "minecraft:compass"
++            }
++          }
++        ]
+       },
+       "trigger": "minecraft:item_used_on_block"
+     }

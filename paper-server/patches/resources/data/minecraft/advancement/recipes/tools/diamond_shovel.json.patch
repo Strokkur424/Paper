@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/tools/diamond_shovel.json
++++ b/data/minecraft/advancement/recipes/tools/diamond_shovel.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:diamond_shovel"
++        "recipe": "minecraft:diamond_shovel"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

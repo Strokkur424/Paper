@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/building_blocks/blue_stained_glass.json
++++ b/data/minecraft/advancement/recipes/building_blocks/blue_stained_glass.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:blue_stained_glass"
++        "recipe": "minecraft:blue_stained_glass"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

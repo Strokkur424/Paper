@@ -1,0 +1,12 @@
+--- a/data/minecraft/trim_material/emerald.json
++++ b/data/minecraft/trim_material/emerald.json
+@@ -1,7 +_,7 @@
+ {
++  "asset_name": "emerald",
+   "description": {
+     "color": "#11A036",
+     "translate": "trim_material.minecraft.emerald"
+-  },
+-  "palette_id": "minecraft:trim/emerald"
++  }
+ }

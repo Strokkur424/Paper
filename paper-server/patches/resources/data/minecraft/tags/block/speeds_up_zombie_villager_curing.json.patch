@@ -1,0 +1,9 @@
+--- a/data/minecraft/tags/block/speeds_up_zombie_villager_curing.json
++++ /dev/null
+@@ -1,6 +_,0 @@
+-{
+-  "values": [
+-    "minecraft:iron_bars",
+-    "#minecraft:beds"
+-  ]
+-}

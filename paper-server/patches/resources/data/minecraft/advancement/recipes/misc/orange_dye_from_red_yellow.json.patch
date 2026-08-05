@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/misc/orange_dye_from_red_yellow.json
++++ b/data/minecraft/advancement/recipes/misc/orange_dye_from_red_yellow.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:orange_dye_from_red_yellow"
++        "recipe": "minecraft:orange_dye_from_red_yellow"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     },

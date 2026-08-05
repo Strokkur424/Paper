@@ -1,0 +1,16 @@
+--- a/data/minecraft/worldgen/placed_feature/cherry_checked.json
++++ b/data/minecraft/worldgen/placed_feature/cherry_checked.json
+@@ -5,7 +_,12 @@
+       "type": "minecraft:block_predicate_filter",
+       "predicate": {
+         "type": "minecraft:would_survive",
+-        "state": "minecraft:cherry_sapling"
++        "state": {
++          "Name": "minecraft:cherry_sapling",
++          "Properties": {
++            "stage": "0"
++          }
++        }
+       }
+     }
+   ]

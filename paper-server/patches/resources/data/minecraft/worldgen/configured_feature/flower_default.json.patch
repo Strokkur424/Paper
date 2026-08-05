@@ -1,0 +1,25 @@
+--- /dev/null
++++ b/data/minecraft/worldgen/configured_feature/flower_default.json
+@@ -1,0 +_,22 @@
++{
++  "type": "minecraft:simple_block",
++  "config": {
++    "to_place": {
++      "type": "minecraft:weighted_state_provider",
++      "entries": [
++        {
++          "data": {
++            "Name": "minecraft:poppy"
++          },
++          "weight": 2
++        },
++        {
++          "data": {
++            "Name": "minecraft:dandelion"
++          },
++          "weight": 1
++        }
++      ]
++    }
++  }
++}

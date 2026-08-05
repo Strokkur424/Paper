@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/building_blocks/purple_terracotta.json
++++ b/data/minecraft/advancement/recipes/building_blocks/purple_terracotta.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:purple_terracotta"
++        "recipe": "minecraft:purple_terracotta"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

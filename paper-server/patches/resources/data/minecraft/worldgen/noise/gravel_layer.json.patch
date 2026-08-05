@@ -1,0 +1,18 @@
+--- a/data/minecraft/worldgen/noise/gravel_layer.json
++++ b/data/minecraft/worldgen/noise/gravel_layer.json
+@@ -1,5 +_,5 @@
+ {
+-  "amplitude_modifiers": [
++  "amplitudes": [
+     1.0,
+     1.0,
+     1.0,
+@@ -10,7 +_,5 @@
+     0.0,
+     0.013333333333333334
+   ],
+-  "base_amplitude": 1.0569606747151457,
+-  "base_octave": -8,
+-  "octave_count": 9
++  "firstOctave": -8
+ }

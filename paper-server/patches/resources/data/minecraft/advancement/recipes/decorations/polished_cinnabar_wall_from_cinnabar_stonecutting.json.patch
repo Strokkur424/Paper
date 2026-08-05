@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/decorations/polished_cinnabar_wall_from_cinnabar_stonecutting.json
++++ b/data/minecraft/advancement/recipes/decorations/polished_cinnabar_wall_from_cinnabar_stonecutting.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:polished_cinnabar_wall_from_cinnabar_stonecutting"
++        "recipe": "minecraft:polished_cinnabar_wall_from_cinnabar_stonecutting"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

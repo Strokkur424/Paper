@@ -1,0 +1,7 @@
+--- /dev/null
++++ b/data/minecraft/worldgen/configured_feature/freeze_top_layer.json
+@@ -1,0 +_,4 @@
++{
++  "type": "minecraft:freeze_top_layer",
++  "config": {}
++}

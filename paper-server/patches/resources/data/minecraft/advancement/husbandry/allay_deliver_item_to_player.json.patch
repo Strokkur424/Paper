@@ -1,0 +1,24 @@
+--- a/data/minecraft/advancement/husbandry/allay_deliver_item_to_player.json
++++ b/data/minecraft/advancement/husbandry/allay_deliver_item_to_player.json
+@@ -3,13 +_,15 @@
+   "criteria": {
+     "allay_deliver_item_to_player": {
+       "conditions": {
+-        "entity": {
+-          "type": "minecraft:entity_properties",
+-          "entity": "this",
+-          "predicate": {
+-            "minecraft:entity_type": "minecraft:allay"
++        "entity": [
++          {
++            "condition": "minecraft:entity_properties",
++            "entity": "this",
++            "predicate": {
++              "minecraft:entity_type": "minecraft:allay"
++            }
+           }
+-        }
++        ]
+       },
+       "trigger": "minecraft:thrown_item_picked_up_by_player"
+     }

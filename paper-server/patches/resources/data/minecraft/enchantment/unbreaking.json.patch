@@ -1,0 +1,23 @@
+--- a/data/minecraft/enchantment/unbreaking.json
++++ b/data/minecraft/enchantment/unbreaking.json
+@@ -23,7 +_,7 @@
+           }
+         },
+         "requirements": {
+-          "type": "minecraft:match_tool",
++          "condition": "minecraft:match_tool",
+           "predicate": {
+             "items": "#minecraft:enchantable/armor"
+           }
+@@ -47,9 +_,9 @@
+           }
+         },
+         "requirements": {
+-          "type": "minecraft:inverted",
++          "condition": "minecraft:inverted",
+           "term": {
+-            "type": "minecraft:match_tool",
++            "condition": "minecraft:match_tool",
+             "predicate": {
+               "items": "#minecraft:enchantable/armor"
+             }

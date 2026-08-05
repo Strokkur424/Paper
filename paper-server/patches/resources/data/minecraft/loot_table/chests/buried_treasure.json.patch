@@ -1,0 +1,262 @@
+--- a/data/minecraft/loot_table/chests/buried_treasure.json
++++ b/data/minecraft/loot_table/chests/buried_treasure.json
+@@ -14,40 +_,46 @@
+       "entries": [
+         {
+           "type": "minecraft:item",
+-          "modifier": {
+-            "type": "minecraft:set_count",
+-            "count": {
+-              "type": "minecraft:uniform",
+-              "max": 4.0,
+-              "min": 1.0
++          "functions": [
++            {
++              "count": {
++                "type": "minecraft:uniform",
++                "max": 4.0,
++                "min": 1.0
++              },
++              "function": "minecraft:set_count"
+             }
+-          },
++          ],
+           "name": "minecraft:iron_ingot",
+           "weight": 20
+         },
+         {
+           "type": "minecraft:item",
+-          "modifier": {
+-            "type": "minecraft:set_count",
+-            "count": {
+-              "type": "minecraft:uniform",
+-              "max": 4.0,
+-              "min": 1.0
++          "functions": [
++            {
++              "count": {
++                "type": "minecraft:uniform",
++                "max": 4.0,
++                "min": 1.0
++              },
++              "function": "minecraft:set_count"
+             }
+-          },
++          ],
+           "name": "minecraft:gold_ingot",
+           "weight": 10
+         },
+         {
+           "type": "minecraft:item",
+-          "modifier": {
+-            "type": "minecraft:set_count",
+-            "count": {
+-              "type": "minecraft:uniform",
+-              "max": 2.0,
+-              "min": 1.0
++          "functions": [
++            {
++              "count": {
++                "type": "minecraft:uniform",
++                "max": 2.0,
++                "min": 1.0
++              },
++              "function": "minecraft:set_count"
+             }
+-          },
++          ],
+           "name": "minecraft:tnt",
+           "weight": 5
+         }
+@@ -62,40 +_,46 @@
+       "entries": [
+         {
+           "type": "minecraft:item",
+-          "modifier": {
+-            "type": "minecraft:set_count",
+-            "count": {
+-              "type": "minecraft:uniform",
+-              "max": 8.0,
+-              "min": 4.0
++          "functions": [
++            {
++              "count": {
++                "type": "minecraft:uniform",
++                "max": 8.0,
++                "min": 4.0
++              },
++              "function": "minecraft:set_count"
+             }
+-          },
++          ],
+           "name": "minecraft:emerald",
+           "weight": 5
+         },
+         {
+           "type": "minecraft:item",
+-          "modifier": {
+-            "type": "minecraft:set_count",
+-            "count": {
+-              "type": "minecraft:uniform",
+-              "max": 2.0,
+-              "min": 1.0
++          "functions": [
++            {
++              "count": {
++                "type": "minecraft:uniform",
++                "max": 2.0,
++                "min": 1.0
++              },
++              "function": "minecraft:set_count"
+             }
+-          },
++          ],
+           "name": "minecraft:diamond",
+           "weight": 5
+         },
+         {
+           "type": "minecraft:item",
+-          "modifier": {
+-            "type": "minecraft:set_count",
+-            "count": {
+-              "type": "minecraft:uniform",
+-              "max": 5.0,
+-              "min": 1.0
++          "functions": [
++            {
++              "count": {
++                "type": "minecraft:uniform",
++                "max": 5.0,
++                "min": 1.0
++              },
++              "function": "minecraft:set_count"
+             }
+-          },
++          ],
+           "name": "minecraft:prismarine_crystals",
+           "weight": 5
+         }
+@@ -131,26 +_,30 @@
+       "entries": [
+         {
+           "type": "minecraft:item",
+-          "modifier": {
+-            "type": "minecraft:set_count",
+-            "count": {
+-              "type": "minecraft:uniform",
+-              "max": 4.0,
+-              "min": 2.0
++          "functions": [
++            {
++              "count": {
++                "type": "minecraft:uniform",
++                "max": 4.0,
++                "min": 2.0
++              },
++              "function": "minecraft:set_count"
+             }
+-          },
++          ],
+           "name": "minecraft:cooked_cod"
+         },
+         {
+           "type": "minecraft:item",
+-          "modifier": {
+-            "type": "minecraft:set_count",
+-            "count": {
+-              "type": "minecraft:uniform",
+-              "max": 4.0,
+-              "min": 2.0
++          "functions": [
++            {
++              "count": {
++                "type": "minecraft:uniform",
++                "max": 4.0,
++                "min": 2.0
++              },
++              "function": "minecraft:set_count"
+             }
+-          },
++          ],
+           "name": "minecraft:cooked_salmon"
+         }
+       ],
+@@ -163,10 +_,12 @@
+           "name": "minecraft:potion"
+         }
+       ],
+-      "modifier": {
+-        "type": "minecraft:set_potion",
+-        "id": "minecraft:water_breathing"
+-      },
++      "functions": [
++        {
++          "function": "minecraft:set_potion",
++          "id": "minecraft:water_breathing"
++        }
++      ],
+       "rolls": {
+         "type": "minecraft:uniform",
+         "max": 2.0,
+@@ -181,37 +_,45 @@
+         },
+         {
+           "type": "minecraft:item",
+-          "modifier": {
+-            "type": "minecraft:set_count",
+-            "count": 1.0
+-          },
++          "functions": [
++            {
++              "count": 1.0,
++              "function": "minecraft:set_count"
++            }
++          ],
+           "name": "minecraft:copper_nautilus_armor",
+           "weight": 20
+         },
+         {
+           "type": "minecraft:item",
+-          "modifier": {
+-            "type": "minecraft:set_count",
+-            "count": 1.0
+-          },
++          "functions": [
++            {
++              "count": 1.0,
++              "function": "minecraft:set_count"
++            }
++          ],
+           "name": "minecraft:iron_nautilus_armor",
+           "weight": 10
+         },
+         {
+           "type": "minecraft:item",
+-          "modifier": {
+-            "type": "minecraft:set_count",
+-            "count": 1.0
+-          },
++          "functions": [
++            {
++              "count": 1.0,
++              "function": "minecraft:set_count"
++            }
++          ],
+           "name": "minecraft:golden_nautilus_armor",
+           "weight": 5
+         },
+         {
+           "type": "minecraft:item",
+-          "modifier": {
+-            "type": "minecraft:set_count",
+-            "count": 1.0
+-          },
++          "functions": [
++            {
++              "count": 1.0,
++              "function": "minecraft:set_count"
++            }
++          ],
+           "name": "minecraft:diamond_nautilus_armor",
+           "weight": 2
+         }

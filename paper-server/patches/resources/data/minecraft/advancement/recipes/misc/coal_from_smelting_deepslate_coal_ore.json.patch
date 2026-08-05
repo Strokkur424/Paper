@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/misc/coal_from_smelting_deepslate_coal_ore.json
++++ b/data/minecraft/advancement/recipes/misc/coal_from_smelting_deepslate_coal_ore.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:coal_from_smelting_deepslate_coal_ore"
++        "recipe": "minecraft:coal_from_smelting_deepslate_coal_ore"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

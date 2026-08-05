@@ -1,0 +1,7 @@
+--- /dev/null
++++ b/data/minecraft/worldgen/configured_feature/desert_well.json
+@@ -1,0 +_,4 @@
++{
++  "type": "minecraft:desert_well",
++  "config": {}
++}

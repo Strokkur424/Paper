@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/misc/leather_horse_armor.json
++++ b/data/minecraft/advancement/recipes/misc/leather_horse_armor.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:leather_horse_armor"
++        "recipe": "minecraft:leather_horse_armor"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

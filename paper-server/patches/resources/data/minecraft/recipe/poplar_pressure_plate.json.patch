@@ -1,0 +1,17 @@
+--- a/data/minecraft/recipe/poplar_pressure_plate.json
++++ /dev/null
+@@ -1,14 +_,0 @@
+-{
+-  "type": "minecraft:crafting_shaped",
+-  "category": "redstone",
+-  "group": "wooden_pressure_plate",
+-  "key": {
+-    "#": "minecraft:poplar_planks"
+-  },
+-  "pattern": [
+-    "##"
+-  ],
+-  "result": {
+-    "id": "minecraft:poplar_pressure_plate"
+-  }
+-}

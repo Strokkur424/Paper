@@ -1,0 +1,33 @@
+--- a/data/minecraft/advancement/nether/ride_strider_in_overworld_lava.json
++++ b/data/minecraft/advancement/nether/ride_strider_in_overworld_lava.json
+@@ -8,18 +_,20 @@
+             "min": 50.0
+           }
+         },
+-        "player": {
+-          "type": "minecraft:entity_properties",
+-          "entity": "this",
+-          "predicate": {
+-            "minecraft:location": {
+-              "dimension": "minecraft:overworld"
+-            },
+-            "minecraft:vehicle": {
+-              "minecraft:entity_type": "minecraft:strider"
++        "player": [
++          {
++            "condition": "minecraft:entity_properties",
++            "entity": "this",
++            "predicate": {
++              "minecraft:location": {
++                "dimension": "minecraft:overworld"
++              },
++              "minecraft:vehicle": {
++                "minecraft:entity_type": "minecraft:strider"
++              }
+             }
+           }
+-        }
++        ]
+       },
+       "trigger": "minecraft:ride_entity_in_lava"
+     }

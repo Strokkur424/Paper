@@ -1,0 +1,23 @@
+--- a/data/minecraft/recipe/brewing/lingering_potion_awkward_pufferfish.json
++++ /dev/null
+@@ -1,20 +_,0 @@
+-{
+-  "type": "minecraft:brewing",
+-  "input": {
+-    "item": "minecraft:lingering_potion",
+-    "potion_contents": {
+-      "potions": "minecraft:awkward"
+-    }
+-  },
+-  "output": {
+-    "components": {
+-      "minecraft:potion_contents": {
+-        "potion": "minecraft:water_breathing"
+-      }
+-    },
+-    "id": "minecraft:lingering_potion"
+-  },
+-  "reagent": {
+-    "item": "minecraft:pufferfish"
+-  }
+-}

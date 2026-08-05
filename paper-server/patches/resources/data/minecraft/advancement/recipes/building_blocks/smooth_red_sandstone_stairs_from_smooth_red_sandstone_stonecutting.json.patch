@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/building_blocks/smooth_red_sandstone_stairs_from_smooth_red_sandstone_stonecutting.json
++++ b/data/minecraft/advancement/recipes/building_blocks/smooth_red_sandstone_stairs_from_smooth_red_sandstone_stonecutting.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:smooth_red_sandstone_stairs_from_smooth_red_sandstone_stonecutting"
++        "recipe": "minecraft:smooth_red_sandstone_stairs_from_smooth_red_sandstone_stonecutting"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

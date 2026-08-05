@@ -1,0 +1,16 @@
+--- a/data/minecraft/recipe/straw_bed.json
++++ /dev/null
+@@ -1,13 +_,0 @@
+-{
+-  "type": "minecraft:crafting_shaped",
+-  "key": {
+-    "X": "minecraft:hay_block"
+-  },
+-  "pattern": [
+-    "XXX"
+-  ],
+-  "result": {
+-    "count": 4,
+-    "id": "minecraft:straw_bed"
+-  }
+-}

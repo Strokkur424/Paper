@@ -1,0 +1,9 @@
+--- /dev/null
++++ b/data/minecraft/worldgen/configured_feature/seagrass_short.json
+@@ -1,0 +_,6 @@
++{
++  "type": "minecraft:seagrass",
++  "config": {
++    "probability": 0.3
++  }
++}

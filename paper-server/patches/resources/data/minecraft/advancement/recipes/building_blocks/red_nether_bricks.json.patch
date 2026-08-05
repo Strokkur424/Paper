@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/building_blocks/red_nether_bricks.json
++++ b/data/minecraft/advancement/recipes/building_blocks/red_nether_bricks.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:red_nether_bricks"
++        "recipe": "minecraft:red_nether_bricks"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

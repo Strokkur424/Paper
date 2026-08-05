@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/decorations/soul_campfire.json
++++ b/data/minecraft/advancement/recipes/decorations/soul_campfire.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:soul_campfire"
++        "recipe": "minecraft:soul_campfire"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

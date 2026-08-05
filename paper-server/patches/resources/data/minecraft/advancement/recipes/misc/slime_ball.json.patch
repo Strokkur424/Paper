@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/misc/slime_ball.json
++++ b/data/minecraft/advancement/recipes/misc/slime_ball.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:slime_ball"
++        "recipe": "minecraft:slime_ball"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

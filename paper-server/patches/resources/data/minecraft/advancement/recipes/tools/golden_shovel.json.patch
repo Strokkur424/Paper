@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/tools/golden_shovel.json
++++ b/data/minecraft/advancement/recipes/tools/golden_shovel.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:golden_shovel"
++        "recipe": "minecraft:golden_shovel"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

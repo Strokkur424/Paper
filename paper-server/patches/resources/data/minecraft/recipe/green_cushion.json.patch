@@ -1,0 +1,16 @@
+--- a/data/minecraft/recipe/green_cushion.json
++++ /dev/null
+@@ -1,13 +_,0 @@
+-{
+-  "type": "minecraft:crafting_shaped",
+-  "group": "cushion",
+-  "key": {
+-    "#": "minecraft:green_wool_slab"
+-  },
+-  "pattern": [
+-    "###"
+-  ],
+-  "result": {
+-    "id": "minecraft:green_cushion"
+-  }
+-}

@@ -1,0 +1,20 @@
+--- a/data/minecraft/recipe/red_concrete_stairs.json
++++ /dev/null
+@@ -1,17 +_,0 @@
+-{
+-  "type": "minecraft:crafting_shaped",
+-  "category": "building",
+-  "group": "concrete_stairs",
+-  "key": {
+-    "#": "minecraft:red_concrete"
+-  },
+-  "pattern": [
+-    "#  ",
+-    "## ",
+-    "###"
+-  ],
+-  "result": {
+-    "count": 4,
+-    "id": "minecraft:red_concrete_stairs"
+-  }
+-}

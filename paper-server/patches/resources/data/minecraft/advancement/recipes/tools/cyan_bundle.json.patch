@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/tools/cyan_bundle.json
++++ b/data/minecraft/advancement/recipes/tools/cyan_bundle.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:cyan_bundle"
++        "recipe": "minecraft:cyan_bundle"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

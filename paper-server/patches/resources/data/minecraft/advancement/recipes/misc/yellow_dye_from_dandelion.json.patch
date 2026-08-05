@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/misc/yellow_dye_from_dandelion.json
++++ b/data/minecraft/advancement/recipes/misc/yellow_dye_from_dandelion.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:yellow_dye_from_dandelion"
++        "recipe": "minecraft:yellow_dye_from_dandelion"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

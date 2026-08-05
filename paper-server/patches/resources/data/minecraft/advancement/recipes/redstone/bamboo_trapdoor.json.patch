@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/redstone/bamboo_trapdoor.json
++++ b/data/minecraft/advancement/recipes/redstone/bamboo_trapdoor.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:bamboo_trapdoor"
++        "recipe": "minecraft:bamboo_trapdoor"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

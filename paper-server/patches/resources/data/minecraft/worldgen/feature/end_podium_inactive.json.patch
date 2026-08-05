@@ -1,0 +1,6 @@
+--- a/data/minecraft/worldgen/feature/end_podium_inactive.json
++++ /dev/null
+@@ -1,3 +_,0 @@
+-{
+-  "type": "minecraft:end_podium"
+-}

@@ -1,0 +1,12 @@
+--- a/data/minecraft/trim_material/redstone.json
++++ b/data/minecraft/trim_material/redstone.json
+@@ -1,7 +_,7 @@
+ {
++  "asset_name": "redstone",
+   "description": {
+     "color": "#971607",
+     "translate": "trim_material.minecraft.redstone"
+-  },
+-  "palette_id": "minecraft:trim/redstone"
++  }
+ }

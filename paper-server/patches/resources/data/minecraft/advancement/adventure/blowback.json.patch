@@ -1,0 +1,33 @@
+--- a/data/minecraft/advancement/adventure/blowback.json
++++ b/data/minecraft/advancement/adventure/blowback.json
+@@ -3,13 +_,15 @@
+   "criteria": {
+     "blowback": {
+       "conditions": {
+-        "entity": {
+-          "type": "minecraft:entity_properties",
+-          "entity": "this",
+-          "predicate": {
+-            "minecraft:entity_type": "minecraft:breeze"
++        "entity": [
++          {
++            "condition": "minecraft:entity_properties",
++            "entity": "this",
++            "predicate": {
++              "minecraft:entity_type": "minecraft:breeze"
++            }
+           }
+-        },
++        ],
+         "killing_blow": {
+           "direct_entity": {
+             "minecraft:entity_type": "minecraft:breeze_wind_charge"
+@@ -17,7 +_,7 @@
+           "tags": [
+             {
+               "expected": true,
+-              "id": "#minecraft:is_projectile"
++              "id": "minecraft:is_projectile"
+             }
+           ]
+         }

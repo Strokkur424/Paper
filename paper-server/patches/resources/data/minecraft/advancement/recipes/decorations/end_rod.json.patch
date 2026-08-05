@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/decorations/end_rod.json
++++ b/data/minecraft/advancement/recipes/decorations/end_rod.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:end_rod"
++        "recipe": "minecraft:end_rod"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

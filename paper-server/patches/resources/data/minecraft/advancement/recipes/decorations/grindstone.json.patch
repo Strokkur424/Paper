@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/decorations/grindstone.json
++++ b/data/minecraft/advancement/recipes/decorations/grindstone.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:grindstone"
++        "recipe": "minecraft:grindstone"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

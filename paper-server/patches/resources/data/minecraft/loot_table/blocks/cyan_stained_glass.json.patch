@@ -1,0 +1,27 @@
+--- a/data/minecraft/loot_table/blocks/cyan_stained_glass.json
++++ b/data/minecraft/loot_table/blocks/cyan_stained_glass.json
+@@ -2,7 +_,23 @@
+   "type": "minecraft:block",
+   "pools": [
+     {
+-      "condition": "minecraft:tool/can_silk_touch",
++      "conditions": [
++        {
++          "condition": "minecraft:match_tool",
++          "predicate": {
++            "predicates": {
++              "minecraft:enchantments": [
++                {
++                  "enchantments": "minecraft:silk_touch",
++                  "levels": {
++                    "min": 1
++                  }
++                }
++              ]
++            }
++          }
++        }
++      ],
+       "entries": [
+         {
+           "type": "minecraft:item",

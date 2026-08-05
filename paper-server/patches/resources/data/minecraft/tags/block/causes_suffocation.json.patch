@@ -1,0 +1,8 @@
+--- a/data/minecraft/tags/block/causes_suffocation.json
++++ /dev/null
+@@ -1,5 +_,0 @@
+-{
+-  "values": [
+-    "#minecraft:blocks_motion"
+-  ]
+-}

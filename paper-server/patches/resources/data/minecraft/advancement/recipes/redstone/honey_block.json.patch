@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/redstone/honey_block.json
++++ b/data/minecraft/advancement/recipes/redstone/honey_block.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:honey_block"
++        "recipe": "minecraft:honey_block"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

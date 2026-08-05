@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/building_blocks/waxed_copper_golem_statue_from_honeycomb.json
++++ b/data/minecraft/advancement/recipes/building_blocks/waxed_copper_golem_statue_from_honeycomb.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:waxed_copper_golem_statue_from_honeycomb"
++        "recipe": "minecraft:waxed_copper_golem_statue_from_honeycomb"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

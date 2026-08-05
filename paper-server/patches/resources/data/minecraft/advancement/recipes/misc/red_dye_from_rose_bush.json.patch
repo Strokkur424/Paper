@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/misc/red_dye_from_rose_bush.json
++++ b/data/minecraft/advancement/recipes/misc/red_dye_from_rose_bush.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:red_dye_from_rose_bush"
++        "recipe": "minecraft:red_dye_from_rose_bush"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/misc/bordure_indented_banner_pattern.json
++++ b/data/minecraft/advancement/recipes/misc/bordure_indented_banner_pattern.json
+@@ -3,7 +_,7 @@
+   "criteria": {
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:bordure_indented_banner_pattern"
++        "recipe": "minecraft:bordure_indented_banner_pattern"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     },

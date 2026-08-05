@@ -1,0 +1,31 @@
+--- a/data/minecraft/loot_table/blocks/shulker_box.json
++++ b/data/minecraft/loot_table/blocks/shulker_box.json
+@@ -5,16 +_,18 @@
+       "entries": [
+         {
+           "type": "minecraft:item",
+-          "modifier": {
+-            "type": "minecraft:copy_components",
+-            "include": [
+-              "minecraft:custom_name",
+-              "minecraft:container",
+-              "minecraft:lock",
+-              "minecraft:container_loot"
+-            ],
+-            "source": "block_entity"
+-          },
++          "functions": [
++            {
++              "function": "minecraft:copy_components",
++              "include": [
++                "minecraft:custom_name",
++                "minecraft:container",
++                "minecraft:lock",
++                "minecraft:container_loot"
++              ],
++              "source": "block_entity"
++            }
++          ],
+           "name": "minecraft:shulker_box"
+         }
+       ],

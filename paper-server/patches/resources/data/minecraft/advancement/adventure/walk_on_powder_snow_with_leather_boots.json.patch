@@ -1,0 +1,40 @@
+--- a/data/minecraft/advancement/adventure/walk_on_powder_snow_with_leather_boots.json
++++ b/data/minecraft/advancement/adventure/walk_on_powder_snow_with_leather_boots.json
+@@ -3,22 +_,24 @@
+   "criteria": {
+     "walk_on_powder_snow_with_leather_boots": {
+       "conditions": {
+-        "player": {
+-          "type": "minecraft:entity_properties",
+-          "entity": "this",
+-          "predicate": {
+-            "minecraft:equipment": {
+-              "feet": {
+-                "items": "minecraft:leather_boots"
+-              }
+-            },
+-            "minecraft:stepping_on": {
+-              "block": {
+-                "blocks": "minecraft:powder_snow"
++        "player": [
++          {
++            "condition": "minecraft:entity_properties",
++            "entity": "this",
++            "predicate": {
++              "minecraft:equipment": {
++                "feet": {
++                  "items": "minecraft:leather_boots"
++                }
++              },
++              "minecraft:stepping_on": {
++                "block": {
++                  "blocks": "minecraft:powder_snow"
++                }
+               }
+             }
+           }
+-        }
++        ]
+       },
+       "trigger": "minecraft:location"
+     }

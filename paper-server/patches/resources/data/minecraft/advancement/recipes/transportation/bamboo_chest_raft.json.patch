@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/transportation/bamboo_chest_raft.json
++++ b/data/minecraft/advancement/recipes/transportation/bamboo_chest_raft.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:bamboo_chest_raft"
++        "recipe": "minecraft:bamboo_chest_raft"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

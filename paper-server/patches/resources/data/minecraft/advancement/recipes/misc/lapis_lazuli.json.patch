@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/misc/lapis_lazuli.json
++++ b/data/minecraft/advancement/recipes/misc/lapis_lazuli.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:lapis_lazuli"
++        "recipe": "minecraft:lapis_lazuli"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/food/cookie.json
++++ b/data/minecraft/advancement/recipes/food/cookie.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:cookie"
++        "recipe": "minecraft:cookie"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

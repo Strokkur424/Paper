@@ -1,0 +1,19 @@
+--- a/data/minecraft/recipe/poplar_fence.json
++++ /dev/null
+@@ -1,16 +_,0 @@
+-{
+-  "type": "minecraft:crafting_shaped",
+-  "group": "wooden_fence",
+-  "key": {
+-    "#": "minecraft:stick",
+-    "W": "minecraft:poplar_planks"
+-  },
+-  "pattern": [
+-    "W#W",
+-    "W#W"
+-  ],
+-  "result": {
+-    "count": 3,
+-    "id": "minecraft:poplar_fence"
+-  }
+-}

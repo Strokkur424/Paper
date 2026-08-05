@@ -1,0 +1,10 @@
+--- a/data/minecraft/tags/block/replaceable.json
++++ b/data/minecraft/tags/block/replaceable.json
+@@ -7,7 +_,6 @@
+     "minecraft:fern",
+     "minecraft:dead_bush",
+     "minecraft:bush",
+-    "minecraft:red_shrub",
+     "minecraft:short_dry_grass",
+     "minecraft:tall_dry_grass",
+     "minecraft:seagrass",

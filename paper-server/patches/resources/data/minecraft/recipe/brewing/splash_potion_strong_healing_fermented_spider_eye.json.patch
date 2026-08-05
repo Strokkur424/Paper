@@ -1,0 +1,23 @@
+--- a/data/minecraft/recipe/brewing/splash_potion_strong_healing_fermented_spider_eye.json
++++ /dev/null
+@@ -1,20 +_,0 @@
+-{
+-  "type": "minecraft:brewing",
+-  "input": {
+-    "item": "minecraft:splash_potion",
+-    "potion_contents": {
+-      "potions": "minecraft:strong_healing"
+-    }
+-  },
+-  "output": {
+-    "components": {
+-      "minecraft:potion_contents": {
+-        "potion": "minecraft:strong_harming"
+-      }
+-    },
+-    "id": "minecraft:splash_potion"
+-  },
+-  "reagent": {
+-    "item": "minecraft:fermented_spider_eye"
+-  }
+-}

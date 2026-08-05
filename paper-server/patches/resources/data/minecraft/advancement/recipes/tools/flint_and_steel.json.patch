@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/tools/flint_and_steel.json
++++ b/data/minecraft/advancement/recipes/tools/flint_and_steel.json
+@@ -23,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:flint_and_steel"
++        "recipe": "minecraft:flint_and_steel"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

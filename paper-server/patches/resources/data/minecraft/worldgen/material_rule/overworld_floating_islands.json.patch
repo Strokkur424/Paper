@@ -1,0 +1,10 @@
+--- a/data/minecraft/worldgen/material_rule/overworld_floating_islands.json
++++ /dev/null
+@@ -1,7 +_,0 @@
+-{
+-  "type": "minecraft:sequence",
+-  "sequence": [
+-    "minecraft:overworld/surface",
+-    "minecraft:overworld/underground"
+-  ]
+-}

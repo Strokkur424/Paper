@@ -1,0 +1,30 @@
+--- a/data/minecraft/advancement/adventure/spyglass_at_parrot.json
++++ b/data/minecraft/advancement/adventure/spyglass_at_parrot.json
+@@ -6,17 +_,19 @@
+         "item": {
+           "items": "minecraft:spyglass"
+         },
+-        "player": {
+-          "type": "minecraft:entity_properties",
+-          "entity": "this",
+-          "predicate": {
+-            "minecraft:type_specific/player": {
+-              "looking_at": {
+-                "minecraft:entity_type": "minecraft:parrot"
++        "player": [
++          {
++            "condition": "minecraft:entity_properties",
++            "entity": "this",
++            "predicate": {
++              "minecraft:type_specific/player": {
++                "looking_at": {
++                  "minecraft:entity_type": "minecraft:parrot"
++                }
+               }
+             }
+           }
+-        }
++        ]
+       },
+       "trigger": "minecraft:using_item"
+     }

@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/decorations/flower_pot.json
++++ b/data/minecraft/advancement/recipes/decorations/flower_pot.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:flower_pot"
++        "recipe": "minecraft:flower_pot"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

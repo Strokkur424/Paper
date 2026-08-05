@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/decorations/spruce_sign.json
++++ b/data/minecraft/advancement/recipes/decorations/spruce_sign.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:spruce_sign"
++        "recipe": "minecraft:spruce_sign"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

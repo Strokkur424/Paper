@@ -1,0 +1,13 @@
+--- a/data/minecraft/worldgen/processor_list/mossify_10_percent.json
++++ b/data/minecraft/worldgen/processor_list/mossify_10_percent.json
+@@ -12,7 +_,9 @@
+           "location_predicate": {
+             "predicate_type": "minecraft:always_true"
+           },
+-          "output_state": "minecraft:mossy_cobblestone"
++          "output_state": {
++            "Name": "minecraft:mossy_cobblestone"
++          }
+         }
+       ]
+     }

@@ -1,0 +1,32 @@
+--- a/data/minecraft/enchantment/bane_of_arthropods.json
++++ b/data/minecraft/enchantment/bane_of_arthropods.json
+@@ -15,7 +_,7 @@
+           }
+         },
+         "requirements": {
+-          "type": "minecraft:entity_properties",
++          "condition": "minecraft:entity_properties",
+           "entity": "this",
+           "predicate": {
+             "minecraft:entity_type": "#minecraft:sensitive_to_bane_of_arthropods"
+@@ -40,17 +_,17 @@
+         },
+         "enchanted": "attacker",
+         "requirements": {
+-          "type": "minecraft:all_of",
++          "condition": "minecraft:all_of",
+           "terms": [
+             {
+-              "type": "minecraft:entity_properties",
++              "condition": "minecraft:entity_properties",
+               "entity": "this",
+               "predicate": {
+                 "minecraft:entity_type": "#minecraft:sensitive_to_bane_of_arthropods"
+               }
+             },
+             {
+-              "type": "minecraft:damage_source_properties",
++              "condition": "minecraft:damage_source_properties",
+               "predicate": {
+                 "is_direct": true
+               }

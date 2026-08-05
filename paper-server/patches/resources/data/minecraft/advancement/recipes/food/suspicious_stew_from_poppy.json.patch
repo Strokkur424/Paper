@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/food/suspicious_stew_from_poppy.json
++++ b/data/minecraft/advancement/recipes/food/suspicious_stew_from_poppy.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:suspicious_stew_from_poppy"
++        "recipe": "minecraft:suspicious_stew_from_poppy"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

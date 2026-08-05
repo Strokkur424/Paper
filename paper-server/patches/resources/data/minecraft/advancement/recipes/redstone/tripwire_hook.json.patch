@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/redstone/tripwire_hook.json
++++ b/data/minecraft/advancement/recipes/redstone/tripwire_hook.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:tripwire_hook"
++        "recipe": "minecraft:tripwire_hook"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

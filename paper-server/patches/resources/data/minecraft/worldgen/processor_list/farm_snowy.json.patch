@@ -1,0 +1,30 @@
+--- a/data/minecraft/worldgen/processor_list/farm_snowy.json
++++ b/data/minecraft/worldgen/processor_list/farm_snowy.json
+@@ -12,7 +_,12 @@
+           "location_predicate": {
+             "predicate_type": "minecraft:always_true"
+           },
+-          "output_state": "minecraft:carrots"
++          "output_state": {
++            "Name": "minecraft:carrots",
++            "Properties": {
++              "age": "0"
++            }
++          }
+         },
+         {
+           "input_predicate": {
+@@ -23,7 +_,12 @@
+           "location_predicate": {
+             "predicate_type": "minecraft:always_true"
+           },
+-          "output_state": "minecraft:potatoes"
++          "output_state": {
++            "Name": "minecraft:potatoes",
++            "Properties": {
++              "age": "0"
++            }
++          }
+         }
+       ]
+     }

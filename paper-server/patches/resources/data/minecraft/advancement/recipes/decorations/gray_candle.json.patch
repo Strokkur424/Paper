@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/decorations/gray_candle.json
++++ b/data/minecraft/advancement/recipes/decorations/gray_candle.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:gray_candle"
++        "recipe": "minecraft:gray_candle"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

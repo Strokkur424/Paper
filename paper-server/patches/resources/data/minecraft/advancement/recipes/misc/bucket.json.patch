@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/misc/bucket.json
++++ b/data/minecraft/advancement/recipes/misc/bucket.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:bucket"
++        "recipe": "minecraft:bucket"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

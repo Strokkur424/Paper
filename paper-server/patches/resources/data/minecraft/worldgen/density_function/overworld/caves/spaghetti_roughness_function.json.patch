@@ -1,0 +1,49 @@
+--- a/data/minecraft/worldgen/density_function/overworld/caves/spaghetti_roughness_function.json
++++ b/data/minecraft/worldgen/density_function/overworld/caves/spaghetti_roughness_function.json
+@@ -1,33 +_,33 @@
+ {
+   "type": "minecraft:cache_once",
+-  "input": {
++  "argument": {
+     "type": "minecraft:mul",
+-    "left": {
++    "argument1": {
+       "type": "minecraft:add",
+-      "left": {
++      "argument1": -0.05,
++      "argument2": {
+         "type": "minecraft:mul",
+-        "left": {
++        "argument1": -0.05,
++        "argument2": {
+           "type": "minecraft:noise",
+           "noise": "minecraft:spaghetti_roughness_modulator",
+           "xz_scale": 1.0,
+           "y_scale": 1.0
+-        },
+-        "right": -0.05
+-      },
+-      "right": -0.05
++        }
++      }
+     },
+-    "right": {
++    "argument2": {
+       "type": "minecraft:add",
+-      "left": {
++      "argument1": -0.4,
++      "argument2": {
+         "type": "minecraft:abs",
+-        "input": {
++        "argument": {
+           "type": "minecraft:noise",
+           "noise": "minecraft:spaghetti_roughness",
+           "xz_scale": 1.0,
+           "y_scale": 1.0
+         }
+-      },
+-      "right": -0.4
++      }
+     }
+   }
+ }

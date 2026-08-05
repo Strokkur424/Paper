@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/building_blocks/weathered_cut_copper_slab.json
++++ b/data/minecraft/advancement/recipes/building_blocks/weathered_cut_copper_slab.json
+@@ -3,7 +_,7 @@
+   "criteria": {
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:weathered_cut_copper_slab"
++        "recipe": "minecraft:weathered_cut_copper_slab"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     },

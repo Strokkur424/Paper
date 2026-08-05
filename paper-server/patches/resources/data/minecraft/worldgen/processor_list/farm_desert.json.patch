@@ -1,0 +1,30 @@
+--- a/data/minecraft/worldgen/processor_list/farm_desert.json
++++ b/data/minecraft/worldgen/processor_list/farm_desert.json
+@@ -12,7 +_,12 @@
+           "location_predicate": {
+             "predicate_type": "minecraft:always_true"
+           },
+-          "output_state": "minecraft:beetroots"
++          "output_state": {
++            "Name": "minecraft:beetroots",
++            "Properties": {
++              "age": "0"
++            }
++          }
+         },
+         {
+           "input_predicate": {
+@@ -23,7 +_,12 @@
+           "location_predicate": {
+             "predicate_type": "minecraft:always_true"
+           },
+-          "output_state": "minecraft:melon_stem"
++          "output_state": {
++            "Name": "minecraft:melon_stem",
++            "Properties": {
++              "age": "0"
++            }
++          }
+         }
+       ]
+     }

@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/combat/arrow.json
++++ b/data/minecraft/advancement/recipes/combat/arrow.json
+@@ -23,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:arrow"
++        "recipe": "minecraft:arrow"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

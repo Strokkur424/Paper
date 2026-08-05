@@ -1,0 +1,44 @@
+--- a/data/minecraft/loot_table/blocks/black_banner.json
++++ b/data/minecraft/loot_table/blocks/black_banner.json
+@@ -2,23 +_,27 @@
+   "type": "minecraft:block",
+   "pools": [
+     {
+-      "condition": {
+-        "type": "minecraft:survives_explosion"
+-      },
++      "conditions": [
++        {
++          "condition": "minecraft:survives_explosion"
++        }
++      ],
+       "entries": [
+         {
+           "type": "minecraft:item",
+-          "modifier": {
+-            "type": "minecraft:copy_components",
+-            "include": [
+-              "minecraft:custom_name",
+-              "minecraft:item_name",
+-              "minecraft:tooltip_display",
+-              "minecraft:banner_patterns",
+-              "minecraft:rarity"
+-            ],
+-            "source": "block_entity"
+-          },
++          "functions": [
++            {
++              "function": "minecraft:copy_components",
++              "include": [
++                "minecraft:custom_name",
++                "minecraft:item_name",
++                "minecraft:tooltip_display",
++                "minecraft:banner_patterns",
++                "minecraft:rarity"
++              ],
++              "source": "block_entity"
++            }
++          ],
+           "name": "minecraft:black_banner"
+         }
+       ],

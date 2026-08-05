@@ -1,0 +1,31 @@
+--- a/data/minecraft/loot_table/blocks/tall_seagrass.json
++++ b/data/minecraft/loot_table/blocks/tall_seagrass.json
+@@ -2,14 +_,23 @@
+   "type": "minecraft:block",
+   "pools": [
+     {
+-      "condition": "minecraft:tool/can_shear",
++      "conditions": [
++        {
++          "condition": "minecraft:match_tool",
++          "predicate": {
++            "items": "minecraft:shears"
++          }
++        }
++      ],
+       "entries": [
+         {
+           "type": "minecraft:item",
+-          "modifier": {
+-            "type": "minecraft:set_count",
+-            "count": 2.0
+-          },
++          "functions": [
++            {
++              "count": 2.0,
++              "function": "minecraft:set_count"
++            }
++          ],
+           "name": "minecraft:seagrass"
+         }
+       ],

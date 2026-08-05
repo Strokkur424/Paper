@@ -1,0 +1,27 @@
+--- a/data/minecraft/advancement/nether/find_fortress.json
++++ b/data/minecraft/advancement/nether/find_fortress.json
+@@ -3,15 +_,17 @@
+   "criteria": {
+     "fortress": {
+       "conditions": {
+-        "player": {
+-          "type": "minecraft:entity_properties",
+-          "entity": "this",
+-          "predicate": {
+-            "minecraft:location": {
+-              "structures": "minecraft:fortress"
++        "player": [
++          {
++            "condition": "minecraft:entity_properties",
++            "entity": "this",
++            "predicate": {
++              "minecraft:location": {
++                "structures": "minecraft:fortress"
++              }
+             }
+           }
+-        }
++        ]
+       },
+       "trigger": "minecraft:location"
+     }

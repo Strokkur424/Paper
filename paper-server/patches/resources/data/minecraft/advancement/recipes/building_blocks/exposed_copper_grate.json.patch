@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/building_blocks/exposed_copper_grate.json
++++ b/data/minecraft/advancement/recipes/building_blocks/exposed_copper_grate.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:exposed_copper_grate"
++        "recipe": "minecraft:exposed_copper_grate"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

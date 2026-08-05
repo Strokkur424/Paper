@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/misc/raw_gold.json
++++ b/data/minecraft/advancement/recipes/misc/raw_gold.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:raw_gold"
++        "recipe": "minecraft:raw_gold"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

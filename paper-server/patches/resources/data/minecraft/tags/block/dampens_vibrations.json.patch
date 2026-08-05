@@ -1,0 +1,12 @@
+--- a/data/minecraft/tags/block/dampens_vibrations.json
++++ b/data/minecraft/tags/block/dampens_vibrations.json
+@@ -1,8 +_,6 @@
+ {
+   "values": [
+     "#minecraft:wool",
+-    "#minecraft:wool_carpets",
+-    "#minecraft:wool_slabs",
+-    "#minecraft:wool_stairs"
++    "#minecraft:wool_carpets"
+   ]
+ }

@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/combat/leather_leggings.json
++++ b/data/minecraft/advancement/recipes/combat/leather_leggings.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:leather_leggings"
++        "recipe": "minecraft:leather_leggings"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

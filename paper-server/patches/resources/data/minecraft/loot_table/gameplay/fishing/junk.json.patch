@@ -1,0 +1,112 @@
+--- a/data/minecraft/loot_table/gameplay/fishing/junk.json
++++ b/data/minecraft/loot_table/gameplay/fishing/junk.json
+@@ -10,14 +_,16 @@
+         },
+         {
+           "type": "minecraft:item",
+-          "modifier": {
+-            "type": "minecraft:set_damage",
+-            "damage": {
+-              "type": "minecraft:uniform",
+-              "max": 0.9,
+-              "min": 0.0
++          "functions": [
++            {
++              "damage": {
++                "type": "minecraft:uniform",
++                "max": 0.9,
++                "min": 0.0
++              },
++              "function": "minecraft:set_damage"
+             }
+-          },
++          ],
+           "name": "minecraft:leather_boots",
+           "weight": 10
+         },
+@@ -33,10 +_,12 @@
+         },
+         {
+           "type": "minecraft:item",
+-          "modifier": {
+-            "type": "minecraft:set_potion",
+-            "id": "minecraft:water"
+-          },
++          "functions": [
++            {
++              "function": "minecraft:set_potion",
++              "id": "minecraft:water"
++            }
++          ],
+           "name": "minecraft:potion",
+           "weight": 10
+         },
+@@ -47,14 +_,16 @@
+         },
+         {
+           "type": "minecraft:item",
+-          "modifier": {
+-            "type": "minecraft:set_damage",
+-            "damage": {
+-              "type": "minecraft:uniform",
+-              "max": 0.9,
+-              "min": 0.0
++          "functions": [
++            {
++              "damage": {
++                "type": "minecraft:uniform",
++                "max": 0.9,
++                "min": 0.0
++              },
++              "function": "minecraft:set_damage"
+             }
+-          },
++          ],
+           "name": "minecraft:fishing_rod",
+           "weight": 2
+         },
+@@ -70,10 +_,12 @@
+         },
+         {
+           "type": "minecraft:item",
+-          "modifier": {
+-            "type": "minecraft:set_count",
+-            "count": 10.0
+-          },
++          "functions": [
++            {
++              "count": 10.0,
++              "function": "minecraft:set_count"
++            }
++          ],
+           "name": "minecraft:ink_sac"
+         },
+         {
+@@ -88,16 +_,18 @@
+         },
+         {
+           "type": "minecraft:item",
+-          "condition": {
+-            "type": "minecraft:location_check",
+-            "predicate": {
+-              "biomes": [
+-                "minecraft:jungle",
+-                "minecraft:sparse_jungle",
+-                "minecraft:bamboo_jungle"
+-              ]
++          "conditions": [
++            {
++              "condition": "minecraft:location_check",
++              "predicate": {
++                "biomes": [
++                  "minecraft:jungle",
++                  "minecraft:sparse_jungle",
++                  "minecraft:bamboo_jungle"
++                ]
++              }
+             }
+-          },
++          ],
+           "name": "minecraft:bamboo",
+           "weight": 10
+         }

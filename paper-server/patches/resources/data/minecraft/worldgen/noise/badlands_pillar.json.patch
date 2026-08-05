@@ -1,0 +1,15 @@
+--- a/data/minecraft/worldgen/noise/badlands_pillar.json
++++ b/data/minecraft/worldgen/noise/badlands_pillar.json
+@@ -1,5 +_,9 @@
+ {
+-  "base_amplitude": 0.939546696581729,
+-  "base_octave": -2,
+-  "octave_count": 4
++  "amplitudes": [
++    1.0,
++    1.0,
++    1.0,
++    1.0
++  ],
++  "firstOctave": -2
+ }

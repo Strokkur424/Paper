@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/misc/beacon.json
++++ b/data/minecraft/advancement/recipes/misc/beacon.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:beacon"
++        "recipe": "minecraft:beacon"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/decorations/light_blue_banner.json
++++ b/data/minecraft/advancement/recipes/decorations/light_blue_banner.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:light_blue_banner"
++        "recipe": "minecraft:light_blue_banner"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

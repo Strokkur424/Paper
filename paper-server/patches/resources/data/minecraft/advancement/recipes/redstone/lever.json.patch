@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/redstone/lever.json
++++ b/data/minecraft/advancement/recipes/redstone/lever.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:lever"
++        "recipe": "minecraft:lever"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

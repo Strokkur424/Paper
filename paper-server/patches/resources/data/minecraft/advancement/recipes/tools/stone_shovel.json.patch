@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/tools/stone_shovel.json
++++ b/data/minecraft/advancement/recipes/tools/stone_shovel.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:stone_shovel"
++        "recipe": "minecraft:stone_shovel"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

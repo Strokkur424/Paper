@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/decorations/armor_stand.json
++++ b/data/minecraft/advancement/recipes/decorations/armor_stand.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:armor_stand"
++        "recipe": "minecraft:armor_stand"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

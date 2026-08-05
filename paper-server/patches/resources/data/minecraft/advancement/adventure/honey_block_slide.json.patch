@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/adventure/honey_block_slide.json
++++ b/data/minecraft/advancement/adventure/honey_block_slide.json
+@@ -3,7 +_,7 @@
+   "criteria": {
+     "honey_block_slide": {
+       "conditions": {
+-        "blocks": "minecraft:honey_block"
++        "block": "minecraft:honey_block"
+       },
+       "trigger": "minecraft:slide_down_block"
+     }

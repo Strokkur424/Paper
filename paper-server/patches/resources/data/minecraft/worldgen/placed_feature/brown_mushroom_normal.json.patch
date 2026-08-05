@@ -1,0 +1,29 @@
+--- a/data/minecraft/worldgen/placed_feature/brown_mushroom_normal.json
++++ b/data/minecraft/worldgen/placed_feature/brown_mushroom_normal.json
+@@ -20,23 +_,17 @@
+       "count": 96
+     },
+     {
+-      "type": "minecraft:offset",
+-      "x": {
++      "type": "minecraft:random_offset",
++      "xz_spread": {
+         "type": "minecraft:trapezoid",
+         "max": 7,
+         "min": -7,
+         "plateau": 0
+       },
+-      "y": {
++      "y_spread": {
+         "type": "minecraft:trapezoid",
+         "max": 3,
+         "min": -3,
+-        "plateau": 0
+-      },
+-      "z": {
+-        "type": "minecraft:trapezoid",
+-        "max": 7,
+-        "min": -7,
+         "plateau": 0
+       }
+     },

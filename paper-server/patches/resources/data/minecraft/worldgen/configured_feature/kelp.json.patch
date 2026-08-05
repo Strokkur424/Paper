@@ -1,0 +1,7 @@
+--- /dev/null
++++ b/data/minecraft/worldgen/configured_feature/kelp.json
+@@ -1,0 +_,4 @@
++{
++  "type": "minecraft:kelp",
++  "config": {}
++}

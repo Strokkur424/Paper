@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/decorations/prismarine_wall_from_prismarine_stonecutting.json
++++ b/data/minecraft/advancement/recipes/decorations/prismarine_wall_from_prismarine_stonecutting.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:prismarine_wall_from_prismarine_stonecutting"
++        "recipe": "minecraft:prismarine_wall_from_prismarine_stonecutting"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

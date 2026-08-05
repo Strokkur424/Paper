@@ -1,0 +1,97 @@
+--- a/data/minecraft/loot_table/spawners/trial_chamber/consumables.json
++++ b/data/minecraft/loot_table/spawners/trial_chamber/consumables.json
+@@ -5,48 +_,54 @@
+       "entries": [
+         {
+           "type": "minecraft:item",
+-          "modifier": {
+-            "type": "minecraft:set_count",
+-            "count": 1.0
+-          },
++          "functions": [
++            {
++              "count": 1.0,
++              "function": "minecraft:set_count"
++            }
++          ],
+           "name": "minecraft:cooked_chicken",
+           "weight": 3
+         },
+         {
+           "type": "minecraft:item",
+-          "modifier": {
+-            "type": "minecraft:set_count",
+-            "count": {
+-              "type": "minecraft:uniform",
+-              "max": 3.0,
+-              "min": 1.0
++          "functions": [
++            {
++              "count": {
++                "type": "minecraft:uniform",
++                "max": 3.0,
++                "min": 1.0
++              },
++              "function": "minecraft:set_count"
+             }
+-          },
++          ],
+           "name": "minecraft:bread",
+           "weight": 3
+         },
+         {
+           "type": "minecraft:item",
+-          "modifier": {
+-            "type": "minecraft:set_count",
+-            "count": {
+-              "type": "minecraft:uniform",
+-              "max": 3.0,
+-              "min": 1.0
++          "functions": [
++            {
++              "count": {
++                "type": "minecraft:uniform",
++                "max": 3.0,
++                "min": 1.0
++              },
++              "function": "minecraft:set_count"
+             }
+-          },
++          ],
+           "name": "minecraft:baked_potato",
+           "weight": 2
+         },
+         {
+           "type": "minecraft:item",
+-          "modifier": [
++          "functions": [
+             {
+-              "type": "minecraft:set_count",
+-              "count": 1.0
++              "count": 1.0,
++              "function": "minecraft:set_count"
+             },
+             {
+-              "type": "minecraft:set_potion",
++              "function": "minecraft:set_potion",
+               "id": "minecraft:regeneration"
+             }
+           ],
+@@ -54,13 +_,13 @@
+         },
+         {
+           "type": "minecraft:item",
+-          "modifier": [
++          "functions": [
+             {
+-              "type": "minecraft:set_count",
+-              "count": 1.0
++              "count": 1.0,
++              "function": "minecraft:set_count"
+             },
+             {
+-              "type": "minecraft:set_potion",
++              "function": "minecraft:set_potion",
+               "id": "minecraft:swiftness"
+             }
+           ],

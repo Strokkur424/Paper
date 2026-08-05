@@ -1,0 +1,11 @@
+--- a/data/minecraft/worldgen/structure/ruined_portal_nether.json
++++ b/data/minecraft/worldgen/structure/ruined_portal_nether.json
+@@ -3,7 +_,7 @@
+   "biomes": "#minecraft:has_structure/ruined_portal_nether",
+   "setups": [
+     {
+-      "air_pocket_probability": 0.0,
++      "air_pocket_probability": 0.5,
+       "can_be_cold": false,
+       "mossiness": 0.0,
+       "overgrown": false,

@@ -1,0 +1,18 @@
+--- a/data/minecraft/advancement/recipes/transportation/bamboo_raft.json
++++ b/data/minecraft/advancement/recipes/transportation/bamboo_raft.json
+@@ -3,13 +_,13 @@
+   "criteria": {
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:bamboo_raft"
++        "recipe": "minecraft:bamboo_raft"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     },
+     "in_water": {
+       "conditions": {
+-        "blocks": "minecraft:water"
++        "block": "minecraft:water"
+       },
+       "trigger": "minecraft:enter_block"
+     }

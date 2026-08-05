@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/redstone/trapped_chest.json
++++ b/data/minecraft/advancement/recipes/redstone/trapped_chest.json
+@@ -3,7 +_,7 @@
+   "criteria": {
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:trapped_chest"
++        "recipe": "minecraft:trapped_chest"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     },

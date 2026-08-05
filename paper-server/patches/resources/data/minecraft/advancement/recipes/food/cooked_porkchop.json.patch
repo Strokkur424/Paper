@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/food/cooked_porkchop.json
++++ b/data/minecraft/advancement/recipes/food/cooked_porkchop.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:cooked_porkchop"
++        "recipe": "minecraft:cooked_porkchop"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

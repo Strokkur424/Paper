@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/decorations/andesite_wall_from_andesite_stonecutting.json
++++ b/data/minecraft/advancement/recipes/decorations/andesite_wall_from_andesite_stonecutting.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:andesite_wall_from_andesite_stonecutting"
++        "recipe": "minecraft:andesite_wall_from_andesite_stonecutting"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

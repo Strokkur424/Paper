@@ -1,0 +1,27 @@
+--- a/data/minecraft/advancement/adventure/minecraft_trials_edition.json
++++ b/data/minecraft/advancement/adventure/minecraft_trials_edition.json
+@@ -3,15 +_,17 @@
+   "criteria": {
+     "minecraft_trials_edition": {
+       "conditions": {
+-        "player": {
+-          "type": "minecraft:entity_properties",
+-          "entity": "this",
+-          "predicate": {
+-            "minecraft:location": {
+-              "structures": "minecraft:trial_chambers"
++        "player": [
++          {
++            "condition": "minecraft:entity_properties",
++            "entity": "this",
++            "predicate": {
++              "minecraft:location": {
++                "structures": "minecraft:trial_chambers"
++              }
+             }
+           }
+-        }
++        ]
+       },
+       "trigger": "minecraft:location"
+     }

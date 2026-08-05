@@ -1,0 +1,33 @@
+--- a/data/minecraft/advancement/adventure/trade_at_world_height.json
++++ b/data/minecraft/advancement/adventure/trade_at_world_height.json
+@@ -3,19 +_,21 @@
+   "criteria": {
+     "trade_at_world_height": {
+       "conditions": {
+-        "player": {
+-          "type": "minecraft:entity_properties",
+-          "entity": "this",
+-          "predicate": {
+-            "minecraft:location": {
+-              "position": {
+-                "y": {
+-                  "min": 319.0
++        "player": [
++          {
++            "condition": "minecraft:entity_properties",
++            "entity": "this",
++            "predicate": {
++              "minecraft:location": {
++                "position": {
++                  "y": {
++                    "min": 319.0
++                  }
+                 }
+               }
+             }
+           }
+-        }
++        ]
+       },
+       "trigger": "minecraft:villager_trade"
+     }

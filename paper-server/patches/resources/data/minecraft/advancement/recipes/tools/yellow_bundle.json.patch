@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/tools/yellow_bundle.json
++++ b/data/minecraft/advancement/recipes/tools/yellow_bundle.json
+@@ -3,7 +_,7 @@
+   "criteria": {
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:yellow_bundle"
++        "recipe": "minecraft:yellow_bundle"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     },

@@ -1,0 +1,18 @@
+--- a/data/minecraft/worldgen/noise/vegetation_large.json
++++ b/data/minecraft/worldgen/noise/vegetation_large.json
+@@ -1,5 +_,5 @@
+ {
+-  "amplitude_modifiers": [
++  "amplitudes": [
+     1.0,
+     1.0,
+     0.0,
+@@ -7,7 +_,5 @@
+     0.0,
+     0.0
+   ],
+-  "base_amplitude": 0.9494731054427978,
+-  "base_octave": -10,
+-  "octave_count": 6
++  "firstOctave": -10
+ }

@@ -1,0 +1,35 @@
+--- a/data/minecraft/loot_table/entities/tropical_fish.json
++++ b/data/minecraft/loot_table/entities/tropical_fish.json
+@@ -5,20 +_,24 @@
+       "entries": [
+         {
+           "type": "minecraft:item",
+-          "modifier": {
+-            "type": "minecraft:set_count",
+-            "count": 1.0
+-          },
++          "functions": [
++            {
++              "count": 1.0,
++              "function": "minecraft:set_count"
++            }
++          ],
+           "name": "minecraft:tropical_fish"
+         }
+       ],
+       "rolls": 1.0
+     },
+     {
+-      "condition": {
+-        "type": "minecraft:random_chance",
+-        "chance": 0.05
+-      },
++      "conditions": [
++        {
++          "chance": 0.05,
++          "condition": "minecraft:random_chance"
++        }
++      ],
+       "entries": [
+         {
+           "type": "minecraft:item",

@@ -18,8 +18,8 @@ repositories {
 }
 
 dependencies {
-    mache("io.papermc:mache:26.2+build.1")
-    // mache("io.papermc:mache:26.3-snapshot-7+build.local-SNAPSHOT")
+    // mache("io.papermc:mache:26.2+build.1")
+    mache("io.papermc:mache:26.3-snapshot-7+build.local-SNAPSHOT")
     paperclip("io.papermc:paperclip:3.0.4")
 }
 
@@ -28,7 +28,7 @@ paperweight {
     gitFilePatches = false
 
     updatingMinecraft {
-        // oldPaperCommit = "d4fe85375af18bfa88f44d7c1e6a61904ae550cc"
+        oldPaperCommit = "714512e3bcf2b6886db38b765f78661cfd5409b7"
     }
 }
 

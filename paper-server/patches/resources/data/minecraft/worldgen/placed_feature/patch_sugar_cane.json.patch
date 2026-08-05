@@ -1,0 +1,44 @@
+--- a/data/minecraft/worldgen/placed_feature/patch_sugar_cane.json
++++ b/data/minecraft/worldgen/placed_feature/patch_sugar_cane.json
+@@ -20,24 +_,18 @@
+       "count": 20
+     },
+     {
+-      "type": "minecraft:offset",
+-      "x": {
++      "type": "minecraft:random_offset",
++      "xz_spread": {
+         "type": "minecraft:trapezoid",
+         "max": 4,
+         "min": -4,
+         "plateau": 0
+       },
+-      "y": {
++      "y_spread": {
+         "type": "minecraft:trapezoid",
+         "max": 0,
+         "min": 0,
+         "plateau": 0
+-      },
+-      "z": {
+-        "type": "minecraft:trapezoid",
+-        "max": 4,
+-        "min": -4,
+-        "plateau": 0
+       }
+     },
+     {
+@@ -51,7 +_,12 @@
+           },
+           {
+             "type": "minecraft:would_survive",
+-            "state": "minecraft:sugar_cane"
++            "state": {
++              "Name": "minecraft:sugar_cane",
++              "Properties": {
++                "age": "0"
++              }
++            }
+           },
+           {
+             "type": "minecraft:any_of",
