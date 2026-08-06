@@ -1,0 +1,14 @@
+--- a/net/minecraft/core/component/BlockTransformer.java
++++ b/net/minecraft/core/component/BlockTransformer.java
+@@ -65,6 +_,11 @@
+             if (!transformData.disallowedFaces().contains(clickedFace)) {
+                 BlockState newBlockState = transformData.blockStateProvider.getOptionalState(level, level.getRandom(), pos);
+                 if (newBlockState != null) {
++                    // Paper start
++                    if (!org.bukkit.craftbukkit.event.CraftEventFactory.callEntityChangeBlockEvent(context.getPlayer(), pos, newBlockState)) {
++                        return InteractionResult.PASS;
++                    }
++                    // Paper end
+                     BlockState updatedShape = transformData.updateFromNeighbors ? Block.updateFromNeighbourShapes(newBlockState, level, pos) : newBlockState;
+                     Player player = context.getPlayer();
+                     ItemStack itemInHand = context.getItemInHand();
