@@ -18,12 +18,3 @@
                      if (drop != null) {
                          drop.setNoPickUpDelay();
                          drop.setTarget(player.getUUID());
-@@ -98,7 +_,7 @@
-                 true
-             );
-         } else {
--            source.sendSuccess(() -> Component.translatable("commands.give.success.single", count, prototypeItemStack.getDisplayName(), players.size()), true);
-+            source.sendSuccess(() -> Component.translatable("commands.give.success.multiple", count, prototypeItemStack.getDisplayName(), players.size()), true); // Paper - MC-151857 - correct translation key
-         }
- 
-         return players.size();
