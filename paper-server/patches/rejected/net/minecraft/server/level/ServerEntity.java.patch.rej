@@ -1,0 +1,17 @@
+++++ REJECTED HUNK: 3
+@@ -141,7 +149,13 @@
+             } else {
+                 this.teleportDelay++;
+                 Vec3 currentPosition = this.entity.trackingPosition();
+-                boolean positionChanged = this.positionCodec.delta(currentPosition).lengthSqr() >= 7.6293945E-6F;
++                // Paper start - reduce allocation of Vec3D here
++                Vec3 base = this.positionCodec.base;
++                double vec3_dx = currentPosition.x - base.x;
++                double vec3_dy = currentPosition.y - base.y;
++                double vec3_dz = currentPosition.z - base.z;
++                boolean positionChanged = (vec3_dx * vec3_dx + vec3_dy * vec3_dy + vec3_dz * vec3_dz) >= 7.62939453125E-6D;
++                // Paper end - reduce allocation of Vec3D here
+                 Packet<ClientGamePacketListener> packet = null;
+                 boolean pos = positionChanged || this.tickCount % 60 == 0;
+                 boolean sentPosition = false;
+++++ END HUNK

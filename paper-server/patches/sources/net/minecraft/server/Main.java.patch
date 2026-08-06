@@ -85,7 +85,7 @@
              }
  
 -            File universePath = new File(options.valueOf(universe));
--            Services services = Services.create(new YggdrasilAuthenticationService(Proxy.NO_PROXY), universePath);
+-            Services services = Services.create(MinecraftServicesDiscoveryService.create(Proxy.NO_PROXY), universePath);
 +            // Paper start - Detect headless JRE
 +            String awtException = io.papermc.paper.util.ServerEnvironment.awtDependencyCheck();
 +            if (awtException != null) {
@@ -161,7 +161,7 @@
 +                                    }
 +                                    // Paper end - migrate startup world
                                      LevelDataAndDimensions worldData = LevelStorageSource.getLevelDataAndDimensions(
--                                        access, levelDataTag, context.dataConfiguration(), datapackDimensions, context.datapackWorldgen()
+-                                        access, levelDataTag, context.dataConfiguration(), datapackDimensions, context.datapackWorldRegistries()
 +                                        access, levelDataTag, context.dataConfiguration(), datapackDimensions, context.datapackWorldgen(), net.minecraft.world.level.Level.OVERWORLD // Paper
                                      );
                                      return new WorldLoader.DataLoadOutput<>(

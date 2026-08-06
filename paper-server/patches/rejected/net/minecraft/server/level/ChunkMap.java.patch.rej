@@ -1,0 +1,24 @@
+++++ REJECTED HUNK: 2
+@@ -179,13 +206,19 @@
+         this.level = level;
+         RegistryAccess registryAccess = level.registryAccess();
+         long levelSeed = level.getSeed();
+-        if (generator instanceof NoiseBasedChunkGenerator noiseGenerator) {
++        // CraftBukkit start - SPIGOT-7051: It's a rigged game! Use delegate for random state creation, otherwise it is not so random.
++        ChunkGenerator randomGenerator = generator;
++        if (randomGenerator instanceof org.bukkit.craftbukkit.generator.CustomChunkGenerator customChunkGenerator) {
++            randomGenerator = customChunkGenerator.getDelegate();
++        }
++        if (randomGenerator instanceof NoiseBasedChunkGenerator noiseGenerator) {
++            // CraftBukkit end
+             this.randomState = RandomState.create(noiseGenerator.generatorSettings().value(), registryAccess.lookupOrThrow(Registries.NOISE), levelSeed);
+         } else {
+             this.randomState = RandomState.create(NoiseGeneratorSettings.dummy(), registryAccess.lookupOrThrow(Registries.NOISE), levelSeed);
+         }
+ 
+-        this.chunkGeneratorState = generator.createState(registryAccess.lookupOrThrow(Registries.STRUCTURE_SET), this.randomState, levelSeed);
++        this.chunkGeneratorState = generator.createState(registryAccess.lookupOrThrow(Registries.STRUCTURE_SET), this.randomState, levelSeed, level.spigotConfig); // Spigot
+         this.mainThreadExecutor = mainThreadExecutor;
+         ConsecutiveExecutor worldgen = new ConsecutiveExecutor(executor, "worldgen");
+         this.chunkStatusListener = chunkStatusListener;
+++++ END HUNK

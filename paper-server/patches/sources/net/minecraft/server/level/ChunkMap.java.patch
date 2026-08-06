@@ -1,6 +1,6 @@
 --- a/net/minecraft/server/level/ChunkMap.java
 +++ b/net/minecraft/server/level/ChunkMap.java
-@@ -152,6 +_,33 @@
+@@ -150,6 +_,33 @@
      public int serverViewDistance;
      private final WorldGenContext worldGenContext;
  
@@ -34,7 +34,7 @@
      public ChunkMap(
          final ServerLevel level,
          final LevelStorageSource.LevelStorageAccess levelStorage,
-@@ -179,13 +_,19 @@
+@@ -175,7 +_,13 @@
          this.level = level;
          RegistryAccess registryAccess = level.registryAccess();
          long levelSeed = level.getSeed();
@@ -46,17 +46,19 @@
 +        }
 +        if (randomGenerator instanceof NoiseBasedChunkGenerator noiseGenerator) {
 +            // CraftBukkit end
-             this.randomState = RandomState.create(noiseGenerator.generatorSettings().value(), registryAccess.lookupOrThrow(Registries.NOISE), levelSeed);
+             this.randomState = RandomState.create(registryAccess.lookupOrThrow(Registries.NOISE), levelSeed, noiseGenerator.generatorSettings().value());
          } else {
-             this.randomState = RandomState.create(NoiseGeneratorSettings.dummy(), registryAccess.lookupOrThrow(Registries.NOISE), levelSeed);
+             this.randomState = RandomState.create(
+@@ -191,7 +_,7 @@
+             );
          }
  
 -        this.chunkGeneratorState = generator.createState(registryAccess.lookupOrThrow(Registries.STRUCTURE_SET), this.randomState, levelSeed);
-+        this.chunkGeneratorState = generator.createState(registryAccess.lookupOrThrow(Registries.STRUCTURE_SET), this.randomState, levelSeed, level.spigotConfig); // Spigot
++        this.chunkGeneratorState = generator.createState(registryAccess.lookupOrThrow(Registries.STRUCTURE_SET), this.randomState, levelSeed, level.spigotConfig);
          this.mainThreadExecutor = mainThreadExecutor;
          ConsecutiveExecutor worldgen = new ConsecutiveExecutor(executor, "worldgen");
          this.chunkStatusListener = chunkStatusListener;
-@@ -212,6 +_,12 @@
+@@ -218,6 +_,12 @@
          this.chunksToEagerlySave.add(chunkPos.pack());
      }
  
@@ -69,7 +71,7 @@
      protected ChunkGenerator generator() {
          return this.worldGenContext.generator();
      }
-@@ -348,9 +_,9 @@
+@@ -354,9 +_,9 @@
              }
          });
          sb.append("Updating:").append(System.lineSeparator());
@@ -81,7 +83,7 @@
          CrashReport report = CrashReport.forThrowable(exception, "Chunk loading");
          CrashReportCategory category = report.addCategory("Chunk loading");
          category.setDetail("Details", details);
-@@ -386,6 +_,7 @@
+@@ -392,6 +_,7 @@
                  chunk.setTicketLevel(level);
              } else {
                  chunk = new ChunkHolder(ChunkPos.unpack(node), level, this.level, this.lightEngine, this::onLevelChange, this);
@@ -89,7 +91,7 @@
              }
  
              this.updatingChunkMap.put(node, chunk);
-@@ -413,8 +_,8 @@
+@@ -419,8 +_,8 @@
  
      protected void saveAllChunks(final boolean flushStorage) {
          if (flushStorage) {
@@ -100,7 +102,7 @@
                  .stream()
                  .filter(ChunkHolder::wasAccessibleSinceLastSave)
                  .peek(ChunkHolder::refreshAccessibility)
-@@ -440,7 +_,7 @@
+@@ -446,7 +_,7 @@
              this.nextChunkSaveTime.clear();
              long now = Util.getMillis();
  
@@ -109,7 +111,7 @@
                  this.saveChunkIfNeeded(chunk, now);
              }
          }
-@@ -461,6 +_,7 @@
+@@ -467,6 +_,7 @@
      public boolean hasWork() {
          return this.lightEngine.hasLightWork()
              || !this.pendingUnloads.isEmpty()
@@ -117,7 +119,7 @@
              || !this.updatingChunkMap.isEmpty()
              || this.poiManager.hasWork()
              || !this.toDrop.isEmpty()
-@@ -519,7 +_,11 @@
+@@ -525,7 +_,11 @@
                  this.scheduleUnload(pos, chunkHolder);
              } else {
                  ChunkAccess chunk = chunkHolder.getLatestChunk();
@@ -130,7 +132,7 @@
                      if (chunk instanceof LevelChunk levelChunk) {
                          levelChunk.setLoaded(false);
                      }
-@@ -532,7 +_,9 @@
+@@ -538,7 +_,9 @@
                      this.lightEngine.updateChunkStatus(chunk.getPos());
                      this.lightEngine.tryScheduleUpdate();
                      this.nextChunkSaveTime.remove(chunk.getPos().pack());
@@ -141,7 +143,7 @@
              }
          }, this.unloadQueue::add).whenComplete((ignored, throwable) -> {
              if (throwable != null) {
-@@ -843,7 +_,7 @@
+@@ -846,7 +_,7 @@
      }
  
      public int size() {
@@ -150,7 +152,7 @@
      }
  
      public net.minecraft.server.level.DistanceManager getDistanceManager() {
-@@ -870,10 +_,10 @@
+@@ -873,10 +_,10 @@
              .addColumn("fluid_ticks")
              .build(output);
  
@@ -165,7 +167,7 @@
              Optional<ChunkAccess> chunk = Optional.ofNullable(holder.getLatestChunk());
              Optional<LevelChunk> fullChunk = chunk.flatMap(
                  chunkAccess -> chunkAccess instanceof LevelChunk levelChunk ? Optional.of(levelChunk) : Optional.empty()
-@@ -922,14 +_,15 @@
+@@ -925,14 +_,15 @@
          return this.upgradeChunkTag(
              tag,
              -1,
@@ -184,7 +186,7 @@
          generatorIdentifier.ifPresent(identifier -> contextTag.putString("generator", identifier.toString()));
          return contextTag;
      }
-@@ -941,7 +_,7 @@
+@@ -944,7 +_,7 @@
              ChunkHolder holder = this.visibleChunkMap.get(spawnCandidateChunks.nextLong());
              if (holder != null) {
                  LevelChunk chunk = holder.getTickingChunk();
@@ -193,7 +195,7 @@
                      output.add(chunk);
                  }
              }
-@@ -961,8 +_,14 @@
+@@ -964,8 +_,14 @@
      }
  
      public boolean anyPlayerCloseEnoughForSpawning(final ChunkPos pos) {
@@ -209,7 +211,7 @@
      }
  
      public boolean anyPlayerCloseEnoughTo(final BlockPos pos, final int maxDistance) {
-@@ -978,8 +_,24 @@
+@@ -981,8 +_,24 @@
      }
  
      private boolean anyPlayerCloseEnoughForSpawningInternal(final ChunkPos pos) {
@@ -235,7 +237,7 @@
                  return true;
              }
          }
-@@ -996,7 +_,7 @@
+@@ -999,7 +_,7 @@
          Builder<ServerPlayer> builder = ImmutableList.builder();
  
          for (ServerPlayer player : this.playerMap.getAllPlayers()) {
@@ -244,7 +246,7 @@
                  builder.add(player);
              }
          }
-@@ -1004,13 +_,13 @@
+@@ -1007,13 +_,13 @@
          return builder.build();
      }
  
@@ -260,7 +262,7 @@
      }
  
      private boolean playerIsCloseEnoughTo(final ServerPlayer player, final Vec3 pos, final int maxDistance) {
-@@ -1142,9 +_,19 @@
+@@ -1145,9 +_,19 @@
      }
  
      protected void addEntity(final Entity entity) {
@@ -280,7 +282,7 @@
              if (range != 0) {
                  int updateInterval = type.updateInterval();
                  if (this.entityMap.containsKey(entity.getId())) {
-@@ -1168,6 +_,7 @@
+@@ -1171,6 +_,7 @@
      }
  
      protected void removeEntity(final Entity entity) {
@@ -288,7 +290,7 @@
          if (entity instanceof ServerPlayer player) {
              this.updatePlayerStatus(player, false);
  
-@@ -1328,10 +_,10 @@
+@@ -1327,10 +_,10 @@
          private final Entity entity;
          private final int range;
          private SectionPos lastSectionPos;
@@ -301,7 +303,7 @@
              this.entity = entity;
              this.range = range;
              this.lastSectionPos = SectionPos.of(entity);
-@@ -1378,6 +_,7 @@
+@@ -1377,6 +_,7 @@
          }
  
          public void removePlayer(final ServerPlayer player) {
@@ -309,7 +311,7 @@
              if (this.seenBy.remove(player.connection)) {
                  this.serverEntity.removePairing(player);
                  if (this.seenBy.isEmpty()) {
-@@ -1387,23 +_,47 @@
+@@ -1386,23 +_,47 @@
          }
  
          public void updatePlayer(final ServerPlayer player) {
@@ -360,7 +362,7 @@
                      }
                  } else {
                      this.removePlayer(player);
-@@ -1420,6 +_,7 @@
+@@ -1419,6 +_,7 @@
  
              for (Entity passenger : this.entity.getIndirectPassengers()) {
                  int passengerRange = passenger.getType().clientTrackingRange() * 16;

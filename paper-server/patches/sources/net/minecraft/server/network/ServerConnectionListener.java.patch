@@ -1,6 +1,6 @@
 --- a/net/minecraft/server/network/ServerConnectionListener.java
 +++ b/net/minecraft/server/network/ServerConnectionListener.java
-@@ -53,9 +_,31 @@
+@@ -56,9 +_,31 @@
          this.running = true;
      }
  
@@ -33,11 +33,11 @@
              this.channels
                  .add(
                      new ServerBootstrap()
-@@ -79,22 +_,64 @@
+@@ -82,22 +_,64 @@
                                      Connection connection = rateLimitPacketsPerSecond > 0
                                          ? new RateKickingConnection(rateLimitPacketsPerSecond)
                                          : new Connection(PacketFlow.SERVERBOUND);
--                                    ServerConnectionListener.this.connections.add(connection);
+-                                    ServerConnectionListener.this.pendingConnections.add(connection);
 +                                    // Paper start - Add support for Proxy Protocol
 +                                    if (io.papermc.paper.configuration.GlobalConfiguration.get().proxies.proxyProtocol) {
 +                                        channel.pipeline().addAfter(HandlerNames.TIMEOUT, "haproxy-decoder", new io.netty.handler.codec.haproxy.HAProxyMessageDecoder());
@@ -100,10 +100,10 @@
      public SocketAddress startMemoryChannel() {
          ChannelFuture newChannel;
          synchronized (this.channels) {
-@@ -187,12 +_,26 @@
- 
+@@ -169,12 +_,26 @@
      public void tick() {
          synchronized (this.connections) {
+             this.addPendingConnections();
 +            // Spigot start
 +            this.addPending(); // Paper - prevent blocking on adding a new connection while the server is ticking
 +            // This prevents players from 'gaming' the server, and strategically relogging to increase their position in the tick order
@@ -127,7 +127,7 @@
                          try {
                              connection.tick();
                          } catch (Exception e) {
-@@ -206,6 +_,7 @@
+@@ -188,6 +_,7 @@
                              connection.setReadOnly();
                          }
                      } else {
@@ -135,7 +135,7 @@
                          iterator.remove();
                          connection.handleDisconnection();
                      }
-@@ -219,6 +_,16 @@
+@@ -201,6 +_,16 @@
              }
          }
      }
