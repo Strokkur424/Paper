@@ -1,0 +1,14 @@
+--- a/net/minecraft/world/level/block/BedBlock.java
++++ b/net/minecraft/world/level/block/BedBlock.java
+@@ -44,6 +_,11 @@
+     }
+ 
+     @Override
++    protected net.minecraft.world.InteractionResult useWithoutItem(final net.minecraft.world.level.block.state.BlockState state, final net.minecraft.world.level.Level level, final net.minecraft.core.BlockPos pos, final net.minecraft.world.entity.player.Player player, final net.minecraft.world.phys.BlockHitResult hitResult) {
++        return super.useWithoutItem(state, level, pos, player, hitResult);
++    }
++
++    @Override
+     protected InteractionResult destroyOnUse(final BlockState state, final Level level, BlockPos pos, final Player player) {
+         level.removeBlock(pos, false);
+         BlockPos blockPos = pos.relative(state.getValue(FACING).getOpposite());
