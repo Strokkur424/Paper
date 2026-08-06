@@ -1,0 +1,48 @@
+--- a/net/minecraft/world/entity/projectile/throwableitemprojectile/AbstractThrownPotion.java
++++ b/net/minecraft/world/entity/projectile/throwableitemprojectile/AbstractThrownPotion.java
+@@ -70,15 +_,23 @@
+     @Override
+     protected void onHit(final HitResult hitResult) {
+         super.onHit(hitResult);
++        // Paper start - More projectile API
++        this.splash(hitResult);
++    }
++
++    public void splash(final @org.jspecify.annotations.Nullable HitResult hitResult) { // Paper
++        // Paper end - More projectile API
+         if (this.level() instanceof ServerLevel level) {
+             ItemStack potionItemStack = this.getItem();
+             PotionContents potion = potionItemStack.getOrDefault(DataComponents.POTION_CONTENTS, PotionContents.EMPTY);
++            boolean showParticles = true; // Paper - Fix potions splash events
+             if (potion.is(Potions.WATER)) {
+-                this.onHitAsWater(level);
+-            } else if (potion.hasEffects()) {
+-                this.onHitAsPotion(level, potionItemStack, hitResult);
++                showParticles = this.onHitAsWater(level, hitResult); // Paper - Fix potions splash events
++            } else if (true || potion.hasEffects()) { // CraftBukkit - Call event even if no effects to apply
++                showParticles = this.onHitAsPotion(level, potionItemStack, hitResult); // Paper - pass HitResult
+             }
+ 
++            if (showParticles) { // Paper - Fix potions splash events
+             if (potion.potion().isPresent() && potion.potion().get().value().hasInstantEffects()) {
+                 level.levelEvent(LevelEvent.PARTICLES_INSTANT_POTION_SPLASH, this.blockPosition(), potion.getColor());
+                 if (!this.isSilent()) {
+@@ -91,7 +_,8 @@
+                 }
+             }
+ 
+-            this.discard();
++            } // Paper - Fix potions splash events
++            this.discard(org.bukkit.event.entity.EntityRemoveEvent.Cause.HIT); // CraftBukkit - add Bukkit remove cause
+         }
+     }
+ 
+@@ -116,7 +_,7 @@
+         }
+     }
+ 
+-    protected abstract void onHitAsPotion(ServerLevel level, ItemStack potionItem, HitResult hitResult);
++    protected abstract boolean onHitAsPotion(ServerLevel level, ItemStack potionItem, HitResult hitResult); // - More projectile API
+ 
+     private void douseFire(final BlockPos pos) {
+         BlockState blockState = this.level().getBlockState(pos);

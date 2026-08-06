@@ -1,0 +1,59 @@
+--- a/net/minecraft/world/entity/ConversionTracker.java
++++ b/net/minecraft/world/entity/ConversionTracker.java
+@@ -23,6 +_,10 @@
+     private final String conversionTimeTag;
+     private final int totalConversionTime;
+     private final @Nullable BiConsumer<M, ServerLevel> postConversionStep;
++    // Paper start - EntityTransformEvent
++    private final org.bukkit.event.entity.EntityTransformEvent.TransformReason transformReason;
++    private final org.bukkit.event.entity.CreatureSpawnEvent.SpawnReason spawnReason;
++    // Paper end - EntityTransformEvent
+     private int afflictionTime = 0;
+     private int conversionTime;
+ 
+@@ -36,7 +_,11 @@
+         final int totalAfflictionTime,
+         final String conversionTimeTag,
+         final int totalConversionTime,
+-        final @Nullable BiConsumer<M, ServerLevel> postConversionStep
++        // Paper start - EntityTransformEvent
++        final @Nullable BiConsumer<M, ServerLevel> postConversionStep,
++        final org.bukkit.event.entity.EntityTransformEvent.TransformReason transformReason,
++        final org.bukkit.event.entity.CreatureSpawnEvent.SpawnReason spawnReason
++        // Paper end - EntityTransformEvent
+     ) {
+         this.mob = mob;
+         this.conversionId = conversionId;
+@@ -48,6 +_,8 @@
+         this.conversionTimeTag = conversionTimeTag;
+         this.totalConversionTime = totalConversionTime;
+         this.postConversionStep = postConversionStep;
++        this.transformReason = transformReason;
++        this.spawnReason = spawnReason;
+     }
+ 
+     public void tick() {
+@@ -95,7 +_,7 @@
+     }
+ 
+     private void doConversion(final ServerLevel serverLevel) {
+-        this.mob.convertTo(this.convertsTo.get(), ConversionParams.single(this.mob, true, true), converted -> {
++        final M entity = this.mob.convertTo(this.convertsTo.get(), ConversionParams.single(this.mob, true, true), converted -> {  // Paper - Fix issues with mob conversion; reset conversion time to prevent event spam
+             if (this.postConversionStep != null) {
+                 this.postConversionStep.accept((M)converted, serverLevel);
+             }
+@@ -103,7 +_,13 @@
+             if (!converted.isSilent()) {
+                 serverLevel.levelEvent(null, this.conversionSound.get(), converted.blockPosition(), 0);
+             }
+-        });
++        // Paper start - add spawn and transform reasons
++        }, transformReason, spawnReason);
++        if (entity == null) {
++            // Reset conversion time to prevent event spam
++            this.conversionTime = totalConversionTime;
++        }
++        // Paper end - add spawn and transform reasons
+     }
+ 
+     public void startConversion(final int time) {

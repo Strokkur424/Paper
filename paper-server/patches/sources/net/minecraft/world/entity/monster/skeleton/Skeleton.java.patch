@@ -1,0 +1,14 @@
+--- a/net/minecraft/world/entity/monster/skeleton/Skeleton.java
++++ b/net/minecraft/world/entity/monster/skeleton/Skeleton.java
+@@ -17,7 +_,10 @@
+ public class Skeleton extends AbstractSkeleton {
+     private static final EntityDataAccessor<Boolean> DATA_STRAY_CONVERSION_ID = SynchedEntityData.defineId(Skeleton.class, EntityDataSerializers.BOOLEAN);
+     private final ConversionTracker<AbstractSkeleton> freezingTracker = new ConversionTracker<>(
+-        this, DATA_STRAY_CONVERSION_ID, () -> EntityTypes.STRAY, () -> 1048, () -> this.isInPowderSnow, "FreezingTime", 140, "StrayConversionTime", 300, null
++        // Paper start - EntityTransformEvent
++        this, DATA_STRAY_CONVERSION_ID, () -> EntityTypes.STRAY, () -> 1048, () -> this.isInPowderSnow, "FreezingTime", 140, "StrayConversionTime", 300, null,
++        org.bukkit.event.entity.EntityTransformEvent.TransformReason.FROZEN, org.bukkit.event.entity.CreatureSpawnEvent.SpawnReason.FROZEN
++        // Paper end - EntityTransformEvent
+     );
+ 
+     public Skeleton(final EntityType<? extends Skeleton> type, final Level level) {
