@@ -1,0 +1,68 @@
+--- a/net/minecraft/world/level/levelgen/NoiseChunk.java
++++ b/net/minecraft/world/level/levelgen/NoiseChunk.java
+@@ -2,12 +_,6 @@
+ 
+ import com.google.common.collect.Lists;
+ import com.mojang.serialization.MapCodec;
+-import java.util.ArrayList;
+-import java.util.HashMap;
+-import java.util.List;
+-import java.util.Map;
+-import java.util.Objects;
+-
+ import net.minecraft.SharedConstants;
+ import net.minecraft.core.Holder;
+ import net.minecraft.core.QuartPos;
+@@ -25,6 +_,12 @@
+ import net.minecraft.world.level.levelgen.material.MaterialRuleList;
+ import org.jspecify.annotations.Nullable;
+ 
++import java.util.ArrayList;
++import java.util.HashMap;
++import java.util.List;
++import java.util.Map;
++import java.util.Objects;
++
+ public class NoiseChunk implements DensityFunction.FunctionContext, DensityFunction.ContextProvider {
+     private final int cellCountXZ;
+     private final int cellCountY;
+@@ -618,7 +_,7 @@
+                 if (this.lastArray != null && this.lastArray.length == output.length) {
+                     System.arraycopy(output, 0, this.lastArray, 0, output.length);
+                 } else {
+-                    this.lastArray = (float[])output.clone();
++                    this.lastArray = (float[]) output.clone();
+                 }
+ 
+                 this.lastArrayCounter = NoiseChunk.this.arrayInterpolationCounter;
+@@ -783,18 +_,18 @@
+             } else {
+                 return NoiseChunk.this.fillingCell
+                     ? Mth.lerp3(
+-                        (float)NoiseChunk.this.inCellX / NoiseChunk.this.cellWidth,
+-                        (float)NoiseChunk.this.inCellY / NoiseChunk.this.cellHeight,
+-                        (float)NoiseChunk.this.inCellZ / NoiseChunk.this.cellWidth,
+-                        this.noise000,
+-                        this.noise100,
+-                        this.noise010,
+-                        this.noise110,
+-                        this.noise001,
+-                        this.noise101,
+-                        this.noise011,
+-                        this.noise111
+-                    )
++                    (float) NoiseChunk.this.inCellX / NoiseChunk.this.cellWidth,
++                    (float) NoiseChunk.this.inCellY / NoiseChunk.this.cellHeight,
++                    (float) NoiseChunk.this.inCellZ / NoiseChunk.this.cellWidth,
++                    this.noise000,
++                    this.noise100,
++                    this.noise010,
++                    this.noise110,
++                    this.noise001,
++                    this.noise101,
++                    this.noise011,
++                    this.noise111
++                )
+                     : this.value;
+             }
+         }

@@ -1,0 +1,11 @@
+--- a/net/minecraft/world/level/block/entity/SignTextSlot.java
++++ b/net/minecraft/world/level/block/entity/SignTextSlot.java
+@@ -17,4 +_,8 @@
+     SignTextSlot(final int id) {
+         this.id = id;
+     }
++
++    public org.bukkit.block.sign.Side toBukkit() {
++        return this == FRONT ? org.bukkit.block.sign.Side.FRONT : org.bukkit.block.sign.Side.BACK;
++    }
+ }

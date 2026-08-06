@@ -1,0 +1,76 @@
+--- a/net/minecraft/world/level/block/entity/vault/VaultBlockEntity.java
++++ b/net/minecraft/world/level/block/entity/vault/VaultBlockEntity.java
+@@ -235,6 +_,19 @@
+             final VaultServerData serverData,
+             final VaultSharedData sharedData
+         ) {
++            // Paper start - Vault API
++            setVaultState(serverLevel, pos, blockState, config, serverData, sharedData, null);
++        }
++
++        static void setVaultState(
++            final ServerLevel serverLevel,
++            final BlockPos pos,
++            final BlockState blockState,
++            final VaultConfig config,
++            final VaultServerData serverData,
++            final VaultSharedData sharedData,
++            final @Nullable Player associatedPlayer
++        ) {
+             VaultState currentState = blockState.getValue(VaultBlock.STATE);
+             if (shouldCycleDisplayItem(serverLevel.getGameTime(), currentState)) {
+                 cycleDisplayItemFromLootTable(serverLevel, currentState, config, sharedData, pos);
+@@ -280,7 +_,13 @@
+                     if (!itemsToEject.isEmpty()) {
+                         player.awardStat(Stats.ITEM_USED.get(stackToInsert.getItem()));
+                         stackToInsert.consume(config.keyItem().getCount(), player);
+-                        unlock(serverLevel, blockState, pos, config, serverData, sharedData, itemsToEject);
++                        // CraftBukkit start
++                        LootTable sourceLootTable = serverLevel.getServer().reloadableRegistries().getLootTable(config.lootTable());
++                        org.bukkit.event.block.BlockDispenseLootEvent vaultDispenseLootEvent = org.bukkit.craftbukkit.event.CraftEventFactory.callBlockDispenseLootEvent(serverLevel, pos, player, itemsToEject, sourceLootTable);
++                        if (vaultDispenseLootEvent.isCancelled()) return;
++                        itemsToEject = vaultDispenseLootEvent.getDispensedLoot().stream().map(org.bukkit.craftbukkit.inventory.CraftItemStack::asNMSCopy).toList();
++                        // CraftBukkit end
++                        unlock(serverLevel, blockState, pos, config, serverData, sharedData, itemsToEject, player); // Paper - Vault API
+                         serverData.addToRewardedPlayers(player);
+                         sharedData.updateConnectedPlayersWithinRange(serverLevel, pos, serverData, config, config.deactivationRange());
+                     }
+@@ -309,6 +_,11 @@
+                 sharedData.setDisplayItem(ItemStack.EMPTY);
+             } else {
+                 ItemStack displayItem = getRandomDisplayItemFromLootTable(serverLevel, pos, config.overrideLootTableToDisplay().orElse(config.lootTable()));
++                // CraftBukkit start
++                org.bukkit.event.block.VaultDisplayItemEvent event = org.bukkit.craftbukkit.event.CraftEventFactory.callVaultDisplayItemEvent(serverLevel, pos, displayItem);
++                if (event.isCancelled()) return;
++                displayItem = org.bukkit.craftbukkit.inventory.CraftItemStack.asNMSCopy(event.getDisplayItem());
++                // CraftBukkit end
+                 sharedData.setDisplayItem(displayItem);
+             }
+         }
+@@ -331,10 +_,25 @@
+             final VaultSharedData sharedData,
+             final List<ItemStack> itemsToEject
+         ) {
++            // Paper start - Vault API
++            unlock(serverLevel, blockState, pos, config, serverData, sharedData, itemsToEject, null);
++        }
++
++        private static void unlock(
++            final ServerLevel serverLevel,
++            final BlockState blockState,
++            final BlockPos pos,
++            final VaultConfig config,
++            final VaultServerData serverData,
++            final VaultSharedData sharedData,
++            final List<ItemStack> itemsToEject,
++            final @Nullable Player associatedPlayer
++        ) {
++            // Paper end - Vault API
+             serverData.setItemsToEject(itemsToEject);
+             sharedData.setDisplayItem(serverData.getNextItemToEject());
+             serverData.pauseStateUpdatingUntil(serverLevel.getGameTime() + 14L);
+-            setVaultState(serverLevel, pos, blockState, blockState.setValue(VaultBlock.STATE, VaultState.UNLOCKING), config, sharedData);
++            setVaultState(serverLevel, pos, blockState, blockState.setValue(VaultBlock.STATE, VaultState.UNLOCKING), config, sharedData, associatedPlayer); // Paper - Vault API
+         }
+ 
+         private static List<ItemStack> resolveItemsToEject(
