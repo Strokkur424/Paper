@@ -1,9 +1,0 @@
---- a/data/minecraft/tags/block/blocks_fluid_flow.json
-+++ /dev/null
-@@ -1,6 +_,0 @@
--{
--  "values": [
--    "#minecraft:blocks_motion",
--    "#minecraft:all_signs"
--  ]
--}

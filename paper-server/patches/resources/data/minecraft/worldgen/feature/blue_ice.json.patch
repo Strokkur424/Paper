@@ -1,6 +1,0 @@
---- a/data/minecraft/worldgen/feature/blue_ice.json
-+++ /dev/null
-@@ -1,3 +_,0 @@
--{
--  "type": "minecraft:blue_ice"
--}

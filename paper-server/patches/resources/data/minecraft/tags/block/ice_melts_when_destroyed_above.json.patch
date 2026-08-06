@@ -1,8 +1,0 @@
---- a/data/minecraft/tags/block/ice_melts_when_destroyed_above.json
-+++ /dev/null
-@@ -1,5 +_,0 @@
--{
--  "values": [
--    "#minecraft:blocks_motion"
--  ]
--}

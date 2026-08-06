@@ -74418,12 +74418,12 @@
  
  Name: data/minecraft/recipe/magenta_harness.json
  SHA-384-Digest: 2qccc2cuc2jtvxN0VYL443Gw+T/DgRJgqRfJrAllYwMlss/dZhR4FuhS
-@@ -75281,6 +_,6 @@
+@@ -75281,6 +_,5 @@
  
  Name: net/minecraft/world/level/levelgen/placement/NoiseBasedCountPlacem
   ent.class
 -SHA-384-Digest: pEmWud4XRzx08byR6llBR9ufmpe63dy9OhgYSlEKXYIV3ZCvytbGm4F9
 - c8As8iF5
+-
 +SHA-384-Digest: lMOOcgwHB6CsjFOwMfEAGwTolxWdA5ZlyoQm0unRpvN3g+aKo3HPWPDh
 + wt/yRtam
- 

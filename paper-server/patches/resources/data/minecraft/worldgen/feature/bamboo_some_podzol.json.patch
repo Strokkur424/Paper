@@ -1,7 +1,0 @@
---- a/data/minecraft/worldgen/feature/bamboo_some_podzol.json
-+++ /dev/null
-@@ -1,4 +_,0 @@
--{
--  "type": "minecraft:bamboo",
--  "probability": 0.2
--}

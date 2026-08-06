@@ -1,8 +1,0 @@
---- a/data/minecraft/tags/block/blocks_motion_in_heightmap.json
-+++ /dev/null
-@@ -1,5 +_,0 @@
--{
--  "values": [
--    "#minecraft:blocks_motion"
--  ]
--}

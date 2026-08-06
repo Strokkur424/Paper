@@ -1,8 +1,0 @@
---- a/data/minecraft/tags/worldgen/structure/on_ocean_ruin_warm_maps.json
-+++ /dev/null
-@@ -1,5 +_,0 @@
--{
--  "values": [
--    "minecraft:ocean_ruin_warm"
--  ]
--}
