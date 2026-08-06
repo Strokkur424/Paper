@@ -1,6 +1,6 @@
 --- a/net/minecraft/world/level/levelgen/NoiseBasedChunkGenerator.java
 +++ b/net/minecraft/world/level/levelgen/NoiseBasedChunkGenerator.java
-@@ -265,7 +_,7 @@
+@@ -263,7 +_,7 @@
      @Override
      public void buildSurface(final WorldGenRegion region, final StructureManager structureManager, final RandomState randomState, final ChunkAccess protoChunk) {
          if (!SharedConstants.debugVoidTerrain(protoChunk.getPos()) && !SharedConstants.DEBUG_DISABLE_SURFACE) {
@@ -9,12 +9,12 @@
              Set<Holder<Biome>> possibleBiomes = collectPossibleBiomes(region, 1);
              this.buildSurface(protoChunk, context, randomState, structureManager, region.getBiomeManager(), Blender.of(region), possibleBiomes);
          }
-@@ -319,7 +_,7 @@
+@@ -312,7 +_,7 @@
+             int range = 8;
+             ChunkPos pos = chunk.getPos();
              NoiseChunk noiseChunk = chunk.getOrCreateNoiseChunk(c -> this.createNoiseChunk(c, structureManager, Blender.of(region), randomState));
-             Aquifer aquifer = noiseChunk.aquifer();
-             CarvingContext context = new CarvingContext(
--                this, region.registryAccess(), chunk.getHeightAccessorForGeneration(), noiseChunk, randomState, this.settings.value().surfaceRule()
-+                this, region.registryAccess(), chunk.getHeightAccessorForGeneration(), noiseChunk, randomState, this.settings.value().surfaceRule(), region.getMinecraftWorld() // Paper - Flat bedrock generator settings
-             );
-             CarvingMask mask = ((ProtoChunk)chunk).getOrCreateCarvingMask();
- 
+-            WorldGenerationContext context = new WorldGenerationContext(this, chunk.getHeightAccessorForGeneration());
++            WorldGenerationContext context = new WorldGenerationContext(this, chunk.getHeightAccessorForGeneration(), region.getMinecraftWorld()); // Paper - Flat bedrock generator settings
+             int protectedBlocksOnTop = chunk.isUpgrading() ? 0 : 7;
+             int maxY = context.getMinGenY() + context.getGenDepth() - 1 - protectedBlocksOnTop;
+             CarvingMask mask = new CarvingMask(context.getMinGenY() + 1, maxY);

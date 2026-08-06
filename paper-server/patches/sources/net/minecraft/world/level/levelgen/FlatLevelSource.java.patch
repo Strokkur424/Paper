@@ -1,6 +1,6 @@
 --- a/net/minecraft/world/level/levelgen/FlatLevelSource.java
 +++ b/net/minecraft/world/level/levelgen/FlatLevelSource.java
-@@ -32,17 +_,22 @@
+@@ -34,17 +_,22 @@
      private final FlatLevelGeneratorSettings settings;
  
      public FlatLevelSource(final FlatLevelGeneratorSettings generatorSettings) {
@@ -21,7 +21,7 @@
              .structureOverrides()
              .map(HolderSet::stream)
              .orElseGet(() -> structureSets.listElements().map(e -> (Holder<StructureSet>)e));
--        return ChunkGeneratorStructureState.createForFlat(randomState, levelSeed, this.biomeSource, structures);
+-        return ChunkGeneratorStructureState.createForFlat(randomState, levelSeed, this.getOrigin(randomState), this.biomeSource, structures);
 +        return ChunkGeneratorStructureState.createForFlat(randomState, levelSeed, this.biomeSource, structures, conf); // Spigot
      }
  

@@ -1,28 +1,29 @@
 --- a/net/minecraft/world/level/chunk/ChunkGeneratorStructureState.java
 +++ b/net/minecraft/world/level/chunk/ChunkGeneratorStructureState.java
-@@ -41,22 +_,109 @@
-     private final Map<ConcentricRingsStructurePlacement, CompletableFuture<List<ChunkPos>>> ringPositions = new Object2ObjectArrayMap<>();
-     private boolean hasGeneratedPositions;
-     private final List<Holder<StructureSet>> possibleStructureSets;
+@@ -49,23 +_,111 @@
+         final ChunkPos origin,
+         final BiomeSource biomeSource,
+         final Stream<Holder<StructureSet>> structureOverrides
 +    public final org.spigotmc.SpigotWorldConfig conf; // Paper - Add missing structure set seed configs
- 
-     public static ChunkGeneratorStructureState createForFlat(
--        final RandomState randomState, final long levelSeed, final BiomeSource biomeSource, final Stream<Holder<StructureSet>> structureOverrides
 +        final RandomState randomState, final long levelSeed, final BiomeSource biomeSource, final Stream<Holder<StructureSet>> structureOverrides, org.spigotmc.SpigotWorldConfig conf // Spigot
      ) {
          List<Holder<StructureSet>> structures = structureOverrides.filter(structureSet -> hasBiomesForStructureSet(structureSet.value(), biomeSource)).toList();
--        return new ChunkGeneratorStructureState(randomState, biomeSource, levelSeed, 0L, structures);
+-        return new ChunkGeneratorStructureState(randomState, biomeSource, levelSeed, origin, 0L, structures);
 +        return new ChunkGeneratorStructureState(randomState, biomeSource, levelSeed, 0L, ChunkGeneratorStructureState.injectSpigot(structures, conf), conf); // Spigot
      }
  
      public static ChunkGeneratorStructureState createForNormal(
--        final RandomState randomState, final long levelSeed, final BiomeSource biomeSource, final HolderLookup<StructureSet> allStructures
+-        final RandomState randomState,
+         final long levelSeed,
+         final ChunkPos origin,
+         final BiomeSource biomeSource,
+         final HolderLookup<StructureSet> allStructures
 +        final RandomState randomState, final long levelSeed, final BiomeSource biomeSource, final HolderLookup<StructureSet> allStructures, org.spigotmc.SpigotWorldConfig conf // Spigot
      ) {
          List<Holder<StructureSet>> structures = allStructures.listElements()
              .filter(structureSet -> hasBiomesForStructureSet(structureSet.value(), biomeSource))
              .collect(Collectors.toUnmodifiableList());
--        return new ChunkGeneratorStructureState(randomState, biomeSource, levelSeed, levelSeed, structures);
+-        return new ChunkGeneratorStructureState(randomState, biomeSource, levelSeed, origin, levelSeed, structures);
 -    }
 +        return new ChunkGeneratorStructureState(randomState, biomeSource, levelSeed, levelSeed, ChunkGeneratorStructureState.injectSpigot(structures, conf), conf); // Spigot
 +    }
@@ -115,15 +116,16 @@
  
      private static boolean hasBiomesForStructureSet(final StructureSet structureSet, final BiomeSource biomeSource) {
          Stream<Holder<Biome>> structureBiomes = structureSet.structures().stream().flatMap(entry -> {
-@@ -71,13 +_,14 @@
-         final BiomeSource biomeSource,
+@@ -81,7 +_,7 @@
          final long levelSeed,
+         final ChunkPos origin,
          final long concentricRingsSeed,
 -        final List<Holder<StructureSet>> possibleStructureSets
 +        final List<Holder<StructureSet>> possibleStructureSets, org.spigotmc.SpigotWorldConfig conf // Paper - Add missing structure set seed configs
      ) {
          this.randomState = randomState;
          this.levelSeed = levelSeed;
+@@ -89,6 +_,7 @@
          this.biomeSource = biomeSource;
          this.concentricRingsSeed = concentricRingsSeed;
          this.possibleStructureSets = possibleStructureSets;
@@ -131,7 +133,7 @@
      }
  
      public List<Holder<StructureSet>> possibleStructureSets() {
-@@ -116,7 +_,13 @@
+@@ -127,7 +_,13 @@
          int spread = placement.spread();
          HolderSet<Biome> preferredBiomes = placement.preferredBiomes();
          RandomSource random = RandomSource.create();
@@ -145,7 +147,7 @@
          double angle = random.nextDouble() * Math.PI * 2.0;
          int positionInCircle = 0;
          int circle = 0;
-@@ -193,7 +_,7 @@
+@@ -208,7 +_,7 @@
  
          for (int testX = sourceX - range; testX <= sourceX + range; testX++) {
              for (int testZ = sourceZ - range; testZ <= sourceZ + range; testZ++) {

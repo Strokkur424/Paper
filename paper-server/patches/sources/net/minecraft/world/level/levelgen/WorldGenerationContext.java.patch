@@ -1,9 +1,9 @@
 --- a/net/minecraft/world/level/levelgen/WorldGenerationContext.java
 +++ b/net/minecraft/world/level/levelgen/WorldGenerationContext.java
-@@ -6,8 +_,15 @@
- public class WorldGenerationContext {
-     private final int minY;
-     private final int height;
+@@ -15,14 +_,22 @@
+             ? new WorldGenerationContext(worldGenLevel.getLevel().getChunkSource().getGenerator(), level)
+             : new WorldGenerationContext(level);
+     }
 +    // Paper start - Flat bedrock generator settings
 +    private final net.minecraft.world.level.@org.jspecify.annotations.Nullable Level level;
  
@@ -15,10 +15,17 @@
 +        // Paper end - Flat bedrock generator settings
          this.minY = Math.max(heightAccessor.getMinY(), generator.getMinY());
          this.height = Math.min(heightAccessor.getHeight(), generator.getGenDepth());
+         this.seaLevel = generator.getSeaLevel();
      }
-@@ -19,4 +_,13 @@
-     public int getGenDepth() {
-         return this.height;
+ 
+     private WorldGenerationContext(final LevelAccessor level) {
++        this.level = null; // Paper
+         this.minY = level.getMinY();
+         this.height = level.getHeight();
+         this.seaLevel = level.getSeaLevel();
+@@ -39,4 +_,13 @@
+     public int seaLevel() {
+         return this.seaLevel;
      }
 +
 +    // Paper start - Flat bedrock generator settings
