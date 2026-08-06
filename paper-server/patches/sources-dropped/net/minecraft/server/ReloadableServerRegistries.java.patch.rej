@@ -1,6 +1,5 @@
---- a/net/minecraft/server/ReloadableServerRegistries.java
-+++ b/net/minecraft/server/ReloadableServerRegistries.java
-@@ -48,8 +_,9 @@
+++++ REJECTED HUNK: 1
+@@ -48,8 +48,9 @@
          );
          HolderLookup.Provider loadingContextWithTags = HolderLookup.Provider.create(contextRegistriesWithTags.stream());
          RegistryOps<JsonElement> ops = loadingContextWithTags.createSerializationContext(JsonOps.INSTANCE);
@@ -11,7 +10,10 @@
              .toList();
          CompletableFuture<List<WritableRegistry<?>>> sequence = Util.sequence(registryLoads);
          return sequence.thenApplyAsync(
-@@ -58,14 +_,20 @@
+++++ END HUNK
+
+++++ REJECTED HUNK: 2
+@@ -58,14 +59,20 @@
      }
  
      private static <T extends Validatable> CompletableFuture<WritableRegistry<?>> scheduleRegistryLoad(
@@ -35,3 +37,4 @@
              return registry;
          }, taskExecutor);
      }
+++++ END HUNK
