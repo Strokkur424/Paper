@@ -1,0 +1,112 @@
+--- a/net/minecraft/world/level/block/entity/SignBlockEntity.java
++++ b/net/minecraft/world/level/block/entity/SignBlockEntity.java
+@@ -61,10 +_,15 @@
+     }
+ 
+     public SignTextSlot getSlotPlayerIsFacing(final Player player) {
++        // Paper start - More Sign Block API
++        return this.isFacingFrontText(player.getX(), player.getZ());
++    }
++    public boolean isFacingFrontText(final double x, final double z) {
++        // Paper end - More Sign Block API
+         if (this.getBlockState().getBlock() instanceof SignBlock sign) {
+             Vec3 signPositionOffset = sign.getSignHitboxCenterPosition(this.getBlockState());
+-            double xd = player.getX() - (this.getBlockPos().getX() + signPositionOffset.x);
+-            double zd = player.getZ() - (this.getBlockPos().getZ() + signPositionOffset.z);
++            double xd = x - (this.getBlockPos().getX() + signPositionOffset.x); // Paper - More Sign Block API
++            double zd = z - (this.getBlockPos().getZ() + signPositionOffset.z); // Paper - More Sign Block API
+             float signYRot = sign.getYRotationDegrees(this.getBlockState());
+             float playerYRot = (float)(Mth.atan2(zd, xd) * 180.0F / (float)Math.PI) - 90.0F;
+             return Mth.degreesDifferenceAbs(signYRot, playerYRot) <= 90.0F ? SignTextSlot.FRONT : SignTextSlot.BACK;
+@@ -126,11 +_,13 @@
+ 
+     public void updateSignText(final Player player, final SignTextSlot slot, final List<FilteredText> lines) {
+         if (!this.isWaxed() && player.getUUID().equals(this.getPlayerWhoMayEdit()) && this.level != null) {
+-            this.updateText(text -> updateMessages(lines, text, player.isTextFilteringEnabled()), slot);
++            this.updateText(text -> updateMessages(lines, text, player.isTextFilteringEnabled()), slot), frontText); // CraftBukkit
+             this.setAllowedPlayerEditor(null);
+             this.level.sendBlockUpdated(this.getBlockPos(), this.getBlockState(), this.getBlockState(), Block.UPDATE_ALL);
+         } else {
+             LOGGER.warn("Player {} just tried to change non-editable sign", player.getPlainTextName());
++            if (player.distanceToSqr(this.getBlockPos().getX(), this.getBlockPos().getY(), this.getBlockPos().getZ()) < Mth.square(32)) // Paper - Don't send far away sign update
++            ((net.minecraft.server.level.ServerPlayer) player).connection.send(this.getUpdatePacket()); // CraftBukkit
+         }
+     }
+ 
+@@ -220,11 +_,55 @@
+         return hasAnyClickCommand;
+     }
+ 
+-    private static CommandSourceStack createCommandSourceStack(final @Nullable Player player, final ServerLevel level, final BlockPos pos) {
++    // CraftBukkit start
++    private final CommandSource commandSource = new CommandSource() {
++
++        @Override
++        public void sendSystemMessage(Component message) {}
++
++        @Override
++        public org.bukkit.command.CommandSender getBukkitSender(CommandSourceStack commandSourceStack) {
++            return commandSourceStack.getEntity() != null ? commandSourceStack.getEntity().getBukkitEntity() : new org.bukkit.craftbukkit.command.CraftBlockCommandSender(commandSourceStack, SignBlockEntity.this);
++        }
++
++        @Override
++        public boolean acceptsSuccess() {
++            return false;
++        }
++
++        @Override
++        public boolean acceptsFailure() {
++            return false;
++        }
++
++        @Override
++        public boolean shouldInformAdmins() {
++            return false;
++        }
++    };
++
++    private CommandSourceStack createCommandSourceStack(final @Nullable Player player, final ServerLevel level, final BlockPos pos) {
++        // CraftBukkit end
+         String textName = player == null ? "Sign" : player.getPlainTextName();
+         Component displayName = player == null ? Component.literal("Sign") : player.getDisplayName();
++        // Paper start - Fix commands from signs not firing command events
++        CommandSource commandSource = level.paperConfig().misc.showSignClickCommandFailureMsgsToPlayer ? new io.papermc.paper.commands.DelegatingCommandSource(this.commandSource) {
++            @Override
++            public void sendSystemMessage(Component message) {
++                if (player instanceof final net.minecraft.server.level.ServerPlayer serverPlayer) {
++                    serverPlayer.sendSystemMessage(message);
++                }
++            }
++
++            @Override
++            public boolean acceptsFailure() {
++                return true;
++            }
++        } : this.commandSource;
++        // Paper end - Fix commands from signs not firing command events
++        // CraftBukkit - this
+         return new CommandSourceStack(
+-            CommandSource.NULL, Vec3.atCenterOf(pos), Vec2.ZERO, level, LevelBasedPermissionSet.GAMEMASTER, textName, displayName, level.getServer(), player
++            commandSource, Vec3.atCenterOf(pos), Vec2.ZERO, level, LevelBasedPermissionSet.GAMEMASTER, textName, displayName, level.getServer(), player // Paper - Fix commands from signs not firing command events
+         );
+     }
+ 
+@@ -243,12 +_,17 @@
+     }
+ 
+     public @Nullable UUID getPlayerWhoMayEdit() {
++        // CraftBukkit start - unnecessary sign ticking removed, so do this lazily
++        if (this.level != null && this.playerWhoMayEdit != null) {
++            this.clearInvalidPlayerWhoMayEdit(this, this.level, this.playerWhoMayEdit);
++        }
++        // CraftBukkit end
+         return this.playerWhoMayEdit;
+     }
+ 
+     private void markUpdated() {
+         this.setChanged();
+-        this.level.sendBlockUpdated(this.getBlockPos(), this.getBlockState(), this.getBlockState(), Block.UPDATE_ALL);
++        if (this.level != null) this.level.sendBlockUpdated(this.getBlockPos(), this.getBlockState(), this.getBlockState(), Block.UPDATE_ALL); // CraftBukkit - skip notify if world is null (SPIGOT-5122)
+     }
+ 
+     public boolean isWaxed() {

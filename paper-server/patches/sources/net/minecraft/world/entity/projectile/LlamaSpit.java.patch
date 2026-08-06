@@ -1,0 +1,31 @@
+--- a/net/minecraft/world/entity/projectile/LlamaSpit.java
++++ b/net/minecraft/world/entity/projectile/LlamaSpit.java
+@@ -44,16 +_,16 @@
+         super.tick();
+         Vec3 movement = this.getDeltaMovement();
+         HitResult hitResult = ProjectileUtil.getHitResultOnMoveVector(this, this::canHitEntity);
+-        this.hitTargetOrDeflectSelf(hitResult);
++        this.preHitTargetOrDeflectSelf(hitResult); // CraftBukkit - projectile hit event
+         double x = this.getX() + movement.x;
+         double y = this.getY() + movement.y;
+         double z = this.getZ() + movement.z;
+         this.updateRotation();
+         boolean touchesNoAir = this.level().findBlocksIn(this.getBoundingBox()).filterState(BlockBehaviour.BlockStateBase::isAir).noneMatched();
+         if (touchesNoAir) {
+-            this.discard();
++            this.discard(org.bukkit.event.entity.EntityRemoveEvent.Cause.DESPAWN); // CraftBukkit - add Bukkit remove cause
+         } else if (this.isInWater()) {
+-            this.discard();
++            this.discard(org.bukkit.event.entity.EntityRemoveEvent.Cause.DESPAWN); // CraftBukkit - add Bukkit remove cause
+         } else {
+             this.setDeltaMovement(movement.scale(this.getAirDrag()));
+             this.applyGravity();
+@@ -82,7 +_,7 @@
+     protected void onHitBlock(final BlockHitResult hitResult) {
+         super.onHitBlock(hitResult);
+         if (!this.level().isClientSide()) {
+-            this.discard();
++            this.discard(org.bukkit.event.entity.EntityRemoveEvent.Cause.HIT); // CraftBukkit - add Bukkit remove cause
+         }
+     }
+ 
