@@ -1,14 +1,14 @@
-From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
 From: File <noreply+automated@papermc.io>
 Date: Sun, 20 Apr 1997 15:37:42 +0200
 Subject: [PATCH] paper File Patches
 
 
 diff --git a/net/minecraft/advancements/AdvancementHolder.java b/net/minecraft/advancements/AdvancementHolder.java
-index 3a0891109dd18e2d2b7304fbb8d96522172f9ea8..4aaa9fd163acc55a40373f221151451b6995a408 100644
+index b947ba0f87b9ea4b11810e2fe7c980907cbffb98..e01727a8eb1a152afc3e47dc4be746e86b9c4f05 100644
 --- a/net/minecraft/advancements/AdvancementHolder.java
 +++ b/net/minecraft/advancements/AdvancementHolder.java
-@@ -26,4 +26,10 @@ public record AdvancementHolder(Identifier id, Advancement value) {
+@@ -33,4 +33,10 @@ public record AdvancementHolder(Identifier id, Advancement value) {
      public String toString() {
          return this.id.toString();
      }

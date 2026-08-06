@@ -1,14 +1,14 @@
-From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
 From: File <noreply+automated@papermc.io>
 Date: Sun, 20 Apr 1997 15:37:42 +0200
 Subject: [PATCH] paper File Patches
 
 
 diff --git a/net/minecraft/world/level/block/LeavesBlock.java b/net/minecraft/world/level/block/LeavesBlock.java
-index b193e0d1a754837f26cf731b4cef3586fbbf038f..23ff958d35aa9199f361aa88cca7fd676f035709 100644
+index ef2957e6f2462413debc8c417f053cf7f0f80902..d0dba204ed4f709470d097ddf6448e432e5530bc 100644
 --- a/net/minecraft/world/level/block/LeavesBlock.java
 +++ b/net/minecraft/world/level/block/LeavesBlock.java
-@@ -66,6 +66,14 @@ public abstract class LeavesBlock extends Block implements SimpleWaterloggedBloc
+@@ -63,6 +63,14 @@ public class LeavesBlock extends Block implements SimpleWaterloggedBlock {
      @Override
      protected void randomTick(final BlockState state, final ServerLevel level, final BlockPos pos, final RandomSource random) {
          if (this.decaying(state)) {

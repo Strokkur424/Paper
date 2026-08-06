@@ -1,0 +1,22 @@
+From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/world/level/block/PathBlock.java b/net/minecraft/world/level/block/PathBlock.java
+index 2e5fa2cb1be88142388e5dd623bdcbc26a08555e..36215938f2fbe83bfc0d623b1af7934a16e005fc 100644
+--- a/net/minecraft/world/level/block/PathBlock.java
++++ b/net/minecraft/world/level/block/PathBlock.java
+@@ -59,6 +59,11 @@ public class PathBlock extends Block {
+ 
+     @Override
+     protected void tick(final BlockState state, final ServerLevel level, final BlockPos pos, final RandomSource random) {
++        // CraftBukkit start - do not fade if the block is valid here
++        if (state.canSurvive(level, pos)) {
++            return;
++        }
++        // CraftBukkit end
+         this.turnToBaseBlock(null, state, level, pos);
+     }
+ 

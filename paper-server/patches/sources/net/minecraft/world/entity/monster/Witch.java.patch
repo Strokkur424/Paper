@@ -1,11 +1,11 @@
-From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
 From: File <noreply+automated@papermc.io>
 Date: Sun, 20 Apr 1997 15:37:42 +0200
 Subject: [PATCH] paper File Patches
 
 
 diff --git a/net/minecraft/world/entity/monster/Witch.java b/net/minecraft/world/entity/monster/Witch.java
-index 27d138af6859f6e91cffee92953259884c734d75..b259b84556f0759dff1e1587b09995cbf80480e3 100644
+index 607f4f816126c0dbbf99bc12762be393d12f2e47..d906a590d583ffb150a27b3755fc23e8469d6a6c 100644
 --- a/net/minecraft/world/entity/monster/Witch.java
 +++ b/net/minecraft/world/entity/monster/Witch.java
 @@ -124,8 +124,14 @@ public class Witch extends Raider implements RangedAttackMob {
@@ -88,5 +88,5 @@ index 27d138af6859f6e91cffee92953259884c734d75..b259b84556f0759dff1e1587b09995cb
 +                itemStack = org.bukkit.craftbukkit.inventory.CraftItemStack.asNMSCopy(event.getPotion());
 +                // Paper end - WitchThrowPotionEven
                  Projectile.spawnProjectileUsingShoot(
-                     ThrownSplashPotion::new, serverLevel, itemStack, this, xd, yd + dist * 0.2, zd, dist <= 2.0 ? 0.45F : 0.75F, 8.0F
-                 );
+                     ThrownSplashPotion::new,
+                     serverLevel,

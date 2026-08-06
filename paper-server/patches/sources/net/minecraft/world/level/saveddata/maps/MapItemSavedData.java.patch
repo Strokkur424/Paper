@@ -1,14 +1,14 @@
-From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
 From: File <noreply+automated@papermc.io>
 Date: Sun, 20 Apr 1997 15:37:42 +0200
 Subject: [PATCH] paper File Patches
 
 
 diff --git a/net/minecraft/world/level/saveddata/maps/MapItemSavedData.java b/net/minecraft/world/level/saveddata/maps/MapItemSavedData.java
-index 8b1487ca9c69b1209267d4201ecfffffe2bf6970..f05ab5fdab4cb587974e2864e859e49375f8165e 100644
+index 30fa2318d751e843eb9f07dfe2679beed2cd61ef..1c8b9c0a1f615dedca9028379a1d8f60e9c39947 100644
 --- a/net/minecraft/world/level/saveddata/maps/MapItemSavedData.java
 +++ b/net/minecraft/world/level/saveddata/maps/MapItemSavedData.java
-@@ -48,7 +48,7 @@ public class MapItemSavedData extends SavedData {
+@@ -47,7 +47,7 @@ public class MapItemSavedData extends SavedData {
      private static final String FRAME_PREFIX = "frame-";
      public static final Codec<MapItemSavedData> CODEC = RecordCodecBuilder.create(
          i -> i.group(
@@ -17,7 +17,7 @@ index 8b1487ca9c69b1209267d4201ecfffffe2bf6970..f05ab5fdab4cb587974e2864e859e493
                  Codec.INT.fieldOf("xCenter").forGetter(m -> m.centerX),
                  Codec.INT.fieldOf("zCenter").forGetter(m -> m.centerZ),
                  Codec.BYTE.optionalFieldOf("scale", (byte)0).forGetter(m -> m.scale),
-@@ -69,6 +69,7 @@ public class MapItemSavedData extends SavedData {
+@@ -68,6 +68,7 @@ public class MapItemSavedData extends SavedData {
      public byte scale;
      public byte[] colors = new byte[16384];
      public boolean locked;
@@ -25,7 +25,7 @@ index 8b1487ca9c69b1209267d4201ecfffffe2bf6970..f05ab5fdab4cb587974e2864e859e493
      public final List<MapItemSavedData.HoldingPlayer> carriedBy = Lists.newArrayList();
      public final Map<Player, MapItemSavedData.HoldingPlayer> carriedByPlayers = Maps.newHashMap();
      private final Map<String, MapBanner> bannerMarkers = Maps.newHashMap();
-@@ -76,6 +77,12 @@ public class MapItemSavedData extends SavedData {
+@@ -75,6 +76,12 @@ public class MapItemSavedData extends SavedData {
      private final Map<String, MapFrame> frameMarkers = Maps.newHashMap();
      private int trackedDecorationCount;
  
@@ -38,7 +38,7 @@ index 8b1487ca9c69b1209267d4201ecfffffe2bf6970..f05ab5fdab4cb587974e2864e859e493
      public static SavedDataType<MapItemSavedData> type(final MapId id) {
          return new SavedDataType<>(Identifier.withDefaultNamespace(id.key()), () -> {
              throw new IllegalStateException("Should never create an empty map saved data");
-@@ -98,7 +105,28 @@ public class MapItemSavedData extends SavedData {
+@@ -97,7 +104,28 @@ public class MapItemSavedData extends SavedData {
          this.trackingPosition = trackingPosition;
          this.unlimitedTracking = unlimitedTracking;
          this.locked = locked;
@@ -67,7 +67,7 @@ index 8b1487ca9c69b1209267d4201ecfffffe2bf6970..f05ab5fdab4cb587974e2864e859e493
  
      private MapItemSavedData(
          final ResourceKey<Level> dimension,
-@@ -126,6 +154,8 @@ public class MapItemSavedData extends SavedData {
+@@ -125,6 +153,8 @@ public class MapItemSavedData extends SavedData {
              this.frameMarkers.put(frame.getId(), frame);
              this.addDecoration(MapDecorationTypes.FRAME, null, getFrameKey(frame.entityId()), frame.pos().getX(), frame.pos().getZ(), frame.rotation(), null);
          }
@@ -76,7 +76,7 @@ index 8b1487ca9c69b1209267d4201ecfffffe2bf6970..f05ab5fdab4cb587974e2864e859e493
      }
  
      public static MapItemSavedData createFresh(
-@@ -209,6 +239,7 @@ public class MapItemSavedData extends SavedData {
+@@ -208,6 +238,7 @@ public class MapItemSavedData extends SavedData {
              }
  
              MapFrame mapFrame = new MapFrame(pos, placedInFrame.getDirection().get2DDataValue() * 90, placedInFrame.getId());
@@ -84,7 +84,7 @@ index 8b1487ca9c69b1209267d4201ecfffffe2bf6970..f05ab5fdab4cb587974e2864e859e493
              this.addDecoration(
                  MapDecorationTypes.FRAME,
                  tickingPlayer.level(),
-@@ -222,6 +253,7 @@ public class MapItemSavedData extends SavedData {
+@@ -221,6 +252,7 @@ public class MapItemSavedData extends SavedData {
              if (!mapFrame.equals(oldFrame)) {
                  this.setDirty();
              }
@@ -92,7 +92,7 @@ index 8b1487ca9c69b1209267d4201ecfffffe2bf6970..f05ab5fdab4cb587974e2864e859e493
          }
  
          MapDecorations staticDecorations = itemStack.getOrDefault(DataComponents.MAP_DECORATIONS, MapDecorations.EMPTY);
-@@ -252,7 +284,7 @@ public class MapItemSavedData extends SavedData {
+@@ -251,7 +283,7 @@ public class MapItemSavedData extends SavedData {
              this.trackedDecorationCount--;
          }
  
@@ -101,7 +101,7 @@ index 8b1487ca9c69b1209267d4201ecfffffe2bf6970..f05ab5fdab4cb587974e2864e859e493
      }
  
      public static void addTargetDecoration(final ItemStack itemStack, final BlockPos position, final String key, final Holder<MapDecorationType> decorationType) {
-@@ -375,7 +407,12 @@ public class MapItemSavedData extends SavedData {
+@@ -371,7 +403,12 @@ public class MapItemSavedData extends SavedData {
      }
  
      private void setColorsDirty(final int x, final int y) {
@@ -115,7 +115,7 @@ index 8b1487ca9c69b1209267d4201ecfffffe2bf6970..f05ab5fdab4cb587974e2864e859e493
  
          for (MapItemSavedData.HoldingPlayer holdingPlayer : this.carriedBy) {
              holdingPlayer.markColorsDirty(x, y);
-@@ -416,7 +453,7 @@ public class MapItemSavedData extends SavedData {
+@@ -412,7 +449,7 @@ public class MapItemSavedData extends SavedData {
                  return true;
              }
  
@@ -124,7 +124,7 @@ index 8b1487ca9c69b1209267d4201ecfffffe2bf6970..f05ab5fdab4cb587974e2864e859e493
                  this.bannerMarkers.put(banner.getId(), banner);
                  this.addDecoration(banner.getDecoration(), level, banner.getId(), xPos, zPos, 180.0, banner.name().orElse(null));
                  this.setDirty();
-@@ -518,7 +555,7 @@ public class MapItemSavedData extends SavedData {
+@@ -504,7 +541,7 @@ public class MapItemSavedData extends SavedData {
              this.player = player;
          }
  
@@ -133,7 +133,7 @@ index 8b1487ca9c69b1209267d4201ecfffffe2bf6970..f05ab5fdab4cb587974e2864e859e493
              int startX = this.minDirtyX;
              int startY = this.minDirtyY;
              int width = this.maxDirtyX + 1 - this.minDirtyX;
-@@ -527,7 +564,7 @@ public class MapItemSavedData extends SavedData {
+@@ -513,7 +550,7 @@ public class MapItemSavedData extends SavedData {
  
              for (int x = 0; x < width; x++) {
                  for (int y = 0; y < height; y++) {
@@ -142,7 +142,7 @@ index 8b1487ca9c69b1209267d4201ecfffffe2bf6970..f05ab5fdab4cb587974e2864e859e493
                  }
              }
  
-@@ -536,17 +573,38 @@ public class MapItemSavedData extends SavedData {
+@@ -522,17 +559,38 @@ public class MapItemSavedData extends SavedData {
  
          private @Nullable Packet<?> nextUpdatePacket(final MapId id) {
              MapItemSavedData.MapPatch patch;
@@ -184,7 +184,7 @@ index 8b1487ca9c69b1209267d4201ecfffffe2bf6970..f05ab5fdab4cb587974e2864e859e493
              } else {
                  decorations = null;
              }
-@@ -574,6 +632,23 @@ public class MapItemSavedData extends SavedData {
+@@ -560,6 +618,23 @@ public class MapItemSavedData extends SavedData {
          private void markDecorationsDirty() {
              this.dirtyDecorations = true;
          }
@@ -208,7 +208,7 @@ index 8b1487ca9c69b1209267d4201ecfffffe2bf6970..f05ab5fdab4cb587974e2864e859e493
      }
  
      private record MapDecorationLocation(Holder<MapDecorationType> type, byte x, byte y, byte rot) {
-@@ -618,4 +693,71 @@ public class MapItemSavedData extends SavedData {
+@@ -604,4 +679,71 @@ public class MapItemSavedData extends SavedData {
              }
          }
      }

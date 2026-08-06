@@ -1,14 +1,14 @@
-From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
 From: File <noreply+automated@papermc.io>
 Date: Sun, 20 Apr 1997 15:37:42 +0200
 Subject: [PATCH] paper File Patches
 
 
 diff --git a/net/minecraft/core/Direction.java b/net/minecraft/core/Direction.java
-index bf30dedb613e57ce3e1fb9f445bbb7ec17923d26..bb0c36283b4bdcfa10a4e1b5668b0c34c11cdced 100644
+index 40ba3520bf292a42eb199bfe96a8c1b5d2434ca0..97497799ed9097a72a2b3cac19efca8368ea3144 100644
 --- a/net/minecraft/core/Direction.java
 +++ b/net/minecraft/core/Direction.java
-@@ -63,6 +63,12 @@ public enum Direction implements StringRepresentable {
+@@ -63,6 +63,12 @@ public enum Direction implements Directional, StringRepresentable {
          .sorted(Comparator.comparingInt(d -> d.data2d))
          .toArray(Direction[]::new);
  
@@ -21,7 +21,7 @@ index bf30dedb613e57ce3e1fb9f445bbb7ec17923d26..bb0c36283b4bdcfa10a4e1b5668b0c34
      Direction(
          final int data3d,
          final int oppositeIndex,
-@@ -81,6 +87,11 @@ public enum Direction implements StringRepresentable {
+@@ -81,6 +87,11 @@ public enum Direction implements Directional, StringRepresentable {
          this.normal = normal;
          this.normalVec3 = Vec3.atLowerCornerOf(normal);
          this.normalVec3f = new Vector3f(normal.getX(), normal.getY(), normal.getZ());
@@ -33,22 +33,24 @@ index bf30dedb613e57ce3e1fb9f445bbb7ec17923d26..bb0c36283b4bdcfa10a4e1b5668b0c34
      }
  
      public static Direction[] orderedByNearest(final Entity entity) {
-@@ -253,15 +264,15 @@ public enum Direction implements StringRepresentable {
-     }
+@@ -254,17 +265,17 @@ public enum Direction implements Directional, StringRepresentable {
  
+     @Override
      public int getStepX() {
 -        return this.normal.getX();
 +        return this.adjX; // Paper - Perf: Inline shift direction fields
      }
  
+     @Override
      public int getStepY() {
 -        return this.normal.getY();
 +        return this.adjY; // Paper - Perf: Inline shift direction fields
      }
  
+     @Override
      public int getStepZ() {
 -        return this.normal.getZ();
 +        return this.adjZ; // Paper - Perf: Inline shift direction fields
      }
  
-     public Vector3f step() {
+     @Override

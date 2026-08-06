@@ -1,14 +1,14 @@
-From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
 From: File <noreply+automated@papermc.io>
 Date: Sun, 20 Apr 1997 15:37:42 +0200
 Subject: [PATCH] paper File Patches
 
 
 diff --git a/net/minecraft/world/item/MapItem.java b/net/minecraft/world/item/MapItem.java
-index 2c302b9aedb95df240a43242ca07a3982a528f8c..337b6aa7ee170a1ec9310a72d4d5f25176246c6b 100644
+index 9a571513a59c68b12fa671f011ae769c3aaef236..5392d8592556fd3f8de2a953a71d089f59516c9d 100644
 --- a/net/minecraft/world/item/MapItem.java
 +++ b/net/minecraft/world/item/MapItem.java
-@@ -103,10 +103,10 @@ public class MapItem extends Item {
+@@ -115,10 +115,10 @@ public class MapItem extends Item {
                              int averagingAreaMinX = (centerX / scale + imgX - 64) * scale;
                              int averagingAreaMinZ = (centerZ / scale + imgY - 64) * scale;
                              Multiset<MapColor> colorCount = LinkedHashMultiset.create();
@@ -21,7 +21,7 @@ index 2c302b9aedb95df240a43242ca07a3982a528f8c..337b6aa7ee170a1ec9310a72d4d5f251
                                  int waterDepth = 0;
                                  double averageAreaHeight = 0.0;
                                  if (level.dimensionType().hasCeiling()) {
-@@ -213,7 +213,7 @@ public class MapItem extends Item {
+@@ -225,7 +225,7 @@ public class MapItem extends Item {
  
                  for (int row = 0; row < 128; row++) {
                      for (int column = 0; column < 128; column++) {

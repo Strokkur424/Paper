@@ -1,11 +1,11 @@
-From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
 From: File <noreply+automated@papermc.io>
 Date: Sun, 20 Apr 1997 15:37:42 +0200
 Subject: [PATCH] paper File Patches
 
 
 diff --git a/net/minecraft/world/entity/animal/fox/Fox.java b/net/minecraft/world/entity/animal/fox/Fox.java
-index e281bea59b3bf83e90693477548de69ffcecd4c0..dbe9cb45c7687a9f8da3f2d8b779d15bbe9a3473 100644
+index 11812c8ef79a73bdd78499ac1c9c9b617611cda1..9bc2f97a31876362f8123f5411fcd574c3e36a3a 100644
 --- a/net/minecraft/world/entity/animal/fox/Fox.java
 +++ b/net/minecraft/world/entity/animal/fox/Fox.java
 @@ -453,7 +453,7 @@ public class Fox extends Animal {

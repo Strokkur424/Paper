@@ -1,14 +1,14 @@
-From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
 From: File <noreply+automated@papermc.io>
 Date: Sun, 20 Apr 1997 15:37:42 +0200
 Subject: [PATCH] paper File Patches
 
 
 diff --git a/net/minecraft/world/level/BaseSpawner.java b/net/minecraft/world/level/BaseSpawner.java
-index d2ed04e7c01abd39a4b8f2615f9bbab4a45a90a8..2f89a9145902e514089924462003709f256ac3f4 100644
+index 28aeb0557d4049f8c94e91b86cb3a7cce762d9e3..56f9c7906761b49c1090bd2489fe111f0d2a4a32 100644
 --- a/net/minecraft/world/level/BaseSpawner.java
 +++ b/net/minecraft/world/level/BaseSpawner.java
-@@ -58,13 +58,15 @@ public abstract class BaseSpawner {
+@@ -59,9 +59,11 @@ public abstract class BaseSpawner {
      public int maxNearbyEntities = 6;
      public int requiredPlayerRange = 16;
      public int spawnRange = 4;
@@ -19,13 +19,17 @@ index d2ed04e7c01abd39a4b8f2615f9bbab4a45a90a8..2f89a9145902e514089924462003709f
 +        this.spawnPotentials = WeightedList.of(); // CraftBukkit - SPIGOT-3496, MC-92282
      }
  
+     public void setEntityData(final TypedEntityData<EntityType<?>> entityData, final @Nullable Level level, final RandomSource random, final BlockPos pos) {
+@@ -70,7 +72,7 @@ public abstract class BaseSpawner {
+     }
+ 
      public boolean isNearPlayer(final Level level, final BlockPos pos) {
 -        return level.hasNearbyAlivePlayer(pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5, this.requiredPlayerRange);
 +        return level.hasNearbyAlivePlayerThatAffectsSpawning(pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5, this.requiredPlayerRange); // Paper - Affects Spawning API
      }
  
      public void clientTick(final Level level, final BlockPos pos) {
-@@ -87,13 +89,19 @@ public abstract class BaseSpawner {
+@@ -93,13 +95,19 @@ public abstract class BaseSpawner {
      }
  
      public void serverTick(final ServerLevel level, final BlockPos pos) {
@@ -47,7 +51,7 @@ index d2ed04e7c01abd39a4b8f2615f9bbab4a45a90a8..2f89a9145902e514089924462003709f
              } else {
                  boolean delay = false;
                  RandomSource random = level.getRandom();
-@@ -131,6 +139,21 @@ public abstract class BaseSpawner {
+@@ -137,6 +145,21 @@ public abstract class BaseSpawner {
                                  continue;
                              }
  
@@ -69,7 +73,7 @@ index d2ed04e7c01abd39a4b8f2615f9bbab4a45a90a8..2f89a9145902e514089924462003709f
                              Entity entity = EntityType.loadEntityRecursive(input, level, EntitySpawnReason.SPAWNER, e -> {
                                  e.snapTo(spawnPos.x, spawnPos.y, spawnPos.z, e.getYRot(), e.getXRot());
                                  return e;
-@@ -165,9 +188,22 @@ public abstract class BaseSpawner {
+@@ -171,9 +194,22 @@ public abstract class BaseSpawner {
                                  }
  
                                  nextSpawnData.getEquipment().ifPresent(mob::equip);
@@ -93,7 +97,7 @@ index d2ed04e7c01abd39a4b8f2615f9bbab4a45a90a8..2f89a9145902e514089924462003709f
                                  this.delay(level, pos);
                                  return;
                              }
-@@ -178,7 +214,7 @@ public abstract class BaseSpawner {
+@@ -184,7 +220,7 @@ public abstract class BaseSpawner {
                                  mob.spawnAnim();
                              }
  
@@ -102,7 +106,7 @@ index d2ed04e7c01abd39a4b8f2615f9bbab4a45a90a8..2f89a9145902e514089924462003709f
                          }
                      }
                  }
-@@ -205,12 +241,14 @@ public abstract class BaseSpawner {
+@@ -211,12 +247,14 @@ public abstract class BaseSpawner {
      }
  
      public void load(final @Nullable Level level, final BlockPos pos, final ValueInput input) {
@@ -120,7 +124,7 @@ index d2ed04e7c01abd39a4b8f2615f9bbab4a45a90a8..2f89a9145902e514089924462003709f
          this.spawnCount = input.getIntOr("SpawnCount", 4);
          this.maxNearbyEntities = input.getIntOr("MaxNearbyEntities", 6);
          this.requiredPlayerRange = input.getIntOr("RequiredPlayerRange", 16);
-@@ -219,9 +257,19 @@ public abstract class BaseSpawner {
+@@ -225,9 +263,19 @@ public abstract class BaseSpawner {
      }
  
      public void save(final ValueOutput output) {

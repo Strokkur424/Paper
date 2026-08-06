@@ -1,11 +1,11 @@
-From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
 From: File <noreply+automated@papermc.io>
 Date: Sun, 20 Apr 1997 15:37:42 +0200
 Subject: [PATCH] paper File Patches
 
 
 diff --git a/net/minecraft/world/level/levelgen/structure/StructurePiece.java b/net/minecraft/world/level/levelgen/structure/StructurePiece.java
-index aac6224ec9b10456f731108b8929e2159fdd2565..a04be389ba8c0cd968837d2a381fe61f5a6a0f0f 100644
+index 9410cf8f708f696eec3255a6e6ba63140642f955..29ed70aa28cc65ec9fb65e4f17db1480c84878ff 100644
 --- a/net/minecraft/world/level/levelgen/structure/StructurePiece.java
 +++ b/net/minecraft/world/level/levelgen/structure/StructurePiece.java
 @@ -177,6 +177,11 @@ public abstract class StructurePiece {

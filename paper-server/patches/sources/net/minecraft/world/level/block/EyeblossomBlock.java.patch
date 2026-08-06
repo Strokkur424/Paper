@@ -1,14 +1,14 @@
-From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
 From: File <noreply+automated@papermc.io>
 Date: Sun, 20 Apr 1997 15:37:42 +0200
 Subject: [PATCH] paper File Patches
 
 
 diff --git a/net/minecraft/world/level/block/EyeblossomBlock.java b/net/minecraft/world/level/block/EyeblossomBlock.java
-index 1d5999988eb2c92d42c2ecc513d64503d66a2081..a2c0369e1abc45d57a5431dc224495a00bb82b5c 100644
+index 33ccc6eeabc3b3b82cb7a1ae9494af61602a24b5..8e920d01ef669056751b021b7d0eb80c803078ee 100644
 --- a/net/minecraft/world/level/block/EyeblossomBlock.java
 +++ b/net/minecraft/world/level/block/EyeblossomBlock.java
-@@ -106,6 +106,7 @@ public class EyeblossomBlock extends FlowerBlock {
+@@ -94,6 +94,7 @@ public class EyeblossomBlock extends FlowerBlock {
          final InsideBlockEffectApplier effectApplier,
          final boolean isPrecise
      ) {

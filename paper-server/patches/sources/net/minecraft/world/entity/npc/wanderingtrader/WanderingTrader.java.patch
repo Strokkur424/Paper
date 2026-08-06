@@ -1,11 +1,11 @@
-From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
 From: File <noreply+automated@papermc.io>
 Date: Sun, 20 Apr 1997 15:37:42 +0200
 Subject: [PATCH] paper File Patches
 
 
 diff --git a/net/minecraft/world/entity/npc/wanderingtrader/WanderingTrader.java b/net/minecraft/world/entity/npc/wanderingtrader/WanderingTrader.java
-index 93cbda6cf9dc15c6247c78b8414412342b610666..f79353aa58b03d00839e4e95d1fd2480a635a592 100644
+index fd470bce04d5e751e13a15cc34e485f11b11de24..7af7514a204914957de02d8a775fb8ad9ea6d010 100644
 --- a/net/minecraft/world/entity/npc/wanderingtrader/WanderingTrader.java
 +++ b/net/minecraft/world/entity/npc/wanderingtrader/WanderingTrader.java
 @@ -51,6 +51,10 @@ public class WanderingTrader extends AbstractVillager implements Consumable.Over

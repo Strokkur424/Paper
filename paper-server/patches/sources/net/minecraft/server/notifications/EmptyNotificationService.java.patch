@@ -1,14 +1,14 @@
-From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
 From: File <noreply+automated@papermc.io>
 Date: Sun, 20 Apr 1997 15:37:42 +0200
 Subject: [PATCH] paper File Patches
 
 
 diff --git a/net/minecraft/server/notifications/EmptyNotificationService.java b/net/minecraft/server/notifications/EmptyNotificationService.java
-index d04e1f5afcc6f86d712d9a30c20868cf04498569..5056f1e601604b9db19037b9a2395b125b10679a 100644
+index db18147ce0974f983c550a9d3b52c77e6e0c4139..68516e81b30b9a5c68316f02fd06c1fd121f64d4 100644
 --- a/net/minecraft/server/notifications/EmptyNotificationService.java
 +++ b/net/minecraft/server/notifications/EmptyNotificationService.java
-@@ -69,7 +69,7 @@ public class EmptyNotificationService implements NotificationService {
+@@ -85,7 +85,7 @@ public class EmptyNotificationService implements NotificationService {
      }
  
      @Override

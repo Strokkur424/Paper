@@ -1,16 +1,16 @@
-From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
 From: File <noreply+automated@papermc.io>
 Date: Sun, 20 Apr 1997 15:37:42 +0200
 Subject: [PATCH] paper File Patches
 
 
 diff --git a/net/minecraft/world/entity/projectile/FishingHook.java b/net/minecraft/world/entity/projectile/FishingHook.java
-index b4512ba0c56fda4b4d88418266c97e0c42c72bb2..c0bb1b62dfcdebbd34a8e8423fa36eb4924a55e5 100644
+index 5b73961edcc6b145e126c51bdf59470680195b20..afb186fe69096bc98f22a864e382d0901c1667e0 100644
 --- a/net/minecraft/world/entity/projectile/FishingHook.java
 +++ b/net/minecraft/world/entity/projectile/FishingHook.java
-@@ -70,10 +70,26 @@ public class FishingHook extends Projectile {
+@@ -72,10 +72,26 @@ public class FishingHook extends Projectile {
      private final int lureSpeed;
-     private final InterpolationHandler interpolationHandler = new InterpolationHandler(this);
+     private final InterpolationHandler interpolationHandler = new LinearInterpolationHandler(this);
  
 +    // CraftBukkit start - Extra variables to enable modification of fishing wait time, values are minecraft defaults
 +    public int minWaitTime = 100;
@@ -35,7 +35,7 @@ index b4512ba0c56fda4b4d88418266c97e0c42c72bb2..c0bb1b62dfcdebbd34a8e8423fa36eb4
      }
  
      public FishingHook(final EntityType<? extends FishingHook> type, final Level level) {
-@@ -153,12 +169,12 @@ public class FishingHook extends Projectile {
+@@ -155,12 +171,12 @@ public class FishingHook extends Projectile {
          super.tick();
          Player owner = this.getPlayerOwner();
          if (owner == null) {
@@ -50,7 +50,7 @@ index b4512ba0c56fda4b4d88418266c97e0c42c72bb2..c0bb1b62dfcdebbd34a8e8423fa36eb4
                      return;
                  }
              } else {
-@@ -176,12 +192,14 @@ public class FishingHook extends Projectile {
+@@ -178,12 +194,14 @@ public class FishingHook extends Projectile {
              if (this.currentState == FishingHook.FishHookState.FLYING) {
                  if (this.hookedIn != null) {
                      this.setDeltaMovement(Vec3.ZERO);
@@ -65,7 +65,7 @@ index b4512ba0c56fda4b4d88418266c97e0c42c72bb2..c0bb1b62dfcdebbd34a8e8423fa36eb4
                      this.currentState = FishingHook.FishHookState.BOBBING;
                      return;
                  }
-@@ -196,6 +214,7 @@ public class FishingHook extends Projectile {
+@@ -198,6 +216,7 @@ public class FishingHook extends Projectile {
                              this.setPos(this.hookedIn.getX(), this.hookedIn.getY(0.8), this.hookedIn.getZ());
                          } else {
                              this.setHookedEntity(null);
@@ -73,7 +73,7 @@ index b4512ba0c56fda4b4d88418266c97e0c42c72bb2..c0bb1b62dfcdebbd34a8e8423fa36eb4
                              this.currentState = FishingHook.FishHookState.FLYING;
                          }
                      }
-@@ -262,13 +281,13 @@ public class FishingHook extends Projectile {
+@@ -264,13 +283,13 @@ public class FishingHook extends Projectile {
              }
          }
  
@@ -89,7 +89,7 @@ index b4512ba0c56fda4b4d88418266c97e0c42c72bb2..c0bb1b62dfcdebbd34a8e8423fa36eb4
      }
  
      @Override
-@@ -299,11 +318,11 @@ public class FishingHook extends Projectile {
+@@ -301,11 +320,11 @@ public class FishingHook extends Projectile {
          ServerLevel serverLevel = (ServerLevel)this.level();
          int fishingSpeed = 1;
          BlockPos above = blockPos.above();
@@ -103,7 +103,7 @@ index b4512ba0c56fda4b4d88418266c97e0c42c72bb2..c0bb1b62dfcdebbd34a8e8423fa36eb4
              fishingSpeed--;
          }
  
-@@ -313,6 +332,10 @@ public class FishingHook extends Projectile {
+@@ -315,6 +334,10 @@ public class FishingHook extends Projectile {
                  this.timeUntilLured = 0;
                  this.timeUntilHooked = 0;
                  this.getEntityData().set(DATA_BITING, false);
@@ -114,7 +114,7 @@ index b4512ba0c56fda4b4d88418266c97e0c42c72bb2..c0bb1b62dfcdebbd34a8e8423fa36eb4
              }
          } else if (this.timeUntilHooked > 0) {
              this.timeUntilHooked -= fishingSpeed;
-@@ -336,6 +359,12 @@ public class FishingHook extends Projectile {
+@@ -338,6 +361,12 @@ public class FishingHook extends Projectile {
                      serverLevel.sendParticles(ParticleTypes.FISHING, fishX, fishY, fishZ, 0, -particleZMovement, 0.01, particleXMovement, 1.0);
                  }
              } else {
@@ -127,7 +127,7 @@ index b4512ba0c56fda4b4d88418266c97e0c42c72bb2..c0bb1b62dfcdebbd34a8e8423fa36eb4
                  this.playSound(SoundEvents.FISHING_BOBBER_SPLASH, 0.25F, 1.0F + (this.random.nextFloat() - this.random.nextFloat()) * 0.4F);
                  double y = this.getY() + 0.5;
                  serverLevel.sendParticles(
-@@ -379,15 +408,32 @@ public class FishingHook extends Projectile {
+@@ -381,15 +410,32 @@ public class FishingHook extends Projectile {
              }
  
              if (this.timeUntilLured <= 0) {
@@ -164,7 +164,7 @@ index b4512ba0c56fda4b4d88418266c97e0c42c72bb2..c0bb1b62dfcdebbd34a8e8423fa36eb4
      public boolean calculateOpenWater(final BlockPos blockPos) {
          FishingHook.OpenWaterType previousLayer = FishingHook.OpenWaterType.INVALID;
  
-@@ -445,15 +491,30 @@ public class FishingHook extends Projectile {
+@@ -447,15 +493,30 @@ public class FishingHook extends Projectile {
      protected void readAdditionalSaveData(final ValueInput input) {
      }
  
@@ -195,7 +195,7 @@ index b4512ba0c56fda4b4d88418266c97e0c42c72bb2..c0bb1b62dfcdebbd34a8e8423fa36eb4
              } else if (this.nibble > 0) {
                  LootParams params = new LootParams.Builder((ServerLevel)this.level())
                      .withParameter(LootContextParams.ORIGIN, this.position())
-@@ -467,14 +528,27 @@ public class FishingHook extends Projectile {
+@@ -469,14 +530,27 @@ public class FishingHook extends Projectile {
  
                  for (ItemStack itemStack : items) {
                      ItemEntity entity = new ItemEntity(this.level(), this.getX(), this.getY(), this.getZ(), itemStack);
@@ -225,7 +225,7 @@ index b4512ba0c56fda4b4d88418266c97e0c42c72bb2..c0bb1b62dfcdebbd34a8e8423fa36eb4
                      if (itemStack.is(ItemTags.FISHES)) {
                          owner.awardStat(Stats.FISH_CAUGHT, 1);
                      }
-@@ -484,10 +558,24 @@ public class FishingHook extends Projectile {
+@@ -486,10 +560,24 @@ public class FishingHook extends Projectile {
              }
  
              if (this.onGround()) {
@@ -251,7 +251,7 @@ index b4512ba0c56fda4b4d88418266c97e0c42c72bb2..c0bb1b62dfcdebbd34a8e8423fa36eb4
              return dmg;
          } else {
              return 0;
-@@ -517,9 +605,9 @@ public class FishingHook extends Projectile {
+@@ -524,9 +612,9 @@ public class FishingHook extends Projectile {
      }
  
      @Override
@@ -263,7 +263,7 @@ index b4512ba0c56fda4b4d88418266c97e0c42c72bb2..c0bb1b62dfcdebbd34a8e8423fa36eb4
      }
  
      @Override
-@@ -565,7 +653,7 @@ public class FishingHook extends Projectile {
+@@ -572,7 +660,7 @@ public class FishingHook extends Projectile {
          if (this.getPlayerOwner() == null) {
              int ownerId = packet.getData();
              LOGGER.error("Failed to recreate fishing hook on client. {} (id: {}) is not a valid owner.", this.level().getEntity(ownerId), ownerId);

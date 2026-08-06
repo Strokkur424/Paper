@@ -1,18 +1,18 @@
-From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
 From: File <noreply+automated@papermc.io>
 Date: Sun, 20 Apr 1997 15:37:42 +0200
 Subject: [PATCH] paper File Patches
 
 
 diff --git a/net/minecraft/network/chat/MessageSignature.java b/net/minecraft/network/chat/MessageSignature.java
-index 8aa29b1b05baba03f8e19e987d233c2ce691facb..69f2d09836ea109a503bcee762b98b4f74e81cf0 100644
+index 3e17c1d285a7131de5c4ceced8cd50233fab2794..44543a5a4a9fd6d0cac684f3dab5e20cdb7ef8df 100644
 --- a/net/minecraft/network/chat/MessageSignature.java
 +++ b/net/minecraft/network/chat/MessageSignature.java
-@@ -13,6 +13,7 @@ import net.minecraft.util.SignatureValidator;
+@@ -15,6 +15,7 @@ import net.minecraft.util.SignatureValidator;
  import org.jspecify.annotations.Nullable;
  
  public record MessageSignature(byte[] bytes) {
 +    public net.kyori.adventure.chat.SignedMessage.Signature adventure() { return net.kyori.adventure.chat.SignedMessage.signature(this.bytes); } // Paper - adventure; support signed messages
      public static final Codec<MessageSignature> CODEC = ExtraCodecs.BASE64_STRING.xmap(MessageSignature::new, MessageSignature::bytes);
+     public static final StreamCodec<ByteBuf, MessageSignature> STREAM_CODEC = StreamCodec.of(MessageSignature::write, MessageSignature::read);
      public static final int BYTES = 256;
- 

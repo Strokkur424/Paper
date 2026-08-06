@@ -1,14 +1,14 @@
-From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
 From: File <noreply+automated@papermc.io>
 Date: Sun, 20 Apr 1997 15:37:42 +0200
 Subject: [PATCH] paper File Patches
 
 
 diff --git a/net/minecraft/server/level/ServerPlayerGameMode.java b/net/minecraft/server/level/ServerPlayerGameMode.java
-index 8c7867871aefa2963b2b1068a27bdf6b174a9641..e6f8ebe229da830365aecf99790eaa7816078764 100644
+index 8920dea0d102f57d015940d1bfb95d19e582c080..ac20b855a840beaf63dd684ff233cad4d4e62808 100644
 --- a/net/minecraft/server/level/ServerPlayerGameMode.java
 +++ b/net/minecraft/server/level/ServerPlayerGameMode.java
-@@ -46,17 +46,37 @@ public class ServerPlayerGameMode {
+@@ -50,17 +50,37 @@ public class ServerPlayerGameMode {
      private BlockPos delayedDestroyPos = BlockPos.ZERO;
      private int delayedTickStart;
      private int lastSentState = -1;
@@ -48,7 +48,7 @@ index 8c7867871aefa2963b2b1068a27bdf6b174a9641..e6f8ebe229da830365aecf99790eaa78
          Abilities abilities = this.player.getAbilities();
          this.setGameModeForPlayer(gameModeForPlayer, this.gameModeForPlayer);
          if (abilities.flying && gameModeForPlayer != GameType.SPECTATOR && this.isInRangeOfGround()) {
-@@ -67,13 +87,13 @@ public class ServerPlayerGameMode {
+@@ -71,13 +91,13 @@ public class ServerPlayerGameMode {
          this.level
              .getServer()
              .getPlayerList()
@@ -64,7 +64,7 @@ index 8c7867871aefa2963b2b1068a27bdf6b174a9641..e6f8ebe229da830365aecf99790eaa78
      }
  
      protected void setGameModeForPlayer(final GameType gameModeForPlayer, final @Nullable GameType previousGameModeForPlayer) {
-@@ -105,10 +125,11 @@ public class ServerPlayerGameMode {
+@@ -109,10 +129,11 @@ public class ServerPlayerGameMode {
      }
  
      public void tick() {
@@ -79,7 +79,7 @@ index 8c7867871aefa2963b2b1068a27bdf6b174a9641..e6f8ebe229da830365aecf99790eaa78
                  this.hasDelayedDestroy = false;
              } else {
                  float destroyProgress = this.incrementDestroyProgress(blockState, this.delayedDestroyPos, this.delayedTickStart);
-@@ -118,7 +139,13 @@ public class ServerPlayerGameMode {
+@@ -122,7 +143,13 @@ public class ServerPlayerGameMode {
                  }
              }
          } else if (this.isDestroyingBlock) {
@@ -94,7 +94,7 @@ index 8c7867871aefa2963b2b1068a27bdf6b174a9641..e6f8ebe229da830365aecf99790eaa78
              if (blockState.isAir()) {
                  this.level.destroyBlockProgress(this.player.getId(), this.destroyPos, -1);
                  this.lastSentState = -1;
-@@ -151,6 +178,7 @@ public class ServerPlayerGameMode {
+@@ -155,6 +182,7 @@ public class ServerPlayerGameMode {
          final BlockPos pos, final ServerboundPlayerActionPacket.Action action, final Direction direction, final int maxY, final int sequence
      ) {
          if (!this.player.isWithinBlockInteractionRange(pos, 1.0)) {
@@ -102,7 +102,7 @@ index 8c7867871aefa2963b2b1068a27bdf6b174a9641..e6f8ebe229da830365aecf99790eaa78
              this.debugLogging(pos, false, sequence, "too far");
          } else if (pos.getY() > maxY) {
              this.player.connection.send(new ClientboundBlockUpdatePacket(pos, this.level.getBlockState(pos)));
-@@ -164,16 +192,35 @@ public class ServerPlayerGameMode {
+@@ -168,16 +196,35 @@ public class ServerPlayerGameMode {
                  }
  
                  if (!this.level.mayInteract(this.player, pos)) {
@@ -138,7 +138,7 @@ index 8c7867871aefa2963b2b1068a27bdf6b174a9641..e6f8ebe229da830365aecf99790eaa78
                  if (this.player.blockActionRestricted(this.level, pos, this.gameModeForPlayer)) {
                      this.player.connection.send(new ClientboundBlockUpdatePacket(pos, this.level.getBlockState(pos)));
                      this.debugLogging(pos, false, sequence, "block action restricted");
-@@ -183,7 +230,7 @@ public class ServerPlayerGameMode {
+@@ -187,7 +234,7 @@ public class ServerPlayerGameMode {
                  this.destroyProgressStart = this.gameTicks;
                  float progress = 1.0F;
                  BlockState blockState = this.level.getBlockState(pos);
@@ -147,7 +147,7 @@ index 8c7867871aefa2963b2b1068a27bdf6b174a9641..e6f8ebe229da830365aecf99790eaa78
                      EnchantmentHelper.onHitBlock(
                          this.level,
                          this.player.getMainHandItem(),
-@@ -198,6 +245,23 @@ public class ServerPlayerGameMode {
+@@ -202,6 +249,23 @@ public class ServerPlayerGameMode {
                      progress = blockState.getDestroyProgress(this.player, this.player.level(), pos);
                  }
  
@@ -171,7 +171,7 @@ index 8c7867871aefa2963b2b1068a27bdf6b174a9641..e6f8ebe229da830365aecf99790eaa78
                  if (!blockState.isAir() && progress >= 1.0F) {
                      this.destroyAndAck(pos, sequence, "insta mine");
                  } else {
-@@ -238,14 +302,22 @@ public class ServerPlayerGameMode {
+@@ -242,14 +306,22 @@ public class ServerPlayerGameMode {
                  this.debugLogging(pos, true, sequence, "stopped destroying");
              } else if (action == ServerboundPlayerActionPacket.Action.ABORT_DESTROY_BLOCK) {
                  this.isDestroyingBlock = false;
@@ -196,7 +196,7 @@ index 8c7867871aefa2963b2b1068a27bdf6b174a9641..e6f8ebe229da830365aecf99790eaa78
              }
          }
      }
-@@ -261,13 +333,53 @@ public class ServerPlayerGameMode {
+@@ -265,13 +337,53 @@ public class ServerPlayerGameMode {
  
      public boolean destroyBlock(final BlockPos pos) {
          BlockState state = this.level.getBlockState(pos);
@@ -253,7 +253,7 @@ index 8c7867871aefa2963b2b1068a27bdf6b174a9641..e6f8ebe229da830365aecf99790eaa78
              this.level.sendBlockUpdated(pos, state, state, Block.UPDATE_ALL);
              return false;
          }
-@@ -276,6 +388,10 @@ public class ServerPlayerGameMode {
+@@ -280,6 +392,10 @@ public class ServerPlayerGameMode {
              return false;
          }
  
@@ -264,7 +264,7 @@ index 8c7867871aefa2963b2b1068a27bdf6b174a9641..e6f8ebe229da830365aecf99790eaa78
          BlockState adjustedState = block.playerWillDestroy(this.level, pos, state, this.player);
          boolean changed = this.level.removeBlock(pos, false);
          if (SharedConstants.DEBUG_BLOCK_BREAK) {
-@@ -286,17 +402,38 @@ public class ServerPlayerGameMode {
+@@ -290,17 +406,38 @@ public class ServerPlayerGameMode {
              block.destroy(this.level, pos, adjustedState);
          }
  
@@ -309,7 +309,7 @@ index 8c7867871aefa2963b2b1068a27bdf6b174a9641..e6f8ebe229da830365aecf99790eaa78
  
          return true;
      }
-@@ -312,6 +449,7 @@ public class ServerPlayerGameMode {
+@@ -316,6 +453,7 @@ public class ServerPlayerGameMode {
  
          int oldCount = itemStack.getCount();
          int oldDamage = itemStack.getDamageValue();
@@ -317,7 +317,7 @@ index 8c7867871aefa2963b2b1068a27bdf6b174a9641..e6f8ebe229da830365aecf99790eaa78
          InteractionResult result = itemStack.use(level, player, hand);
          ItemStack resultStack;
          if (result instanceof InteractionResult.Success success) {
-@@ -340,25 +478,70 @@ public class ServerPlayerGameMode {
+@@ -344,25 +482,70 @@ public class ServerPlayerGameMode {
          }
  
          if (!player.isUsingItem()) {
@@ -389,9 +389,9 @@ index 8c7867871aefa2963b2b1068a27bdf6b174a9641..e6f8ebe229da830365aecf99790eaa78
 +            MenuProvider menuProvider = state.getMenuProvider(level, pos);
 +            if (menuProvider != null && player.openMenu(menuProvider).isPresent()) { // Paper - Fix InventoryOpenEvent cancellation
                  return InteractionResult.CONSUME;
-             } else {
-                 return InteractionResult.PASS;
-@@ -383,7 +566,7 @@ public class ServerPlayerGameMode {
+             }
+ 
+@@ -403,7 +586,7 @@ public class ServerPlayerGameMode {
                  }
              }
  
@@ -400,7 +400,7 @@ index 8c7867871aefa2963b2b1068a27bdf6b174a9641..e6f8ebe229da830365aecf99790eaa78
                  UseOnContext context = new UseOnContext(player, hand, hitResult);
                  InteractionResult success;
                  if (player.hasInfiniteMaterials()) {
-@@ -400,6 +583,11 @@ public class ServerPlayerGameMode {
+@@ -420,6 +603,11 @@ public class ServerPlayerGameMode {
  
                  return success;
              } else {

@@ -1,14 +1,14 @@
-From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
 From: File <noreply+automated@papermc.io>
 Date: Sun, 20 Apr 1997 15:37:42 +0200
 Subject: [PATCH] paper File Patches
 
 
 diff --git a/net/minecraft/world/level/levelgen/placement/PlacementContext.java b/net/minecraft/world/level/levelgen/placement/PlacementContext.java
-index efbaf3f658a08cb2c44f12df68333aa416a095db..170751b9a66aa09cf0bd9a660fd3e91c4ce8c3b7 100644
+index 8292110e9c52b088c85a3f805858ada3d9a91fd6..21a65ff27a4b1ec5b66b855782c8707f7929d482 100644
 --- a/net/minecraft/world/level/levelgen/placement/PlacementContext.java
 +++ b/net/minecraft/world/level/levelgen/placement/PlacementContext.java
-@@ -17,7 +17,7 @@ public class PlacementContext extends WorldGenerationContext {
+@@ -14,7 +14,7 @@ public class PlacementContext extends WorldGenerationContext {
      private final Optional<PlacedFeature> topFeature;
  
      public PlacementContext(final WorldGenLevel level, final ChunkGenerator generator, final Optional<PlacedFeature> topFeature) {

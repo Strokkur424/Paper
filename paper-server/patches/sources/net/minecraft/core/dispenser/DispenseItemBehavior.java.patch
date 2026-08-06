@@ -1,14 +1,14 @@
-From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
 From: File <noreply+automated@papermc.io>
 Date: Sun, 20 Apr 1997 15:37:42 +0200
 Subject: [PATCH] paper File Patches
 
 
 diff --git a/net/minecraft/core/dispenser/DispenseItemBehavior.java b/net/minecraft/core/dispenser/DispenseItemBehavior.java
-index 923cc13a8dfcfbc6848ed2357f2f7eedab0552fe..162d7890f204315b0476467e757de5c9dd84aeca 100644
+index 19639d7b5a2ff159aebab6d34b73f3cf06a34115..1f2ee2004a8e4c7052609eb370b1602ae63a0a16 100644
 --- a/net/minecraft/core/dispenser/DispenseItemBehavior.java
 +++ b/net/minecraft/core/dispenser/DispenseItemBehavior.java
-@@ -81,12 +81,38 @@ public interface DispenseItemBehavior {
+@@ -80,12 +80,38 @@ public interface DispenseItemBehavior {
                      Direction direction = source.state().getValue(DispenserBlock.FACING);
                      BlockPos pos = source.pos().relative(direction);
                      ServerLevel serverLevel = source.level();
@@ -49,7 +49,7 @@ index 923cc13a8dfcfbc6848ed2357f2f7eedab0552fe..162d7890f204315b0476467e757de5c9
                      }
  
                      return dispensed;
-@@ -104,8 +130,33 @@ public interface DispenseItemBehavior {
+@@ -103,8 +129,33 @@ public interface DispenseItemBehavior {
                          .getEntitiesOfClass(AbstractChestedHorse.class, new AABB(pos), entity -> entity.isAlive() && !entity.hasChest())) {
                          if (abstractChestedHorse.isTamed()) {
                              SlotAccess slot = abstractChestedHorse.getSlot(AbstractHorse.CHEST_SLOT_OFFSET);
@@ -85,7 +85,7 @@ index 923cc13a8dfcfbc6848ed2357f2f7eedab0552fe..162d7890f204315b0476467e757de5c9
                                  this.setSuccess(true);
                                  return dispensed;
                              }
-@@ -144,8 +195,45 @@ public interface DispenseItemBehavior {
+@@ -145,8 +196,45 @@ public interface DispenseItemBehavior {
                  DispensibleContainerItem bucket = (DispensibleContainerItem)dispensed.getItem();
                  BlockPos target = source.pos().relative(source.state().getValue(DispenserBlock.FACING));
                  Level level = source.level();
@@ -132,7 +132,7 @@ index 923cc13a8dfcfbc6848ed2357f2f7eedab0552fe..162d7890f204315b0476467e757de5c9
                      return this.consumeWithRemainder(source, dispensed, new ItemStack(Items.BUCKET));
                  } else {
                      return this.defaultDispenseItemBehavior.dispense(source, dispensed);
-@@ -169,13 +257,20 @@ public interface DispenseItemBehavior {
+@@ -170,13 +258,20 @@ public interface DispenseItemBehavior {
                  BlockPos target = source.pos().relative(source.state().getValue(DispenserBlock.FACING));
                  BlockState blockState = level.getBlockState(target);
                  if (blockState.getBlock() instanceof BucketPickup bucket) {
@@ -154,7 +154,7 @@ index 923cc13a8dfcfbc6848ed2357f2f7eedab0552fe..162d7890f204315b0476467e757de5c9
                      return this.consumeWithRemainder(source, dispensed, new ItemStack(targetType));
                  } else {
                      return super.execute(source, dispensed);
-@@ -189,11 +284,54 @@ public interface DispenseItemBehavior {
+@@ -190,11 +285,54 @@ public interface DispenseItemBehavior {
                  this.setSuccess(true);
                  Level level = source.level();
                  BlockPos target = source.pos().relative(source.state().getValue(DispenserBlock.FACING));
@@ -209,7 +209,7 @@ index 923cc13a8dfcfbc6848ed2357f2f7eedab0552fe..162d7890f204315b0476467e757de5c9
  
                  return dispensed;
              }
-@@ -208,15 +346,41 @@ public interface DispenseItemBehavior {
+@@ -209,15 +347,41 @@ public interface DispenseItemBehavior {
                  }
  
                  BlockPos target = source.pos().relative(source.state().getValue(DispenserBlock.FACING));
@@ -255,7 +255,7 @@ index 923cc13a8dfcfbc6848ed2357f2f7eedab0552fe..162d7890f204315b0476467e757de5c9
                  this.setSuccess(true);
                  return dispensed;
              }
-@@ -229,6 +393,13 @@ public interface DispenseItemBehavior {
+@@ -230,6 +394,13 @@ public interface DispenseItemBehavior {
                      Level level = source.level();
                      Direction direction = source.state().getValue(DispenserBlock.FACING);
                      BlockPos target = source.pos().relative(direction);
@@ -267,9 +267,9 @@ index 923cc13a8dfcfbc6848ed2357f2f7eedab0552fe..162d7890f204315b0476467e757de5c9
 +                    }
 +                    // Paper end - Call BlockDispenseEvent
                      if (level.isEmptyBlock(target) && WitherSkullBlock.canSpawnMob(level, target, dispensed)) {
-                         level.setBlock(
-                             target,
-@@ -243,7 +414,7 @@ public interface DispenseItemBehavior {
+                         level.setBlockAndUpdate(
+                             target, Blocks.WITHER_SKELETON_SKULL.defaultBlockState().setValue(SkullBlock.ROTATION, RotationSegment.convertToSegment(direction))
+@@ -242,7 +413,7 @@ public interface DispenseItemBehavior {
                          dispensed.shrink(1);
                          this.setSuccess(true);
                      } else {
@@ -278,7 +278,7 @@ index 923cc13a8dfcfbc6848ed2357f2f7eedab0552fe..162d7890f204315b0476467e757de5c9
                      }
  
                      return dispensed;
-@@ -256,6 +427,13 @@ public interface DispenseItemBehavior {
+@@ -255,6 +426,13 @@ public interface DispenseItemBehavior {
                  Level level = source.level();
                  BlockPos target = source.pos().relative(source.state().getValue(DispenserBlock.FACING));
                  CarvedPumpkinBlock pumpkinBlock = (CarvedPumpkinBlock)Blocks.CARVED_PUMPKIN;
@@ -291,8 +291,8 @@ index 923cc13a8dfcfbc6848ed2357f2f7eedab0552fe..162d7890f204315b0476467e757de5c9
 +                // Paper end - Call BlockDispenseEvent
                  if (level.isEmptyBlock(target) && pumpkinBlock.canSpawnGolem(level, target)) {
                      if (!level.isClientSide()) {
-                         level.setBlock(target, pumpkinBlock.defaultBlockState(), Block.UPDATE_ALL);
-@@ -265,7 +443,7 @@ public interface DispenseItemBehavior {
+                         level.setBlockAndUpdate(target, pumpkinBlock.defaultBlockState());
+@@ -264,7 +442,7 @@ public interface DispenseItemBehavior {
                      dispensed.shrink(1);
                      this.setSuccess(true);
                  } else {
@@ -301,7 +301,7 @@ index 923cc13a8dfcfbc6848ed2357f2f7eedab0552fe..162d7890f204315b0476467e757de5c9
                  }
  
                  return dispensed;
-@@ -288,6 +466,12 @@ public interface DispenseItemBehavior {
+@@ -287,6 +465,12 @@ public interface DispenseItemBehavior {
                      ServerLevel level = source.level();
                      BlockPos target = source.pos().relative(source.state().getValue(DispenserBlock.FACING));
                      BlockState state = level.getBlockState(target);
@@ -314,7 +314,7 @@ index 923cc13a8dfcfbc6848ed2357f2f7eedab0552fe..162d7890f204315b0476467e757de5c9
                      if (state.is(BlockTags.BEEHIVES, s -> s.hasProperty(BeehiveBlock.HONEY_LEVEL) && s.getBlock() instanceof BeehiveBlock)
                          && state.getValue(BeehiveBlock.HONEY_LEVEL) >= 5) {
                          ((BeehiveBlock)state.getBlock())
-@@ -313,6 +497,13 @@ public interface DispenseItemBehavior {
+@@ -312,6 +496,13 @@ public interface DispenseItemBehavior {
                  this.setSuccess(true);
                  if (blockState.is(Blocks.RESPAWN_ANCHOR)) {
                      if (blockState.getValue(RespawnAnchorBlock.CHARGE) != 4) {
@@ -328,7 +328,7 @@ index 923cc13a8dfcfbc6848ed2357f2f7eedab0552fe..162d7890f204315b0476467e757de5c9
                          RespawnAnchorBlock.charge(null, level, pos, blockState);
                          dispensed.shrink(1);
                      } else {
-@@ -337,6 +528,28 @@ public interface DispenseItemBehavior {
+@@ -336,6 +527,28 @@ public interface DispenseItemBehavior {
                      return dispensed;
                  }
  
@@ -357,7 +357,7 @@ index 923cc13a8dfcfbc6848ed2357f2f7eedab0552fe..162d7890f204315b0476467e757de5c9
                  for (Armadillo armadillo : armadillos) {
                      if (armadillo.brushOffScute(null, dispensed)) {
                          dispensed.hurtAndBreak(16, level, null, item -> {});
-@@ -356,6 +569,13 @@ public interface DispenseItemBehavior {
+@@ -355,6 +568,13 @@ public interface DispenseItemBehavior {
                  BlockState blockState = level.getBlockState(pos);
                  Optional<BlockState> maybeWaxed = HoneycombItem.getWaxed(blockState);
                  if (maybeWaxed.isPresent()) {
@@ -369,8 +369,8 @@ index 923cc13a8dfcfbc6848ed2357f2f7eedab0552fe..162d7890f204315b0476467e757de5c9
 +                    }
 +                    // Paper end - Call BlockDispenseEvent
                      level.setBlockAndUpdate(pos, maybeWaxed.get());
-                     level.levelEvent(LevelEvent.PARTICLES_AND_SOUND_WAX_ON, pos, 0);
-                     dispensed.shrink(1);
+                     level.levelEvent(LevelEvent.PARTICLES_WAX_ON, pos, 0);
+                     level.playSound(null, pos, SoundEvents.HONEYCOMB_WAX_ON, SoundSource.BLOCKS, 1.0F, 1.0F);
 @@ -385,6 +605,12 @@ public interface DispenseItemBehavior {
                          return this.defaultDispenseItemBehavior.dispense(source, dispensed);
                      }

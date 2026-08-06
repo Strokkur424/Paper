@@ -1,14 +1,14 @@
-From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
 From: File <noreply+automated@papermc.io>
 Date: Sun, 20 Apr 1997 15:37:42 +0200
 Subject: [PATCH] paper File Patches
 
 
 diff --git a/net/minecraft/world/level/block/DispenserBlock.java b/net/minecraft/world/level/block/DispenserBlock.java
-index d7e20c29ccae4f537db3e3bea492e683e5780e52..754f2a541e80947553c56420bdc962dbcf80d36e 100644
+index cb4c22c5bd1c9d29610607d0522cf483041dad1e..f777b67e0d90c1bb25c3aeef8e5b1710ab8ac96e 100644
 --- a/net/minecraft/world/level/block/DispenserBlock.java
 +++ b/net/minecraft/world/level/block/DispenserBlock.java
-@@ -77,8 +77,7 @@ public class DispenserBlock extends BaseEntityBlock {
+@@ -70,8 +70,7 @@ public class DispenserBlock extends BaseEntityBlock {
      protected InteractionResult useWithoutItem(
          final BlockState state, final Level level, final BlockPos pos, final Player player, final BlockHitResult hitResult
      ) {
@@ -18,7 +18,7 @@ index d7e20c29ccae4f537db3e3bea492e683e5780e52..754f2a541e80947553c56420bdc962db
              player.awardStat(dispenser instanceof DropperBlockEntity ? Stats.INSPECT_DROPPER : Stats.INSPECT_DISPENSER);
          }
  
-@@ -93,18 +92,27 @@ public class DispenserBlock extends BaseEntityBlock {
+@@ -86,18 +85,27 @@ public class DispenserBlock extends BaseEntityBlock {
              BlockSource source = new BlockSource(level, pos, state, blockEntity);
              int slot = blockEntity.getRandomSlot(level.getRandom());
              if (slot < 0) {

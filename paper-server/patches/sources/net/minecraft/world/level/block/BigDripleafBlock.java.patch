@@ -1,14 +1,14 @@
-From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
 From: File <noreply+automated@papermc.io>
 Date: Sun, 20 Apr 1997 15:37:42 +0200
 Subject: [PATCH] paper File Patches
 
 
 diff --git a/net/minecraft/world/level/block/BigDripleafBlock.java b/net/minecraft/world/level/block/BigDripleafBlock.java
-index d0882dfd0aa66f1af35cf7a0e403751a5391e067..adf7399e6589f9d1092be3858ed1ce4b08009925 100644
+index cc42ec71b006a2318ee420ae53da493af31fba81..40a205b5f51a52e1c564eef8d3e80d7a24b5ec3c 100644
 --- a/net/minecraft/world/level/block/BigDripleafBlock.java
 +++ b/net/minecraft/world/level/block/BigDripleafBlock.java
-@@ -127,7 +127,7 @@ public class BigDripleafBlock extends HorizontalDirectionalBlock implements Simp
+@@ -120,7 +120,7 @@ public class BigDripleafBlock extends HorizontalDirectionalBlock implements Simp
  
      @Override
      protected void onProjectileHit(final Level level, final BlockState state, final BlockHitResult blockHit, final Projectile projectile) {
@@ -17,7 +17,7 @@ index d0882dfd0aa66f1af35cf7a0e403751a5391e067..adf7399e6589f9d1092be3858ed1ce4b
      }
  
      @Override
-@@ -195,9 +195,23 @@ public class BigDripleafBlock extends HorizontalDirectionalBlock implements Simp
+@@ -188,9 +188,23 @@ public class BigDripleafBlock extends HorizontalDirectionalBlock implements Simp
          final InsideBlockEffectApplier effectApplier,
          final boolean isPrecise
      ) {
@@ -42,7 +42,7 @@ index d0882dfd0aa66f1af35cf7a0e403751a5391e067..adf7399e6589f9d1092be3858ed1ce4b
              }
          }
      }
-@@ -209,9 +223,9 @@ public class BigDripleafBlock extends HorizontalDirectionalBlock implements Simp
+@@ -202,9 +216,9 @@ public class BigDripleafBlock extends HorizontalDirectionalBlock implements Simp
          } else {
              Tilt tilt = state.getValue(TILT);
              if (tilt == Tilt.UNSTABLE) {
@@ -54,7 +54,7 @@ index d0882dfd0aa66f1af35cf7a0e403751a5391e067..adf7399e6589f9d1092be3858ed1ce4b
              } else if (tilt == Tilt.FULL) {
                  resetTilt(state, level, pos);
              }
-@@ -236,8 +250,11 @@ public class BigDripleafBlock extends HorizontalDirectionalBlock implements Simp
+@@ -229,8 +243,11 @@ public class BigDripleafBlock extends HorizontalDirectionalBlock implements Simp
          return entity.onGround() && entity.position().y > pos.getY() + 0.6875F;
      }
  
@@ -68,7 +68,7 @@ index d0882dfd0aa66f1af35cf7a0e403751a5391e067..adf7399e6589f9d1092be3858ed1ce4b
          if (sound != null) {
              playTiltSound(level, pos, sound);
          }
-@@ -249,18 +266,26 @@ public class BigDripleafBlock extends HorizontalDirectionalBlock implements Simp
+@@ -242,18 +259,26 @@ public class BigDripleafBlock extends HorizontalDirectionalBlock implements Simp
      }
  
      private static void resetTilt(final BlockState state, final Level level, final BlockPos pos) {

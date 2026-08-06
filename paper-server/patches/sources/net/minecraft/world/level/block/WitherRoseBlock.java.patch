@@ -1,14 +1,14 @@
-From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
 From: File <noreply+automated@papermc.io>
 Date: Sun, 20 Apr 1997 15:37:42 +0200
 Subject: [PATCH] paper File Patches
 
 
 diff --git a/net/minecraft/world/level/block/WitherRoseBlock.java b/net/minecraft/world/level/block/WitherRoseBlock.java
-index ca18b13880cb1b85e32b162b6dea10e628341e94..6c9d309bd087e6ebfb86f22b05fe5fd705af421f 100644
+index e8044e0db0a7c534f049104df080aa0a278f0c13..d662c99d5688c13e91739203a4eabf79425bb584 100644
 --- a/net/minecraft/world/level/block/WitherRoseBlock.java
 +++ b/net/minecraft/world/level/block/WitherRoseBlock.java
-@@ -72,11 +72,12 @@ public class WitherRoseBlock extends FlowerBlock {
+@@ -61,11 +61,12 @@ public class WitherRoseBlock extends FlowerBlock {
          final InsideBlockEffectApplier effectApplier,
          final boolean isPrecise
      ) {

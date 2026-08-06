@@ -1,14 +1,14 @@
-From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
 From: File <noreply+automated@papermc.io>
 Date: Sun, 20 Apr 1997 15:37:42 +0200
 Subject: [PATCH] paper File Patches
 
 
 diff --git a/net/minecraft/world/inventory/BeaconMenu.java b/net/minecraft/world/inventory/BeaconMenu.java
-index fe886d0a09560b5da2615c8abff949d22e2f0ac9..ba9a752ec6cc608b006007da19d9e84386fe8f0b 100644
+index cfcd14abb9ccbe587deccb99adc378f6e9c7b7c6..b37761006c08717434a075ed64948166132baac0 100644
 --- a/net/minecraft/world/inventory/BeaconMenu.java
 +++ b/net/minecraft/world/inventory/BeaconMenu.java
-@@ -23,20 +23,14 @@ public class BeaconMenu extends AbstractContainerMenu {
+@@ -24,20 +24,14 @@ public class BeaconMenu extends AbstractContainerMenu {
      private static final int USE_ROW_SLOT_START = 28;
      private static final int USE_ROW_SLOT_END = 37;
      private static final int NO_EFFECT = 0;
@@ -34,7 +34,7 @@ index fe886d0a09560b5da2615c8abff949d22e2f0ac9..ba9a752ec6cc608b006007da19d9e843
  
      public BeaconMenu(final int containerId, final Container inventory) {
          this(containerId, inventory, new SimpleContainerData(3), ContainerLevelAccess.NULL);
-@@ -44,6 +38,25 @@ public class BeaconMenu extends AbstractContainerMenu {
+@@ -45,6 +39,25 @@ public class BeaconMenu extends AbstractContainerMenu {
  
      public BeaconMenu(final int containerId, final Container inventory, final ContainerData beaconData, final ContainerLevelAccess access) {
          super(MenuType.BEACON, containerId);
@@ -60,7 +60,7 @@ index fe886d0a09560b5da2615c8abff949d22e2f0ac9..ba9a752ec6cc608b006007da19d9e843
          checkContainerDataCount(beaconData, 3);
          this.beaconData = beaconData;
          this.access = access;
-@@ -66,6 +79,7 @@ public class BeaconMenu extends AbstractContainerMenu {
+@@ -67,6 +80,7 @@ public class BeaconMenu extends AbstractContainerMenu {
  
      @Override
      public boolean stillValid(final Player player) {
@@ -68,7 +68,7 @@ index fe886d0a09560b5da2615c8abff949d22e2f0ac9..ba9a752ec6cc608b006007da19d9e843
          return stillValid(this.access, player, Blocks.BEACON);
      }
  
-@@ -139,6 +153,11 @@ public class BeaconMenu extends AbstractContainerMenu {
+@@ -140,6 +154,11 @@ public class BeaconMenu extends AbstractContainerMenu {
      public @Nullable Holder<MobEffect> getSecondaryEffect() {
          return decodeEffect(this.beaconData.get(2));
      }
@@ -80,7 +80,7 @@ index fe886d0a09560b5da2615c8abff949d22e2f0ac9..ba9a752ec6cc608b006007da19d9e843
  
      public boolean updateEffects(final Optional<Holder<MobEffect>> primary, final Optional<Holder<MobEffect>> secondary) {
          if (this.paymentSlot.hasItem()) {
-@@ -149,8 +168,16 @@ public class BeaconMenu extends AbstractContainerMenu {
+@@ -150,8 +169,16 @@ public class BeaconMenu extends AbstractContainerMenu {
                  return false;
              }
  
@@ -99,7 +99,7 @@ index fe886d0a09560b5da2615c8abff949d22e2f0ac9..ba9a752ec6cc608b006007da19d9e843
              this.paymentSlot.remove(1);
              this.access.execute(Level::blockEntityChanged);
              return true;
-@@ -178,4 +205,17 @@ public class BeaconMenu extends AbstractContainerMenu {
+@@ -179,4 +206,17 @@ public class BeaconMenu extends AbstractContainerMenu {
              return 1;
          }
      }

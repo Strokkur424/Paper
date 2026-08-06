@@ -1,14 +1,14 @@
-From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
 From: File <noreply+automated@papermc.io>
 Date: Sun, 20 Apr 1997 15:37:42 +0200
 Subject: [PATCH] paper File Patches
 
 
 diff --git a/net/minecraft/world/level/block/ShelfBlock.java b/net/minecraft/world/level/block/ShelfBlock.java
-index 59c2ffe912131d07d366e789abc54560ed437744..8a1313a10b6afeee86ea2245da4bd9beb28d1d84 100644
+index 1e810ae7b0a1bc79383b5c92c627555aa6174ade..683e94d86b1e0eb0a287608270ec8e36cdef6ae3 100644
 --- a/net/minecraft/world/level/block/ShelfBlock.java
 +++ b/net/minecraft/world/level/block/ShelfBlock.java
-@@ -111,6 +111,11 @@ public class ShelfBlock extends BaseEntityBlock implements SelectableSlotContain
+@@ -104,6 +104,11 @@ public class ShelfBlock extends BaseEntityBlock implements SelectableSlotContain
          if (!level.isClientSide()) {
              boolean signal = level.hasNeighborSignal(pos);
              if (state.getValue(POWERED) != signal) {

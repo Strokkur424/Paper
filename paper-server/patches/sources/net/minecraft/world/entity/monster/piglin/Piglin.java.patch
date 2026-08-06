@@ -1,11 +1,11 @@
-From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
 From: File <noreply+automated@papermc.io>
 Date: Sun, 20 Apr 1997 15:37:42 +0200
 Subject: [PATCH] paper File Patches
 
 
 diff --git a/net/minecraft/world/entity/monster/piglin/Piglin.java b/net/minecraft/world/entity/monster/piglin/Piglin.java
-index c16b516d0359d87d32032f9d20dec18491325e14..77638e1b9b2ab1165d11c1ac8ea09255b04544f6 100644
+index 6505ae03e7c563877c184f8d264fbe7651cfccf9..b567fc282af18836e30d5dbab6ef25fe8d58e01d 100644
 --- a/net/minecraft/world/entity/monster/piglin/Piglin.java
 +++ b/net/minecraft/world/entity/monster/piglin/Piglin.java
 @@ -97,6 +97,12 @@ public class Piglin extends AbstractPiglin implements CrossbowAttackMob, Invento
@@ -53,7 +53,7 @@ index c16b516d0359d87d32032f9d20dec18491325e14..77638e1b9b2ab1165d11c1ac8ea09255
      }
  
      protected ItemStack addToInventory(final ItemStack itemStack) {
-@@ -362,7 +377,7 @@ public class Piglin extends AbstractPiglin implements CrossbowAttackMob, Invento
+@@ -357,7 +372,7 @@ public class Piglin extends AbstractPiglin implements CrossbowAttackMob, Invento
  
      protected void holdInOffHand(final ItemStack itemStack) {
          this.setItemSlotAndDropWhenKilled(EquipmentSlot.OFFHAND, itemStack);
@@ -62,7 +62,7 @@ index c16b516d0359d87d32032f9d20dec18491325e14..77638e1b9b2ab1165d11c1ac8ea09255
              this.setPersistenceRequired();
          }
      }
-@@ -385,15 +400,15 @@ public class Piglin extends AbstractPiglin implements CrossbowAttackMob, Invento
+@@ -380,15 +395,15 @@ public class Piglin extends AbstractPiglin implements CrossbowAttackMob, Invento
          }
  
          TagKey<Item> preferredWeaponType = this.getPreferredWeaponType();

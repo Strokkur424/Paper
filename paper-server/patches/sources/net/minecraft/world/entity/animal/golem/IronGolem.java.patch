@@ -1,11 +1,11 @@
-From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
 From: File <noreply+automated@papermc.io>
 Date: Sun, 20 Apr 1997 15:37:42 +0200
 Subject: [PATCH] paper File Patches
 
 
 diff --git a/net/minecraft/world/entity/animal/golem/IronGolem.java b/net/minecraft/world/entity/animal/golem/IronGolem.java
-index 7856c8360eaf9a311da6a9df1d1a3da65c50f2c0..21b481765faca951c8baf20a7a63cf03d77db33a 100644
+index 474e8afa6534234b5f43b88a9fda98747e980cbb..d517d59dc3e05be34dbeebb640a038dc13f4dfb6 100644
 --- a/net/minecraft/world/entity/animal/golem/IronGolem.java
 +++ b/net/minecraft/world/entity/animal/golem/IronGolem.java
 @@ -107,7 +107,7 @@ public class IronGolem extends AbstractGolem implements NeutralMob {

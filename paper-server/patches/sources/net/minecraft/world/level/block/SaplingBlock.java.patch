@@ -1,22 +1,22 @@
-From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
 From: File <noreply+automated@papermc.io>
 Date: Sun, 20 Apr 1997 15:37:42 +0200
 Subject: [PATCH] paper File Patches
 
 
 diff --git a/net/minecraft/world/level/block/SaplingBlock.java b/net/minecraft/world/level/block/SaplingBlock.java
-index abf19fc1689c67dc7e2644f49a9a8802821eda61..cbf7845ca64f1b716af3e50ac8716373d2ae3755 100644
+index 21ff62b7a1413d9648c1af6998b80750500fe336..5564a54f23aab158b9506325953ec70cab55c961 100644
 --- a/net/minecraft/world/level/block/SaplingBlock.java
 +++ b/net/minecraft/world/level/block/SaplingBlock.java
-@@ -24,6 +24,7 @@ public class SaplingBlock extends VegetationBlock implements BonemealableBlock {
-     public static final IntegerProperty STAGE = BlockStateProperties.STAGE;
+@@ -21,6 +21,7 @@ public class SaplingBlock extends VegetationBlock implements BonemealableBlock {
+     public static final int TICK_CHANCE_FOR_SAPLING_GROWTH = 7;
      private static final VoxelShape SHAPE = Block.column(12.0, 0.0, 12.0);
      protected final TreeGrower treeGrower;
 +    public static org.bukkit.@org.jspecify.annotations.Nullable TreeType treeType; // CraftBukkit
  
-     @Override
-     public MapCodec<? extends SaplingBlock> codec() {
-@@ -43,7 +44,7 @@ public class SaplingBlock extends VegetationBlock implements BonemealableBlock {
+     protected SaplingBlock(final TreeGrower treeGrower, final BlockBehaviour.Properties properties) {
+         super(properties);
+@@ -35,7 +36,7 @@ public class SaplingBlock extends VegetationBlock implements BonemealableBlock {
  
      @Override
      protected void randomTick(final BlockState state, final ServerLevel level, final BlockPos pos, final RandomSource random) {
@@ -25,7 +25,7 @@ index abf19fc1689c67dc7e2644f49a9a8802821eda61..cbf7845ca64f1b716af3e50ac8716373
              this.advanceTree(level, pos, state, random);
          }
      }
-@@ -52,7 +53,40 @@ public class SaplingBlock extends VegetationBlock implements BonemealableBlock {
+@@ -44,7 +45,40 @@ public class SaplingBlock extends VegetationBlock implements BonemealableBlock {
          if (state.getValue(STAGE) == 0) {
              level.setBlock(pos, state.cycle(STAGE), Block.UPDATE_NONE);
          } else {

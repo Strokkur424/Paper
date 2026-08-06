@@ -1,11 +1,11 @@
-From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
 From: File <noreply+automated@papermc.io>
 Date: Sun, 20 Apr 1997 15:37:42 +0200
 Subject: [PATCH] paper File Patches
 
 
 diff --git a/net/minecraft/network/syncher/SynchedEntityData.java b/net/minecraft/network/syncher/SynchedEntityData.java
-index 3671c2ad0592c12a94c6771df726e8917096663f..0075164bf057271d63a8b97473aa5c41c03eac91 100644
+index 4a4524873797ab75c2a3d1f39f1b2576575f0ab4..bdb4f9f5052fa5c919783b9cbe744c4c55cf9cae 100644
 --- a/net/minecraft/network/syncher/SynchedEntityData.java
 +++ b/net/minecraft/network/syncher/SynchedEntityData.java
 @@ -67,6 +67,13 @@ public class SynchedEntityData {

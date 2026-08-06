@@ -1,14 +1,14 @@
-From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
 From: File <noreply+automated@papermc.io>
 Date: Sun, 20 Apr 1997 15:37:42 +0200
 Subject: [PATCH] paper File Patches
 
 
 diff --git a/net/minecraft/world/level/block/RedstoneLampBlock.java b/net/minecraft/world/level/block/RedstoneLampBlock.java
-index 718e6700b90f70c8dd74aeb7f3841ce5d344b6dd..3c9a0347bb12a95d5f17e3714f031e70f2a94338 100644
+index 8fc2bd56f6ab9f77318528d047e79ad092f7b1de..84d7fdd8214b6ce15bcdc76c7bee5fd34a839471 100644
 --- a/net/minecraft/world/level/block/RedstoneLampBlock.java
 +++ b/net/minecraft/world/level/block/RedstoneLampBlock.java
-@@ -42,6 +42,11 @@ public class RedstoneLampBlock extends Block {
+@@ -35,6 +35,11 @@ public class RedstoneLampBlock extends Block {
                  if (isLit) {
                      level.scheduleTick(pos, this, 4);
                  } else {
@@ -20,7 +20,7 @@ index 718e6700b90f70c8dd74aeb7f3841ce5d344b6dd..3c9a0347bb12a95d5f17e3714f031e70
                      level.setBlock(pos, state.cycle(LIT), Block.UPDATE_CLIENTS);
                  }
              }
-@@ -51,6 +56,11 @@ public class RedstoneLampBlock extends Block {
+@@ -44,6 +49,11 @@ public class RedstoneLampBlock extends Block {
      @Override
      protected void tick(final BlockState state, final ServerLevel level, final BlockPos pos, final RandomSource random) {
          if (state.getValue(LIT) && !level.hasNeighborSignal(pos)) {

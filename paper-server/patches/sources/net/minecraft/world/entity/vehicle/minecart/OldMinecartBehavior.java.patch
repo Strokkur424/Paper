@@ -1,14 +1,14 @@
-From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
 From: File <noreply+automated@papermc.io>
 Date: Sun, 20 Apr 1997 15:37:42 +0200
 Subject: [PATCH] paper File Patches
 
 
 diff --git a/net/minecraft/world/entity/vehicle/minecart/OldMinecartBehavior.java b/net/minecraft/world/entity/vehicle/minecart/OldMinecartBehavior.java
-index 77c7c2dc1cbbeeee6e6ca2038fbc6f43eb2fd26a..3c8694e75cabd68690d9139ecedc9e079db482c5 100644
+index 39b86d21aaadccdaa96a28c68e536723c6fe7dba..8efe0328164ecdb85410409270cfbde4972782a5 100644
 --- a/net/minecraft/world/entity/vehicle/minecart/OldMinecartBehavior.java
 +++ b/net/minecraft/world/entity/vehicle/minecart/OldMinecartBehavior.java
-@@ -375,8 +375,22 @@ public class OldMinecartBehavior extends MinecartBehavior {
+@@ -377,8 +377,22 @@ public class OldMinecartBehavior extends MinecartBehavior {
                          && !(entity instanceof AbstractMinecart)
                          && !this.minecart.isVehicle()
                          && !entity.isPassenger()) {
@@ -31,7 +31,7 @@ index 77c7c2dc1cbbeeee6e6ca2038fbc6f43eb2fd26a..3c8694e75cabd68690d9139ecedc9e07
                          entity.push(this.minecart);
                      }
                  }
-@@ -384,6 +398,12 @@ public class OldMinecartBehavior extends MinecartBehavior {
+@@ -386,6 +400,12 @@ public class OldMinecartBehavior extends MinecartBehavior {
          } else {
              for (Entity entity : this.level().getEntities(this.minecart, hitbox)) {
                  if (!this.minecart.hasPassenger(entity) && entity.isPushable() && entity instanceof AbstractMinecart) {
@@ -44,7 +44,7 @@ index 77c7c2dc1cbbeeee6e6ca2038fbc6f43eb2fd26a..3c8694e75cabd68690d9139ecedc9e07
                      entity.push(this.minecart);
                  }
              }
-@@ -406,11 +426,18 @@ public class OldMinecartBehavior extends MinecartBehavior {
+@@ -408,11 +428,18 @@ public class OldMinecartBehavior extends MinecartBehavior {
  
      @Override
      public double getMaxSpeed(final ServerLevel level) {

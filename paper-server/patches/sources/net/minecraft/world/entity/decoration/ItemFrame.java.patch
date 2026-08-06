@@ -1,11 +1,11 @@
-From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
 From: File <noreply+automated@papermc.io>
 Date: Sun, 20 Apr 1997 15:37:42 +0200
 Subject: [PATCH] paper File Patches
 
 
 diff --git a/net/minecraft/world/entity/decoration/ItemFrame.java b/net/minecraft/world/entity/decoration/ItemFrame.java
-index 46703c20640c2c9fb57bad0d507834162cc5442f..4d0d58d5cbfa88fdd0f5ea3b9d96b21a88f2f988 100644
+index d51e71fa813adbe392a69cd807e772e90888b28a..a9bad99aae3e991651731e34f852ccc67a203fc6 100644
 --- a/net/minecraft/world/entity/decoration/ItemFrame.java
 +++ b/net/minecraft/world/entity/decoration/ItemFrame.java
 @@ -55,6 +55,7 @@ public class ItemFrame extends HangingEntity {

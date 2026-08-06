@@ -1,14 +1,14 @@
-From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
 From: File <noreply+automated@papermc.io>
 Date: Sun, 20 Apr 1997 15:37:42 +0200
 Subject: [PATCH] paper File Patches
 
 
 diff --git a/net/minecraft/server/commands/DebugCommand.java b/net/minecraft/server/commands/DebugCommand.java
-index dd81d2b30c18cde4ee2533525a2c0aaa05f78946..e890128286c825ac5fb1ab22dd4a5f61bcced024 100644
+index 1e64ac2bec04c3b70046c8b4a41bca73bce95faf..812659bc14a356bde510d245557f94746bc576cc 100644
 --- a/net/minecraft/server/commands/DebugCommand.java
 +++ b/net/minecraft/server/commands/DebugCommand.java
-@@ -273,6 +273,13 @@ public class DebugCommand {
+@@ -263,6 +263,13 @@ public class DebugCommand {
              return true;
          }
  

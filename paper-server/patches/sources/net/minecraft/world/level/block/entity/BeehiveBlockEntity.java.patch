@@ -1,11 +1,11 @@
-From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
 From: File <noreply+automated@papermc.io>
 Date: Sun, 20 Apr 1997 15:37:42 +0200
 Subject: [PATCH] paper File Patches
 
 
 diff --git a/net/minecraft/world/level/block/entity/BeehiveBlockEntity.java b/net/minecraft/world/level/block/entity/BeehiveBlockEntity.java
-index e2f74ab29d403b05359913bb5437e11d731b09ad..0bbce88f95c8f96d865f3c58e830e5aa006e48bb 100644
+index f48abccc084dcbf854a46ab81e6cf5b7584660f1..c91631e7544dd913e03e5c46d85f0250389d4082 100644
 --- a/net/minecraft/world/level/block/entity/BeehiveBlockEntity.java
 +++ b/net/minecraft/world/level/block/entity/BeehiveBlockEntity.java
 @@ -86,6 +86,7 @@ public class BeehiveBlockEntity extends BlockEntity {
@@ -16,7 +16,7 @@ index e2f74ab29d403b05359913bb5437e11d731b09ad..0bbce88f95c8f96d865f3c58e830e5aa
  
      public BeehiveBlockEntity(final BlockPos worldPosition, final BlockState blockState) {
          super(BlockEntityTypes.BEEHIVE, worldPosition, blockState);
-@@ -119,16 +120,17 @@ public class BeehiveBlockEntity extends BlockEntity {
+@@ -113,16 +114,17 @@ public class BeehiveBlockEntity extends BlockEntity {
      }
  
      public boolean isFull() {
@@ -36,7 +36,7 @@ index e2f74ab29d403b05359913bb5437e11d731b09ad..0bbce88f95c8f96d865f3c58e830e5aa
                      } else {
                          bee.setStayOutOfHiveCountdown(400);
                      }
-@@ -138,10 +140,15 @@ public class BeehiveBlockEntity extends BlockEntity {
+@@ -132,10 +134,15 @@ public class BeehiveBlockEntity extends BlockEntity {
      }
  
      private List<Entity> releaseAllOccupants(final BlockState state, final BeehiveBlockEntity.BeeReleaseStatus releaseStatus) {
@@ -53,7 +53,7 @@ index e2f74ab29d403b05359913bb5437e11d731b09ad..0bbce88f95c8f96d865f3c58e830e5aa
              );
          if (!spawned.isEmpty()) {
              super.setChanged();
-@@ -155,6 +162,12 @@ public class BeehiveBlockEntity extends BlockEntity {
+@@ -149,6 +156,12 @@ public class BeehiveBlockEntity extends BlockEntity {
          return this.stored.size();
      }
  
@@ -66,7 +66,7 @@ index e2f74ab29d403b05359913bb5437e11d731b09ad..0bbce88f95c8f96d865f3c58e830e5aa
      public static int getHoneyLevel(final BlockState blockState) {
          return blockState.getValue(BeehiveBlock.HONEY_LEVEL);
      }
-@@ -165,7 +178,16 @@ public class BeehiveBlockEntity extends BlockEntity {
+@@ -159,7 +172,16 @@ public class BeehiveBlockEntity extends BlockEntity {
      }
  
      public void addOccupant(final Bee bee) {
@@ -84,7 +84,7 @@ index e2f74ab29d403b05359913bb5437e11d731b09ad..0bbce88f95c8f96d865f3c58e830e5aa
              bee.stopRiding();
              bee.ejectPassengers();
              bee.dropLeash();
-@@ -180,7 +202,7 @@ public class BeehiveBlockEntity extends BlockEntity {
+@@ -174,7 +196,7 @@ public class BeehiveBlockEntity extends BlockEntity {
                  this.level.gameEvent(GameEvent.BLOCK_CHANGE, blockPos, GameEvent.Context.of(bee, this.getBlockState()));
              }
  
@@ -93,7 +93,7 @@ index e2f74ab29d403b05359913bb5437e11d731b09ad..0bbce88f95c8f96d865f3c58e830e5aa
              super.setChanged();
          }
      }
-@@ -189,6 +211,12 @@ public class BeehiveBlockEntity extends BlockEntity {
+@@ -183,6 +205,12 @@ public class BeehiveBlockEntity extends BlockEntity {
          this.stored.add(new BeehiveBlockEntity.BeeData(occupant));
      }
  
@@ -106,7 +106,7 @@ index e2f74ab29d403b05359913bb5437e11d731b09ad..0bbce88f95c8f96d865f3c58e830e5aa
      private static boolean releaseOccupant(
          final Level level,
          final BlockPos blockPos,
-@@ -197,8 +225,9 @@ public class BeehiveBlockEntity extends BlockEntity {
+@@ -191,8 +219,9 @@ public class BeehiveBlockEntity extends BlockEntity {
          final @Nullable List<Entity> spawned,
          final BeehiveBlockEntity.BeeReleaseStatus releaseStatus,
          final @Nullable BlockPos savedFlowerPos
@@ -117,7 +117,7 @@ index e2f74ab29d403b05359913bb5437e11d731b09ad..0bbce88f95c8f96d865f3c58e830e5aa
              && releaseStatus != BeehiveBlockEntity.BeeReleaseStatus.EMERGENCY) {
              return false;
          }
-@@ -212,6 +241,17 @@ public class BeehiveBlockEntity extends BlockEntity {
+@@ -206,6 +235,17 @@ public class BeehiveBlockEntity extends BlockEntity {
  
          Entity entity = beeData.createEntity(level, blockPos);
          if (entity != null) {
@@ -135,7 +135,7 @@ index e2f74ab29d403b05359913bb5437e11d731b09ad..0bbce88f95c8f96d865f3c58e830e5aa
              if (entity instanceof Bee bee) {
                  RandomSource random = level.getRandom();
                  if (savedFlowerPos != null && !bee.hasSavedFlowerPos() && random.nextFloat() < 0.9F) {
-@@ -228,7 +268,13 @@ public class BeehiveBlockEntity extends BlockEntity {
+@@ -222,7 +262,13 @@ public class BeehiveBlockEntity extends BlockEntity {
                                  levelIncrease--;
                              }
  
@@ -150,7 +150,7 @@ index e2f74ab29d403b05359913bb5437e11d731b09ad..0bbce88f95c8f96d865f3c58e830e5aa
                          }
                      }
                  }
-@@ -237,17 +283,19 @@ public class BeehiveBlockEntity extends BlockEntity {
+@@ -231,17 +277,19 @@ public class BeehiveBlockEntity extends BlockEntity {
                      spawned.add(bee);
                  }
  
@@ -171,7 +171,7 @@ index e2f74ab29d403b05359913bb5437e11d731b09ad..0bbce88f95c8f96d865f3c58e830e5aa
          } else {
              return false;
          }
-@@ -273,6 +321,11 @@ public class BeehiveBlockEntity extends BlockEntity {
+@@ -267,6 +315,11 @@ public class BeehiveBlockEntity extends BlockEntity {
                      changed = true;
                      iterator.remove();
                  }
@@ -183,7 +183,7 @@ index e2f74ab29d403b05359913bb5437e11d731b09ad..0bbce88f95c8f96d865f3c58e830e5aa
              }
          }
  
-@@ -294,9 +347,10 @@ public class BeehiveBlockEntity extends BlockEntity {
+@@ -288,9 +341,10 @@ public class BeehiveBlockEntity extends BlockEntity {
      @Override
      protected void loadAdditional(final ValueInput input) {
          super.loadAdditional(input);
@@ -195,7 +195,7 @@ index e2f74ab29d403b05359913bb5437e11d731b09ad..0bbce88f95c8f96d865f3c58e830e5aa
      }
  
      @Override
-@@ -304,12 +358,13 @@ public class BeehiveBlockEntity extends BlockEntity {
+@@ -298,12 +352,13 @@ public class BeehiveBlockEntity extends BlockEntity {
          super.saveAdditional(output);
          output.store("bees", BeehiveBlockEntity.Occupant.LIST_CODEC, this.getBees());
          output.storeNullable("flower_pos", BlockPos.CODEC, this.savedFlowerPos);
@@ -210,7 +210,7 @@ index e2f74ab29d403b05359913bb5437e11d731b09ad..0bbce88f95c8f96d865f3c58e830e5aa
          List<BeehiveBlockEntity.Occupant> bees = components.getOrDefault(DataComponents.BEES, Bees.EMPTY).bees();
          bees.forEach(this::storeBee);
      }
-@@ -337,15 +392,18 @@ public class BeehiveBlockEntity extends BlockEntity {
+@@ -331,15 +386,18 @@ public class BeehiveBlockEntity extends BlockEntity {
  
      private static class BeeData {
          private final BeehiveBlockEntity.Occupant occupant;

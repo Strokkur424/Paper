@@ -1,14 +1,14 @@
-From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
 From: File <noreply+automated@papermc.io>
 Date: Sun, 20 Apr 1997 15:37:42 +0200
 Subject: [PATCH] paper File Patches
 
 
 diff --git a/net/minecraft/world/level/block/DropperBlock.java b/net/minecraft/world/level/block/DropperBlock.java
-index 2955df6076eede75613cb911dc8046d75d2c002c..bdc8de231de7525a4bfb249fc6f5077b6112a2d7 100644
+index 86eb6ac902ac855c150ab9675be0137df004e46e..ecd84d7d345b9af56351c37e64c7650d2fdf6fcd 100644
 --- a/net/minecraft/world/level/block/DropperBlock.java
 +++ b/net/minecraft/world/level/block/DropperBlock.java
-@@ -53,6 +53,7 @@ public class DropperBlock extends DispenserBlock {
+@@ -46,6 +46,7 @@ public class DropperBlock extends DispenserBlock {
              BlockSource source = new BlockSource(level, pos, state, blockEntity);
              int slot = blockEntity.getRandomSlot(level.getRandom());
              if (slot < 0) {
@@ -16,7 +16,7 @@ index 2955df6076eede75613cb911dc8046d75d2c002c..bdc8de231de7525a4bfb249fc6f5077b
                  level.levelEvent(LevelEvent.SOUND_DISPENSER_FAIL, pos, 0);
              } else {
                  ItemStack itemStack = blockEntity.getItem(slot);
-@@ -61,10 +62,27 @@ public class DropperBlock extends DispenserBlock {
+@@ -54,10 +55,27 @@ public class DropperBlock extends DispenserBlock {
                      Container into = HopperBlockEntity.getContainerAt(level, pos.relative(direction));
                      ItemStack remaining;
                      if (into == null) {

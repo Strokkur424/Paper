@@ -1,14 +1,14 @@
-From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
 From: File <noreply+automated@papermc.io>
 Date: Sun, 20 Apr 1997 15:37:42 +0200
 Subject: [PATCH] paper File Patches
 
 
 diff --git a/net/minecraft/server/level/WorldGenRegion.java b/net/minecraft/server/level/WorldGenRegion.java
-index 83e40a05bd99ad0fd17f7b4cbbd1e4cde7818800..48254f947cf9099de2d50b8208314c98fad4df12 100644
+index bff86e1367e252aa97e6237c63c692e619136633..866d26dd9dc0ffb241d196677d23360400aa120b 100644
 --- a/net/minecraft/server/level/WorldGenRegion.java
 +++ b/net/minecraft/server/level/WorldGenRegion.java
-@@ -153,6 +153,28 @@ public class WorldGenRegion implements WorldGenLevel {
+@@ -159,6 +159,28 @@ public class WorldGenRegion implements WorldGenLevel {
          return distance < this.generatingStep.directDependencies().size();
      }
  
@@ -37,7 +37,7 @@ index 83e40a05bd99ad0fd17f7b4cbbd1e4cde7818800..48254f947cf9099de2d50b8208314c98
      @Override
      public BlockState getBlockState(final BlockPos pos) {
          int chunkX = SectionPos.blockToSectionCoord(pos.getX());
-@@ -268,11 +290,14 @@ public class WorldGenRegion implements WorldGenLevel {
+@@ -290,11 +312,14 @@ public class WorldGenRegion implements WorldGenLevel {
          return Math.abs(this.centerChunkX - chunkX) <= this.writeRadius && Math.abs(this.centerChunkZ - chunkZ) <= this.writeRadius;
      }
  
@@ -52,7 +52,7 @@ index 83e40a05bd99ad0fd17f7b4cbbd1e4cde7818800..48254f947cf9099de2d50b8208314c98
              Util.logAndPauseIfInIde(
                  "Detected setBlock in a far chunk ["
                      + chunkX
-@@ -284,6 +309,12 @@ public class WorldGenRegion implements WorldGenLevel {
+@@ -306,6 +331,12 @@ public class WorldGenRegion implements WorldGenLevel {
                      + this.generatingStep.targetStatus()
                      + (this.currentlyGenerating == null ? "" : ", currently generating: " + this.currentlyGenerating.get())
              );
@@ -65,7 +65,7 @@ index 83e40a05bd99ad0fd17f7b4cbbd1e4cde7818800..48254f947cf9099de2d50b8208314c98
              return false;
          } else if (this.center.isUpgrading()) {
              LevelHeightAccessor levelHeightAccessor = this.center.getHeightAccessorForGeneration();
-@@ -301,7 +332,7 @@ public class WorldGenRegion implements WorldGenLevel {
+@@ -323,7 +354,7 @@ public class WorldGenRegion implements WorldGenLevel {
  
          ChunkAccess chunk = this.getChunk(pos);
          BlockState oldState = chunk.setBlockState(pos, blockState, updateFlags);
@@ -74,7 +74,7 @@ index 83e40a05bd99ad0fd17f7b4cbbd1e4cde7818800..48254f947cf9099de2d50b8208314c98
              this.level.updatePOIOnBlockStateChange(pos, oldState, blockState);
          }
  
-@@ -314,6 +345,17 @@ public class WorldGenRegion implements WorldGenLevel {
+@@ -336,6 +367,17 @@ public class WorldGenRegion implements WorldGenLevel {
                      chunk.removeBlockEntity(pos);
                  }
              } else {
@@ -92,7 +92,7 @@ index 83e40a05bd99ad0fd17f7b4cbbd1e4cde7818800..48254f947cf9099de2d50b8208314c98
                  CompoundTag tag = new CompoundTag();
                  tag.putInt("x", pos.getX());
                  tag.putInt("y", pos.getY());
-@@ -341,6 +383,13 @@ public class WorldGenRegion implements WorldGenLevel {
+@@ -363,6 +405,13 @@ public class WorldGenRegion implements WorldGenLevel {
  
      @Override
      public boolean addFreshEntity(final Entity entity) {

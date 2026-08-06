@@ -1,11 +1,11 @@
-From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
 From: File <noreply+automated@papermc.io>
 Date: Sun, 20 Apr 1997 15:37:42 +0200
 Subject: [PATCH] paper File Patches
 
 
 diff --git a/net/minecraft/world/entity/vehicle/minecart/MinecartTNT.java b/net/minecraft/world/entity/vehicle/minecart/MinecartTNT.java
-index 9718bb1ed21b4e1ee380e2681a1ec50ee8fa6808..c1b3e93910b2ac2b89f9662e23eb0d36c6ef96d3 100644
+index b3b1a1837b4bab009bbcd46c5ad789e18a8281ea..1016e910940237b44dafaf0806af283827178463 100644
 --- a/net/minecraft/world/entity/vehicle/minecart/MinecartTNT.java
 +++ b/net/minecraft/world/entity/vehicle/minecart/MinecartTNT.java
 @@ -36,6 +36,7 @@ public class MinecartTNT extends AbstractMinecart {

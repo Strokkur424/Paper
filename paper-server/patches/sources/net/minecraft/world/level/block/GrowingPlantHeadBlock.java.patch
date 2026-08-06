@@ -1,14 +1,14 @@
-From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
 From: File <noreply+automated@papermc.io>
 Date: Sun, 20 Apr 1997 15:37:42 +0200
 Subject: [PATCH] paper File Patches
 
 
 diff --git a/net/minecraft/world/level/block/GrowingPlantHeadBlock.java b/net/minecraft/world/level/block/GrowingPlantHeadBlock.java
-index 30269ef827b53d62c0f26cf5b91fa252efd62457..21524350cb8822d33c86f1be783669ac8b961319 100644
+index 060c487a8af28e2c6bfd1398b9e43c78aacc1baf..4fd9e6bb598afdebfda4828e9f18afe556057f63 100644
 --- a/net/minecraft/world/level/block/GrowingPlantHeadBlock.java
 +++ b/net/minecraft/world/level/block/GrowingPlantHeadBlock.java
-@@ -48,14 +48,32 @@ public abstract class GrowingPlantHeadBlock extends GrowingPlantBlock implements
+@@ -44,14 +44,32 @@ public abstract class GrowingPlantHeadBlock extends GrowingPlantBlock implements
  
      @Override
      protected void randomTick(final BlockState state, final ServerLevel level, final BlockPos pos, final RandomSource random) {

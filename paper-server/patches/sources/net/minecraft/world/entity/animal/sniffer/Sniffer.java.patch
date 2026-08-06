@@ -1,11 +1,11 @@
-From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
 From: File <noreply+automated@papermc.io>
 Date: Sun, 20 Apr 1997 15:37:42 +0200
 Subject: [PATCH] paper File Patches
 
 
 diff --git a/net/minecraft/world/entity/animal/sniffer/Sniffer.java b/net/minecraft/world/entity/animal/sniffer/Sniffer.java
-index c18f12a5fbae3c10f82df5a3403b6fb65d9946f3..d5394ae7ce56555ad21aeafb2d78c291c62e2988 100644
+index a02a29d4a78064069e01e3fffd2b142312c7ff63..0d84b8885bbd0fb65c3202c68fccea93e3f64e6f 100644
 --- a/net/minecraft/world/entity/animal/sniffer/Sniffer.java
 +++ b/net/minecraft/world/entity/animal/sniffer/Sniffer.java
 @@ -289,6 +289,13 @@ public class Sniffer extends Animal {
@@ -22,7 +22,7 @@ index c18f12a5fbae3c10f82df5a3403b6fb65d9946f3..d5394ae7ce56555ad21aeafb2d78c291
                  l.addFreshEntity(entity);
              });
              this.playSound(SoundEvents.SNIFFER_DROP_SEED, 1.0F, 1.0F);
-@@ -347,12 +354,17 @@ public class Sniffer extends Animal {
+@@ -344,12 +351,17 @@ public class Sniffer extends Animal {
  
      @Override
      public void spawnChildFromBreeding(final ServerLevel level, final Animal partner) {

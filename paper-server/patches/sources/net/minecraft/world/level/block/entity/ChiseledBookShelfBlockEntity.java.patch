@@ -1,14 +1,14 @@
-From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
 From: File <noreply+automated@papermc.io>
 Date: Sun, 20 Apr 1997 15:37:42 +0200
 Subject: [PATCH] paper File Patches
 
 
 diff --git a/net/minecraft/world/level/block/entity/ChiseledBookShelfBlockEntity.java b/net/minecraft/world/level/block/entity/ChiseledBookShelfBlockEntity.java
-index 9fc2d1f1a6d441b821dc31defa3f5266654e37d1..8697f4d589766163a56b0de5be4fad999d09f809 100644
+index 45cedd26e31fb626415bd4657f4c922e3ac0d3b0..8967c271678a8ee8d4f79fb40eeaf646af192010 100644
 --- a/net/minecraft/world/level/block/entity/ChiseledBookShelfBlockEntity.java
 +++ b/net/minecraft/world/level/block/entity/ChiseledBookShelfBlockEntity.java
-@@ -29,6 +29,42 @@ public class ChiseledBookShelfBlockEntity extends BlockEntity implements ListBac
+@@ -28,6 +28,42 @@ public class ChiseledBookShelfBlockEntity extends BlockEntity implements ListBac
      private final NonNullList<ItemStack> items = NonNullList.withSize(6, ItemStack.EMPTY);
      public int lastInteractedSlot = -1;
  
@@ -51,7 +51,7 @@ index 9fc2d1f1a6d441b821dc31defa3f5266654e37d1..8697f4d589766163a56b0de5be4fad99
      public ChiseledBookShelfBlockEntity(final BlockPos worldPosition, final BlockState blockState) {
          super(BlockEntityTypes.CHISELED_BOOKSHELF, worldPosition, blockState);
      }
-@@ -68,7 +104,7 @@ public class ChiseledBookShelfBlockEntity extends BlockEntity implements ListBac
+@@ -67,7 +103,7 @@ public class ChiseledBookShelfBlockEntity extends BlockEntity implements ListBac
  
      @Override
      public int getMaxStackSize() {
@@ -60,7 +60,7 @@ index 9fc2d1f1a6d441b821dc31defa3f5266654e37d1..8697f4d589766163a56b0de5be4fad99
      }
  
      @Override
-@@ -81,7 +117,7 @@ public class ChiseledBookShelfBlockEntity extends BlockEntity implements ListBac
+@@ -80,7 +116,7 @@ public class ChiseledBookShelfBlockEntity extends BlockEntity implements ListBac
          ItemStack retrievedItem = Objects.requireNonNullElse(this.getItems().get(slot), ItemStack.EMPTY);
          this.getItems().set(slot, ItemStack.EMPTY);
          if (!retrievedItem.isEmpty()) {
@@ -69,7 +69,7 @@ index 9fc2d1f1a6d441b821dc31defa3f5266654e37d1..8697f4d589766163a56b0de5be4fad99
          }
  
          return retrievedItem;
-@@ -91,7 +127,7 @@ public class ChiseledBookShelfBlockEntity extends BlockEntity implements ListBac
+@@ -90,7 +126,7 @@ public class ChiseledBookShelfBlockEntity extends BlockEntity implements ListBac
      public void setItem(final int slot, final ItemStack itemStack) {
          if (this.acceptsItemType(itemStack)) {
              this.getItems().set(slot, itemStack);

@@ -1,14 +1,14 @@
-From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
 From: File <noreply+automated@papermc.io>
 Date: Sun, 20 Apr 1997 15:37:42 +0200
 Subject: [PATCH] paper File Patches
 
 
 diff --git a/net/minecraft/world/inventory/MerchantMenu.java b/net/minecraft/world/inventory/MerchantMenu.java
-index 19b09d60461a0c4acc72591ecc81be7e6a8fa22a..5979e3856da1287f4513c984c0414952bfeb3ea2 100644
+index d63eece4bc97dc9c1fc6e3c5cc8afee8576eb64c..d6e6909b443e39b6b4e5c1dad33f27368198b97c 100644
 --- a/net/minecraft/world/inventory/MerchantMenu.java
 +++ b/net/minecraft/world/inventory/MerchantMenu.java
-@@ -30,6 +30,18 @@ public class MerchantMenu extends AbstractContainerMenu {
+@@ -31,6 +31,18 @@ public class MerchantMenu extends AbstractContainerMenu {
      private int merchantLevel;
      private boolean showProgressBar;
      private boolean canRestock;
@@ -27,7 +27,7 @@ index 19b09d60461a0c4acc72591ecc81be7e6a8fa22a..5979e3856da1287f4513c984c0414952
  
      public MerchantMenu(final int containerId, final Inventory inventory) {
          this(containerId, inventory, new ClientSideMerchant(inventory.player));
-@@ -42,6 +54,7 @@ public class MerchantMenu extends AbstractContainerMenu {
+@@ -43,6 +55,7 @@ public class MerchantMenu extends AbstractContainerMenu {
          this.addSlot(new Slot(this.tradeContainer, 0, 136, 37));
          this.addSlot(new Slot(this.tradeContainer, 1, 162, 37));
          this.addSlot(new MerchantResultSlot(inventory.player, merchant, this.tradeContainer, 2, 220, 37));
@@ -35,7 +35,7 @@ index 19b09d60461a0c4acc72591ecc81be7e6a8fa22a..5979e3856da1287f4513c984c0414952
          this.addStandardInventorySlots(inventory, 108, 84);
      }
  
-@@ -61,6 +74,7 @@ public class MerchantMenu extends AbstractContainerMenu {
+@@ -62,6 +75,7 @@ public class MerchantMenu extends AbstractContainerMenu {
  
      @Override
      public boolean stillValid(final Player player) {
@@ -43,7 +43,7 @@ index 19b09d60461a0c4acc72591ecc81be7e6a8fa22a..5979e3856da1287f4513c984c0414952
          return this.trader.stillValid(player);
      }
  
-@@ -105,12 +119,12 @@ public class MerchantMenu extends AbstractContainerMenu {
+@@ -106,12 +120,12 @@ public class MerchantMenu extends AbstractContainerMenu {
              ItemStack stack = slot.getItem();
              clicked = stack.copy();
              if (slotIndex == 2) {
@@ -59,7 +59,7 @@ index 19b09d60461a0c4acc72591ecc81be7e6a8fa22a..5979e3856da1287f4513c984c0414952
              } else if (slotIndex != 0 && slotIndex != 1) {
                  if (slotIndex >= 3 && slotIndex < 30) {
                      if (!this.moveItemStackTo(stack, 30, 39, false)) {
-@@ -123,6 +137,7 @@ public class MerchantMenu extends AbstractContainerMenu {
+@@ -124,6 +138,7 @@ public class MerchantMenu extends AbstractContainerMenu {
                  return ItemStack.EMPTY;
              }
  
@@ -67,7 +67,7 @@ index 19b09d60461a0c4acc72591ecc81be7e6a8fa22a..5979e3856da1287f4513c984c0414952
              if (stack.isEmpty()) {
                  slot.setByPlayer(ItemStack.EMPTY);
              } else {
-@@ -134,13 +149,28 @@ public class MerchantMenu extends AbstractContainerMenu {
+@@ -135,13 +150,28 @@ public class MerchantMenu extends AbstractContainerMenu {
              }
  
              slot.onTake(player, stack);

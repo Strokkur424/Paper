@@ -1,14 +1,14 @@
-From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
 From: File <noreply+automated@papermc.io>
 Date: Sun, 20 Apr 1997 15:37:42 +0200
 Subject: [PATCH] paper File Patches
 
 
 diff --git a/net/minecraft/world/level/block/SculkCatalystBlock.java b/net/minecraft/world/level/block/SculkCatalystBlock.java
-index 1bfce3e5aedf9e30910b755f1a90939aed94dad6..22eec76ee5ac388ad28661ba6c251ec4c2bd8a67 100644
+index 24baa85566314530c4cdd51b43f31a170379a20c..ebea630ec3b3a7ad886e76090f279661ae83b266 100644
 --- a/net/minecraft/world/level/block/SculkCatalystBlock.java
 +++ b/net/minecraft/world/level/block/SculkCatalystBlock.java
-@@ -60,8 +60,16 @@ public class SculkCatalystBlock extends BaseEntityBlock {
+@@ -53,8 +53,16 @@ public class SculkCatalystBlock extends BaseEntityBlock {
      @Override
      protected void spawnAfterBreak(final BlockState state, final ServerLevel level, final BlockPos pos, final ItemStack tool, final boolean dropExperience) {
          super.spawnAfterBreak(state, level, pos, tool, dropExperience);

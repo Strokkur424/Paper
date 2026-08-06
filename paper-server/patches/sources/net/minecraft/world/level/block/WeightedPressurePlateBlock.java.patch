@@ -1,14 +1,14 @@
-From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
 From: File <noreply+automated@papermc.io>
 Date: Sun, 20 Apr 1997 15:37:42 +0200
 Subject: [PATCH] paper File Patches
 
 
 diff --git a/net/minecraft/world/level/block/WeightedPressurePlateBlock.java b/net/minecraft/world/level/block/WeightedPressurePlateBlock.java
-index 453253ba344a9b2472b1586c1b302bd8114050d1..e26385eb25338e7f0770b9154a542273b651c2f4 100644
+index 8b288e0d713f27f031808954089c470ee9612ff1..47e5291925e1a7ee69d120b79651c71a856d15d5 100644
 --- a/net/minecraft/world/level/block/WeightedPressurePlateBlock.java
 +++ b/net/minecraft/world/level/block/WeightedPressurePlateBlock.java
-@@ -39,7 +39,25 @@ public class WeightedPressurePlateBlock extends BasePressurePlateBlock {
+@@ -23,7 +23,25 @@ public class WeightedPressurePlateBlock extends BasePressurePlateBlock {
  
      @Override
      protected int getSignalStrength(final Level level, final BlockPos pos) {

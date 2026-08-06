@@ -1,14 +1,14 @@
-From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
 From: File <noreply+automated@papermc.io>
 Date: Sun, 20 Apr 1997 15:37:42 +0200
 Subject: [PATCH] paper File Patches
 
 
 diff --git a/net/minecraft/world/level/block/state/BlockBehaviour.java b/net/minecraft/world/level/block/state/BlockBehaviour.java
-index 959d15453ac674e0bad48fa56adb3e5c0051514f..3ec065b2db3810cfb42a65330501998dd2e75683 100644
+index 212b05b85ddce88c80df8a6aac3df8fe674c91ab..d4f6d9ead9da025c537fca5f4635a67e9ff042c0 100644
 --- a/net/minecraft/world/level/block/state/BlockBehaviour.java
 +++ b/net/minecraft/world/level/block/state/BlockBehaviour.java
-@@ -168,15 +168,22 @@ public abstract class BlockBehaviour implements FeatureElement {
+@@ -159,15 +159,22 @@ public abstract class BlockBehaviour implements FeatureElement {
      }
  
      protected void onPlace(final BlockState state, final Level level, final BlockPos pos, final BlockState oldState, final boolean movedByPiston) {
@@ -32,7 +32,7 @@ index 959d15453ac674e0bad48fa56adb3e5c0051514f..3ec065b2db3810cfb42a65330501998d
              Block block = state.getBlock();
              boolean doDropExperienceHack = explosion.getIndirectSourceEntity() instanceof Player;
              if (block.dropFromExplosion(explosion)) {
-@@ -186,8 +193,10 @@ public abstract class BlockBehaviour implements FeatureElement {
+@@ -177,8 +184,10 @@ public abstract class BlockBehaviour implements FeatureElement {
                      .withParameter(LootContextParams.TOOL, ItemStack.EMPTY)
                      .withOptionalParameter(LootContextParams.BLOCK_ENTITY, blockEntity)
                      .withOptionalParameter(LootContextParams.THIS_ENTITY, explosion.getDirectSourceEntity());
@@ -45,7 +45,7 @@ index 959d15453ac674e0bad48fa56adb3e5c0051514f..3ec065b2db3810cfb42a65330501998d
                  }
  
                  state.spawnAfterBreak(level, pos, ItemStack.EMPTY, doDropExperienceHack);
-@@ -263,7 +272,7 @@ public abstract class BlockBehaviour implements FeatureElement {
+@@ -258,7 +267,7 @@ public abstract class BlockBehaviour implements FeatureElement {
      }
  
      protected boolean canBeReplaced(final BlockState state, final BlockPlaceContext context) {
@@ -54,7 +54,7 @@ index 959d15453ac674e0bad48fa56adb3e5c0051514f..3ec065b2db3810cfb42a65330501998d
      }
  
      protected boolean canBeReplaced(final BlockState state, final Fluid fluid) {
-@@ -486,6 +495,15 @@ public abstract class BlockBehaviour implements FeatureElement {
+@@ -481,6 +490,15 @@ public abstract class BlockBehaviour implements FeatureElement {
              this.instrument = properties.instrument;
              this.replaceable = properties.replaceable;
          }
@@ -70,8 +70,8 @@ index 959d15453ac674e0bad48fa56adb3e5c0051514f..3ec065b2db3810cfb42a65330501998d
  
          private boolean calculateSolid() {
              if (this.owner.properties.forceSolidOn) {
-@@ -509,12 +527,14 @@ public abstract class BlockBehaviour implements FeatureElement {
-             return bounds.getSize() >= 0.7291666666666666 || bounds.getYsize() >= 1.0;
+@@ -506,12 +524,14 @@ public abstract class BlockBehaviour implements FeatureElement {
+             }
          }
  
 +        protected boolean shapeExceedsCube = true; // Paper - moved from actual method to here
@@ -85,7 +85,7 @@ index 959d15453ac674e0bad48fa56adb3e5c0051514f..3ec065b2db3810cfb42a65330501998d
  
              this.legacySolid = this.calculateSolid();
              this.occlusionShape = this.canOcclude ? this.owner.getOcclusionShape(this.asState()) : Shapes.empty();
-@@ -555,6 +575,12 @@ public abstract class BlockBehaviour implements FeatureElement {
+@@ -546,6 +566,12 @@ public abstract class BlockBehaviour implements FeatureElement {
              return this.legacySolid;
          }
  
@@ -98,7 +98,7 @@ index 959d15453ac674e0bad48fa56adb3e5c0051514f..3ec065b2db3810cfb42a65330501998d
          public boolean isValidSpawn(final BlockGetter level, final BlockPos pos, final EntityType<?> type) {
              return this.getBlock().properties.isValidSpawn.test(this.asState(), level, pos, type);
          }
-@@ -575,19 +601,19 @@ public abstract class BlockBehaviour implements FeatureElement {
+@@ -566,19 +592,19 @@ public abstract class BlockBehaviour implements FeatureElement {
              return this.occlusionShape;
          }
  
@@ -123,7 +123,7 @@ index 959d15453ac674e0bad48fa56adb3e5c0051514f..3ec065b2db3810cfb42a65330501998d
              return this.isAir;
          }
  
-@@ -601,7 +627,7 @@ public abstract class BlockBehaviour implements FeatureElement {
+@@ -592,7 +618,7 @@ public abstract class BlockBehaviour implements FeatureElement {
          }
  
          public MapColor getMapColor(final BlockGetter level, final BlockPos pos) {
@@ -132,7 +132,7 @@ index 959d15453ac674e0bad48fa56adb3e5c0051514f..3ec065b2db3810cfb42a65330501998d
          }
  
          public BlockState rotate(final Rotation rotation) {
-@@ -661,14 +687,14 @@ public abstract class BlockBehaviour implements FeatureElement {
+@@ -652,14 +678,14 @@ public abstract class BlockBehaviour implements FeatureElement {
          }
  
          public PushReaction getPistonPushReaction() {
@@ -149,7 +149,7 @@ index 959d15453ac674e0bad48fa56adb3e5c0051514f..3ec065b2db3810cfb42a65330501998d
              return this.canOcclude;
          }
  
-@@ -759,7 +785,13 @@ public abstract class BlockBehaviour implements FeatureElement {
+@@ -750,7 +776,13 @@ public abstract class BlockBehaviour implements FeatureElement {
          }
  
          public void onPlace(final Level level, final BlockPos pos, final BlockState oldState, final boolean movedByPiston) {
@@ -164,7 +164,7 @@ index 959d15453ac674e0bad48fa56adb3e5c0051514f..3ec065b2db3810cfb42a65330501998d
          }
  
          public void affectNeighborsAfterRemoval(final ServerLevel level, final BlockPos pos, final boolean movedByPiston) {
-@@ -786,6 +818,7 @@ public abstract class BlockBehaviour implements FeatureElement {
+@@ -777,6 +809,7 @@ public abstract class BlockBehaviour implements FeatureElement {
  
          public void spawnAfterBreak(final ServerLevel level, final BlockPos pos, final ItemStack tool, final boolean dropExperience) {
              this.getBlock().spawnAfterBreak(this.asState(), level, pos, tool, dropExperience);
@@ -172,7 +172,7 @@ index 959d15453ac674e0bad48fa56adb3e5c0051514f..3ec065b2db3810cfb42a65330501998d
          }
  
          public List<ItemStack> getDrops(final LootParams.Builder params) {
-@@ -870,11 +903,11 @@ public abstract class BlockBehaviour implements FeatureElement {
+@@ -869,11 +902,11 @@ public abstract class BlockBehaviour implements FeatureElement {
              return this.getBlock() instanceof EntityBlock ? ((EntityBlock)this.getBlock()).getTicker(level, this.asState(), type) : null;
          }
  

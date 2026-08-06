@@ -1,14 +1,14 @@
-From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
 From: File <noreply+automated@papermc.io>
 Date: Sun, 20 Apr 1997 15:37:42 +0200
 Subject: [PATCH] paper File Patches
 
 
 diff --git a/net/minecraft/world/level/block/entity/SculkCatalystBlockEntity.java b/net/minecraft/world/level/block/entity/SculkCatalystBlockEntity.java
-index 0f09e83073bd6a1bc31870de4e7eaaa356342b3f..4aa2d141eba2596e782fc4ab4890c5e2d80eb811 100644
+index e938f87e93acec95d06ed5c117c669a01bd84022..a1b0168077b83575f16dd377da2e1ba520d3bd19 100644
 --- a/net/minecraft/world/level/block/entity/SculkCatalystBlockEntity.java
 +++ b/net/minecraft/world/level/block/entity/SculkCatalystBlockEntity.java
-@@ -35,8 +35,18 @@ public class SculkCatalystBlockEntity extends BlockEntity implements GameEventLi
+@@ -34,8 +34,18 @@ public class SculkCatalystBlockEntity extends BlockEntity implements GameEventLi
          this.catalystListener = new SculkCatalystBlockEntity.CatalystListener(blockState, new BlockPositionSource(worldPosition));
      }
  

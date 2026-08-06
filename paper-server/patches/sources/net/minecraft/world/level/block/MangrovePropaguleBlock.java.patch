@@ -1,14 +1,14 @@
-From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
 From: File <noreply+automated@papermc.io>
 Date: Sun, 20 Apr 1997 15:37:42 +0200
 Subject: [PATCH] paper File Patches
 
 
 diff --git a/net/minecraft/world/level/block/MangrovePropaguleBlock.java b/net/minecraft/world/level/block/MangrovePropaguleBlock.java
-index 854ced944e49876dfb06e4d519ad74f3e285efb3..5f7a7ef91fa0246a92ad88364ab9f771c78458ab 100644
+index bfe60598bc3c075bed32146b9d09a06386d1b3f6..3f05c540c2dfeebfe7e4e956a1087e1a4dea50b0 100644
 --- a/net/minecraft/world/level/block/MangrovePropaguleBlock.java
 +++ b/net/minecraft/world/level/block/MangrovePropaguleBlock.java
-@@ -102,7 +102,7 @@ public class MangrovePropaguleBlock extends SaplingBlock implements SimpleWaterl
+@@ -92,7 +92,7 @@ public class MangrovePropaguleBlock extends SaplingBlock implements SimpleWaterl
      @Override
      protected void randomTick(final BlockState state, final ServerLevel level, final BlockPos pos, final RandomSource random) {
          if (!isHanging(state)) {

@@ -1,14 +1,14 @@
-From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
 From: File <noreply+automated@papermc.io>
 Date: Sun, 20 Apr 1997 15:37:42 +0200
 Subject: [PATCH] paper File Patches
 
 
 diff --git a/net/minecraft/world/level/block/AbstractCandleBlock.java b/net/minecraft/world/level/block/AbstractCandleBlock.java
-index 47a9e96bd4b007a188062816e8b876f7b7ad4cf1..4ceb8c8213e1699821d6b26ea578bc5ad3f03553 100644
+index 9d9cf90a6a00d1cc94354e31eee56792a77c3ad7..e8fe1757d38618c510771df9afce6c5fc507c2e8 100644
 --- a/net/minecraft/world/level/block/AbstractCandleBlock.java
 +++ b/net/minecraft/world/level/block/AbstractCandleBlock.java
-@@ -44,6 +44,11 @@ public abstract class AbstractCandleBlock extends Block {
+@@ -40,6 +40,11 @@ public abstract class AbstractCandleBlock extends Block {
      @Override
      protected void onProjectileHit(final Level level, final BlockState state, final BlockHitResult blockHit, final Projectile projectile) {
          if (!level.isClientSide() && projectile.isOnFire() && this.canBeLit(state)) {

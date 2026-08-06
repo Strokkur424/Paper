@@ -1,14 +1,14 @@
-From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
 From: File <noreply+automated@papermc.io>
 Date: Sun, 20 Apr 1997 15:37:42 +0200
 Subject: [PATCH] paper File Patches
 
 
 diff --git a/net/minecraft/world/level/block/FrogspawnBlock.java b/net/minecraft/world/level/block/FrogspawnBlock.java
-index 6bf57d0d59d906f81be7ee9b6ca400e0901bbbb5..701a1c80e91dc5c0517819f3af55c1473979b039 100644
+index 7fb3646c2d6b48dcd22f730cf9ef8d5ff2c68ca9..aebd151607033dd119428cf9effd868d8d3a3574 100644
 --- a/net/minecraft/world/level/block/FrogspawnBlock.java
 +++ b/net/minecraft/world/level/block/FrogspawnBlock.java
-@@ -99,6 +99,7 @@ public class FrogspawnBlock extends Block {
+@@ -92,6 +92,7 @@ public class FrogspawnBlock extends Block {
          final InsideBlockEffectApplier effectApplier,
          final boolean isPrecise
      ) {
@@ -16,7 +16,7 @@ index 6bf57d0d59d906f81be7ee9b6ca400e0901bbbb5..701a1c80e91dc5c0517819f3af55c147
          if (entity.is(EntityTypes.FALLING_BLOCK)) {
              this.destroyBlock(level, pos);
          }
-@@ -111,6 +112,11 @@ public class FrogspawnBlock extends Block {
+@@ -104,6 +105,11 @@ public class FrogspawnBlock extends Block {
      }
  
      private void hatchFrogspawn(final ServerLevel level, final BlockPos pos, final RandomSource random) {
@@ -28,7 +28,7 @@ index 6bf57d0d59d906f81be7ee9b6ca400e0901bbbb5..701a1c80e91dc5c0517819f3af55c147
          this.destroyBlock(level, pos);
          level.playSound(null, pos, SoundEvents.FROGSPAWN_HATCH, SoundSource.BLOCKS, 1.0F, 1.0F);
          this.spawnTadpoles(level, pos, random);
-@@ -131,7 +137,7 @@ public class FrogspawnBlock extends Block {
+@@ -124,7 +130,7 @@ public class FrogspawnBlock extends Block {
                  int yRot = random.nextInt(1, 361);
                  tadpole.snapTo(xPos, pos.getY() - 0.5, zPos, yRot, 0.0F);
                  tadpole.setPersistenceRequired();

@@ -1,11 +1,11 @@
-From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
 From: File <noreply+automated@papermc.io>
 Date: Sun, 20 Apr 1997 15:37:42 +0200
 Subject: [PATCH] paper File Patches
 
 
 diff --git a/net/minecraft/world/entity/Bucketable.java b/net/minecraft/world/entity/Bucketable.java
-index c25c44d1ce051656e8a6ddff7622f50e2401a5d6..c0a931526bf663da06949fbe0a4a19ba5ecc5838 100644
+index fb699dff1db30a5664e7c4d97554e0e51b301adb..f88d8791c3deb1ec0e022e4b422c7d73da8f1893 100644
 --- a/net/minecraft/world/entity/Bucketable.java
 +++ b/net/minecraft/world/entity/Bucketable.java
 @@ -80,9 +80,25 @@ public interface Bucketable {

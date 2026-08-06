@@ -1,11 +1,11 @@
-From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
 From: File <noreply+automated@papermc.io>
 Date: Sun, 20 Apr 1997 15:37:42 +0200
 Subject: [PATCH] paper File Patches
 
 
 diff --git a/net/minecraft/world/entity/animal/rabbit/Rabbit.java b/net/minecraft/world/entity/animal/rabbit/Rabbit.java
-index 3f2b0ca7f4a92137579a50969bbd48dd704ddb91..3cdfde73d965e50b00355547e54429fd4afe5ce3 100644
+index a2957a15f8ad56d38bde3db9bf928c7c5d5b4496..de39f94ed46c095f3b14eb0dc4589b7b9ebb4f79 100644
 --- a/net/minecraft/world/entity/animal/rabbit/Rabbit.java
 +++ b/net/minecraft/world/entity/animal/rabbit/Rabbit.java
 @@ -114,7 +114,7 @@ public class Rabbit extends Animal {
@@ -28,4 +28,4 @@ index 3f2b0ca7f4a92137579a50969bbd48dd704ddb91..3cdfde73d965e50b00355547e54429fd
 +                        if (!org.bukkit.craftbukkit.event.CraftEventFactory.callEntityChangeBlockEvent(this.rabbit, cropsPos, blockState.setValue(CarrotBlock.AGE, carrotAge - 1))) return; // CraftBukkit // Paper - fix wrong block state
                          level.setBlock(cropsPos, blockState.setValue(CarrotBlock.AGE, carrotAge - 1), Block.UPDATE_CLIENTS);
                          level.gameEvent(GameEvent.BLOCK_CHANGE, cropsPos, GameEvent.Context.of(this.rabbit));
-                         level.levelEvent(LevelEvent.PARTICLES_DESTROY_BLOCK, cropsPos, Block.getId(blockState));
+                         level.levelEvent(LevelEvent.PARTICLES_AND_SOUND_DESTROY_BLOCK, cropsPos, Block.getId(blockState));

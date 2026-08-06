@@ -1,14 +1,14 @@
-From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
 From: File <noreply+automated@papermc.io>
 Date: Sun, 20 Apr 1997 15:37:42 +0200
 Subject: [PATCH] paper File Patches
 
 
 diff --git a/net/minecraft/world/level/block/SpongeBlock.java b/net/minecraft/world/level/block/SpongeBlock.java
-index aa050a9483378ef3fc7628b96269ed6405652b05..604bd261066fbbd98e1b95602187f0b6b3f63010 100644
+index 5af4afa40e30095cf7fd1b6d29334646578e77a6..73922914a7291faed21bbf85eae268c1f9e35730 100644
 --- a/net/minecraft/world/level/block/SpongeBlock.java
 +++ b/net/minecraft/world/level/block/SpongeBlock.java
-@@ -52,7 +52,8 @@ public class SpongeBlock extends Block {
+@@ -45,7 +45,8 @@ public class SpongeBlock extends Block {
      }
  
      private boolean removeWaterBreadthFirstSearch(final Level level, final BlockPos startPos) {
@@ -18,7 +18,7 @@ index aa050a9483378ef3fc7628b96269ed6405652b05..604bd261066fbbd98e1b95602187f0b6
              for (Direction direction : ALL_DIRECTIONS) {
                  consumer.accept(pos.relative(direction));
              }
-@@ -60,28 +61,65 @@ public class SpongeBlock extends Block {
+@@ -53,28 +54,65 @@ public class SpongeBlock extends Block {
              if (pos.equals(startPos)) {
                  return BlockPos.TraversalNodeStatus.ACCEPT;
              } else {
@@ -36,9 +36,9 @@ index aa050a9483378ef3fc7628b96269ed6405652b05..604bd261066fbbd98e1b95602187f0b6
                      return BlockPos.TraversalNodeStatus.ACCEPT;
                  } else {
 -                    if (state.getBlock() instanceof LiquidBlock) {
--                        level.setBlock(pos, Blocks.AIR.defaultBlockState(), Block.UPDATE_ALL);
+-                        level.setBlockAndUpdate(pos, Blocks.AIR.defaultBlockState());
 +                    if (blockState.getBlock() instanceof LiquidBlock) {
-+                        blockList.setBlock(pos, Blocks.AIR.defaultBlockState(), Block.UPDATE_ALL); // CraftBukkit
++                        blockList.setBlockAndUpdate(pos, Blocks.AIR.defaultBlockState()); // CraftBukkit
                      } else {
 -                        if (!state.is(Blocks.KELP) && !state.is(Blocks.KELP_PLANT) && !state.is(Blocks.SEAGRASS) && !state.is(Blocks.TALL_SEAGRASS)) {
 +                        if (!blockState.is(Blocks.KELP) && !blockState.is(Blocks.KELP_PLANT) && !blockState.is(Blocks.SEAGRASS) && !blockState.is(Blocks.TALL_SEAGRASS)) {
@@ -47,11 +47,11 @@ index aa050a9483378ef3fc7628b96269ed6405652b05..604bd261066fbbd98e1b95602187f0b6
  
 -                        BlockEntity blockEntity = state.hasBlockEntity() ? level.getBlockEntity(pos) : null;
 -                        dropResources(state, level, pos, blockEntity);
--                        level.setBlock(pos, Blocks.AIR.defaultBlockState(), Block.UPDATE_ALL);
+-                        level.setBlockAndUpdate(pos, Blocks.AIR.defaultBlockState());
 +                        // CraftBukkit start
 +                        // BlockEntity blockEntity = blockState.hasBlockEntity() ? level.getBlockEntity(pos) : null;
 +                        // dropResources(blockState, level, pos, blockEntity);
-+                        blockList.setBlock(pos, Blocks.AIR.defaultBlockState(), Block.UPDATE_ALL);
++                        blockList.setBlockAndUpdate(pos, Blocks.AIR.defaultBlockState());
 +                        // CraftBukkit end
                      }
  

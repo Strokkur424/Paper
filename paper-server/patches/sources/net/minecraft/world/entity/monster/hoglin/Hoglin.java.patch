@@ -1,11 +1,11 @@
-From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
 From: File <noreply+automated@papermc.io>
 Date: Sun, 20 Apr 1997 15:37:42 +0200
 Subject: [PATCH] paper File Patches
 
 
 diff --git a/net/minecraft/world/entity/monster/hoglin/Hoglin.java b/net/minecraft/world/entity/monster/hoglin/Hoglin.java
-index f2bee8c284dae7e81cb4105f920de33b1d31b8be..045b8320ef9d63d7b81a680ad12f1afa94a76c7d 100644
+index c605d95633391c12dabe66835ceb0c860b3fe0db..b9c1c04b6bc53dca41b5075f716d33af1f30236e 100644
 --- a/net/minecraft/world/entity/monster/hoglin/Hoglin.java
 +++ b/net/minecraft/world/entity/monster/hoglin/Hoglin.java
 @@ -250,9 +250,14 @@ public class Hoglin extends Animal implements Enemy, HoglinBase {

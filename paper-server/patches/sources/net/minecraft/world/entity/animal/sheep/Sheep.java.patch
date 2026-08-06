@@ -1,11 +1,11 @@
-From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
 From: File <noreply+automated@papermc.io>
 Date: Sun, 20 Apr 1997 15:37:42 +0200
 Subject: [PATCH] paper File Patches
 
 
 diff --git a/net/minecraft/world/entity/animal/sheep/Sheep.java b/net/minecraft/world/entity/animal/sheep/Sheep.java
-index 4e41fc2712a74ce9d5315b149a7a0baed68cd643..b3345d2e0f991f578c5a8d2871bee8f936a733c8 100644
+index 0debdcb8baa5773003f13d9b9bf1862b88f9f395..450bdc5fab3b4e2fd9007595b339327adebbca60 100644
 --- a/net/minecraft/world/entity/animal/sheep/Sheep.java
 +++ b/net/minecraft/world/entity/animal/sheep/Sheep.java
 @@ -148,7 +148,15 @@ public class Sheep extends Animal implements Shearable {

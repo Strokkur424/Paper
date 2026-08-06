@@ -1,11 +1,11 @@
-From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
 From: File <noreply+automated@papermc.io>
 Date: Sun, 20 Apr 1997 15:37:42 +0200
 Subject: [PATCH] paper File Patches
 
 
 diff --git a/net/minecraft/world/entity/decoration/ArmorStand.java b/net/minecraft/world/entity/decoration/ArmorStand.java
-index cf2aec42db0255961de0e2e080395dc829785caf..9c496533c311a13807d9a7e5d7ed1507e5f18657 100644
+index 1d1dcbe7a8b27703f4fc424d4ab1561ace3aa3dd..bf7bc0b300712eb498305205e91be30948b467ef 100644
 --- a/net/minecraft/world/entity/decoration/ArmorStand.java
 +++ b/net/minecraft/world/entity/decoration/ArmorStand.java
 @@ -89,9 +89,16 @@ public class ArmorStand extends LivingEntity {

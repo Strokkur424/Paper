@@ -1,14 +1,14 @@
-From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
 From: File <noreply+automated@papermc.io>
 Date: Sun, 20 Apr 1997 15:37:42 +0200
 Subject: [PATCH] paper File Patches
 
 
 diff --git a/net/minecraft/network/protocol/game/VecDeltaCodec.java b/net/minecraft/network/protocol/game/VecDeltaCodec.java
-index 0801bbc822b1640794fa8f71a8256be82b2316ff..74180d9cc7f5a0caa47b7c20784be31dbcf9e296 100644
+index a4c899bff7825f5bf4b559c55799e19aa4f8115a..0041a413c3346a7a4463f9f6eaf9137ca56802c1 100644
 --- a/net/minecraft/network/protocol/game/VecDeltaCodec.java
 +++ b/net/minecraft/network/protocol/game/VecDeltaCodec.java
-@@ -5,7 +5,7 @@ import net.minecraft.world.phys.Vec3;
+@@ -9,7 +9,7 @@ import org.jspecify.annotations.Nullable;
  
  public class VecDeltaCodec {
      private static final double TRUNCATION_STEPS = 4096.0;

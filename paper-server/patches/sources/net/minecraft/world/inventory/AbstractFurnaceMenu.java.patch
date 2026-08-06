@@ -1,14 +1,14 @@
-From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
 From: File <noreply+automated@papermc.io>
 Date: Sun, 20 Apr 1997 15:37:42 +0200
 Subject: [PATCH] paper File Patches
 
 
 diff --git a/net/minecraft/world/inventory/AbstractFurnaceMenu.java b/net/minecraft/world/inventory/AbstractFurnaceMenu.java
-index acac9cfd5f9f3d6617c2f24d5fd2df4d219080ca..19bfba135158f19a6055af611d4fc2b34be9ca17 100644
+index 77373654d53c2d8380a65beed7c7b57f176fb110..060a5d9372a5ebd2b18977f53ab723eb7359342c 100644
 --- a/net/minecraft/world/inventory/AbstractFurnaceMenu.java
 +++ b/net/minecraft/world/inventory/AbstractFurnaceMenu.java
-@@ -32,6 +32,21 @@ public abstract class AbstractFurnaceMenu extends RecipeBookMenu {
+@@ -33,6 +33,21 @@ public abstract class AbstractFurnaceMenu extends RecipeBookMenu {
      protected final Level level;
      private final RecipePropertySet acceptedInputs;
      private final RecipeBookType recipeBookType;
@@ -30,7 +30,7 @@ index acac9cfd5f9f3d6617c2f24d5fd2df4d219080ca..19bfba135158f19a6055af611d4fc2b3
  
      protected AbstractFurnaceMenu(
          final MenuType<?> menuType,
-@@ -63,6 +78,7 @@ public abstract class AbstractFurnaceMenu extends RecipeBookMenu {
+@@ -64,6 +79,7 @@ public abstract class AbstractFurnaceMenu extends RecipeBookMenu {
          this.addSlot(new Slot(container, 0, 56, 17));
          this.addSlot(new FurnaceFuelSlot(this, container, 1, 56, 53));
          this.addSlot(new FurnaceResultSlot(inventory.player, container, 2, 116, 35));
@@ -38,7 +38,7 @@ index acac9cfd5f9f3d6617c2f24d5fd2df4d219080ca..19bfba135158f19a6055af611d4fc2b3
          this.addStandardInventorySlots(inventory, 8, 84);
          this.addDataSlots(data);
      }
-@@ -80,6 +96,7 @@ public abstract class AbstractFurnaceMenu extends RecipeBookMenu {
+@@ -81,6 +97,7 @@ public abstract class AbstractFurnaceMenu extends RecipeBookMenu {
  
      @Override
      public boolean stillValid(final Player player) {

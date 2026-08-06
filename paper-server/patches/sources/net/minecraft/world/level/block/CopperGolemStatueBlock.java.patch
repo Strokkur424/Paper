@@ -1,14 +1,14 @@
-From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
 From: File <noreply+automated@papermc.io>
 Date: Sun, 20 Apr 1997 15:37:42 +0200
 Subject: [PATCH] paper File Patches
 
 
 diff --git a/net/minecraft/world/level/block/CopperGolemStatueBlock.java b/net/minecraft/world/level/block/CopperGolemStatueBlock.java
-index a76a053ccdc23d2df138c4ac102c1fe609779f39..d42cd67804afe78488f98ad22c984fc01a74df2a 100644
+index 75d64d512ba68602d5b456298465a7f15b70f818..45002ae1b1dbb77697797df57b5390355aae4905 100644
 --- a/net/minecraft/world/level/block/CopperGolemStatueBlock.java
 +++ b/net/minecraft/world/level/block/CopperGolemStatueBlock.java
-@@ -112,14 +112,20 @@ public class CopperGolemStatueBlock extends BaseEntityBlock implements SimpleWat
+@@ -101,14 +101,20 @@ public class CopperGolemStatueBlock extends BaseEntityBlock implements SimpleWat
              return InteractionResult.PASS;
          }
  
@@ -25,8 +25,8 @@ index a76a053ccdc23d2df138c4ac102c1fe609779f39..d42cd67804afe78488f98ad22c984fc0
 +            return InteractionResult.PASS;
 +        }
          level.playSound(null, pos, SoundEvents.COPPER_GOLEM_BECOME_STATUE, SoundSource.BLOCKS);
--        level.setBlock(pos, state.setValue(POSE, state.getValue(POSE).getNextPose()), Block.UPDATE_ALL);
-+        level.setBlock(pos, newState, Block.UPDATE_ALL);
+-        level.setBlockAndUpdate(pos, state.setValue(POSE, state.getValue(POSE).getNextPose()));
++        level.setBlockAndUpdate(pos, newState);
          level.gameEvent(player, GameEvent.BLOCK_CHANGE, pos);
 +        return InteractionResult.SUCCESS;
 +        // Paper end - call EntityChangeBlockEvent

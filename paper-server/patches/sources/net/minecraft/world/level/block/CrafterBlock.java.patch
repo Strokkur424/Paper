@@ -1,14 +1,14 @@
-From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
 From: File <noreply+automated@papermc.io>
 Date: Sun, 20 Apr 1997 15:37:42 +0200
 Subject: [PATCH] paper File Patches
 
 
 diff --git a/net/minecraft/world/level/block/CrafterBlock.java b/net/minecraft/world/level/block/CrafterBlock.java
-index 96043a3d3ce134225f25b793b6d7f54284538206..f0756f3d277103f95e4d5213b5ae788025b72f42 100644
+index bcecf4fa147bb42f3d2cfed54cf9c5bbd7cc1155..e1ace2d92505eac2b39f829bf37a93a9b4e989c4 100644
 --- a/net/minecraft/world/level/block/CrafterBlock.java
 +++ b/net/minecraft/world/level/block/CrafterBlock.java
-@@ -156,6 +156,13 @@ public class CrafterBlock extends BaseEntityBlock {
+@@ -149,6 +149,13 @@ public class CrafterBlock extends BaseEntityBlock {
              } else {
                  RecipeHolder<CraftingRecipe> pickedRecipe = recipe.get();
                  ItemStack results = pickedRecipe.value().assemble(var11);
@@ -22,7 +22,7 @@ index 96043a3d3ce134225f25b793b6d7f54284538206..f0756f3d277103f95e4d5213b5ae7880
                  if (results.isEmpty()) {
                      level.levelEvent(LevelEvent.SOUND_CRAFTER_FAIL, pos, 0);
                  } else {
-@@ -197,7 +204,25 @@ public class CrafterBlock extends BaseEntityBlock {
+@@ -190,7 +197,25 @@ public class CrafterBlock extends BaseEntityBlock {
          Container into = HopperBlockEntity.getContainerAt(level, pos.relative(direction));
          ItemStack remaining = results.copy();
          if (into != null && (into instanceof CrafterBlockEntity || results.getCount() > into.getMaxStackSize(results))) {
@@ -48,7 +48,7 @@ index 96043a3d3ce134225f25b793b6d7f54284538206..f0756f3d277103f95e4d5213b5ae7880
                  ItemStack copy = remaining.copyWithCount(1);
                  ItemStack itemStack = HopperBlockEntity.addItem(blockEntity, into, copy, direction.getOpposite());
                  if (!itemStack.isEmpty()) {
-@@ -207,7 +232,25 @@ public class CrafterBlock extends BaseEntityBlock {
+@@ -200,7 +225,25 @@ public class CrafterBlock extends BaseEntityBlock {
                  remaining.shrink(1);
              }
          } else if (into != null) {

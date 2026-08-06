@@ -1,14 +1,14 @@
-From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
 From: File <noreply+automated@papermc.io>
 Date: Sun, 20 Apr 1997 15:37:42 +0200
 Subject: [PATCH] paper File Patches
 
 
 diff --git a/net/minecraft/server/Bootstrap.java b/net/minecraft/server/Bootstrap.java
-index 7c513977ca94e3ad52e1ebcb901155f787c98361..0de71059cf509091840169bd27ba8fb04b214356 100644
+index 664ebeaea9b07861862ec5c61b91231d0d5d9c1c..8da5a31f76fa6a8f629773ddce040038c34a8367 100644
 --- a/net/minecraft/server/Bootstrap.java
 +++ b/net/minecraft/server/Bootstrap.java
-@@ -44,6 +44,7 @@ public class Bootstrap {
+@@ -43,6 +43,7 @@ public class Bootstrap {
          if (!isBootstrapped) {
              isBootstrapped = true;
              Instant start = Instant.now();
@@ -16,7 +16,7 @@ index 7c513977ca94e3ad52e1ebcb901155f787c98361..0de71059cf509091840169bd27ba8fb0
              if (BuiltInRegistries.REGISTRY.keySet().isEmpty()) {
                  throw new IllegalStateException("Unable to load registries");
              }
-@@ -57,10 +58,84 @@ public class Bootstrap {
+@@ -55,10 +56,84 @@ public class Bootstrap {
              EntitySelectorOptions.bootStrap();
              DispenseItemBehavior.bootStrap();
              CauldronInteractions.bootStrap();

@@ -1,14 +1,14 @@
-From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
 From: File <noreply+automated@papermc.io>
 Date: Sun, 20 Apr 1997 15:37:42 +0200
 Subject: [PATCH] paper File Patches
 
 
 diff --git a/net/minecraft/world/level/block/SmithingTableBlock.java b/net/minecraft/world/level/block/SmithingTableBlock.java
-index 53866cf449c2bc3895f61dc09d73f6d163d4ad18..ac2c6dd71ac7829a58ed1980b5802e782f00715d 100644
+index 664a327c75e7db3f3a95f7def1ae25ecca51104b..0feae60d0f826f6fd3879a1ae60a46d9551bcb13 100644
 --- a/net/minecraft/world/level/block/SmithingTableBlock.java
 +++ b/net/minecraft/world/level/block/SmithingTableBlock.java
-@@ -40,8 +40,9 @@ public class SmithingTableBlock extends CraftingTableBlock {
+@@ -33,8 +33,9 @@ public class SmithingTableBlock extends CraftingTableBlock {
          final BlockState state, final Level level, final BlockPos pos, final Player player, final BlockHitResult hitResult
      ) {
          if (!level.isClientSide()) {

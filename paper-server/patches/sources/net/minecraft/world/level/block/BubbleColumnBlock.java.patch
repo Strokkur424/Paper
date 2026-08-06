@@ -1,14 +1,14 @@
-From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
 From: File <noreply+automated@papermc.io>
 Date: Sun, 20 Apr 1997 15:37:42 +0200
 Subject: [PATCH] paper File Patches
 
 
 diff --git a/net/minecraft/world/level/block/BubbleColumnBlock.java b/net/minecraft/world/level/block/BubbleColumnBlock.java
-index ec23fafe37dee822dfbbd50ff1669298cd35754e..810b73d8ab91db045a9f5853d0c0cb3da73f6711 100644
+index c1cf7c3b484658639c92dbc7b04bacd52c0d9aa2..fe681350e8044e6a032d6dd2435c325e51c74423 100644
 --- a/net/minecraft/world/level/block/BubbleColumnBlock.java
 +++ b/net/minecraft/world/level/block/BubbleColumnBlock.java
-@@ -58,6 +58,7 @@ public class BubbleColumnBlock extends Block implements BucketPickup {
+@@ -51,6 +51,7 @@ public class BubbleColumnBlock extends Block implements BucketPickup {
          final InsideBlockEffectApplier effectApplier,
          final boolean isPrecise
      ) {

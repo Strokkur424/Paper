@@ -1,11 +1,11 @@
-From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
 From: File <noreply+automated@papermc.io>
 Date: Sun, 20 Apr 1997 15:37:42 +0200
 Subject: [PATCH] paper File Patches
 
 
 diff --git a/net/minecraft/world/entity/projectile/EvokerFangs.java b/net/minecraft/world/entity/projectile/EvokerFangs.java
-index 6d4678dc342baf19516adf009147d2a9e361d232..19f1b74d93df66144f907968aa49465bf59e0afb 100644
+index a79bc715cb17e38f048b06af9a27027cd0190925..91366122bd075c1b29b8e7ee4ebcdd5d8229d102 100644
 --- a/net/minecraft/world/entity/projectile/EvokerFangs.java
 +++ b/net/minecraft/world/entity/projectile/EvokerFangs.java
 @@ -100,7 +100,7 @@ public class EvokerFangs extends Entity implements TraceableEntity {

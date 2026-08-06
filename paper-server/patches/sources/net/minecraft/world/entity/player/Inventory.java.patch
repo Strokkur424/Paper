@@ -1,14 +1,14 @@
-From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
 From: File <noreply+automated@papermc.io>
 Date: Sun, 20 Apr 1997 15:37:42 +0200
 Subject: [PATCH] paper File Patches
 
 
 diff --git a/net/minecraft/world/entity/player/Inventory.java b/net/minecraft/world/entity/player/Inventory.java
-index f00b4bf962b87f7b50fd2e605bb78616757ee92c..5c083f2ec110c388be951014d8e5a6eb64ded371 100644
+index 4747b539133c0186dbae533fe68e1bf9f9d5579b..8d8a4034b19f0d01a10afe9c1e4ded4cec207140 100644
 --- a/net/minecraft/world/entity/player/Inventory.java
 +++ b/net/minecraft/world/entity/player/Inventory.java
-@@ -57,6 +57,80 @@ public class Inventory implements Container, Nameable {
+@@ -59,6 +59,80 @@ public class Inventory implements Container, Nameable {
      public final Player player;
      public final EntityEquipment equipment;
      private int timesChanged;
@@ -89,7 +89,7 @@ index f00b4bf962b87f7b50fd2e605bb78616757ee92c..5c083f2ec110c388be951014d8e5a6eb
  
      public Inventory(final Player player, final EntityEquipment equipment) {
          this.player = player;
-@@ -93,10 +167,39 @@ public class Inventory implements Container, Nameable {
+@@ -95,10 +169,39 @@ public class Inventory implements Container, Nameable {
  
      private boolean hasRemainingSpaceForItem(final ItemStack slotItemStack, final ItemStack newItemStack) {
          return !slotItemStack.isEmpty()
@@ -131,7 +131,7 @@ index f00b4bf962b87f7b50fd2e605bb78616757ee92c..5c083f2ec110c388be951014d8e5a6eb
  
      public int getFreeSlot() {
          for (int i = 0; i < this.items.size(); i++) {
-@@ -108,8 +211,10 @@ public class Inventory implements Container, Nameable {
+@@ -110,8 +213,10 @@ public class Inventory implements Container, Nameable {
          return NOT_FOUND_INDEX;
      }
  
@@ -144,7 +144,7 @@ index f00b4bf962b87f7b50fd2e605bb78616757ee92c..5c083f2ec110c388be951014d8e5a6eb
          if (!this.items.get(this.selected).isEmpty()) {
              int freeSlot = this.getFreeSlot();
              if (freeSlot != NOT_FOUND_INDEX) {
-@@ -120,8 +225,10 @@ public class Inventory implements Container, Nameable {
+@@ -122,8 +227,10 @@ public class Inventory implements Container, Nameable {
          this.items.set(this.selected, itemStack);
      }
  

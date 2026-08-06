@@ -1,14 +1,14 @@
-From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
 From: File <noreply+automated@papermc.io>
 Date: Sun, 20 Apr 1997 15:37:42 +0200
 Subject: [PATCH] paper File Patches
 
 
 diff --git a/net/minecraft/world/inventory/CraftingMenu.java b/net/minecraft/world/inventory/CraftingMenu.java
-index fd6adb469db94082a4668c32d00773e5e3c23184..cca32d1798ee90ecec8bf72f629ab777def67f66 100644
+index fb03974a557843466a51fbea62663ad71e2f57f0..48b46c7a4d33f9f0e6dc67469ac00d0312b19af1 100644
 --- a/net/minecraft/world/inventory/CraftingMenu.java
 +++ b/net/minecraft/world/inventory/CraftingMenu.java
-@@ -30,13 +30,14 @@ public class CraftingMenu extends AbstractCraftingMenu {
+@@ -31,13 +31,14 @@ public class CraftingMenu extends AbstractCraftingMenu {
      public final ContainerLevelAccess access;
      private final Player player;
      private boolean placingRecipe;
@@ -24,7 +24,7 @@ index fd6adb469db94082a4668c32d00773e5e3c23184..cca32d1798ee90ecec8bf72f629ab777
          this.access = access;
          this.player = inventory.player;
          this.addResultSlot(this.player, 124, 35);
-@@ -50,12 +51,37 @@ public class CraftingMenu extends AbstractCraftingMenu {
+@@ -51,12 +52,37 @@ public class CraftingMenu extends AbstractCraftingMenu {
          final Player player,
          final CraftingContainer container,
          final ResultContainer resultSlots,
@@ -63,7 +63,7 @@ index fd6adb469db94082a4668c32d00773e5e3c23184..cca32d1798ee90ecec8bf72f629ab777
          if (maybeRecipe.isPresent()) {
              RecipeHolder<CraftingRecipe> recipeHolder = maybeRecipe.get();
              CraftingRecipe craftingRecipe = recipeHolder.value();
-@@ -66,6 +92,7 @@ public class CraftingMenu extends AbstractCraftingMenu {
+@@ -67,6 +93,7 @@ public class CraftingMenu extends AbstractCraftingMenu {
                  }
              }
          }
@@ -71,7 +71,7 @@ index fd6adb469db94082a4668c32d00773e5e3c23184..cca32d1798ee90ecec8bf72f629ab777
  
          resultSlots.setItem(0, result);
          menu.setRemoteSlot(0, result);
-@@ -102,6 +129,7 @@ public class CraftingMenu extends AbstractCraftingMenu {
+@@ -103,6 +130,7 @@ public class CraftingMenu extends AbstractCraftingMenu {
  
      @Override
      public boolean stillValid(final Player player) {
@@ -79,7 +79,7 @@ index fd6adb469db94082a4668c32d00773e5e3c23184..cca32d1798ee90ecec8bf72f629ab777
          return stillValid(this.access, player, Blocks.CRAFTING_TABLE);
      }
  
-@@ -176,4 +204,17 @@ public class CraftingMenu extends AbstractCraftingMenu {
+@@ -177,4 +205,17 @@ public class CraftingMenu extends AbstractCraftingMenu {
      protected Player owner() {
          return this.player;
      }

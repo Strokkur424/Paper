@@ -1,14 +1,14 @@
-From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
 From: File <noreply+automated@papermc.io>
 Date: Sun, 20 Apr 1997 15:37:42 +0200
 Subject: [PATCH] paper File Patches
 
 
 diff --git a/net/minecraft/world/inventory/LecternMenu.java b/net/minecraft/world/inventory/LecternMenu.java
-index a1cddaaa6697b2e77fa80ce92b213b6628a71d9a..4286d228cb4190c41c4c23efe24ad4132e8ce62b 100644
+index b0d3f640963c3dd10c06286eff2ae4d081003279..9883ba12720a72ad9dddb17d95132f1505d0cb2e 100644
 --- a/net/minecraft/world/inventory/LecternMenu.java
 +++ b/net/minecraft/world/inventory/LecternMenu.java
-@@ -14,12 +14,29 @@ public class LecternMenu extends AbstractContainerMenu {
+@@ -15,12 +15,29 @@ public class LecternMenu extends AbstractContainerMenu {
      public static final int BUTTON_PAGE_JUMP_RANGE_START = 100;
      private final Container lectern;
      private final ContainerData lecternData;
@@ -41,7 +41,7 @@ index a1cddaaa6697b2e77fa80ce92b213b6628a71d9a..4286d228cb4190c41c4c23efe24ad413
          super(MenuType.LECTERN, containerId);
          checkContainerSize(lectern, 1);
          checkContainerDataCount(lecternData, 1);
-@@ -33,10 +50,12 @@ public class LecternMenu extends AbstractContainerMenu {
+@@ -34,10 +51,12 @@ public class LecternMenu extends AbstractContainerMenu {
              }
          });
          this.addDataSlots(lecternData);
@@ -54,7 +54,7 @@ index a1cddaaa6697b2e77fa80ce92b213b6628a71d9a..4286d228cb4190c41c4c23efe24ad413
          if (buttonId >= 100) {
              int pageToSet = buttonId - 100;
              this.setData(0, pageToSet);
-@@ -46,12 +65,26 @@ public class LecternMenu extends AbstractContainerMenu {
+@@ -47,12 +66,26 @@ public class LecternMenu extends AbstractContainerMenu {
          switch (buttonId) {
              case 1: {
                  int currentPage = this.lecternData.get(0);
@@ -83,7 +83,7 @@ index a1cddaaa6697b2e77fa80ce92b213b6628a71d9a..4286d228cb4190c41c4c23efe24ad413
                  return true;
              }
              case 3:
-@@ -59,6 +92,12 @@ public class LecternMenu extends AbstractContainerMenu {
+@@ -60,6 +93,12 @@ public class LecternMenu extends AbstractContainerMenu {
                      return false;
                  }
  
@@ -96,7 +96,7 @@ index a1cddaaa6697b2e77fa80ce92b213b6628a71d9a..4286d228cb4190c41c4c23efe24ad413
                  ItemStack book = this.lectern.removeItemNoUpdate(0);
                  this.lectern.setChanged();
                  if (!player.getInventory().add(book)) {
-@@ -84,6 +123,8 @@ public class LecternMenu extends AbstractContainerMenu {
+@@ -85,6 +124,8 @@ public class LecternMenu extends AbstractContainerMenu {
  
      @Override
      public boolean stillValid(final Player player) {

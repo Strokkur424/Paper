@@ -1,14 +1,14 @@
-From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
 From: File <noreply+automated@papermc.io>
 Date: Sun, 20 Apr 1997 15:37:42 +0200
 Subject: [PATCH] paper File Patches
 
 
 diff --git a/net/minecraft/world/item/equipment/Equippable.java b/net/minecraft/world/item/equipment/Equippable.java
-index 8fae350bbcb8fccc9661c0e9ce484ef64ceb4bb0..30e52dce9536cda641f6ca290181bd926311dbe3 100644
+index 0c6d44c2f3ff11f3cc9b0a70da420ccae294899d..b0c7b15632bf08808fb9d943f7b3462400f89f56 100644
 --- a/net/minecraft/world/item/equipment/Equippable.java
 +++ b/net/minecraft/world/item/equipment/Equippable.java
-@@ -130,6 +130,19 @@ public record Equippable(
+@@ -131,6 +131,19 @@ public record Equippable(
              ItemStack inEquipmentSlot = player.getItemBySlot(this.slot);
              if ((!EnchantmentHelper.has(inEquipmentSlot, EnchantmentEffectComponents.PREVENT_ARMOR_CHANGE) || player.isCreative())
                  && !ItemStack.isSameItemSameComponents(inHand, inEquipmentSlot)) {

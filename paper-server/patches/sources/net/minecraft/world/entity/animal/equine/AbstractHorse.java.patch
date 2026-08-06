@@ -1,11 +1,11 @@
-From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
 From: File <noreply+automated@papermc.io>
 Date: Sun, 20 Apr 1997 15:37:42 +0200
 Subject: [PATCH] paper File Patches
 
 
 diff --git a/net/minecraft/world/entity/animal/equine/AbstractHorse.java b/net/minecraft/world/entity/animal/equine/AbstractHorse.java
-index eaa6eab9bea3c61d7f70d29992e6eab992d3cf65..847fcecc4046d9fe880aaa7eb2a3c55c5bc61faf 100644
+index 465e755e49b22a7408dc7fa5f9b38f837d59b144..cb52699759b6b23e74100ad9d5fdb9ef371b0108 100644
 --- a/net/minecraft/world/entity/animal/equine/AbstractHorse.java
 +++ b/net/minecraft/world/entity/animal/equine/AbstractHorse.java
 @@ -124,6 +124,7 @@ public abstract class AbstractHorse extends Animal implements PlayerRideableJump

@@ -1,14 +1,14 @@
-From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
 From: File <noreply+automated@papermc.io>
 Date: Sun, 20 Apr 1997 15:37:42 +0200
 Subject: [PATCH] paper File Patches
 
 
 diff --git a/net/minecraft/world/level/block/DoorBlock.java b/net/minecraft/world/level/block/DoorBlock.java
-index fba995e09d8ca8884b07bf0954918a196c9154b1..6a35def97b463047524af77f6897571a26dfbeca 100644
+index f9ed009d8eece55d8c387cdf00803680d7890ac3..345b540606a8946fec538d1b7cb088cae10aed9e 100644
 --- a/net/minecraft/world/level/block/DoorBlock.java
 +++ b/net/minecraft/world/level/block/DoorBlock.java
-@@ -228,6 +228,11 @@ public class DoorBlock extends Block {
+@@ -218,6 +218,11 @@ public class DoorBlock extends Block {
          boolean signal = level.hasNeighborSignal(pos)
              || level.hasNeighborSignal(pos.relative(state.getValue(HALF) == DoubleBlockHalf.LOWER ? Direction.UP : Direction.DOWN));
          if (!this.defaultBlockState().is(block) && signal != state.getValue(POWERED)) {

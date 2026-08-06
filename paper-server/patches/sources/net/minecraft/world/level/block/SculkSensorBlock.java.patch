@@ -1,14 +1,14 @@
-From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
 From: File <noreply+automated@papermc.io>
 Date: Sun, 20 Apr 1997 15:37:42 +0200
 Subject: [PATCH] paper File Patches
 
 
 diff --git a/net/minecraft/world/level/block/SculkSensorBlock.java b/net/minecraft/world/level/block/SculkSensorBlock.java
-index 65946cc66bb68f98088dfe1297516927a4706eb4..10cff0f9db2910c543c20fa055c0c5b759becc15 100644
+index b712c65af3a875dda0fcf692d7edec6225d9cad1..6e217dea06365d2125b51b8222f49e186fcf6c08 100644
 --- a/net/minecraft/world/level/block/SculkSensorBlock.java
 +++ b/net/minecraft/world/level/block/SculkSensorBlock.java
-@@ -103,6 +103,18 @@ public class SculkSensorBlock extends BaseEntityBlock implements SimpleWaterlogg
+@@ -96,6 +96,18 @@ public class SculkSensorBlock extends BaseEntityBlock implements SimpleWaterlogg
              && level.getBlockEntity(pos) instanceof SculkSensorBlockEntity sculkSensor
              && level instanceof ServerLevel serverLevel
              && sculkSensor.getVibrationUser().canReceiveVibration(serverLevel, pos, GameEvent.STEP, GameEvent.Context.of(onState))) {
@@ -27,7 +27,7 @@ index 65946cc66bb68f98088dfe1297516927a4706eb4..10cff0f9db2910c543c20fa055c0c5b7
              sculkSensor.getListener().forceScheduleVibration(serverLevel, GameEvent.STEP, GameEvent.Context.of(entity), entity.position());
          }
  
-@@ -190,10 +202,17 @@ public class SculkSensorBlock extends BaseEntityBlock implements SimpleWaterlogg
+@@ -183,10 +195,17 @@ public class SculkSensorBlock extends BaseEntityBlock implements SimpleWaterlogg
      }
  
      public static boolean canActivate(final BlockState state) {
@@ -43,10 +43,10 @@ index 65946cc66bb68f98088dfe1297516927a4706eb4..10cff0f9db2910c543c20fa055c0c5b7
 +            return;
 +        }
 +        // Paper end - Call BlockRedstoneEvent
-         level.setBlock(pos, state.setValue(PHASE, SculkSensorPhase.COOLDOWN).setValue(POWER, 0), Block.UPDATE_ALL);
+         level.setBlockAndUpdate(pos, state.setValue(PHASE, SculkSensorPhase.COOLDOWN).setValue(POWER, 0));
          level.scheduleTick(pos, state.getBlock(), 10);
          updateNeighbours(level, pos, state);
-@@ -209,9 +228,15 @@ public class SculkSensorBlock extends BaseEntityBlock implements SimpleWaterlogg
+@@ -202,9 +221,15 @@ public class SculkSensorBlock extends BaseEntityBlock implements SimpleWaterlogg
          final Level level,
          final BlockPos pos,
          final BlockState state,
@@ -60,10 +60,10 @@ index 65946cc66bb68f98088dfe1297516927a4706eb4..10cff0f9db2910c543c20fa055c0c5b7
 +            return;
 +        }
 +        // Paper end - Call BlockRedstoneEvent
-         level.setBlock(pos, state.setValue(PHASE, SculkSensorPhase.ACTIVE).setValue(POWER, calculatedPower), Block.UPDATE_ALL);
+         level.setBlockAndUpdate(pos, state.setValue(PHASE, SculkSensorPhase.ACTIVE).setValue(POWER, calculatedPower));
          level.scheduleTick(pos, state.getBlock(), this.getActiveTicks());
          updateNeighbours(level, pos, state);
-@@ -289,8 +314,16 @@ public class SculkSensorBlock extends BaseEntityBlock implements SimpleWaterlogg
+@@ -282,8 +307,16 @@ public class SculkSensorBlock extends BaseEntityBlock implements SimpleWaterlogg
      @Override
      protected void spawnAfterBreak(final BlockState state, final ServerLevel level, final BlockPos pos, final ItemStack tool, final boolean dropExperience) {
          super.spawnAfterBreak(state, level, pos, tool, dropExperience);

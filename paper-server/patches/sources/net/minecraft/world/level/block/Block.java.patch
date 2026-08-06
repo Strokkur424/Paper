@@ -1,14 +1,14 @@
-From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
 From: File <noreply+automated@papermc.io>
 Date: Sun, 20 Apr 1997 15:37:42 +0200
 Subject: [PATCH] paper File Patches
 
 
 diff --git a/net/minecraft/world/level/block/Block.java b/net/minecraft/world/level/block/Block.java
-index c141eb27d6760f71235c84dab94501960f4ffed3..5d09a36718bb22022348a9ce8efe8a4767c21a8c 100644
+index 05c1e1b0f362f89b559e520c35491cd953e458bf..901af35d1ec1a75a18fa99fb56eea7dd84974188 100644
 --- a/net/minecraft/world/level/block/Block.java
 +++ b/net/minecraft/world/level/block/Block.java
-@@ -89,25 +89,43 @@ public class Block extends BlockBehaviour implements ItemLike {
+@@ -87,25 +87,43 @@ public class Block extends BlockBehaviour implements ItemLike {
                  return !Shapes.joinIsNotEmpty(Shapes.block(), shape, BooleanOp.NOT_SAME);
              }
          });
@@ -66,7 +66,7 @@ index c141eb27d6760f71235c84dab94501960f4ffed3..5d09a36718bb22022348a9ce8efe8a47
      private @Nullable Item item;
      private static final int CACHE_SIZE = 256;
      private static final ThreadLocal<Object2ByteLinkedOpenHashMap<Block.ShapePairKey>> OCCLUSION_CACHE = ThreadLocal.withInitial(() -> {
-@@ -382,6 +400,27 @@ public class Block extends BlockBehaviour implements ItemLike {
+@@ -377,6 +395,27 @@ public class Block extends BlockBehaviour implements ItemLike {
          return state.getDrops(params);
      }
  
@@ -94,7 +94,7 @@ index c141eb27d6760f71235c84dab94501960f4ffed3..5d09a36718bb22022348a9ce8efe8a47
      public static void dropResources(final BlockState state, final Level level, final BlockPos pos) {
          if (level instanceof ServerLevel serverLevel) {
              getDrops(state, serverLevel, pos, null).forEach(stack -> popResource(level, pos, stack));
-@@ -396,6 +435,12 @@ public class Block extends BlockBehaviour implements ItemLike {
+@@ -391,6 +430,12 @@ public class Block extends BlockBehaviour implements ItemLike {
          }
      }
  
@@ -107,7 +107,7 @@ index c141eb27d6760f71235c84dab94501960f4ffed3..5d09a36718bb22022348a9ce8efe8a47
      public static void dropResources(
          final BlockState state,
          final Level level,
-@@ -403,10 +448,11 @@ public class Block extends BlockBehaviour implements ItemLike {
+@@ -398,10 +443,11 @@ public class Block extends BlockBehaviour implements ItemLike {
          final @Nullable BlockEntity blockEntity,
          final @Nullable Entity breaker,
          final ItemStack tool
@@ -120,7 +120,7 @@ index c141eb27d6760f71235c84dab94501960f4ffed3..5d09a36718bb22022348a9ce8efe8a47
          }
      }
  
-@@ -439,13 +485,25 @@ public class Block extends BlockBehaviour implements ItemLike {
+@@ -434,13 +480,25 @@ public class Block extends BlockBehaviour implements ItemLike {
          if (level instanceof ServerLevel serverLevel && !itemStack.isEmpty() && serverLevel.getGameRules().get(GameRules.BLOCK_DROPS)) {
              ItemEntity entity = entityFactory.get();
              entity.setDefaultPickUpDelay();
@@ -148,7 +148,7 @@ index c141eb27d6760f71235c84dab94501960f4ffed3..5d09a36718bb22022348a9ce8efe8a47
          }
      }
  
-@@ -463,6 +521,13 @@ public class Block extends BlockBehaviour implements ItemLike {
+@@ -458,6 +516,13 @@ public class Block extends BlockBehaviour implements ItemLike {
          return this.defaultBlockState();
      }
  
@@ -162,7 +162,7 @@ index c141eb27d6760f71235c84dab94501960f4ffed3..5d09a36718bb22022348a9ce8efe8a47
      public void playerDestroy(
          final Level level,
          final Player player,
-@@ -470,10 +535,13 @@ public class Block extends BlockBehaviour implements ItemLike {
+@@ -465,10 +530,13 @@ public class Block extends BlockBehaviour implements ItemLike {
          final BlockState state,
          final @Nullable BlockEntity blockEntity,
          final ItemStack destroyedWith
@@ -178,7 +178,7 @@ index c141eb27d6760f71235c84dab94501960f4ffed3..5d09a36718bb22022348a9ce8efe8a47
      }
  
      public void setPlacedBy(final Level level, final BlockPos pos, final BlockState state, final @Nullable LivingEntity by, final ItemStack itemStack) {
-@@ -613,12 +681,20 @@ public class Block extends BlockBehaviour implements ItemLike {
+@@ -614,12 +682,20 @@ public class Block extends BlockBehaviour implements ItemLike {
          return this.builtInRegistryHolder;
      }
  
@@ -201,7 +201,7 @@ index c141eb27d6760f71235c84dab94501960f4ffed3..5d09a36718bb22022348a9ce8efe8a47
  
      private record ShapePairKey(VoxelShape first, VoxelShape second) {
          @Override
-@@ -634,6 +710,7 @@ public class Block extends BlockBehaviour implements ItemLike {
+@@ -635,6 +711,7 @@ public class Block extends BlockBehaviour implements ItemLike {
  
      @Retention(RetentionPolicy.CLASS)
      @Target(ElementType.TYPE_USE)

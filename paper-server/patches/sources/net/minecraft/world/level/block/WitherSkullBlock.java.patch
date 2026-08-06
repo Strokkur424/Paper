@@ -1,14 +1,14 @@
-From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
 From: File <noreply+automated@papermc.io>
 Date: Sun, 20 Apr 1997 15:37:42 +0200
 Subject: [PATCH] paper File Patches
 
 
 diff --git a/net/minecraft/world/level/block/WitherSkullBlock.java b/net/minecraft/world/level/block/WitherSkullBlock.java
-index 6b525573397b737681ea867bedbc63c0a5ab21d0..2e65881cd2db4dab9967a4d2c597365c31939c42 100644
+index 1379698fbddbcfec2599287e6760214522901744..ad7303e83a3a33b263d182097c082887b3afce2f 100644
 --- a/net/minecraft/world/level/block/WitherSkullBlock.java
 +++ b/net/minecraft/world/level/block/WitherSkullBlock.java
-@@ -43,7 +43,7 @@ public class WitherSkullBlock extends SkullBlock {
+@@ -36,7 +36,7 @@ public class WitherSkullBlock extends SkullBlock {
      }
  
      public static void checkSpawn(final Level level, final BlockPos pos) {
@@ -17,7 +17,7 @@ index 6b525573397b737681ea867bedbc63c0a5ab21d0..2e65881cd2db4dab9967a4d2c597365c
              checkSpawn(level, pos, placedSkull);
          }
      }
-@@ -57,7 +57,7 @@ public class WitherSkullBlock extends SkullBlock {
+@@ -50,7 +50,7 @@ public class WitherSkullBlock extends SkullBlock {
                  if (match != null) {
                      WitherBoss witherBoss = EntityTypes.WITHER.create(level, EntitySpawnReason.TRIGGERED);
                      if (witherBoss != null) {
@@ -26,7 +26,7 @@ index 6b525573397b737681ea867bedbc63c0a5ab21d0..2e65881cd2db4dab9967a4d2c597365c
                          BlockPos spawnPos = match.getBlock(1, 2, 0).getPos();
                          witherBoss.snapTo(
                              spawnPos.getX() + 0.5,
-@@ -68,12 +68,23 @@ public class WitherSkullBlock extends SkullBlock {
+@@ -61,12 +61,23 @@ public class WitherSkullBlock extends SkullBlock {
                          );
                          witherBoss.yBodyRot = match.getForwards().getAxis() == Direction.Axis.X ? 0.0F : 90.0F;
                          witherBoss.makeInvulnerable();

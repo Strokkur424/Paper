@@ -1,14 +1,14 @@
-From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
 From: File <noreply+automated@papermc.io>
 Date: Sun, 20 Apr 1997 15:37:42 +0200
 Subject: [PATCH] paper File Patches
 
 
 diff --git a/net/minecraft/world/level/block/ChangeOverTimeBlock.java b/net/minecraft/world/level/block/ChangeOverTimeBlock.java
-index cd6b26ea8b2ac0d8a81f3740f037d6fd31e85ec3..f5bfdef3437cc3fb15ff1170b59598b3dec742eb 100644
+index 9681140b9647ead2ca4f6cd941903ba83f970e61..d8fd04ee970b71381b7420e1ec2620d18686bc5c 100644
 --- a/net/minecraft/world/level/block/ChangeOverTimeBlock.java
 +++ b/net/minecraft/world/level/block/ChangeOverTimeBlock.java
-@@ -16,7 +16,7 @@ public interface ChangeOverTimeBlock<T extends Enum<T>> {
+@@ -18,7 +18,7 @@ public interface ChangeOverTimeBlock<T extends Enum<T>> {
      default void changeOverTime(final BlockState state, final ServerLevel level, final BlockPos pos, final RandomSource random) {
          float eachBlockOncePerDayChance = 0.05688889F;
          if (random.nextFloat() < 0.05688889F) {

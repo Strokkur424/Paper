@@ -1,14 +1,14 @@
-From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
 From: File <noreply+automated@papermc.io>
 Date: Sun, 20 Apr 1997 15:37:42 +0200
 Subject: [PATCH] paper File Patches
 
 
 diff --git a/net/minecraft/world/level/storage/PrimaryLevelData.java b/net/minecraft/world/level/storage/PrimaryLevelData.java
-index a6f077e11d3b4f2a270632ef7d969eeffc98198e..4e197556a8a83d41945ebf58e9b4836b2537aaa6 100644
+index d362d4dc8879ccf7a3515a2f0f071fcf3feb8f42..efecfead76e995b0473f5a4dc86e98973d6ec4bc 100644
 --- a/net/minecraft/world/level/storage/PrimaryLevelData.java
 +++ b/net/minecraft/world/level/storage/PrimaryLevelData.java
-@@ -35,6 +35,8 @@ public class PrimaryLevelData implements ServerLevelData, WorldData {
+@@ -37,6 +37,8 @@ public class PrimaryLevelData implements ServerLevelData, WorldData {
      private final PrimaryLevelData.SpecialWorldProperty specialWorldProperty;
      private final Lifecycle worldGenSettingsLifecycle;
      private LevelData.RespawnData respawnData;
@@ -17,7 +17,7 @@ index a6f077e11d3b4f2a270632ef7d969eeffc98198e..4e197556a8a83d41945ebf58e9b4836b
      private long gameTime;
      private final @Nullable UUID singlePlayerUUID;
      private final int version;
-@@ -93,7 +95,7 @@ public class PrimaryLevelData implements ServerLevelData, WorldData {
+@@ -99,7 +101,7 @@ public class PrimaryLevelData implements ServerLevelData, WorldData {
      ) {
          long gameTime = input.get("Time").asLong(0L);
          LevelVersion levelVersion = LevelVersion.parse(input);
@@ -26,9 +26,9 @@ index a6f077e11d3b4f2a270632ef7d969eeffc98198e..4e197556a8a83d41945ebf58e9b4836b
              input.get("singleplayer_uuid").flatMap(UUIDUtil.CODEC::parse).result().orElse(null),
              input.get("WasModded").asBoolean(false),
              input.get("spawn").read(LevelData.RespawnData.CODEC).result().orElse(LevelData.RespawnData.DEFAULT),
-@@ -106,6 +108,13 @@ public class PrimaryLevelData implements ServerLevelData, WorldData {
-             specialWorldProperty,
-             worldGenSettingsLifecycle
+@@ -113,6 +115,13 @@ public class PrimaryLevelData implements ServerLevelData, WorldData {
+             worldGenSettingsLifecycle,
+             input.get("version_history").orElseEmptyList().asList(d -> d.asInt(-1))
          );
 +        // Paper start
 +        data.respawnDimension = input.get(PAPER_RESPAWN_DIMENSION)
@@ -40,9 +40,9 @@ index a6f077e11d3b4f2a270632ef7d969eeffc98198e..4e197556a8a83d41945ebf58e9b4836b
      }
  
      @Override
-@@ -128,20 +137,22 @@ public class PrimaryLevelData implements ServerLevelData, WorldData {
- 
+@@ -136,20 +145,22 @@ public class PrimaryLevelData implements ServerLevelData, WorldData {
          writeVersionTag(tag);
+         this.writeVersionHistory(tag);
          NbtUtils.addCurrentDataVersion(tag);
 -        tag.putInt("GameType", this.settings.gameType().getId());
 -        tag.store("spawn", LevelData.RespawnData.CODEC, this.respawnData);
@@ -68,7 +68,7 @@ index a6f077e11d3b4f2a270632ef7d969eeffc98198e..4e197556a8a83d41945ebf58e9b4836b
      }
  
      public static void writeLastPlayed(final CompoundTag tag) {
-@@ -328,6 +339,14 @@ public class PrimaryLevelData implements ServerLevelData, WorldData {
+@@ -347,6 +358,14 @@ public class PrimaryLevelData implements ServerLevelData, WorldData {
          return this.settings.copy();
      }
  

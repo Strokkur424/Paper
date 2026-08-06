@@ -1,14 +1,14 @@
-From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
 From: File <noreply+automated@papermc.io>
 Date: Sun, 20 Apr 1997 15:37:42 +0200
 Subject: [PATCH] paper File Patches
 
 
 diff --git a/net/minecraft/server/notifications/NotificationManager.java b/net/minecraft/server/notifications/NotificationManager.java
-index d2b70adf50a7e64ed47f09a80dd02aef933438b5..5638b5c7a02f3c19a130af33bfc20d502d13b592 100644
+index c40d116c1c3ced64be578e529e78a592d29e3f08..7d8f16a68eca76cffa83704084734a11e2b70104 100644
 --- a/net/minecraft/server/notifications/NotificationManager.java
 +++ b/net/minecraft/server/notifications/NotificationManager.java
-@@ -107,8 +107,8 @@ public class NotificationManager implements NotificationService {
+@@ -127,8 +127,8 @@ public class NotificationManager implements NotificationService {
      }
  
      @Override

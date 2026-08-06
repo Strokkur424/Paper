@@ -1,11 +1,11 @@
-From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
 From: File <noreply+automated@papermc.io>
 Date: Sun, 20 Apr 1997 15:37:42 +0200
 Subject: [PATCH] paper File Patches
 
 
 diff --git a/net/minecraft/world/entity/animal/feline/Ocelot.java b/net/minecraft/world/entity/animal/feline/Ocelot.java
-index 94fdf1ad57b6924c5b551dc65c35d2a357dd7c9a..43997b73c04613b7bc23ea16a17a391ff80c9343 100644
+index 400e096f8a908ba1ffce05a228dedd516c2b8921..9c58a0ada0ab1e6d89f7e3505948694febc99df8 100644
 --- a/net/minecraft/world/entity/animal/feline/Ocelot.java
 +++ b/net/minecraft/world/entity/animal/feline/Ocelot.java
 @@ -136,7 +136,7 @@ public class Ocelot extends Animal {

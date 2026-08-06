@@ -1,14 +1,14 @@
-From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
 From: File <noreply+automated@papermc.io>
 Date: Sun, 20 Apr 1997 15:37:42 +0200
 Subject: [PATCH] paper File Patches
 
 
 diff --git a/net/minecraft/world/level/LevelReader.java b/net/minecraft/world/level/LevelReader.java
-index 8862e3dfd1054ef1279e9e950f6a3264a31a6d1f..254a967292938a9ed6a0291bbc9cf6e971eeaf01 100644
+index 554a64f0199a3b700a0c2a090f6948a4b9ac97ac..aa5eea91ac5119a58af0706a6d5be05887a8a638 100644
 --- a/net/minecraft/world/level/LevelReader.java
 +++ b/net/minecraft/world/level/LevelReader.java
-@@ -26,6 +26,9 @@ import org.jspecify.annotations.Nullable;
+@@ -29,6 +29,9 @@ import org.jspecify.annotations.Nullable;
  public interface LevelReader extends BlockAndLightGetter, CollisionGetter, SignalGetter, BiomeManager.NoiseBiomeSource {
      @Nullable ChunkAccess getChunk(final int chunkX, final int chunkZ, final ChunkStatus targetStatus, final boolean loadOrGenerate);
  

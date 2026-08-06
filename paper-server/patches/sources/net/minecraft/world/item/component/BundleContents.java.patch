@@ -1,16 +1,16 @@
-From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
 From: File <noreply+automated@papermc.io>
 Date: Sun, 20 Apr 1997 15:37:42 +0200
 Subject: [PATCH] paper File Patches
 
 
 diff --git a/net/minecraft/world/item/component/BundleContents.java b/net/minecraft/world/item/component/BundleContents.java
-index e3063437db5f04aa5ac6a85b024c092ff27d25e5..8d925a64f21c1599ea558256b0efd93e99d95fac 100644
+index d63aced8ba51525b917030c85eb05cbae182dec7..59fdcb99be24896de4e4c2c7d8ca3b8cd068cd1e 100644
 --- a/net/minecraft/world/item/component/BundleContents.java
 +++ b/net/minecraft/world/item/component/BundleContents.java
-@@ -25,9 +25,10 @@ import org.jspecify.annotations.Nullable;
+@@ -29,9 +29,10 @@ import org.jspecify.annotations.Nullable;
  
- public final class BundleContents implements TooltipComponent {
+ public final class BundleContents implements ContainerComponent<BundleContents>, TooltipComponent {
      public static final BundleContents EMPTY = new BundleContents(List.of());
 -    public static final Codec<BundleContents> CODEC = ItemStackTemplate.CODEC.listOf().xmap(BundleContents::new, contents -> contents.items);
 +    public static final Codec<BundleContents> CODEC = ItemStackTemplate.CODEC.sizeLimitedListOf(256).xmap(BundleContents::new, contents -> contents.items); // Paper - limit size
@@ -21,7 +21,7 @@ index e3063437db5f04aa5ac6a85b024c092ff27d25e5..8d925a64f21c1599ea558256b0efd93e
          .map(BundleContents::new, contents -> contents.items);
      private static final Fraction BUNDLE_IN_BUNDLE_WEIGHT = Fraction.getFraction(1, 16);
      private static final int NO_STACK_INDEX = -1;
-@@ -38,6 +39,11 @@ public final class BundleContents implements TooltipComponent {
+@@ -42,6 +43,11 @@ public final class BundleContents implements ContainerComponent<BundleContents>,
      private final Supplier<DataResult<Fraction>> weight;
  
      private BundleContents(final List<ItemStackTemplate> items, final int selectedItem) {
@@ -33,7 +33,7 @@ index e3063437db5f04aa5ac6a85b024c092ff27d25e5..8d925a64f21c1599ea558256b0efd93e
          this.items = items;
          this.selectedItem = selectedItem;
          this.weight = Suppliers.memoize(() -> computeContentWeight(this.items));
-@@ -80,6 +86,13 @@ public final class BundleContents implements TooltipComponent {
+@@ -84,6 +90,13 @@ public final class BundleContents implements ContainerComponent<BundleContents>,
          return !itemToAdd.isEmpty() && itemToAdd.getItem().canFitInsideContainerItems();
      }
  
@@ -47,7 +47,7 @@ index e3063437db5f04aa5ac6a85b024c092ff27d25e5..8d925a64f21c1599ea558256b0efd93e
      public int getNumberOfItemsToShow() {
          int numberOfItemStacks = this.size();
          int availableItemsToShow = numberOfItemStacks > 12 ? 11 : 12;
-@@ -180,6 +193,14 @@ public final class BundleContents implements TooltipComponent {
+@@ -208,6 +221,14 @@ public final class BundleContents implements ContainerComponent<BundleContents>,
              return Math.max(remainingWeight.divideBy(itemWeight).intValue(), 0);
          }
  

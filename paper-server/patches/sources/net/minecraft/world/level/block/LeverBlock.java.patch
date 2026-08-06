@@ -1,14 +1,14 @@
-From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
 From: File <noreply+automated@papermc.io>
 Date: Sun, 20 Apr 1997 15:37:42 +0200
 Subject: [PATCH] paper File Patches
 
 
 diff --git a/net/minecraft/world/level/block/LeverBlock.java b/net/minecraft/world/level/block/LeverBlock.java
-index a9f10d0c501d5a0e3a5d7c4a89b69af9be6d7253..772a1cb8b275506ed0310294369b985746f8f567 100644
+index e851ad854b37999784e0c89a67d77610107b927c..7b9989c23f248dcde9a0730b5d898fd674c53edf 100644
 --- a/net/minecraft/world/level/block/LeverBlock.java
 +++ b/net/minecraft/world/level/block/LeverBlock.java
-@@ -70,6 +70,12 @@ public class LeverBlock extends FaceAttachedHorizontalDirectionalBlock {
+@@ -63,6 +63,12 @@ public class LeverBlock extends FaceAttachedHorizontalDirectionalBlock {
                  makeParticle(stateAfter, level, pos, 1.0F);
              }
          } else {
@@ -21,7 +21,7 @@ index a9f10d0c501d5a0e3a5d7c4a89b69af9be6d7253..772a1cb8b275506ed0310294369b9857
              this.pull(stateBefore, level, pos, null);
          }
  
-@@ -81,7 +87,12 @@ public class LeverBlock extends FaceAttachedHorizontalDirectionalBlock {
+@@ -74,7 +80,12 @@ public class LeverBlock extends FaceAttachedHorizontalDirectionalBlock {
          final BlockState state, final ServerLevel level, final BlockPos pos, final Explosion explosion, final BiConsumer<ItemStack, BlockPos> onHit
      ) {
          if (explosion.canTriggerBlocks()) {

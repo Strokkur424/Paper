@@ -1,11 +1,11 @@
-From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
 From: File <noreply+automated@papermc.io>
 Date: Sun, 20 Apr 1997 15:37:42 +0200
 Subject: [PATCH] paper File Patches
 
 
 diff --git a/net/minecraft/world/entity/monster/cubemob/AbstractCubeMob.java b/net/minecraft/world/entity/monster/cubemob/AbstractCubeMob.java
-index eed213cc3018bb4a5b6afe35b3f758cd7f983ae1..0b9bf94d6192235d916b8c335cafed3280286afe 100644
+index f3d58a21fad391743ec47a367a70e4696a0cd07a..528f3f60b889d6c3f03b428cb047027588639fdd 100644
 --- a/net/minecraft/world/entity/monster/cubemob/AbstractCubeMob.java
 +++ b/net/minecraft/world/entity/monster/cubemob/AbstractCubeMob.java
 @@ -49,6 +49,7 @@ public abstract class AbstractCubeMob extends AgeableMob {
@@ -91,7 +91,7 @@ index eed213cc3018bb4a5b6afe35b3f758cd7f983ae1..0b9bf94d6192235d916b8c335cafed32
      }
  
      protected void setUpSplitCube(final AbstractCubeMob cubeMob, final int halfSize, final float xd, final float zd) {
-@@ -259,6 +288,16 @@ public abstract class AbstractCubeMob extends AgeableMob {
+@@ -263,6 +292,16 @@ public abstract class AbstractCubeMob extends AgeableMob {
          return this.getType().getDimensions().scale(this.getSize());
      }
  
@@ -108,7 +108,7 @@ index eed213cc3018bb4a5b6afe35b3f758cd7f983ae1..0b9bf94d6192235d916b8c335cafed32
      @Override
      public void jumpFromGround() {
          Vec3 movement = this.getDeltaMovement();
-@@ -337,7 +376,16 @@ public abstract class AbstractCubeMob extends AgeableMob {
+@@ -341,7 +380,16 @@ public abstract class AbstractCubeMob extends AgeableMob {
          @Override
          public boolean canUse() {
              LivingEntity target = this.cubeMob.getTarget();
@@ -126,7 +126,7 @@ index eed213cc3018bb4a5b6afe35b3f758cd7f983ae1..0b9bf94d6192235d916b8c335cafed32
          }
  
          @Override
-@@ -349,7 +397,16 @@ public abstract class AbstractCubeMob extends AgeableMob {
+@@ -353,7 +401,16 @@ public abstract class AbstractCubeMob extends AgeableMob {
          @Override
          public boolean canContinueToUse() {
              LivingEntity target = this.cubeMob.getTarget();
@@ -144,8 +144,8 @@ index eed213cc3018bb4a5b6afe35b3f758cd7f983ae1..0b9bf94d6192235d916b8c335cafed32
          }
  
          @Override
-@@ -368,6 +425,13 @@ public abstract class AbstractCubeMob extends AgeableMob {
-                 cubeMobMoveControl.setDirection(this.cubeMob.getYRot(), this.cubeMob.isDealsDamage());
+@@ -372,6 +429,13 @@ public abstract class AbstractCubeMob extends AgeableMob {
+                 cubeMobMoveControl.setDirection(this.cubeMob.getYRot(), this.cubeMob.canDealDamage());
              }
          }
 +
@@ -158,7 +158,7 @@ index eed213cc3018bb4a5b6afe35b3f758cd7f983ae1..0b9bf94d6192235d916b8c335cafed32
      }
  
      private static class CubeMobFloatGoal extends Goal {
-@@ -381,7 +445,7 @@ public abstract class AbstractCubeMob extends AgeableMob {
+@@ -385,7 +449,7 @@ public abstract class AbstractCubeMob extends AgeableMob {
  
          @Override
          public boolean canUse() {
@@ -167,7 +167,7 @@ index eed213cc3018bb4a5b6afe35b3f758cd7f983ae1..0b9bf94d6192235d916b8c335cafed32
          }
  
          @Override
-@@ -411,7 +475,7 @@ public abstract class AbstractCubeMob extends AgeableMob {
+@@ -415,7 +479,7 @@ public abstract class AbstractCubeMob extends AgeableMob {
  
          @Override
          public boolean canUse() {
@@ -176,7 +176,7 @@ index eed213cc3018bb4a5b6afe35b3f758cd7f983ae1..0b9bf94d6192235d916b8c335cafed32
          }
  
          @Override
-@@ -487,7 +551,7 @@ public abstract class AbstractCubeMob extends AgeableMob {
+@@ -491,7 +555,7 @@ public abstract class AbstractCubeMob extends AgeableMob {
  
          @Override
          public boolean canUse() {
@@ -185,7 +185,7 @@ index eed213cc3018bb4a5b6afe35b3f758cd7f983ae1..0b9bf94d6192235d916b8c335cafed32
                  && (this.cubeMob.onGround() || this.cubeMob.isInWater() || this.cubeMob.isInLava() || this.cubeMob.hasEffect(MobEffects.LEVITATION))
                  && this.cubeMob.getMoveControl() instanceof AbstractCubeMob.CubeMobMoveControl;
          }
-@@ -497,6 +561,11 @@ public abstract class AbstractCubeMob extends AgeableMob {
+@@ -501,6 +565,11 @@ public abstract class AbstractCubeMob extends AgeableMob {
              if (--this.nextRandomizeTime <= 0) {
                  this.nextRandomizeTime = this.adjustedTickDelay(40 + this.cubeMob.getRandom().nextInt(60));
                  this.chosenDegrees = this.cubeMob.getRandom().nextInt(360);

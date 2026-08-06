@@ -1,14 +1,14 @@
-From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
 From: File <noreply+automated@papermc.io>
 Date: Sun, 20 Apr 1997 15:37:42 +0200
 Subject: [PATCH] paper File Patches
 
 
 diff --git a/net/minecraft/world/level/chunk/ProtoChunk.java b/net/minecraft/world/level/chunk/ProtoChunk.java
-index e460757018c4e38f1805cfd18dfde96e0c56dd75..3e19d1bf3b43135f1e132c9d8fa421d42bd8d34e 100644
+index f6235a72ade81e73a704cc7b11853e33475c063e..27f7e3846607bc0c8070c3ec3d9ec87c583b1c07 100644
 --- a/net/minecraft/world/level/chunk/ProtoChunk.java
 +++ b/net/minecraft/world/level/chunk/ProtoChunk.java
-@@ -90,15 +90,32 @@ public class ProtoChunk extends ChunkAccess {
+@@ -89,15 +89,32 @@ public class ProtoChunk extends ChunkAccess {
          return new ChunkAccess.PackedTicks(this.blockTicks.pack(currentTick), this.fluidTicks.pack(currentTick));
      }
  

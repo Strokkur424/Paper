@@ -1,11 +1,11 @@
-From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
 From: File <noreply+automated@papermc.io>
 Date: Sun, 20 Apr 1997 15:37:42 +0200
 Subject: [PATCH] paper File Patches
 
 
 diff --git a/net/minecraft/world/entity/vehicle/minecart/AbstractMinecart.java b/net/minecraft/world/entity/vehicle/minecart/AbstractMinecart.java
-index 7f2cdd5000c77a58ce48a61f9f6d7b01a6f0827b..5ad77636d0681d1f0341cff4482ba6ad52f3583b 100644
+index 3e90db0aa2121a81982e92466c5dc7df68583592..bcaec4f7c9dccf67dfdf0f1ea56341387f72679b 100644
 --- a/net/minecraft/world/entity/vehicle/minecart/AbstractMinecart.java
 +++ b/net/minecraft/world/entity/vehicle/minecart/AbstractMinecart.java
 @@ -96,6 +96,17 @@ public abstract class AbstractMinecart extends VehicleEntity {
@@ -85,7 +85,7 @@ index 7f2cdd5000c77a58ce48a61f9f6d7b01a6f0827b..5ad77636d0681d1f0341cff4482ba6ad
          this.updateFluidInteraction();
          if (this.isInLava()) {
              this.lavaIgnite();
-@@ -371,12 +410,16 @@ public abstract class AbstractMinecart extends VehicleEntity {
+@@ -376,12 +415,16 @@ public abstract class AbstractMinecart extends VehicleEntity {
          Vec3 movement = this.getDeltaMovement();
          this.setDeltaMovement(Mth.clamp(movement.x, -maxSpeed, maxSpeed), movement.y, Mth.clamp(movement.z, -maxSpeed, maxSpeed));
          if (this.onGround()) {
@@ -104,7 +104,7 @@ index 7f2cdd5000c77a58ce48a61f9f6d7b01a6f0827b..5ad77636d0681d1f0341cff4482ba6ad
          }
      }
  
-@@ -483,6 +526,15 @@ public abstract class AbstractMinecart extends VehicleEntity {
+@@ -488,6 +531,15 @@ public abstract class AbstractMinecart extends VehicleEntity {
          this.setDisplayOffset(input.getIntOr("DisplayOffset", this.getDefaultDisplayOffset()));
          this.flipped = input.getBooleanOr("FlippedRotation", false);
          this.firstTick = input.getBooleanOr("HasTicked", false);
@@ -120,7 +120,7 @@ index 7f2cdd5000c77a58ce48a61f9f6d7b01a6f0827b..5ad77636d0681d1f0341cff4482ba6ad
      }
  
      @Override
-@@ -495,13 +547,26 @@ public abstract class AbstractMinecart extends VehicleEntity {
+@@ -500,13 +552,26 @@ public abstract class AbstractMinecart extends VehicleEntity {
  
          output.putBoolean("FlippedRotation", this.flipped);
          output.putBoolean("HasTicked", this.firstTick);
@@ -147,7 +147,7 @@ index 7f2cdd5000c77a58ce48a61f9f6d7b01a6f0827b..5ad77636d0681d1f0341cff4482ba6ad
                      double xa = entity.getX() - this.getX();
                      double za = entity.getZ() - this.getZ();
                      double dd = xa * xa + za * za;
-@@ -610,4 +675,26 @@ public abstract class AbstractMinecart extends VehicleEntity {
+@@ -615,4 +680,26 @@ public abstract class AbstractMinecart extends VehicleEntity {
      public boolean isFurnace() {
          return false;
      }

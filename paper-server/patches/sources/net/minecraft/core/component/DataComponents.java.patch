@@ -1,14 +1,14 @@
-From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
 From: File <noreply+automated@papermc.io>
 Date: Sun, 20 Apr 1997 15:37:42 +0200
 Subject: [PATCH] paper File Patches
 
 
 diff --git a/net/minecraft/core/component/DataComponents.java b/net/minecraft/core/component/DataComponents.java
-index 0fc8598cacb823303b97d329807060b16e3d8d5b..98ae632b541d4ca2458807c210a69a123ecba5cf 100644
+index 6617710b01a8e99ffd22af4c29d87245678a3e87..48ee9c50149e79e890725ca82182e04ee27e84e0 100644
 --- a/net/minecraft/core/component/DataComponents.java
 +++ b/net/minecraft/core/component/DataComponents.java
-@@ -232,10 +232,10 @@ public class DataComponents {
+@@ -245,10 +245,10 @@ public class DataComponents {
          "map_post_processing", b -> b.networkSynchronized(MapPostProcessing.STREAM_CODEC)
      );
      public static final DataComponentType<ChargedProjectiles> CHARGED_PROJECTILES = register(
@@ -21,7 +21,7 @@ index 0fc8598cacb823303b97d329807060b16e3d8d5b..98ae632b541d4ca2458807c210a69a12
      );
      public static final DataComponentType<PotionContents> POTION_CONTENTS = register(
          "potion_contents", b -> b.persistent(PotionContents.CODEC).networkSynchronized(PotionContents.STREAM_CODEC).cacheEncoding()
-@@ -315,7 +315,7 @@ public class DataComponents {
+@@ -328,7 +328,7 @@ public class DataComponents {
          "pot_decorations", b -> b.persistent(PotDecorations.CODEC).networkSynchronized(PotDecorations.STREAM_CODEC).cacheEncoding()
      );
      public static final DataComponentType<ItemContainerContents> CONTAINER = register(
