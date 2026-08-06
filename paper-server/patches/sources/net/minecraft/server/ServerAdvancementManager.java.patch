@@ -1,0 +1,21 @@
+--- a/net/minecraft/server/ServerAdvancementManager.java
++++ b/net/minecraft/server/ServerAdvancementManager.java
+@@ -27,12 +_,18 @@
+         HolderLookup.RegistryLookup<Advancement> advancements = registries.lookupOrThrow(Registries.ADVANCEMENT);
+         Builder<Identifier, AdvancementHolder> builder = ImmutableMap.builder();
+         advancements.listElements().forEach(advancement -> {
++            // Spigot start
++            if (org.spigotmc.SpigotConfig.disabledAdvancements != null && (org.spigotmc.SpigotConfig.disabledAdvancements.contains("*") || org.spigotmc.SpigotConfig.disabledAdvancements.contains(id.toString()) || org.spigotmc.SpigotConfig.disabledAdvancements.contains(advancement.key().identifier().getNamespace()))) {
++                return;
++            }
++            // Spigot end
+             validate(registries, (Holder.Reference<Advancement>)advancement);
+             builder.put(advancement.key().identifier(), new AdvancementHolder(advancement.key().identifier(), advancement.value()));
+         });
+         this.advancements = builder.buildOrThrow();
+         AdvancementTree tree = new AdvancementTree();
+         tree.addAll(this.advancements.values());
++        LOGGER.info("Loaded {} advancements", tree.nodes().size()); // Paper - Improve logging and errors; moved from AdvancementTree#addAll
+ 
+         for (AdvancementNode root : tree.roots()) {
+             if (root.holder().value().display().isPresent()) {
