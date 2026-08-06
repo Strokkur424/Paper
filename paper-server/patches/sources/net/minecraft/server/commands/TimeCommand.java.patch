@@ -1,14 +1,6 @@
-From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/server/commands/TimeCommand.java b/net/minecraft/server/commands/TimeCommand.java
-index a33299ba9b9331e50f963a26296f8657805e9739..27ec27001aad55c9e1c691e3910c08a57b3322c9 100644
 --- a/net/minecraft/server/commands/TimeCommand.java
 +++ b/net/minecraft/server/commands/TimeCommand.java
-@@ -120,7 +120,7 @@ public class TimeCommand {
+@@ -135,7 +_,7 @@
          final CommandSourceStack source, final SuggestionsBuilder builder, final Holder<WorldClock> clock
      ) {
          return SharedSuggestionProvider.suggestResource(
@@ -17,16 +9,16 @@ index a33299ba9b9331e50f963a26296f8657805e9739..27ec27001aad55c9e1c691e3910c08a5
          );
      }
  
-@@ -142,7 +142,7 @@ public class TimeCommand {
+@@ -157,7 +_,7 @@
      }
  
      private static int queryTime(final CommandSourceStack source, final Holder<WorldClock> clock) {
 -        ServerClockManager clockManager = source.getServer().clockManager();
 +        ServerClockManager clockManager = source.getLevel().clockManager(); // Paper - per-world time
-         long totalTicks = clockManager.getTotalTicks(clock);
+         long totalTicks = clockManager.getInstance(clock).totalTicks();
          source.sendSuccess(() -> Component.translatable("commands.time.query.absolute", clock.getRegisteredName(), totalTicks), false);
          return wrapTime(totalTicks);
-@@ -153,7 +153,7 @@ public class TimeCommand {
+@@ -168,7 +_,7 @@
              throw ERROR_WRONG_TIMELINE_FOR_CLOCK.create(clock.getRegisteredName(), timeline.getRegisteredName());
          }
  
@@ -35,7 +27,7 @@ index a33299ba9b9331e50f963a26296f8657805e9739..27ec27001aad55c9e1c691e3910c08a5
          long currentTicks = timeline.value().getCurrentTicks(clockManager);
          source.sendSuccess(() -> Component.translatable("commands.time.query.timeline", timeline.getRegisteredName(), currentTicks), false);
          return wrapTime(currentTicks);
-@@ -164,45 +164,67 @@ public class TimeCommand {
+@@ -179,33 +_,47 @@
              throw ERROR_WRONG_TIMELINE_FOR_CLOCK.create(clock.getRegisteredName(), timeline.getRegisteredName());
          }
  
@@ -47,12 +39,16 @@ index a33299ba9b9331e50f963a26296f8657805e9739..27ec27001aad55c9e1c691e3910c08a5
      }
  
 +    // Paper start - per-world time
-     private static int setTotalTicks(final CommandSourceStack source, final Holder<WorldClock> clock, final int totalTicks) {
+     private static int setTotalTicks(final CommandSourceStack source, final Holder<WorldClock> clock, final int totalTicks) throws CommandSyntaxException {
 -        ServerClockManager clockManager = source.getServer().clockManager();
++        ServerClockManager clockManager = source.getLevel().clockManager();
+         if (clockManager.getInstance(clock).totalTicks() == totalTicks) {
+             throw ERROR_ALREADY_AT_TIME.create(clock.getRegisteredName(), totalTicks);
+         }
+ 
 -        clockManager.setTotalTicks(clock, totalTicks);
 -        source.sendSuccess(() -> Component.translatable("commands.time.set.absolute", clock.getRegisteredName(), totalTicks), true);
 -        return totalTicks;
-+        ServerClockManager clockManager = source.getLevel().clockManager();
 +        long currentTotalTicks = clockManager.getTotalTicks(clock);
 +        org.bukkit.event.world.ClockTimeSkipEvent event = org.bukkit.craftbukkit.event.CraftEventFactory.createTimeSkipEvent(source, totalTicks - currentTotalTicks);
 +        final long newTotalTicks;
@@ -74,43 +70,48 @@ index a33299ba9b9331e50f963a26296f8657805e9739..27ec27001aad55c9e1c691e3910c08a5
 +        if (event.callEvent()) {
 +            clockManager.addTicks(clock, event.getSkipAmount());
 +        }
-         long totalTicks = clockManager.getTotalTicks(clock);
+         long totalTicks = clockManager.getInstance(clock).totalTicks();
          source.sendSuccess(() -> Component.translatable("commands.time.set.absolute", clock.getRegisteredName(), totalTicks), true);
          return wrapTime(totalTicks);
      }
  
      private static int setTimeToTimeMarker(final CommandSourceStack source, final Holder<WorldClock> clock, final ResourceKey<ClockTimeMarker> timeMarkerId) throws CommandSyntaxException {
 -        ServerClockManager clockManager = source.getServer().clockManager();
--        if (!clockManager.moveToTimeMarker(clock, timeMarkerId)) {
 +        // Paper start - per-world time
 +        ServerClockManager clockManager = source.getLevel().clockManager();
-+        java.util.OptionalLong targetTime = clockManager.getTotalTicksToTimeMarker(clock, timeMarkerId);
-+        if (targetTime.isEmpty()) {
-+            // Paper end - per-world time
-             throw ERROR_NO_TIME_MARKER_FOUND.create(clock.getRegisteredName(), timeMarkerId);
++        // Paper end - per-world time
+         ServerClockManager.MoveResult moveResult = clockManager.moveToTimeMarker(clock, timeMarkerId);
+         String clockName = clock.getRegisteredName();
+         String timeMarkerName = timeMarkerId.identifier().toString();
+@@ -222,7 +_,7 @@
+     }
+ 
+     private static int setPaused(final CommandSourceStack source, final Holder<WorldClock> clock, final boolean paused) throws CommandSyntaxException {
+-        ServerClockManager clockManager = source.getServer().clockManager();
++        ServerClockManager clockManager = source.getLevel().clockManager();
+         String clockName = clock.getRegisteredName();
+         if (clockManager.getInstance(clock).isPaused() == paused) {
+             if (paused) {
+@@ -231,19 +_,19 @@
+                 throw ERROR_ALREADY_RUNNING.create(clockName);
+             }
+         } else {
+-            clockManager.setPaused(clock, paused);
++            clockManager.setPaused(clock, paused); // Paper - per-world time
+             source.sendSuccess(() -> Component.translatable(paused ? "commands.time.pause" : "commands.time.resume", clockName), true);
+             return Command.SINGLE_SUCCESS;
+         }
+     }
+ 
+     private static int setRate(final CommandSourceStack source, final Holder<WorldClock> clock, final float rate) throws CommandSyntaxException {
+-        ServerClockManager clockManager = source.getServer().clockManager();
++        ServerClockManager clockManager = source.getLevel().clockManager();
+         if (clockManager.getInstance(clock).rate() == rate) {
+             throw ERROR_ALREADY_SAME_RATE.create(clock.getRegisteredName(), rate);
          }
  
-+        // Paper start - per-world time
-+        final long currentTime = clockManager.getTotalTicks(clock);
-+        final org.bukkit.event.world.ClockTimeSkipEvent event = org.bukkit.craftbukkit.event.CraftEventFactory.createTimeSkipEvent(source, targetTime.getAsLong() - currentTime);
-+        if (event.callEvent()) {
-+            clockManager.setTotalTicks(clock, currentTime + event.getSkipAmount());
-+        }
-+        // Paper end - per-world time
-         source.sendSuccess(() -> Component.translatable("commands.time.set.time_marker", clock.getRegisteredName(), timeMarkerId.identifier().toString()), true);
-         return wrapTime(clockManager.getTotalTicks(clock));
-     }
- 
-     private static int setPaused(final CommandSourceStack source, final Holder<WorldClock> clock, final boolean paused) {
--        source.getServer().clockManager().setPaused(clock, paused);
-+        source.getLevel().clockManager().setPaused(clock, paused); // Paper - per-world time
-         source.sendSuccess(() -> Component.translatable(paused ? "commands.time.pause" : "commands.time.resume", clock.getRegisteredName()), true);
-         return Command.SINGLE_SUCCESS;
-     }
- 
-     private static int setRate(final CommandSourceStack source, final Holder<WorldClock> clock, final float rate) {
--        source.getServer().clockManager().setRate(clock, rate);
-+        source.getLevel().clockManager().setRate(clock, rate); // Paper - per-world time
+-        clockManager.setRate(clock, rate);
++        clockManager.setRate(clock, rate); // Paper - per-world time
          source.sendSuccess(() -> Component.translatable("commands.time.rate", clock.getRegisteredName(), rate), true);
          return Command.SINGLE_SUCCESS;
      }
