@@ -1,0 +1,44 @@
+--- a/net/minecraft/world/item/Items.java
++++ b/net/minecraft/world/item/Items.java
+@@ -1642,7 +_,40 @@
+         ItemIds.WOODEN_PICKAXE, new Item.Properties().pickaxe(ToolMaterial.WOOD, 1.0F, -2.8F).cookingFuel(NumberProviders.COOKING_TIME_WOOD_ITEMS_LARGE)
+     );
+     public static final Item WOODEN_AXE = registerItem(
+-        ItemIds.WOODEN_AXE, new Item.Properties().axe(ToolMaterial.WOOD, 6.0F, -3.2F).cookingFuel(NumberProviders.COOKING_TIME_WOOD_ITEMS_LARGE)
++        ItemIds.WOODEN_AXE, new Item.Properties().axe--- a/net/minecraft/world/item/ShovelItem.java
+++++ b/net/minecraft/world/item/ShovelItem.java
++@@ -46,20 +_,29 @@
++         Player player = context.getPlayer();
++         BlockState newState = FLATTENABLES.get(blockState.getBlock());
++         BlockState updatedState = null;
+++        Runnable afterAction = null; // Paper
++         if (newState != null && level.getBlockState(pos.above()).isAir()) {
++-            level.playSound(player, pos, SoundEvents.SHOVEL_FLATTEN, SoundSource.BLOCKS, 1.0F, 1.0F);
+++            afterAction = () -> level.playSound(player, pos, SoundEvents.SHOVEL_FLATTEN, SoundSource.BLOCKS, 1.0F, 1.0F); // Paper
++             updatedState = newState;
++         } else if (blockState.getBlock() instanceof CampfireBlock && blockState.getValue(CampfireBlock.LIT)) {
+++            afterAction = () -> { // Paper
++             if (!level.isClientSide()) {
++                 level.levelEvent(null, LevelEvent.SOUND_EXTINGUISH_FIRE, pos, 0);
++             }
++
++             CampfireBlock.dowse(context.getPlayer(), level, pos, blockState);
+++            }; // Paper
++             updatedState = blockState.setValue(CampfireBlock.LIT, false);
++         }
++
++         if (updatedState != null) {
++             if (!level.isClientSide()) {
+++                // Paper start
+++                if (!org.bukkit.craftbukkit.event.CraftEventFactory.callEntityChangeBlockEvent(context.getPlayer(), pos, updatedState)) {
+++                    return InteractionResult.PASS;
+++                }
+++                afterAction.run();
+++                // Paper end
++                 level.setBlock(pos, updatedState, Block.UPDATE_ALL_IMMEDIATE);
++                 level.gameEvent(GameEvent.BLOCK_CHANGE, pos, GameEvent.Context.of(player, updatedState));
++                 if (player != null) {
++(ToolMaterial.WOOD, 6.0F, -3.2F).cookingFuel(NumberProviders.COOKING_TIME_WOOD_ITEMS_LARGE)
+     );
+     public static final Item WOODEN_HOE = registerItem(
+         ItemIds.WOODEN_HOE, new Item.Properties().hoe(ToolMaterial.WOOD, 0.0F, -3.0F).cookingFuel(NumberProviders.COOKING_TIME_WOOD_ITEMS_LARGE)

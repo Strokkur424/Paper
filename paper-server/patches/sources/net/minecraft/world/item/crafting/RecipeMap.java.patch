@@ -1,9 +1,9 @@
 --- a/net/minecraft/world/item/crafting/RecipeMap.java
 +++ b/net/minecraft/world/item/crafting/RecipeMap.java
 @@ -30,8 +_,32 @@
-             byKey.put(recipe.id(), recipe);
-         }
- 
+             byType.put(recipe.value().getType(), legacyRecipeHolder);
+             byKey.put(recipe.key(), legacyRecipeHolder);
+         });
 -        return new RecipeMap(byType.build(), byKey.build());
 -    }
 +        // CraftBukkit start - mutable
