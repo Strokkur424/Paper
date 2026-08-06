@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/item/component/ResolvableProfile.java b/net/minecraft/world/item/component/ResolvableProfile.java
-index 9daf5074df4cde1437a4abfb3ff0caf96974d7d7..f1b62a6e0d8176d8ba1875e78cc730ee55b1b0c1 100644
 --- a/net/minecraft/world/item/component/ResolvableProfile.java
 +++ b/net/minecraft/world/item/component/ResolvableProfile.java
-@@ -46,7 +46,7 @@ public abstract sealed class ResolvableProfile implements TooltipProvider permit
+@@ -46,7 +_,7 @@
      private static ResolvableProfile create(final Either<GameProfile, ResolvableProfile.Partial> value, final PlayerSkin.Patch patch) {
          return value.map(
              full -> new ResolvableProfile.Static(Either.left(full), patch),
@@ -17,7 +9,7 @@ index 9daf5074df4cde1437a4abfb3ff0caf96974d7d7..f1b62a6e0d8176d8ba1875e78cc730ee
                  ? partial.name
                      .<ResolvableProfile>map(s -> new ResolvableProfile.Dynamic(Either.left(s), patch))
                      .orElseGet(() -> new ResolvableProfile.Dynamic(Either.right(partial.id.get()), patch))
-@@ -140,9 +140,10 @@ public abstract sealed class ResolvableProfile implements TooltipProvider permit
+@@ -140,9 +_,10 @@
              i -> i.group(
                      ExtraCodecs.PLAYER_NAME.optionalFieldOf("name").forGetter(ResolvableProfile.Partial::name),
                      UUIDUtil.CODEC.optionalFieldOf("id").forGetter(ResolvableProfile.Partial::id),

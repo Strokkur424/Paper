@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/entity/vehicle/minecart/MinecartCommandBlock.java b/net/minecraft/world/entity/vehicle/minecart/MinecartCommandBlock.java
-index d947ddd331a272003f20d5cf6bae7a7d5775e2da..912962e7ba35df57cbb157443fc8b7867a43d5dc 100644
 --- a/net/minecraft/world/entity/vehicle/minecart/MinecartCommandBlock.java
 +++ b/net/minecraft/world/entity/vehicle/minecart/MinecartCommandBlock.java
-@@ -87,7 +87,7 @@ public class MinecartCommandBlock extends AbstractMinecart {
+@@ -87,7 +_,7 @@
  
      @Override
      public InteractionResult interact(final Player player, final InteractionHand hand, final Vec3 location) {
@@ -17,7 +9,7 @@ index d947ddd331a272003f20d5cf6bae7a7d5775e2da..912962e7ba35df57cbb157443fc8b786
              return InteractionResult.PASS;
          }
  
-@@ -125,7 +125,7 @@ public class MinecartCommandBlock extends AbstractMinecart {
+@@ -125,7 +_,7 @@
                  MinecartCommandBlock.this.position(),
                  MinecartCommandBlock.this.getRotationVector(),
                  level,
@@ -26,7 +18,7 @@ index d947ddd331a272003f20d5cf6bae7a7d5775e2da..912962e7ba35df57cbb157443fc8b786
                  this.getName().getString(),
                  MinecartCommandBlock.this.getDisplayName(),
                  level.getServer(),
-@@ -137,5 +137,17 @@ public class MinecartCommandBlock extends AbstractMinecart {
+@@ -137,5 +_,17 @@
          public boolean isValid() {
              return !MinecartCommandBlock.this.isRemoved();
          }

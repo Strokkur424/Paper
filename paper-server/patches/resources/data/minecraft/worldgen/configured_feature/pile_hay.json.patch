@@ -1,0 +1,17 @@
+--- /dev/null
++++ b/data/minecraft/worldgen/configured_feature/pile_hay.json
+@@ -1,0 +_,14 @@
++{
++  "type": "minecraft:block_pile",
++  "config": {
++    "state_provider": {
++      "type": "minecraft:rotated_block_provider",
++      "state": {
++        "Name": "minecraft:hay_block",
++        "Properties": {
++          "axis": "y"
++        }
++      }
++    }
++  }
++}

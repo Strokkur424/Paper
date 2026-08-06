@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/transportation/warped_fungus_on_a_stick.json
++++ b/data/minecraft/advancement/recipes/transportation/warped_fungus_on_a_stick.json
+@@ -3,7 +_,7 @@
+   "criteria": {
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:warped_fungus_on_a_stick"
++        "recipe": "minecraft:warped_fungus_on_a_stick"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     },

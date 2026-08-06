@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/end/enter_end_gateway.json
++++ b/data/minecraft/advancement/end/enter_end_gateway.json
+@@ -3,7 +_,7 @@
+   "criteria": {
+     "entered_end_gateway": {
+       "conditions": {
+-        "blocks": "minecraft:end_gateway"
++        "block": "minecraft:end_gateway"
+       },
+       "trigger": "minecraft:enter_block"
+     }

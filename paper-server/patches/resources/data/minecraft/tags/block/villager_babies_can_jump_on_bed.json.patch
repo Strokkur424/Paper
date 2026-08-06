@@ -1,0 +1,8 @@
+--- a/data/minecraft/tags/block/villager_babies_can_jump_on_bed.json
++++ /dev/null
+@@ -1,5 +_,0 @@
+-{
+-  "values": [
+-    "#minecraft:beds"
+-  ]
+-}

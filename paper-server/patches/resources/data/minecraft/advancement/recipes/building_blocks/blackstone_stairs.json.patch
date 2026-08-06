@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/building_blocks/blackstone_stairs.json
++++ b/data/minecraft/advancement/recipes/building_blocks/blackstone_stairs.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:blackstone_stairs"
++        "recipe": "minecraft:blackstone_stairs"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

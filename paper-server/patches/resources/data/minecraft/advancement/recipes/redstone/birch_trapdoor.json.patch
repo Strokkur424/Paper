@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/redstone/birch_trapdoor.json
++++ b/data/minecraft/advancement/recipes/redstone/birch_trapdoor.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:birch_trapdoor"
++        "recipe": "minecraft:birch_trapdoor"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

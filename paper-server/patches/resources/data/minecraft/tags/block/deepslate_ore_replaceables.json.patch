@@ -1,0 +1,10 @@
+--- a/data/minecraft/tags/block/deepslate_ore_replaceables.json
++++ b/data/minecraft/tags/block/deepslate_ore_replaceables.json
+@@ -1,5 +_,6 @@
+ {
+   "values": [
+-    "minecraft:deepslate"
++    "minecraft:deepslate",
++    "minecraft:tuff"
+   ]
+ }

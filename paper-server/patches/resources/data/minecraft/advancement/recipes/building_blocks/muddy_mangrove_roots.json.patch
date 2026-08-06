@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/building_blocks/muddy_mangrove_roots.json
++++ b/data/minecraft/advancement/recipes/building_blocks/muddy_mangrove_roots.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:muddy_mangrove_roots"
++        "recipe": "minecraft:muddy_mangrove_roots"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

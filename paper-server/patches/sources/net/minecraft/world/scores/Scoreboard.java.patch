@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/scores/Scoreboard.java b/net/minecraft/world/scores/Scoreboard.java
-index fe7c562a4944f9c96dc1476d36f136769bbe212f..4a15851bda30c918c58c96d2cb98b74f30db396c 100644
 --- a/net/minecraft/world/scores/Scoreboard.java
 +++ b/net/minecraft/world/scores/Scoreboard.java
-@@ -373,7 +373,7 @@ public class Scoreboard {
+@@ -373,7 +_,7 @@
      }
  
      protected List<PlayerTeam.Packed> packPlayerTeams() {

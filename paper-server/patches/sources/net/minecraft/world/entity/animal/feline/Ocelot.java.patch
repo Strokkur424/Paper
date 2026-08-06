@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/entity/animal/feline/Ocelot.java b/net/minecraft/world/entity/animal/feline/Ocelot.java
-index 400e096f8a908ba1ffce05a228dedd516c2b8921..9c58a0ada0ab1e6d89f7e3505948694febc99df8 100644
 --- a/net/minecraft/world/entity/animal/feline/Ocelot.java
 +++ b/net/minecraft/world/entity/animal/feline/Ocelot.java
-@@ -136,7 +136,7 @@ public class Ocelot extends Animal {
+@@ -136,7 +_,7 @@
  
      @Override
      public boolean removeWhenFarAway(final double distSqr) {
@@ -17,7 +9,7 @@ index 400e096f8a908ba1ffce05a228dedd516c2b8921..9c58a0ada0ab1e6d89f7e3505948694f
      }
  
      public static AttributeSupplier.Builder createAttributes() {
-@@ -169,7 +169,7 @@ public class Ocelot extends Animal {
+@@ -169,7 +_,7 @@
          if ((this.temptGoal == null || this.temptGoal.isRunning()) && !this.isTrusting() && this.isFood(itemStack) && player.distanceToSqr(this) < 9.0) {
              this.usePlayerItem(player, hand, itemStack);
              if (!this.level().isClientSide()) {

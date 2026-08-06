@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/misc/pink_dye_from_red_white_dye.json
++++ b/data/minecraft/advancement/recipes/misc/pink_dye_from_red_white_dye.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:pink_dye_from_red_white_dye"
++        "recipe": "minecraft:pink_dye_from_red_white_dye"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     },

@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/entity/ai/behavior/StartAttacking.java b/net/minecraft/world/entity/ai/behavior/StartAttacking.java
-index 7d86e7d0d2c9ee69d3a9845b8be2a7d863c07ee8..f28b65e23b58d5d78b77111b2b2596021c298d65 100644
 --- a/net/minecraft/world/entity/ai/behavior/StartAttacking.java
 +++ b/net/minecraft/world/entity/ai/behavior/StartAttacking.java
-@@ -32,6 +32,17 @@ public class StartAttacking {
+@@ -32,6 +_,17 @@
                          return false;
                      }
  

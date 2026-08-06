@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/entity/item/ItemEntity.java b/net/minecraft/world/entity/item/ItemEntity.java
-index b82709de35015718d1019943a94fd2c7eea3f948..469ab01df66e33ef83d2a7344b9e8544ce4dcfdd 100644
 --- a/net/minecraft/world/entity/item/ItemEntity.java
 +++ b/net/minecraft/world/entity/item/ItemEntity.java
-@@ -53,6 +53,9 @@ public class ItemEntity extends Entity implements TraceableEntity {
+@@ -53,6 +_,9 @@
      public @Nullable EntityReference<Entity> thrower;
      public @Nullable UUID target;
      public final float bobOffs = this.random.nextFloat() * (float) Math.PI * 2.0F;
@@ -18,7 +10,7 @@ index b82709de35015718d1019943a94fd2c7eea3f948..469ab01df66e33ef83d2a7344b9e8544
  
      public ItemEntity(final EntityType<? extends ItemEntity> type, final Level level) {
          super(type, level);
-@@ -82,6 +85,14 @@ public class ItemEntity extends Entity implements TraceableEntity {
+@@ -82,6 +_,14 @@
          this.setDeltaMovement(deltaX, deltaY, deltaZ);
      }
  
@@ -33,7 +25,7 @@ index b82709de35015718d1019943a94fd2c7eea3f948..469ab01df66e33ef83d2a7344b9e8544
      @Override
      public boolean dampensVibrations() {
          return this.getItem().is(ItemTags.DAMPENS_VIBRATIONS);
-@@ -118,7 +129,7 @@ public class ItemEntity extends Entity implements TraceableEntity {
+@@ -118,7 +_,7 @@
      @Override
      public void tick() {
          if (this.getItem().isEmpty()) {
@@ -42,7 +34,7 @@ index b82709de35015718d1019943a94fd2c7eea3f948..469ab01df66e33ef83d2a7344b9e8544
          } else {
              super.tick();
              if (this.pickupDelay > 0 && this.pickupDelay != 32767) {
-@@ -146,14 +157,18 @@ public class ItemEntity extends Entity implements TraceableEntity {
+@@ -146,14 +_,18 @@
                  }
              }
  
@@ -63,7 +55,7 @@ index b82709de35015718d1019943a94fd2c7eea3f948..469ab01df66e33ef83d2a7344b9e8544
                      groundFriction *= this.level().getBlockState(this.getBlockPosBelowThatAffectsMyMovement()).getBlock().getFriction();
                  }
  
-@@ -186,8 +201,14 @@ public class ItemEntity extends Entity implements TraceableEntity {
+@@ -186,8 +_,14 @@
                  }
              }
  
@@ -80,7 +72,7 @@ index b82709de35015718d1019943a94fd2c7eea3f948..469ab01df66e33ef83d2a7344b9e8544
              }
          }
      }
-@@ -212,9 +233,18 @@ public class ItemEntity extends Entity implements TraceableEntity {
+@@ -212,9 +_,18 @@
  
      private void mergeWithNeighbours() {
          if (this.isMergable()) {
@@ -100,7 +92,7 @@ index b82709de35015718d1019943a94fd2c7eea3f948..469ab01df66e33ef83d2a7344b9e8544
                      this.tryToMerge(entity);
                      if (this.isRemoved()) {
                          break;
-@@ -226,7 +256,7 @@ public class ItemEntity extends Entity implements TraceableEntity {
+@@ -226,7 +_,7 @@
  
      private boolean isMergable() {
          ItemStack item = this.getItem();
@@ -109,7 +101,7 @@ index b82709de35015718d1019943a94fd2c7eea3f948..469ab01df66e33ef83d2a7344b9e8544
      }
  
      private void tryToMerge(final ItemEntity other) {
-@@ -259,11 +289,16 @@ public class ItemEntity extends Entity implements TraceableEntity {
+@@ -259,11 +_,16 @@
      }
  
      private static void merge(final ItemEntity toItem, final ItemStack toStack, final ItemEntity fromItem, final ItemStack fromStack) {
@@ -127,7 +119,7 @@ index b82709de35015718d1019943a94fd2c7eea3f948..469ab01df66e33ef83d2a7344b9e8544
          }
      }
  
-@@ -296,12 +331,17 @@ public class ItemEntity extends Entity implements TraceableEntity {
+@@ -296,12 +_,17 @@
              return false;
          }
  
@@ -146,7 +138,7 @@ index b82709de35015718d1019943a94fd2c7eea3f948..469ab01df66e33ef83d2a7344b9e8544
          }
  
          return true;
-@@ -322,6 +362,11 @@ public class ItemEntity extends Entity implements TraceableEntity {
+@@ -322,6 +_,11 @@
          if (!this.getItem().isEmpty()) {
              output.store("Item", ItemStack.CODEC, this.getItem());
          }
@@ -158,7 +150,7 @@ index b82709de35015718d1019943a94fd2c7eea3f948..469ab01df66e33ef83d2a7344b9e8544
      }
  
      @Override
-@@ -332,8 +377,17 @@ public class ItemEntity extends Entity implements TraceableEntity {
+@@ -332,8 +_,17 @@
          this.target = input.read("Owner", UUIDUtil.CODEC).orElse(null);
          this.thrower = EntityReference.read(input, "Thrower");
          this.setItem(input.read("Item", ItemStack.CODEC).orElse(ItemStack.EMPTY));
@@ -177,7 +169,7 @@ index b82709de35015718d1019943a94fd2c7eea3f948..469ab01df66e33ef83d2a7344b9e8544
          }
      }
  
-@@ -343,10 +397,73 @@ public class ItemEntity extends Entity implements TraceableEntity {
+@@ -343,10 +_,73 @@
              ItemStack itemStack = this.getItem();
              Item item = itemStack.getItem();
              int orgCount = itemStack.getCount();
@@ -252,7 +244,7 @@ index b82709de35015718d1019943a94fd2c7eea3f948..469ab01df66e33ef83d2a7344b9e8544
                      itemStack.setCount(orgCount);
                  }
  
-@@ -383,6 +500,7 @@ public class ItemEntity extends Entity implements TraceableEntity {
+@@ -383,6 +_,7 @@
  
      public void setItem(final ItemStack itemStack) {
          this.getEntityData().set(DATA_ITEM, itemStack);
@@ -260,7 +252,7 @@ index b82709de35015718d1019943a94fd2c7eea3f948..469ab01df66e33ef83d2a7344b9e8544
      }
  
      public void setTarget(final @Nullable UUID target) {
-@@ -427,7 +545,7 @@ public class ItemEntity extends Entity implements TraceableEntity {
+@@ -427,7 +_,7 @@
  
      public void makeFakeItem() {
          this.setNeverPickUp();

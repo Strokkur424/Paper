@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/entity/projectile/hurtingprojectile/WitherSkull.java b/net/minecraft/world/entity/projectile/hurtingprojectile/WitherSkull.java
-index bc3ed75981b65daa6fd887b7bee6e0e453d97fc8..2ca5fefa798af814e7e3d59def71df921b2afd54 100644
 --- a/net/minecraft/world/entity/projectile/hurtingprojectile/WitherSkull.java
 +++ b/net/minecraft/world/entity/projectile/hurtingprojectile/WitherSkull.java
-@@ -68,11 +68,11 @@ public class WitherSkull extends AbstractHurtingProjectile {
+@@ -68,11 +_,11 @@
                      if (var8.isAlive()) {
                          EnchantmentHelper.doPostAttackEffects(serverLevel, var8, damageSource);
                      } else {
@@ -22,7 +14,7 @@ index bc3ed75981b65daa6fd887b7bee6e0e453d97fc8..2ca5fefa798af814e7e3d59def71df92
              }
  
              if (wasHurt && var8 instanceof LivingEntity livingEntity) {
-@@ -84,7 +84,7 @@ public class WitherSkull extends AbstractHurtingProjectile {
+@@ -84,7 +_,7 @@
                  }
  
                  if (witherSeconds > 0) {
@@ -31,7 +23,7 @@ index bc3ed75981b65daa6fd887b7bee6e0e453d97fc8..2ca5fefa798af814e7e3d59def71df92
                  }
              }
          }
-@@ -94,8 +94,13 @@ public class WitherSkull extends AbstractHurtingProjectile {
+@@ -94,8 +_,13 @@
      protected void onHit(final HitResult hitResult) {
          super.onHit(hitResult);
          if (!this.level().isClientSide()) {

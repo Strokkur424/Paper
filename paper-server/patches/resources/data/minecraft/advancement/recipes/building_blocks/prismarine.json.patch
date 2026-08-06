@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/building_blocks/prismarine.json
++++ b/data/minecraft/advancement/recipes/building_blocks/prismarine.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:prismarine"
++        "recipe": "minecraft:prismarine"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

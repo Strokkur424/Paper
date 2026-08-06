@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/level/block/BrewingStandBlock.java b/net/minecraft/world/level/block/BrewingStandBlock.java
-index b23eafa2363ff563ee722afa0a5ef4849e1fc958..a3b29ef6da86759b268fe657bec60ad5bbd45120 100644
 --- a/net/minecraft/world/level/block/BrewingStandBlock.java
 +++ b/net/minecraft/world/level/block/BrewingStandBlock.java
-@@ -63,8 +63,7 @@ public class BrewingStandBlock extends BaseEntityBlock {
+@@ -63,8 +_,7 @@
      protected InteractionResult useWithoutItem(
          final BlockState state, final Level level, final BlockPos pos, final Player player, final BlockHitResult hitResult
      ) {

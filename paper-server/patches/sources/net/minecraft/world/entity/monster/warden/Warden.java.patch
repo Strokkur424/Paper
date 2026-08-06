@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/entity/monster/warden/Warden.java b/net/minecraft/world/entity/monster/warden/Warden.java
-index 716a68ed83d76901d5acf3f7a7c958b49a4591db..28fab6b47bccccfb02ca171142e71d0ce4130e79 100644
 --- a/net/minecraft/world/entity/monster/warden/Warden.java
 +++ b/net/minecraft/world/entity/monster/warden/Warden.java
-@@ -409,7 +409,7 @@ public class Warden extends Monster implements VibrationSystem {
+@@ -409,7 +_,7 @@
  
      public static void applyDarknessAround(final ServerLevel level, final Vec3 position, final @Nullable Entity source, final int darknessRadius) {
          MobEffectInstance darkness = new MobEffectInstance(MobEffects.DARKNESS, 260, 0, false, false);
@@ -17,7 +9,7 @@ index 716a68ed83d76901d5acf3f7a7c958b49a4591db..28fab6b47bccccfb02ca171142e71d0c
      }
  
      @Override
-@@ -451,8 +451,17 @@ public class Warden extends Monster implements VibrationSystem {
+@@ -451,8 +_,17 @@
      }
  
      @VisibleForTesting

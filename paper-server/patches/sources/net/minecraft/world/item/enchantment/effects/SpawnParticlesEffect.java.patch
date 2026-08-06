@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/item/enchantment/effects/SpawnParticlesEffect.java b/net/minecraft/world/item/enchantment/effects/SpawnParticlesEffect.java
-index b40e4738530523245253887c122ce3f798766fcd..fcf8df825a6cac9f389ef957eda9aeac463b482d 100644
 --- a/net/minecraft/world/item/enchantment/effects/SpawnParticlesEffect.java
 +++ b/net/minecraft/world/item/enchantment/effects/SpawnParticlesEffect.java
-@@ -59,8 +59,13 @@ public record SpawnParticlesEffect(
+@@ -59,8 +_,13 @@
          Vec3 movement = entity.getKnownMovement();
          float bbWidth = entity.getBbWidth();
          float bbHeight = entity.getBbHeight();

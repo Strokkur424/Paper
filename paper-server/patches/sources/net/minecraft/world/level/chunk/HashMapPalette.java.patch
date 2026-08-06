@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/level/chunk/HashMapPalette.java b/net/minecraft/world/level/chunk/HashMapPalette.java
-index df36b113aefdaa01288d3ad7ade238d0b071885d..fde0a0e4b2a3b2bd4f2ac893703c70dd55b1ddc2 100644
 --- a/net/minecraft/world/level/chunk/HashMapPalette.java
 +++ b/net/minecraft/world/level/chunk/HashMapPalette.java
-@@ -18,7 +18,7 @@ public class HashMapPalette<T> implements Palette<T> {
+@@ -18,7 +_,7 @@
      }
  
      public HashMapPalette(final int bits) {
@@ -17,7 +9,7 @@ index df36b113aefdaa01288d3ad7ade238d0b071885d..fde0a0e4b2a3b2bd4f2ac893703c70dd
      }
  
      private HashMapPalette(final int bits, final CrudeIncrementalIntIdentityHashBiMap<T> values) {
-@@ -34,10 +34,16 @@ public class HashMapPalette<T> implements Palette<T> {
+@@ -34,10 +_,16 @@
      public int idFor(final T value, final PaletteResize<T> resizeHandler) {
          int id = this.values.getId(value);
          if (id == -1) {

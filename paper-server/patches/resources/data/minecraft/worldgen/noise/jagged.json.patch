@@ -1,0 +1,27 @@
+--- a/data/minecraft/worldgen/noise/jagged.json
++++ b/data/minecraft/worldgen/noise/jagged.json
+@@ -1,5 +_,21 @@
+ {
+-  "base_amplitude": 1.0383104856073737,
+-  "base_octave": -16,
+-  "octave_count": 16
++  "amplitudes": [
++    1.0,
++    1.0,
++    1.0,
++    1.0,
++    1.0,
++    1.0,
++    1.0,
++    1.0,
++    1.0,
++    1.0,
++    1.0,
++    1.0,
++    1.0,
++    1.0,
++    1.0,
++    1.0
++  ],
++  "firstOctave": -16
+ }

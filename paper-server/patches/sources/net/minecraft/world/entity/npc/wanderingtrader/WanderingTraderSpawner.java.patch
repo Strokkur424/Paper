@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/entity/npc/wanderingtrader/WanderingTraderSpawner.java b/net/minecraft/world/entity/npc/wanderingtrader/WanderingTraderSpawner.java
-index 4ff18b08787cef2c45b4dae142743858f14b1fcb..625996a7e1c6ec51312d25d7a94a08caccba32de 100644
 --- a/net/minecraft/world/entity/npc/wanderingtrader/WanderingTraderSpawner.java
 +++ b/net/minecraft/world/entity/npc/wanderingtrader/WanderingTraderSpawner.java
-@@ -37,30 +37,38 @@ public class WanderingTraderSpawner implements CustomSpawner {
+@@ -37,30 +_,38 @@
  
      public WanderingTraderSpawner(final SavedDataStorage savedDataStorage) {
          this.savedDataStorage = savedDataStorage;
@@ -55,7 +47,7 @@ index 4ff18b08787cef2c45b4dae142743858f14b1fcb..625996a7e1c6ec51312d25d7a94a08ca
          }
      }
  
-@@ -93,13 +101,13 @@ public class WanderingTraderSpawner implements CustomSpawner {
+@@ -93,13 +_,13 @@
                  return false;
              }
  
@@ -71,7 +63,7 @@ index 4ff18b08787cef2c45b4dae142743858f14b1fcb..625996a7e1c6ec51312d25d7a94a08ca
                  trader.setWanderTarget(referencePos);
                  trader.setHomeTo(referencePos, 16);
                  return true;
-@@ -112,7 +120,7 @@ public class WanderingTraderSpawner implements CustomSpawner {
+@@ -112,7 +_,7 @@
      private void tryToSpawnLlamaFor(final ServerLevel level, final WanderingTrader trader, final int radius) {
          BlockPos spawnPosition = this.findSpawnPositionNear(level, trader.blockPosition(), radius);
          if (spawnPosition != null) {

@@ -1,0 +1,11 @@
+--- /dev/null
++++ b/data/minecraft/worldgen/configured_feature/iceberg_blue.json
+@@ -1,0 +_,8 @@
++{
++  "type": "minecraft:iceberg",
++  "config": {
++    "state": {
++      "Name": "minecraft:blue_ice"
++    }
++  }
++}

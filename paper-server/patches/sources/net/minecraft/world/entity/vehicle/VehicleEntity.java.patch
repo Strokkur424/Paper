@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/entity/vehicle/VehicleEntity.java b/net/minecraft/world/entity/vehicle/VehicleEntity.java
-index 9505931f68baae03f88cafaf69f73dae37d7b217..96b0fa2ebab15a939a5162d23b3ad9b92365d818 100644
 --- a/net/minecraft/world/entity/vehicle/VehicleEntity.java
 +++ b/net/minecraft/world/entity/vehicle/VehicleEntity.java
-@@ -32,7 +32,7 @@ public abstract class VehicleEntity extends Entity {
+@@ -32,7 +_,7 @@
      }
  
      @Override
@@ -17,7 +9,7 @@ index 9505931f68baae03f88cafaf69f73dae37d7b217..96b0fa2ebab15a939a5162d23b3ad9b9
          if (this.isRemoved()) {
              return true;
          }
-@@ -41,6 +41,16 @@ public abstract class VehicleEntity extends Entity {
+@@ -41,6 +_,16 @@
              return false;
          }
  
@@ -34,7 +26,7 @@ index 9505931f68baae03f88cafaf69f73dae37d7b217..96b0fa2ebab15a939a5162d23b3ad9b9
          this.setHurtDir(-this.getHurtDir());
          this.setHurtTime(10);
          this.markHurt();
-@@ -49,9 +59,23 @@ public abstract class VehicleEntity extends Entity {
+@@ -49,9 +_,23 @@
          boolean creativePlayer = source.getEntity() instanceof Player player && player.getAbilities().instabuild;
          if ((creativePlayer || !(this.getDamage() > 40.0F)) && !this.shouldSourceDestroy(source)) {
              if (creativePlayer) {

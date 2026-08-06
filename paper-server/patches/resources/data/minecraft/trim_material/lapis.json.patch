@@ -1,0 +1,12 @@
+--- a/data/minecraft/trim_material/lapis.json
++++ b/data/minecraft/trim_material/lapis.json
+@@ -1,7 +_,7 @@
+ {
++  "asset_name": "lapis",
+   "description": {
+     "color": "#416E97",
+     "translate": "trim_material.minecraft.lapis"
+-  },
+-  "palette_id": "minecraft:trim/lapis"
++  }
+ }

@@ -1,0 +1,26 @@
+--- a/data/minecraft/loot_table/dispensers/trial_chambers/corridor.json
++++ b/data/minecraft/loot_table/dispensers/trial_chambers/corridor.json
+@@ -5,14 +_,16 @@
+       "entries": [
+         {
+           "type": "minecraft:item",
+-          "modifier": {
+-            "type": "minecraft:set_count",
+-            "count": {
+-              "type": "minecraft:uniform",
+-              "max": 8.0,
+-              "min": 4.0
++          "functions": [
++            {
++              "count": {
++                "type": "minecraft:uniform",
++                "max": 8.0,
++                "min": 4.0
++              },
++              "function": "minecraft:set_count"
+             }
+-          },
++          ],
+           "name": "minecraft:arrow"
+         }
+       ],

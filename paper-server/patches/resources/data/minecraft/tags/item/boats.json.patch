@@ -1,0 +1,10 @@
+--- a/data/minecraft/tags/item/boats.json
++++ b/data/minecraft/tags/item/boats.json
+@@ -10,7 +_,6 @@
+     "minecraft:mangrove_boat",
+     "minecraft:bamboo_raft",
+     "minecraft:cherry_boat",
+-    "minecraft:poplar_boat",
+     "#minecraft:chest_boats"
+   ]
+ }

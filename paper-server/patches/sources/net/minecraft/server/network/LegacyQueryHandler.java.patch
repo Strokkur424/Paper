@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/server/network/LegacyQueryHandler.java b/net/minecraft/server/network/LegacyQueryHandler.java
-index ae00fda333e23daac4ab8256992bd2fc5b544f30..a17ee0e63b34f3adadc3ae3d09da13c8a37b65c1 100644
 --- a/net/minecraft/server/network/LegacyQueryHandler.java
 +++ b/net/minecraft/server/network/LegacyQueryHandler.java
-@@ -14,6 +14,7 @@ import org.slf4j.Logger;
+@@ -14,6 +_,7 @@
  public class LegacyQueryHandler extends ChannelInboundHandlerAdapter {
      private static final Logger LOGGER = LogUtils.getLogger();
      private final ServerInfo server;
@@ -16,7 +8,7 @@ index ae00fda333e23daac4ab8256992bd2fc5b544f30..a17ee0e63b34f3adadc3ae3d09da13c8
  
      public LegacyQueryHandler(final ServerInfo server) {
          this.server = server;
-@@ -22,6 +23,17 @@ public class LegacyQueryHandler extends ChannelInboundHandlerAdapter {
+@@ -22,6 +_,17 @@
      @Override
      public void channelRead(final ChannelHandlerContext ctx, final Object msg) {
          ByteBuf in = (ByteBuf)msg;
@@ -34,7 +26,7 @@ index ae00fda333e23daac4ab8256992bd2fc5b544f30..a17ee0e63b34f3adadc3ae3d09da13c8
          in.markReaderIndex();
          boolean connectNormally = true;
  
-@@ -33,9 +45,19 @@ public class LegacyQueryHandler extends ChannelInboundHandlerAdapter {
+@@ -33,9 +_,19 @@
  
                  SocketAddress socket = ctx.channel().remoteAddress();
                  int length = in.readableBytes();
@@ -56,7 +48,7 @@ index ae00fda333e23daac4ab8256992bd2fc5b544f30..a17ee0e63b34f3adadc3ae3d09da13c8
                      sendFlushAndClose(ctx, createLegacyDisconnectPacket(ctx.alloc(), body));
                  } else {
                      if (in.readUnsignedByte() != 1) {
-@@ -43,16 +65,39 @@ public class LegacyQueryHandler extends ChannelInboundHandlerAdapter {
+@@ -43,16 +_,39 @@
                      }
  
                      if (in.isReadable()) {
@@ -74,10 +66,12 @@ index ae00fda333e23daac4ab8256992bd2fc5b544f30..a17ee0e63b34f3adadc3ae3d09da13c8
 +                        // Paper end - Replace below
                      } else {
 -                        LOGGER.debug("Ping: (1.4-1.5.x) from {}", socket);
-+                        LOGGER.debug("Ping: (1.4-1.5.x) from {}", net.minecraft.server.MinecraftServer.getServer().logIPs() ? socket : "<ip address withheld>"); // Paper - Respect logIPs option
-                     }
- 
+-                    }
+-
 -                    String body = createVersion1Response(this.server);
++                        LOGGER.debug("Ping: (1.4-1.5.x) from {}", net.minecraft.server.MinecraftServer.getServer().logIPs() ? socket : "<ip address withheld>"); // Paper - Respect logIPs option
++                    }
++
 +                    // Paper start - Call PaperServerListPingEvent and use results
 +                    if (body == null) {
 +                        com.destroystokyo.paper.event.server.PaperServerListPingEvent event = com.destroystokyo.paper.network.PaperLegacyStatusClient.processRequest(net.minecraft.server.MinecraftServer.getServer(), (java.net.InetSocketAddress) socket, 127, null); // Paper
@@ -102,10 +96,11 @@ index ae00fda333e23daac4ab8256992bd2fc5b544f30..a17ee0e63b34f3adadc3ae3d09da13c8
                      sendFlushAndClose(ctx, createLegacyDisconnectPacket(ctx.alloc(), body));
                  }
  
-@@ -111,6 +156,96 @@ public class LegacyQueryHandler extends ChannelInboundHandlerAdapter {
+@@ -110,6 +_,96 @@
+             server.getMaxPlayers()
          );
      }
- 
++
 +    // Paper start
 +    private static @org.jspecify.annotations.Nullable String readLegacyString(final ByteBuf buf) {
 +        int size = buf.readShort() * Character.BYTES;
@@ -195,7 +190,6 @@ index ae00fda333e23daac4ab8256992bd2fc5b544f30..a17ee0e63b34f3adadc3ae3d09da13c8
 +        }
 +    }
 +    // Paper end
-+
+ 
      private static void sendFlushAndClose(final ChannelHandlerContext ctx, final ByteBuf out) {
          ctx.pipeline().firstContext().writeAndFlush(out).addListener(ChannelFutureListener.CLOSE);
-     }

@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/building_blocks/purpur_stairs_from_purpur_block_stonecutting.json
++++ b/data/minecraft/advancement/recipes/building_blocks/purpur_stairs_from_purpur_block_stonecutting.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:purpur_stairs_from_purpur_block_stonecutting"
++        "recipe": "minecraft:purpur_stairs_from_purpur_block_stonecutting"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

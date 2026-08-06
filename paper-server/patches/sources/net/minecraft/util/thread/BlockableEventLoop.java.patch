@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/util/thread/BlockableEventLoop.java b/net/minecraft/util/thread/BlockableEventLoop.java
-index 46ee892e67d994c7da3583ece06776954d965e94..3dea2dae8c9eb3ed021068162a726aa1e432369c 100644
 --- a/net/minecraft/util/thread/BlockableEventLoop.java
 +++ b/net/minecraft/util/thread/BlockableEventLoop.java
-@@ -38,6 +38,45 @@ public abstract class BlockableEventLoop<R extends Runnable> implements Executor
+@@ -38,6 +_,45 @@
          MetricsRegistry.INSTANCE.add(this);
      }
  
@@ -54,10 +46,11 @@ index 46ee892e67d994c7da3583ece06776954d965e94..3dea2dae8c9eb3ed021068162a726aa1
      protected abstract boolean shouldRun(final R task);
  
      public boolean isSameThread() {
-@@ -88,6 +127,14 @@ public abstract class BlockableEventLoop<R extends Runnable> implements Executor
+@@ -87,6 +_,14 @@
+             runnable.run();
          }
      }
- 
++
 +    // Paper start
 +    public void scheduleOnMain(Runnable runnable) {
 +        // postToMainThread does not work the same as older versions of mc
@@ -65,7 +58,6 @@ index 46ee892e67d994c7da3583ece06776954d965e94..3dea2dae8c9eb3ed021068162a726aa1
 +        this.schedule(this.wrapRunnable(runnable));
 +    }
 +    // Paper end
-+
+ 
      @Override
      public void schedule(final R r) {
-         this.pendingRunnables.add(r);

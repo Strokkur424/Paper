@@ -1,0 +1,25 @@
+--- a/data/minecraft/loot_table/blocks/zombie_head.json
++++ b/data/minecraft/loot_table/blocks/zombie_head.json
+@@ -5,13 +_,15 @@
+       "entries": [
+         {
+           "type": "minecraft:item",
+-          "modifier": {
+-            "type": "minecraft:copy_components",
+-            "include": [
+-              "minecraft:custom_name"
+-            ],
+-            "source": "block_entity"
+-          },
++          "functions": [
++            {
++              "function": "minecraft:copy_components",
++              "include": [
++                "minecraft:custom_name"
++              ],
++              "source": "block_entity"
++            }
++          ],
+           "name": "minecraft:zombie_head"
+         }
+       ],

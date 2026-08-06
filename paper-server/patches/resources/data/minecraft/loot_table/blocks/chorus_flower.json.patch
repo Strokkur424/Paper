@@ -1,0 +1,32 @@
+--- a/data/minecraft/loot_table/blocks/chorus_flower.json
++++ b/data/minecraft/loot_table/blocks/chorus_flower.json
+@@ -5,19 +_,16 @@
+       "entries": [
+         {
+           "type": "minecraft:item",
+-          "condition": {
+-            "type": "minecraft:all_of",
+-            "terms": [
+-              {
+-                "type": "minecraft:survives_explosion"
+-              },
+-              {
+-                "type": "minecraft:entity_properties",
+-                "entity": "this",
+-                "predicate": {}
+-              }
+-            ]
+-          },
++          "conditions": [
++            {
++              "condition": "minecraft:survives_explosion"
++            },
++            {
++              "condition": "minecraft:entity_properties",
++              "entity": "this",
++              "predicate": {}
++            }
++          ],
+           "name": "minecraft:chorus_flower"
+         }
+       ],

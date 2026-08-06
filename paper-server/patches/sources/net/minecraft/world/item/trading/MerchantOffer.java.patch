@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/item/trading/MerchantOffer.java b/net/minecraft/world/item/trading/MerchantOffer.java
-index b4537931866b7a650564aa097ecb62de04b09785..b7766e7155a6a5345bc4eefcbd05e6848e1bf026 100644
 --- a/net/minecraft/world/item/trading/MerchantOffer.java
 +++ b/net/minecraft/world/item/trading/MerchantOffer.java
-@@ -21,6 +21,7 @@ public class MerchantOffer {
+@@ -21,6 +_,7 @@
                  Codec.INT.lenientOptionalFieldOf("demand", 0).forGetter(o -> o.demand),
                  Codec.FLOAT.lenientOptionalFieldOf("priceMultiplier", 0.0F).forGetter(o -> o.priceMultiplier),
                  Codec.INT.lenientOptionalFieldOf("xp", 1).forGetter(o -> o.xp)
@@ -16,7 +8,7 @@ index b4537931866b7a650564aa097ecb62de04b09785..b7766e7155a6a5345bc4eefcbd05e684
              )
              .apply(i, MerchantOffer::new)
      );
-@@ -37,6 +38,21 @@ public class MerchantOffer {
+@@ -37,6 +_,21 @@
      public int demand;
      public float priceMultiplier;
      public int xp;
@@ -38,7 +30,7 @@ index b4537931866b7a650564aa097ecb62de04b09785..b7766e7155a6a5345bc4eefcbd05e684
  
      private MerchantOffer(
          final ItemCost baseCostA,
-@@ -49,6 +65,7 @@ public class MerchantOffer {
+@@ -49,6 +_,7 @@
          final int demand,
          final float priceMultiplier,
          final int xp
@@ -46,7 +38,7 @@ index b4537931866b7a650564aa097ecb62de04b09785..b7766e7155a6a5345bc4eefcbd05e684
      ) {
          this.baseCostA = baseCostA;
          this.costB = costB;
-@@ -60,6 +77,7 @@ public class MerchantOffer {
+@@ -60,6 +_,7 @@
          this.demand = demand;
          this.priceMultiplier = priceMultiplier;
          this.xp = xp;
@@ -54,7 +46,7 @@ index b4537931866b7a650564aa097ecb62de04b09785..b7766e7155a6a5345bc4eefcbd05e684
      }
  
      public MerchantOffer(final ItemCost buy, final ItemStack result, final int maxUses, final int xp, final float priceMultiplier) {
-@@ -94,7 +112,7 @@ public class MerchantOffer {
+@@ -94,7 +_,7 @@
          final float priceMultiplier,
          final int demand
      ) {
@@ -63,7 +55,7 @@ index b4537931866b7a650564aa097ecb62de04b09785..b7766e7155a6a5345bc4eefcbd05e684
      }
  
      private MerchantOffer(final MerchantOffer offer) {
-@@ -109,6 +127,7 @@ public class MerchantOffer {
+@@ -109,6 +_,7 @@
              offer.demand,
              offer.priceMultiplier,
              offer.xp
@@ -71,7 +63,7 @@ index b4537931866b7a650564aa097ecb62de04b09785..b7766e7155a6a5345bc4eefcbd05e684
          );
      }
  
-@@ -144,6 +163,7 @@ public class MerchantOffer {
+@@ -144,6 +_,7 @@
  
      public void updateDemand() {
          this.demand = this.demand + this.uses - (this.maxUses - this.uses);
@@ -79,7 +71,7 @@ index b4537931866b7a650564aa097ecb62de04b09785..b7766e7155a6a5345bc4eefcbd05e684
      }
  
      public ItemStack assemble() {
-@@ -223,7 +243,9 @@ public class MerchantOffer {
+@@ -223,7 +_,9 @@
              return false;
          }
  

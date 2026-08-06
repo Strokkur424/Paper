@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/level/entity/EntitySectionStorage.java b/net/minecraft/world/level/entity/EntitySectionStorage.java
-index c102fdafd2afd7cedcfa7ce71b0954c4a233598c..f853c217ec89f9d23f00aa1551272271ea24fbe6 100644
 --- a/net/minecraft/world/level/entity/EntitySectionStorage.java
 +++ b/net/minecraft/world/level/entity/EntitySectionStorage.java
-@@ -35,6 +35,16 @@ public class EntitySectionStorage<T extends EntityAccess> {
+@@ -35,6 +_,16 @@
          this.intialSectionVisibility = intialSectionVisibility;
      }
  

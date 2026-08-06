@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/item/enchantment/effects/ReplaceDisk.java b/net/minecraft/world/item/enchantment/effects/ReplaceDisk.java
-index 6cdf6a5968ec2baffe65c45b1e29060f56fb2ecc..41e3fdc6546472fa172aab87a60f5534808ca872 100644
 --- a/net/minecraft/world/item/enchantment/effects/ReplaceDisk.java
 +++ b/net/minecraft/world/item/enchantment/effects/ReplaceDisk.java
-@@ -47,7 +47,7 @@ public record ReplaceDisk(
+@@ -47,7 +_,7 @@
          for (BlockPos pos : BlockPos.betweenClosed(centerBlock.offset(-dist, 0, -dist), centerBlock.offset(dist, Math.min(height - 1, 0), dist))) {
              if (pos.distToCenterSqr(position.x(), pos.getY() + 0.5, position.z()) < Mth.square(dist)
                  && this.predicate.map(p -> p.test(serverLevel, pos)).orElse(true)

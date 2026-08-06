@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/waypoints/WaypointTransmitter.java b/net/minecraft/world/waypoints/WaypointTransmitter.java
-index adf3c2e498a428cfb515a5023c1aab67469fde12..01fd20a4a452de5201f4e6141d6fb7563e2597b4 100644
 --- a/net/minecraft/world/waypoints/WaypointTransmitter.java
 +++ b/net/minecraft/world/waypoints/WaypointTransmitter.java
-@@ -20,13 +20,14 @@ public interface WaypointTransmitter extends Waypoint {
+@@ -20,13 +_,14 @@
      Waypoint.Icon waypointIcon();
  
      static boolean doesSourceIgnoreReceiver(final LivingEntity source, final ServerPlayer receiver) {

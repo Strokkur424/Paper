@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/network/chat/ComponentSerialization.java b/net/minecraft/network/chat/ComponentSerialization.java
-index 2899a952a379a1b765cfc09ec906b42a6c7c1ab2..5e6d3f0f1990e52f05b638fa407aa4c0f6b1a79b 100644
 --- a/net/minecraft/network/chat/ComponentSerialization.java
 +++ b/net/minecraft/network/chat/ComponentSerialization.java
-@@ -35,9 +35,31 @@ import net.minecraft.util.GsonHelper;
+@@ -35,9 +_,31 @@
  
  public class ComponentSerialization {
      public static final Codec<Component> CODEC = Codec.recursive("Component", ComponentSerialization::createCodec);
@@ -42,7 +34,7 @@ index 2899a952a379a1b765cfc09ec906b42a6c7c1ab2..5e6d3f0f1990e52f05b638fa407aa4c0
      public static final StreamCodec<RegistryFriendlyByteBuf, Optional<Component>> TRUSTED_OPTIONAL_STREAM_CODEC = TRUSTED_STREAM_CODEC.apply(
          ByteBufCodecs::optional
      );
-@@ -93,7 +115,25 @@ public class ComponentSerialization {
+@@ -93,7 +_,25 @@
          return ExtraCodecs.orCompressed(contentsCodec, discriminatorCodec);
      }
  
@@ -68,7 +60,7 @@ index 2899a952a379a1b765cfc09ec906b42a6c7c1ab2..5e6d3f0f1990e52f05b638fa407aa4c0
          ExtraCodecs.LateBoundIdMapper<String, MapCodec<? extends ComponentContents>> contentTypes = new ExtraCodecs.LateBoundIdMapper<>();
          bootstrap(contentTypes);
          MapCodec<ComponentContents> compressedContentsCodec = createLegacyComponentMatcher(contentTypes, ComponentContents::codec, "type");
-@@ -105,6 +145,34 @@ public class ComponentSerialization {
+@@ -105,6 +_,34 @@
                  )
                  .apply(i, MutableComponent::new)
          );

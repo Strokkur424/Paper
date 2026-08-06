@@ -1,0 +1,24 @@
+--- a/data/minecraft/advancement/husbandry/remove_wolf_armor.json
++++ b/data/minecraft/advancement/husbandry/remove_wolf_armor.json
+@@ -3,13 +_,15 @@
+   "criteria": {
+     "remove_wolf_armor": {
+       "conditions": {
+-        "entity": {
+-          "type": "minecraft:entity_properties",
+-          "entity": "this",
+-          "predicate": {
+-            "minecraft:entity_type": "minecraft:wolf"
++        "entity": [
++          {
++            "condition": "minecraft:entity_properties",
++            "entity": "this",
++            "predicate": {
++              "minecraft:entity_type": "minecraft:wolf"
++            }
+           }
+-        },
++        ],
+         "item": {
+           "items": "minecraft:wolf_armor"
+         }

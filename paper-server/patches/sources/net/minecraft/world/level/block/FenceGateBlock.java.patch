@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/level/block/FenceGateBlock.java b/net/minecraft/world/level/block/FenceGateBlock.java
-index 093a8955dbe31f9928f446ce717d55017affaa95..af0b6d03ddaad9d9e1411b470267e6f88dda90f8 100644
 --- a/net/minecraft/world/level/block/FenceGateBlock.java
 +++ b/net/minecraft/world/level/block/FenceGateBlock.java
-@@ -175,6 +175,11 @@ public class FenceGateBlock extends HorizontalDirectionalBlock {
+@@ -175,6 +_,11 @@
          if (!level.isClientSide()) {
              boolean hasPower = level.hasNeighborSignal(pos);
              if (state.getValue(POWERED) != hasPower) {

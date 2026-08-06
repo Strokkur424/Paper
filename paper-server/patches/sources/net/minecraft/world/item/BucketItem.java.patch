@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/item/BucketItem.java b/net/minecraft/world/item/BucketItem.java
-index a1f237a5ebd91f07e19b0904e3231bd21e3b17fc..42fbfb0e3eff318742928a94bddc0fbcc4d45596 100644
 --- a/net/minecraft/world/item/BucketItem.java
 +++ b/net/minecraft/world/item/BucketItem.java
-@@ -32,6 +32,7 @@ import net.minecraft.world.phys.HitResult;
+@@ -32,6 +_,7 @@
  import org.jspecify.annotations.Nullable;
  
  public class BucketItem extends Item implements DispensibleContainerItem {
@@ -16,7 +8,7 @@ index a1f237a5ebd91f07e19b0904e3231bd21e3b17fc..42fbfb0e3eff318742928a94bddc0fbc
      protected final Fluid content;
  
      public BucketItem(final Fluid content, final Item.Properties properties) {
-@@ -57,7 +58,7 @@ public class BucketItem extends Item implements DispensibleContainerItem {
+@@ -57,7 +_,7 @@
          if (level.mayInteract(player, pos) && player.mayUseItemAt(directionOffsetPos, direction, itemStack)) {
              BlockState clicked = level.getBlockState(pos);
              BlockPos placePos = clicked.getBlock() instanceof LiquidBlockContainer && this.content == Fluids.WATER ? pos : directionOffsetPos;
@@ -25,7 +17,7 @@ index a1f237a5ebd91f07e19b0904e3231bd21e3b17fc..42fbfb0e3eff318742928a94bddc0fbc
                  this.checkExtraContent(player, level, itemStack, placePos);
                  if (player instanceof ServerPlayer serverPlayer && this.content != Fluids.EMPTY) {
                      CriteriaTriggers.PLACED_BLOCK.trigger(serverPlayer, placePos, itemStack);
-@@ -70,12 +71,22 @@ public class BucketItem extends Item implements DispensibleContainerItem {
+@@ -70,12 +_,22 @@
                  if (this.content == Fluids.EMPTY) {
                      BlockState blockState = level.getBlockState(pos);
                      if (blockState.getBlock() instanceof BucketPickup bucketPickupBlock) {
@@ -49,7 +41,7 @@ index a1f237a5ebd91f07e19b0904e3231bd21e3b17fc..42fbfb0e3eff318742928a94bddc0fbc
                              if (!level.isClientSide()) {
                                  CriteriaTriggers.FILLED_BUCKET.trigger((ServerPlayer)player, taken);
                              }
-@@ -97,6 +108,13 @@ public class BucketItem extends Item implements DispensibleContainerItem {
+@@ -97,6 +_,13 @@
      }
  
      public static ItemStack getEmptySuccessItem(final ItemStack itemStack, final Player player) {
@@ -63,7 +55,7 @@ index a1f237a5ebd91f07e19b0904e3231bd21e3b17fc..42fbfb0e3eff318742928a94bddc0fbc
          return !player.hasInfiniteMaterials() ? new ItemStack(Items.BUCKET) : itemStack;
      }
  
-@@ -105,7 +123,13 @@ public class BucketItem extends Item implements DispensibleContainerItem {
+@@ -105,7 +_,13 @@
      }
  
      @Override
@@ -78,7 +70,7 @@ index a1f237a5ebd91f07e19b0904e3231bd21e3b17fc..42fbfb0e3eff318742928a94bddc0fbc
          if (!(this.content instanceof FlowingFluid flowingFluid)) {
              return false;
          } else {
-@@ -116,8 +140,18 @@ public class BucketItem extends Item implements DispensibleContainerItem {
+@@ -116,8 +_,18 @@
              boolean placeLiquid = mayReplace
                  || block instanceof LiquidBlockContainer container && container.canPlaceLiquid(user, level, pos, blockState, this.content);
              boolean canPlaceFluidInsideBlock = blockState.isAir() || placeLiquid && (!shiftKeyDown || hitResult == null);

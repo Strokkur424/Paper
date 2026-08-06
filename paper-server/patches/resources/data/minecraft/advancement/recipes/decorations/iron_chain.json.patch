@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/decorations/iron_chain.json
++++ b/data/minecraft/advancement/recipes/decorations/iron_chain.json
+@@ -23,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:iron_chain"
++        "recipe": "minecraft:iron_chain"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

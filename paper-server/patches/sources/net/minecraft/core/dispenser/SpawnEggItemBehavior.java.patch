@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/core/dispenser/SpawnEggItemBehavior.java b/net/minecraft/core/dispenser/SpawnEggItemBehavior.java
-index 6d9768302ae918da687e57b3ec2e187d6a6d671d..94b4e9e5e37903a6801a26aa82531899af44d576 100644
 --- a/net/minecraft/core/dispenser/SpawnEggItemBehavior.java
 +++ b/net/minecraft/core/dispenser/SpawnEggItemBehavior.java
-@@ -20,9 +20,32 @@ public class SpawnEggItemBehavior extends DefaultDispenseItemBehavior {
+@@ -20,9 +_,32 @@
              return dispensed;
          }
  
@@ -42,7 +34,7 @@ index 6d9768302ae918da687e57b3ec2e187d6a6d671d..94b4e9e5e37903a6801a26aa82531899
              );
              if (spawned == null) {
                  return dispensed;
-@@ -32,7 +55,7 @@ public class SpawnEggItemBehavior extends DefaultDispenseItemBehavior {
+@@ -32,7 +_,7 @@
              return ItemStack.EMPTY;
          }
  

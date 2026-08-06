@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/level/storage/LevelStorageSource.java b/net/minecraft/world/level/storage/LevelStorageSource.java
-index 2551e258d4ef075beec88c0e01ef7cdc5ea23657..01b4ea4159d1885c4f409cca85297342bf485d56 100644
 --- a/net/minecraft/world/level/storage/LevelStorageSource.java
 +++ b/net/minecraft/world/level/storage/LevelStorageSource.java
-@@ -145,13 +145,14 @@ public class LevelStorageSource {
+@@ -145,13 +_,14 @@
          final WorldDataConfiguration dataConfiguration,
          final Registry<LevelStem> datapackDimensions,
          final HolderLookup.Provider registryAccess
@@ -24,7 +16,7 @@ index 2551e258d4ef075beec88c0e01ef7cdc5ea23657..01b4ea4159d1885c4f409cca85297342
              .mapOrElse(
                  Function.identity(),
                  error -> {
-@@ -170,9 +171,9 @@ public class LevelStorageSource {
+@@ -170,9 +_,9 @@
      }
  
      public static <T extends SavedData> DataResult<T> readExistingSavedData(
@@ -36,7 +28,7 @@ index 2551e258d4ef075beec88c0e01ef7cdc5ea23657..01b4ea4159d1885c4f409cca85297342
  
          CompoundTag fileContents;
          try {
-@@ -393,7 +394,7 @@ public class LevelStorageSource {
+@@ -393,7 +_,7 @@
  
      public LevelStorageSource.LevelStorageAccess validateAndCreateAccess(final String levelId) throws IOException, ContentValidationException {
          Path levelPath = this.getLevelPath(levelId);

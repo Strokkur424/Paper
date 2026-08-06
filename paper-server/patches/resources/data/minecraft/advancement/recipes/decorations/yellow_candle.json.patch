@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/decorations/yellow_candle.json
++++ b/data/minecraft/advancement/recipes/decorations/yellow_candle.json
+@@ -3,7 +_,7 @@
+   "criteria": {
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:yellow_candle"
++        "recipe": "minecraft:yellow_candle"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     },

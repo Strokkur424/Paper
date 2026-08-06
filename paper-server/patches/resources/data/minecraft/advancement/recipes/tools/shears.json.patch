@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/tools/shears.json
++++ b/data/minecraft/advancement/recipes/tools/shears.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:shears"
++        "recipe": "minecraft:shears"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

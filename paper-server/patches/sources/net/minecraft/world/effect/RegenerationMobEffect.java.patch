@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/effect/RegenerationMobEffect.java b/net/minecraft/world/effect/RegenerationMobEffect.java
-index 80409e1ef5a36a3085a4a58b232b44417f35cac8..31e61ebea613a5999f6e4fa24ba734c835494b3b 100644
 --- a/net/minecraft/world/effect/RegenerationMobEffect.java
 +++ b/net/minecraft/world/effect/RegenerationMobEffect.java
-@@ -11,7 +11,7 @@ class RegenerationMobEffect extends MobEffect {
+@@ -11,7 +_,7 @@
      @Override
      public boolean applyEffectTick(final ServerLevel level, final LivingEntity mob, final int amplification) {
          if (mob.getHealth() < mob.getMaxHealth()) {

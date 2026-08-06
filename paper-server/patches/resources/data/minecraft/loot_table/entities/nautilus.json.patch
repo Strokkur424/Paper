@@ -1,0 +1,41 @@
+--- a/data/minecraft/loot_table/entities/nautilus.json
++++ b/data/minecraft/loot_table/entities/nautilus.json
+@@ -2,24 +_,21 @@
+   "type": "minecraft:entity",
+   "pools": [
+     {
+-      "condition": {
+-        "type": "minecraft:all_of",
+-        "terms": [
+-          {
+-            "type": "minecraft:killed_by_player"
++      "conditions": [
++        {
++          "condition": "minecraft:killed_by_player"
++        },
++        {
++          "condition": "minecraft:random_chance_with_enchanted_bonus",
++          "enchanted_chance": {
++            "type": "minecraft:linear",
++            "base": 0.060000002,
++            "per_level_above_first": 0.01
+           },
+-          {
+-            "type": "minecraft:random_chance_with_enchanted_bonus",
+-            "enchanted_chance": {
+-              "type": "minecraft:linear",
+-              "base": 0.060000002,
+-              "per_level_above_first": 0.01
+-            },
+-            "enchantment": "minecraft:looting",
+-            "unenchanted_chance": 0.05
+-          }
+-        ]
+-      },
++          "enchantment": "minecraft:looting",
++          "unenchanted_chance": 0.05
++        }
++      ],
+       "entries": [
+         {
+           "type": "minecraft:item",

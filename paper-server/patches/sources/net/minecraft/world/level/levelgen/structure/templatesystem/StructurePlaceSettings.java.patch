@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/level/levelgen/structure/templatesystem/StructurePlaceSettings.java b/net/minecraft/world/level/levelgen/structure/templatesystem/StructurePlaceSettings.java
-index f3aa6a927d8e32100d5a02ad145f22441cb1419b..60b098937d71e82c0dd12b7793121df3628d5d7a 100644
 --- a/net/minecraft/world/level/levelgen/structure/templatesystem/StructurePlaceSettings.java
 +++ b/net/minecraft/world/level/levelgen/structure/templatesystem/StructurePlaceSettings.java
-@@ -19,7 +19,7 @@ public class StructurePlaceSettings {
+@@ -19,7 +_,7 @@
      private @Nullable BoundingBox boundingBox;
      private LiquidSettings liquidSettings = LiquidSettings.APPLY_WATERLOGGING;
      private @Nullable RandomSource random;
@@ -17,7 +9,7 @@ index f3aa6a927d8e32100d5a02ad145f22441cb1419b..60b098937d71e82c0dd12b7793121df3
      private final List<StructureProcessor> processors = Lists.newArrayList();
      private boolean knownShape;
      private boolean finalizeEntities;
-@@ -139,6 +139,13 @@ public class StructurePlaceSettings {
+@@ -139,6 +_,13 @@
          int paletteSize = palettes.size();
          if (paletteSize == 0) {
              throw new IllegalStateException("No palettes");

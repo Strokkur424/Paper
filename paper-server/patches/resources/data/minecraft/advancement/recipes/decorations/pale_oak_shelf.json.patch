@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/decorations/pale_oak_shelf.json
++++ b/data/minecraft/advancement/recipes/decorations/pale_oak_shelf.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:pale_oak_shelf"
++        "recipe": "minecraft:pale_oak_shelf"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

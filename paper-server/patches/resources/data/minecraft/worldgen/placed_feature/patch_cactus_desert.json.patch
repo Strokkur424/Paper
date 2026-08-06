@@ -1,0 +1,44 @@
+--- a/data/minecraft/worldgen/placed_feature/patch_cactus_desert.json
++++ b/data/minecraft/worldgen/placed_feature/patch_cactus_desert.json
+@@ -20,24 +_,18 @@
+       "count": 10
+     },
+     {
+-      "type": "minecraft:offset",
+-      "x": {
++      "type": "minecraft:random_offset",
++      "xz_spread": {
+         "type": "minecraft:trapezoid",
+         "max": 7,
+         "min": -7,
+         "plateau": 0
+       },
+-      "y": {
++      "y_spread": {
+         "type": "minecraft:trapezoid",
+         "max": 3,
+         "min": -3,
+         "plateau": 0
+-      },
+-      "z": {
+-        "type": "minecraft:trapezoid",
+-        "max": 7,
+-        "min": -7,
+-        "plateau": 0
+       }
+     },
+     {
+@@ -51,7 +_,12 @@
+           },
+           {
+             "type": "minecraft:would_survive",
+-            "state": "minecraft:cactus"
++            "state": {
++              "Name": "minecraft:cactus",
++              "Properties": {
++                "age": "0"
++              }
++            }
+           }
+         ]
+       }

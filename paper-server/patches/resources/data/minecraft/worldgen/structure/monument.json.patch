@@ -1,0 +1,16 @@
+--- a/data/minecraft/worldgen/structure/monument.json
++++ b/data/minecraft/worldgen/structure/monument.json
+@@ -11,11 +_,8 @@
+       "spawns": [
+         {
+           "type": "minecraft:guardian",
+-          "count": {
+-            "type": "minecraft:uniform",
+-            "max_inclusive": 4,
+-            "min_inclusive": 2
+-          },
++          "maxCount": 4,
++          "minCount": 2,
+           "weight": 1
+         }
+       ]

@@ -1,0 +1,16 @@
+--- a/data/minecraft/worldgen/processor_list/trail_ruins_tower_top_archaeology.json
++++ b/data/minecraft/worldgen/processor_list/trail_ruins_tower_top_archaeology.json
+@@ -16,7 +_,12 @@
+             "location_predicate": {
+               "predicate_type": "minecraft:always_true"
+             },
+-            "output_state": "minecraft:suspicious_gravel"
++            "output_state": {
++              "Name": "minecraft:suspicious_gravel",
++              "Properties": {
++                "dusted": "0"
++              }
++            }
+           }
+         ]
+       },

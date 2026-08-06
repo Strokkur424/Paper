@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/building_blocks/acacia_planks.json
++++ b/data/minecraft/advancement/recipes/building_blocks/acacia_planks.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:acacia_planks"
++        "recipe": "minecraft:acacia_planks"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

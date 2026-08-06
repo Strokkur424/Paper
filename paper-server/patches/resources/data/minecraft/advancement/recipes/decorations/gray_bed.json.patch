@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/decorations/gray_bed.json
++++ b/data/minecraft/advancement/recipes/decorations/gray_bed.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:gray_bed"
++        "recipe": "minecraft:gray_bed"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

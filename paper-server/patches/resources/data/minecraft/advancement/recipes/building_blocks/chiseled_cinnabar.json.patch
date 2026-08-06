@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/building_blocks/chiseled_cinnabar.json
++++ b/data/minecraft/advancement/recipes/building_blocks/chiseled_cinnabar.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:chiseled_cinnabar"
++        "recipe": "minecraft:chiseled_cinnabar"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/item/EggItem.java b/net/minecraft/world/item/EggItem.java
-index a93fb4e5fc378bc1428876a5ac92d3c82f7f20dc..e79dd3f88d2369e07c3cfad5db6e6302dd44d7d6 100644
 --- a/net/minecraft/world/item/EggItem.java
 +++ b/net/minecraft/world/item/EggItem.java
-@@ -23,22 +23,35 @@ public class EggItem extends Item implements ProjectileItem {
+@@ -23,22 +_,35 @@
      @Override
      public InteractionResult use(final Level level, final Player player, final InteractionHand hand) {
          ItemStack itemStack = player.getItemInHand(hand);

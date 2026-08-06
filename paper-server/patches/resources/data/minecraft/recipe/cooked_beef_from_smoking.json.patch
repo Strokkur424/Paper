@@ -1,0 +1,10 @@
+--- a/data/minecraft/recipe/cooked_beef_from_smoking.json
++++ b/data/minecraft/recipe/cooked_beef_from_smoking.json
+@@ -1,7 +_,6 @@
+ {
+   "type": "minecraft:smoking",
+   "category": "food",
+-  "cookingtime": 200,
+   "experience": 0.35,
+   "ingredient": "minecraft:beef",
+   "result": {

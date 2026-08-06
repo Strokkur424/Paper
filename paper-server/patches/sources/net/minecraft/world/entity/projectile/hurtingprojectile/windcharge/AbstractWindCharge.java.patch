@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/entity/projectile/hurtingprojectile/windcharge/AbstractWindCharge.java b/net/minecraft/world/entity/projectile/hurtingprojectile/windcharge/AbstractWindCharge.java
-index 3f74694b8d33d3460004b5e59147bab11882a08f..654fdca39db9f559ad8fdce874e9d425441b4bf1 100644
 --- a/net/minecraft/world/entity/projectile/hurtingprojectile/windcharge/AbstractWindCharge.java
 +++ b/net/minecraft/world/entity/projectile/hurtingprojectile/windcharge/AbstractWindCharge.java
-@@ -90,7 +90,7 @@ public abstract class AbstractWindCharge extends AbstractHurtingProjectile imple
+@@ -90,7 +_,7 @@
      }
  
      @Override
@@ -17,7 +9,7 @@ index 3f74694b8d33d3460004b5e59147bab11882a08f..654fdca39db9f559ad8fdce874e9d425
      }
  
      public abstract void explode(final Vec3 position);
-@@ -103,7 +103,7 @@ public abstract class AbstractWindCharge extends AbstractHurtingProjectile imple
+@@ -103,7 +_,7 @@
              Vec3 scaledNormal = Vec3.atLowerCornerOf(collisionNormal).multiply(0.25, 0.25, 0.25);
              Vec3 explosionPos = hitResult.getLocation().add(scaledNormal);
              this.explode(explosionPos);
@@ -26,7 +18,7 @@ index 3f74694b8d33d3460004b5e59147bab11882a08f..654fdca39db9f559ad8fdce874e9d425
          }
      }
  
-@@ -111,7 +111,7 @@ public abstract class AbstractWindCharge extends AbstractHurtingProjectile imple
+@@ -111,7 +_,7 @@
      protected void onHit(final HitResult hitResult) {
          super.onHit(hitResult);
          if (!this.level().isClientSide()) {
@@ -35,7 +27,7 @@ index 3f74694b8d33d3460004b5e59147bab11882a08f..654fdca39db9f559ad8fdce874e9d425
          }
      }
  
-@@ -144,7 +144,7 @@ public abstract class AbstractWindCharge extends AbstractHurtingProjectile imple
+@@ -144,7 +_,7 @@
      public void tick() {
          if (!this.level().isClientSide() && this.getBlockY() > this.level().getMaxY() + 30) {
              this.explode(this.position());

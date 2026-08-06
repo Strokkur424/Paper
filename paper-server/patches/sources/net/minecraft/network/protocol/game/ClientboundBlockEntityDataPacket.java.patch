@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/network/protocol/game/ClientboundBlockEntityDataPacket.java b/net/minecraft/network/protocol/game/ClientboundBlockEntityDataPacket.java
-index 18b47d9f6d9d7acc96a751aee8b3404ab5a2ada1..2122ff56412a2ad412eb8b2f0e4538aab4257bf2 100644
 --- a/net/minecraft/network/protocol/game/ClientboundBlockEntityDataPacket.java
 +++ b/net/minecraft/network/protocol/game/ClientboundBlockEntityDataPacket.java
-@@ -31,7 +31,7 @@ public class ClientboundBlockEntityDataPacket implements Packet<ClientGamePacket
+@@ -31,7 +_,7 @@
          final BlockEntity blockEntity, final BiFunction<BlockEntity, RegistryAccess, CompoundTag> updateTagSaver
      ) {
          RegistryAccess registryAccess = blockEntity.getLevel().registryAccess();

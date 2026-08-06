@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/misc/emerald.json
++++ b/data/minecraft/advancement/recipes/misc/emerald.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:emerald"
++        "recipe": "minecraft:emerald"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

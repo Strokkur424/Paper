@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/entity/ai/navigation/FlyingPathNavigation.java b/net/minecraft/world/entity/ai/navigation/FlyingPathNavigation.java
-index e24fee25c8639a1fb47fe21e80a83089f1205191..e44814cfb6afb594456b8215bd13a92e93de2c85 100644
 --- a/net/minecraft/world/entity/ai/navigation/FlyingPathNavigation.java
 +++ b/net/minecraft/world/entity/ai/navigation/FlyingPathNavigation.java
-@@ -38,7 +38,7 @@ public class FlyingPathNavigation extends PathNavigation {
+@@ -38,7 +_,7 @@
  
      @Override
      public Path createPath(final Entity target, final int reachRange) {

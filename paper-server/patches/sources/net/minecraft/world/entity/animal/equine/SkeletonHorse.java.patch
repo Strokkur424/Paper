@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/entity/animal/equine/SkeletonHorse.java b/net/minecraft/world/entity/animal/equine/SkeletonHorse.java
-index 0d4e9150477505f5680d7a0d21eb74356cbfb599..71da9124581c7f5a7a9cdd35f9629397fba75668 100644
 --- a/net/minecraft/world/entity/animal/equine/SkeletonHorse.java
 +++ b/net/minecraft/world/entity/animal/equine/SkeletonHorse.java
-@@ -127,7 +127,7 @@ public class SkeletonHorse extends AbstractHorse {
+@@ -127,7 +_,7 @@
      public void aiStep() {
          super.aiStep();
          if (!this.isPersistenceRequired() && this.isTrap() && this.trapTime++ >= 18000) {

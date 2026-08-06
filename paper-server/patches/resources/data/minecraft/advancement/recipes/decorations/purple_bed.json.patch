@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/decorations/purple_bed.json
++++ b/data/minecraft/advancement/recipes/decorations/purple_bed.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:purple_bed"
++        "recipe": "minecraft:purple_bed"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

@@ -1,0 +1,70 @@
+--- a/data/minecraft/loot_table/entities/drowned.json
++++ b/data/minecraft/loot_table/entities/drowned.json
+@@ -5,23 +_,23 @@
+       "entries": [
+         {
+           "type": "minecraft:item",
+-          "modifier": [
++          "functions": [
+             {
+-              "type": "minecraft:set_count",
+               "count": {
+                 "type": "minecraft:uniform",
+                 "max": 2.0,
+                 "min": 0.0
+-              }
++              },
++              "function": "minecraft:set_count"
+             },
+             {
+-              "type": "minecraft:enchanted_count_increase",
+               "count": {
+                 "type": "minecraft:uniform",
+                 "max": 1.0,
+                 "min": 0.0
+               },
+-              "enchantment": "minecraft:looting"
++              "enchantment": "minecraft:looting",
++              "function": "minecraft:enchanted_count_increase"
+             }
+           ],
+           "name": "minecraft:rotten_flesh"
+@@ -30,24 +_,21 @@
+       "rolls": 1.0
+     },
+     {
+-      "condition": {
+-        "type": "minecraft:all_of",
+-        "terms": [
+-          {
+-            "type": "minecraft:killed_by_player"
++      "conditions": [
++        {
++          "condition": "minecraft:killed_by_player"
++        },
++        {
++          "condition": "minecraft:random_chance_with_enchanted_bonus",
++          "enchanted_chance": {
++            "type": "minecraft:linear",
++            "base": 0.13,
++            "per_level_above_first": 0.02
+           },
+-          {
+-            "type": "minecraft:random_chance_with_enchanted_bonus",
+-            "enchanted_chance": {
+-              "type": "minecraft:linear",
+-              "base": 0.13,
+-              "per_level_above_first": 0.02
+-            },
+-            "enchantment": "minecraft:looting",
+-            "unenchanted_chance": 0.11
+-          }
+-        ]
+-      },
++          "enchantment": "minecraft:looting",
++          "unenchanted_chance": 0.11
++        }
++      ],
+       "entries": [
+         {
+           "type": "minecraft:item",

@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/entity/animal/equine/Llama.java b/net/minecraft/world/entity/animal/equine/Llama.java
-index 19393a5ff73a327fdbc5c92ae933e1254ed087d5..aa3f316705e00a040dc37aa509963f760335db2b 100644
 --- a/net/minecraft/world/entity/animal/equine/Llama.java
 +++ b/net/minecraft/world/entity/animal/equine/Llama.java
-@@ -75,18 +75,19 @@ public class Llama extends AbstractChestedHorse implements RangedAttackMob {
+@@ -75,18 +_,19 @@
          .scale(0.5F);
      private boolean didSpit;
      private @Nullable Llama caravanHead;
@@ -30,7 +22,7 @@ index 19393a5ff73a327fdbc5c92ae933e1254ed087d5..aa3f316705e00a040dc37aa509963f76
          this.entityData.set(DATA_STRENGTH_ID, Math.max(1, Math.min(5, strength)));
      }
  
-@@ -191,12 +192,12 @@ public class Llama extends AbstractChestedHorse implements RangedAttackMob {
+@@ -191,12 +_,12 @@
              heal = 10.0F;
              if (this.isTamed() && this.getAge() == 0 && this.canFallInLove()) {
                  itemUsed = true;
@@ -45,7 +37,7 @@ index 19393a5ff73a327fdbc5c92ae933e1254ed087d5..aa3f316705e00a040dc37aa509963f76
              itemUsed = true;
          }
  
-@@ -308,7 +309,7 @@ public class Llama extends AbstractChestedHorse implements RangedAttackMob {
+@@ -308,7 +_,7 @@
  
      @Override
      public int getMaxTemper() {

@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/decorations/ladder.json
++++ b/data/minecraft/advancement/recipes/decorations/ladder.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:ladder"
++        "recipe": "minecraft:ladder"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

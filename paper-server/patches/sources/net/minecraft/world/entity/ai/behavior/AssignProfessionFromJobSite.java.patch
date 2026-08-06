@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/entity/ai/behavior/AssignProfessionFromJobSite.java b/net/minecraft/world/entity/ai/behavior/AssignProfessionFromJobSite.java
-index 858ce01e30eb4215745ad4e104e1cae0d06ddee2..bae514a553838e5e4a3d91a2713693a4847aad02 100644
 --- a/net/minecraft/world/entity/ai/behavior/AssignProfessionFromJobSite.java
 +++ b/net/minecraft/world/entity/ai/behavior/AssignProfessionFromJobSite.java
-@@ -41,7 +41,14 @@ public class AssignProfessionFromJobSite {
+@@ -41,7 +_,14 @@
                                      .findFirst()
                              )
                              .ifPresent(profession -> {

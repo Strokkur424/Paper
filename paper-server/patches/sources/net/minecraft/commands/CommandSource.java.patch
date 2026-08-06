@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/commands/CommandSource.java b/net/minecraft/commands/CommandSource.java
-index dcffa1d811043c281905b7be706ba5a80f6d0230..68b1f048b805eef3902a0cd1a52066a4bd603e6a 100644
 --- a/net/minecraft/commands/CommandSource.java
 +++ b/net/minecraft/commands/CommandSource.java
-@@ -22,6 +22,13 @@ public interface CommandSource {
+@@ -22,6 +_,13 @@
          public boolean shouldInformAdmins() {
              return false;
          }
@@ -22,7 +14,7 @@ index dcffa1d811043c281905b7be706ba5a80f6d0230..68b1f048b805eef3902a0cd1a52066a4
      };
  
      void sendSystemMessage(Component message);
-@@ -35,4 +42,6 @@ public interface CommandSource {
+@@ -35,4 +_,6 @@
      default boolean alwaysAccepts() {
          return false;
      }

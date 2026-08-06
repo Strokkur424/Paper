@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/level/material/WaterFluid.java b/net/minecraft/world/level/material/WaterFluid.java
-index 851f14c829e5b8e72f5aa02b9d37fa682fa01e23..d0a62bad5592c3ef8bd2ba5bc9719fad66c4edf0 100644
 --- a/net/minecraft/world/level/material/WaterFluid.java
 +++ b/net/minecraft/world/level/material/WaterFluid.java
-@@ -77,6 +77,14 @@ public abstract class WaterFluid extends FlowingFluid {
+@@ -77,6 +_,14 @@
          return level.getGameRules().get(GameRules.WATER_SOURCE_CONVERSION);
      }
  
@@ -23,7 +15,7 @@ index 851f14c829e5b8e72f5aa02b9d37fa682fa01e23..d0a62bad5592c3ef8bd2ba5bc9719fad
      @Override
      protected void beforeDestroyingBlock(final LevelAccessor level, final BlockPos pos, final BlockState state) {
          BlockEntity blockEntity = state.hasBlockEntity() ? level.getBlockEntity(pos) : null;
-@@ -120,7 +128,7 @@ public abstract class WaterFluid extends FlowingFluid {
+@@ -120,7 +_,7 @@
  
      @Override
      protected float getExplosionResistance() {

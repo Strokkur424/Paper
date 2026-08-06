@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/level/block/state/StateHolder.java b/net/minecraft/world/level/block/state/StateHolder.java
-index 16613801adf7e292799aa1f98c71db1a34f36e99..335754e3b3dc60ed0991a2ecaf49a51aa3051f48 100644
 --- a/net/minecraft/world/level/block/state/StateHolder.java
 +++ b/net/minecraft/world/level/block/state/StateHolder.java
-@@ -141,7 +141,7 @@ public abstract class StateHolder<O, S> {
+@@ -141,7 +_,7 @@
          return length == 0 ? Stream.empty() : IntStream.range(0, length).mapToObj(i -> createValue(this.propertyKeys[i], this.propertyValues[i]));
      }
  

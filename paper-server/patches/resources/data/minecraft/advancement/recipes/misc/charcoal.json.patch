@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/misc/charcoal.json
++++ b/data/minecraft/advancement/recipes/misc/charcoal.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:charcoal"
++        "recipe": "minecraft:charcoal"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/entity/projectile/throwableitemprojectile/ThrownSplashPotion.java b/net/minecraft/world/entity/projectile/throwableitemprojectile/ThrownSplashPotion.java
-index 534cc8d0779fd83d7084cfb32dea3857a2520d30..c55411e0ddf6e75cf1e26e9dad1d3328552f78a7 100644
 --- a/net/minecraft/world/entity/projectile/throwableitemprojectile/ThrownSplashPotion.java
 +++ b/net/minecraft/world/entity/projectile/throwableitemprojectile/ThrownSplashPotion.java
-@@ -38,13 +38,14 @@ public class ThrownSplashPotion extends AbstractThrownPotion {
+@@ -38,13 +_,14 @@
      }
  
      @Override
@@ -25,7 +17,7 @@ index 534cc8d0779fd83d7084cfb32dea3857a2520d30..c55411e0ddf6e75cf1e26e9dad1d3328
          float margin = ProjectileUtil.computeMargin(this);
          if (!entities.isEmpty()) {
              Entity effectSource = this.getEffectSource();
-@@ -53,8 +54,25 @@ public class ThrownSplashPotion extends AbstractThrownPotion {
+@@ -53,8 +_,25 @@
                  if (entity.isAffectedByPotions()) {
                      double dist = potionAabb.distanceToSqr(entity.getBoundingBox().inflate(margin));
                      if (dist < 16.0) {
@@ -53,7 +45,7 @@ index 534cc8d0779fd83d7084cfb32dea3857a2520d30..c55411e0ddf6e75cf1e26e9dad1d3328
                          for (MobEffectInstance effectInstance : mobEffects) {
                              Holder<MobEffect> effect = effectInstance.getEffect();
                              if (effect.value().isInstantaneous()) {
-@@ -65,7 +83,7 @@ public class ThrownSplashPotion extends AbstractThrownPotion {
+@@ -65,7 +_,7 @@
                                      effect, duration, effectInstance.getAmplifier(), effectInstance.isAmbient(), effectInstance.isVisible()
                                  );
                                  if (!newEffect.endsWithin(20)) {
@@ -62,7 +54,7 @@ index 534cc8d0779fd83d7084cfb32dea3857a2520d30..c55411e0ddf6e75cf1e26e9dad1d3328
                                  }
                              }
                          }
-@@ -73,5 +91,6 @@ public class ThrownSplashPotion extends AbstractThrownPotion {
+@@ -73,5 +_,6 @@
                  }
              }
          }

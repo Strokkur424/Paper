@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/level/storage/PlayerDataStorage.java b/net/minecraft/world/level/storage/PlayerDataStorage.java
-index aa3160786b502ede052ec62e82785f129d3b6691..8eda63e1f07f7998875713447c5f39eea3f85ca4 100644
 --- a/net/minecraft/world/level/storage/PlayerDataStorage.java
 +++ b/net/minecraft/world/level/storage/PlayerDataStorage.java
-@@ -31,6 +31,7 @@ public class PlayerDataStorage {
+@@ -31,6 +_,7 @@
      }
  
      public void save(final Player player) {
@@ -16,7 +8,7 @@ index aa3160786b502ede052ec62e82785f129d3b6691..8eda63e1f07f7998875713447c5f39ee
          try (ProblemReporter.ScopedCollector reporter = new ProblemReporter.ScopedCollector(player.problemPath(), LOGGER)) {
              TagValueOutput output = TagValueOutput.createWithContext(reporter, player.registryAccess());
              player.saveWithoutId(output);
-@@ -42,7 +43,7 @@ public class PlayerDataStorage {
+@@ -42,7 +_,7 @@
              Path oldFile = playerDirPath.resolve(player.getStringUUID() + ".dat_old");
              Util.safeReplaceFile(realFile, tmpFile, oldFile);
          } catch (Exception ignored) {
@@ -25,7 +17,7 @@ index aa3160786b502ede052ec62e82785f129d3b6691..8eda63e1f07f7998875713447c5f39ee
          }
      }
  
-@@ -62,9 +63,25 @@ public class PlayerDataStorage {
+@@ -62,9 +_,25 @@
  
      private Optional<CompoundTag> load(final NameAndId nameAndId, final String suffix) {
          File realFile = new File(this.playerDir, nameAndId.id() + suffix);
@@ -52,7 +44,7 @@ index aa3160786b502ede052ec62e82785f129d3b6691..8eda63e1f07f7998875713447c5f39ee
              } catch (Exception ignored) {
                  LOGGER.warn("Failed to load player data for {}", nameAndId.name());
              }
-@@ -84,4 +101,10 @@ public class PlayerDataStorage {
+@@ -84,4 +_,10 @@
              return DataFixTypes.PLAYER.updateToCurrentVersion(this.fixerUpper, tag, version);
          });
      }

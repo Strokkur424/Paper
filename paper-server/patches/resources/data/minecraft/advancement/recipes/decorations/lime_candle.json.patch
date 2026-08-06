@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/decorations/lime_candle.json
++++ b/data/minecraft/advancement/recipes/decorations/lime_candle.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:lime_candle"
++        "recipe": "minecraft:lime_candle"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

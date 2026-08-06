@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/level/block/SculkShriekerBlock.java b/net/minecraft/world/level/block/SculkShriekerBlock.java
-index b73a8e6d9ead964bcba596c47ee70851dfdd00a9..fc3fcb07cec78126c1bf7ae37065db7a5cfa232f 100644
 --- a/net/minecraft/world/level/block/SculkShriekerBlock.java
 +++ b/net/minecraft/world/level/block/SculkShriekerBlock.java
-@@ -54,6 +54,7 @@ public class SculkShriekerBlock extends BaseEntityBlock implements SimpleWaterlo
+@@ -54,6 +_,7 @@
          if (level instanceof ServerLevel serverLevel) {
              ServerPlayer player = SculkShriekerBlockEntity.tryGetPlayer(entity);
              if (player != null) {
@@ -16,7 +8,7 @@ index b73a8e6d9ead964bcba596c47ee70851dfdd00a9..fc3fcb07cec78126c1bf7ae37065db7a
                  serverLevel.getBlockEntity(pos, BlockEntityTypes.SCULK_SHRIEKER).ifPresent(shrieker -> shrieker.tryShriek(serverLevel, player));
              }
          }
-@@ -120,9 +121,16 @@ public class SculkShriekerBlock extends BaseEntityBlock implements SimpleWaterlo
+@@ -120,9 +_,16 @@
      @Override
      protected void spawnAfterBreak(final BlockState state, final ServerLevel level, final BlockPos pos, final ItemStack tool, final boolean dropExperience) {
          super.spawnAfterBreak(state, level, pos, tool, dropExperience);

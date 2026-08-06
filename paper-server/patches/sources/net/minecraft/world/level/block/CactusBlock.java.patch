@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/level/block/CactusBlock.java b/net/minecraft/world/level/block/CactusBlock.java
-index 6088631cedb8f2308860f426b9395f5c6bfad8c6..687f7bca0a546bb4dc7942194a76088a07e36770 100644
 --- a/net/minecraft/world/level/block/CactusBlock.java
 +++ b/net/minecraft/world/level/block/CactusBlock.java
-@@ -51,18 +51,18 @@ public class CactusBlock extends Block {
+@@ -51,18 +_,18 @@
              int age = state.getValue(AGE);
  
              while (level.getBlockState(pos.below(height)).is(this)) {
@@ -32,7 +24,7 @@ index 6088631cedb8f2308860f426b9395f5c6bfad8c6..687f7bca0a546bb4dc7942194a76088a
                  BlockState aboveBlock = state.setValue(AGE, 0);
                  level.setBlock(pos, aboveBlock, Block.UPDATE_NONE);
                  level.neighborChanged(aboveBlock, above, this, null, false);
-@@ -124,7 +124,8 @@ public class CactusBlock extends Block {
+@@ -124,7 +_,8 @@
          final InsideBlockEffectApplier effectApplier,
          final boolean isPrecise
      ) {

@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/entity/monster/Strider.java b/net/minecraft/world/entity/monster/Strider.java
-index 4e465a70afd52d5b4ca0737fa114bf4e3cde0603..dcbbdf1aa3bcd18996cd382fd46949722313f45c 100644
 --- a/net/minecraft/world/entity/monster/Strider.java
 +++ b/net/minecraft/world/entity/monster/Strider.java
-@@ -310,7 +310,14 @@ public class Strider extends Animal implements ItemSteerable {
+@@ -310,7 +_,14 @@
                  || stateOn.is(BlockTags.STRIDER_WARM_BLOCKS)
                  || this.getFluidHeight(FluidTags.LAVA) > 0.0;
              boolean onWarmStrider = this.getVehicle() instanceof Strider strider && !strider.isSuffocating();

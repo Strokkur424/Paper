@@ -1,0 +1,132 @@
+--- a/data/minecraft/enchantment/soul_speed.json
++++ b/data/minecraft/enchantment/soul_speed.json
+@@ -30,12 +_,12 @@
+           ]
+         },
+         "requirements": {
+-          "type": "minecraft:all_of",
++          "condition": "minecraft:all_of",
+           "terms": [
+             {
+-              "type": "minecraft:inverted",
++              "condition": "minecraft:inverted",
+               "term": {
+-                "type": "minecraft:entity_properties",
++                "condition": "minecraft:entity_properties",
+                 "entity": "this",
+                 "predicate": {
+                   "minecraft:vehicle": {}
+@@ -43,17 +_,17 @@
+               }
+             },
+             {
+-              "type": "minecraft:any_of",
++              "condition": "minecraft:any_of",
+               "terms": [
+                 {
+-                  "type": "minecraft:all_of",
++                  "condition": "minecraft:all_of",
+                   "terms": [
+                     {
+-                      "type": "minecraft:enchantment_active_check",
+-                      "active": true
++                      "active": true,
++                      "condition": "minecraft:enchantment_active_check"
+                     },
+                     {
+-                      "type": "minecraft:entity_properties",
++                      "condition": "minecraft:entity_properties",
+                       "entity": "this",
+                       "predicate": {
+                         "minecraft:flags": {
+@@ -62,10 +_,10 @@
+                       }
+                     },
+                     {
+-                      "type": "minecraft:any_of",
++                      "condition": "minecraft:any_of",
+                       "terms": [
+                         {
+-                          "type": "minecraft:entity_properties",
++                          "condition": "minecraft:entity_properties",
+                           "entity": "this",
+                           "predicate": {
+                             "minecraft:movement_affected_by": {
+@@ -76,7 +_,7 @@
+                           }
+                         },
+                         {
+-                          "type": "minecraft:entity_properties",
++                          "condition": "minecraft:entity_properties",
+                           "entity": "this",
+                           "predicate": {
+                             "minecraft:flags": {
+@@ -89,14 +_,14 @@
+                   ]
+                 },
+                 {
+-                  "type": "minecraft:all_of",
++                  "condition": "minecraft:all_of",
+                   "terms": [
+                     {
+-                      "type": "minecraft:enchantment_active_check",
+-                      "active": false
++                      "active": false,
++                      "condition": "minecraft:enchantment_active_check"
+                     },
+                     {
+-                      "type": "minecraft:entity_properties",
++                      "condition": "minecraft:entity_properties",
+                       "entity": "this",
+                       "predicate": {
+                         "minecraft:flags": {
+@@ -122,17 +_,17 @@
+           "amount": 1.0
+         },
+         "requirements": {
+-          "type": "minecraft:all_of",
++          "condition": "minecraft:all_of",
+           "terms": [
+             {
+-              "type": "minecraft:random_chance",
+               "chance": {
+                 "type": "minecraft:enchantment_level",
+                 "amount": 0.04
+-              }
++              },
++              "condition": "minecraft:random_chance"
+             },
+             {
+-              "type": "minecraft:entity_properties",
++              "condition": "minecraft:entity_properties",
+               "entity": "this",
+               "predicate": {
+                 "minecraft:flags": {
+@@ -172,7 +_,7 @@
+           }
+         },
+         "requirements": {
+-          "type": "minecraft:entity_properties",
++          "condition": "minecraft:entity_properties",
+           "entity": "this",
+           "predicate": {
+             "minecraft:flags": {
+@@ -205,14 +_,14 @@
+           "volume": 0.6
+         },
+         "requirements": {
+-          "type": "minecraft:all_of",
++          "condition": "minecraft:all_of",
+           "terms": [
+             {
+-              "type": "minecraft:random_chance",
+-              "chance": 0.35
++              "chance": 0.35,
++              "condition": "minecraft:random_chance"
+             },
+             {
+-              "type": "minecraft:entity_properties",
++              "condition": "minecraft:entity_properties",
+               "entity": "this",
+               "predicate": {
+                 "minecraft:flags": {

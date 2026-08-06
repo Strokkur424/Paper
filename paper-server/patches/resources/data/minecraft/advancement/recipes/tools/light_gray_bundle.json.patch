@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/tools/light_gray_bundle.json
++++ b/data/minecraft/advancement/recipes/tools/light_gray_bundle.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:light_gray_bundle"
++        "recipe": "minecraft:light_gray_bundle"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

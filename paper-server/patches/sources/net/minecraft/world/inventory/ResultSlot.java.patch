@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/inventory/ResultSlot.java b/net/minecraft/world/inventory/ResultSlot.java
-index 0ad2c1c52a17fdbc65f320d75eb69f9aa677430e..b4c5202efe53b08c2e94bdf28877800631581ea1 100644
 --- a/net/minecraft/world/inventory/ResultSlot.java
 +++ b/net/minecraft/world/inventory/ResultSlot.java
-@@ -40,6 +40,11 @@ public class ResultSlot extends Slot {
+@@ -40,6 +_,11 @@
      protected void onQuickCraft(final ItemStack picked, final int count) {
          this.removeCount += count;
          this.checkTakeAchievements(picked);
@@ -20,7 +12,7 @@ index 0ad2c1c52a17fdbc65f320d75eb69f9aa677430e..b4c5202efe53b08c2e94bdf288778006
      }
  
      @Override
-@@ -80,14 +85,19 @@ public class ResultSlot extends Slot {
+@@ -80,14 +_,19 @@
      private NonNullList<ItemStack> getRemainingItems(final CraftingInput input, final Level level) {
          return level instanceof ServerLevel serverLevel
              ? serverLevel.recipeAccess()

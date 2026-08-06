@@ -1,25 +1,211 @@
-From 11b7f145bbc9efa8236ac93d8dcb0142c5492580 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/data/minecraft/loot_table/chests/trial_chambers/intersection_barrel.json b/data/minecraft/loot_table/chests/trial_chambers/intersection_barrel.json
-index 0e4c8a100b028be2debbeb45abc7ffb4d1e41f40..86a66cf3ce2d95cb47582759b523010b1361f098 100644
 --- a/data/minecraft/loot_table/chests/trial_chambers/intersection_barrel.json
 +++ b/data/minecraft/loot_table/chests/trial_chambers/intersection_barrel.json
-@@ -63,14 +63,6 @@
+@@ -5,21 +_,21 @@
+       "entries": [
+         {
+           "type": "minecraft:item",
+-          "modifier": [
++          "functions": [
              {
-               "count": 1.0,
-               "function": "minecraft:set_count"
+-              "type": "minecraft:set_count",
+-              "count": 1.0
++              "count": 1.0,
++              "function": "minecraft:set_count"
+             },
+             {
+-              "type": "minecraft:set_damage",
+               "damage": {
+                 "type": "minecraft:uniform",
+                 "max": 0.9,
+                 "min": 0.4
+-              }
++              },
++              "function": "minecraft:set_damage"
+             },
+             {
+-              "type": "minecraft:enchant_randomly",
++              "function": "minecraft:enchant_randomly",
+               "options": "#minecraft:on_random_loot"
+             }
+           ],
+@@ -27,78 +_,74 @@
+         },
+         {
+           "type": "minecraft:item",
+-          "modifier": [
++          "functions": [
+             {
+-              "type": "minecraft:set_count",
+-              "count": 1.0
++              "count": 1.0,
++              "function": "minecraft:set_count"
+             },
+             {
+-              "type": "minecraft:set_damage",
+               "damage": {
+                 "type": "minecraft:uniform",
+                 "max": 0.8,
+                 "min": 0.15
+-              }
++              },
++              "function": "minecraft:set_damage"
+             }
+           ],
+           "name": "minecraft:diamond_pickaxe"
+         },
+         {
+           "type": "minecraft:item",
+-          "modifier": {
+-            "type": "minecraft:set_count",
+-            "count": {
+-              "type": "minecraft:uniform",
+-              "max": 3.0,
+-              "min": 1.0
++          "functions": [
++            {
++              "count": {
++                "type": "minecraft:uniform",
++                "max": 3.0,
++                "min": 1.0
++              },
++              "function": "minecraft:set_count"
+             }
+-          },
++          ],
+           "name": "minecraft:diamond"
+         },
+         {
+           "type": "minecraft:item",
+-          "modifier": [
+-            {
+-              "type": "minecraft:set_count",
+-              "count": 1.0
 -            },
 -            {
+-              "type": "minecraft:set_damage",
 -              "damage": {
 -                "type": "minecraft:uniform",
 -                "max": 0.8,
 -                "min": 0.15
--              },
--              "function": "minecraft:set_damage"
+-              }
++          "functions": [
++            {
++              "count": 1.0,
++              "function": "minecraft:set_count"
              }
            ],
            "name": "minecraft:compass"
+         },
+         {
+           "type": "minecraft:item",
+-          "modifier": {
+-            "type": "minecraft:set_count",
+-            "count": {
+-              "type": "minecraft:uniform",
+-              "max": 2.0,
+-              "min": 1.0
++          "functions": [
++            {
++              "count": {
++                "type": "minecraft:uniform",
++                "max": 2.0,
++                "min": 1.0
++              },
++              "function": "minecraft:set_count"
+             }
+-          },
++          ],
+           "name": "minecraft:bucket"
+         },
+         {
+           "type": "minecraft:item",
+-          "modifier": [
++          "functions": [
+             {
+-              "type": "minecraft:set_count",
+-              "count": 1.0
++              "count": 1.0,
++              "function": "minecraft:set_count"
+             },
+             {
+-              "type": "minecraft:set_damage",
+               "damage": {
+                 "type": "minecraft:uniform",
+                 "max": 0.8,
+                 "min": 0.15
+-              }
++              },
++              "function": "minecraft:set_damage"
+             }
+           ],
+           "name": "minecraft:golden_axe",
+@@ -106,18 +_,18 @@
+         },
+         {
+           "type": "minecraft:item",
+-          "modifier": [
++          "functions": [
+             {
+-              "type": "minecraft:set_count",
+-              "count": 1.0
++              "count": 1.0,
++              "function": "minecraft:set_count"
+             },
+             {
+-              "type": "minecraft:set_damage",
+               "damage": {
+                 "type": "minecraft:uniform",
+                 "max": 0.8,
+                 "min": 0.15
+-              }
++              },
++              "function": "minecraft:set_damage"
+             }
+           ],
+           "name": "minecraft:golden_pickaxe",
+@@ -125,27 +_,31 @@
+         },
+         {
+           "type": "minecraft:item",
+-          "modifier": {
+-            "type": "minecraft:set_count",
+-            "count": {
+-              "type": "minecraft:uniform",
+-              "max": 15.0,
+-              "min": 5.0
++          "functions": [
++            {
++              "count": {
++                "type": "minecraft:uniform",
++                "max": 15.0,
++                "min": 5.0
++              },
++              "function": "minecraft:set_count"
+             }
+-          },
++          ],
+           "name": "minecraft:bamboo_planks",
+           "weight": 10
+         },
+         {
+           "type": "minecraft:item",
+-          "modifier": {
+-            "type": "minecraft:set_count",
+-            "count": {
+-              "type": "minecraft:uniform",
+-              "max": 10.0,
+-              "min": 6.0
++          "functions": [
++            {
++              "count": {
++                "type": "minecraft:uniform",
++                "max": 10.0,
++                "min": 6.0
++              },
++              "function": "minecraft:set_count"
+             }
+-          },
++          ],
+           "name": "minecraft:baked_potato",
+           "weight": 10
+         }

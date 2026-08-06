@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/entity/vehicle/ContainerEntity.java b/net/minecraft/world/entity/vehicle/ContainerEntity.java
-index 294bfe7bb651354bc4f9623ef84edc67037dfd1e..c80a44dbc54e0bf00daa525bef20422b15ce8a85 100644
 --- a/net/minecraft/world/entity/vehicle/ContainerEntity.java
 +++ b/net/minecraft/world/entity/vehicle/ContainerEntity.java
-@@ -58,12 +58,12 @@ public interface ContainerEntity extends Container, MenuProvider {
+@@ -58,12 +_,12 @@
      default void addChestVehicleSaveData(final ValueOutput output) {
          if (this.getContainerLootTable() != null) {
              output.putString("LootTable", this.getContainerLootTable().identifier().toString());
@@ -23,7 +15,7 @@ index 294bfe7bb651354bc4f9623ef84edc67037dfd1e..c80a44dbc54e0bf00daa525bef20422b
      }
  
      default void readChestVehicleSaveData(final ValueInput input) {
-@@ -71,7 +71,12 @@ public interface ContainerEntity extends Container, MenuProvider {
+@@ -71,7 +_,12 @@
          ResourceKey<LootTable> lootTable = input.read("LootTable", LootTable.KEY_CODEC).orElse(null);
          this.setContainerLootTable(lootTable);
          this.setContainerLootTableSeed(input.getLongOr("LootTableSeed", 0L));
@@ -37,7 +29,7 @@ index 294bfe7bb651354bc4f9623ef84edc67037dfd1e..c80a44dbc54e0bf00daa525bef20422b
              ContainerHelper.loadAllItems(input, this.getItemStacks());
          }
      }
-@@ -86,19 +91,27 @@ public interface ContainerEntity extends Container, MenuProvider {
+@@ -86,19 +_,27 @@
      }
  
      default InteractionResult interactWithContainerVehicle(final Player player) {
@@ -68,7 +60,7 @@ index 294bfe7bb651354bc4f9623ef84edc67037dfd1e..c80a44dbc54e0bf00daa525bef20422b
              LootParams.Builder builder = new LootParams.Builder((ServerLevel)this.level()).withParameter(LootContextParams.ORIGIN, this.position());
              if (player != null) {
                  builder.withLuck(player.getLuck()).withParameter(LootContextParams.THIS_ENTITY, player);
-@@ -168,4 +181,14 @@ public interface ContainerEntity extends Container, MenuProvider {
+@@ -168,4 +_,14 @@
      default boolean isChestVehicleStillValid(final Player player) {
          return !this.isRemoved() && player.isWithinEntityInteractionRange(this.getBoundingBox(), 4.0);
      }

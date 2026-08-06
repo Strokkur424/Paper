@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/server/PlayerAdvancements.java b/net/minecraft/server/PlayerAdvancements.java
-index 684e2f1247f0c431d361ca71ddb06f785a4f7f55..d447b444abd9b62ab241419301a96d19ae77a7eb 100644
 --- a/net/minecraft/server/PlayerAdvancements.java
 +++ b/net/minecraft/server/PlayerAdvancements.java
-@@ -47,7 +47,7 @@ import org.slf4j.Logger;
+@@ -47,7 +_,7 @@
  
  public class PlayerAdvancements {
      private static final Logger LOGGER = LogUtils.getLogger();
@@ -17,7 +9,7 @@ index 684e2f1247f0c431d361ca71ddb06f785a4f7f55..d447b444abd9b62ab241419301a96d19
      private final PlayerList playerList;
      private final Path playerSavePath;
      private AdvancementTree tree;
-@@ -127,6 +127,7 @@ public class PlayerAdvancements {
+@@ -127,6 +_,7 @@
      }
  
      public void save() {
@@ -25,7 +17,7 @@ index 684e2f1247f0c431d361ca71ddb06f785a4f7f55..d447b444abd9b62ab241419301a96d19
          JsonElement json = this.codec.encodeStart(JsonOps.INSTANCE, this.asData()).getOrThrow();
  
          try {
-@@ -144,6 +145,7 @@ public class PlayerAdvancements {
+@@ -144,6 +_,7 @@
          data.forEach((id, progress) -> {
              AdvancementHolder advancement = manager.get(id);
              if (advancement == null) {
@@ -33,7 +25,7 @@ index 684e2f1247f0c431d361ca71ddb06f785a4f7f55..d447b444abd9b62ab241419301a96d19
                  LOGGER.warn("Ignored advancement '{}' in progress file {} - it doesn't exist anymore?", id, this.playerSavePath);
              } else {
                  this.startProgress(advancement, progress);
-@@ -168,14 +170,31 @@ public class PlayerAdvancements {
+@@ -168,14 +_,31 @@
          AdvancementProgress progress = this.getOrStartProgress(holder);
          boolean wasDone = progress.isDone();
          if (progress.grantProgress(criterion)) {
@@ -67,7 +59,7 @@ index 684e2f1247f0c431d361ca71ddb06f785a4f7f55..d447b444abd9b62ab241419301a96d19
                      }
                  });
              }
-@@ -238,7 +257,7 @@ public class PlayerAdvancements {
+@@ -238,7 +_,7 @@
      public void flushDirty(final ServerPlayer player, final boolean showAdvancements) {
          if (this.isFirstPacket || !this.rootsToUpdate.isEmpty() || !this.progressChanged.isEmpty()) {
              Map<Identifier, AdvancementProgress> progress = new HashMap<>();

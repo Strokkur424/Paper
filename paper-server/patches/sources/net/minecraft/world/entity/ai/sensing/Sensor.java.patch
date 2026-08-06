@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/entity/ai/sensing/Sensor.java b/net/minecraft/world/entity/ai/sensing/Sensor.java
-index eeee386e6ea664ee96e5d943e03c7fb2d8c874b3..745f26d36a30a9f570bc989b97002c2723db4ba8 100644
 --- a/net/minecraft/world/entity/ai/sensing/Sensor.java
 +++ b/net/minecraft/world/entity/ai/sensing/Sensor.java
-@@ -28,8 +28,17 @@ public abstract class Sensor<E extends LivingEntity> {
+@@ -28,8 +_,17 @@
          .ignoreInvisibilityTesting();
      private final int scanRate;
      private long timeToTick;
@@ -26,7 +18,7 @@ index eeee386e6ea664ee96e5d943e03c7fb2d8c874b3..745f26d36a30a9f570bc989b97002c27
          this.scanRate = scanRate;
      }
  
-@@ -43,7 +52,7 @@ public abstract class Sensor<E extends LivingEntity> {
+@@ -43,7 +_,7 @@
  
      public final void tick(final ServerLevel level, final E body) {
          if (--this.timeToTick <= 0L) {

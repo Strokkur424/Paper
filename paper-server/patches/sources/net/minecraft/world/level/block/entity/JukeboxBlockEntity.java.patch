@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/level/block/entity/JukeboxBlockEntity.java b/net/minecraft/world/level/block/entity/JukeboxBlockEntity.java
-index 6f9673dc5009cae2d665a2121a9529f6aab214ce..eb0a6009ce66c51931f132acb2a5f7e5d5fa31aa 100644
 --- a/net/minecraft/world/level/block/entity/JukeboxBlockEntity.java
 +++ b/net/minecraft/world/level/block/entity/JukeboxBlockEntity.java
-@@ -22,6 +22,44 @@ import net.minecraft.world.phys.Vec3;
+@@ -22,6 +_,44 @@
  import net.minecraft.world.ticks.ContainerSingleItem;
  
  public class JukeboxBlockEntity extends BlockEntity implements ContainerSingleItem.BlockContainerSingleItem {
@@ -53,7 +45,7 @@ index 6f9673dc5009cae2d665a2121a9529f6aab214ce..eb0a6009ce66c51931f132acb2a5f7e5
      public static final String SONG_ITEM_TAG_ID = "RecordItem";
      public static final String TICKS_SINCE_SONG_STARTED_TAG_ID = "ticks_since_song_started";
      private ItemStack item = ItemStack.EMPTY;
-@@ -114,6 +152,7 @@ public class JukeboxBlockEntity extends BlockEntity implements ContainerSingleIt
+@@ -114,6 +_,7 @@
      @Override
      public void setTheItem(final ItemStack itemStack) {
          this.item = itemStack;
@@ -61,7 +53,7 @@ index 6f9673dc5009cae2d665a2121a9529f6aab214ce..eb0a6009ce66c51931f132acb2a5f7e5
          boolean itemWasInserted = !this.item.isEmpty();
          Optional<Holder<JukeboxSong>> maybeSong = JukeboxSong.fromStack(this.item);
          this.notifyItemChangedInJukebox(itemWasInserted);
-@@ -133,7 +172,7 @@ public class JukeboxBlockEntity extends BlockEntity implements ContainerSingleIt
+@@ -133,7 +_,7 @@
  
      @Override
      public int getMaxStackSize() {
@@ -70,7 +62,7 @@ index 6f9673dc5009cae2d665a2121a9529f6aab214ce..eb0a6009ce66c51931f132acb2a5f7e5
      }
  
      @Override
-@@ -157,10 +196,15 @@ public class JukeboxBlockEntity extends BlockEntity implements ContainerSingleIt
+@@ -157,10 +_,15 @@
      }
  
      @VisibleForTesting

@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/misc/bone_meal_from_bone_block.json
++++ b/data/minecraft/advancement/recipes/misc/bone_meal_from_bone_block.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:bone_meal_from_bone_block"
++        "recipe": "minecraft:bone_meal_from_bone_block"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

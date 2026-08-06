@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/level/block/SnifferEggBlock.java b/net/minecraft/world/level/block/SnifferEggBlock.java
-index 9eb14d0630c30cd65022192ad2e0f228eda8d3ad..d24cba0b8fd157ab0b742341f7a284f2f728cf6d 100644
 --- a/net/minecraft/world/level/block/SnifferEggBlock.java
 +++ b/net/minecraft/world/level/block/SnifferEggBlock.java
-@@ -54,12 +54,31 @@ public class SnifferEggBlock extends Block {
+@@ -54,12 +_,31 @@
          return this.getHatchLevel(state) == 2;
      }
  
@@ -41,7 +33,7 @@ index 9eb14d0630c30cd65022192ad2e0f228eda8d3ad..d24cba0b8fd157ab0b742341f7a284f2
              level.playSound(null, position, SoundEvents.SNIFFER_EGG_HATCH, SoundSource.BLOCKS, 0.7F, 0.9F + random.nextFloat() * 0.2F);
              level.destroyBlock(position, false);
              Sniffer sniffer = EntityTypes.SNIFFER.create(level, EntitySpawnReason.BREEDING);
-@@ -67,7 +86,7 @@ public class SnifferEggBlock extends Block {
+@@ -67,7 +_,7 @@
                  Vec3 spawnAt = Vec3.atCenterOf(position);
                  sniffer.setBaby(true);
                  sniffer.snapTo(spawnAt.x(), spawnAt.y(), spawnAt.z(), Mth.wrapDegrees(level.getRandom().nextFloat() * 360.0F), 0.0F);
@@ -50,7 +42,7 @@ index 9eb14d0630c30cd65022192ad2e0f228eda8d3ad..d24cba0b8fd157ab0b742341f7a284f2
              }
          }
      }
-@@ -79,7 +98,7 @@ public class SnifferEggBlock extends Block {
+@@ -79,7 +_,7 @@
              level.levelEvent(LevelEvent.PARTICLES_EGG_CRACK, pos, 0);
          }
  

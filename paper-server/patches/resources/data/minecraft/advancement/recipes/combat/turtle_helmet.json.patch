@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/combat/turtle_helmet.json
++++ b/data/minecraft/advancement/recipes/combat/turtle_helmet.json
+@@ -3,7 +_,7 @@
+   "criteria": {
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:turtle_helmet"
++        "recipe": "minecraft:turtle_helmet"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     },

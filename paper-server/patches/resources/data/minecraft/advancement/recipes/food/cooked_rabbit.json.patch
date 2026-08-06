@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/food/cooked_rabbit.json
++++ b/data/minecraft/advancement/recipes/food/cooked_rabbit.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:cooked_rabbit"
++        "recipe": "minecraft:cooked_rabbit"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

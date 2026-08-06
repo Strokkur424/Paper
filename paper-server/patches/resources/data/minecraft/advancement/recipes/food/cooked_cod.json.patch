@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/food/cooked_cod.json
++++ b/data/minecraft/advancement/recipes/food/cooked_cod.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:cooked_cod"
++        "recipe": "minecraft:cooked_cod"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

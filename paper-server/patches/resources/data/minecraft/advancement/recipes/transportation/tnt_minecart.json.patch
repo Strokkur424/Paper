@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/transportation/tnt_minecart.json
++++ b/data/minecraft/advancement/recipes/transportation/tnt_minecart.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:tnt_minecart"
++        "recipe": "minecraft:tnt_minecart"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

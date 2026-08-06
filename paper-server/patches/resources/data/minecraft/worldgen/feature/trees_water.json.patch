@@ -1,0 +1,13 @@
+--- a/data/minecraft/worldgen/feature/trees_water.json
++++ /dev/null
+@@ -1,10 +_,0 @@
+-{
+-  "type": "minecraft:random_selector",
+-  "default": "minecraft:oak_checked",
+-  "features": [
+-    {
+-      "chance": 0.1,
+-      "feature": "minecraft:fancy_oak_checked"
+-    }
+-  ]
+-}

@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/entity/monster/Creeper.java b/net/minecraft/world/entity/monster/Creeper.java
-index bdc99caf55b9d9ba8604e21ab0149991afae501c..4a90294f8d8447bb2f2cef7572119274a1a2c62e 100644
 --- a/net/minecraft/world/entity/monster/Creeper.java
 +++ b/net/minecraft/world/entity/monster/Creeper.java
-@@ -55,6 +55,7 @@ public class Creeper extends Monster {
+@@ -55,6 +_,7 @@
      public int maxSwell = 30;
      public int explosionRadius = 3;
      private boolean droppedSkulls;
@@ -16,7 +8,7 @@ index bdc99caf55b9d9ba8604e21ab0149991afae501c..4a90294f8d8447bb2f2cef7572119274
  
      public Creeper(final EntityType<? extends Creeper> type, final Level level) {
          super(type, level);
-@@ -118,7 +119,7 @@ public class Creeper extends Monster {
+@@ -118,7 +_,7 @@
          this.maxSwell = input.getShortOr("Fuse", (short)30);
          this.explosionRadius = input.getByteOr("ExplosionRadius", (byte)3);
          if (input.getBooleanOr("ignited", false)) {
@@ -25,7 +17,7 @@ index bdc99caf55b9d9ba8604e21ab0149991afae501c..4a90294f8d8447bb2f2cef7572119274
          }
      }
  
-@@ -151,10 +152,11 @@ public class Creeper extends Monster {
+@@ -151,10 +_,11 @@
      }
  
      @Override
@@ -39,7 +31,7 @@ index bdc99caf55b9d9ba8604e21ab0149991afae501c..4a90294f8d8447bb2f2cef7572119274
      }
  
      @Override
-@@ -168,15 +170,15 @@ public class Creeper extends Monster {
+@@ -168,15 +_,15 @@
      }
  
      @Override
@@ -58,7 +50,7 @@ index bdc99caf55b9d9ba8604e21ab0149991afae501c..4a90294f8d8447bb2f2cef7572119274
      }
  
      @Override
-@@ -203,9 +205,20 @@ public class Creeper extends Monster {
+@@ -203,9 +_,20 @@
      @Override
      public void thunderHit(final ServerLevel level, final LightningBolt lightningBolt) {
          super.thunderHit(level, lightningBolt);
@@ -79,7 +71,7 @@ index bdc99caf55b9d9ba8604e21ab0149991afae501c..4a90294f8d8447bb2f2cef7572119274
      @Override
      protected InteractionResult mobInteract(final Player player, final InteractionHand hand) {
          ItemStack itemStack = player.getItemInHand(hand);
-@@ -214,8 +227,9 @@ public class Creeper extends Monster {
+@@ -214,8 +_,9 @@
              this.level()
                  .playSound(player, this.getX(), this.getY(), this.getZ(), soundEvent, this.getSoundSource(), 1.0F, this.random.nextFloat() * 0.4F + 0.8F);
              if (!this.level().isClientSide()) {
@@ -90,7 +82,7 @@ index bdc99caf55b9d9ba8604e21ab0149991afae501c..4a90294f8d8447bb2f2cef7572119274
                      itemStack.shrink(1);
                  } else {
                      itemStack.hurtAndBreak(1, player, hand.asEquipmentSlot());
-@@ -231,18 +245,29 @@ public class Creeper extends Monster {
+@@ -231,18 +_,29 @@
      public void explodeCreeper() {
          if (this.level() instanceof ServerLevel level) {
              float explosionMultiplier = this.isPowered() ? 2.0F : 1.0F;
@@ -123,11 +115,13 @@ index bdc99caf55b9d9ba8604e21ab0149991afae501c..4a90294f8d8447bb2f2cef7572119274
              cloud.setRadius(2.5F);
              cloud.setRadiusOnUse(-0.5F);
              cloud.setWaitTime(10);
-@@ -254,15 +279,26 @@ public class Creeper extends Monster {
+@@ -254,15 +_,26 @@
                  cloud.addEffect(new MobEffectInstance(mobEffect));
              }
  
 -            this.level().addFreshEntity(cloud);
+-        }
+-    }
 +            this.level().addFreshEntity(cloud, org.bukkit.event.entity.CreatureSpawnEvent.SpawnReason.EXPLOSION); // CraftBukkit
 +        }
 +    }
@@ -139,8 +133,8 @@ index bdc99caf55b9d9ba8604e21ab0149991afae501c..4a90294f8d8447bb2f2cef7572119274
 +            if (event.callEvent()) {
 +                this.entityData.set(DATA_IS_IGNITED, event.isIgnited());
 +            }
-         }
-     }
++        }
++    }
 +    // Paper end - Call CreeperIgniteEvent
  
      public boolean isIgnited() {

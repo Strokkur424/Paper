@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/inventory/AbstractMountInventoryMenu.java b/net/minecraft/world/inventory/AbstractMountInventoryMenu.java
-index 4d95e1e5915119cb62e738d7dcaf53a3e1cf448c..09908c8a79daed07052bd26ce48502b48a30445f 100644
 --- a/net/minecraft/world/inventory/AbstractMountInventoryMenu.java
 +++ b/net/minecraft/world/inventory/AbstractMountInventoryMenu.java
-@@ -9,13 +9,28 @@ import net.minecraft.world.item.ItemStack;
+@@ -9,13 +_,28 @@
  public abstract class AbstractMountInventoryMenu extends AbstractContainerMenu {
      protected final Container mountContainer;
      public final LivingEntity mount;

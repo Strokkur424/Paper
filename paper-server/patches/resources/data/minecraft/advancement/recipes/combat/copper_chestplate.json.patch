@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/combat/copper_chestplate.json
++++ b/data/minecraft/advancement/recipes/combat/copper_chestplate.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:copper_chestplate"
++        "recipe": "minecraft:copper_chestplate"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

@@ -1,0 +1,15 @@
+--- a/data/minecraft/worldgen/noise/sulfur_cave_gradient.json
++++ b/data/minecraft/worldgen/noise/sulfur_cave_gradient.json
+@@ -1,10 +_,8 @@
+ {
+-  "amplitude_modifiers": [
++  "amplitudes": [
+     1.0,
+     0.0,
+     1.0
+   ],
+-  "base_amplitude": 1.1817507833955654,
+-  "base_octave": -5,
+-  "octave_count": 3
++  "firstOctave": -5
+ }

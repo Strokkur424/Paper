@@ -1,0 +1,10 @@
+--- a/data/minecraft/recipe/dried_kelp_from_smoking.json
++++ b/data/minecraft/recipe/dried_kelp_from_smoking.json
+@@ -1,7 +_,6 @@
+ {
+   "type": "minecraft:smoking",
+   "category": "food",
+-  "cookingtime": 200,
+   "experience": 0.1,
+   "ingredient": "minecraft:kelp",
+   "result": {

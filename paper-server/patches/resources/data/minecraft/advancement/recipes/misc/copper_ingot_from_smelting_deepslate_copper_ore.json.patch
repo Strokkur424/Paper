@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/misc/copper_ingot_from_smelting_deepslate_copper_ore.json
++++ b/data/minecraft/advancement/recipes/misc/copper_ingot_from_smelting_deepslate_copper_ore.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:copper_ingot_from_smelting_deepslate_copper_ore"
++        "recipe": "minecraft:copper_ingot_from_smelting_deepslate_copper_ore"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

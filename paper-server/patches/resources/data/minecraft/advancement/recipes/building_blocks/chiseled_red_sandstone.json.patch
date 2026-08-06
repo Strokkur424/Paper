@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/building_blocks/chiseled_red_sandstone.json
++++ b/data/minecraft/advancement/recipes/building_blocks/chiseled_red_sandstone.json
+@@ -33,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:chiseled_red_sandstone"
++        "recipe": "minecraft:chiseled_red_sandstone"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

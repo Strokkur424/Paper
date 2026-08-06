@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/level/block/EndGatewayBlock.java b/net/minecraft/world/level/block/EndGatewayBlock.java
-index c3cb2b162efa9bed12b18597820fae9bfcd5bee3..4ac1da84017191eb0d415ff0a4ed934538da985d 100644
 --- a/net/minecraft/world/level/block/EndGatewayBlock.java
 +++ b/net/minecraft/world/level/block/EndGatewayBlock.java
-@@ -86,10 +86,15 @@ public class EndGatewayBlock extends BaseEntityBlock implements Portal {
+@@ -86,10 +_,15 @@
          final InsideBlockEffectApplier effectApplier,
          final boolean isPrecise
      ) {
@@ -24,7 +16,7 @@ index c3cb2b162efa9bed12b18597820fae9bfcd5bee3..4ac1da84017191eb0d415ff0a4ed9345
              entity.setAsInsidePortal(this, pos);
              TheEndGatewayBlockEntity.triggerCooldown(level, pos, state, endGatewayBlockEntity);
          }
-@@ -103,7 +108,7 @@ public class EndGatewayBlock extends BaseEntityBlock implements Portal {
+@@ -103,7 +_,7 @@
                  return null;
              } else {
                  return entity instanceof ThrownEnderpearl
@@ -33,7 +25,7 @@ index c3cb2b162efa9bed12b18597820fae9bfcd5bee3..4ac1da84017191eb0d415ff0a4ed9345
                      : new TeleportTransition(
                          currentLevel,
                          teleportPosition,
-@@ -112,7 +117,7 @@ public class EndGatewayBlock extends BaseEntityBlock implements Portal {
+@@ -112,7 +_,7 @@
                          0.0F,
                          Relative.union(Relative.DELTA, Relative.ROTATION),
                          TeleportTransition.PLACE_PORTAL_TICKET

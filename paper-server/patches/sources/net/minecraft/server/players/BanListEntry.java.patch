@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/server/players/BanListEntry.java b/net/minecraft/server/players/BanListEntry.java
-index ff07e0e3a538588a47c4aae5fadd41a9a5588a10..a3aa9128aeb17e9148a149e93fe514c7661a9e21 100644
 --- a/net/minecraft/server/players/BanListEntry.java
 +++ b/net/minecraft/server/players/BanListEntry.java
-@@ -28,7 +28,7 @@ public abstract class BanListEntry<T> extends StoredUserEntry<T> {
+@@ -28,7 +_,7 @@
      }
  
      protected BanListEntry(final @Nullable T user, final JsonObject object) {
@@ -17,7 +9,7 @@ index ff07e0e3a538588a47c4aae5fadd41a9a5588a10..a3aa9128aeb17e9148a149e93fe514c7
  
          Date created;
          try {
-@@ -106,4 +106,22 @@ public abstract class BanListEntry<T> extends StoredUserEntry<T> {
+@@ -106,4 +_,22 @@
      public int hashCode() {
          return Objects.hash(this.source, this.expires, this.reason, this.getUser());
      }

@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/redstone/warped_door.json
++++ b/data/minecraft/advancement/recipes/redstone/warped_door.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:warped_door"
++        "recipe": "minecraft:warped_door"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

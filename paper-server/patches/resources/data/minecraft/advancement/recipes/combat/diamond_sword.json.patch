@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/combat/diamond_sword.json
++++ b/data/minecraft/advancement/recipes/combat/diamond_sword.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:diamond_sword"
++        "recipe": "minecraft:diamond_sword"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

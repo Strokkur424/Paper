@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/server/dedicated/DedicatedPlayerList.java b/net/minecraft/server/dedicated/DedicatedPlayerList.java
-index 7b14cbb166235522499da3473722efef1244cf80..8cc4fe9feb57902a4b9a6a26e6175ac00a2cef65 100644
 --- a/net/minecraft/server/dedicated/DedicatedPlayerList.java
 +++ b/net/minecraft/server/dedicated/DedicatedPlayerList.java
-@@ -16,6 +16,11 @@ public class DedicatedPlayerList extends PlayerList {
+@@ -16,6 +_,11 @@
          super(server, registries, playerDataStorage, server.notificationManager());
          this.setViewDistance(server.viewDistance());
          this.setSimulationDistance(server.simulationDistance());

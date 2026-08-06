@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/util/StringUtil.java b/net/minecraft/util/StringUtil.java
-index 7a9f7942723c4a37c6c58e45d2c723211abecab1..7957e0cfc43909c5268698a11c4933d20b4d9155 100644
 --- a/net/minecraft/util/StringUtil.java
 +++ b/net/minecraft/util/StringUtil.java
-@@ -85,6 +85,25 @@ public class StringUtil {
+@@ -85,6 +_,25 @@
          return builder.toString();
      }
  

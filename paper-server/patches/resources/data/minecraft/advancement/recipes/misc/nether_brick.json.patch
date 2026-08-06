@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/misc/nether_brick.json
++++ b/data/minecraft/advancement/recipes/misc/nether_brick.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:nether_brick"
++        "recipe": "minecraft:nether_brick"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

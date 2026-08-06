@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/network/protocol/Packet.java b/net/minecraft/network/protocol/Packet.java
-index b583e1396822cf950f648fd4da2f4ccb233f6fc1..1480d0db90f5797e3dee19503e52d1e783493ac3 100644
 --- a/net/minecraft/network/protocol/Packet.java
 +++ b/net/minecraft/network/protocol/Packet.java
-@@ -11,6 +11,19 @@ public interface Packet<T extends PacketListener> {
+@@ -11,6 +_,19 @@
  
      void handle(T listener);
  

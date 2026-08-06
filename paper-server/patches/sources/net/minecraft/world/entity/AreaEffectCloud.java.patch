@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/entity/AreaEffectCloud.java b/net/minecraft/world/entity/AreaEffectCloud.java
-index e7af4432681ce3f329d377bb754121a77a7a1265..3cc8da512c5f901b2ee2bd75a7c9a6d3f13dcb41 100644
 --- a/net/minecraft/world/entity/AreaEffectCloud.java
 +++ b/net/minecraft/world/entity/AreaEffectCloud.java
-@@ -189,7 +189,7 @@ public class AreaEffectCloud extends Entity implements TraceableEntity {
+@@ -189,7 +_,7 @@
  
      private void serverTick(final ServerLevel serverLevel) {
          if (this.duration != -1 && this.tickCount - this.waitTime >= this.duration) {
@@ -17,7 +9,7 @@ index e7af4432681ce3f329d377bb754121a77a7a1265..3cc8da512c5f901b2ee2bd75a7c9a6d3
          } else {
              boolean isWaiting = this.isWaiting();
              boolean shouldWait = this.tickCount < this.waitTime;
-@@ -202,7 +202,7 @@ public class AreaEffectCloud extends Entity implements TraceableEntity {
+@@ -202,7 +_,7 @@
                  if (this.radiusPerTick != 0.0F) {
                      radius += this.radiusPerTick;
                      if (radius < 0.5F) {
@@ -26,7 +18,7 @@ index e7af4432681ce3f329d377bb754121a77a7a1265..3cc8da512c5f901b2ee2bd75a7c9a6d3
                          return;
                      }
  
-@@ -218,12 +218,24 @@ public class AreaEffectCloud extends Entity implements TraceableEntity {
+@@ -218,12 +_,24 @@
                          this.potionContents.forEachEffect(allEffects::add, this.potionDurationScale);
                          List<LivingEntity> entities = this.level().getEntitiesOfClass(LivingEntity.class, this.getBoundingBox());
                          if (!entities.isEmpty()) {
@@ -51,7 +43,7 @@ index e7af4432681ce3f329d377bb754121a77a7a1265..3cc8da512c5f901b2ee2bd75a7c9a6d3
                                          this.victims.put(entity, this.tickCount + this.reapplicationDelay);
  
                                          for (MobEffectInstance effect : allEffects) {
-@@ -232,14 +244,14 @@ public class AreaEffectCloud extends Entity implements TraceableEntity {
+@@ -232,14 +_,14 @@
                                                      .value()
                                                      .applyInstantaneousEffect(serverLevel, this, this.getOwner(), entity, effect.getAmplifier(), 0.5);
                                              } else {
@@ -68,7 +60,7 @@ index e7af4432681ce3f329d377bb754121a77a7a1265..3cc8da512c5f901b2ee2bd75a7c9a6d3
                                                  return;
                                              }
  
-@@ -249,7 +261,7 @@ public class AreaEffectCloud extends Entity implements TraceableEntity {
+@@ -249,7 +_,7 @@
                                          if (this.durationOnUse != 0 && this.duration != -1) {
                                              this.duration = this.duration + this.durationOnUse;
                                              if (this.duration <= 0) {

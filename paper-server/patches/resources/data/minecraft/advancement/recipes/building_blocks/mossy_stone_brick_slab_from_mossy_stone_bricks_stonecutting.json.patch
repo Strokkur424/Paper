@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/building_blocks/mossy_stone_brick_slab_from_mossy_stone_bricks_stonecutting.json
++++ b/data/minecraft/advancement/recipes/building_blocks/mossy_stone_brick_slab_from_mossy_stone_bricks_stonecutting.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:mossy_stone_brick_slab_from_mossy_stone_bricks_stonecutting"
++        "recipe": "minecraft:mossy_stone_brick_slab_from_mossy_stone_bricks_stonecutting"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

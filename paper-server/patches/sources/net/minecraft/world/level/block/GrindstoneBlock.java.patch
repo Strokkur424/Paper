@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/level/block/GrindstoneBlock.java b/net/minecraft/world/level/block/GrindstoneBlock.java
-index 0a293908ad36d5b82136cbfb90fa7bc6b2e44773..5371504f1343aa41a5672544f8a788cf6fec7d7a 100644
 --- a/net/minecraft/world/level/block/GrindstoneBlock.java
 +++ b/net/minecraft/world/level/block/GrindstoneBlock.java
-@@ -67,8 +67,7 @@ public class GrindstoneBlock extends FaceAttachedHorizontalDirectionalBlock {
+@@ -67,8 +_,7 @@
      protected InteractionResult useWithoutItem(
          final BlockState state, final Level level, final BlockPos pos, final Player player, final BlockHitResult hitResult
      ) {

@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/entity/decoration/painting/Painting.java b/net/minecraft/world/entity/decoration/painting/Painting.java
-index 2090fb61a71d847dad0d8cf79a5e7dfaad4d55fa..f6882a8392998e1964205635ea0b060a7a192157 100644
 --- a/net/minecraft/world/entity/decoration/painting/Painting.java
 +++ b/net/minecraft/world/entity/decoration/painting/Painting.java
-@@ -150,21 +150,31 @@ public class Painting extends HangingEntity {
+@@ -150,21 +_,31 @@
  
      @Override
      protected AABB calculateBoundingBox(final BlockPos pos, final Direction direction) {

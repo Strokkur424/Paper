@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/building_blocks/mud_bricks.json
++++ b/data/minecraft/advancement/recipes/building_blocks/mud_bricks.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:mud_bricks"
++        "recipe": "minecraft:mud_bricks"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

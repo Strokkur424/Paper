@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/misc/map.json
++++ b/data/minecraft/advancement/recipes/misc/map.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:map"
++        "recipe": "minecraft:map"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/level/block/entity/ChiseledBookShelfBlockEntity.java b/net/minecraft/world/level/block/entity/ChiseledBookShelfBlockEntity.java
-index 45cedd26e31fb626415bd4657f4c922e3ac0d3b0..8967c271678a8ee8d4f79fb40eeaf646af192010 100644
 --- a/net/minecraft/world/level/block/entity/ChiseledBookShelfBlockEntity.java
 +++ b/net/minecraft/world/level/block/entity/ChiseledBookShelfBlockEntity.java
-@@ -28,6 +28,42 @@ public class ChiseledBookShelfBlockEntity extends BlockEntity implements ListBac
+@@ -28,6 +_,42 @@
      private final NonNullList<ItemStack> items = NonNullList.withSize(6, ItemStack.EMPTY);
      public int lastInteractedSlot = -1;
  
@@ -51,7 +43,7 @@ index 45cedd26e31fb626415bd4657f4c922e3ac0d3b0..8967c271678a8ee8d4f79fb40eeaf646
      public ChiseledBookShelfBlockEntity(final BlockPos worldPosition, final BlockState blockState) {
          super(BlockEntityTypes.CHISELED_BOOKSHELF, worldPosition, blockState);
      }
-@@ -67,7 +103,7 @@ public class ChiseledBookShelfBlockEntity extends BlockEntity implements ListBac
+@@ -67,7 +_,7 @@
  
      @Override
      public int getMaxStackSize() {
@@ -60,7 +52,7 @@ index 45cedd26e31fb626415bd4657f4c922e3ac0d3b0..8967c271678a8ee8d4f79fb40eeaf646
      }
  
      @Override
-@@ -80,7 +116,7 @@ public class ChiseledBookShelfBlockEntity extends BlockEntity implements ListBac
+@@ -80,7 +_,7 @@
          ItemStack retrievedItem = Objects.requireNonNullElse(this.getItems().get(slot), ItemStack.EMPTY);
          this.getItems().set(slot, ItemStack.EMPTY);
          if (!retrievedItem.isEmpty()) {
@@ -69,7 +61,7 @@ index 45cedd26e31fb626415bd4657f4c922e3ac0d3b0..8967c271678a8ee8d4f79fb40eeaf646
          }
  
          return retrievedItem;
-@@ -90,7 +126,7 @@ public class ChiseledBookShelfBlockEntity extends BlockEntity implements ListBac
+@@ -90,7 +_,7 @@
      public void setItem(final int slot, final ItemStack itemStack) {
          if (this.acceptsItemType(itemStack)) {
              this.getItems().set(slot, itemStack);

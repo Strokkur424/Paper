@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/level/block/BuddingAmethystBlock.java b/net/minecraft/world/level/block/BuddingAmethystBlock.java
-index 27fc347e587104d9559be6722a271d8d19a015dc..15d58eb7b6a24d28e1ed092f654db62c5230c61f 100644
 --- a/net/minecraft/world/level/block/BuddingAmethystBlock.java
 +++ b/net/minecraft/world/level/block/BuddingAmethystBlock.java
-@@ -37,7 +37,13 @@ public class BuddingAmethystBlock extends AmethystBlock {
+@@ -37,7 +_,13 @@
                  BlockState targetState = nextStage.defaultBlockState()
                      .setValue(AmethystClusterBlock.FACING, growDirection)
                      .setValue(AmethystClusterBlock.WATERLOGGED, relativeState.getFluidState().is(Fluids.WATER));

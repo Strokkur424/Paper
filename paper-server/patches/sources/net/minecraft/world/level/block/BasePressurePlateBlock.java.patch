@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/level/block/BasePressurePlateBlock.java b/net/minecraft/world/level/block/BasePressurePlateBlock.java
-index f0e951494a8bb6287662c15ea9f8f5cfd1e2e919..f77e9bc43fbaa9286f921bbd775f7f2025772ea3 100644
 --- a/net/minecraft/world/level/block/BasePressurePlateBlock.java
 +++ b/net/minecraft/world/level/block/BasePressurePlateBlock.java
-@@ -86,6 +86,7 @@ public abstract class BasePressurePlateBlock extends Block {
+@@ -86,6 +_,7 @@
          final InsideBlockEffectApplier effectApplier,
          final boolean isPrecise
      ) {
@@ -16,7 +8,7 @@ index f0e951494a8bb6287662c15ea9f8f5cfd1e2e919..f77e9bc43fbaa9286f921bbd775f7f20
          if (!level.isClientSide()) {
              int signal = this.getSignalForState(state);
              if (signal == 0) {
-@@ -98,6 +99,16 @@ public abstract class BasePressurePlateBlock extends Block {
+@@ -98,6 +_,16 @@
          int signal = this.getSignalStrength(level, pos);
          boolean wasPressed = oldSignal > 0;
          boolean isPressed = signal > 0;
@@ -33,7 +25,7 @@ index f0e951494a8bb6287662c15ea9f8f5cfd1e2e919..f77e9bc43fbaa9286f921bbd775f7f20
          if (oldSignal != signal) {
              BlockState newState = this.setSignalForState(state, signal);
              level.setBlock(pos, newState, Block.UPDATE_CLIENTS);
-@@ -146,7 +157,13 @@ public abstract class BasePressurePlateBlock extends Block {
+@@ -146,7 +_,13 @@
      }
  
      protected static int getEntityCount(final Level level, final AABB entityDetectionBox, final Class<? extends Entity> entityClass) {

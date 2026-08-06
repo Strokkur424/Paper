@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/entity/animal/golem/IronGolem.java b/net/minecraft/world/entity/animal/golem/IronGolem.java
-index 474e8afa6534234b5f43b88a9fda98747e980cbb..d517d59dc3e05be34dbeebb640a038dc13f4dfb6 100644
 --- a/net/minecraft/world/entity/animal/golem/IronGolem.java
 +++ b/net/minecraft/world/entity/animal/golem/IronGolem.java
-@@ -107,7 +107,7 @@ public class IronGolem extends AbstractGolem implements NeutralMob {
+@@ -107,7 +_,7 @@
      @Override
      protected void doPush(final Entity entity) {
          if (entity instanceof Enemy && !(entity instanceof Creeper) && this.getRandom().nextInt(20) == 0) {
@@ -17,7 +9,7 @@ index 474e8afa6534234b5f43b88a9fda98747e980cbb..d517d59dc3e05be34dbeebb640a038dc
          }
  
          super.doPush(entity);
-@@ -305,7 +305,7 @@ public class IronGolem extends AbstractGolem implements NeutralMob {
+@@ -305,7 +_,7 @@
          BlockPos pos = this.blockPosition();
          BlockPos belowPos = pos.below();
          BlockState below = level.getBlockState(belowPos);

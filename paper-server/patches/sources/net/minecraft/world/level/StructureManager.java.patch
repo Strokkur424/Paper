@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/level/StructureManager.java b/net/minecraft/world/level/StructureManager.java
-index 88803a3d3a5b7489fd33ada2aa6d7dc9ae0d7289..a8f00da4d5c7cca9b6948d7c2d5114f84fdacc00 100644
 --- a/net/minecraft/world/level/StructureManager.java
 +++ b/net/minecraft/world/level/StructureManager.java
-@@ -48,7 +48,13 @@ public class StructureManager {
+@@ -48,7 +_,13 @@
      }
  
      public List<StructureStart> startsForStructure(final ChunkPos pos, final Predicate<Structure> matcher) {
@@ -23,7 +15,7 @@ index 88803a3d3a5b7489fd33ada2aa6d7dc9ae0d7289..a8f00da4d5c7cca9b6948d7c2d5114f8
          Builder<StructureStart> result = ImmutableList.builder();
  
          for (Entry<Structure, LongSet> entry : allReferences.entrySet()) {
-@@ -111,14 +117,29 @@ public class StructureManager {
+@@ -111,14 +_,29 @@
      }
  
      public StructureStart getStructureWithPieceAt(final BlockPos blockPos, final HolderSet<Structure> structures) {

@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/server/jsonrpc/methods/IpBanlistService.java b/net/minecraft/server/jsonrpc/methods/IpBanlistService.java
-index 1f41ab89eba6480ed8c9cbbfe6beae167d5b7649..94472181457c43426154c554a113009094214ce6 100644
 --- a/net/minecraft/server/jsonrpc/methods/IpBanlistService.java
 +++ b/net/minecraft/server/jsonrpc/methods/IpBanlistService.java
-@@ -33,7 +33,7 @@ public class IpBanlistService {
+@@ -33,7 +_,7 @@
          bans.stream()
              .map(ban -> banIp(minecraftApi, ban, clientInfo))
              .flatMap(Collection::stream)
@@ -17,7 +9,7 @@ index 1f41ab89eba6480ed8c9cbbfe6beae167d5b7649..94472181457c43426154c554a1130090
          return get(minecraftApi);
      }
  
-@@ -83,7 +83,7 @@ public class IpBanlistService {
+@@ -83,7 +_,7 @@
          finalBanlist.stream()
              .filter(ban -> !currentBans.contains(ban))
              .flatMap(ban -> minecraftApi.playerListService().getPlayersWithAddress(ban.ip()).stream())

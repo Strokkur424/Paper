@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/network/FriendlyByteBuf.java b/net/minecraft/network/FriendlyByteBuf.java
-index 64fcd8520d2ad7cb2c95111db7f0cbdb98c410e0..216898464b92ffd4c483f74bc9304994c44b6e6a 100644
 --- a/net/minecraft/network/FriendlyByteBuf.java
 +++ b/net/minecraft/network/FriendlyByteBuf.java
-@@ -59,11 +59,17 @@ import org.jspecify.annotations.Nullable;
+@@ -59,11 +_,17 @@
  
  public class FriendlyByteBuf extends ByteBuf {
      private final ByteBuf source;
@@ -26,7 +18,7 @@ index 64fcd8520d2ad7cb2c95111db7f0cbdb98c410e0..216898464b92ffd4c483f74bc9304994
          this.source = source;
      }
  
-@@ -92,8 +98,13 @@ public class FriendlyByteBuf extends ByteBuf {
+@@ -92,8 +_,13 @@
      }
  
      public <T> void writeJsonWithCodec(final Codec<T> codec, final T value) {
@@ -41,7 +33,7 @@ index 64fcd8520d2ad7cb2c95111db7f0cbdb98c410e0..216898464b92ffd4c483f74bc9304994
      }
  
      public void readWithCount(final Consumer<FriendlyByteBuf> reader) {
-@@ -438,7 +449,7 @@ public class FriendlyByteBuf extends ByteBuf {
+@@ -438,7 +_,7 @@
  
          try {
              NbtIo.writeAnyTag(tag, new ByteBufOutputStream(output));

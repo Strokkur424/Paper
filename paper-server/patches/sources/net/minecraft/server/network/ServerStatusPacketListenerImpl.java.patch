@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/server/network/ServerStatusPacketListenerImpl.java b/net/minecraft/server/network/ServerStatusPacketListenerImpl.java
-index 8b0394e49d804362ad4bfc2d29e891308a700e89..fc7b0b1dd054bddd830983b7f07a92169c886518 100644
 --- a/net/minecraft/server/network/ServerStatusPacketListenerImpl.java
 +++ b/net/minecraft/server/network/ServerStatusPacketListenerImpl.java
-@@ -36,7 +36,8 @@ public class ServerStatusPacketListenerImpl implements ServerStatusPacketListene
+@@ -36,7 +_,8 @@
              this.connection.disconnect(DISCONNECT_REASON);
          } else {
              this.hasRequestedStatus = true;

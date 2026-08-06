@@ -1,0 +1,39 @@
+--- a/data/minecraft/enchantment/fire_protection.json
++++ b/data/minecraft/enchantment/fire_protection.json
+@@ -27,19 +_,24 @@
+           }
+         },
+         "requirements": {
+-          "type": "minecraft:damage_source_properties",
+-          "predicate": {
+-            "tags": [
+-              {
+-                "expected": true,
+-                "id": "#minecraft:is_fire"
+-              },
+-              {
+-                "expected": false,
+-                "id": "#minecraft:bypasses_invulnerability"
++          "condition": "minecraft:all_of",
++          "terms": [
++            {
++              "condition": "minecraft:damage_source_properties",
++              "predicate": {
++                "tags": [
++                  {
++                    "expected": true,
++                    "id": "minecraft:is_fire"
++                  },
++                  {
++                    "expected": false,
++                    "id": "minecraft:bypasses_invulnerability"
++                  }
++                ]
+               }
+-            ]
+-          }
++            }
++          ]
+         }
+       }
+     ]

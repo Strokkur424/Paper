@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/building_blocks/crimson_hyphae.json
++++ b/data/minecraft/advancement/recipes/building_blocks/crimson_hyphae.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:crimson_hyphae"
++        "recipe": "minecraft:crimson_hyphae"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

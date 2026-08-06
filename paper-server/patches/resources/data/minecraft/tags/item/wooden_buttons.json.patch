@@ -1,0 +1,11 @@
+--- a/data/minecraft/tags/item/wooden_buttons.json
++++ b/data/minecraft/tags/item/wooden_buttons.json
+@@ -11,7 +_,6 @@
+     "minecraft:warped_button",
+     "minecraft:mangrove_button",
+     "minecraft:bamboo_button",
+-    "minecraft:cherry_button",
+-    "minecraft:poplar_button"
++    "minecraft:cherry_button"
+   ]
+ }

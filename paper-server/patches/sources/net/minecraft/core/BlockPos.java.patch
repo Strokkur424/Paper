@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/core/BlockPos.java b/net/minecraft/core/BlockPos.java
-index 433f7aa780e583f16ab794fb6713ed41c5d4049d..70cf995b9d13a030f0e48f033b9e67926808c262 100644
 --- a/net/minecraft/core/BlockPos.java
 +++ b/net/minecraft/core/BlockPos.java
-@@ -141,67 +141,84 @@ public class BlockPos extends Vec3i {
+@@ -141,67 +_,84 @@
  
      @Override
      public BlockPos above() {
@@ -106,7 +98,7 @@ index 433f7aa780e583f16ab794fb6713ed41c5d4049d..70cf995b9d13a030f0e48f033b9e6792
      }
  
      @Override
-@@ -667,9 +684,9 @@ public class BlockPos extends Vec3i {
+@@ -667,9 +_,9 @@
          }
  
          public BlockPos.MutableBlockPos set(final int x, final int y, final int z) {
@@ -119,7 +111,7 @@ index 433f7aa780e583f16ab794fb6713ed41c5d4049d..70cf995b9d13a030f0e48f033b9e6792
              return this;
          }
  
-@@ -727,19 +744,19 @@ public class BlockPos extends Vec3i {
+@@ -727,19 +_,19 @@
  
          @Override
          public BlockPos.MutableBlockPos setX(final int x) {

@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/decorations/cherry_fence.json
++++ b/data/minecraft/advancement/recipes/decorations/cherry_fence.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:cherry_fence"
++        "recipe": "minecraft:cherry_fence"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

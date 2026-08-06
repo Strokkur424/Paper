@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/tools/brush.json
++++ b/data/minecraft/advancement/recipes/tools/brush.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:brush"
++        "recipe": "minecraft:brush"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

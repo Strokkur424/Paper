@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/misc/stick_from_bamboo_item.json
++++ b/data/minecraft/advancement/recipes/misc/stick_from_bamboo_item.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:stick_from_bamboo_item"
++        "recipe": "minecraft:stick_from_bamboo_item"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

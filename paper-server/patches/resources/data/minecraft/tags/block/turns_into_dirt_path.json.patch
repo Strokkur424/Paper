@@ -1,0 +1,13 @@
+--- a/data/minecraft/tags/block/turns_into_dirt_path.json
++++ /dev/null
+@@ -1,10 +_,0 @@
+-{
+-  "values": [
+-    "minecraft:grass_block",
+-    "minecraft:dirt",
+-    "minecraft:podzol",
+-    "minecraft:coarse_dirt",
+-    "minecraft:mycelium",
+-    "minecraft:rooted_dirt"
+-  ]
+-}

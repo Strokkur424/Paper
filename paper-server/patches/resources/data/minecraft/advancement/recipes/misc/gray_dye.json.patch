@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/misc/gray_dye.json
++++ b/data/minecraft/advancement/recipes/misc/gray_dye.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:gray_dye"
++        "recipe": "minecraft:gray_dye"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     },

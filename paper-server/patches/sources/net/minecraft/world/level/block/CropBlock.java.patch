@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/level/block/CropBlock.java b/net/minecraft/world/level/block/CropBlock.java
-index 5e8855df9d198fe5057b1b304b0f004a80895cfe..f7d3cfe3439d63665c2050b3e95b39a947a7fb2e 100644
 --- a/net/minecraft/world/level/block/CropBlock.java
 +++ b/net/minecraft/world/level/block/CropBlock.java
-@@ -74,8 +74,25 @@ public class CropBlock extends VegetationBlock implements BonemealableBlock {
+@@ -74,8 +_,25 @@
              int age = this.getAge(state);
              if (age < this.getMaxAge()) {
                  float growthSpeed = getGrowthSpeed(this, level, pos);
@@ -36,7 +28,7 @@ index 5e8855df9d198fe5057b1b304b0f004a80895cfe..f7d3cfe3439d63665c2050b3e95b39a9
                  }
              }
          }
-@@ -83,7 +100,7 @@ public class CropBlock extends VegetationBlock implements BonemealableBlock {
+@@ -83,7 +_,7 @@
  
      public void growCrops(final Level level, final BlockPos pos, final BlockState state) {
          int age = Math.min(this.getMaxAge(), this.getAge(state) + this.getBonemealAgeIncrease(level));
@@ -45,7 +37,7 @@ index 5e8855df9d198fe5057b1b304b0f004a80895cfe..f7d3cfe3439d63665c2050b3e95b39a9
      }
  
      protected int getBonemealAgeIncrease(final Level level) {
-@@ -152,7 +169,8 @@ public class CropBlock extends VegetationBlock implements BonemealableBlock {
+@@ -152,7 +_,8 @@
          final InsideBlockEffectApplier effectApplier,
          final boolean isPrecise
      ) {

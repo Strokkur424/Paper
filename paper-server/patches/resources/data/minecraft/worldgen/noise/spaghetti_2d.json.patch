@@ -1,0 +1,11 @@
+--- a/data/minecraft/worldgen/noise/spaghetti_2d.json
++++ b/data/minecraft/worldgen/noise/spaghetti_2d.json
+@@ -1,4 +_,6 @@
+ {
+-  "base_amplitude": 0.955388882960065,
+-  "base_octave": -7
++  "amplitudes": [
++    1.0
++  ],
++  "firstOctave": -7
+ }

@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/decorations/tuff_wall.json
++++ b/data/minecraft/advancement/recipes/decorations/tuff_wall.json
+@@ -3,7 +_,7 @@
+   "criteria": {
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:tuff_wall"
++        "recipe": "minecraft:tuff_wall"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     },

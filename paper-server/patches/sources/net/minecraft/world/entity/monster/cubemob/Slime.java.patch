@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/entity/monster/cubemob/Slime.java b/net/minecraft/world/entity/monster/cubemob/Slime.java
-index c9fefc926cc119142bd92033066a710638f20014..984ec15bdebcb541cd6ee9014a654ea58988f6f1 100644
 --- a/net/minecraft/world/entity/monster/cubemob/Slime.java
 +++ b/net/minecraft/world/entity/monster/cubemob/Slime.java
-@@ -78,7 +78,11 @@ public class Slime extends AbstractCubeMob implements Enemy {
+@@ -78,7 +_,11 @@
                  return checkMobSpawnRules(type, level, spawnReason, pos, random);
              }
  
@@ -21,7 +13,7 @@ index c9fefc926cc119142bd92033066a710638f20014..984ec15bdebcb541cd6ee9014a654ea5
                  float surfaceSlimeSpawnChance = level.environmentAttributes().getValue(EnvironmentAttributes.SURFACE_SLIME_SPAWN_CHANCE, pos);
                  if (random.nextFloat() < surfaceSlimeSpawnChance && level.getMaxLocalRawBrightness(pos) <= random.nextInt(8)) {
                      return checkMobSpawnRules(type, level, spawnReason, pos, random);
-@@ -90,8 +94,11 @@ public class Slime extends AbstractCubeMob implements Enemy {
+@@ -90,8 +_,11 @@
              }
  
              ChunkPos chunkPos = ChunkPos.containing(pos);

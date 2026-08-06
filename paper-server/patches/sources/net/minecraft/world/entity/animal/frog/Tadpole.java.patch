@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/entity/animal/frog/Tadpole.java b/net/minecraft/world/entity/animal/frog/Tadpole.java
-index d392a29788b280da32117acad3d092911cabbc22..296cae1d5f5a3a054949ee03e2a2552bfeae4682 100644
 --- a/net/minecraft/world/entity/animal/frog/Tadpole.java
 +++ b/net/minecraft/world/entity/animal/frog/Tadpole.java
-@@ -128,7 +128,7 @@ public class Tadpole extends AbstractFish {
+@@ -128,7 +_,7 @@
          entityData.define(AGE_LOCKED, false);
      }
  
@@ -17,7 +9,7 @@ index d392a29788b280da32117acad3d092911cabbc22..296cae1d5f5a3a054949ee03e2a2552b
          this.entityData.set(AGE_LOCKED, locked);
      }
  
-@@ -158,6 +158,11 @@ public class Tadpole extends AbstractFish {
+@@ -158,6 +_,11 @@
              this.feed(player, itemStack);
              return InteractionResult.SUCCESS;
          } else if (AgeableMob.canUseGoldenDandelion(itemStack, true, this.ageLockParticleTimer, this)) {
@@ -29,7 +21,7 @@ index d392a29788b280da32117acad3d092911cabbc22..296cae1d5f5a3a054949ee03e2a2552b
              AgeableMob.setAgeLocked(this, this::isAgeLocked, player, itemStack, mob -> this.setAgeLockedData());
              return InteractionResult.SUCCESS;
          } else {
-@@ -237,12 +242,17 @@ public class Tadpole extends AbstractFish {
+@@ -237,12 +_,17 @@
  
      private void ageUp() {
          if (this.level() instanceof ServerLevel serverLevel) {

@@ -1,0 +1,30 @@
+--- a/data/minecraft/advancement/adventure/spyglass_at_ghast.json
++++ b/data/minecraft/advancement/adventure/spyglass_at_ghast.json
+@@ -6,17 +_,19 @@
+         "item": {
+           "items": "minecraft:spyglass"
+         },
+-        "player": {
+-          "type": "minecraft:entity_properties",
+-          "entity": "this",
+-          "predicate": {
+-            "minecraft:type_specific/player": {
+-              "looking_at": {
+-                "minecraft:entity_type": "minecraft:ghast"
++        "player": [
++          {
++            "condition": "minecraft:entity_properties",
++            "entity": "this",
++            "predicate": {
++              "minecraft:type_specific/player": {
++                "looking_at": {
++                  "minecraft:entity_type": "minecraft:ghast"
++                }
+               }
+             }
+           }
+-        }
++        ]
+       },
+       "trigger": "minecraft:using_item"
+     }

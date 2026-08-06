@@ -1,0 +1,89 @@
+--- a/data/minecraft/loot_table/blocks/gilded_blackstone.json
++++ b/data/minecraft/loot_table/blocks/gilded_blackstone.json
+@@ -8,7 +_,23 @@
+           "children": [
+             {
+               "type": "minecraft:item",
+-              "condition": "minecraft:tool/can_silk_touch",
++              "conditions": [
++                {
++                  "condition": "minecraft:match_tool",
++                  "predicate": {
++                    "predicates": {
++                      "minecraft:enchantments": [
++                        {
++                          "enchantments": "minecraft:silk_touch",
++                          "levels": {
++                            "min": 1
++                          }
++                        }
++                      ]
++                    }
++                  }
++                }
++              ],
+               "name": "minecraft:gilded_blackstone"
+             },
+             {
+@@ -16,24 +_,28 @@
+               "children": [
+                 {
+                   "type": "minecraft:item",
+-                  "condition": {
+-                    "type": "minecraft:table_bonus",
+-                    "chances": [
+-                      0.1,
+-                      0.14285715,
+-                      0.25,
+-                      1.0
+-                    ],
+-                    "enchantment": "minecraft:fortune"
+-                  },
+-                  "modifier": {
+-                    "type": "minecraft:set_count",
+-                    "count": {
+-                      "type": "minecraft:uniform",
+-                      "max": 5.0,
+-                      "min": 2.0
+-                    }
+-                  },
++                  "conditions": [
++                    {
++                      "chances": [
++                        0.1,
++                        0.14285715,
++                        0.25,
++                        1.0
++                      ],
++                      "condition": "minecraft:table_bonus",
++                      "enchantment": "minecraft:fortune"
++                    }
++                  ],
++                  "functions": [
++                    {
++                      "count": {
++                        "type": "minecraft:uniform",
++                        "max": 5.0,
++                        "min": 2.0
++                      },
++                      "function": "minecraft:set_count"
++                    }
++                  ],
+                   "name": "minecraft:gold_nugget"
+                 },
+                 {
+@@ -41,9 +_,11 @@
+                   "name": "minecraft:gilded_blackstone"
+                 }
+               ],
+-              "condition": {
+-                "type": "minecraft:survives_explosion"
+-              }
++              "conditions": [
++                {
++                  "condition": "minecraft:survives_explosion"
++                }
++              ]
+             }
+           ]
+         }

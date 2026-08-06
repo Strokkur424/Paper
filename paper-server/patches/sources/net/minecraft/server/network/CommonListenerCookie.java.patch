@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/server/network/CommonListenerCookie.java b/net/minecraft/server/network/CommonListenerCookie.java
-index 5d93fba389e86c2c5112c06191dec783c107f76d..021c2b0d4d8b55cb74b16a1210535e97576a83f1 100644
 --- a/net/minecraft/server/network/CommonListenerCookie.java
 +++ b/net/minecraft/server/network/CommonListenerCookie.java
-@@ -3,8 +3,8 @@ package net.minecraft.server.network;
+@@ -3,8 +_,8 @@
  import com.mojang.authlib.GameProfile;
  import net.minecraft.server.level.ClientInformation;
  

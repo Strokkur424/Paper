@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/level/block/CrafterBlock.java b/net/minecraft/world/level/block/CrafterBlock.java
-index bcecf4fa147bb42f3d2cfed54cf9c5bbd7cc1155..e1ace2d92505eac2b39f829bf37a93a9b4e989c4 100644
 --- a/net/minecraft/world/level/block/CrafterBlock.java
 +++ b/net/minecraft/world/level/block/CrafterBlock.java
-@@ -149,6 +149,13 @@ public class CrafterBlock extends BaseEntityBlock {
+@@ -149,6 +_,13 @@
              } else {
                  RecipeHolder<CraftingRecipe> pickedRecipe = recipe.get();
                  ItemStack results = pickedRecipe.value().assemble(var11);
@@ -22,7 +14,7 @@ index bcecf4fa147bb42f3d2cfed54cf9c5bbd7cc1155..e1ace2d92505eac2b39f829bf37a93a9
                  if (results.isEmpty()) {
                      level.levelEvent(LevelEvent.SOUND_CRAFTER_FAIL, pos, 0);
                  } else {
-@@ -190,7 +197,25 @@ public class CrafterBlock extends BaseEntityBlock {
+@@ -190,7 +_,25 @@
          Container into = HopperBlockEntity.getContainerAt(level, pos.relative(direction));
          ItemStack remaining = results.copy();
          if (into != null && (into instanceof CrafterBlockEntity || results.getCount() > into.getMaxStackSize(results))) {
@@ -48,7 +40,7 @@ index bcecf4fa147bb42f3d2cfed54cf9c5bbd7cc1155..e1ace2d92505eac2b39f829bf37a93a9
                  ItemStack copy = remaining.copyWithCount(1);
                  ItemStack itemStack = HopperBlockEntity.addItem(blockEntity, into, copy, direction.getOpposite());
                  if (!itemStack.isEmpty()) {
-@@ -200,7 +225,25 @@ public class CrafterBlock extends BaseEntityBlock {
+@@ -200,7 +_,25 @@
                  remaining.shrink(1);
              }
          } else if (into != null) {

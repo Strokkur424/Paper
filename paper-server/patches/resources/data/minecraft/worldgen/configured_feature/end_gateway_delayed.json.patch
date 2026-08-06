@@ -1,0 +1,9 @@
+--- /dev/null
++++ b/data/minecraft/worldgen/configured_feature/end_gateway_delayed.json
+@@ -1,0 +_,6 @@
++{
++  "type": "minecraft:end_gateway",
++  "config": {
++    "exact": false
++  }
++}

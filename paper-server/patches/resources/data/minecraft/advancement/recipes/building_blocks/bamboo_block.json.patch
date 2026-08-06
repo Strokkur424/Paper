@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/building_blocks/bamboo_block.json
++++ b/data/minecraft/advancement/recipes/building_blocks/bamboo_block.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:bamboo_block"
++        "recipe": "minecraft:bamboo_block"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

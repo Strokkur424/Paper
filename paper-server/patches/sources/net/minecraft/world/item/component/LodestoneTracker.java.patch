@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/item/component/LodestoneTracker.java b/net/minecraft/world/item/component/LodestoneTracker.java
-index d8d273972ce0b65e86e92c23198fc571c94a6e10..65fe2c5b19e37c6800a54c6945eec7df9c505749 100644
 --- a/net/minecraft/world/item/component/LodestoneTracker.java
 +++ b/net/minecraft/world/item/component/LodestoneTracker.java
-@@ -30,7 +30,7 @@ public record LodestoneTracker(Optional<GlobalPos> target, boolean tracked) {
+@@ -30,7 +_,7 @@
              }
  
              BlockPos blockPos = this.target.get().pos();

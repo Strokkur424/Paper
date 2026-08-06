@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/core/dispenser/EquipmentDispenseItemBehavior.java b/net/minecraft/core/dispenser/EquipmentDispenseItemBehavior.java
-index 2c6b0a8b371bbdbeb05c6bcd557d2b0d1eb07cef..bdf3395a2ee7331ad8eef432380eca10c8755e36 100644
 --- a/net/minecraft/core/dispenser/EquipmentDispenseItemBehavior.java
 +++ b/net/minecraft/core/dispenser/EquipmentDispenseItemBehavior.java
-@@ -14,10 +14,17 @@ public class EquipmentDispenseItemBehavior extends DefaultDispenseItemBehavior {
+@@ -14,10 +_,17 @@
  
      @Override
      protected ItemStack execute(final BlockSource source, final ItemStack dispensed) {
@@ -27,7 +19,7 @@ index 2c6b0a8b371bbdbeb05c6bcd557d2b0d1eb07cef..bdf3395a2ee7331ad8eef432380eca10
          BlockPos pos = source.pos().relative(source.state().getValue(DispenserBlock.FACING));
          List<LivingEntity> entities = source.level().getEntitiesOfClass(LivingEntity.class, new AABB(pos), entity -> entity.canEquipWithDispenser(dispensed));
          if (entities.isEmpty()) {
-@@ -26,13 +33,39 @@ public class EquipmentDispenseItemBehavior extends DefaultDispenseItemBehavior {
+@@ -26,13 +_,39 @@
  
          LivingEntity target = entities.getFirst();
          EquipmentSlot slot = target.getEquipmentSlotForItem(dispensed);

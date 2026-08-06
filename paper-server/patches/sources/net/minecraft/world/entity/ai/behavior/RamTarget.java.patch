@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/entity/ai/behavior/RamTarget.java b/net/minecraft/world/entity/ai/behavior/RamTarget.java
-index c1ecab6573a3ccbc811fd48e4f4589443e382b21..1b38f4aca224674ff2d72ea945161f574384952f 100644
 --- a/net/minecraft/world/entity/ai/behavior/RamTarget.java
 +++ b/net/minecraft/world/entity/ai/behavior/RamTarget.java
-@@ -97,7 +97,7 @@ public class RamTarget extends Behavior<Goat> {
+@@ -97,7 +_,7 @@
              float blockedDamage = ramTarget.applyItemBlocking(level, source, damage);
              float blockingFactor = blockedDamage > 0.0F ? 0.5F : 1.0F;
              ramTarget.knockback(

@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/server/network/ServerCommonPacketListenerImpl.java b/net/minecraft/server/network/ServerCommonPacketListenerImpl.java
-index 59c81395a4db30335de38936480a76fe72538d9f..563d5b7915bb321365f40246cce5cc087a0f445b 100644
 --- a/net/minecraft/server/network/ServerCommonPacketListenerImpl.java
 +++ b/net/minecraft/server/network/ServerCommonPacketListenerImpl.java
-@@ -37,7 +37,7 @@ public abstract class ServerCommonPacketListenerImpl implements ServerCommonPack
+@@ -37,7 +_,7 @@
      private static final Component TIMEOUT_DISCONNECTION_MESSAGE = Component.translatable("disconnect.timeout");
      static final Component DISCONNECT_UNEXPECTED_QUERY = Component.translatable("multiplayer.disconnect.unexpected_query_response");
      protected final MinecraftServer server;
@@ -17,7 +9,7 @@ index 59c81395a4db30335de38936480a76fe72538d9f..563d5b7915bb321365f40246cce5cc08
      private final boolean transferred;
      private long keepAliveTime;
      private boolean keepAlivePending;
-@@ -46,6 +46,16 @@ public abstract class ServerCommonPacketListenerImpl implements ServerCommonPack
+@@ -46,6 +_,16 @@
      private boolean closed = false;
      private int latency;
      private volatile boolean suspendFlushingOnServerThread = false;
@@ -34,7 +26,7 @@ index 59c81395a4db30335de38936480a76fe72538d9f..563d5b7915bb321365f40246cce5cc08
  
      public ServerCommonPacketListenerImpl(final MinecraftServer server, final Connection connection, final CommonListenerCookie cookie) {
          this.server = server;
-@@ -53,8 +63,19 @@ public abstract class ServerCommonPacketListenerImpl implements ServerCommonPack
+@@ -53,7 +_,18 @@
          this.keepAliveTime = Util.getMillis();
          this.latency = cookie.latency();
          this.transferred = cookie.transferred();
@@ -44,17 +36,16 @@ index 59c81395a4db30335de38936480a76fe72538d9f..563d5b7915bb321365f40246cce5cc08
 +        this.pluginMessagerChannels = cookie.channels();
 +        // Paper end
      }
- 
++
 +    // Paper start - configuration phase API
 +    public abstract io.papermc.paper.connection.PlayerCommonConnection getApiConnection();
 +
 +    public abstract net.kyori.adventure.audience.Audience getAudience();
 +    // Paper end - configuration phase API
-+
+ 
      private void close() {
          if (!this.closed) {
-             this.closedListenerTime = Util.getMillis();
-@@ -83,7 +104,7 @@ public abstract class ServerCommonPacketListenerImpl implements ServerCommonPack
+@@ -83,7 +_,7 @@
              this.latency = (this.latency * 3 + time) / 4;
              this.keepAlivePending = false;
          } else if (!this.isSingleplayerOwner()) {
@@ -63,7 +54,7 @@ index 59c81395a4db30335de38936480a76fe72538d9f..563d5b7915bb321365f40246cce5cc08
          }
      }
  
-@@ -91,14 +112,88 @@ public abstract class ServerCommonPacketListenerImpl implements ServerCommonPack
+@@ -91,14 +_,88 @@
      public void handlePong(final ServerboundPongPacket serverboundPongPacket) {
      }
  
@@ -152,11 +143,12 @@ index 59c81395a4db30335de38936480a76fe72538d9f..563d5b7915bb321365f40246cce5cc08
      }
  
      @Override
-@@ -106,21 +201,46 @@ public abstract class ServerCommonPacketListenerImpl implements ServerCommonPack
+@@ -106,21 +_,46 @@
          PacketUtils.ensureRunningOnSameThread(packet, this, this.server.packetProcessor());
          if (packet.action() == ServerboundResourcePackPacket.Action.DECLINED && this.server.isResourcePackRequired()) {
              LOGGER.info("Disconnecting {} due to resource pack {} rejection", this.playerProfile().name(), packet.id());
 -            this.disconnect(Component.translatable("multiplayer.requiredTexturePrompt.disconnect"));
+-        }
 +            this.disconnect(Component.translatable("multiplayer.requiredTexturePrompt.disconnect"), io.papermc.paper.connection.DisconnectionReason.RESOURCE_PACK_REJECTION); // Paper - kick event cause
 +        }
 +        // Paper start - adventure pack callbacks
@@ -166,7 +158,7 @@ index 59c81395a4db30335de38936480a76fe72538d9f..563d5b7915bb321365f40246cce5cc08
 +            callback = this.packCallbacks.remove(packet.id());
 +        } else {
 +            callback = this.packCallbacks.get(packet.id());
-         }
++        }
 +        if (callback != null) {
 +            net.kyori.adventure.audience.Audience audience = switch (this) {
 +                case ServerGamePacketListenerImpl serverGamePacketListener -> serverGamePacketListener.getCraftPlayer();
@@ -203,7 +195,7 @@ index 59c81395a4db30335de38936480a76fe72538d9f..563d5b7915bb321365f40246cce5cc08
              } else if (this.checkIfClosed(now)) {
                  this.keepAlivePending = true;
                  this.keepAliveTime = now;
-@@ -135,7 +255,7 @@ public abstract class ServerCommonPacketListenerImpl implements ServerCommonPack
+@@ -135,7 +_,7 @@
      private boolean checkIfClosed(final long now) {
          if (this.closed) {
              if (now - this.closedListenerTime >= 15000L) {
@@ -212,7 +204,7 @@ index 59c81395a4db30335de38936480a76fe72538d9f..563d5b7915bb321365f40246cce5cc08
              }
  
              return false;
-@@ -158,6 +278,13 @@ public abstract class ServerCommonPacketListenerImpl implements ServerCommonPack
+@@ -158,6 +_,13 @@
      }
  
      public void send(final Packet<?> packet, final @Nullable ChannelFutureListener listener) {
@@ -226,7 +218,7 @@ index 59c81395a4db30335de38936480a76fe72538d9f..563d5b7915bb321365f40246cce5cc08
          if (packet.isTerminal()) {
              this.close();
          }
-@@ -174,16 +301,109 @@ public abstract class ServerCommonPacketListenerImpl implements ServerCommonPack
+@@ -174,15 +_,108 @@
          }
      }
  
@@ -313,6 +305,7 @@ index 59c81395a4db30335de38936480a76fe72538d9f..563d5b7915bb321365f40246cce5cc08
          this.connection.send(new ClientboundDisconnectPacket(details.reason()), PacketSendListener.thenRun(() -> this.connection.disconnect(details)));
          this.connection.setReadOnly();
 -        this.server.executeBlocking(this.connection::handleDisconnection);
+-    }
 +        this.connection.handleConnectionDisconnectOnNextTick = true; // Paper - Force kill connection ticking. Let this close the connection
 +    }
 +
@@ -324,8 +317,8 @@ index 59c81395a4db30335de38936480a76fe72538d9f..563d5b7915bb321365f40246cce5cc08
 +    @Deprecated @io.papermc.paper.annotation.DoNotUse
 +    public final void disconnectAsync(Component component) {
 +        this.disconnectAsync(component, io.papermc.paper.connection.DisconnectionReason.UNKNOWN);
-     }
- 
++    }
++
 +    public abstract void disconnectAsync(DisconnectionDetails disconnectionInfo);
 +
 +    public boolean isTransferred() {
@@ -334,11 +327,10 @@ index 59c81395a4db30335de38936480a76fe72538d9f..563d5b7915bb321365f40246cce5cc08
 +
 +    public abstract io.papermc.paper.connection.PaperCommonConnection<?> paperConnection();
 +    // Paper end - add proper async disconnect
-+
+ 
      protected boolean isSingleplayerOwner() {
          return this.server.isSingleplayerOwner(new NameAndId(this.playerProfile()));
-     }
-@@ -200,6 +420,6 @@ public abstract class ServerCommonPacketListenerImpl implements ServerCommonPack
+@@ -200,6 +_,6 @@
      }
  
      protected CommonListenerCookie createCookie(final ClientInformation clientInformation) {

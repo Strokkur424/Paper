@@ -1,0 +1,65 @@
+--- a/data/minecraft/loot_table/gameplay/fishing/treasure.json
++++ b/data/minecraft/loot_table/gameplay/fishing/treasure.json
+@@ -13,17 +_,17 @@
+         },
+         {
+           "type": "minecraft:item",
+-          "modifier": [
++          "functions": [
+             {
+-              "type": "minecraft:set_damage",
+               "damage": {
+                 "type": "minecraft:uniform",
+                 "max": 0.25,
+                 "min": 0.0
+-              }
++              },
++              "function": "minecraft:set_damage"
+             },
+             {
+-              "type": "minecraft:enchant_with_levels",
++              "function": "minecraft:enchant_with_levels",
+               "levels": 30.0,
+               "options": "#minecraft:on_random_loot"
+             }
+@@ -32,17 +_,17 @@
+         },
+         {
+           "type": "minecraft:item",
+-          "modifier": [
++          "functions": [
+             {
+-              "type": "minecraft:set_damage",
+               "damage": {
+                 "type": "minecraft:uniform",
+                 "max": 0.25,
+                 "min": 0.0
+-              }
++              },
++              "function": "minecraft:set_damage"
+             },
+             {
+-              "type": "minecraft:enchant_with_levels",
++              "function": "minecraft:enchant_with_levels",
+               "levels": 30.0,
+               "options": "#minecraft:on_random_loot"
+             }
+@@ -51,11 +_,13 @@
+         },
+         {
+           "type": "minecraft:item",
+-          "modifier": {
+-            "type": "minecraft:enchant_with_levels",
+-            "levels": 30.0,
+-            "options": "#minecraft:on_random_loot"
+-          },
++          "functions": [
++            {
++              "function": "minecraft:enchant_with_levels",
++              "levels": 30.0,
++              "options": "#minecraft:on_random_loot"
++            }
++          ],
+           "name": "minecraft:book"
+         },
+         {

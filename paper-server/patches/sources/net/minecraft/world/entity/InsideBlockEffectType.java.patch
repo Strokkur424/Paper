@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/entity/InsideBlockEffectType.java b/net/minecraft/world/entity/InsideBlockEffectType.java
-index c68898581888a60f1fc1aceb09db2ef8ca7b5653..6414b5deab539d9e7af26e0f95dcdd7eab989c11 100644
 --- a/net/minecraft/world/entity/InsideBlockEffectType.java
 +++ b/net/minecraft/world/entity/InsideBlockEffectType.java
-@@ -6,22 +6,35 @@ import net.minecraft.world.level.block.BaseFireBlock;
+@@ -6,22 +_,35 @@
  public enum InsideBlockEffectType {
      FREEZE(entity -> {
          entity.setIsInPowderSnow(true);

@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/damagesource/DamageSource.java b/net/minecraft/world/damagesource/DamageSource.java
-index 39d0b55800785b84925f99da4332aacd3e56d17e..448504347d6c6c2553aeb34ef20499fc74f844a8 100644
 --- a/net/minecraft/world/damagesource/DamageSource.java
 +++ b/net/minecraft/world/damagesource/DamageSource.java
-@@ -17,6 +17,90 @@ public class DamageSource {
+@@ -17,6 +_,90 @@
      private final @Nullable Entity causingEntity;
      private final @Nullable Entity directEntity;
      private final @Nullable Vec3 damageSourcePosition;

@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/food/baked_potato_from_smoking.json
++++ b/data/minecraft/advancement/recipes/food/baked_potato_from_smoking.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:baked_potato_from_smoking"
++        "recipe": "minecraft:baked_potato_from_smoking"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

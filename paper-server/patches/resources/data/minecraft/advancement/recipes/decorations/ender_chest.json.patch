@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/decorations/ender_chest.json
++++ b/data/minecraft/advancement/recipes/decorations/ender_chest.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:ender_chest"
++        "recipe": "minecraft:ender_chest"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

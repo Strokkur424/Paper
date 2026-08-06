@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/item/SnowballItem.java b/net/minecraft/world/item/SnowballItem.java
-index 12e32b2141d548fa2fb80ac5cc9ee7d044d101cb..101b259068875deb0cc8790d61664d9cd85e0667 100644
 --- a/net/minecraft/world/item/SnowballItem.java
 +++ b/net/minecraft/world/item/SnowballItem.java
-@@ -23,22 +23,40 @@ public class SnowballItem extends Item implements ProjectileItem {
+@@ -23,22 +_,40 @@
      @Override
      public InteractionResult use(final Level level, final Player player, final InteractionHand hand) {
          ItemStack itemStack = player.getItemInHand(hand);

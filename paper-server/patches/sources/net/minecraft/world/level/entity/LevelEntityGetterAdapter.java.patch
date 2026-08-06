@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/level/entity/LevelEntityGetterAdapter.java b/net/minecraft/world/level/entity/LevelEntityGetterAdapter.java
-index 6f0c1d8596d923a5dbb5d81e31d3b4823c0f5d20..7474384d85acbc497b5797b023a1cba4100c588b 100644
 --- a/net/minecraft/world/level/entity/LevelEntityGetterAdapter.java
 +++ b/net/minecraft/world/level/entity/LevelEntityGetterAdapter.java
-@@ -8,7 +8,7 @@ import org.jspecify.annotations.Nullable;
+@@ -8,7 +_,7 @@
  
  public class LevelEntityGetterAdapter<T extends EntityAccess> implements LevelEntityGetter<T> {
      private final EntityLookup<T> visibleEntities;

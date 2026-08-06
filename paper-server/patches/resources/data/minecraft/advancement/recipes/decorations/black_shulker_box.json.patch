@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/decorations/black_shulker_box.json
++++ b/data/minecraft/advancement/recipes/decorations/black_shulker_box.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:black_shulker_box"
++        "recipe": "minecraft:black_shulker_box"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

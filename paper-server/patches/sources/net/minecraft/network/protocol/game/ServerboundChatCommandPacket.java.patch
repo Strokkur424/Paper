@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/network/protocol/game/ServerboundChatCommandPacket.java b/net/minecraft/network/protocol/game/ServerboundChatCommandPacket.java
-index e58b7b01e8782d7ba78b3d404068d98a0320f64a..491af2413a4e793a121fec368259ff8211ed031e 100644
 --- a/net/minecraft/network/protocol/game/ServerboundChatCommandPacket.java
 +++ b/net/minecraft/network/protocol/game/ServerboundChatCommandPacket.java
-@@ -6,12 +6,13 @@ import net.minecraft.network.protocol.Packet;
+@@ -6,12 +_,13 @@
  import net.minecraft.network.protocol.PacketType;
  
  public record ServerboundChatCommandPacket(String command) implements Packet<ServerGamePacketListener> {

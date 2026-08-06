@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/level/block/SpawnerBlock.java b/net/minecraft/world/level/block/SpawnerBlock.java
-index 52532988ddc4584a7655837a85deba94ce5f731d..d9c4a23c23e316bd4131ac91fcebb2a66c49afc4 100644
 --- a/net/minecraft/world/level/block/SpawnerBlock.java
 +++ b/net/minecraft/world/level/block/SpawnerBlock.java
-@@ -32,10 +32,18 @@ public class SpawnerBlock extends BaseEntityBlock {
+@@ -32,10 +_,18 @@
      @Override
      protected void spawnAfterBreak(final BlockState state, final ServerLevel level, final BlockPos pos, final ItemStack tool, final boolean dropExperience) {
          super.spawnAfterBreak(state, level, pos, tool, dropExperience);

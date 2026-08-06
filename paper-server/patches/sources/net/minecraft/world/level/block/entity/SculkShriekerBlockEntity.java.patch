@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/level/block/entity/SculkShriekerBlockEntity.java b/net/minecraft/world/level/block/entity/SculkShriekerBlockEntity.java
-index 1b8556916ce821c7254fc6b4dbf9c96cab6eed6b..8ad288bfb58d888950c2404ccd287b16d34bf67f 100644
 --- a/net/minecraft/world/level/block/entity/SculkShriekerBlockEntity.java
 +++ b/net/minecraft/world/level/block/entity/SculkShriekerBlockEntity.java
-@@ -88,6 +88,13 @@ public class SculkShriekerBlockEntity extends BlockEntity implements GameEventLi
+@@ -88,6 +_,13 @@
      }
  
      public static @Nullable ServerPlayer tryGetPlayer(final @Nullable Entity sourceEntity) {
@@ -22,7 +14,7 @@ index 1b8556916ce821c7254fc6b4dbf9c96cab6eed6b..8ad288bfb58d888950c2404ccd287b16
          if (sourceEntity instanceof ServerPlayer player) {
              return player;
          } else if (sourceEntity != null && sourceEntity.getControllingPassenger() instanceof ServerPlayer player) {
-@@ -164,7 +171,7 @@ public class SculkShriekerBlockEntity extends BlockEntity implements GameEventLi
+@@ -164,7 +_,7 @@
      private boolean trySummonWarden(final ServerLevel level) {
          return this.warningLevel >= 4
              && SpawnUtil.trySpawnMob(

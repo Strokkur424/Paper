@@ -1,0 +1,8 @@
+--- a/data/minecraft/tags/worldgen/structure/on_desert_pyramid_maps.json
++++ /dev/null
+@@ -1,5 +_,0 @@
+-{
+-  "values": [
+-    "minecraft:desert_pyramid"
+-  ]
+-}

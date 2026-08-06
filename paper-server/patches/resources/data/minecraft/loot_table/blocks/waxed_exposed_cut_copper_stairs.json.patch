@@ -1,0 +1,17 @@
+--- a/data/minecraft/loot_table/blocks/waxed_exposed_cut_copper_stairs.json
++++ b/data/minecraft/loot_table/blocks/waxed_exposed_cut_copper_stairs.json
+@@ -2,9 +_,11 @@
+   "type": "minecraft:block",
+   "pools": [
+     {
+-      "condition": {
+-        "type": "minecraft:survives_explosion"
+-      },
++      "conditions": [
++        {
++          "condition": "minecraft:survives_explosion"
++        }
++      ],
+       "entries": [
+         {
+           "type": "minecraft:item",

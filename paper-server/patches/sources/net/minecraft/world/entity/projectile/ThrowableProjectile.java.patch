@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/entity/projectile/ThrowableProjectile.java b/net/minecraft/world/entity/projectile/ThrowableProjectile.java
-index 600e93fdbb99fa05a8b2d7c8457cccab450ac4de..82358c4f98a2720da6adf8c63616a810c2117919 100644
 --- a/net/minecraft/world/entity/projectile/ThrowableProjectile.java
 +++ b/net/minecraft/world/entity/projectile/ThrowableProjectile.java
-@@ -58,7 +58,7 @@ public abstract class ThrowableProjectile extends Projectile {
+@@ -58,7 +_,7 @@
          this.applyEffectsFromBlocks();
          super.tick();
          if (result.getType() != HitResult.Type.MISS && this.isAlive()) {

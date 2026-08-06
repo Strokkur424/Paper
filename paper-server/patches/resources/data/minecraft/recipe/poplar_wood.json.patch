@@ -1,0 +1,19 @@
+--- a/data/minecraft/recipe/poplar_wood.json
++++ /dev/null
+@@ -1,16 +_,0 @@
+-{
+-  "type": "minecraft:crafting_shaped",
+-  "category": "building",
+-  "group": "bark",
+-  "key": {
+-    "#": "minecraft:poplar_log"
+-  },
+-  "pattern": [
+-    "##",
+-    "##"
+-  ],
+-  "result": {
+-    "count": 3,
+-    "id": "minecraft:poplar_wood"
+-  }
+-}

@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/building_blocks/hay_block.json
++++ b/data/minecraft/advancement/recipes/building_blocks/hay_block.json
+@@ -3,7 +_,7 @@
+   "criteria": {
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:hay_block"
++        "recipe": "minecraft:hay_block"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     },

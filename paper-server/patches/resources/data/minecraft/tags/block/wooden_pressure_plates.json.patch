@@ -1,0 +1,11 @@
+--- a/data/minecraft/tags/block/wooden_pressure_plates.json
++++ b/data/minecraft/tags/block/wooden_pressure_plates.json
+@@ -11,7 +_,6 @@
+     "minecraft:warped_pressure_plate",
+     "minecraft:mangrove_pressure_plate",
+     "minecraft:bamboo_pressure_plate",
+-    "minecraft:cherry_pressure_plate",
+-    "minecraft:poplar_pressure_plate"
++    "minecraft:cherry_pressure_plate"
+   ]
+ }

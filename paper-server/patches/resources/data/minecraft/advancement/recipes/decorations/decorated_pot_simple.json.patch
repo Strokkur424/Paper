@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/decorations/decorated_pot_simple.json
++++ b/data/minecraft/advancement/recipes/decorations/decorated_pot_simple.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:decorated_pot_simple"
++        "recipe": "minecraft:decorated_pot_simple"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

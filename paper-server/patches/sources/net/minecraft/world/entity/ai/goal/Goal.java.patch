@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/entity/ai/goal/Goal.java b/net/minecraft/world/entity/ai/goal/Goal.java
-index c50e8aea838dd27e4925445e46e16aa2d80ef363..aa5f0e00daf26650b943a24676638581e494a112 100644
 --- a/net/minecraft/world/entity/ai/goal/Goal.java
 +++ b/net/minecraft/world/entity/ai/goal/Goal.java
-@@ -46,6 +46,17 @@ public abstract class Goal {
+@@ -46,6 +_,17 @@
          return this.flags;
      }
  
@@ -26,7 +18,7 @@ index c50e8aea838dd27e4925445e46e16aa2d80ef363..aa5f0e00daf26650b943a24676638581
      protected int adjustedTickDelay(final int ticks) {
          return this.requiresUpdateEveryTick() ? ticks : reducedTickDelay(ticks);
      }
-@@ -62,7 +73,19 @@ public abstract class Goal {
+@@ -62,7 +_,19 @@
          return (ServerLevel)level;
      }
  

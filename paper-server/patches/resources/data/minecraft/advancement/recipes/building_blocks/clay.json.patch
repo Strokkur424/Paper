@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/building_blocks/clay.json
++++ b/data/minecraft/advancement/recipes/building_blocks/clay.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:clay"
++        "recipe": "minecraft:clay"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

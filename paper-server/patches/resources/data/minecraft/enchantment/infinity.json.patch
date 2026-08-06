@@ -1,0 +1,11 @@
+--- a/data/minecraft/enchantment/infinity.json
++++ b/data/minecraft/enchantment/infinity.json
+@@ -11,7 +_,7 @@
+           "value": 0.0
+         },
+         "requirements": {
+-          "type": "minecraft:match_tool",
++          "condition": "minecraft:match_tool",
+           "predicate": {
+             "items": "minecraft:arrow"
+           }

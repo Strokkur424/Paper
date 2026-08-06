@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/entity/projectile/arrow/Arrow.java b/net/minecraft/world/entity/projectile/arrow/Arrow.java
-index cbd19cee0e3c66c61902c1d00a0dbac05956999b..e9199464cebb0d704c02cf4fcf8c00343ec824c5 100644
 --- a/net/minecraft/world/entity/projectile/arrow/Arrow.java
 +++ b/net/minecraft/world/entity/projectile/arrow/Arrow.java
-@@ -117,7 +117,7 @@ public class Arrow extends AbstractArrow {
+@@ -117,7 +_,7 @@
          Entity effectSource = this.getEffectSource();
          PotionContents potionContents = this.getPotionContents();
          float durationScale = this.getPotionDurationScale();

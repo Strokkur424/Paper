@@ -1,0 +1,19 @@
+--- a/data/minecraft/recipe/poplar_trapdoor.json
++++ /dev/null
+@@ -1,16 +_,0 @@
+-{
+-  "type": "minecraft:crafting_shaped",
+-  "category": "redstone",
+-  "group": "wooden_trapdoor",
+-  "key": {
+-    "#": "minecraft:poplar_planks"
+-  },
+-  "pattern": [
+-    "###",
+-    "###"
+-  ],
+-  "result": {
+-    "count": 2,
+-    "id": "minecraft:poplar_trapdoor"
+-  }
+-}

@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/tools/recovery_compass.json
++++ b/data/minecraft/advancement/recipes/tools/recovery_compass.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:recovery_compass"
++        "recipe": "minecraft:recovery_compass"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

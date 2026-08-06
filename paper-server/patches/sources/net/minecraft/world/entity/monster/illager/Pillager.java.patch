@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/entity/monster/illager/Pillager.java b/net/minecraft/world/entity/monster/illager/Pillager.java
-index 13083622766683a4d9e2d6d9b62398e3f74c2fcb..2fb3b7f3928a459d089bd8680673aa589118f464 100644
 --- a/net/minecraft/world/entity/monster/illager/Pillager.java
 +++ b/net/minecraft/world/entity/monster/illager/Pillager.java
-@@ -215,7 +215,7 @@ public class Pillager extends AbstractIllager implements CrossbowAttackMob, Inve
+@@ -215,7 +_,7 @@
              this.onItemPickup(entity);
              ItemStack remainder = this.inventory.addItem(itemStack);
              if (remainder.isEmpty()) {

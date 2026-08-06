@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/building_blocks/deepslate_brick_stairs_from_deepslate_stonecutting.json
++++ b/data/minecraft/advancement/recipes/building_blocks/deepslate_brick_stairs_from_deepslate_stonecutting.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:deepslate_brick_stairs_from_deepslate_stonecutting"
++        "recipe": "minecraft:deepslate_brick_stairs_from_deepslate_stonecutting"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

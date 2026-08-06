@@ -1,0 +1,18 @@
+--- a/data/minecraft/loot_table/blocks/nether_sprouts.json
++++ b/data/minecraft/loot_table/blocks/nether_sprouts.json
+@@ -2,7 +_,14 @@
+   "type": "minecraft:block",
+   "pools": [
+     {
+-      "condition": "minecraft:tool/can_shear",
++      "conditions": [
++        {
++          "condition": "minecraft:match_tool",
++          "predicate": {
++            "items": "minecraft:shears"
++          }
++        }
++      ],
+       "entries": [
+         {
+           "type": "minecraft:item",

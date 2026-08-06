@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/misc/leaf_litter.json
++++ b/data/minecraft/advancement/recipes/misc/leaf_litter.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:leaf_litter"
++        "recipe": "minecraft:leaf_litter"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

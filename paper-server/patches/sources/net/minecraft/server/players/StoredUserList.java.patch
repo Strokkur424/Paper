@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/server/players/StoredUserList.java b/net/minecraft/server/players/StoredUserList.java
-index 01dac844fbf6cc3463322d3fafb6ff074bf151d9..eaf8fb8a9cf94d0d16debf90e5ceda3f91c979ef 100644
 --- a/net/minecraft/server/players/StoredUserList.java
 +++ b/net/minecraft/server/players/StoredUserList.java
-@@ -28,7 +28,7 @@ public abstract class StoredUserList<K, V extends StoredUserEntry<K>> {
+@@ -28,7 +_,7 @@
      private static final Logger LOGGER = LogUtils.getLogger();
      private static final Gson GSON = new GsonBuilder().setPrettyPrinting().create();
      private final File file;
@@ -17,7 +9,7 @@ index 01dac844fbf6cc3463322d3fafb6ff074bf151d9..eaf8fb8a9cf94d0d16debf90e5ceda3f
      protected final NotificationService notificationService;
  
      public StoredUserList(final File file, final NotificationService notificationService) {
-@@ -59,8 +59,11 @@ public abstract class StoredUserList<K, V extends StoredUserEntry<K>> {
+@@ -59,8 +_,11 @@
      }
  
      public @Nullable V get(final K user) {
@@ -31,7 +23,7 @@ index 01dac844fbf6cc3463322d3fafb6ff074bf151d9..eaf8fb8a9cf94d0d16debf90e5ceda3f
      }
  
      public boolean remove(final K user) {
-@@ -105,22 +108,15 @@ public abstract class StoredUserList<K, V extends StoredUserEntry<K>> {
+@@ -105,22 +_,15 @@
      }
  
      protected boolean contains(final K user) {
@@ -58,7 +50,7 @@ index 01dac844fbf6cc3463322d3fafb6ff074bf151d9..eaf8fb8a9cf94d0d16debf90e5ceda3f
  
      protected abstract StoredUserEntry<K> createEntry(final JsonObject object);
  
-@@ -129,6 +125,7 @@ public abstract class StoredUserList<K, V extends StoredUserEntry<K>> {
+@@ -129,6 +_,7 @@
      }
  
      public void save() throws IOException {
@@ -66,7 +58,7 @@ index 01dac844fbf6cc3463322d3fafb6ff074bf151d9..eaf8fb8a9cf94d0d16debf90e5ceda3f
          JsonArray result = new JsonArray();
          this.map.values().stream().map(entry -> Util.make(new JsonObject(), entry::serialize)).forEach(result::add);
  
-@@ -153,7 +150,14 @@ public abstract class StoredUserList<K, V extends StoredUserEntry<K>> {
+@@ -153,7 +_,14 @@
                          this.map.put(this.getKeyForUser(entry.getUser()), (V)entry);
                      }
                  }

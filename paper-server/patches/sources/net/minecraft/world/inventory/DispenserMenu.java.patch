@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/inventory/DispenserMenu.java b/net/minecraft/world/inventory/DispenserMenu.java
-index 0c88f529658c7c3b841f049343657b3317ba4bb8..dd81046e4ed435b9ce13242041ee5cff42e520f8 100644
 --- a/net/minecraft/world/inventory/DispenserMenu.java
 +++ b/net/minecraft/world/inventory/DispenserMenu.java
-@@ -13,6 +13,10 @@ public class DispenserMenu extends AbstractContainerMenu {
+@@ -13,6 +_,10 @@
      private static final int USE_ROW_SLOT_START = 36;
      private static final int USE_ROW_SLOT_END = 45;
      private final Container dispenser;
@@ -19,7 +11,7 @@ index 0c88f529658c7c3b841f049343657b3317ba4bb8..dd81046e4ed435b9ce13242041ee5cff
  
      public DispenserMenu(final int containerId, final Inventory inventory) {
          this(containerId, inventory, new SimpleContainer(9));
-@@ -20,6 +24,9 @@ public class DispenserMenu extends AbstractContainerMenu {
+@@ -20,6 +_,9 @@
  
      public DispenserMenu(final int containerId, final Inventory inventory, final Container dispenser) {
          super(MenuType.GENERIC_3x3, containerId);
@@ -29,7 +21,7 @@ index 0c88f529658c7c3b841f049343657b3317ba4bb8..dd81046e4ed435b9ce13242041ee5cff
          checkContainerSize(dispenser, 9);
          this.dispenser = dispenser;
          dispenser.startOpen(inventory.player);
-@@ -38,6 +45,7 @@ public class DispenserMenu extends AbstractContainerMenu {
+@@ -38,6 +_,7 @@
  
      @Override
      public boolean stillValid(final Player player) {
@@ -37,7 +29,7 @@ index 0c88f529658c7c3b841f049343657b3317ba4bb8..dd81046e4ed435b9ce13242041ee5cff
          return this.dispenser.stillValid(player);
      }
  
-@@ -77,4 +85,17 @@ public class DispenserMenu extends AbstractContainerMenu {
+@@ -77,4 +_,17 @@
          super.removed(player);
          this.dispenser.stopOpen(player);
      }

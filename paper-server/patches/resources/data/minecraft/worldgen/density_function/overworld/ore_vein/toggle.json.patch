@@ -1,0 +1,19 @@
+--- a/data/minecraft/worldgen/density_function/overworld/ore_vein/toggle.json
++++ /dev/null
+@@ -1,16 +_,0 @@
+-{
+-  "type": "minecraft:interpolated",
+-  "input": {
+-    "type": "minecraft:range_choice",
+-    "input": "minecraft:y",
+-    "max_exclusive": 57.0,
+-    "min_inclusive": -64.0,
+-    "when_in_range": {
+-      "type": "minecraft:noise",
+-      "noise": "minecraft:ore_veininess",
+-      "xz_scale": 1.5,
+-      "y_scale": 1.5
+-    },
+-    "when_out_of_range": 0.0
+-  }
+-}

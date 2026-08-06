@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/server/gui/StatsComponent.java b/net/minecraft/server/gui/StatsComponent.java
-index e81029f5b07712507e0fafe15fe661aaa4243fec..e9f53520d99454536f32bb491ed1ef6b2a5ee07a 100644
 --- a/net/minecraft/server/gui/StatsComponent.java
 +++ b/net/minecraft/server/gui/StatsComponent.java
-@@ -32,12 +32,21 @@ public class StatsComponent extends JComponent {
+@@ -32,12 +_,21 @@
  
      private void tick() {
          long usedRam = Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory();
@@ -30,7 +22,7 @@ index e81029f5b07712507e0fafe15fe661aaa4243fec..e9f53520d99454536f32bb491ed1ef6b
          this.values[this.vp++ & 0xFF] = (int)(usedRam * 100L / Runtime.getRuntime().maxMemory());
          this.repaint();
      }
-@@ -66,4 +75,10 @@ public class StatsComponent extends JComponent {
+@@ -66,4 +_,10 @@
      public void close() {
          this.timer.stop();
      }

@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/misc/netherite_ingot_from_netherite_block.json
++++ b/data/minecraft/advancement/recipes/misc/netherite_ingot_from_netherite_block.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:netherite_ingot_from_netherite_block"
++        "recipe": "minecraft:netherite_ingot_from_netherite_block"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

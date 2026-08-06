@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/level/BaseCommandBlock.java b/net/minecraft/world/level/BaseCommandBlock.java
-index c136589764fd6ed7056d0f0a686d9deb694eab77..fbe1cf1f02a27cbe0666fb83eb74c82df92785c9 100644
 --- a/net/minecraft/world/level/BaseCommandBlock.java
 +++ b/net/minecraft/world/level/BaseCommandBlock.java
-@@ -30,6 +30,10 @@ public abstract class BaseCommandBlock {
+@@ -30,6 +_,10 @@
      private @Nullable Component lastOutput;
      private String command = "";
      private @Nullable Component customName;
@@ -19,7 +11,7 @@ index c136589764fd6ed7056d0f0a686d9deb694eab77..fbe1cf1f02a27cbe0666fb83eb74c82d
  
      public int getSuccessCount() {
          return this.successCount;
-@@ -109,7 +113,13 @@ public abstract class BaseCommandBlock {
+@@ -109,7 +_,13 @@
                              this.successCount++;
                          }
                      });
@@ -34,7 +26,7 @@ index c136589764fd6ed7056d0f0a686d9deb694eab77..fbe1cf1f02a27cbe0666fb83eb74c82d
                  }
              } catch (Throwable t) {
                  CrashReport report = CrashReport.forThrowable(t, "Executing command block");
-@@ -129,8 +139,8 @@ public abstract class BaseCommandBlock {
+@@ -129,8 +_,8 @@
          return true;
      }
  
@@ -45,7 +37,7 @@ index c136589764fd6ed7056d0f0a686d9deb694eab77..fbe1cf1f02a27cbe0666fb83eb74c82d
      }
  
      public Component getName() {
-@@ -163,13 +173,21 @@ public abstract class BaseCommandBlock {
+@@ -163,13 +_,21 @@
  
      public abstract boolean isValid();
  
@@ -69,7 +61,7 @@ index c136589764fd6ed7056d0f0a686d9deb694eab77..fbe1cf1f02a27cbe0666fb83eb74c82d
          }
  
          @Override
-@@ -179,7 +197,7 @@ public abstract class BaseCommandBlock {
+@@ -179,7 +_,7 @@
  
          @Override
          public boolean acceptsFailure() {
@@ -78,7 +70,7 @@ index c136589764fd6ed7056d0f0a686d9deb694eab77..fbe1cf1f02a27cbe0666fb83eb74c82d
          }
  
          @Override
-@@ -189,7 +207,8 @@ public abstract class BaseCommandBlock {
+@@ -189,7 +_,8 @@
  
          @Override
          public void sendSystemMessage(final Component message) {
@@ -88,7 +80,7 @@ index c136589764fd6ed7056d0f0a686d9deb694eab77..fbe1cf1f02a27cbe0666fb83eb74c82d
                  BaseCommandBlock.this.lastOutput = Component.literal("[" + TIME_FORMAT.format(ZonedDateTime.now()) + "] ").append(message);
                  BaseCommandBlock.this.onUpdated(this.level);
              }
-@@ -199,5 +218,12 @@ public abstract class BaseCommandBlock {
+@@ -199,5 +_,12 @@
          public void close() throws Exception {
              this.closed = true;
          }

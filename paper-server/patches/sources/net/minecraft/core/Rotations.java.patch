@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/core/Rotations.java b/net/minecraft/core/Rotations.java
-index 705c379e861adf268c16f1792ee60bbfe493cac6..0d5805a9002854ea2666ef3bc792e61f016ffd34 100644
 --- a/net/minecraft/core/Rotations.java
 +++ b/net/minecraft/core/Rotations.java
-@@ -26,10 +26,21 @@ public record Rotations(float x, float y, float z) {
+@@ -26,10 +_,21 @@
              output.writeFloat(value.z);
          }
      };

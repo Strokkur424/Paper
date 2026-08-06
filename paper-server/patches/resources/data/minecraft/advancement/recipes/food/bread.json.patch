@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/food/bread.json
++++ b/data/minecraft/advancement/recipes/food/bread.json
+@@ -3,7 +_,7 @@
+   "criteria": {
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:bread"
++        "recipe": "minecraft:bread"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     },

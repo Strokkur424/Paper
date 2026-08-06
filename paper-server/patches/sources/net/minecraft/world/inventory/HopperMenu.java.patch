@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/inventory/HopperMenu.java b/net/minecraft/world/inventory/HopperMenu.java
-index 668adb389ad35ba123f3d8cf6bdc6fe142c8b921..88495d19e30e5c0fcca205603472e0240d8c2ab0 100644
 --- a/net/minecraft/world/inventory/HopperMenu.java
 +++ b/net/minecraft/world/inventory/HopperMenu.java
-@@ -9,6 +9,21 @@ import net.minecraft.world.item.ItemStack;
+@@ -9,6 +_,21 @@
  public class HopperMenu extends AbstractContainerMenu {
      public static final int CONTAINER_SIZE = 5;
      private final Container hopper;
@@ -30,7 +22,7 @@ index 668adb389ad35ba123f3d8cf6bdc6fe142c8b921..88495d19e30e5c0fcca205603472e024
  
      public HopperMenu(final int containerId, final Inventory inventory) {
          this(containerId, inventory, new SimpleContainer(5));
-@@ -17,6 +32,7 @@ public class HopperMenu extends AbstractContainerMenu {
+@@ -17,6 +_,7 @@
      public HopperMenu(final int containerId, final Inventory inventory, final Container hopper) {
          super(MenuType.HOPPER, containerId);
          this.hopper = hopper;
@@ -38,7 +30,7 @@ index 668adb389ad35ba123f3d8cf6bdc6fe142c8b921..88495d19e30e5c0fcca205603472e024
          checkContainerSize(hopper, 5);
          hopper.startOpen(inventory.player);
  
-@@ -29,6 +45,7 @@ public class HopperMenu extends AbstractContainerMenu {
+@@ -29,6 +_,7 @@
  
      @Override
      public boolean stillValid(final Player player) {

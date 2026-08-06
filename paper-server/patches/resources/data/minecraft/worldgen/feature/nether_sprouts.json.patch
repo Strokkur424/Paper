@@ -1,0 +1,10 @@
+--- a/data/minecraft/worldgen/feature/nether_sprouts.json
++++ /dev/null
+@@ -1,7 +_,0 @@
+-{
+-  "type": "minecraft:simple_block",
+-  "to_place": {
+-    "type": "minecraft:simple_state_provider",
+-    "state": "minecraft:nether_sprouts"
+-  }
+-}

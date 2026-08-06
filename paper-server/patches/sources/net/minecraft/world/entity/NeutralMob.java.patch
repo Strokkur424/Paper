@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/entity/NeutralMob.java b/net/minecraft/world/entity/NeutralMob.java
-index 4db44b1f3a7ec7da3a6d7df51abda7c348fad1e8..3425ac4f186f144527e612bc895457ba4cd3ff93 100644
 --- a/net/minecraft/world/entity/NeutralMob.java
 +++ b/net/minecraft/world/entity/NeutralMob.java
-@@ -51,7 +51,11 @@ public interface NeutralMob {
+@@ -51,7 +_,11 @@
  
          if (level instanceof ServerLevel) {
              this.setPersistentAngerTarget(EntityReference.read(input, "angry_at"));
@@ -21,7 +13,7 @@ index 4db44b1f3a7ec7da3a6d7df51abda7c348fad1e8..3425ac4f186f144527e612bc895457ba
          }
      }
  
-@@ -136,7 +140,7 @@ public interface NeutralMob {
+@@ -136,7 +_,7 @@
      default void stopBeingAngry() {
          this.setLastHurtByMob(null);
          this.setPersistentAngerTarget(null);
@@ -30,7 +22,7 @@ index 4db44b1f3a7ec7da3a6d7df51abda7c348fad1e8..3425ac4f186f144527e612bc895457ba
          this.setPersistentAngerEndTime(-1L);
      }
  
-@@ -146,9 +150,21 @@ public interface NeutralMob {
+@@ -146,9 +_,21 @@
  
      void setTarget(final @Nullable LivingEntity target);
  

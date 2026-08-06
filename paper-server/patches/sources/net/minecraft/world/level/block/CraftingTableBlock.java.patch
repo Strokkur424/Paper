@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/level/block/CraftingTableBlock.java b/net/minecraft/world/level/block/CraftingTableBlock.java
-index beb64f9956f0ec621bb6c9e68fcc60a8844ea227..71594d6118cc9f9e7862710c6e8755a38302d797 100644
 --- a/net/minecraft/world/level/block/CraftingTableBlock.java
 +++ b/net/minecraft/world/level/block/CraftingTableBlock.java
-@@ -26,8 +26,9 @@ public class CraftingTableBlock extends Block {
+@@ -26,8 +_,9 @@
          final BlockState state, final Level level, final BlockPos pos, final Player player, final BlockHitResult hitResult
      ) {
          if (!level.isClientSide()) {

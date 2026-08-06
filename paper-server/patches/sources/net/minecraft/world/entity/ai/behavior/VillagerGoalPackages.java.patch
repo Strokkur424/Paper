@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/entity/ai/behavior/VillagerGoalPackages.java b/net/minecraft/world/entity/ai/behavior/VillagerGoalPackages.java
-index 4ebc11f1a5ada65f348aab49a609b112eaaa55da..35b564506edc94d4d6dabe239082d992e22efec4 100644
 --- a/net/minecraft/world/entity/ai/behavior/VillagerGoalPackages.java
 +++ b/net/minecraft/world/entity/ai/behavior/VillagerGoalPackages.java
-@@ -45,7 +45,7 @@ public class VillagerGoalPackages {
+@@ -45,7 +_,7 @@
              Pair.of(1, new MoveToTargetSink()),
              Pair.of(2, PoiCompetitorScan.create()),
              Pair.of(3, new LookAndFollowTradingPlayerSink(speedModifier)),

@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/item/crafting/SmithingTransformRecipe.java b/net/minecraft/world/item/crafting/SmithingTransformRecipe.java
-index 34694705fbb74c49acfe2536ecc0809848cfa13a..33f9870a4f966a887023b1debd4ab9ef9d24378f 100644
 --- a/net/minecraft/world/item/crafting/SmithingTransformRecipe.java
 +++ b/net/minecraft/world/item/crafting/SmithingTransformRecipe.java
-@@ -42,6 +42,7 @@ public class SmithingTransformRecipe extends SimpleSmithingRecipe {
+@@ -42,6 +_,7 @@
      private final Ingredient base;
      private final Optional<Ingredient> addition;
      private final ItemStackTemplate result;
@@ -16,11 +8,10 @@ index 34694705fbb74c49acfe2536ecc0809848cfa13a..33f9870a4f966a887023b1debd4ab9ef
  
      public SmithingTransformRecipe(
          final Recipe.CommonInfo commonInfo,
-@@ -49,8 +50,22 @@ public class SmithingTransformRecipe extends SimpleSmithingRecipe {
-         final Ingredient base,
+@@ -50,7 +_,21 @@
          final Optional<Ingredient> addition,
          final ItemStackTemplate result
-+    ) {
+     ) {
 +    // Paper start - Option to prevent data components copy
 +        this(commonInfo, template, base, addition, result, true);
 +    }
@@ -32,14 +23,14 @@ index 34694705fbb74c49acfe2536ecc0809848cfa13a..33f9870a4f966a887023b1debd4ab9ef
 +        final Optional<Ingredient> addition,
 +        final ItemStackTemplate result,
 +        final boolean copyDataComponents
-     ) {
++    ) {
          super(commonInfo);
 +        this.copyDataComponents = copyDataComponents;
 +    // Paper end - Option to prevent data components copy
          this.template = template;
          this.base = base;
          this.addition = addition;
-@@ -59,7 +74,7 @@ public class SmithingTransformRecipe extends SimpleSmithingRecipe {
+@@ -59,7 +_,7 @@
  
      @Override
      public ItemStack assemble(final SmithingRecipeInput input) {
@@ -48,7 +39,7 @@ index 34694705fbb74c49acfe2536ecc0809848cfa13a..33f9870a4f966a887023b1debd4ab9ef
      }
  
      @Override
-@@ -99,4 +114,13 @@ public class SmithingTransformRecipe extends SimpleSmithingRecipe {
+@@ -99,4 +_,13 @@
              )
          );
      }

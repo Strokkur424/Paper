@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/decorations/orange_banner.json
++++ b/data/minecraft/advancement/recipes/decorations/orange_banner.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:orange_banner"
++        "recipe": "minecraft:orange_banner"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/building_blocks/granite_slab_from_granite_stonecutting.json
++++ b/data/minecraft/advancement/recipes/building_blocks/granite_slab_from_granite_stonecutting.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:granite_slab_from_granite_stonecutting"
++        "recipe": "minecraft:granite_slab_from_granite_stonecutting"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

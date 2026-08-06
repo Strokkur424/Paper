@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/building_blocks/coarse_dirt.json
++++ b/data/minecraft/advancement/recipes/building_blocks/coarse_dirt.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:coarse_dirt"
++        "recipe": "minecraft:coarse_dirt"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

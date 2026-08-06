@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/gametest/framework/StructureUtils.java b/net/minecraft/gametest/framework/StructureUtils.java
-index 949f2eafa4f03710c9f3a8f4f6d4e736abe2b685..ed6d659c0925cfc6c7c1ce2aaaa48a3a06224d34 100644
 --- a/net/minecraft/gametest/framework/StructureUtils.java
 +++ b/net/minecraft/gametest/framework/StructureUtils.java
-@@ -75,7 +75,7 @@ public class StructureUtils {
+@@ -75,7 +_,7 @@
          level.clearBlockEvents(structureBoundingBox);
          AABB bounds = AABB.of(structureBoundingBox);
          List<Entity> livingEntities = level.getEntitiesOfClass(Entity.class, bounds, mob -> !(mob instanceof Player));

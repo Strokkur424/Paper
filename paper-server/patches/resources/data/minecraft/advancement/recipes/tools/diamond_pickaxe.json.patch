@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/tools/diamond_pickaxe.json
++++ b/data/minecraft/advancement/recipes/tools/diamond_pickaxe.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:diamond_pickaxe"
++        "recipe": "minecraft:diamond_pickaxe"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

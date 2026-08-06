@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/network/chat/contents/TranslatableContents.java b/net/minecraft/network/chat/contents/TranslatableContents.java
-index 04bd33681ad4f6491e89f95a88c597538da33824..b6973f9b48092676029ff58485ec8b8dece7387b 100644
 --- a/net/minecraft/network/chat/contents/TranslatableContents.java
 +++ b/net/minecraft/network/chat/contents/TranslatableContents.java
-@@ -177,6 +177,16 @@ public class TranslatableContents implements ComponentContents {
+@@ -177,6 +_,16 @@
  
      @Override
      public <T> Optional<T> visit(final FormattedText.ContentConsumer<T> output) {
@@ -25,10 +17,11 @@ index 04bd33681ad4f6491e89f95a88c597538da33824..b6973f9b48092676029ff58485ec8b8d
          this.decompose();
  
          for (FormattedText part : this.decomposedParts) {
-@@ -189,6 +199,27 @@ public class TranslatableContents implements ComponentContents {
+@@ -188,6 +_,27 @@
+ 
          return Optional.empty();
      }
- 
++
 +    // Paper start - Count visited parts
 +    private static final class TranslatableContentConsumer<T> implements FormattedText.ContentConsumer<T> {
 +        private static final IllegalArgumentException NESTED_TOO_LONG = new IllegalArgumentException("Too long");
@@ -49,7 +42,6 @@ index 04bd33681ad4f6491e89f95a88c597538da33824..b6973f9b48092676029ff58485ec8b8d
 +        }
 +    }
 +    // Paper end - Count visited parts
-+
+ 
      @Override
      public MutableComponent resolve(final ResolutionContext context, final int recursionDepth) throws CommandSyntaxException {
-         Object[] argsCopy = new Object[this.args.length];

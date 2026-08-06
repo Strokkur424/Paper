@@ -1,0 +1,39 @@
+--- a/data/minecraft/loot_table/equipment/trial_chamber_melee.json
++++ b/data/minecraft/loot_table/equipment/trial_chamber_melee.json
+@@ -19,22 +_,26 @@
+         },
+         {
+           "type": "minecraft:item",
+-          "modifier": {
+-            "type": "minecraft:set_enchantments",
+-            "enchantments": {
+-              "minecraft:sharpness": 1.0
++          "functions": [
++            {
++              "enchantments": {
++                "minecraft:sharpness": 1.0
++              },
++              "function": "minecraft:set_enchantments"
+             }
+-          },
++          ],
+           "name": "minecraft:iron_sword"
+         },
+         {
+           "type": "minecraft:item",
+-          "modifier": {
+-            "type": "minecraft:set_enchantments",
+-            "enchantments": {
+-              "minecraft:knockback": 1.0
++          "functions": [
++            {
++              "enchantments": {
++                "minecraft:knockback": 1.0
++              },
++              "function": "minecraft:set_enchantments"
+             }
+-          },
++          ],
+           "name": "minecraft:iron_sword"
+         },
+         {

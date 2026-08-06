@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/level/levelgen/feature/EndSpikeFeature.java b/net/minecraft/world/level/levelgen/feature/EndSpikeFeature.java
-index e024c9d2db30676ddb3e95c22b71138eaa269af5..2907dc4452e9602fd8aed8e9d6c47eeb23fe9850 100644
 --- a/net/minecraft/world/level/levelgen/feature/EndSpikeFeature.java
 +++ b/net/minecraft/world/level/levelgen/feature/EndSpikeFeature.java
-@@ -119,6 +119,7 @@ public record EndSpikeFeature(List<EndSpikeFeature.EndSpike> spikes, boolean cry
+@@ -119,6 +_,7 @@
              endCrystal.setBeamTarget(this.crystalBeamTarget.orElse(null));
              endCrystal.setPermanentlyInvulnerable(this.crystalInvulnerable);
              endCrystal.snapTo(spike.getCenterX() + 0.5, spike.getHeight() + 1, spike.getCenterZ() + 0.5, random.nextFloat() * 360.0F, 0.0F);

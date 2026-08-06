@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/entity/boss/enderdragon/phases/DragonStrafePlayerPhase.java b/net/minecraft/world/entity/boss/enderdragon/phases/DragonStrafePlayerPhase.java
-index 95786cea4b8da6009c4add4862793edd8778d877..b07a36b1b2f4d009b10b9df864f285f7be100709 100644
 --- a/net/minecraft/world/entity/boss/enderdragon/phases/DragonStrafePlayerPhase.java
 +++ b/net/minecraft/world/entity/boss/enderdragon/phases/DragonStrafePlayerPhase.java
-@@ -69,13 +69,16 @@ public class DragonStrafePlayerPhase extends AbstractDragonPhaseInstance {
+@@ -69,13 +_,16 @@
                          double ydd = this.attackTarget.getY(0.5) - startingY;
                          double zdd = this.attackTarget.getZ() - startingZ;
                          Vec3 direction = new Vec3(xdd, ydd, zdd);

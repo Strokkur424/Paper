@@ -1,0 +1,11 @@
+--- a/data/minecraft/worldgen/structure/ruined_portal.json
++++ b/data/minecraft/worldgen/structure/ruined_portal.json
+@@ -13,7 +_,7 @@
+       "weight": 0.5
+     },
+     {
+-      "air_pocket_probability": 0.0,
++      "air_pocket_probability": 0.5,
+       "can_be_cold": true,
+       "mossiness": 0.2,
+       "overgrown": false,

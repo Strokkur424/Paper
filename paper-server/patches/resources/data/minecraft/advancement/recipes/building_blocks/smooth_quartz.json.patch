@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/building_blocks/smooth_quartz.json
++++ b/data/minecraft/advancement/recipes/building_blocks/smooth_quartz.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:smooth_quartz"
++        "recipe": "minecraft:smooth_quartz"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

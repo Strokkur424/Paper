@@ -1,0 +1,17 @@
+--- a/data/minecraft/loot_table/blocks/oak_sapling.json
++++ b/data/minecraft/loot_table/blocks/oak_sapling.json
+@@ -2,9 +_,11 @@
+   "type": "minecraft:block",
+   "pools": [
+     {
+-      "condition": {
+-        "type": "minecraft:survives_explosion"
+-      },
++      "conditions": [
++        {
++          "condition": "minecraft:survives_explosion"
++        }
++      ],
+       "entries": [
+         {
+           "type": "minecraft:item",

@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/entity/LightningBolt.java b/net/minecraft/world/entity/LightningBolt.java
-index c7e97883052f24d7a58867a1dd136df3a2d7b053..c756d28b396520264336832f17527981248556f3 100644
 --- a/net/minecraft/world/entity/LightningBolt.java
 +++ b/net/minecraft/world/entity/LightningBolt.java
-@@ -40,6 +40,7 @@ public class LightningBolt extends Entity {
+@@ -40,6 +_,7 @@
      private @Nullable ServerPlayer cause;
      private final Set<Entity> hitEntities = Sets.newHashSet();
      private int blocksSetOnFire;
@@ -16,7 +8,7 @@ index c7e97883052f24d7a58867a1dd136df3a2d7b053..c756d28b396520264336832f17527981
  
      public LightningBolt(final EntityType<? extends LightningBolt> type, final Level level) {
          super(type, level);
-@@ -76,7 +77,7 @@ public class LightningBolt extends Entity {
+@@ -76,7 +_,7 @@
      @Override
      public void tick() {
          super.tick();
@@ -25,7 +17,7 @@ index c7e97883052f24d7a58867a1dd136df3a2d7b053..c756d28b396520264336832f17527981
              if (this.level().isClientSide()) {
                  if (!this.isSilent()) {
                      this.level()
-@@ -109,7 +110,7 @@ public class LightningBolt extends Entity {
+@@ -109,7 +_,7 @@
                  }
  
                  this.powerLightningRod();
@@ -34,7 +26,7 @@ index c7e97883052f24d7a58867a1dd136df3a2d7b053..c756d28b396520264336832f17527981
                  this.gameEvent(GameEvent.LIGHTNING_STRIKE);
              }
          }
-@@ -132,7 +133,7 @@ public class LightningBolt extends Entity {
+@@ -132,7 +_,7 @@
                      }
                  }
  
@@ -43,7 +35,7 @@ index c7e97883052f24d7a58867a1dd136df3a2d7b053..c756d28b396520264336832f17527981
              } else if (this.life < -this.random.nextInt(10)) {
                  this.flashes--;
                  this.life = 1;
-@@ -141,10 +142,10 @@ public class LightningBolt extends Entity {
+@@ -141,10 +_,10 @@
              }
          }
  
@@ -56,7 +48,7 @@ index c7e97883052f24d7a58867a1dd136df3a2d7b053..c756d28b396520264336832f17527981
                  List<Entity> entities = this.level()
                      .getEntities(
                          this,
-@@ -170,34 +171,43 @@ public class LightningBolt extends Entity {
+@@ -170,34 +_,43 @@
      }
  
      private void spawnFire(final int additionalSources) {
@@ -103,7 +95,7 @@ index c7e97883052f24d7a58867a1dd136df3a2d7b053..c756d28b396520264336832f17527981
              }
  
              BlockPos.MutableBlockPos workPos = struckPos.mutable();
-@@ -206,18 +216,18 @@ public class LightningBolt extends Entity {
+@@ -206,18 +_,18 @@
  
              for (int strike = 0; strike < strikesCount; strike++) {
                  int stepCount = random.nextInt(8) + 1;
@@ -125,7 +117,7 @@ index c7e97883052f24d7a58867a1dd136df3a2d7b053..c756d28b396520264336832f17527981
              if (stepPos.isEmpty()) {
                  break;
              }
-@@ -226,11 +236,17 @@ public class LightningBolt extends Entity {
+@@ -226,11 +_,17 @@
          }
      }
  

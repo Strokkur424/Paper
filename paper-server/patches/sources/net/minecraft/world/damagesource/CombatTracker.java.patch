@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/damagesource/CombatTracker.java b/net/minecraft/world/damagesource/CombatTracker.java
-index e7eff57ebf01e000ac75f7dc090bc50a2c6a076a..dd9fb54f50ebfeef71dcec0db76618d4916888e1 100644
 --- a/net/minecraft/world/damagesource/CombatTracker.java
 +++ b/net/minecraft/world/damagesource/CombatTracker.java
-@@ -22,22 +22,40 @@ public class CombatTracker {
+@@ -22,22 +_,40 @@
      private static final Style INTENTIONAL_GAME_DESIGN_STYLE = Style.EMPTY
          .withClickEvent(new ClickEvent.OpenUrl(CommonLinks.INTENTIONAL_GAME_DESIGN_BUG))
          .withHoverEvent(new HoverEvent.ShowText(Component.literal("MCPE-28723")));
@@ -50,7 +42,7 @@ index e7eff57ebf01e000ac75f7dc090bc50a2c6a076a..dd9fb54f50ebfeef71dcec0db76618d4
          this.entries.add(entry);
          this.lastDamageTime = this.mob.tickCount;
          this.takingDamage = true;
-@@ -147,6 +165,14 @@ public class CombatTracker {
+@@ -147,6 +_,14 @@
      public void recheckStatus() {
          int reset = this.inCombat ? 300 : 100;
          if (this.takingDamage && (!this.mob.isAlive() || this.mob.tickCount - this.lastDamageTime > reset)) {

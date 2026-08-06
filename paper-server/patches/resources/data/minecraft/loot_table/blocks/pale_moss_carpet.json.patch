@@ -1,0 +1,33 @@
+--- a/data/minecraft/loot_table/blocks/pale_moss_carpet.json
++++ b/data/minecraft/loot_table/blocks/pale_moss_carpet.json
+@@ -5,16 +_,20 @@
+       "entries": [
+         {
+           "type": "minecraft:item",
+-          "condition": {
+-            "type": "minecraft:match_block",
+-            "blocks": "minecraft:pale_moss_carpet",
+-            "state": {
+-              "bottom": "true"
+-            }
+-          },
+-          "modifier": {
+-            "type": "minecraft:explosion_decay"
+-          },
++          "conditions": [
++            {
++              "block": "minecraft:pale_moss_carpet",
++              "condition": "minecraft:block_state_property",
++              "properties": {
++                "bottom": "true"
++              }
++            }
++          ],
++          "functions": [
++            {
++              "function": "minecraft:explosion_decay"
++            }
++          ],
+           "name": "minecraft:pale_moss_carpet"
+         }
+       ],

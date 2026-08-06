@@ -1,0 +1,49 @@
+--- a/data/minecraft/loot_table/blocks/soul_campfire.json
++++ b/data/minecraft/loot_table/blocks/soul_campfire.json
+@@ -8,18 +_,38 @@
+           "children": [
+             {
+               "type": "minecraft:item",
+-              "condition": "minecraft:tool/can_silk_touch",
++              "conditions": [
++                {
++                  "condition": "minecraft:match_tool",
++                  "predicate": {
++                    "predicates": {
++                      "minecraft:enchantments": [
++                        {
++                          "enchantments": "minecraft:silk_touch",
++                          "levels": {
++                            "min": 1
++                          }
++                        }
++                      ]
++                    }
++                  }
++                }
++              ],
+               "name": "minecraft:soul_campfire"
+             },
+             {
+               "type": "minecraft:item",
+-              "condition": {
+-                "type": "minecraft:survives_explosion"
+-              },
+-              "modifier": {
+-                "type": "minecraft:set_count",
+-                "count": 1.0
+-              },
++              "conditions": [
++                {
++                  "condition": "minecraft:survives_explosion"
++                }
++              ],
++              "functions": [
++                {
++                  "count": 1.0,
++                  "function": "minecraft:set_count"
++                }
++              ],
+               "name": "minecraft:soul_soil"
+             }
+           ]

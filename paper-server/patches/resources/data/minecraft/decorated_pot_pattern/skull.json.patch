@@ -1,0 +1,6 @@
+--- a/data/minecraft/decorated_pot_pattern/skull.json
++++ /dev/null
+@@ -1,3 +_,0 @@
+-{
+-  "asset_id": "minecraft:skull_pottery_pattern"
+-}

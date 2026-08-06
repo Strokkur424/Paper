@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/level/levelgen/structure/StructurePiece.java b/net/minecraft/world/level/levelgen/structure/StructurePiece.java
-index 9410cf8f708f696eec3255a6e6ba63140642f955..29ed70aa28cc65ec9fb65e4f17db1480c84878ff 100644
 --- a/net/minecraft/world/level/levelgen/structure/StructurePiece.java
 +++ b/net/minecraft/world/level/levelgen/structure/StructurePiece.java
-@@ -177,6 +177,11 @@ public abstract class StructurePiece {
+@@ -177,6 +_,11 @@
                  }
  
                  level.setBlock(pos, blockState, Block.UPDATE_CLIENTS);
@@ -20,7 +12,7 @@ index 9410cf8f708f696eec3255a6e6ba63140642f955..29ed70aa28cc65ec9fb65e4f17db1480
                  FluidState fluidState = level.getFluidState(pos);
                  if (!fluidState.isEmpty()) {
                      level.scheduleTick(pos, fluidState.getType(), 0);
-@@ -189,6 +194,48 @@ public abstract class StructurePiece {
+@@ -189,6 +_,48 @@
          }
      }
  
@@ -69,7 +61,7 @@ index 9410cf8f708f696eec3255a6e6ba63140642f955..29ed70aa28cc65ec9fb65e4f17db1480
      protected boolean canBeReplaced(final LevelReader level, final int x, final int y, final int z, final BoundingBox chunkBB) {
          return true;
      }
-@@ -460,10 +507,16 @@ public abstract class StructurePiece {
+@@ -460,10 +_,16 @@
                  blockState = reorient(level, pos, Blocks.CHEST.defaultBlockState());
              }
  
@@ -90,13 +82,14 @@ index 9410cf8f708f696eec3255a6e6ba63140642f955..29ed70aa28cc65ec9fb65e4f17db1480
  
              return true;
          } else {
-@@ -483,10 +536,27 @@ public abstract class StructurePiece {
+@@ -483,10 +_,27 @@
      ) {
          BlockPos pos = this.getWorldPos(x, y, z);
          if (chunkBB.isInside(pos) && !level.getBlockState(pos).is(Blocks.DISPENSER)) {
 -            this.placeBlock(level, Blocks.DISPENSER.defaultBlockState().setValue(DispenserBlock.FACING, facing), x, y, z, chunkBB);
 -            if (level.getBlockEntity(pos) instanceof DispenserBlockEntity dispenserBlockEntity) {
 -                dispenserBlockEntity.setLootTable(lootTable, random.nextLong());
+-            }
 +            // CraftBukkit start
 +            // this.placeBlock(level, Blocks.DISPENSER.defaultBlockState().setValue(DispenserBlock.FACING, facing), x, y, z, chunkBB);
 +            // if (level.getBlockEntity(pos) instanceof DispenserBlockEntity dispenserBlockEntity) {
@@ -108,7 +101,7 @@ index 9410cf8f708f696eec3255a6e6ba63140642f955..29ed70aa28cc65ec9fb65e4f17db1480
 +            BlockState dispenserBlockState = Blocks.DISPENSER.defaultBlockState().setValue(DispenserBlock.FACING, facing);
 +            if (this.mirror != Mirror.NONE) {
 +                dispenserBlockState = dispenserBlockState.mirror(this.mirror);
-             }
++            }
 +            if (this.rotation != Rotation.NONE) {
 +                dispenserBlockState = dispenserBlockState.rotate(this.rotation);
 +            }

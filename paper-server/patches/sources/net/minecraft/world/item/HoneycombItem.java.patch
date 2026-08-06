@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/item/HoneycombItem.java b/net/minecraft/world/item/HoneycombItem.java
-index 8768a126be0481d495803599f94eafd91b19bdab..8de5df3c26b5fcbff8d96ef9eb2681e88b56e45e 100644
 --- a/net/minecraft/world/item/HoneycombItem.java
 +++ b/net/minecraft/world/item/HoneycombItem.java
-@@ -73,6 +73,14 @@ public class HoneycombItem extends Item implements SignApplicator {
+@@ -73,6 +_,14 @@
          return getWaxed(oldState).<InteractionResult>map(waxedState -> {
              Player player = context.getPlayer();
              ItemStack itemInHand = context.getItemInHand();

@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/entity/projectile/EvokerFangs.java b/net/minecraft/world/entity/projectile/EvokerFangs.java
-index a79bc715cb17e38f048b06af9a27027cd0190925..91366122bd075c1b29b8e7ee4ebcdd5d8229d102 100644
 --- a/net/minecraft/world/entity/projectile/EvokerFangs.java
 +++ b/net/minecraft/world/entity/projectile/EvokerFangs.java
-@@ -100,7 +100,7 @@ public class EvokerFangs extends Entity implements TraceableEntity {
+@@ -100,7 +_,7 @@
              }
  
              if (--this.lifeTicks < 0) {
@@ -17,7 +9,7 @@ index a79bc715cb17e38f048b06af9a27027cd0190925..91366122bd075c1b29b8e7ee4ebcdd5d
              }
          }
      }
-@@ -109,7 +109,7 @@ public class EvokerFangs extends Entity implements TraceableEntity {
+@@ -109,7 +_,7 @@
          LivingEntity currentOwner = this.getOwner();
          if (entity.isAlive() && !entity.isInvulnerable() && entity != currentOwner) {
              if (currentOwner == null) {

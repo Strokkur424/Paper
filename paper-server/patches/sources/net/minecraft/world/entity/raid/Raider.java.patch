@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/entity/raid/Raider.java b/net/minecraft/world/entity/raid/Raider.java
-index 69f2012fc983985eb692cb4c15f32b67b5199c92..9d242f24c37fec196f06b8ef6fa29a66b2781c68 100644
 --- a/net/minecraft/world/entity/raid/Raider.java
 +++ b/net/minecraft/world/entity/raid/Raider.java
-@@ -214,6 +214,11 @@ public abstract class Raider extends PatrollingMonster {
+@@ -214,6 +_,11 @@
          if (this.hasActiveRaid()
              && !hasRaidLeader
              && ItemStack.matches(itemStack, Raid.getOminousBannerInstance(this.registryAccess().lookupOrThrow(Registries.BANNER_PATTERN)))) {
@@ -20,7 +12,7 @@ index 69f2012fc983985eb692cb4c15f32b67b5199c92..9d242f24c37fec196f06b8ef6fa29a66
              EquipmentSlot slot = EquipmentSlot.HEAD;
              ItemStack current = this.getItemBySlot(slot);
              double dropChance = this.getDropChances().byEquipment(slot);
-@@ -224,7 +229,7 @@ public abstract class Raider extends PatrollingMonster {
+@@ -224,7 +_,7 @@
              this.onItemPickup(entity);
              this.setItemSlot(slot, itemStack);
              this.take(entity, itemStack.getCount());
@@ -29,7 +21,7 @@ index 69f2012fc983985eb692cb4c15f32b67b5199c92..9d242f24c37fec196f06b8ef6fa29a66
              this.getCurrentRaid().setLeader(this.getWave(), this);
              this.setPatrolLeader(true);
          } else {
-@@ -297,7 +302,7 @@ public abstract class Raider extends PatrollingMonster {
+@@ -297,7 +_,7 @@
  
              for (Raider entity : getServerLevel(this.mob)
                  .getNearbyEntities(Raider.class, this.shoutTargeting, this.mob, this.mob.getBoundingBox().inflate(8.0, 8.0, 8.0))) {
@@ -38,7 +30,7 @@ index 69f2012fc983985eb692cb4c15f32b67b5199c92..9d242f24c37fec196f06b8ef6fa29a66
              }
          }
  
-@@ -308,7 +313,7 @@ public abstract class Raider extends PatrollingMonster {
+@@ -308,7 +_,7 @@
              if (target != null) {
                  for (Raider entity : getServerLevel(this.mob)
                      .getNearbyEntities(Raider.class, this.shoutTargeting, this.mob, this.mob.getBoundingBox().inflate(8.0, 8.0, 8.0))) {
@@ -47,7 +39,7 @@ index 69f2012fc983985eb692cb4c15f32b67b5199c92..9d242f24c37fec196f06b8ef6fa29a66
                      entity.setAggressive(true);
                  }
  
-@@ -391,6 +396,7 @@ public abstract class Raider extends PatrollingMonster {
+@@ -391,6 +_,7 @@
          }
  
          private boolean cannotPickUpBanner() {

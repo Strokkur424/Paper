@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/story/deflect_arrow.json
++++ b/data/minecraft/advancement/story/deflect_arrow.json
+@@ -8,7 +_,7 @@
+             "tags": [
+               {
+                 "expected": true,
+-                "id": "#minecraft:is_projectile"
++                "id": "minecraft:is_projectile"
+               }
+             ]
+           },

@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/level/block/LeverBlock.java b/net/minecraft/world/level/block/LeverBlock.java
-index e851ad854b37999784e0c89a67d77610107b927c..7b9989c23f248dcde9a0730b5d898fd674c53edf 100644
 --- a/net/minecraft/world/level/block/LeverBlock.java
 +++ b/net/minecraft/world/level/block/LeverBlock.java
-@@ -63,6 +63,12 @@ public class LeverBlock extends FaceAttachedHorizontalDirectionalBlock {
+@@ -63,6 +_,12 @@
                  makeParticle(stateAfter, level, pos, 1.0F);
              }
          } else {
@@ -21,7 +13,7 @@ index e851ad854b37999784e0c89a67d77610107b927c..7b9989c23f248dcde9a0730b5d898fd6
              this.pull(stateBefore, level, pos, null);
          }
  
-@@ -74,7 +80,12 @@ public class LeverBlock extends FaceAttachedHorizontalDirectionalBlock {
+@@ -74,7 +_,12 @@
          final BlockState state, final ServerLevel level, final BlockPos pos, final Explosion explosion, final BiConsumer<ItemStack, BlockPos> onHit
      ) {
          if (explosion.canTriggerBlocks()) {

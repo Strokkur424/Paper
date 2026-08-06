@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/decorations/blast_furnace.json
++++ b/data/minecraft/advancement/recipes/decorations/blast_furnace.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:blast_furnace"
++        "recipe": "minecraft:blast_furnace"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

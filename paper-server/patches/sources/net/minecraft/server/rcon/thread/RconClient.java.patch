@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/server/rcon/thread/RconClient.java b/net/minecraft/server/rcon/thread/RconClient.java
-index 48916bf68a48020f709059d091c8d13fa9654246..2995d915a7cb433cc72084c341351ebc390c4f2d 100644
 --- a/net/minecraft/server/rcon/thread/RconClient.java
 +++ b/net/minecraft/server/rcon/thread/RconClient.java
-@@ -23,11 +23,14 @@ public class RconClient extends GenericThread {
+@@ -23,11 +_,14 @@
      private final Socket client;
      private final byte[] buf = new byte[1460];
      private final String rconPassword;
@@ -25,7 +17,7 @@ index 48916bf68a48020f709059d091c8d13fa9654246..2995d915a7cb433cc72084c341351ebc
          this.client = socket;
  
          try {
-@@ -37,6 +40,7 @@ public class RconClient extends GenericThread {
+@@ -37,6 +_,7 @@
          }
  
          this.rconPassword = rconPassword;
@@ -33,7 +25,7 @@ index 48916bf68a48020f709059d091c8d13fa9654246..2995d915a7cb433cc72084c341351ebc
      }
  
      @Override
-@@ -67,7 +71,7 @@ public class RconClient extends GenericThread {
+@@ -67,7 +_,7 @@
                                  String command = PktUtils.stringFromByteArray(this.buf, offset, read);
  
                                  try {

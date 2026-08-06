@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/misc/tipped_arrow.json
++++ b/data/minecraft/advancement/recipes/misc/tipped_arrow.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:tipped_arrow"
++        "recipe": "minecraft:tipped_arrow"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

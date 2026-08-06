@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/level/BlockGetter.java b/net/minecraft/world/level/BlockGetter.java
-index 74e80fc1f5705a6d432954efc38e1fc1c1d522b2..2a4c928281c7e455d6f210aeb599881855d328f8 100644
 --- a/net/minecraft/world/level/BlockGetter.java
 +++ b/net/minecraft/world/level/BlockGetter.java
-@@ -31,6 +31,17 @@ public interface BlockGetter extends LevelHeightAccessor {
+@@ -31,6 +_,17 @@
  
      BlockState getBlockState(final BlockPos pos);
  
@@ -26,7 +18,7 @@ index 74e80fc1f5705a6d432954efc38e1fc1c1d522b2..2a4c928281c7e455d6f210aeb5998818
      FluidState getFluidState(BlockPos pos);
  
      default int getLightEmission(final BlockPos pos) {
-@@ -63,9 +74,26 @@ public interface BlockGetter extends LevelHeightAccessor {
+@@ -63,9 +_,26 @@
      }
  
      default BlockHitResult clip(final ClipContext c) {
@@ -56,7 +48,7 @@ index 74e80fc1f5705a6d432954efc38e1fc1c1d522b2..2a4c928281c7e455d6f210aeb5998818
              Vec3 from = context.getFrom();
              Vec3 to = context.getTo();
              VoxelShape blockShape = context.getBlockShape(blockState, this, pos);
-@@ -75,6 +103,12 @@ public interface BlockGetter extends LevelHeightAccessor {
+@@ -75,6 +_,12 @@
              double blockDistanceSquared = blockResult == null ? Double.MAX_VALUE : context.getFrom().distanceToSqr(blockResult.getLocation());
              double liquidDistanceSquared = liquidResult == null ? Double.MAX_VALUE : context.getFrom().distanceToSqr(liquidResult.getLocation());
              return blockDistanceSquared <= liquidDistanceSquared ? blockResult : liquidResult;

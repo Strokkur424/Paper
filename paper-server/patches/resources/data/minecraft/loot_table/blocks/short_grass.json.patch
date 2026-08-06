@@ -1,0 +1,47 @@
+--- a/data/minecraft/loot_table/blocks/short_grass.json
++++ b/data/minecraft/loot_table/blocks/short_grass.json
+@@ -8,26 +_,35 @@
+           "children": [
+             {
+               "type": "minecraft:item",
+-              "condition": "minecraft:tool/can_shear",
++              "conditions": [
++                {
++                  "condition": "minecraft:match_tool",
++                  "predicate": {
++                    "items": "minecraft:shears"
++                  }
++                }
++              ],
+               "name": "minecraft:short_grass"
+             },
+             {
+               "type": "minecraft:item",
+-              "condition": {
+-                "type": "minecraft:random_chance",
+-                "chance": 0.125
+-              },
+-              "modifier": [
+-                {
+-                  "type": "minecraft:apply_bonus",
++              "conditions": [
++                {
++                  "chance": 0.125,
++                  "condition": "minecraft:random_chance"
++                }
++              ],
++              "functions": [
++                {
+                   "enchantment": "minecraft:fortune",
+                   "formula": "minecraft:uniform_bonus_count",
++                  "function": "minecraft:apply_bonus",
+                   "parameters": {
+                     "bonusMultiplier": 2
+                   }
+                 },
+                 {
+-                  "type": "minecraft:explosion_decay"
++                  "function": "minecraft:explosion_decay"
+                 }
+               ],
+               "name": "minecraft:wheat_seeds"

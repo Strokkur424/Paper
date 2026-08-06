@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/item/component/UseRemainder.java b/net/minecraft/world/item/component/UseRemainder.java
-index ad5c20c5042283ff5b1517d8a5f2608e24a62f19..093476275879973612a264e4dadf8ed2be204083 100644
 --- a/net/minecraft/world/item/component/UseRemainder.java
 +++ b/net/minecraft/world/item/component/UseRemainder.java
-@@ -9,7 +9,7 @@ import net.minecraft.world.item.ItemStackTemplate;
+@@ -9,7 +_,7 @@
  public record UseRemainder(ItemStackTemplate convertInto) {
      public static final Codec<UseRemainder> CODEC = ItemStackTemplate.CODEC.xmap(UseRemainder::new, UseRemainder::convertInto);
      public static final StreamCodec<RegistryFriendlyByteBuf, UseRemainder> STREAM_CODEC = StreamCodec.composite(

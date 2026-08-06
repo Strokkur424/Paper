@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/network/protocol/game/ClientboundSetPlayerTeamPacket.java b/net/minecraft/network/protocol/game/ClientboundSetPlayerTeamPacket.java
-index ad3cfaa19b1512d1492441a2a02e460e5abb79c0..c5b2d63119a96e6783ff2171af6c6a9a77340cba 100644
 --- a/net/minecraft/network/protocol/game/ClientboundSetPlayerTeamPacket.java
 +++ b/net/minecraft/network/protocol/game/ClientboundSetPlayerTeamPacket.java
-@@ -61,6 +61,12 @@ public class ClientboundSetPlayerTeamPacket implements Packet<ClientGamePacketLi
+@@ -61,6 +_,12 @@
          );
      }
  
@@ -21,7 +13,7 @@ index ad3cfaa19b1512d1492441a2a02e460e5abb79c0..c5b2d63119a96e6783ff2171af6c6a9a
      private ClientboundSetPlayerTeamPacket(final RegistryFriendlyByteBuf input) {
          this.name = input.readUtf();
          this.method = input.readByte();
-@@ -179,5 +185,12 @@ public class ClientboundSetPlayerTeamPacket implements Packet<ClientGamePacketLi
+@@ -179,5 +_,12 @@
                  team.packOptions()
              );
          }

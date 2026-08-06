@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/building_blocks/polished_deepslate.json
++++ b/data/minecraft/advancement/recipes/building_blocks/polished_deepslate.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:polished_deepslate"
++        "recipe": "minecraft:polished_deepslate"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

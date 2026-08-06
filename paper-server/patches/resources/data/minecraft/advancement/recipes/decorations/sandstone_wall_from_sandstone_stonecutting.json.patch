@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/decorations/sandstone_wall_from_sandstone_stonecutting.json
++++ b/data/minecraft/advancement/recipes/decorations/sandstone_wall_from_sandstone_stonecutting.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:sandstone_wall_from_sandstone_stonecutting"
++        "recipe": "minecraft:sandstone_wall_from_sandstone_stonecutting"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

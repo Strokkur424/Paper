@@ -1,0 +1,33 @@
+--- a/data/minecraft/advancement/nether/return_to_sender.json
++++ b/data/minecraft/advancement/nether/return_to_sender.json
+@@ -3,13 +_,15 @@
+   "criteria": {
+     "killed_ghast": {
+       "conditions": {
+-        "entity": {
+-          "type": "minecraft:entity_properties",
+-          "entity": "this",
+-          "predicate": {
+-            "minecraft:entity_type": "minecraft:ghast"
++        "entity": [
++          {
++            "condition": "minecraft:entity_properties",
++            "entity": "this",
++            "predicate": {
++              "minecraft:entity_type": "minecraft:ghast"
++            }
+           }
+-        },
++        ],
+         "killing_blow": {
+           "direct_entity": {
+             "minecraft:entity_type": "minecraft:fireball"
+@@ -17,7 +_,7 @@
+           "tags": [
+             {
+               "expected": true,
+-              "id": "#minecraft:is_projectile"
++              "id": "minecraft:is_projectile"
+             }
+           ]
+         }

@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/decorations/smoker.json
++++ b/data/minecraft/advancement/recipes/decorations/smoker.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:smoker"
++        "recipe": "minecraft:smoker"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

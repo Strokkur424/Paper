@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/server/packs/repository/ServerPacksSource.java b/net/minecraft/server/packs/repository/ServerPacksSource.java
-index fbdc75a235aab30f4953b7780d310c6fb5aa4d10..cf66cb819bed7b745b00ec8b1c0be0d613015e33 100644
 --- a/net/minecraft/server/packs/repository/ServerPacksSource.java
 +++ b/net/minecraft/server/packs/repository/ServerPacksSource.java
-@@ -47,7 +47,7 @@ public class ServerPacksSource extends BuiltInPackSource {
+@@ -47,7 +_,7 @@
      public static VanillaPackResources createVanillaPackSource() {
          return new VanillaPackResourcesBuilder()
              .setMetadata(BUILT_IN_METADATA)
@@ -17,7 +9,7 @@ index fbdc75a235aab30f4953b7780d310c6fb5aa4d10..cf66cb819bed7b745b00ec8b1c0be0d6
              .applyDevelopmentConfig()
              .pushJarResources()
              .build(VANILLA_PACK_INFO);
-@@ -65,15 +65,26 @@ public class ServerPacksSource extends BuiltInPackSource {
+@@ -65,15 +_,26 @@
  
      @Override
      protected @Nullable Pack createBuiltinPack(final String id, final Pack.ResourcesSupplier resources, final Component name) {

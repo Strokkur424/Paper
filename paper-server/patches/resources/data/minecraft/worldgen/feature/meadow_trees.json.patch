@@ -1,0 +1,13 @@
+--- a/data/minecraft/worldgen/feature/meadow_trees.json
++++ /dev/null
+@@ -1,10 +_,0 @@
+-{
+-  "type": "minecraft:random_selector",
+-  "default": "minecraft:super_birch_bees",
+-  "features": [
+-    {
+-      "chance": 0.5,
+-      "feature": "minecraft:fancy_oak_bees"
+-    }
+-  ]
+-}

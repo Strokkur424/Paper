@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/food/beetroot_soup.json
++++ b/data/minecraft/advancement/recipes/food/beetroot_soup.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:beetroot_soup"
++        "recipe": "minecraft:beetroot_soup"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

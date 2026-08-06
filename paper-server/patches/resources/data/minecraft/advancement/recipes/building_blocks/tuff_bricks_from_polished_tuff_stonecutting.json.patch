@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/building_blocks/tuff_bricks_from_polished_tuff_stonecutting.json
++++ b/data/minecraft/advancement/recipes/building_blocks/tuff_bricks_from_polished_tuff_stonecutting.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:tuff_bricks_from_polished_tuff_stonecutting"
++        "recipe": "minecraft:tuff_bricks_from_polished_tuff_stonecutting"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

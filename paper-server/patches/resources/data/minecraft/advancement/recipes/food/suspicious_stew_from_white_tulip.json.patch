@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/food/suspicious_stew_from_white_tulip.json
++++ b/data/minecraft/advancement/recipes/food/suspicious_stew_from_white_tulip.json
+@@ -3,7 +_,7 @@
+   "criteria": {
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:suspicious_stew_from_white_tulip"
++        "recipe": "minecraft:suspicious_stew_from_white_tulip"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     },

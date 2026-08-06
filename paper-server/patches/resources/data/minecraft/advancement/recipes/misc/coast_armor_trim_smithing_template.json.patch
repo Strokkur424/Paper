@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/misc/coast_armor_trim_smithing_template.json
++++ b/data/minecraft/advancement/recipes/misc/coast_armor_trim_smithing_template.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:coast_armor_trim_smithing_template"
++        "recipe": "minecraft:coast_armor_trim_smithing_template"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

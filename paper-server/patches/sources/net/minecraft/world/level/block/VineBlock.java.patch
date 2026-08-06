@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/level/block/VineBlock.java b/net/minecraft/world/level/block/VineBlock.java
-index ea7021ad08aba4059997543ba440b083f1a911be..81f87a0054cc2882679b9fade760d1f5a0772312 100644
 --- a/net/minecraft/world/level/block/VineBlock.java
 +++ b/net/minecraft/world/level/block/VineBlock.java
-@@ -163,7 +163,7 @@ public class VineBlock extends Block {
+@@ -163,7 +_,7 @@
      @Override
      protected void randomTick(final BlockState state, final ServerLevel level, final BlockPos pos, final RandomSource random) {
          if (level.getGameRules().get(GameRules.SPREAD_VINES)) {
@@ -17,7 +9,7 @@ index ea7021ad08aba4059997543ba440b083f1a911be..81f87a0054cc2882679b9fade760d1f5
                  Direction testDirection = Direction.getRandom(random);
                  BlockPos abovePos = pos.above();
                  if (testDirection.getAxis().isHorizontal() && !state.getValue(getPropertyForFace(testDirection))) {
-@@ -177,30 +177,33 @@ public class VineBlock extends Block {
+@@ -177,30 +_,33 @@
                              boolean ccwHasConnectingFace = state.getValue(getPropertyForFace(ccwDirection));
                              BlockPos cwTestPos = testPos.relative(cwDirection);
                              BlockPos ccwTestPos = testPos.relative(ccwDirection);
@@ -58,7 +50,7 @@ index ea7021ad08aba4059997543ba440b083f1a911be..81f87a0054cc2882679b9fade760d1f5
                              return;
                          }
  
-@@ -218,7 +221,7 @@ public class VineBlock extends Block {
+@@ -218,7 +_,7 @@
                              }
  
                              if (this.hasHorizontalConnection(aboveState)) {
@@ -67,7 +59,7 @@ index ea7021ad08aba4059997543ba440b083f1a911be..81f87a0054cc2882679b9fade760d1f5
                              }
  
                              return;
-@@ -232,7 +235,7 @@ public class VineBlock extends Block {
+@@ -232,7 +_,7 @@
                              BlockState before = belowState.isAir() ? this.defaultBlockState() : belowState;
                              BlockState after = this.copyRandomFaces(state, before, random);
                              if (before != after && this.hasHorizontalConnection(after)) {

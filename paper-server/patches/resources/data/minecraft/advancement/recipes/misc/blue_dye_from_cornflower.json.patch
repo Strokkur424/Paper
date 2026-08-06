@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/misc/blue_dye_from_cornflower.json
++++ b/data/minecraft/advancement/recipes/misc/blue_dye_from_cornflower.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:blue_dye_from_cornflower"
++        "recipe": "minecraft:blue_dye_from_cornflower"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

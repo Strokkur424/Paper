@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/decorations/green_stained_glass_pane.json
++++ b/data/minecraft/advancement/recipes/decorations/green_stained_glass_pane.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:green_stained_glass_pane"
++        "recipe": "minecraft:green_stained_glass_pane"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

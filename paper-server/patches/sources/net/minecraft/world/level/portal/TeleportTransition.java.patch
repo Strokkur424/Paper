@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/level/portal/TeleportTransition.java b/net/minecraft/world/level/portal/TeleportTransition.java
-index 487aa6c835fd349f49daf81f8b36cac767522a9b..4e4640dc660d76d2d56fd5b7e7225ef1b7f932ff 100644
 --- a/net/minecraft/world/level/portal/TeleportTransition.java
 +++ b/net/minecraft/world/level/portal/TeleportTransition.java
-@@ -21,7 +21,108 @@ public record TeleportTransition(
+@@ -21,7 +_,108 @@
      boolean asPassenger,
      Set<Relative> relatives,
      TeleportTransition.PostTeleportTransition postTeleportTransition
@@ -117,7 +109,7 @@ index 487aa6c835fd349f49daf81f8b36cac767522a9b..4e4640dc660d76d2d56fd5b7e7225ef1
      public static final TeleportTransition.PostTeleportTransition DO_NOTHING = entity -> {};
      public static final TeleportTransition.PostTeleportTransition PLAY_PORTAL_SOUND = TeleportTransition::playPortalSound;
      public static final TeleportTransition.PostTeleportTransition PLACE_PORTAL_TICKET = TeleportTransition::placePortalTicket;
-@@ -106,6 +207,10 @@ public record TeleportTransition(
+@@ -106,6 +_,10 @@
              this.asPassenger(),
              this.relatives(),
              this.postTeleportTransition()
@@ -128,7 +120,7 @@ index 487aa6c835fd349f49daf81f8b36cac767522a9b..4e4640dc660d76d2d56fd5b7e7225ef1
          );
      }
  
-@@ -120,6 +225,10 @@ public record TeleportTransition(
+@@ -120,6 +_,10 @@
              this.asPassenger(),
              this.relatives(),
              this.postTeleportTransition()
@@ -139,7 +131,7 @@ index 487aa6c835fd349f49daf81f8b36cac767522a9b..4e4640dc660d76d2d56fd5b7e7225ef1
          );
      }
  
-@@ -134,6 +243,10 @@ public record TeleportTransition(
+@@ -134,6 +_,10 @@
              true,
              this.relatives(),
              this.postTeleportTransition()

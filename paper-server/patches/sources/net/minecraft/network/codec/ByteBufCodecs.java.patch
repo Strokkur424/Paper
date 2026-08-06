@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/network/codec/ByteBufCodecs.java b/net/minecraft/network/codec/ByteBufCodecs.java
-index 593138b0d8f1a9e5f9d1bf20e158ca80cbc58385..08ba78fcd2f02fef5f2695488eb381522beaea8e 100644
 --- a/net/minecraft/network/codec/ByteBufCodecs.java
 +++ b/net/minecraft/network/codec/ByteBufCodecs.java
-@@ -377,7 +377,13 @@ public interface ByteBufCodecs {
+@@ -377,7 +_,13 @@
          return new StreamCodec<ByteBuf, Tag>() {
              @Override
              public Tag decode(final ByteBuf input) {
@@ -23,7 +15,7 @@ index 593138b0d8f1a9e5f9d1bf20e158ca80cbc58385..08ba78fcd2f02fef5f2695488eb38152
                  if (result == null) {
                      throw new DecoderException("Expected non-null compound tag");
                  } else {
-@@ -461,6 +467,48 @@ public interface ByteBufCodecs {
+@@ -461,6 +_,48 @@
          };
      }
  
@@ -72,7 +64,7 @@ index 593138b0d8f1a9e5f9d1bf20e158ca80cbc58385..08ba78fcd2f02fef5f2695488eb38152
      static <B extends ByteBuf, V> StreamCodec<B, Optional<V>> optional(final StreamCodec<? super B, V> original) {
          return new StreamCodec<B, Optional<V>>() {
              @Override
-@@ -681,7 +729,7 @@ public interface ByteBufCodecs {
+@@ -681,7 +_,7 @@
      }
  
      static <V> StreamCodec.CodecOperation<RegistryFriendlyByteBuf, V, V> registryFriendlyLengthPrefixed(final int maxSize) {

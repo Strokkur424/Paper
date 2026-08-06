@@ -1,0 +1,15 @@
+--- a/data/minecraft/worldgen/noise/powder_snow.json
++++ b/data/minecraft/worldgen/noise/powder_snow.json
+@@ -1,5 +_,9 @@
+ {
+-  "base_amplitude": 0.939546696581729,
+-  "base_octave": -6,
+-  "octave_count": 4
++  "amplitudes": [
++    1.0,
++    1.0,
++    1.0,
++    1.0
++  ],
++  "firstOctave": -6
+ }

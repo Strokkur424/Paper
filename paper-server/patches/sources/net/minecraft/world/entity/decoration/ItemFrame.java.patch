@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/entity/decoration/ItemFrame.java b/net/minecraft/world/entity/decoration/ItemFrame.java
-index d51e71fa813adbe392a69cd807e772e90888b28a..a9bad99aae3e991651731e34f852ccc67a203fc6 100644
 --- a/net/minecraft/world/entity/decoration/ItemFrame.java
 +++ b/net/minecraft/world/entity/decoration/ItemFrame.java
-@@ -55,6 +55,7 @@ public class ItemFrame extends HangingEntity {
+@@ -55,6 +_,7 @@
      private static final boolean DEFAULT_FIXED = false;
      public float dropChance = 1.0F;
      public boolean fixed = false;
@@ -16,7 +8,7 @@ index d51e71fa813adbe392a69cd807e772e90888b28a..a9bad99aae3e991651731e34f852ccc6
  
      public ItemFrame(final EntityType<? extends ItemFrame> type, final Level level) {
          super(type, level);
-@@ -112,6 +113,11 @@ public class ItemFrame extends HangingEntity {
+@@ -112,6 +_,11 @@
      }
  
      private AABB createBoundingBox(final BlockPos blockPos, final Direction direction, final boolean hasFramedMap) {
@@ -28,7 +20,7 @@ index d51e71fa813adbe392a69cd807e772e90888b28a..a9bad99aae3e991651731e34f852ccc6
          float shiftToBlockWall = 0.46875F;
          Vec3 position = Vec3.atCenterOf(blockPos).relative(direction, -0.46875);
          float width = hasFramedMap ? 1.0F : 0.75F;
-@@ -145,9 +151,9 @@ public class ItemFrame extends HangingEntity {
+@@ -145,9 +_,9 @@
      }
  
      @Override
@@ -40,7 +32,7 @@ index d51e71fa813adbe392a69cd807e772e90888b28a..a9bad99aae3e991651731e34f852ccc6
          }
      }
  
-@@ -176,6 +182,18 @@ public class ItemFrame extends HangingEntity {
+@@ -176,6 +_,18 @@
              if (this.isInvulnerableToBase(source)) {
                  return false;
              } else if (this.shouldDamageDropItem(source)) {
@@ -59,7 +51,7 @@ index d51e71fa813adbe392a69cd807e772e90888b28a..a9bad99aae3e991651731e34f852ccc6
                  this.dropItem(level, source.getEntity(), false);
                  this.gameEvent(GameEvent.BLOCK_CHANGE, source.getEntity());
                  this.playSound(this.getRemoveItemSound(), 1.0F, 1.0F);
-@@ -259,6 +277,13 @@ public class ItemFrame extends HangingEntity {
+@@ -259,6 +_,13 @@
          return this.getEntityData().get(DATA_ITEM);
      }
  
@@ -73,7 +65,7 @@ index d51e71fa813adbe392a69cd807e772e90888b28a..a9bad99aae3e991651731e34f852ccc6
      public @Nullable MapId getFramedMapId(final ItemStack itemStack) {
          return itemStack.get(DataComponents.MAP_ID);
      }
-@@ -272,13 +297,19 @@ public class ItemFrame extends HangingEntity {
+@@ -272,13 +_,19 @@
      }
  
      public void setItem(ItemStack itemStack, final boolean updateNeighbours) {
@@ -94,7 +86,7 @@ index d51e71fa813adbe392a69cd807e772e90888b28a..a9bad99aae3e991651731e34f852ccc6
              this.playSound(this.getAddItemSound(), 1.0F, 1.0F);
          }
  
-@@ -305,6 +336,7 @@ public class ItemFrame extends HangingEntity {
+@@ -305,6 +_,7 @@
      }
  
      private void onItemChanged(final ItemStack item) {
@@ -102,7 +94,7 @@ index d51e71fa813adbe392a69cd807e772e90888b28a..a9bad99aae3e991651731e34f852ccc6
          this.recalculateBoundingBox();
      }
  
-@@ -372,7 +404,13 @@ public class ItemFrame extends HangingEntity {
+@@ -372,7 +_,13 @@
                          return InteractionResult.FAIL;
                      }
  
@@ -117,7 +109,7 @@ index d51e71fa813adbe392a69cd807e772e90888b28a..a9bad99aae3e991651731e34f852ccc6
                      this.gameEvent(GameEvent.BLOCK_CHANGE, player);
                      itemStack.consume(1, player);
                      return InteractionResult.SUCCESS;
-@@ -380,6 +418,13 @@ public class ItemFrame extends HangingEntity {
+@@ -380,6 +_,13 @@
                      return InteractionResult.PASS;
                  }
              } else {

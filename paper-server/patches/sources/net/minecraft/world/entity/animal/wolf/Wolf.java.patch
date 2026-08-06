@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/entity/animal/wolf/Wolf.java b/net/minecraft/world/entity/animal/wolf/Wolf.java
-index 20bda59fdad85d5dda5bea9035d210b489842428..52bd00213dbbbef45c1039f13aa7dd3ef2bf6dad 100644
 --- a/net/minecraft/world/entity/animal/wolf/Wolf.java
 +++ b/net/minecraft/world/entity/animal/wolf/Wolf.java
-@@ -404,15 +404,18 @@ public class Wolf extends TamableAnimal implements NeutralMob {
+@@ -404,15 +_,18 @@
              return false;
          }
  
@@ -30,7 +22,7 @@ index 20bda59fdad85d5dda5bea9035d210b489842428..52bd00213dbbbef45c1039f13aa7dd3e
              ItemStack armorBefore = this.getBodyArmorItem();
              int damageBefore = armorBefore.getDamageValue();
              int maxDamage = armorBefore.getMaxDamage();
-@@ -424,6 +427,7 @@ public class Wolf extends TamableAnimal implements NeutralMob {
+@@ -424,6 +_,7 @@
                  );
              }
          }
@@ -38,7 +30,7 @@ index 20bda59fdad85d5dda5bea9035d210b489842428..52bd00213dbbbef45c1039f13aa7dd3e
      }
  
      private boolean canArmorAbsorb(final DamageSource source) {
-@@ -434,7 +438,7 @@ public class Wolf extends TamableAnimal implements NeutralMob {
+@@ -434,7 +_,7 @@
      protected void applyTamingSideEffects() {
          if (this.isTame()) {
              this.getAttribute(Attributes.MAX_HEALTH).setBaseValue(40.0);
@@ -47,7 +39,7 @@ index 20bda59fdad85d5dda5bea9035d210b489842428..52bd00213dbbbef45c1039f13aa7dd3e
          } else {
              this.getAttribute(Attributes.MAX_HEALTH).setBaseValue(8.0);
          }
-@@ -484,7 +488,7 @@ public class Wolf extends TamableAnimal implements NeutralMob {
+@@ -484,7 +_,7 @@
                      this.setOrderedToSit(!this.isOrderedToSit());
                      this.jumping = false;
                      this.navigation.stop();
@@ -56,7 +48,7 @@ index 20bda59fdad85d5dda5bea9035d210b489842428..52bd00213dbbbef45c1039f13aa7dd3e
                      return InteractionResult.SUCCESS.withoutItem();
                  }
  
-@@ -493,6 +497,25 @@ public class Wolf extends TamableAnimal implements NeutralMob {
+@@ -493,6 +_,25 @@
  
              DyeColor color = itemStack.get(DataComponents.DYE);
              if (color != null && color != this.getCollarColor()) {
@@ -82,7 +74,7 @@ index 20bda59fdad85d5dda5bea9035d210b489842428..52bd00213dbbbef45c1039f13aa7dd3e
                  this.setCollarColor(color);
                  itemStack.consume(1, player);
                  return InteractionResult.SUCCESS;
-@@ -507,7 +530,7 @@ public class Wolf extends TamableAnimal implements NeutralMob {
+@@ -507,7 +_,7 @@
      }
  
      private void tryToTame(final Player player) {

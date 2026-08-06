@@ -1,0 +1,27 @@
+--- a/data/minecraft/advancement/story/follow_ender_eye.json
++++ b/data/minecraft/advancement/story/follow_ender_eye.json
+@@ -3,15 +_,17 @@
+   "criteria": {
+     "in_stronghold": {
+       "conditions": {
+-        "player": {
+-          "type": "minecraft:entity_properties",
+-          "entity": "this",
+-          "predicate": {
+-            "minecraft:location": {
+-              "structures": "minecraft:stronghold"
++        "player": [
++          {
++            "condition": "minecraft:entity_properties",
++            "entity": "this",
++            "predicate": {
++              "minecraft:location": {
++                "structures": "minecraft:stronghold"
++              }
+             }
+           }
+-        }
++        ]
+       },
+       "trigger": "minecraft:location"
+     }

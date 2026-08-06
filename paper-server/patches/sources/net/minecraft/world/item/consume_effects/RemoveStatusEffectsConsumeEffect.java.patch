@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/item/consume_effects/RemoveStatusEffectsConsumeEffect.java b/net/minecraft/world/item/consume_effects/RemoveStatusEffectsConsumeEffect.java
-index 41711de453026ea86e75995916681f70ef3295d8..ffd6351bb92f480fba7fecbe1e4c39d91d78f292 100644
 --- a/net/minecraft/world/item/consume_effects/RemoveStatusEffectsConsumeEffect.java
 +++ b/net/minecraft/world/item/consume_effects/RemoveStatusEffectsConsumeEffect.java
-@@ -33,11 +33,11 @@ public record RemoveStatusEffectsConsumeEffect(HolderSet<MobEffect> effects) imp
+@@ -33,11 +_,11 @@
      }
  
      @Override

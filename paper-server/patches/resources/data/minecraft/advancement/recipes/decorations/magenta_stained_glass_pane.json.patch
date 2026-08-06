@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/decorations/magenta_stained_glass_pane.json
++++ b/data/minecraft/advancement/recipes/decorations/magenta_stained_glass_pane.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:magenta_stained_glass_pane"
++        "recipe": "minecraft:magenta_stained_glass_pane"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

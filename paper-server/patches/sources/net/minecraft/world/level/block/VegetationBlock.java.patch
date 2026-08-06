@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/level/block/VegetationBlock.java b/net/minecraft/world/level/block/VegetationBlock.java
-index a778b3c1abb87f1842528f1360be9418287f7bd3..912b0e3a615e2154cea239b13cffadd96998e87b 100644
 --- a/net/minecraft/world/level/block/VegetationBlock.java
 +++ b/net/minecraft/world/level/block/VegetationBlock.java
-@@ -31,9 +31,15 @@ public abstract class VegetationBlock extends Block {
+@@ -31,9 +_,15 @@
          final BlockState neighbourState,
          final RandomSource random
      ) {

@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/item/enchantment/Enchantment.java b/net/minecraft/world/item/enchantment/Enchantment.java
-index 25189db5ddae3e3b4ac33e4c578481fa749ead70..dd419380b1a09d89da8712b92164cd207dd1c2ab 100644
 --- a/net/minecraft/world/item/enchantment/Enchantment.java
 +++ b/net/minecraft/world/item/enchantment/Enchantment.java
-@@ -351,7 +351,21 @@ public record Enchantment(Component description, Enchantment.EnchantmentDefiniti
+@@ -351,7 +_,21 @@
          applyEffects(
              this.getEffects(EnchantmentEffectComponents.POST_PIERCING_ATTACK),
              entityContext(serverLevel, enchantmentLevel, user, user.position()),

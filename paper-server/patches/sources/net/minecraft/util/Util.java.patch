@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/util/Util.java b/net/minecraft/util/Util.java
-index 3bb7462581e22d119be8412cbe6ec0f9187fc2bc..907f2488ed4770d0f809f1db69d939e5bf763955 100644
 --- a/net/minecraft/util/Util.java
 +++ b/net/minecraft/util/Util.java
-@@ -104,9 +104,25 @@ public class Util {
+@@ -104,9 +_,25 @@
      private static final int DEFAULT_MAX_THREADS = 255;
      private static final int DEFAULT_SAFE_FILE_OPERATION_RETRIES = 10;
      private static final String MAX_THREADS_SYSTEM_PROPERTY = "max.bg.threads";
@@ -36,7 +28,7 @@ index 3bb7462581e22d119be8412cbe6ec0f9187fc2bc..907f2488ed4770d0f809f1db69d939e5
      private static final DateTimeFormatter FILENAME_DATE_TIME_FORMATTER = DateTimeFormatter.ofPattern("yyyy-MM-dd_HH.mm.ss", Locale.ROOT);
      public static final int LINEAR_LOOKUP_THRESHOLD = 8;
      private static final Set<String> ALLOWED_UNTRUSTED_LINK_PROTOCOLS = Set.of("http", "https");
-@@ -147,6 +163,7 @@ public class Util {
+@@ -147,6 +_,7 @@
          escaper.addEscape('\\', "\\\\");
      }).build();
      private static Consumer<String> thePauser = msg -> {};
@@ -44,7 +36,7 @@ index 3bb7462581e22d119be8412cbe6ec0f9187fc2bc..907f2488ed4770d0f809f1db69d939e5
  
      public static <K, V> Collector<Entry<? extends K, ? extends V>, ?, Map<K, V>> toMap() {
          return Collectors.toMap(Entry::getKey, Entry::getValue);
-@@ -182,7 +199,7 @@ public class Util {
+@@ -182,7 +_,7 @@
      }
  
      public static long getNanos() {
@@ -53,7 +45,7 @@ index 3bb7462581e22d119be8412cbe6ec0f9187fc2bc..907f2488ed4770d0f809f1db69d939e5
      }
  
      public static long getEpochMillis() {
-@@ -193,9 +210,10 @@ public class Util {
+@@ -193,9 +_,10 @@
          return FILENAME_DATE_TIME_FORMATTER.format(ZonedDateTime.now());
      }
  
@@ -66,7 +58,7 @@ index 3bb7462581e22d119be8412cbe6ec0f9187fc2bc..907f2488ed4770d0f809f1db69d939e5
          if (threads <= 0) {
              executor = MoreExecutors.newDirectExecutorService();
          } else {
-@@ -220,16 +238,30 @@ public class Util {
+@@ -220,16 +_,30 @@
                          super.onTermination(exception);
                      }
                  };
@@ -99,10 +91,11 @@ index 3bb7462581e22d119be8412cbe6ec0f9187fc2bc..907f2488ed4770d0f809f1db69d939e5
      }
  
      private static int getMaxThreads() {
-@@ -279,6 +311,21 @@ public class Util {
+@@ -278,6 +_,21 @@
+             return thread;
          }));
      }
- 
++
 +    // Paper start - Separate dimension data IO pool
 +    private static TracingExecutor makeExtraIoExecutor(String namePrefix) {
 +        AtomicInteger atomicInteger = new AtomicInteger(1);
@@ -117,7 +110,6 @@ index 3bb7462581e22d119be8412cbe6ec0f9187fc2bc..907f2488ed4770d0f809f1db69d939e5
 +        }));
 +    }
 +    // Paper end - Separate dimension data IO pool
-+
+ 
      public static void throwAsRuntime(final Throwable throwable) {
          throw throwable instanceof RuntimeException runtimeException ? runtimeException : new RuntimeException(throwable);
-     }

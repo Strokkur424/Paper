@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/level/block/entity/trialspawner/PlayerDetector.java b/net/minecraft/world/level/block/entity/trialspawner/PlayerDetector.java
-index c82755e07a0772e7adafd3019075baa31d42ece0..69e74e6da56c38efc97ef6d5c272e8d162b63680 100644
 --- a/net/minecraft/world/level/block/entity/trialspawner/PlayerDetector.java
 +++ b/net/minecraft/world/level/block/entity/trialspawner/PlayerDetector.java
-@@ -22,7 +22,7 @@ import net.minecraft.world.phys.shapes.CollisionContext;
+@@ -22,7 +_,7 @@
  
  public interface PlayerDetector {
      PlayerDetector NO_CREATIVE_PLAYERS = (level, selector, pos, requiredPlayerRange, requireLineOfSight) -> selector.getPlayers(

@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/decorations/composter.json
++++ b/data/minecraft/advancement/recipes/decorations/composter.json
+@@ -3,7 +_,7 @@
+   "criteria": {
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:composter"
++        "recipe": "minecraft:composter"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     },

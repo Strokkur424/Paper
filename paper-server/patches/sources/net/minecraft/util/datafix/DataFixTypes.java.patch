@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/util/datafix/DataFixTypes.java b/net/minecraft/util/datafix/DataFixTypes.java
-index d570fbb3528a7184a07110146566140ef90c436e..4168626dcff36763e5354fc165044d96ca661572 100644
 --- a/net/minecraft/util/datafix/DataFixTypes.java
 +++ b/net/minecraft/util/datafix/DataFixTypes.java
-@@ -14,6 +14,7 @@ import net.minecraft.nbt.NbtOps;
+@@ -14,6 +_,7 @@
  import net.minecraft.util.datafix.fixes.References;
  
  public enum DataFixTypes {
@@ -16,7 +8,7 @@ index d570fbb3528a7184a07110146566140ef90c436e..4168626dcff36763e5354fc165044d96
      LEVEL(References.LEVEL),
      LEVEL_SUMMARY(References.LIGHTWEIGHT_LEVEL),
      PLAYER(References.PLAYER),
-@@ -76,6 +77,7 @@ public enum DataFixTypes {
+@@ -76,6 +_,7 @@
      }
  
      public <T> Dynamic<T> update(final DataFixer fixerUpper, final Dynamic<T> input, final int fromVersion, final int toVersion) {

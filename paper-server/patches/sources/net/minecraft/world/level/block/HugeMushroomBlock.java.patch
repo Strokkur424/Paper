@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/level/block/HugeMushroomBlock.java b/net/minecraft/world/level/block/HugeMushroomBlock.java
-index 75c83f637f2a591f384fb6e936217aca1378f5a9..dc1d034d2ad4b3d9f26a6c40b60e6bb7cf7b8fae 100644
 --- a/net/minecraft/world/level/block/HugeMushroomBlock.java
 +++ b/net/minecraft/world/level/block/HugeMushroomBlock.java
-@@ -38,6 +38,7 @@ public class HugeMushroomBlock extends Block {
+@@ -38,6 +_,7 @@
  
      @Override
      public BlockState getStateForPlacement(final BlockPlaceContext context) {
@@ -16,7 +8,7 @@ index 75c83f637f2a591f384fb6e936217aca1378f5a9..dc1d034d2ad4b3d9f26a6c40b60e6bb7
          BlockGetter level = context.getLevel();
          BlockPos pos = context.getClickedPos();
          return this.defaultBlockState()
-@@ -60,6 +61,7 @@ public class HugeMushroomBlock extends Block {
+@@ -60,6 +_,7 @@
          final BlockState neighbourState,
          final RandomSource random
      ) {
@@ -24,7 +16,7 @@ index 75c83f637f2a591f384fb6e936217aca1378f5a9..dc1d034d2ad4b3d9f26a6c40b60e6bb7
          return neighbourState.is(this)
              ? state.setValue(PROPERTY_BY_DIRECTION.get(directionToNeighbour), false)
              : super.updateShape(state, level, ticks, pos, directionToNeighbour, neighbourPos, neighbourState, random);
-@@ -67,6 +69,7 @@ public class HugeMushroomBlock extends Block {
+@@ -67,6 +_,7 @@
  
      @Override
      protected BlockState rotate(final BlockState state, final Rotation rotation) {
@@ -32,7 +24,7 @@ index 75c83f637f2a591f384fb6e936217aca1378f5a9..dc1d034d2ad4b3d9f26a6c40b60e6bb7
          return state.setValue(PROPERTY_BY_DIRECTION.get(rotation.rotate(Direction.NORTH)), state.getValue(NORTH))
              .setValue(PROPERTY_BY_DIRECTION.get(rotation.rotate(Direction.SOUTH)), state.getValue(SOUTH))
              .setValue(PROPERTY_BY_DIRECTION.get(rotation.rotate(Direction.EAST)), state.getValue(EAST))
-@@ -77,6 +80,7 @@ public class HugeMushroomBlock extends Block {
+@@ -77,6 +_,7 @@
  
      @Override
      protected BlockState mirror(final BlockState state, final Mirror mirror) {

@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/util/datafix/fixes/ItemStackMapIdFix.java b/net/minecraft/util/datafix/fixes/ItemStackMapIdFix.java
-index 826c3fd78f313e1f9e702845abfd88882faa410e..d79165e21daf3c4b64df714389047df5d8d58551 100644
 --- a/net/minecraft/util/datafix/fixes/ItemStackMapIdFix.java
 +++ b/net/minecraft/util/datafix/fixes/ItemStackMapIdFix.java
-@@ -29,7 +29,7 @@ public class ItemStackMapIdFix extends DataFix {
+@@ -29,7 +_,7 @@
                  Dynamic<?> rest = input.get(DSL.remainderFinder());
                  Typed<?> tag = input.getOrCreateTyped(tagF);
                  Dynamic<?> tagRest = tag.get(DSL.remainderFinder());

@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/misc/white_dye_from_lily_of_the_valley.json
++++ b/data/minecraft/advancement/recipes/misc/white_dye_from_lily_of_the_valley.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:white_dye_from_lily_of_the_valley"
++        "recipe": "minecraft:white_dye_from_lily_of_the_valley"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/level/block/BaseRailBlock.java b/net/minecraft/world/level/block/BaseRailBlock.java
-index ff64b2a542fee74e66f677ff0297d287fe1617ca..4efa741b223997312141040087bb8fc0f04f73e0 100644
 --- a/net/minecraft/world/level/block/BaseRailBlock.java
 +++ b/net/minecraft/world/level/block/BaseRailBlock.java
-@@ -67,6 +67,7 @@ public abstract class BaseRailBlock extends Block implements SimpleWaterloggedBl
+@@ -67,6 +_,7 @@
          state = this.updateDir(level, pos, state, true);
          if (this.isStraight) {
              level.neighborChanged(state, pos, this, null, movedByPiston);

@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/effect/MobEffectInstance.java b/net/minecraft/world/effect/MobEffectInstance.java
-index b4a74217701d2271e92271fd003a7da2f1de4268..5dd64fb6e88629c7cc9f110842d1825365113b3b 100644
 --- a/net/minecraft/world/effect/MobEffectInstance.java
 +++ b/net/minecraft/world/effect/MobEffectInstance.java
-@@ -228,6 +228,7 @@ public class MobEffectInstance implements Comparable<MobEffectInstance> {
+@@ -228,6 +_,7 @@
  
          int tickCount = this.isInfiniteDuration() ? target.tickCount : this.duration;
          if (this.effect.value().shouldApplyEffectTickThisTick(tickCount, this.amplifier)
@@ -16,7 +8,7 @@ index b4a74217701d2271e92271fd003a7da2f1de4268..5dd64fb6e88629c7cc9f110842d18253
              && !this.effect.value().applyEffectTick(serverLevel, target, this.amplifier)) {
              return false;
          }
-@@ -262,13 +263,16 @@ public class MobEffectInstance implements Comparable<MobEffectInstance> {
+@@ -262,13 +_,16 @@
      }
  
      private boolean downgradeToHiddenEffect() {
@@ -38,7 +30,7 @@ index b4a74217701d2271e92271fd003a7da2f1de4268..5dd64fb6e88629c7cc9f110842d18253
      }
  
      public void onEffectStarted(final LivingEntity mob) {
-@@ -425,7 +429,7 @@ public class MobEffectInstance implements Comparable<MobEffectInstance> {
+@@ -425,7 +_,7 @@
                      .apply(i, MobEffectInstance.Details::create)
              )
          );
@@ -47,7 +39,7 @@ index b4a74217701d2271e92271fd003a7da2f1de4268..5dd64fb6e88629c7cc9f110842d18253
              subCodec -> StreamCodec.composite(
                  ByteBufCodecs.VAR_INT,
                  MobEffectInstance.Details::amplifier,
-@@ -437,7 +441,7 @@ public class MobEffectInstance implements Comparable<MobEffectInstance> {
+@@ -437,7 +_,7 @@
                  MobEffectInstance.Details::showParticles,
                  ByteBufCodecs.BOOL,
                  MobEffectInstance.Details::showIcon,

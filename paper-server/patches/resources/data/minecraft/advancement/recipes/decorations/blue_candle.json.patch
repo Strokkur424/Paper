@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/decorations/blue_candle.json
++++ b/data/minecraft/advancement/recipes/decorations/blue_candle.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:blue_candle"
++        "recipe": "minecraft:blue_candle"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

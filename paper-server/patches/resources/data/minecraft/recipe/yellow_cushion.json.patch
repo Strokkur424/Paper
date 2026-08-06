@@ -1,0 +1,16 @@
+--- a/data/minecraft/recipe/yellow_cushion.json
++++ /dev/null
+@@ -1,13 +_,0 @@
+-{
+-  "type": "minecraft:crafting_shaped",
+-  "group": "cushion",
+-  "key": {
+-    "#": "minecraft:yellow_wool_slab"
+-  },
+-  "pattern": [
+-    "###"
+-  ],
+-  "result": {
+-    "id": "minecraft:yellow_cushion"
+-  }
+-}

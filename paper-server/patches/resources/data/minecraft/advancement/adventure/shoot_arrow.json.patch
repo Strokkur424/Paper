@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/adventure/shoot_arrow.json
++++ b/data/minecraft/advancement/adventure/shoot_arrow.json
+@@ -11,7 +_,7 @@
+             "tags": [
+               {
+                 "expected": true,
+-                "id": "#minecraft:is_projectile"
++                "id": "minecraft:is_projectile"
+               }
+             ]
+           }

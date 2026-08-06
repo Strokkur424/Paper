@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/item/ArmorStandItem.java b/net/minecraft/world/item/ArmorStandItem.java
-index 3c6c3c1522c82b923aada412567022687753c941..9ed039c323cccf163e7b3f39d73fcc7e3b5c663c 100644
 --- a/net/minecraft/world/item/ArmorStandItem.java
 +++ b/net/minecraft/world/item/ArmorStandItem.java
-@@ -47,6 +47,12 @@ public class ArmorStandItem extends Item {
+@@ -47,6 +_,12 @@
  
                  float yRot = Mth.floor((Mth.wrapDegrees(context.getRotation() - 180.0F) + 22.5F) / 45.0F) * 45.0F;
                  entity.snapTo(entity.getX(), entity.getY(), entity.getZ(), yRot, 0.0F);

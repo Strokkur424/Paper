@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/level/LevelWriter.java b/net/minecraft/world/level/LevelWriter.java
-index 252933dc021db12020bbfafa6dfbd148d8bf249c..dd58383b5838230c918c5754a213a6c7fcb3cd5d 100644
 --- a/net/minecraft/world/level/LevelWriter.java
 +++ b/net/minecraft/world/level/LevelWriter.java
-@@ -32,4 +32,10 @@ public interface LevelWriter {
+@@ -32,4 +_,10 @@
      default boolean addFreshEntity(final Entity entity) {
          return false;
      }

@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/entity/monster/Guardian.java b/net/minecraft/world/entity/monster/Guardian.java
-index f13a9dc4cc7da387f8ee1215935aa5144b08e638..4dfab4dece54d14fb5648e44b2779b0f4ee89727 100644
 --- a/net/minecraft/world/entity/monster/Guardian.java
 +++ b/net/minecraft/world/entity/monster/Guardian.java
-@@ -58,6 +58,7 @@ public class Guardian extends Monster {
+@@ -58,6 +_,7 @@
      private int clientSideAttackTime;
      private boolean clientSideTouchedGround;
      public @Nullable RandomStrollGoal randomStrollGoal;
@@ -16,7 +8,7 @@ index f13a9dc4cc7da387f8ee1215935aa5144b08e638..4dfab4dece54d14fb5648e44b2779b0f
  
      public Guardian(final EntityType<? extends Guardian> type, final Level level) {
          super(type, level);
-@@ -72,7 +73,7 @@ public class Guardian extends Monster {
+@@ -72,7 +_,7 @@
      protected void registerGoals() {
          MoveTowardsRestrictionGoal goal = new MoveTowardsRestrictionGoal(this, 1.0);
          this.randomStrollGoal = new RandomStrollGoal(this, 1.0, 80);

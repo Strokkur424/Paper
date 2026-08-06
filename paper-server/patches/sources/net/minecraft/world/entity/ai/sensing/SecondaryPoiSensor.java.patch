@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/entity/ai/sensing/SecondaryPoiSensor.java b/net/minecraft/world/entity/ai/sensing/SecondaryPoiSensor.java
-index ec12508c112b1e7748a5d197b73a0d540bed10fc..7d3e843c2d3c5e15b7bea7302d6118419d3a4957 100644
 --- a/net/minecraft/world/entity/ai/sensing/SecondaryPoiSensor.java
 +++ b/net/minecraft/world/entity/ai/sensing/SecondaryPoiSensor.java
-@@ -27,6 +27,7 @@ public class SecondaryPoiSensor extends Sensor<Villager> {
+@@ -27,6 +_,7 @@
          List<GlobalPos> jobSites = Lists.newArrayList();
          int horizontalSearch = 4;
  

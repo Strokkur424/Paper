@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/building_blocks/waxed_oxidized_cut_copper_stairs_from_waxed_oxidized_copper_stonecutting.json
++++ b/data/minecraft/advancement/recipes/building_blocks/waxed_oxidized_cut_copper_stairs_from_waxed_oxidized_copper_stonecutting.json
+@@ -3,7 +_,7 @@
+   "criteria": {
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:waxed_oxidized_cut_copper_stairs_from_waxed_oxidized_copper_stonecutting"
++        "recipe": "minecraft:waxed_oxidized_cut_copper_stairs_from_waxed_oxidized_copper_stonecutting"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     },

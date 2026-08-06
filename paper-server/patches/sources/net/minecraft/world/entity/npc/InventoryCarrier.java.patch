@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/entity/npc/InventoryCarrier.java b/net/minecraft/world/entity/npc/InventoryCarrier.java
-index 651a73c2914224c694fc989b50f5770984b7d151..6e4aa90e43b963a98f8f8d449283a1d4eb6fa7bb 100644
 --- a/net/minecraft/world/entity/npc/InventoryCarrier.java
 +++ b/net/minecraft/world/entity/npc/InventoryCarrier.java
-@@ -22,12 +22,19 @@ public interface InventoryCarrier {
+@@ -22,12 +_,19 @@
                  return;
              }
  

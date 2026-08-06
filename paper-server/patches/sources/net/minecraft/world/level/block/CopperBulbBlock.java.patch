@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/level/block/CopperBulbBlock.java b/net/minecraft/world/level/block/CopperBulbBlock.java
-index 13c8d33ee17609cb25d93d5bd7188dd669167907..181b11733cee06c09592645e5043983300f22490 100644
 --- a/net/minecraft/world/level/block/CopperBulbBlock.java
 +++ b/net/minecraft/world/level/block/CopperBulbBlock.java
-@@ -42,6 +42,11 @@ public class CopperBulbBlock extends Block {
+@@ -42,6 +_,11 @@
      public void checkAndFlip(final BlockState state, final ServerLevel level, final BlockPos pos) {
          boolean signal = level.hasNeighborSignal(pos);
          if (signal != state.getValue(POWERED)) {

@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/inventory/CraftingContainer.java b/net/minecraft/world/inventory/CraftingContainer.java
-index fd64b8bbe8bea6b58616f651f2dab82d473e2437..91e35be5ceaba4d993d77f2484e95071b0c54cf6 100644
 --- a/net/minecraft/world/inventory/CraftingContainer.java
 +++ b/net/minecraft/world/inventory/CraftingContainer.java
-@@ -12,6 +12,15 @@ public interface CraftingContainer extends Container, StackedContentsCompatible
+@@ -12,6 +_,15 @@
  
      List<ItemStack> getItems();
  

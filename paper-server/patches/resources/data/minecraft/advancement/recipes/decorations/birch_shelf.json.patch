@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/decorations/birch_shelf.json
++++ b/data/minecraft/advancement/recipes/decorations/birch_shelf.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:birch_shelf"
++        "recipe": "minecraft:birch_shelf"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

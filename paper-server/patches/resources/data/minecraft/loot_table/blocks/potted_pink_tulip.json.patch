@@ -1,0 +1,32 @@
+--- a/data/minecraft/loot_table/blocks/potted_pink_tulip.json
++++ b/data/minecraft/loot_table/blocks/potted_pink_tulip.json
+@@ -2,9 +_,11 @@
+   "type": "minecraft:block",
+   "pools": [
+     {
+-      "condition": {
+-        "type": "minecraft:survives_explosion"
+-      },
++      "conditions": [
++        {
++          "condition": "minecraft:survives_explosion"
++        }
++      ],
+       "entries": [
+         {
+           "type": "minecraft:item",
+@@ -14,9 +_,11 @@
+       "rolls": 1.0
+     },
+     {
+-      "condition": {
+-        "type": "minecraft:survives_explosion"
+-      },
++      "conditions": [
++        {
++          "condition": "minecraft:survives_explosion"
++        }
++      ],
+       "entries": [
+         {
+           "type": "minecraft:item",

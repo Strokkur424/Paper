@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/item/HangingEntityItem.java b/net/minecraft/world/item/HangingEntityItem.java
-index 6d95c76044237cb192359aae3690de340faf5387..56a048740794db66917c2975a65d9d8fc5a8dc36 100644
 --- a/net/minecraft/world/item/HangingEntityItem.java
 +++ b/net/minecraft/world/item/HangingEntityItem.java
-@@ -64,6 +64,20 @@ public class HangingEntityItem extends Item {
+@@ -64,6 +_,20 @@
          EntityType.<HangingEntity>createDefaultStackConfig(level, itemInHand, player).apply(entity);
          if (entity.survives()) {
              if (!level.isClientSide()) {

@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/entity/monster/Phantom.java b/net/minecraft/world/entity/monster/Phantom.java
-index c67074335a058018830383add5c2e50ab34c9abf..99b5d4aab158e32fb9f940bb66489179527adb76 100644
 --- a/net/minecraft/world/entity/monster/Phantom.java
 +++ b/net/minecraft/world/entity/monster/Phantom.java
-@@ -49,6 +49,10 @@ public class Phantom extends Mob implements Enemy {
+@@ -49,6 +_,10 @@
      private Vec3 moveTargetPoint = Vec3.ZERO;
      public @Nullable BlockPos anchorPoint;
      private Phantom.AttackPhase attackPhase = Phantom.AttackPhase.CIRCLE;
@@ -19,7 +11,7 @@ index c67074335a058018830383add5c2e50ab34c9abf..99b5d4aab158e32fb9f940bb66489179
  
      public Phantom(final EntityType<? extends Phantom> type, final Level level) {
          super(type, level);
-@@ -129,6 +133,13 @@ public class Phantom extends Mob implements Enemy {
+@@ -129,6 +_,13 @@
          }
      }
  
@@ -33,7 +25,7 @@ index c67074335a058018830383add5c2e50ab34c9abf..99b5d4aab158e32fb9f940bb66489179
      @Override
      protected void checkFallDamage(final double ya, final boolean onGround, final BlockState onState, final BlockPos pos) {
      }
-@@ -157,6 +168,10 @@ public class Phantom extends Mob implements Enemy {
+@@ -157,6 +_,10 @@
          super.readAdditionalSaveData(input);
          this.anchorPoint = input.read("anchor_pos", BlockPos.CODEC).orElse(null);
          this.setPhantomSize(input.getIntOr("size", 0));
@@ -44,7 +36,7 @@ index c67074335a058018830383add5c2e50ab34c9abf..99b5d4aab158e32fb9f940bb66489179
      }
  
      @Override
-@@ -164,6 +179,10 @@ public class Phantom extends Mob implements Enemy {
+@@ -164,6 +_,10 @@
          super.addAdditionalSaveData(output);
          output.storeNullable("anchor_pos", BlockPos.CODEC, this.anchorPoint);
          output.putInt("size", this.getPhantomSize());
@@ -55,7 +47,7 @@ index c67074335a058018830383add5c2e50ab34c9abf..99b5d4aab158e32fb9f940bb66489179
      }
  
      @Override
-@@ -226,8 +245,10 @@ public class Phantom extends Mob implements Enemy {
+@@ -226,8 +_,10 @@
  
                  for (Player player : players) {
                      if (Phantom.this.canAttack(level, player, TargetingConditions.DEFAULT)) {

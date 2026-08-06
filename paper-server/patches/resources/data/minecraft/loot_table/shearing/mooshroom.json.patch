@@ -1,0 +1,49 @@
+--- a/data/minecraft/loot_table/shearing/mooshroom.json
++++ b/data/minecraft/loot_table/shearing/mooshroom.json
+@@ -8,28 +_,32 @@
+           "children": [
+             {
+               "type": "minecraft:loot_table",
+-              "condition": {
+-                "type": "minecraft:entity_properties",
+-                "entity": "this",
+-                "predicate": {
+-                  "minecraft:components": {
+-                    "minecraft:mooshroom/variant": "red"
++              "conditions": [
++                {
++                  "condition": "minecraft:entity_properties",
++                  "entity": "this",
++                  "predicate": {
++                    "minecraft:components": {
++                      "minecraft:mooshroom/variant": "red"
++                    }
+                   }
+                 }
+-              },
++              ],
+               "value": "minecraft:shearing/mooshroom/red"
+             },
+             {
+               "type": "minecraft:loot_table",
+-              "condition": {
+-                "type": "minecraft:entity_properties",
+-                "entity": "this",
+-                "predicate": {
+-                  "minecraft:components": {
+-                    "minecraft:mooshroom/variant": "brown"
++              "conditions": [
++                {
++                  "condition": "minecraft:entity_properties",
++                  "entity": "this",
++                  "predicate": {
++                    "minecraft:components": {
++                      "minecraft:mooshroom/variant": "brown"
++                    }
+                   }
+                 }
+-              },
++              ],
+               "value": "minecraft:shearing/mooshroom/brown"
+             }
+           ]

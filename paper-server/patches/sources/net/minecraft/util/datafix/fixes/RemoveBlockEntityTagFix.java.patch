@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/util/datafix/fixes/RemoveBlockEntityTagFix.java b/net/minecraft/util/datafix/fixes/RemoveBlockEntityTagFix.java
-index 871f1df0fa23fa6e7bb534f16009f3ca4c6db4ab..682168ab776b6c37e2810dd7ecfe974a92c6e966 100644
 --- a/net/minecraft/util/datafix/fixes/RemoveBlockEntityTagFix.java
 +++ b/net/minecraft/util/datafix/fixes/RemoveBlockEntityTagFix.java
-@@ -17,6 +17,7 @@ import net.minecraft.util.datafix.ExtraDataFixUtils;
+@@ -17,6 +_,7 @@
  import net.minecraft.util.datafix.schemas.NamespacedSchema;
  
  public class RemoveBlockEntityTagFix extends DataFix {
@@ -16,7 +8,7 @@ index 871f1df0fa23fa6e7bb534f16009f3ca4c6db4ab..682168ab776b6c37e2810dd7ecfe974a
      private final Set<String> blockEntityIdsToDrop;
      private final boolean useLegacyDataStructure;
  
-@@ -102,6 +103,13 @@ public class RemoveBlockEntityTagFix extends DataFix {
+@@ -102,6 +_,13 @@
              chunkTypeOut,
              input -> input.update(blockEntitiesF, blockEntitiesTypeOut, listTag -> {
                  ArrayList<Object> keptBlockEntities = new ArrayList<>();
@@ -30,7 +22,7 @@ index 871f1df0fa23fa6e7bb534f16009f3ca4c6db4ab..682168ab776b6c37e2810dd7ecfe974a
  
                  for (Object untypedBlockEntity : listTag) {
                      Typed<?> typedBlockEntity = ExtraDataFixUtils.cast(blockEntityElementsType, untypedBlockEntity, input.getOps());
-@@ -109,6 +117,30 @@ public class RemoveBlockEntityTagFix extends DataFix {
+@@ -109,6 +_,30 @@
                      String blockEntityId = typedBlockEntityUnwrapped.getOptional(blockEntityIdF).orElse("");
                      if (!this.blockEntityIdsToDrop.contains(blockEntityId)) {
                          keptBlockEntities.add(untypedBlockEntity);

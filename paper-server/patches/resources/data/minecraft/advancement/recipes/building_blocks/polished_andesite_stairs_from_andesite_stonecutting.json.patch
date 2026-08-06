@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/building_blocks/polished_andesite_stairs_from_andesite_stonecutting.json
++++ b/data/minecraft/advancement/recipes/building_blocks/polished_andesite_stairs_from_andesite_stonecutting.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:polished_andesite_stairs_from_andesite_stonecutting"
++        "recipe": "minecraft:polished_andesite_stairs_from_andesite_stonecutting"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

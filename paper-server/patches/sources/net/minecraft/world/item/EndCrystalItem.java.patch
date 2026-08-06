@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/item/EndCrystalItem.java b/net/minecraft/world/item/EndCrystalItem.java
-index 5ac9804c71ecea438e6f89c90b5fda3cfc9d3d81..4c9216d7a0c31a721b9e8cd92d2e999f0dde7685 100644
 --- a/net/minecraft/world/item/EndCrystalItem.java
 +++ b/net/minecraft/world/item/EndCrystalItem.java
-@@ -44,11 +44,17 @@ public class EndCrystalItem extends Item {
+@@ -44,11 +_,17 @@
          if (level instanceof ServerLevel serverLevel) {
              EndCrystal crystal = new EndCrystal(level, x + 0.5, y, z + 0.5);
              crystal.setShowBottom(false);

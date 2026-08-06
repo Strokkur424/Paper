@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/level/block/state/properties/IntegerProperty.java b/net/minecraft/world/level/block/state/properties/IntegerProperty.java
-index 1e80bc318dbc58399d56b62ce4669da2cbdc5fc5..1338213c0c918301a8fbc232b25d55804bda9cf9 100644
 --- a/net/minecraft/world/level/block/state/properties/IntegerProperty.java
 +++ b/net/minecraft/world/level/block/state/properties/IntegerProperty.java
-@@ -30,8 +30,7 @@ public final class IntegerProperty extends Property<Integer> {
+@@ -30,8 +_,7 @@
          return this.values;
      }
  

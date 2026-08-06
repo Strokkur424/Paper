@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/adventure/overoverkill.json
++++ b/data/minecraft/advancement/adventure/overoverkill.json
+@@ -16,7 +_,7 @@
+             "tags": [
+               {
+                 "expected": true,
+-                "id": "#minecraft:mace_smash"
++                "id": "minecraft:mace_smash"
+               }
+             ]
+           },

@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/core/dispenser/SulfurCubeBlockDispenseItemBehavior.java b/net/minecraft/core/dispenser/SulfurCubeBlockDispenseItemBehavior.java
-index 981a193c61e3c6788b29f6589a7d19c6be9411e4..f94ff9370ae3f1350e183e39f7fd677ea705fb41 100644
 --- a/net/minecraft/core/dispenser/SulfurCubeBlockDispenseItemBehavior.java
 +++ b/net/minecraft/core/dispenser/SulfurCubeBlockDispenseItemBehavior.java
-@@ -12,12 +12,19 @@ public class SulfurCubeBlockDispenseItemBehavior extends DefaultDispenseItemBeha
+@@ -12,12 +_,19 @@
  
      @Override
      protected ItemStack execute(final BlockSource source, final ItemStack dispensed) {

@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/inventory/ContainerLevelAccess.java b/net/minecraft/world/inventory/ContainerLevelAccess.java
-index ca9a342e9b726fea8bcc81587426554b03754bc9..250e73d1f4ea50aed201398692748bb16b004399 100644
 --- a/net/minecraft/world/inventory/ContainerLevelAccess.java
 +++ b/net/minecraft/world/inventory/ContainerLevelAccess.java
-@@ -12,6 +12,12 @@ public interface ContainerLevelAccess {
+@@ -12,6 +_,12 @@
          public <T> Optional<T> evaluate(final BiFunction<Level, BlockPos, T> action) {
              return Optional.empty();
          }
@@ -21,7 +13,7 @@ index ca9a342e9b726fea8bcc81587426554b03754bc9..250e73d1f4ea50aed201398692748bb1
      };
  
      static ContainerLevelAccess create(final Level level, final BlockPos pos) {
-@@ -20,6 +26,23 @@ public interface ContainerLevelAccess {
+@@ -20,6 +_,23 @@
              public <T> Optional<T> evaluate(final BiFunction<Level, BlockPos, T> action) {
                  return Optional.of(action.apply(level, pos));
              }
@@ -45,7 +37,7 @@ index ca9a342e9b726fea8bcc81587426554b03754bc9..250e73d1f4ea50aed201398692748bb1
          };
      }
  
-@@ -35,4 +58,29 @@ public interface ContainerLevelAccess {
+@@ -35,4 +_,29 @@
              return Optional.empty();
          });
      }

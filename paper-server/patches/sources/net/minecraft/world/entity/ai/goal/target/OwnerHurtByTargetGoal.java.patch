@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/entity/ai/goal/target/OwnerHurtByTargetGoal.java b/net/minecraft/world/entity/ai/goal/target/OwnerHurtByTargetGoal.java
-index 0cc864e83e87a3b2ff01417a716416edccc70694..dfd92c98b09d118199aa3c7b5d46f354cc8b8b01 100644
 --- a/net/minecraft/world/entity/ai/goal/target/OwnerHurtByTargetGoal.java
 +++ b/net/minecraft/world/entity/ai/goal/target/OwnerHurtByTargetGoal.java
-@@ -44,7 +44,7 @@ public class OwnerHurtByTargetGoal extends TargetGoal {
+@@ -44,7 +_,7 @@
  
      @Override
      public void start() {

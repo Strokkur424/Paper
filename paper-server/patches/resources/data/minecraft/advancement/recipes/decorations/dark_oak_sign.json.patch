@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/decorations/dark_oak_sign.json
++++ b/data/minecraft/advancement/recipes/decorations/dark_oak_sign.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:dark_oak_sign"
++        "recipe": "minecraft:dark_oak_sign"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

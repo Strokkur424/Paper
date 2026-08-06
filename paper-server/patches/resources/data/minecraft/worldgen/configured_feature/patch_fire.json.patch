@@ -1,0 +1,22 @@
+--- /dev/null
++++ b/data/minecraft/worldgen/configured_feature/patch_fire.json
+@@ -1,0 +_,19 @@
++{
++  "type": "minecraft:simple_block",
++  "config": {
++    "to_place": {
++      "type": "minecraft:simple_state_provider",
++      "state": {
++        "Name": "minecraft:fire",
++        "Properties": {
++          "age": "0",
++          "east": "false",
++          "north": "false",
++          "south": "false",
++          "up": "false",
++          "west": "false"
++        }
++      }
++    }
++  }
++}

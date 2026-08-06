@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/server/ServerTickRateManager.java b/net/minecraft/server/ServerTickRateManager.java
-index 48c6077dff5c5b13e6db63ac6e88385b70298bc8..eeb2f88723b37bb3cada04bf3098dd46f0ed7316 100644
 --- a/net/minecraft/server/ServerTickRateManager.java
 +++ b/net/minecraft/server/ServerTickRateManager.java
-@@ -15,6 +15,7 @@ public class ServerTickRateManager extends TickRateManager {
+@@ -15,6 +_,7 @@
      private long scheduledCurrentSprintTicks = 0L;
      private boolean previousIsFrozen = false;
      private final MinecraftServer server;
@@ -16,7 +8,7 @@ index 48c6077dff5c5b13e6db63ac6e88385b70298bc8..eeb2f88723b37bb3cada04bf3098dd46
  
      public ServerTickRateManager(final MinecraftServer server) {
          this.server = server;
-@@ -68,6 +69,13 @@ public class ServerTickRateManager extends TickRateManager {
+@@ -68,6 +_,13 @@
      }
  
      public boolean requestGameToSprint(final int time) {
@@ -30,7 +22,7 @@ index 48c6077dff5c5b13e6db63ac6e88385b70298bc8..eeb2f88723b37bb3cada04bf3098dd46
          boolean interrupted = this.remainingSprintTicks > 0L;
          this.sprintTimeSpend = 0L;
          this.scheduledCurrentSprintTicks = time;
-@@ -86,9 +94,12 @@ public class ServerTickRateManager extends TickRateManager {
+@@ -86,9 +_,12 @@
          );
          this.scheduledCurrentSprintTicks = 0L;
          this.sprintTimeSpend = 0L;

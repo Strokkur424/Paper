@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/level/block/state/BlockState.java b/net/minecraft/world/level/block/state/BlockState.java
-index b998792e4c105291f62872e0c71ac836886debc1..bd784674e0ebbe99260c0077f072c54ddc1e455f 100644
 --- a/net/minecraft/world/level/block/state/BlockState.java
 +++ b/net/minecraft/world/level/block/state/BlockState.java
-@@ -15,6 +15,17 @@ public class BlockState extends BlockBehaviour.BlockStateBase {
+@@ -15,6 +_,17 @@
          state -> state == state.getBlock().defaultBlockState() ? Either.left(state.getBlock()) : Either.right(state)
      );
  

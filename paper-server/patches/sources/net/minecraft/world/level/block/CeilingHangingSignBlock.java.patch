@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/level/block/CeilingHangingSignBlock.java b/net/minecraft/world/level/block/CeilingHangingSignBlock.java
-index e4657ac202aecf28c341110d24fea114d49c608e..41c52e76d50f2c2740e89b54f661e42349af95ab 100644
 --- a/net/minecraft/world/level/block/CeilingHangingSignBlock.java
 +++ b/net/minecraft/world/level/block/CeilingHangingSignBlock.java
-@@ -168,7 +168,7 @@ public class CeilingHangingSignBlock extends SignBlock implements HangingSignBlo
+@@ -168,7 +_,7 @@
  
      @Override
      public <T extends BlockEntity> @Nullable BlockEntityTicker<T> getTicker(final Level level, final BlockState blockState, final BlockEntityType<T> type) {

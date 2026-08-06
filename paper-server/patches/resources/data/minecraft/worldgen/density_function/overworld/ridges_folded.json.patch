@@ -1,0 +1,33 @@
+--- a/data/minecraft/worldgen/density_function/overworld/ridges_folded.json
++++ b/data/minecraft/worldgen/density_function/overworld/ridges_folded.json
+@@ -1,19 +_,19 @@
+ {
+   "type": "minecraft:mul",
+-  "left": {
++  "argument1": -3.0,
++  "argument2": {
+     "type": "minecraft:add",
+-    "left": {
++    "argument1": -0.3333333333333333,
++    "argument2": {
+       "type": "minecraft:abs",
+-      "input": {
++      "argument": {
+         "type": "minecraft:add",
+-        "left": {
++        "argument1": -0.6666666666666666,
++        "argument2": {
+           "type": "minecraft:abs",
+-          "input": "minecraft:overworld/ridges"
+-        },
+-        "right": -0.6666667
++          "argument": "minecraft:overworld/ridges"
++        }
+       }
+-    },
+-    "right": -0.33333334
+-  },
+-  "right": -3.0
++    }
++  }
+ }

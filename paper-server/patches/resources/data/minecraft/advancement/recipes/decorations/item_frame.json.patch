@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/decorations/item_frame.json
++++ b/data/minecraft/advancement/recipes/decorations/item_frame.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:item_frame"
++        "recipe": "minecraft:item_frame"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

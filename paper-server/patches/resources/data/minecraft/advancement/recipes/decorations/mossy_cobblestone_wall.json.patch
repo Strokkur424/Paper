@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/decorations/mossy_cobblestone_wall.json
++++ b/data/minecraft/advancement/recipes/decorations/mossy_cobblestone_wall.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:mossy_cobblestone_wall"
++        "recipe": "minecraft:mossy_cobblestone_wall"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

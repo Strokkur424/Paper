@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/building_blocks/raw_copper_block.json
++++ b/data/minecraft/advancement/recipes/building_blocks/raw_copper_block.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:raw_copper_block"
++        "recipe": "minecraft:raw_copper_block"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

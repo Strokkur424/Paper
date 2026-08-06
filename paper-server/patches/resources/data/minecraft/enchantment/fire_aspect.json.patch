@@ -1,0 +1,11 @@
+--- a/data/minecraft/enchantment/fire_aspect.json
++++ b/data/minecraft/enchantment/fire_aspect.json
+@@ -17,7 +_,7 @@
+         },
+         "enchanted": "attacker",
+         "requirements": {
+-          "type": "minecraft:damage_source_properties",
++          "condition": "minecraft:damage_source_properties",
+           "predicate": {
+             "is_direct": true
+           }

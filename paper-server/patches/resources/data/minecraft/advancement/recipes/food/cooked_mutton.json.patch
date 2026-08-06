@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/food/cooked_mutton.json
++++ b/data/minecraft/advancement/recipes/food/cooked_mutton.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:cooked_mutton"
++        "recipe": "minecraft:cooked_mutton"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

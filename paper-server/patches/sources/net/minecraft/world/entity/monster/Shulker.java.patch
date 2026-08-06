@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/entity/monster/Shulker.java b/net/minecraft/world/entity/monster/Shulker.java
-index 582a91ef2e916bacebef2e47c20c8167a3bc7476..a4e9ec3ddc68af0ffa39f22b34d8214e274fbec0 100644
 --- a/net/minecraft/world/entity/monster/Shulker.java
 +++ b/net/minecraft/world/entity/monster/Shulker.java
-@@ -288,8 +288,10 @@ public class Shulker extends AbstractGolem implements Enemy {
+@@ -288,8 +_,10 @@
      }
  
      @Override
@@ -21,7 +13,7 @@ index 582a91ef2e916bacebef2e47c20c8167a3bc7476..a4e9ec3ddc68af0ffa39f22b34d8214e
          if (this.level().isClientSide()) {
              this.clientOldAttachPosition = this.blockPosition();
          }
-@@ -400,6 +402,14 @@ public class Shulker extends AbstractGolem implements Enemy {
+@@ -400,6 +_,14 @@
                      && this.level().getWorldBorder().isWithinBounds(target)
                      && this.level().noCollision(this, new AABB(target).deflate(1.0E-6))) {
                      Direction attachmentDirection = this.findAttachableSurface(target);
@@ -36,7 +28,7 @@ index 582a91ef2e916bacebef2e47c20c8167a3bc7476..a4e9ec3ddc68af0ffa39f22b34d8214e
                      if (attachmentDirection != null) {
                          this.unRide();
                          this.setAttachFace(attachmentDirection);
-@@ -464,7 +474,12 @@ public class Shulker extends AbstractGolem implements Enemy {
+@@ -464,7 +_,12 @@
                  if (baby != null) {
                      baby.setVariant(this.getVariant());
                      baby.snapTo(oldPosition);

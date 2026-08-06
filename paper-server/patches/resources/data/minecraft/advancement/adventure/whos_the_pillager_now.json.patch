@@ -1,0 +1,24 @@
+--- a/data/minecraft/advancement/adventure/whos_the_pillager_now.json
++++ b/data/minecraft/advancement/adventure/whos_the_pillager_now.json
+@@ -7,13 +_,15 @@
+           "items": "minecraft:crossbow"
+         },
+         "victims": [
+-          {
+-            "type": "minecraft:entity_properties",
+-            "entity": "this",
+-            "predicate": {
+-              "minecraft:entity_type": "minecraft:pillager"
++          [
++            {
++              "condition": "minecraft:entity_properties",
++              "entity": "this",
++              "predicate": {
++                "minecraft:entity_type": "minecraft:pillager"
++              }
+             }
+-          }
++          ]
+         ]
+       },
+       "trigger": "minecraft:killed_by_arrow"

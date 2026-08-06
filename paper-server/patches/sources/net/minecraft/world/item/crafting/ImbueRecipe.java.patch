@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/item/crafting/ImbueRecipe.java b/net/minecraft/world/item/crafting/ImbueRecipe.java
-index 0f2e6e8180caa46d79e6f0ec39da71b0cfa32add..1628a01283b810bba49501ac8264286fab23a56a 100644
 --- a/net/minecraft/world/item/crafting/ImbueRecipe.java
 +++ b/net/minecraft/world/item/crafting/ImbueRecipe.java
-@@ -113,4 +113,15 @@ public class ImbueRecipe extends NormalCraftingRecipe {
+@@ -113,4 +_,15 @@
              )
          );
      }

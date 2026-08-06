@@ -1,20 +1,13 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/entity/projectile/ShulkerBullet.java b/net/minecraft/world/entity/projectile/ShulkerBullet.java
-index 938d9cc9c4fd2b875cba55c9e3e9753d211eae91..d5506bfc84912ec50cd5391225b9b5291435d3aa 100644
 --- a/net/minecraft/world/entity/projectile/ShulkerBullet.java
 +++ b/net/minecraft/world/entity/projectile/ShulkerBullet.java
-@@ -56,8 +56,22 @@ public class ShulkerBullet extends Projectile {
+@@ -56,7 +_,21 @@
          this.finalTarget = EntityReference.of(target);
          this.currentMoveDirection = Direction.UP;
          this.selectNextMoveDirection(invalidStartAxis, target);
+-    }
 +        this.projectileSource = owner.getBukkitLivingEntity(); // CraftBukkit
-     }
- 
++    }
++
 +    // CraftBukkit start
 +    @Nullable
 +    public Entity getTarget() {
@@ -27,11 +20,10 @@ index 938d9cc9c4fd2b875cba55c9e3e9753d211eae91..d5506bfc84912ec50cd5391225b9b529
 +        this.selectNextMoveDirection(Direction.Axis.X, finalTarget);
 +    }
 +    // CraftBukkit end
-+
+ 
      @Override
      public SoundSource getSoundSource() {
-         return SoundSource.HOSTILE;
-@@ -177,7 +191,7 @@ public class ShulkerBullet extends Projectile {
+@@ -177,7 +_,7 @@
      @Override
      public void checkDespawn() {
          if (this.level().getDifficulty() == Difficulty.PEACEFUL) {
@@ -40,7 +32,7 @@ index 938d9cc9c4fd2b875cba55c9e3e9753d211eae91..d5506bfc84912ec50cd5391225b9b529
          }
      }
  
-@@ -219,7 +233,7 @@ public class ShulkerBullet extends Projectile {
+@@ -219,7 +_,7 @@
          }
  
          if (hitResult != null && this.isAlive() && hitResult.getType() != HitResult.Type.MISS) {
@@ -49,7 +41,7 @@ index 938d9cc9c4fd2b875cba55c9e3e9753d211eae91..d5506bfc84912ec50cd5391225b9b529
          }
  
          ProjectileUtil.rotateTowardsMovement(this, 0.5F);
-@@ -289,7 +303,7 @@ public class ShulkerBullet extends Projectile {
+@@ -289,7 +_,7 @@
              }
  
              if (target instanceof LivingEntity livingTarget) {
@@ -58,7 +50,7 @@ index 938d9cc9c4fd2b875cba55c9e3e9753d211eae91..d5506bfc84912ec50cd5391225b9b529
              }
          }
      }
-@@ -302,14 +316,20 @@ public class ShulkerBullet extends Projectile {
+@@ -302,14 +_,20 @@
      }
  
      private void destroy() {
@@ -81,7 +73,7 @@ index 938d9cc9c4fd2b875cba55c9e3e9753d211eae91..d5506bfc84912ec50cd5391225b9b529
      }
  
      @Override
-@@ -324,9 +344,14 @@ public class ShulkerBullet extends Projectile {
+@@ -324,9 +_,14 @@
  
      @Override
      public boolean hurtServer(final ServerLevel level, final DamageSource source, final float damage) {

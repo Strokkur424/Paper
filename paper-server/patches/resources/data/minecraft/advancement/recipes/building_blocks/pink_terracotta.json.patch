@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/building_blocks/pink_terracotta.json
++++ b/data/minecraft/advancement/recipes/building_blocks/pink_terracotta.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:pink_terracotta"
++        "recipe": "minecraft:pink_terracotta"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

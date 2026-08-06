@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/network/protocol/game/ClientboundSetEntityDataPacket.java b/net/minecraft/network/protocol/game/ClientboundSetEntityDataPacket.java
-index df64df2c41bc0d16e26af3cbbe6cdcef91140d19..b8b04a7797259e84d5cc4f1818fe9b7c5e3da908 100644
 --- a/net/minecraft/network/protocol/game/ClientboundSetEntityDataPacket.java
 +++ b/net/minecraft/network/protocol/game/ClientboundSetEntityDataPacket.java
-@@ -19,9 +19,11 @@ public record ClientboundSetEntityDataPacket(int id, List<SynchedEntityData.Data
+@@ -19,9 +_,11 @@
      }
  
      private static void pack(final List<SynchedEntityData.DataValue<?>> items, final RegistryFriendlyByteBuf output) {

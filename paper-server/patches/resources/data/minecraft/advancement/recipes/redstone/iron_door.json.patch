@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/redstone/iron_door.json
++++ b/data/minecraft/advancement/recipes/redstone/iron_door.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:iron_door"
++        "recipe": "minecraft:iron_door"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

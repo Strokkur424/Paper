@@ -1,0 +1,24 @@
+--- a/data/minecraft/advancement/nether/summon_wither.json
++++ b/data/minecraft/advancement/nether/summon_wither.json
+@@ -3,13 +_,15 @@
+   "criteria": {
+     "summoned": {
+       "conditions": {
+-        "entity": {
+-          "type": "minecraft:entity_properties",
+-          "entity": "this",
+-          "predicate": {
+-            "minecraft:entity_type": "minecraft:wither"
++        "entity": [
++          {
++            "condition": "minecraft:entity_properties",
++            "entity": "this",
++            "predicate": {
++              "minecraft:entity_type": "minecraft:wither"
++            }
+           }
+-        }
++        ]
+       },
+       "trigger": "minecraft:summoned_entity"
+     }

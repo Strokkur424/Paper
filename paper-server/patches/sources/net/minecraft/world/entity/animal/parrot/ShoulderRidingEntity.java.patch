@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/entity/animal/parrot/ShoulderRidingEntity.java b/net/minecraft/world/entity/animal/parrot/ShoulderRidingEntity.java
-index b60f2900d5009140f597a6c40580dd71bb7ae6f9..2649584fdceed2be6e1437ea0816f6c993f8cd2f 100644
 --- a/net/minecraft/world/entity/animal/parrot/ShoulderRidingEntity.java
 +++ b/net/minecraft/world/entity/animal/parrot/ShoulderRidingEntity.java
-@@ -24,7 +24,7 @@ public abstract class ShoulderRidingEntity extends TamableAnimal {
+@@ -24,7 +_,7 @@
              this.saveWithoutId(output);
              output.putString("id", this.getEncodeId());
              if (player.setEntityOnShoulder(output.buildResult())) {

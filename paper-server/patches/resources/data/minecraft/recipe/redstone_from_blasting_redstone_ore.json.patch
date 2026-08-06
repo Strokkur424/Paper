@@ -1,0 +1,10 @@
+--- a/data/minecraft/recipe/redstone_from_blasting_redstone_ore.json
++++ b/data/minecraft/recipe/redstone_from_blasting_redstone_ore.json
+@@ -1,7 +_,6 @@
+ {
+   "type": "minecraft:blasting",
+   "category": "blocks",
+-  "cookingtime": 200,
+   "experience": 0.7,
+   "group": "redstone",
+   "ingredient": "minecraft:redstone_ore",

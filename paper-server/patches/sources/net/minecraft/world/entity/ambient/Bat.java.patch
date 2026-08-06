@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/entity/ambient/Bat.java b/net/minecraft/world/entity/ambient/Bat.java
-index 6f3eb571a8e7ceae52865e2a24280bb33c69644d..5dd0c83e44eb68d90cda5743bc24d97044a02f6e 100644
 --- a/net/minecraft/world/entity/ambient/Bat.java
 +++ b/net/minecraft/world/entity/ambient/Bat.java
-@@ -84,7 +84,7 @@ public class Bat extends AmbientCreature {
+@@ -84,7 +_,7 @@
      }
  
      @Override
@@ -17,7 +9,7 @@ index 6f3eb571a8e7ceae52865e2a24280bb33c69644d..5dd0c83e44eb68d90cda5743bc24d970
          return false;
      }
  
-@@ -138,13 +138,13 @@ public class Bat extends AmbientCreature {
+@@ -138,13 +_,13 @@
                      this.yHeadRot = this.random.nextInt(360);
                  }
  
@@ -33,7 +25,7 @@ index 6f3eb571a8e7ceae52865e2a24280bb33c69644d..5dd0c83e44eb68d90cda5743bc24d970
                  this.setResting(false);
                  if (!isSilent) {
                      level.levelEvent(null, LevelEvent.SOUND_BAT_LIFTOFF, pos, 0);
-@@ -175,7 +175,7 @@ public class Bat extends AmbientCreature {
+@@ -175,7 +_,7 @@
              float rotDiff = Mth.wrapDegrees(yRotD - this.getYRot());
              this.zza = 0.5F;
              this.setYRot(this.getYRot() + rotDiff);
@@ -42,7 +34,7 @@ index 6f3eb571a8e7ceae52865e2a24280bb33c69644d..5dd0c83e44eb68d90cda5743bc24d970
                  this.setResting(true);
              }
          }
-@@ -201,7 +201,7 @@ public class Bat extends AmbientCreature {
+@@ -201,7 +_,7 @@
              return false;
          }
  

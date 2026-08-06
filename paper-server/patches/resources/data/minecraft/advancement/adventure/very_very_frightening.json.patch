@@ -1,0 +1,24 @@
+--- a/data/minecraft/advancement/adventure/very_very_frightening.json
++++ b/data/minecraft/advancement/adventure/very_very_frightening.json
+@@ -4,13 +_,15 @@
+     "struck_villager": {
+       "conditions": {
+         "victims": [
+-          {
+-            "type": "minecraft:entity_properties",
+-            "entity": "this",
+-            "predicate": {
+-              "minecraft:entity_type": "minecraft:villager"
++          [
++            {
++              "condition": "minecraft:entity_properties",
++              "entity": "this",
++              "predicate": {
++                "minecraft:entity_type": "minecraft:villager"
++              }
+             }
+-          }
++          ]
+         ]
+       },
+       "trigger": "minecraft:channeled_lightning"

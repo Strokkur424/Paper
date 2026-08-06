@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/decorations/cobbled_deepslate_wall.json
++++ b/data/minecraft/advancement/recipes/decorations/cobbled_deepslate_wall.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:cobbled_deepslate_wall"
++        "recipe": "minecraft:cobbled_deepslate_wall"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

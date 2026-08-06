@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/item/enchantment/effects/ApplyExhaustion.java b/net/minecraft/world/item/enchantment/effects/ApplyExhaustion.java
-index 989b7d86dd0b307173fb07a3def541d959a14daf..2de2504228c872b854107ca030a8db7d623c9c83 100644
 --- a/net/minecraft/world/item/enchantment/effects/ApplyExhaustion.java
 +++ b/net/minecraft/world/item/enchantment/effects/ApplyExhaustion.java
-@@ -17,7 +17,7 @@ public record ApplyExhaustion(LevelBasedValue amount) implements EnchantmentEnti
+@@ -17,7 +_,7 @@
      @Override
      public void apply(final ServerLevel serverLevel, final int enchantmentLevel, final EnchantedItemInUse item, final Entity entity, final Vec3 position) {
          if (entity instanceof Player livingEntity) {

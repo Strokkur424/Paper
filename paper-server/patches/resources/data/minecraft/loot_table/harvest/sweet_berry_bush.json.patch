@@ -1,0 +1,59 @@
+--- a/data/minecraft/loot_table/harvest/sweet_berry_bush.json
++++ b/data/minecraft/loot_table/harvest/sweet_berry_bush.json
+@@ -5,17 +_,21 @@
+       "entries": [
+         {
+           "type": "minecraft:item",
+-          "condition": {
+-            "type": "minecraft:match_block",
+-            "blocks": "minecraft:sweet_berry_bush",
+-            "state": {
+-              "age": "3"
+-            }
+-          },
+-          "modifier": {
+-            "type": "minecraft:set_count",
+-            "count": 1.0
+-          },
++          "conditions": [
++            {
++              "block": "minecraft:sweet_berry_bush",
++              "condition": "minecraft:block_state_property",
++              "properties": {
++                "age": "3"
++              }
++            }
++          ],
++          "functions": [
++            {
++              "count": 1.0,
++              "function": "minecraft:set_count"
++            }
++          ],
+           "name": "minecraft:sweet_berries"
+         }
+       ],
+@@ -25,14 +_,16 @@
+       "entries": [
+         {
+           "type": "minecraft:item",
+-          "modifier": {
+-            "type": "minecraft:set_count",
+-            "count": {
+-              "type": "minecraft:uniform",
+-              "max": 2.0,
+-              "min": 1.0
++          "functions": [
++            {
++              "count": {
++                "type": "minecraft:uniform",
++                "max": 2.0,
++                "min": 1.0
++              },
++              "function": "minecraft:set_count"
+             }
+-          },
++          ],
+           "name": "minecraft:sweet_berries"
+         }
+       ],

@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/level/block/LoomBlock.java b/net/minecraft/world/level/block/LoomBlock.java
-index f631cd72a7b38a91d62af54811639fe741eb22d0..8c6f30959ba2c4e527ac631cef1beb5d0c45cf0c 100644
 --- a/net/minecraft/world/level/block/LoomBlock.java
 +++ b/net/minecraft/world/level/block/LoomBlock.java
-@@ -27,8 +27,7 @@ public class LoomBlock extends HorizontalDirectionalBlock {
+@@ -27,8 +_,7 @@
      protected InteractionResult useWithoutItem(
          final BlockState state, final Level level, final BlockPos pos, final Player player, final BlockHitResult hitResult
      ) {

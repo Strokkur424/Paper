@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/item/crafting/CampfireCookingRecipe.java b/net/minecraft/world/item/crafting/CampfireCookingRecipe.java
-index ac05f8f0947159d2c9735754606dbf0577d5d612..a7d8a869cdd47b9c4780eff400e7615396b21f93 100644
 --- a/net/minecraft/world/item/crafting/CampfireCookingRecipe.java
 +++ b/net/minecraft/world/item/crafting/CampfireCookingRecipe.java
-@@ -42,4 +42,17 @@ public class CampfireCookingRecipe extends AbstractCookingRecipe {
+@@ -42,4 +_,17 @@
      public RecipeBookCategory recipeBookCategory() {
          return RecipeBookCategories.CAMPFIRE;
      }

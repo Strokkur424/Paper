@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/network/PacketEncoder.java b/net/minecraft/network/PacketEncoder.java
-index db19e465a2f7bce72dd17fae815c895eb3df18da..27316db9eb78660c6f54e1d1ea4dc7d584c7bb55 100644
 --- a/net/minecraft/network/PacketEncoder.java
 +++ b/net/minecraft/network/PacketEncoder.java
-@@ -17,11 +17,13 @@ public class PacketEncoder<T extends PacketListener> extends MessageToByteEncode
+@@ -17,11 +_,13 @@
          this.protocolInfo = protocolInfo;
      }
  
@@ -22,7 +14,7 @@ index db19e465a2f7bce72dd17fae815c895eb3df18da..27316db9eb78660c6f54e1d1ea4dc7d5
              this.protocolInfo.codec().encode(output, packet);
              int writtenBytes = output.readableBytes();
              if (LOGGER.isDebugEnabled()) {
-@@ -44,7 +46,33 @@ public class PacketEncoder<T extends PacketListener> extends MessageToByteEncode
+@@ -44,7 +_,33 @@
  
              throw t;
          } finally {

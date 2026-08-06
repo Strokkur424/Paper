@@ -1,0 +1,30 @@
+--- a/data/minecraft/villager_trade/librarian/1/emerald_and_book_enchanted_book.json
++++ b/data/minecraft/villager_trade/librarian/1/emerald_and_book_enchanted_book.json
+@@ -3,15 +_,15 @@
+     "id": "minecraft:book"
+   },
+   "double_trade_price_enchantments": "#minecraft:double_trade_price",
+-  "given_item_modifier": [
++  "given_item_modifiers": [
+     {
+-      "type": "minecraft:enchant_randomly",
++      "function": "minecraft:enchant_randomly",
+       "include_additional_cost_component": true,
+       "only_compatible": false,
+       "options": "#minecraft:tradeable"
+     },
+     {
+-      "type": "minecraft:filtered",
++      "function": "minecraft:filtered",
+       "item_filter": {
+         "items": "minecraft:enchanted_book",
+         "predicates": {
+@@ -21,7 +_,7 @@
+         }
+       },
+       "on_fail": {
+-        "type": "minecraft:discard"
++        "function": "minecraft:discard"
+       }
+     }
+   ],

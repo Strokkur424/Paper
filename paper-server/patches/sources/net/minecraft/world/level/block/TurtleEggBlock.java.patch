@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/level/block/TurtleEggBlock.java b/net/minecraft/world/level/block/TurtleEggBlock.java
-index f0e5ffa9b9045596210afe275c060b0be6a431df..d2a251c9615a50a590fd4d87f26567c5af169aa7 100644
 --- a/net/minecraft/world/level/block/TurtleEggBlock.java
 +++ b/net/minecraft/world/level/block/TurtleEggBlock.java
-@@ -68,6 +68,19 @@ public class TurtleEggBlock extends Block {
+@@ -68,6 +_,19 @@
              && level instanceof ServerLevel serverLevel
              && this.canDestroyEgg(serverLevel, pos, entity)
              && level.getRandom().nextInt(randomness) == 0) {
@@ -28,7 +20,7 @@ index f0e5ffa9b9045596210afe275c060b0be6a431df..d2a251c9615a50a590fd4d87f26567c5
              this.decreaseEggs(serverLevel, pos, state);
          }
      }
-@@ -89,10 +102,19 @@ public class TurtleEggBlock extends Block {
+@@ -89,10 +_,19 @@
          if (this.shouldUpdateHatchLevel(level, pos) && onSand(level, pos)) {
              int hatch = state.getValue(HATCH);
              if (hatch < 2) {
@@ -49,7 +41,7 @@ index f0e5ffa9b9045596210afe275c060b0be6a431df..d2a251c9615a50a590fd4d87f26567c5
                  level.playSound(null, pos, SoundEvents.TURTLE_EGG_HATCH, SoundSource.BLOCKS, 0.7F, 0.9F + random.nextFloat() * 0.2F);
                  level.removeBlock(pos, false);
                  level.gameEvent(GameEvent.BLOCK_DESTROY, pos, GameEvent.Context.of(state));
-@@ -104,7 +126,7 @@ public class TurtleEggBlock extends Block {
+@@ -104,7 +_,7 @@
                          turtle.setAge(-24000);
                          turtle.setHomePos(pos);
                          turtle.snapTo(pos.getX() + 0.3 + i * 0.2, pos.getY(), pos.getZ() + 0.3, 0.0F, 0.0F);
@@ -58,7 +50,7 @@ index f0e5ffa9b9045596210afe275c060b0be6a431df..d2a251c9615a50a590fd4d87f26567c5
                      }
                  }
              }
-@@ -139,8 +161,9 @@ public class TurtleEggBlock extends Block {
+@@ -139,8 +_,9 @@
          final BlockState state,
          final @Nullable BlockEntity blockEntity,
          final ItemStack destroyedWith

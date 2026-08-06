@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/level/block/entity/BannerBlockEntity.java b/net/minecraft/world/level/block/entity/BannerBlockEntity.java
-index 901e4d8888b60bc6b0e940d16f57f920af4dbdc6..ea60053ffd3d974ea1e92c7cb178895fd32a3010 100644
 --- a/net/minecraft/world/level/block/entity/BannerBlockEntity.java
 +++ b/net/minecraft/world/level/block/entity/BannerBlockEntity.java
-@@ -48,7 +48,7 @@ public class BannerBlockEntity extends BlockEntity implements Nameable {
+@@ -48,7 +_,7 @@
      @Override
      protected void saveAdditional(final ValueOutput output) {
          super.saveAdditional(output);
@@ -17,7 +9,7 @@ index 901e4d8888b60bc6b0e940d16f57f920af4dbdc6..ea60053ffd3d974ea1e92c7cb178895f
              output.store("patterns", BannerPatternLayers.CODEC, this.patterns);
          }
  
-@@ -59,7 +59,7 @@ public class BannerBlockEntity extends BlockEntity implements Nameable {
+@@ -59,7 +_,7 @@
      protected void loadAdditional(final ValueInput input) {
          super.loadAdditional(input);
          this.name = parseCustomNameSafe(input, "CustomName");
@@ -26,7 +18,7 @@ index 901e4d8888b60bc6b0e940d16f57f920af4dbdc6..ea60053ffd3d974ea1e92c7cb178895f
      }
  
      @Override
-@@ -67,9 +67,18 @@ public class BannerBlockEntity extends BlockEntity implements Nameable {
+@@ -67,9 +_,18 @@
          return ClientboundBlockEntityDataPacket.create(this);
      }
  
@@ -45,7 +37,7 @@ index 901e4d8888b60bc6b0e940d16f57f920af4dbdc6..ea60053ffd3d974ea1e92c7cb178895f
      }
  
      public BannerPatternLayers getPatterns() {
-@@ -89,7 +98,7 @@ public class BannerBlockEntity extends BlockEntity implements Nameable {
+@@ -89,7 +_,7 @@
      @Override
      protected void applyImplicitComponents(final DataComponentGetter components) {
          super.applyImplicitComponents(components);
@@ -54,7 +46,7 @@ index 901e4d8888b60bc6b0e940d16f57f920af4dbdc6..ea60053ffd3d974ea1e92c7cb178895f
          this.name = components.get(DataComponents.CUSTOM_NAME);
      }
  
-@@ -105,4 +114,13 @@ public class BannerBlockEntity extends BlockEntity implements Nameable {
+@@ -105,4 +_,13 @@
          output.discard("patterns");
          output.discard("CustomName");
      }

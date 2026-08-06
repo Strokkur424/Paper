@@ -1,0 +1,9 @@
+--- a/data/minecraft/recipe/emerald_from_blasting_deepslate_emerald_ore.json
++++ b/data/minecraft/recipe/emerald_from_blasting_deepslate_emerald_ore.json
+@@ -1,6 +_,5 @@
+ {
+   "type": "minecraft:blasting",
+-  "cookingtime": 200,
+   "experience": 1.0,
+   "group": "emerald",
+   "ingredient": "minecraft:deepslate_emerald_ore",

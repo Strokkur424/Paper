@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/decorations/iron_bars.json
++++ b/data/minecraft/advancement/recipes/decorations/iron_bars.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:iron_bars"
++        "recipe": "minecraft:iron_bars"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

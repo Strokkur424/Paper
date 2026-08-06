@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/entity/ConversionType.java b/net/minecraft/world/entity/ConversionType.java
-index 3313ad9465b596166851b0748424556a03b7bb7c..154e3e0283a58d17f6ac254efe1a41d003473f37 100644
 --- a/net/minecraft/world/entity/ConversionType.java
 +++ b/net/minecraft/world/entity/ConversionType.java
-@@ -24,7 +24,7 @@ public enum ConversionType {
+@@ -24,7 +_,7 @@
  
                  for (Entity passenger : to.getPassengers()) {
                      passenger.stopRiding();
@@ -17,7 +9,7 @@ index 3313ad9465b596166851b0748424556a03b7bb7c..154e3e0283a58d17f6ac254efe1a41d0
                  }
  
                  rootPassenger.startRiding(to);
-@@ -73,6 +73,7 @@ public enum ConversionType {
+@@ -73,6 +_,7 @@
              if (leashHolder != null) {
                  from.dropLeash();
              }

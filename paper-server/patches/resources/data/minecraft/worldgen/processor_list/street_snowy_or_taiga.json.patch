@@ -1,0 +1,66 @@
+--- a/data/minecraft/worldgen/processor_list/street_snowy_or_taiga.json
++++ b/data/minecraft/worldgen/processor_list/street_snowy_or_taiga.json
+@@ -12,7 +_,9 @@
+             "block": "minecraft:water",
+             "predicate_type": "minecraft:block_match"
+           },
+-          "output_state": "minecraft:spruce_planks"
++          "output_state": {
++            "Name": "minecraft:spruce_planks"
++          }
+         },
+         {
+           "input_predicate": {
+@@ -23,7 +_,9 @@
+             "block": "minecraft:ice",
+             "predicate_type": "minecraft:block_match"
+           },
+-          "output_state": "minecraft:spruce_planks"
++          "output_state": {
++            "Name": "minecraft:spruce_planks"
++          }
+         },
+         {
+           "input_predicate": {
+@@ -34,7 +_,12 @@
+           "location_predicate": {
+             "predicate_type": "minecraft:always_true"
+           },
+-          "output_state": "minecraft:grass_block"
++          "output_state": {
++            "Name": "minecraft:grass_block",
++            "Properties": {
++              "snowy": "false"
++            }
++          }
+         },
+         {
+           "input_predicate": {
+@@ -45,7 +_,12 @@
+             "block": "minecraft:water",
+             "predicate_type": "minecraft:block_match"
+           },
+-          "output_state": "minecraft:water"
++          "output_state": {
++            "Name": "minecraft:water",
++            "Properties": {
++              "level": "0"
++            }
++          }
+         },
+         {
+           "input_predicate": {
+@@ -56,7 +_,12 @@
+             "block": "minecraft:water",
+             "predicate_type": "minecraft:block_match"
+           },
+-          "output_state": "minecraft:water"
++          "output_state": {
++            "Name": "minecraft:water",
++            "Properties": {
++              "level": "0"
++            }
++          }
+         }
+       ]
+     }

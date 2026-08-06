@@ -1,0 +1,67 @@
+--- a/data/minecraft/loot_table/chests/stronghold_library.json
++++ b/data/minecraft/loot_table/chests/stronghold_library.json
+@@ -5,27 +_,31 @@
+       "entries": [
+         {
+           "type": "minecraft:item",
+-          "modifier": {
+-            "type": "minecraft:set_count",
+-            "count": {
+-              "type": "minecraft:uniform",
+-              "max": 3.0,
+-              "min": 1.0
++          "functions": [
++            {
++              "count": {
++                "type": "minecraft:uniform",
++                "max": 3.0,
++                "min": 1.0
++              },
++              "function": "minecraft:set_count"
+             }
+-          },
++          ],
+           "name": "minecraft:book",
+           "weight": 20
+         },
+         {
+           "type": "minecraft:item",
+-          "modifier": {
+-            "type": "minecraft:set_count",
+-            "count": {
+-              "type": "minecraft:uniform",
+-              "max": 7.0,
+-              "min": 2.0
++          "functions": [
++            {
++              "count": {
++                "type": "minecraft:uniform",
++                "max": 7.0,
++                "min": 2.0
++              },
++              "function": "minecraft:set_count"
+             }
+-          },
++          ],
+           "name": "minecraft:paper",
+           "weight": 20
+         },
+@@ -39,11 +_,13 @@
+         },
+         {
+           "type": "minecraft:item",
+-          "modifier": {
+-            "type": "minecraft:enchant_with_levels",
+-            "levels": 30.0,
+-            "options": "#minecraft:on_random_loot"
+-          },
++          "functions": [
++            {
++              "function": "minecraft:enchant_with_levels",
++              "levels": 30.0,
++              "options": "#minecraft:on_random_loot"
++            }
++          ],
+           "name": "minecraft:book",
+           "weight": 10
+         }

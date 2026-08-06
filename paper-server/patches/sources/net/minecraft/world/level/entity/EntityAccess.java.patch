@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/level/entity/EntityAccess.java b/net/minecraft/world/level/entity/EntityAccess.java
-index 3dd8a56ef9f7b121f35694cf9f3f36c69bf01a8f..a5e1e27f240ea7a5e13441ec7d3390d6ce0b9951 100644
 --- a/net/minecraft/world/level/entity/EntityAccess.java
 +++ b/net/minecraft/world/level/entity/EntityAccess.java
-@@ -18,7 +18,13 @@ public interface EntityAccess extends UniquelyIdentifyable {
+@@ -18,7 +_,13 @@
  
      Stream<? extends EntityAccess> getPassengersAndSelf();
  

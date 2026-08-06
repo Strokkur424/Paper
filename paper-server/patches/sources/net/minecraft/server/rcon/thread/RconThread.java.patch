@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/server/rcon/thread/RconThread.java b/net/minecraft/server/rcon/thread/RconThread.java
-index f029c0a8999318f614243c085262b10b06b8cf2f..4bcd075ff359a4b11cd4ff362ae770585ad64cfb 100644
 --- a/net/minecraft/server/rcon/thread/RconThread.java
 +++ b/net/minecraft/server/rcon/thread/RconThread.java
-@@ -56,7 +56,7 @@ public class RconThread extends GenericThread {
+@@ -56,7 +_,7 @@
  
      public static @Nullable RconThread create(final ServerInterface serverInterface) {
          DedicatedServerProperties settings = serverInterface.getProperties();
@@ -17,7 +9,7 @@ index f029c0a8999318f614243c085262b10b06b8cf2f..4bcd075ff359a4b11cd4ff362ae77058
          if (serverIp.isEmpty()) {
              serverIp = "0.0.0.0";
          }
-@@ -103,6 +103,14 @@ public class RconThread extends GenericThread {
+@@ -103,6 +_,14 @@
  
          this.clients.clear();
      }

@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/redstone/pale_oak_button.json
++++ b/data/minecraft/advancement/recipes/redstone/pale_oak_button.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:pale_oak_button"
++        "recipe": "minecraft:pale_oak_button"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

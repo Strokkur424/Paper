@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/misc/gold_nugget_from_blasting.json
++++ b/data/minecraft/advancement/recipes/misc/gold_nugget_from_blasting.json
+@@ -123,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:gold_nugget_from_blasting"
++        "recipe": "minecraft:gold_nugget_from_blasting"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/item/FireChargeItem.java b/net/minecraft/world/item/FireChargeItem.java
-index d7e93b62e44eb181cad72ae4c03cea6dd75f707a..5d436e01bdb23a44af64a0cad920411ba27a40fa 100644
 --- a/net/minecraft/world/item/FireChargeItem.java
 +++ b/net/minecraft/world/item/FireChargeItem.java
-@@ -36,12 +36,28 @@ public class FireChargeItem extends Item implements ProjectileItem {
+@@ -36,12 +_,28 @@
          if (!CampfireBlock.canLight(blockState) && !CandleBlock.canLight(blockState) && !CandleCakeBlock.canLight(blockState)) {
              pos = pos.relative(context.getClickedFace());
              if (BaseFireBlock.canBePlacedAt(level, pos, context.getHorizontalDirection())) {

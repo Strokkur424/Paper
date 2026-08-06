@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/entity/monster/breeze/Breeze.java b/net/minecraft/world/entity/monster/breeze/Breeze.java
-index b17bdccd984c0a58a06e0b9271e480531f81a1fb..eaa7eb69bdc819228bbab05b053844f1578294ba 100644
 --- a/net/minecraft/world/entity/monster/breeze/Breeze.java
 +++ b/net/minecraft/world/entity/monster/breeze/Breeze.java
-@@ -243,6 +243,11 @@ public class Breeze extends Monster {
+@@ -243,6 +_,11 @@
  
      @Override
      public boolean canAttack(final LivingEntity target) {

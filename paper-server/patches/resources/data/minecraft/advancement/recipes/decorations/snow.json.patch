@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/decorations/snow.json
++++ b/data/minecraft/advancement/recipes/decorations/snow.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:snow"
++        "recipe": "minecraft:snow"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

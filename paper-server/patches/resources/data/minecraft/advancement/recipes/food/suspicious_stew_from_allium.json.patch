@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/food/suspicious_stew_from_allium.json
++++ b/data/minecraft/advancement/recipes/food/suspicious_stew_from_allium.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:suspicious_stew_from_allium"
++        "recipe": "minecraft:suspicious_stew_from_allium"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

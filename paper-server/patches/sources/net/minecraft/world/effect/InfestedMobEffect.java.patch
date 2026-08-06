@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/effect/InfestedMobEffect.java b/net/minecraft/world/effect/InfestedMobEffect.java
-index 79027821e2e2885c54058963151e01b143d79259..e234c8fd39ce67b7db56b9ff3c501606ce976ba1 100644
 --- a/net/minecraft/world/effect/InfestedMobEffect.java
 +++ b/net/minecraft/world/effect/InfestedMobEffect.java
-@@ -44,7 +44,11 @@ class InfestedMobEffect extends MobEffect {
+@@ -44,7 +_,11 @@
              Vector3f viewDirection = mob.getLookAngle().toVector3f().mul(0.3F).mul(1.0F, 1.5F, 1.0F).rotateY(randomAngle);
              silverfish.snapTo(x, y, z, level.getRandom().nextFloat() * 360.0F, 0.0F);
              silverfish.setDeltaMovement(new Vec3(viewDirection));

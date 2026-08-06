@@ -1,0 +1,22 @@
+--- a/data/minecraft/worldgen/structure/swamp_hut.json
++++ b/data/minecraft/worldgen/structure/swamp_hut.json
+@@ -7,7 +_,8 @@
+       "spawns": [
+         {
+           "type": "minecraft:cat",
+-          "count": 1,
++          "maxCount": 1,
++          "minCount": 1,
+           "weight": 1
+         }
+       ]
+@@ -17,7 +_,8 @@
+       "spawns": [
+         {
+           "type": "minecraft:witch",
+-          "count": 1,
++          "maxCount": 1,
++          "minCount": 1,
+           "weight": 1
+         }
+       ]

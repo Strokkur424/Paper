@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/combat/magenta_harness.json
++++ b/data/minecraft/advancement/recipes/combat/magenta_harness.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:magenta_harness"
++        "recipe": "minecraft:magenta_harness"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

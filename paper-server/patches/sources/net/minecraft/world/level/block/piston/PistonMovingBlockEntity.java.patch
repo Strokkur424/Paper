@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/level/block/piston/PistonMovingBlockEntity.java b/net/minecraft/world/level/block/piston/PistonMovingBlockEntity.java
-index 9e9dc1c894828501399b3b003229509ee5ecdd8e..13c2cd857102ffd67bd5297ad4cf716a1c6cd875 100644
 --- a/net/minecraft/world/level/block/piston/PistonMovingBlockEntity.java
 +++ b/net/minecraft/world/level/block/piston/PistonMovingBlockEntity.java
-@@ -36,7 +36,7 @@ public class PistonMovingBlockEntity extends BlockEntity {
+@@ -36,7 +_,7 @@
      private static final boolean DEFAULT_EXTENDING = false;
      private static final boolean DEFAULT_SOURCE = false;
      private BlockState movedState = DEFAULT_BLOCK_STATE;
@@ -17,7 +9,7 @@ index 9e9dc1c894828501399b3b003229509ee5ecdd8e..13c2cd857102ffd67bd5297ad4cf716a
      private boolean extending = false;
      private boolean isSourcePiston = false;
      private static final ThreadLocal<Direction> NOCLIP = ThreadLocal.withInitial(() -> null);
-@@ -303,7 +303,7 @@ public class PistonMovingBlockEntity extends BlockEntity {
+@@ -303,7 +_,7 @@
                  if (level.getBlockState(pos).is(Blocks.MOVING_PISTON)) {
                      BlockState newState = Block.updateFromNeighbourShapes(entity.movedState, level, pos);
                      if (newState.isAir()) {

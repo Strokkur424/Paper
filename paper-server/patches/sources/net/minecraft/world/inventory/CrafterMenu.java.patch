@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/inventory/CrafterMenu.java b/net/minecraft/world/inventory/CrafterMenu.java
-index df0243d292c336206479bfe9986497cd999a2b02..eab7ab8a272b97b8073825875c6e1e8030db0bb7 100644
 --- a/net/minecraft/world/inventory/CrafterMenu.java
 +++ b/net/minecraft/world/inventory/CrafterMenu.java
-@@ -19,6 +19,20 @@ public class CrafterMenu extends AbstractContainerMenu implements ContainerListe
+@@ -19,6 +_,20 @@
      private final ContainerData containerData;
      private final Player player;
      private final CraftingContainer container;
@@ -29,7 +21,7 @@ index df0243d292c336206479bfe9986497cd999a2b02..eab7ab8a272b97b8073825875c6e1e80
  
      public CrafterMenu(final int containerId, final Inventory inventory) {
          super(MenuType.CRAFTER_3x3, containerId);
-@@ -100,6 +114,7 @@ public class CrafterMenu extends AbstractContainerMenu implements ContainerListe
+@@ -100,6 +_,7 @@
  
      @Override
      public boolean stillValid(final Player player) {

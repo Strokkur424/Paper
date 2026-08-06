@@ -1,0 +1,46 @@
+--- a/data/minecraft/worldgen/processor_list/ancient_city_walls_degradation.json
++++ b/data/minecraft/worldgen/processor_list/ancient_city_walls_degradation.json
+@@ -17,7 +_,9 @@
+           "location_predicate": {
+             "predicate_type": "minecraft:always_true"
+           },
+-          "output_state": "minecraft:cracked_deepslate_bricks"
++          "output_state": {
++            "Name": "minecraft:cracked_deepslate_bricks"
++          }
+         },
+         {
+           "input_predicate": {
+@@ -28,7 +_,9 @@
+           "location_predicate": {
+             "predicate_type": "minecraft:always_true"
+           },
+-          "output_state": "minecraft:cracked_deepslate_tiles"
++          "output_state": {
++            "Name": "minecraft:cracked_deepslate_tiles"
++          }
+         },
+         {
+           "input_predicate": {
+@@ -39,7 +_,9 @@
+           "location_predicate": {
+             "predicate_type": "minecraft:always_true"
+           },
+-          "output_state": "minecraft:air"
++          "output_state": {
++            "Name": "minecraft:air"
++          }
+         },
+         {
+           "input_predicate": {
+@@ -50,7 +_,9 @@
+           "location_predicate": {
+             "predicate_type": "minecraft:always_true"
+           },
+-          "output_state": "minecraft:air"
++          "output_state": {
++            "Name": "minecraft:air"
++          }
+         }
+       ]
+     },

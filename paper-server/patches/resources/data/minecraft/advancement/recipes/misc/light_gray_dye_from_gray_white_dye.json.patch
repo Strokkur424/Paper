@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/misc/light_gray_dye_from_gray_white_dye.json
++++ b/data/minecraft/advancement/recipes/misc/light_gray_dye_from_gray_white_dye.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:light_gray_dye_from_gray_white_dye"
++        "recipe": "minecraft:light_gray_dye_from_gray_white_dye"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     },

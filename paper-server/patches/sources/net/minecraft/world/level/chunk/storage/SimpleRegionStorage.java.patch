@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/level/chunk/storage/SimpleRegionStorage.java b/net/minecraft/world/level/chunk/storage/SimpleRegionStorage.java
-index 1e55d5276b85ba6ea214c7af004c1fc040b1ee2f..ebb94d87e3b659e9049cbe5a3d5375274773fe57 100644
 --- a/net/minecraft/world/level/chunk/storage/SimpleRegionStorage.java
 +++ b/net/minecraft/world/level/chunk/storage/SimpleRegionStorage.java
-@@ -44,7 +44,19 @@ public class SimpleRegionStorage implements AutoCloseable {
+@@ -44,7 +_,19 @@
      }
  
      public CompletableFuture<Void> write(final ChunkPos pos, final Supplier<CompoundTag> supplier) {
@@ -29,7 +21,7 @@ index 1e55d5276b85ba6ea214c7af004c1fc040b1ee2f..ebb94d87e3b659e9049cbe5a3d537527
      }
  
      public CompoundTag upgradeChunkTag(CompoundTag chunkTag, final int defaultVersion, final @Nullable CompoundTag dataFixContextTag, final int targetVersion) {
-@@ -54,8 +66,25 @@ public class SimpleRegionStorage implements AutoCloseable {
+@@ -54,8 +_,25 @@
          }
  
          try {

@@ -1,0 +1,12 @@
+--- a/data/minecraft/worldgen/structure/pillager_outpost.json
++++ b/data/minecraft/worldgen/structure/pillager_outpost.json
+@@ -10,7 +_,8 @@
+       "spawns": [
+         {
+           "type": "minecraft:pillager",
+-          "count": 1,
++          "maxCount": 1,
++          "minCount": 1,
+           "weight": 1
+         }
+       ]

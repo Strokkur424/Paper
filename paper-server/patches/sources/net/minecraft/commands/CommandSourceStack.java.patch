@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/commands/CommandSourceStack.java b/net/minecraft/commands/CommandSourceStack.java
-index 15a1c340d1bbe1cfd548a0d880c0b6ff8389b495..3265314d10a3d742d07e0147bc30958030104f43 100644
 --- a/net/minecraft/commands/CommandSourceStack.java
 +++ b/net/minecraft/commands/CommandSourceStack.java
-@@ -47,7 +47,7 @@ import net.minecraft.world.phys.Vec2;
+@@ -47,7 +_,7 @@
  import net.minecraft.world.phys.Vec3;
  import org.jspecify.annotations.Nullable;
  
@@ -17,7 +9,7 @@ index 15a1c340d1bbe1cfd548a0d880c0b6ff8389b495..3265314d10a3d742d07e0147bc309580
      public static final SimpleCommandExceptionType ERROR_NOT_PLAYER = new SimpleCommandExceptionType(Component.translatable("permissions.requires.player"));
      public static final SimpleCommandExceptionType ERROR_NOT_ENTITY = new SimpleCommandExceptionType(Component.translatable("permissions.requires.entity"));
      public final CommandSource source;
-@@ -64,6 +64,7 @@ public class CommandSourceStack implements SharedSuggestionProvider, ExecutionCo
+@@ -64,6 +_,7 @@
      private final Vec2 rotation;
      private final CommandSigningContext signingContext;
      private final TaskChainer chatMessageChainer;
@@ -25,7 +17,7 @@ index 15a1c340d1bbe1cfd548a0d880c0b6ff8389b495..3265314d10a3d742d07e0147bc309580
  
      public CommandSourceStack(
          final CommandSource source,
-@@ -189,6 +190,30 @@ public class CommandSourceStack implements SharedSuggestionProvider, ExecutionCo
+@@ -189,6 +_,30 @@
              );
      }
  
@@ -56,7 +48,7 @@ index 15a1c340d1bbe1cfd548a0d880c0b6ff8389b495..3265314d10a3d742d07e0147bc309580
      public CommandSourceStack withRotation(final Vec2 rotation) {
          return this.rotation.equals(rotation)
              ? this
-@@ -378,6 +403,32 @@ public class CommandSourceStack implements SharedSuggestionProvider, ExecutionCo
+@@ -378,6 +_,32 @@
          return this.permissions;
      }
  
@@ -89,7 +81,7 @@ index 15a1c340d1bbe1cfd548a0d880c0b6ff8389b495..3265314d10a3d742d07e0147bc309580
      public Vec3 getPosition() {
          return this.worldPosition;
      }
-@@ -481,20 +532,25 @@ public class CommandSourceStack implements SharedSuggestionProvider, ExecutionCo
+@@ -481,20 +_,25 @@
          GameRules gameRules = this.level.getGameRules();
          if (gameRules.get(GameRules.SEND_COMMAND_FEEDBACK)) {
              for (ServerPlayer player : this.server.getPlayerList().getPlayers()) {
@@ -118,7 +110,7 @@ index 15a1c340d1bbe1cfd548a0d880c0b6ff8389b495..3265314d10a3d742d07e0147bc309580
          }
      }
  
-@@ -505,7 +561,7 @@ public class CommandSourceStack implements SharedSuggestionProvider, ExecutionCo
+@@ -505,7 +_,7 @@
  
      @Override
      public Collection<String> getOnlinePlayerNames() {
@@ -127,7 +119,7 @@ index 15a1c340d1bbe1cfd548a0d880c0b6ff8389b495..3265314d10a3d742d07e0147bc309580
      }
  
      @Override
-@@ -582,4 +638,16 @@ public class CommandSourceStack implements SharedSuggestionProvider, ExecutionCo
+@@ -582,4 +_,16 @@
      public boolean isSilent() {
          return this.silent;
      }

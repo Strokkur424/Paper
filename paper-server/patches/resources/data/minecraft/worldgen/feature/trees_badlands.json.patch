@@ -1,0 +1,13 @@
+--- a/data/minecraft/worldgen/feature/trees_badlands.json
++++ /dev/null
+@@ -1,10 +_,0 @@
+-{
+-  "type": "minecraft:random_selector",
+-  "default": "minecraft:oak_leaf_litter",
+-  "features": [
+-    {
+-      "chance": 0.0125,
+-      "feature": "minecraft:fallen_oak_tree"
+-    }
+-  ]
+-}

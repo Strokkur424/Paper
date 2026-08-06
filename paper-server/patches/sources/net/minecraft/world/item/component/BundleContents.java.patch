@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/item/component/BundleContents.java b/net/minecraft/world/item/component/BundleContents.java
-index d63aced8ba51525b917030c85eb05cbae182dec7..59fdcb99be24896de4e4c2c7d8ca3b8cd068cd1e 100644
 --- a/net/minecraft/world/item/component/BundleContents.java
 +++ b/net/minecraft/world/item/component/BundleContents.java
-@@ -29,9 +29,10 @@ import org.jspecify.annotations.Nullable;
+@@ -29,9 +_,10 @@
  
  public final class BundleContents implements ContainerComponent<BundleContents>, TooltipComponent {
      public static final BundleContents EMPTY = new BundleContents(List.of());
@@ -21,7 +13,7 @@ index d63aced8ba51525b917030c85eb05cbae182dec7..59fdcb99be24896de4e4c2c7d8ca3b8c
          .map(BundleContents::new, contents -> contents.items);
      private static final Fraction BUNDLE_IN_BUNDLE_WEIGHT = Fraction.getFraction(1, 16);
      private static final int NO_STACK_INDEX = -1;
-@@ -42,6 +43,11 @@ public final class BundleContents implements ContainerComponent<BundleContents>,
+@@ -42,6 +_,11 @@
      private final Supplier<DataResult<Fraction>> weight;
  
      private BundleContents(final List<ItemStackTemplate> items, final int selectedItem) {
@@ -33,7 +25,7 @@ index d63aced8ba51525b917030c85eb05cbae182dec7..59fdcb99be24896de4e4c2c7d8ca3b8c
          this.items = items;
          this.selectedItem = selectedItem;
          this.weight = Suppliers.memoize(() -> computeContentWeight(this.items));
-@@ -84,6 +90,13 @@ public final class BundleContents implements ContainerComponent<BundleContents>,
+@@ -84,6 +_,13 @@
          return !itemToAdd.isEmpty() && itemToAdd.getItem().canFitInsideContainerItems();
      }
  
@@ -47,10 +39,11 @@ index d63aced8ba51525b917030c85eb05cbae182dec7..59fdcb99be24896de4e4c2c7d8ca3b8c
      public int getNumberOfItemsToShow() {
          int numberOfItemStacks = this.size();
          int availableItemsToShow = numberOfItemStacks > 12 ? 11 : 12;
-@@ -208,6 +221,14 @@ public final class BundleContents implements ContainerComponent<BundleContents>,
+@@ -207,6 +_,14 @@
+             Fraction remainingWeight = Fraction.ONE.subtract(this.weight);
              return Math.max(remainingWeight.divideBy(itemWeight).intValue(), 0);
          }
- 
++
 +        // Paper start - correct bundle inventory action
 +        // Static overload to easily compute this value without the need for an instance of mutable.
 +        static int getMaxAmountToAdd(final ItemStack stack, final Fraction weight) {
@@ -58,7 +51,6 @@ index d63aced8ba51525b917030c85eb05cbae182dec7..59fdcb99be24896de4e4c2c7d8ca3b8c
 +            return Math.max(remainingWeight.divideBy(BundleContents.getWeight(stack).getOrThrow()).intValue(), 0);
 +        }
 +        // Paper end - correct bundle inventory action
-+
+ 
          public int tryInsert(final ItemStack itemsToAdd) {
              if (!BundleContents.canItemBeInBundle(itemsToAdd)) {
-                 return 0;

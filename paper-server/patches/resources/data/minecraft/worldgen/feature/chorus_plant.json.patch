@@ -1,0 +1,6 @@
+--- a/data/minecraft/worldgen/feature/chorus_plant.json
++++ /dev/null
+@@ -1,3 +_,0 @@
+-{
+-  "type": "minecraft:chorus_plant"
+-}

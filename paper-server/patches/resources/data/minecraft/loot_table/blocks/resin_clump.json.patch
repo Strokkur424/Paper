@@ -1,0 +1,181 @@
+--- a/data/minecraft/loot_table/blocks/resin_clump.json
++++ b/data/minecraft/loot_table/blocks/resin_clump.json
+@@ -5,86 +_,98 @@
+       "entries": [
+         {
+           "type": "minecraft:item",
+-          "modifier": [
+-            {
+-              "type": "minecraft:set_count",
+-              "add": true,
+-              "condition": {
+-                "type": "minecraft:match_block",
+-                "blocks": "minecraft:resin_clump",
+-                "state": {
+-                  "down": "true"
+-                }
+-              },
+-              "count": 1.0
+-            },
+-            {
+-              "type": "minecraft:set_count",
+-              "add": true,
+-              "condition": {
+-                "type": "minecraft:match_block",
+-                "blocks": "minecraft:resin_clump",
+-                "state": {
+-                  "up": "true"
+-                }
+-              },
+-              "count": 1.0
+-            },
+-            {
+-              "type": "minecraft:set_count",
+-              "add": true,
+-              "condition": {
+-                "type": "minecraft:match_block",
+-                "blocks": "minecraft:resin_clump",
+-                "state": {
+-                  "north": "true"
+-                }
+-              },
+-              "count": 1.0
+-            },
+-            {
+-              "type": "minecraft:set_count",
+-              "add": true,
+-              "condition": {
+-                "type": "minecraft:match_block",
+-                "blocks": "minecraft:resin_clump",
+-                "state": {
+-                  "south": "true"
+-                }
+-              },
+-              "count": 1.0
+-            },
+-            {
+-              "type": "minecraft:set_count",
+-              "add": true,
+-              "condition": {
+-                "type": "minecraft:match_block",
+-                "blocks": "minecraft:resin_clump",
+-                "state": {
+-                  "west": "true"
+-                }
+-              },
+-              "count": 1.0
+-            },
+-            {
+-              "type": "minecraft:set_count",
+-              "add": true,
+-              "condition": {
+-                "type": "minecraft:match_block",
+-                "blocks": "minecraft:resin_clump",
+-                "state": {
+-                  "east": "true"
+-                }
+-              },
+-              "count": 1.0
+-            },
+-            {
+-              "type": "minecraft:set_count",
+-              "add": true,
+-              "count": -1.0
+-            },
+-            {
+-              "type": "minecraft:explosion_decay"
++          "functions": [
++            {
++              "add": true,
++              "conditions": [
++                {
++                  "block": "minecraft:resin_clump",
++                  "condition": "minecraft:block_state_property",
++                  "properties": {
++                    "down": "true"
++                  }
++                }
++              ],
++              "count": 1.0,
++              "function": "minecraft:set_count"
++            },
++            {
++              "add": true,
++              "conditions": [
++                {
++                  "block": "minecraft:resin_clump",
++                  "condition": "minecraft:block_state_property",
++                  "properties": {
++                    "up": "true"
++                  }
++                }
++              ],
++              "count": 1.0,
++              "function": "minecraft:set_count"
++            },
++            {
++              "add": true,
++              "conditions": [
++                {
++                  "block": "minecraft:resin_clump",
++                  "condition": "minecraft:block_state_property",
++                  "properties": {
++                    "north": "true"
++                  }
++                }
++              ],
++              "count": 1.0,
++              "function": "minecraft:set_count"
++            },
++            {
++              "add": true,
++              "conditions": [
++                {
++                  "block": "minecraft:resin_clump",
++                  "condition": "minecraft:block_state_property",
++                  "properties": {
++                    "south": "true"
++                  }
++                }
++              ],
++              "count": 1.0,
++              "function": "minecraft:set_count"
++            },
++            {
++              "add": true,
++              "conditions": [
++                {
++                  "block": "minecraft:resin_clump",
++                  "condition": "minecraft:block_state_property",
++                  "properties": {
++                    "west": "true"
++                  }
++                }
++              ],
++              "count": 1.0,
++              "function": "minecraft:set_count"
++            },
++            {
++              "add": true,
++              "conditions": [
++                {
++                  "block": "minecraft:resin_clump",
++                  "condition": "minecraft:block_state_property",
++                  "properties": {
++                    "east": "true"
++                  }
++                }
++              ],
++              "count": 1.0,
++              "function": "minecraft:set_count"
++            },
++            {
++              "add": true,
++              "count": -1.0,
++              "function": "minecraft:set_count"
++            },
++            {
++              "function": "minecraft:explosion_decay"
+             }
+           ],
+           "name": "minecraft:resin_clump"

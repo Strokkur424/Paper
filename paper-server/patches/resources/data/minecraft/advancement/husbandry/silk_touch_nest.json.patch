@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/husbandry/silk_touch_nest.json
++++ b/data/minecraft/advancement/husbandry/silk_touch_nest.json
+@@ -3,7 +_,7 @@
+   "criteria": {
+     "silk_touch_nest": {
+       "conditions": {
+-        "blocks": "minecraft:bee_nest",
++        "block": "minecraft:bee_nest",
+         "item": {
+           "predicates": {
+             "minecraft:enchantments": [

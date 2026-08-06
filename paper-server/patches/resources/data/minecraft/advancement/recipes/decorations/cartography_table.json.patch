@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/decorations/cartography_table.json
++++ b/data/minecraft/advancement/recipes/decorations/cartography_table.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:cartography_table"
++        "recipe": "minecraft:cartography_table"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

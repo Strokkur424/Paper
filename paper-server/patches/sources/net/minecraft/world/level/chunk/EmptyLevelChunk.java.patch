@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/level/chunk/EmptyLevelChunk.java b/net/minecraft/world/level/chunk/EmptyLevelChunk.java
-index dc2b30d592b0a93f38ad485380c0a1c233d2b3ed..f095ec93c0c5be6db15b6486ec22980ba74cf9e5 100644
 --- a/net/minecraft/world/level/chunk/EmptyLevelChunk.java
 +++ b/net/minecraft/world/level/chunk/EmptyLevelChunk.java
-@@ -27,6 +27,13 @@ public class EmptyLevelChunk extends LevelChunk {
+@@ -27,6 +_,13 @@
          return Blocks.VOID_AIR.defaultBlockState();
      }
  

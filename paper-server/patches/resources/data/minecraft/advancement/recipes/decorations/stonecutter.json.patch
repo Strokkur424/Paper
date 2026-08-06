@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/decorations/stonecutter.json
++++ b/data/minecraft/advancement/recipes/decorations/stonecutter.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:stonecutter"
++        "recipe": "minecraft:stonecutter"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

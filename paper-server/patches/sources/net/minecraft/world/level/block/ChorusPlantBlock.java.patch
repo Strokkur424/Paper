@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/level/block/ChorusPlantBlock.java b/net/minecraft/world/level/block/ChorusPlantBlock.java
-index c47a8bd3d58537ad34db18cc9ccb6a0144f69a7d..9bb7a2a33d96fcc9b05aaa58fb7dac61c1e90e13 100644
 --- a/net/minecraft/world/level/block/ChorusPlantBlock.java
 +++ b/net/minecraft/world/level/block/ChorusPlantBlock.java
-@@ -31,6 +31,7 @@ public class ChorusPlantBlock extends PipeBlock {
+@@ -31,6 +_,7 @@
  
      @Override
      public BlockState getStateForPlacement(final BlockPlaceContext context) {
@@ -16,7 +8,7 @@ index c47a8bd3d58537ad34db18cc9ccb6a0144f69a7d..9bb7a2a33d96fcc9b05aaa58fb7dac61
          return getStateWithConnections(context.getLevel(), context.getClickedPos(), this.defaultBlockState());
      }
  
-@@ -61,6 +62,7 @@ public class ChorusPlantBlock extends PipeBlock {
+@@ -61,6 +_,7 @@
          final BlockState neighbourState,
          final RandomSource random
      ) {
@@ -24,7 +16,7 @@ index c47a8bd3d58537ad34db18cc9ccb6a0144f69a7d..9bb7a2a33d96fcc9b05aaa58fb7dac61
          if (!state.canSurvive(level, pos)) {
              ticks.scheduleTick(pos, this, 1);
              return super.updateShape(state, level, ticks, pos, directionToNeighbour, neighbourPos, neighbourState, random);
-@@ -74,6 +76,7 @@ public class ChorusPlantBlock extends PipeBlock {
+@@ -74,6 +_,7 @@
  
      @Override
      protected void tick(final BlockState state, final ServerLevel level, final BlockPos pos, final RandomSource random) {
@@ -32,7 +24,7 @@ index c47a8bd3d58537ad34db18cc9ccb6a0144f69a7d..9bb7a2a33d96fcc9b05aaa58fb7dac61
          if (!state.canSurvive(level, pos)) {
              level.destroyBlock(pos, true);
          }
-@@ -81,6 +84,7 @@ public class ChorusPlantBlock extends PipeBlock {
+@@ -81,6 +_,7 @@
  
      @Override
      protected boolean canSurvive(final BlockState state, final LevelReader level, final BlockPos pos) {

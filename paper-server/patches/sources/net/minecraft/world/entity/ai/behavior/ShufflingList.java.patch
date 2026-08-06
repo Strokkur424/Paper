@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/entity/ai/behavior/ShufflingList.java b/net/minecraft/world/entity/ai/behavior/ShufflingList.java
-index f56d4b8b534411c159bc474020cbb4963c2725d2..909a44b7897bfcb250f82e0a703606d79ee22f29 100644
 --- a/net/minecraft/world/entity/ai/behavior/ShufflingList.java
 +++ b/net/minecraft/world/entity/ai/behavior/ShufflingList.java
-@@ -16,12 +16,25 @@ import net.minecraft.util.RandomSource;
+@@ -16,12 +_,25 @@
  public class ShufflingList<U> implements Iterable<U> {
      protected final List<ShufflingList.WeightedEntry<U>> entries;
      private final RandomSource random = RandomSource.create();
@@ -34,7 +26,7 @@ index f56d4b8b534411c159bc474020cbb4963c2725d2..909a44b7897bfcb250f82e0a703606d7
          this.entries = Lists.newArrayList(entries);
      }
  
-@@ -35,9 +48,12 @@ public class ShufflingList<U> implements Iterable<U> {
+@@ -35,9 +_,12 @@
      }
  
      public ShufflingList<U> shuffle() {

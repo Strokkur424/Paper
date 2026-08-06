@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/decorations/cinnabar_wall.json
++++ b/data/minecraft/advancement/recipes/decorations/cinnabar_wall.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:cinnabar_wall"
++        "recipe": "minecraft:cinnabar_wall"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

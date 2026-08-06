@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/brewing/blaze_powder.json
++++ b/data/minecraft/advancement/recipes/brewing/blaze_powder.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:blaze_powder"
++        "recipe": "minecraft:blaze_powder"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

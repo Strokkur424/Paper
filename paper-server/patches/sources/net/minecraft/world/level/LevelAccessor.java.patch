@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/level/LevelAccessor.java b/net/minecraft/world/level/LevelAccessor.java
-index c79a8a869755d4ca37449f54bc7850b537d322eb..0cfb4da0d2cf1c107427fdc59e2fe56ff374f4ee 100644
 --- a/net/minecraft/world/level/LevelAccessor.java
 +++ b/net/minecraft/world/level/LevelAccessor.java
-@@ -103,4 +103,6 @@ public interface LevelAccessor extends CommonLevelAccessor, ScheduledTickAccess
+@@ -103,4 +_,6 @@
      default void gameEvent(final ResourceKey<GameEvent> gameEvent, final BlockPos pos, final GameEvent.Context context) {
          this.gameEvent(this.registryAccess().lookupOrThrow(Registries.GAME_EVENT).getOrThrow(gameEvent), pos, context);
      }

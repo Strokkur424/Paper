@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/redstone/jungle_door.json
++++ b/data/minecraft/advancement/recipes/redstone/jungle_door.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:jungle_door"
++        "recipe": "minecraft:jungle_door"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/com/mojang/serialization/Dynamic.java b/com/mojang/serialization/Dynamic.java
-index e351602f4d66d25ff4511171daa94d8c93025779..2b288c354097ef387c1a9d149bdff78e40f77fc1 100644
 --- a/com/mojang/serialization/Dynamic.java
 +++ b/com/mojang/serialization/Dynamic.java
-@@ -20,6 +20,7 @@ import java.util.stream.Stream;
+@@ -20,6 +_,7 @@
  
  @SuppressWarnings("unused")
  public class Dynamic<T> extends DynamicLike<T> {
@@ -16,7 +8,7 @@ index e351602f4d66d25ff4511171daa94d8c93025779..2b288c354097ef387c1a9d149bdff78e
      private final T value;
  
      public Dynamic(final DynamicOps<T> ops) {
-@@ -121,7 +122,7 @@ public class Dynamic<T> extends DynamicLike<T> {
+@@ -121,7 +_,7 @@
          return new OptionalDynamic<>(ops, ops.getMap(value).flatMap(m -> {
              final T value = m.get(key);
              if (value == null) {

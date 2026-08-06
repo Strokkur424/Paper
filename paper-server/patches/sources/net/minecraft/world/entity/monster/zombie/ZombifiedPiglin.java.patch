@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/entity/monster/zombie/ZombifiedPiglin.java b/net/minecraft/world/entity/monster/zombie/ZombifiedPiglin.java
-index 43b06f4dded075fc160f2d008dc7d49134e5f12b..a806369361bf18e2729ba634d7508f8f68882b36 100644
 --- a/net/minecraft/world/entity/monster/zombie/ZombifiedPiglin.java
 +++ b/net/minecraft/world/entity/monster/zombie/ZombifiedPiglin.java
-@@ -61,6 +61,7 @@ public class ZombifiedPiglin extends Zombie implements NeutralMob {
+@@ -61,6 +_,7 @@
      private static final int ALERT_RANGE_Y = 10;
      private static final UniformInt ALERT_INTERVAL = TimeUtil.rangeOfSeconds(4, 6);
      private int ticksUntilNextAlert;
@@ -16,7 +8,7 @@ index 43b06f4dded075fc160f2d008dc7d49134e5f12b..a806369361bf18e2729ba634d7508f8f
  
      public ZombifiedPiglin(final EntityType<? extends ZombifiedPiglin> type, final Level level) {
          super(type, level);
-@@ -72,7 +73,7 @@ public class ZombifiedPiglin extends Zombie implements NeutralMob {
+@@ -72,7 +_,7 @@
          this.goalSelector.addGoal(1, new SpearUseGoal<>(this, 1.0, 1.0, 10.0F, 2.0F));
          this.goalSelector.addGoal(2, new ZombieAttackGoal(this, 1.0, false));
          this.goalSelector.addGoal(7, new WaterAvoidingRandomStrollGoal(this, 1.0));
@@ -25,7 +17,7 @@ index 43b06f4dded075fc160f2d008dc7d49134e5f12b..a806369361bf18e2729ba634d7508f8f
          this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, Player.class, 10, true, false, this::isAngryAt));
          this.targetSelector.addGoal(3, new ResetUniversalAngerTargetGoal<>(this, true));
      }
-@@ -145,7 +146,7 @@ public class ZombifiedPiglin extends Zombie implements NeutralMob {
+@@ -145,7 +_,7 @@
              .filter(other -> other != this)
              .filter(other -> other.getTarget() == null)
              .filter(other -> !other.isAlliedTo(this.getTarget()))
@@ -34,7 +26,7 @@ index 43b06f4dded075fc160f2d008dc7d49134e5f12b..a806369361bf18e2729ba634d7508f8f
      }
  
      private void playAngerSound() {
-@@ -153,18 +154,27 @@ public class ZombifiedPiglin extends Zombie implements NeutralMob {
+@@ -153,18 +_,27 @@
      }
  
      @Override

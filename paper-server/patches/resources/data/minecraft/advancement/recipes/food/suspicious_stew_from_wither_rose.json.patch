@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/food/suspicious_stew_from_wither_rose.json
++++ b/data/minecraft/advancement/recipes/food/suspicious_stew_from_wither_rose.json
+@@ -3,7 +_,7 @@
+   "criteria": {
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:suspicious_stew_from_wither_rose"
++        "recipe": "minecraft:suspicious_stew_from_wither_rose"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     },

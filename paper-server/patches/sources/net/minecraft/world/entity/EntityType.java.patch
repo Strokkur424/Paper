@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/entity/EntityType.java b/net/minecraft/world/entity/EntityType.java
-index 01d01a020395b32ed56b0e8460ccfa9c51dbab9b..a27d0a3676b12b7673fe5137aede482561688b07 100644
 --- a/net/minecraft/world/entity/EntityType.java
 +++ b/net/minecraft/world/entity/EntityType.java
-@@ -52,6 +52,7 @@ import org.jspecify.annotations.Nullable;
+@@ -52,6 +_,7 @@
  import org.slf4j.Logger;
  
  public class EntityType<T extends Entity> implements EntityTypeTest<Entity, T>, FeatureElement {
@@ -16,7 +8,7 @@ index 01d01a020395b32ed56b0e8460ccfa9c51dbab9b..a27d0a3676b12b7673fe5137aede4825
      private static final Logger LOGGER = LogUtils.getLogger();
      private final Holder.Reference<EntityType<?>> builtInRegistryHolder = BuiltInRegistries.ENTITY_TYPE.createIntrusiveHolder(this);
      public static final Codec<EntityType<?>> CODEC = BuiltInRegistries.ENTITY_TYPE.byNameCodec();
-@@ -123,6 +124,22 @@ public class EntityType<T extends Entity> implements EntityTypeTest<Entity, T>,
+@@ -123,6 +_,22 @@
          final boolean tryMoveDown,
          final boolean movedUp
      ) {
@@ -39,7 +31,7 @@ index 01d01a020395b32ed56b0e8460ccfa9c51dbab9b..a27d0a3676b12b7673fe5137aede4825
          PostSpawnProcessor<T> postSpawnConfig;
          if (itemStack != null) {
              postSpawnConfig = createDefaultStackConfig(level, itemStack, user);
-@@ -130,7 +147,7 @@ public class EntityType<T extends Entity> implements EntityTypeTest<Entity, T>,
+@@ -130,7 +_,7 @@
              postSpawnConfig = PostSpawnProcessor.nop();
          }
  
@@ -48,7 +40,7 @@ index 01d01a020395b32ed56b0e8460ccfa9c51dbab9b..a27d0a3676b12b7673fe5137aede4825
      }
  
      public static <T extends Entity> PostSpawnProcessor<T> createDefaultStackConfig(
-@@ -153,11 +170,30 @@ public class EntityType<T extends Entity> implements EntityTypeTest<Entity, T>,
+@@ -153,11 +_,30 @@
          final PostSpawnProcessor<T> initialConfig, final Level level, final ItemStack itemStack, final @Nullable LivingEntity user
      ) {
          TypedEntityData<EntityType<?>> entityData = itemStack.get(DataComponents.ENTITY_DATA);
@@ -81,7 +73,7 @@ index 01d01a020395b32ed56b0e8460ccfa9c51dbab9b..a27d0a3676b12b7673fe5137aede4825
      }
  
      public @Nullable T spawn(
-@@ -168,9 +204,39 @@ public class EntityType<T extends Entity> implements EntityTypeTest<Entity, T>,
+@@ -168,9 +_,39 @@
          final boolean tryMoveDown,
          final boolean movedUp
      ) {
@@ -122,7 +114,7 @@ index 01d01a020395b32ed56b0e8460ccfa9c51dbab9b..a27d0a3676b12b7673fe5137aede4825
              if (entity instanceof Mob mob) {
                  mob.playAmbientSound();
              }
-@@ -233,6 +299,13 @@ public class EntityType<T extends Entity> implements EntityTypeTest<Entity, T>,
+@@ -233,6 +_,13 @@
                  if (level.isClientSide()
                      || !entity.getType().onlyOpCanSetNbt()
                      || user instanceof Player player && server.getPlayerList().isOp(player.nameAndId())) {
@@ -136,7 +128,7 @@ index 01d01a020395b32ed56b0e8460ccfa9c51dbab9b..a27d0a3676b12b7673fe5137aede4825
                      entityData.loadInto(entity);
                  }
              }
-@@ -311,10 +384,28 @@ public class EntityType<T extends Entity> implements EntityTypeTest<Entity, T>,
+@@ -311,10 +_,28 @@
      }
  
      public static Optional<Entity> create(final ValueInput input, final Level level, final EntitySpawnRequest request) {
@@ -167,7 +159,7 @@ index 01d01a020395b32ed56b0e8460ccfa9c51dbab9b..a27d0a3676b12b7673fe5137aede4825
          );
      }
  
-@@ -458,7 +549,7 @@ public class EntityType<T extends Entity> implements EntityTypeTest<Entity, T>,
+@@ -458,7 +_,7 @@
          return this.builtInRegistryHolder;
      }
  

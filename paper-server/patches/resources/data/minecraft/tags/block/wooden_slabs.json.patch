@@ -1,0 +1,11 @@
+--- a/data/minecraft/tags/block/wooden_slabs.json
++++ b/data/minecraft/tags/block/wooden_slabs.json
+@@ -11,7 +_,6 @@
+     "minecraft:warped_slab",
+     "minecraft:mangrove_slab",
+     "minecraft:bamboo_slab",
+-    "minecraft:cherry_slab",
+-    "minecraft:poplar_slab"
++    "minecraft:cherry_slab"
+   ]
+ }

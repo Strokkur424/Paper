@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/building_blocks/bricks.json
++++ b/data/minecraft/advancement/recipes/building_blocks/bricks.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:bricks"
++        "recipe": "minecraft:bricks"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

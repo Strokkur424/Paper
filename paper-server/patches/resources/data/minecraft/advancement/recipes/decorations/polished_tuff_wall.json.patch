@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/decorations/polished_tuff_wall.json
++++ b/data/minecraft/advancement/recipes/decorations/polished_tuff_wall.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:polished_tuff_wall"
++        "recipe": "minecraft:polished_tuff_wall"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

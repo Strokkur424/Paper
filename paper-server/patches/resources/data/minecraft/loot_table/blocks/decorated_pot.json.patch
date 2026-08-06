@@ -1,0 +1,44 @@
+--- a/data/minecraft/loot_table/blocks/decorated_pot.json
++++ b/data/minecraft/loot_table/blocks/decorated_pot.json
+@@ -8,24 +_,28 @@
+           "children": [
+             {
+               "type": "minecraft:dynamic",
+-              "condition": {
+-                "type": "minecraft:match_block",
+-                "blocks": "minecraft:decorated_pot",
+-                "state": {
+-                  "cracked": "true"
++              "conditions": [
++                {
++                  "block": "minecraft:decorated_pot",
++                  "condition": "minecraft:block_state_property",
++                  "properties": {
++                    "cracked": "true"
++                  }
+                 }
+-              },
++              ],
+               "name": "minecraft:sherds"
+             },
+             {
+               "type": "minecraft:item",
+-              "modifier": {
+-                "type": "minecraft:copy_components",
+-                "include": [
+-                  "minecraft:pot_decorations"
+-                ],
+-                "source": "block_entity"
+-              },
++              "functions": [
++                {
++                  "function": "minecraft:copy_components",
++                  "include": [
++                    "minecraft:pot_decorations"
++                  ],
++                  "source": "block_entity"
++                }
++              ],
+               "name": "minecraft:decorated_pot"
+             }
+           ]

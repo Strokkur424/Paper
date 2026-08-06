@@ -1,0 +1,11 @@
+--- a/data/minecraft/tags/block/saplings.json
++++ b/data/minecraft/tags/block/saplings.json
+@@ -10,7 +_,6 @@
+     "minecraft:azalea",
+     "minecraft:flowering_azalea",
+     "minecraft:mangrove_propagule",
+-    "minecraft:cherry_sapling",
+-    "minecraft:poplar_sapling"
++    "minecraft:cherry_sapling"
+   ]
+ }

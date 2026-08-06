@@ -1,0 +1,46 @@
+--- a/data/minecraft/worldgen/processor_list/side_wall_degradation.json
++++ b/data/minecraft/worldgen/processor_list/side_wall_degradation.json
+@@ -12,7 +_,9 @@
+           "location_predicate": {
+             "predicate_type": "minecraft:always_true"
+           },
+-          "output_state": "minecraft:air"
++          "output_state": {
++            "Name": "minecraft:air"
++          }
+         },
+         {
+           "input_predicate": {
+@@ -23,7 +_,9 @@
+           "location_predicate": {
+             "predicate_type": "minecraft:always_true"
+           },
+-          "output_state": "minecraft:cracked_polished_blackstone_bricks"
++          "output_state": {
++            "Name": "minecraft:cracked_polished_blackstone_bricks"
++          }
+         },
+         {
+           "input_predicate": {
+@@ -34,7 +_,9 @@
+           "location_predicate": {
+             "predicate_type": "minecraft:always_true"
+           },
+-          "output_state": "minecraft:blackstone"
++          "output_state": {
++            "Name": "minecraft:blackstone"
++          }
+         },
+         {
+           "input_predicate": {
+@@ -45,7 +_,9 @@
+           "location_predicate": {
+             "predicate_type": "minecraft:always_true"
+           },
+-          "output_state": "minecraft:gilded_blackstone"
++          "output_state": {
++            "Name": "minecraft:gilded_blackstone"
++          }
+         }
+       ]
+     }

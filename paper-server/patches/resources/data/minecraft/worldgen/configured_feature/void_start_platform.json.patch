@@ -1,0 +1,7 @@
+--- /dev/null
++++ b/data/minecraft/worldgen/configured_feature/void_start_platform.json
+@@ -1,0 +_,4 @@
++{
++  "type": "minecraft:void_start_platform",
++  "config": {}
++}

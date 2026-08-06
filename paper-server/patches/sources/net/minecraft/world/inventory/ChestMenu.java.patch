@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/inventory/ChestMenu.java b/net/minecraft/world/inventory/ChestMenu.java
-index 1eee796de551852847b1e809f53dc8078b8b68ff..e77bfcd31cdcfd5836dc5db561e3fe2bc552a4b1 100644
 --- a/net/minecraft/world/inventory/ChestMenu.java
 +++ b/net/minecraft/world/inventory/ChestMenu.java
-@@ -9,6 +9,34 @@ import net.minecraft.world.item.ItemStack;
+@@ -9,6 +_,34 @@
  public class ChestMenu extends AbstractContainerMenu {
      private final Container container;
      private final int containerRows;
@@ -43,7 +35,7 @@ index 1eee796de551852847b1e809f53dc8078b8b68ff..e77bfcd31cdcfd5836dc5db561e3fe2b
  
      private ChestMenu(final MenuType<?> menuType, final int containerId, final Inventory inventory, final int rows) {
          this(menuType, containerId, inventory, new SimpleContainer(9 * rows), rows);
-@@ -51,7 +79,10 @@ public class ChestMenu extends AbstractContainerMenu {
+@@ -51,7 +_,10 @@
          checkContainerSize(container, rows * 9);
          this.container = container;
          this.containerRows = rows;
@@ -55,7 +47,7 @@ index 1eee796de551852847b1e809f53dc8078b8b68ff..e77bfcd31cdcfd5836dc5db561e3fe2b
          int chestGridTop = 18;
          this.addChestGrid(container, 8, 18);
          int inventoryTop = 18 + this.containerRows * 18 + 13;
-@@ -68,6 +99,7 @@ public class ChestMenu extends AbstractContainerMenu {
+@@ -68,6 +_,7 @@
  
      @Override
      public boolean stillValid(final Player player) {

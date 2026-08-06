@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/util/TickThrottler.java b/net/minecraft/util/TickThrottler.java
-index cb37c72ae25749653abb373ae134998e86323a81..49ded8671febedb8a0ca977f7bf444e6f28ecfc2 100644
 --- a/net/minecraft/util/TickThrottler.java
 +++ b/net/minecraft/util/TickThrottler.java
-@@ -3,7 +3,7 @@ package net.minecraft.util;
+@@ -3,7 +_,7 @@
  public class TickThrottler {
      private final int incrementStep;
      private final int threshold;
@@ -17,7 +9,7 @@ index cb37c72ae25749653abb373ae134998e86323a81..49ded8671febedb8a0ca977f7bf444e6
  
      public TickThrottler(final int incrementStep, final int threshold) {
          this.incrementStep = incrementStep;
-@@ -11,16 +11,31 @@ public class TickThrottler {
+@@ -11,16 +_,31 @@
      }
  
      public void increment() {

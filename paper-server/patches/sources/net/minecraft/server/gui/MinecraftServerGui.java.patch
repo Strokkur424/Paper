@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/server/gui/MinecraftServerGui.java b/net/minecraft/server/gui/MinecraftServerGui.java
-index a2578abbb6d61e37638c47626fd4cc7674aff258..023cca49c6dd0f2961cf30f02c7cd74601f73f8b 100644
 --- a/net/minecraft/server/gui/MinecraftServerGui.java
 +++ b/net/minecraft/server/gui/MinecraftServerGui.java
-@@ -55,6 +55,13 @@ public class MinecraftServerGui extends JComponent {
+@@ -55,6 +_,13 @@
          frame.pack();
          frame.setLocationRelativeTo(null);
          frame.setVisible(true);
@@ -22,7 +14,7 @@ index a2578abbb6d61e37638c47626fd4cc7674aff258..023cca49c6dd0f2961cf30f02c7cd746
          frame.addWindowListener(new WindowAdapter() {
              @Override
              public void windowClosing(final WindowEvent event) {
-@@ -76,6 +83,7 @@ public class MinecraftServerGui extends JComponent {
+@@ -76,6 +_,7 @@
          this.setLayout(new BorderLayout());
  
          try {
@@ -30,7 +22,7 @@ index a2578abbb6d61e37638c47626fd4cc7674aff258..023cca49c6dd0f2961cf30f02c7cd746
              this.add(this.buildChatPanel(), "Center");
              this.add(this.buildInfoPanel(), "West");
          } catch (Exception e) {
-@@ -89,7 +97,7 @@ public class MinecraftServerGui extends JComponent {
+@@ -89,7 +_,7 @@
  
      private JComponent buildInfoPanel() {
          JPanel panel = new JPanel(new BorderLayout());
@@ -39,7 +31,7 @@ index a2578abbb6d61e37638c47626fd4cc7674aff258..023cca49c6dd0f2961cf30f02c7cd746
          this.finalizers.add(comp::close);
          panel.add(comp, "North");
          panel.add(this.buildPlayerPanel(), "Center");
-@@ -152,6 +160,7 @@ public class MinecraftServerGui extends JComponent {
+@@ -152,6 +_,7 @@
          this.finalizers.forEach(Runnable::run);
      }
  
@@ -47,7 +39,7 @@ index a2578abbb6d61e37638c47626fd4cc7674aff258..023cca49c6dd0f2961cf30f02c7cd746
      public void print(final JTextArea console, final JScrollPane scrollPane, final String line) {
          if (!SwingUtilities.isEventDispatchThread()) {
              SwingUtilities.invokeLater(() -> this.print(console, scrollPane, line));
-@@ -164,7 +173,7 @@ public class MinecraftServerGui extends JComponent {
+@@ -164,7 +_,7 @@
              }
  
              try {
@@ -56,7 +48,7 @@ index a2578abbb6d61e37638c47626fd4cc7674aff258..023cca49c6dd0f2961cf30f02c7cd746
              } catch (BadLocationException var8) {
              }
  
-@@ -173,4 +182,37 @@ public class MinecraftServerGui extends JComponent {
+@@ -173,4 +_,37 @@
              }
          }
      }

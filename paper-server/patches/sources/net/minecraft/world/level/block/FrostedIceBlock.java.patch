@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/level/block/FrostedIceBlock.java b/net/minecraft/world/level/block/FrostedIceBlock.java
-index 8897ee239926c536615378b0f64f78f1990bfe6b..e0cf2165a1459636bf1c7a41234e5906b61e63ac 100644
 --- a/net/minecraft/world/level/block/FrostedIceBlock.java
 +++ b/net/minecraft/world/level/block/FrostedIceBlock.java
-@@ -36,6 +36,7 @@ public class FrostedIceBlock extends IceBlock {
+@@ -36,6 +_,7 @@
  
      @Override
      protected void tick(final BlockState state, final ServerLevel level, final BlockPos pos, final RandomSource random) {
@@ -16,7 +8,7 @@ index 8897ee239926c536615378b0f64f78f1990bfe6b..e0cf2165a1459636bf1c7a41234e5906
          if (random.nextInt(3) == 0 || this.fewerNeigboursThan(level, pos, 4)) {
              int brightness = level.dimension() == Level.END ? level.getBrightness(LightLayer.BLOCK, pos) : level.getMaxLocalRawBrightness(pos);
              if (brightness > 11 - state.getValue(AGE) - state.getLightDampening() && this.slightlyMelt(state, level, pos)) {
-@@ -45,7 +46,7 @@ public class FrostedIceBlock extends IceBlock {
+@@ -45,7 +_,7 @@
                      neighborPos.setWithOffset(pos, direction);
                      BlockState neighbour = level.getBlockState(neighborPos);
                      if (neighbour.is(this) && !this.slightlyMelt(neighbour, level, neighborPos)) {
@@ -25,7 +17,7 @@ index 8897ee239926c536615378b0f64f78f1990bfe6b..e0cf2165a1459636bf1c7a41234e5906
                      }
                  }
  
-@@ -53,12 +54,17 @@ public class FrostedIceBlock extends IceBlock {
+@@ -53,12 +_,17 @@
              }
          }
  

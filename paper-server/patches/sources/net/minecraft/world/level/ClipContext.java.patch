@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/level/ClipContext.java b/net/minecraft/world/level/ClipContext.java
-index c2d7f06a0b00664c45466f6c45b5b73d943500dd..fbcd6dd3753a65fed36ed24fd3322802684995e0 100644
 --- a/net/minecraft/world/level/ClipContext.java
 +++ b/net/minecraft/world/level/ClipContext.java
-@@ -26,7 +26,7 @@ public class ClipContext {
+@@ -26,7 +_,7 @@
      private final CollisionContext collisionContext;
  
      public ClipContext(final Vec3 from, final Vec3 to, final ClipContext.Block block, final ClipContext.Fluid fluid, final Entity entity) {

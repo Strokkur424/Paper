@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/level/block/ScaffoldingBlock.java b/net/minecraft/world/level/block/ScaffoldingBlock.java
-index d28aa627839f45d31084eec3dbf3bf9c038724a3..92bc27c26e18472ee2c8555b17fc5b5e05db4ce4 100644
 --- a/net/minecraft/world/level/block/ScaffoldingBlock.java
 +++ b/net/minecraft/world/level/block/ScaffoldingBlock.java
-@@ -110,7 +110,7 @@ public class ScaffoldingBlock extends Block implements SimpleWaterloggedBlock {
+@@ -110,7 +_,7 @@
      protected void tick(final BlockState state, final ServerLevel level, final BlockPos pos, final RandomSource random) {
          int distance = getDistance(level, pos);
          BlockState newState = state.setValue(DISTANCE, distance).setValue(BOTTOM, this.isBottom(level, pos, distance));

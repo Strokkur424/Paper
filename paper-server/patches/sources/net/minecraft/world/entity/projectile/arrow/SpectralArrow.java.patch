@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/entity/projectile/arrow/SpectralArrow.java b/net/minecraft/world/entity/projectile/arrow/SpectralArrow.java
-index 210a8be39e889ba6cd5f71aed778689d3a801c69..ba218cef512fab903aac04ce5b2e649b2ea4d33c 100644
 --- a/net/minecraft/world/entity/projectile/arrow/SpectralArrow.java
 +++ b/net/minecraft/world/entity/projectile/arrow/SpectralArrow.java
-@@ -44,7 +44,7 @@ public class SpectralArrow extends AbstractArrow {
+@@ -44,7 +_,7 @@
      protected void doPostHurtEffects(final LivingEntity mob) {
          super.doPostHurtEffects(mob);
          MobEffectInstance effect = new MobEffectInstance(MobEffects.GLOWING, this.duration, 0);

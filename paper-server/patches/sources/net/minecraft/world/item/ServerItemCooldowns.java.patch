@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/item/ServerItemCooldowns.java b/net/minecraft/world/item/ServerItemCooldowns.java
-index efa13c3731c343413296d12479f7e8bed0a2920a..ca548c006dfde82bef3f8855e275df63a42b8e09 100644
 --- a/net/minecraft/world/item/ServerItemCooldowns.java
 +++ b/net/minecraft/world/item/ServerItemCooldowns.java
-@@ -11,6 +11,42 @@ public class ServerItemCooldowns extends ItemCooldowns {
+@@ -11,6 +_,42 @@
          this.player = player;
      }
  

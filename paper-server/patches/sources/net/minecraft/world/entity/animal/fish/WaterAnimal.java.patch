@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/entity/animal/fish/WaterAnimal.java b/net/minecraft/world/entity/animal/fish/WaterAnimal.java
-index 5bbba6d765737550929503736ae5bd956300821b..9d42eeaa1d2fcfad986a1d3ae3392bff4de5eab7 100644
 --- a/net/minecraft/world/entity/animal/fish/WaterAnimal.java
 +++ b/net/minecraft/world/entity/animal/fish/WaterAnimal.java
-@@ -41,7 +41,7 @@ public abstract class WaterAnimal extends PathfinderMob {
+@@ -41,7 +_,7 @@
              this.setAirSupply(preTickAirSupply - 1);
              if (this.shouldTakeDrowningDamage()) {
                  this.setAirSupply(0);
@@ -17,7 +9,7 @@ index 5bbba6d765737550929503736ae5bd956300821b..9d42eeaa1d2fcfad986a1d3ae3392bff
              }
          } else {
              this.setAirSupply(300);
-@@ -76,6 +76,10 @@ public abstract class WaterAnimal extends PathfinderMob {
+@@ -76,6 +_,10 @@
      ) {
          int seaLevel = level.getSeaLevel();
          int minSpawnLevel = seaLevel - 13;

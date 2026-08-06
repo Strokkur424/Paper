@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/level/chunk/storage/RegionFileVersion.java b/net/minecraft/world/level/chunk/storage/RegionFileVersion.java
-index a7aa9008ac7fc62b0d7275ab90220925b307dc90..ea229f63f81c5638ded74c28e1e13d8948f2e5e0 100644
 --- a/net/minecraft/world/level/chunk/storage/RegionFileVersion.java
 +++ b/net/minecraft/world/level/chunk/storage/RegionFileVersion.java
-@@ -24,7 +24,7 @@ public class RegionFileVersion {
+@@ -24,7 +_,7 @@
      private static final Int2ObjectMap<RegionFileVersion> VERSIONS = new Int2ObjectOpenHashMap<>();
      private static final Object2ObjectMap<String, RegionFileVersion> VERSIONS_BY_NAME = new Object2ObjectOpenHashMap<>();
      public static final RegionFileVersion VERSION_GZIP = register(

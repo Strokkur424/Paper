@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/entity/OminousItemSpawner.java b/net/minecraft/world/entity/OminousItemSpawner.java
-index 92304d4682652a7a72a565738d7abb00377c77db..580cb952b2772761d3e7e1fa0789512732a1117d 100644
 --- a/net/minecraft/world/entity/OminousItemSpawner.java
 +++ b/net/minecraft/world/entity/OminousItemSpawner.java
-@@ -78,7 +78,7 @@ public class OminousItemSpawner extends Entity {
+@@ -78,7 +_,7 @@
                      spawnedEntity = this.spawnProjectile(level, projectileItem, item);
                  } else {
                      spawnedEntity = new ItemEntity(level, this.getX(), this.getY(), this.getZ(), item);
@@ -17,7 +9,7 @@ index 92304d4682652a7a72a565738d7abb00377c77db..580cb952b2772761d3e7e1fa07895127
                  }
  
                  level.levelEvent(LevelEvent.PARTICLES_TRIAL_SPAWNER_SPAWN_ITEM, this.blockPosition(), 1);
-@@ -92,7 +92,7 @@ public class OminousItemSpawner extends Entity {
+@@ -92,7 +_,7 @@
          ProjectileItem.DispenseConfig dispenseConfig = projectileItem.createDispenseConfig();
          dispenseConfig.overrideDispenseEvent().ifPresent(event -> level.levelEvent(event, this.blockPosition(), 0));
          Direction direction = Direction.DOWN;
@@ -26,7 +18,7 @@ index 92304d4682652a7a72a565738d7abb00377c77db..580cb952b2772761d3e7e1fa07895127
              projectileItem.asProjectile(level, this.position(), item, direction),
              level,
              item,
-@@ -101,7 +101,7 @@ public class OminousItemSpawner extends Entity {
+@@ -101,7 +_,7 @@
              direction.getStepZ(),
              dispenseConfig.power(),
              dispenseConfig.uncertainty()

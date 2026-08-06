@@ -1,0 +1,17 @@
+--- a/data/minecraft/worldgen/feature/trees_savanna.json
++++ /dev/null
+@@ -1,14 +_,0 @@
+-{
+-  "type": "minecraft:random_selector",
+-  "default": "minecraft:oak_checked",
+-  "features": [
+-    {
+-      "chance": 0.8,
+-      "feature": "minecraft:acacia_checked"
+-    },
+-    {
+-      "chance": 0.0125,
+-      "feature": "minecraft:fallen_oak_tree"
+-    }
+-  ]
+-}

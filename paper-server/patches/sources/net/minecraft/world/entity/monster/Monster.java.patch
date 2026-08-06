@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/entity/monster/Monster.java b/net/minecraft/world/entity/monster/Monster.java
-index 2ed22a7b2a6734d4b053328528a81a27bdeed36f..de58564416d985fab7b946fbf9e867e89bb14163 100644
 --- a/net/minecraft/world/entity/monster/Monster.java
 +++ b/net/minecraft/world/entity/monster/Monster.java
-@@ -87,7 +87,7 @@ public abstract class Monster extends PathfinderMob implements Enemy {
+@@ -87,7 +_,7 @@
          }
  
          DimensionType dimensionType = level.dimensionType();

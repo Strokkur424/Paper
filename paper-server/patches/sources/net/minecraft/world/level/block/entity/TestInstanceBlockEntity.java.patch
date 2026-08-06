@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/level/block/entity/TestInstanceBlockEntity.java b/net/minecraft/world/level/block/entity/TestInstanceBlockEntity.java
-index 60647bf373857a2e81ee087be48f176ced4e7841..f7233bae65e09b219191433473bb0ea1fb1d8854 100644
 --- a/net/minecraft/world/level/block/entity/TestInstanceBlockEntity.java
 +++ b/net/minecraft/world/level/block/entity/TestInstanceBlockEntity.java
-@@ -163,6 +163,7 @@ public class TestInstanceBlockEntity extends BlockEntity implements BoundingBoxR
+@@ -163,6 +_,7 @@
  
      @Override
      protected void loadAdditional(final ValueInput input) {
@@ -16,7 +8,7 @@ index 60647bf373857a2e81ee087be48f176ced4e7841..f7233bae65e09b219191433473bb0ea1
          input.read("data", TestInstanceBlockEntity.Data.CODEC).ifPresent(this::set);
          this.errorMarkers.clear();
          this.errorMarkers.addAll(input.read("errors", TestInstanceBlockEntity.ErrorMarker.LIST_CODEC).orElse(List.of()));
-@@ -170,6 +171,7 @@ public class TestInstanceBlockEntity extends BlockEntity implements BoundingBoxR
+@@ -170,6 +_,7 @@
  
      @Override
      protected void saveAdditional(final ValueOutput output) {
@@ -24,7 +16,7 @@ index 60647bf373857a2e81ee087be48f176ced4e7841..f7233bae65e09b219191433473bb0ea1
          output.store("data", TestInstanceBlockEntity.Data.CODEC, this.data);
          if (!this.errorMarkers.isEmpty()) {
              output.store("errors", TestInstanceBlockEntity.ErrorMarker.LIST_CODEC, this.errorMarkers);
-@@ -344,7 +346,7 @@ public class TestInstanceBlockEntity extends BlockEntity implements BoundingBoxR
+@@ -344,7 +_,7 @@
      }
  
      private void removeEntities() {

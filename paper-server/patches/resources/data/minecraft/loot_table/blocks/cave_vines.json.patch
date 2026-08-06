@@ -1,0 +1,24 @@
+--- a/data/minecraft/loot_table/blocks/cave_vines.json
++++ b/data/minecraft/loot_table/blocks/cave_vines.json
+@@ -2,13 +_,15 @@
+   "type": "minecraft:block",
+   "pools": [
+     {
+-      "condition": {
+-        "type": "minecraft:match_block",
+-        "blocks": "minecraft:cave_vines",
+-        "state": {
+-          "berries": "true"
++      "conditions": [
++        {
++          "block": "minecraft:cave_vines",
++          "condition": "minecraft:block_state_property",
++          "properties": {
++            "berries": "true"
++          }
+         }
+-      },
++      ],
+       "entries": [
+         {
+           "type": "minecraft:item",

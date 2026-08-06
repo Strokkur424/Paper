@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/entity/raid/Raids.java b/net/minecraft/world/entity/raid/Raids.java
-index d6952d4be0026e0a9144dcdd8af9430e26c48ec1..bc0f31a16f7b055e85f10eda377026a927032535 100644
 --- a/net/minecraft/world/entity/raid/Raids.java
 +++ b/net/minecraft/world/entity/raid/Raids.java
-@@ -52,6 +52,7 @@ public class Raids extends SavedData {
+@@ -52,6 +_,7 @@
      private Raids(final List<Raids.RaidWithId> raids, final int nextId, final int tick) {
          for (Raids.RaidWithId raid : raids) {
              this.raidMap.put(raid.id, raid.raid);
@@ -16,13 +8,15 @@ index d6952d4be0026e0a9144dcdd8af9430e26c48ec1..bc0f31a16f7b055e85f10eda377026a9
          }
  
          this.nextId = nextId;
-@@ -132,11 +133,23 @@ public class Raids extends SavedData {
+@@ -132,11 +_,23 @@
          }
  
          Raid raid = this.getOrCreateRaid(level, raidCenterPos);
 -        if (!raid.isStarted() && !this.raidMap.containsValue(raid)) {
 -            this.raidMap.put(this.getUniqueId(), raid);
 -        }
+-
+-        if (!raid.isStarted() || raid.getRaidOmenLevel() < raid.getMaxRaidOmenLevel()) {
 +        // CraftBukkit - moved down
 +        // if (!raid.isStarted() && !this.raidMap.containsValue(raid)) {
 +        //     this.raidMap.put(this.getUniqueId(), raid);
@@ -34,8 +28,7 @@ index d6952d4be0026e0a9144dcdd8af9430e26c48ec1..bc0f31a16f7b055e85f10eda377026a9
 +                player.removeEffect(net.minecraft.world.effect.MobEffects.RAID_OMEN);
 +                return null;
 +            }
- 
--        if (!raid.isStarted() || raid.getRaidOmenLevel() < raid.getMaxRaidOmenLevel()) {
++
 +            if (!raid.isStarted() && !this.raidMap.containsValue(raid)) {
 +                this.raidMap.put(this.getUniqueId(), raid);
 +                raid.idOrNegativeOne = this.nextId; // Paper - expose id of raids while method is kept around as deprecated for removal

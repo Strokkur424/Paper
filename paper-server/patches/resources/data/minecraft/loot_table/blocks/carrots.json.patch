@@ -1,0 +1,60 @@
+--- a/data/minecraft/loot_table/blocks/carrots.json
++++ b/data/minecraft/loot_table/blocks/carrots.json
+@@ -1,8 +_,10 @@
+ {
+   "type": "minecraft:block",
+-  "modifier": {
+-    "type": "minecraft:explosion_decay"
+-  },
++  "functions": [
++    {
++      "function": "minecraft:explosion_decay"
++    }
++  ],
+   "pools": [
+     {
+       "entries": [
+@@ -14,25 +_,29 @@
+       "rolls": 1.0
+     },
+     {
+-      "condition": {
+-        "type": "minecraft:match_block",
+-        "blocks": "minecraft:carrots",
+-        "state": {
+-          "age": "7"
++      "conditions": [
++        {
++          "block": "minecraft:carrots",
++          "condition": "minecraft:block_state_property",
++          "properties": {
++            "age": "7"
++          }
+         }
+-      },
++      ],
+       "entries": [
+         {
+           "type": "minecraft:item",
+-          "modifier": {
+-            "type": "minecraft:apply_bonus",
+-            "enchantment": "minecraft:fortune",
+-            "formula": "minecraft:binomial_with_bonus_count",
+-            "parameters": {
+-              "extra": 3,
+-              "probability": 0.5714286
++          "functions": [
++            {
++              "enchantment": "minecraft:fortune",
++              "formula": "minecraft:binomial_with_bonus_count",
++              "function": "minecraft:apply_bonus",
++              "parameters": {
++                "extra": 3,
++                "probability": 0.5714286
++              }
+             }
+-          },
++          ],
+           "name": "minecraft:carrot"
+         }
+       ],

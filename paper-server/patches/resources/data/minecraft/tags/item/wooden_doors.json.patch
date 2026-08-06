@@ -1,0 +1,11 @@
+--- a/data/minecraft/tags/item/wooden_doors.json
++++ b/data/minecraft/tags/item/wooden_doors.json
+@@ -11,7 +_,6 @@
+     "minecraft:warped_door",
+     "minecraft:mangrove_door",
+     "minecraft:bamboo_door",
+-    "minecraft:cherry_door",
+-    "minecraft:poplar_door"
++    "minecraft:cherry_door"
+   ]
+ }

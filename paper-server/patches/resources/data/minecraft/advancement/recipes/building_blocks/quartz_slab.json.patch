@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/building_blocks/quartz_slab.json
++++ b/data/minecraft/advancement/recipes/building_blocks/quartz_slab.json
+@@ -33,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:quartz_slab"
++        "recipe": "minecraft:quartz_slab"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

@@ -1,0 +1,9 @@
+--- a/data/minecraft/worldgen/material_condition/not_underwater.json
++++ /dev/null
+@@ -1,6 +_,0 @@
+-{
+-  "type": "minecraft:water",
+-  "add_stone_depth": false,
+-  "offset": -1,
+-  "surface_depth_multiplier": 0
+-}

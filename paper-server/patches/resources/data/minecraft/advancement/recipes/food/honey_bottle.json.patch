@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/food/honey_bottle.json
++++ b/data/minecraft/advancement/recipes/food/honey_bottle.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:honey_bottle"
++        "recipe": "minecraft:honey_bottle"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/combat/orange_harness.json
++++ b/data/minecraft/advancement/recipes/combat/orange_harness.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:orange_harness"
++        "recipe": "minecraft:orange_harness"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

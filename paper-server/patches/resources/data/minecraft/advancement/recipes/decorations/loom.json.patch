@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/decorations/loom.json
++++ b/data/minecraft/advancement/recipes/decorations/loom.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:loom"
++        "recipe": "minecraft:loom"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/level/block/NetherWartBlock.java b/net/minecraft/world/level/block/NetherWartBlock.java
-index 3c9eb3d713d02dda01df9aee6bc2050dc2fb82e7..fcd93b9c78e4705861f345defe2a94f3626306dd 100644
 --- a/net/minecraft/world/level/block/NetherWartBlock.java
 +++ b/net/minecraft/world/level/block/NetherWartBlock.java
-@@ -44,9 +44,9 @@ public class NetherWartBlock extends VegetationBlock {
+@@ -44,9 +_,9 @@
      @Override
      protected void randomTick(BlockState state, final ServerLevel level, final BlockPos pos, final RandomSource random) {
          int age = state.getValue(AGE);

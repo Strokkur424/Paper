@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/entity/ai/behavior/GoToWantedItem.java b/net/minecraft/world/entity/ai/behavior/GoToWantedItem.java
-index 82d180a9b061fb70a6d3a3042072210c3c0219d4..aff2db230f992b1cd139de0997497322f0efc419 100644
 --- a/net/minecraft/world/entity/ai/behavior/GoToWantedItem.java
 +++ b/net/minecraft/world/entity/ai/behavior/GoToWantedItem.java
-@@ -37,6 +37,21 @@ public class GoToWantedItem {
+@@ -37,6 +_,21 @@
                                  && item.closerThan(body, maxDistToWalk)
                                  && body.level().getWorldBorder().isWithinBounds(item.blockPosition())
                                  && body.canPickUpLoot()) {

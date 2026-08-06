@@ -1,0 +1,15 @@
+--- a/data/minecraft/worldgen/placed_feature/yellow_poplar.json
++++ /dev/null
+@@ -1,12 +_,0 @@
+-{
+-  "feature": "minecraft:yellow_poplar",
+-  "placement": [
+-    {
+-      "type": "minecraft:block_predicate_filter",
+-      "predicate": {
+-        "type": "minecraft:would_survive",
+-        "state": "minecraft:poplar_sapling"
+-      }
+-    }
+-  ]
+-}

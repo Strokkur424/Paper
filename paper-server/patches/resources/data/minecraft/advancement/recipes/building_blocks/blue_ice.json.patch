@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/building_blocks/blue_ice.json
++++ b/data/minecraft/advancement/recipes/building_blocks/blue_ice.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:blue_ice"
++        "recipe": "minecraft:blue_ice"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

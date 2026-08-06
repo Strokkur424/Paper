@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/network/DisconnectionDetails.java b/net/minecraft/network/DisconnectionDetails.java
-index 0941b096070590a33f1134ee375f298824a0255d..a9a6478d31bdc032d5c1cdeb53d32932493a36c9 100644
 --- a/net/minecraft/network/DisconnectionDetails.java
 +++ b/net/minecraft/network/DisconnectionDetails.java
-@@ -5,7 +5,13 @@ import java.nio.file.Path;
+@@ -5,7 +_,13 @@
  import java.util.Optional;
  import net.minecraft.network.chat.Component;
  

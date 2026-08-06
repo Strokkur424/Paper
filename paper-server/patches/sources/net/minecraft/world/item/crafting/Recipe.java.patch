@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/item/crafting/Recipe.java b/net/minecraft/world/item/crafting/Recipe.java
-index 2d9eb6bbdb2939aedb67ef0cf70067f5ca4cf87b..cb9d2b2cc89068b0b75e659388e9f807d3604d94 100644
 --- a/net/minecraft/world/item/crafting/Recipe.java
 +++ b/net/minecraft/world/item/crafting/Recipe.java
-@@ -87,4 +87,6 @@ public interface Recipe<T extends RecipeInput> {
+@@ -87,4 +_,6 @@
              ByteBufCodecs.BOOL, Recipe.CommonInfo::showNotification, Recipe.CommonInfo::new
          );
      }

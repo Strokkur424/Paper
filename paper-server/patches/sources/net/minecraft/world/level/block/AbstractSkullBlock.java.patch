@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/level/block/AbstractSkullBlock.java b/net/minecraft/world/level/block/AbstractSkullBlock.java
-index 3b9ad7b36cdc17d070915c9ed6b120535ceec87a..8debd0654a88859b6514930590459306d11474bf 100644
 --- a/net/minecraft/world/level/block/AbstractSkullBlock.java
 +++ b/net/minecraft/world/level/block/AbstractSkullBlock.java
-@@ -73,6 +73,11 @@ public abstract class AbstractSkullBlock extends BaseEntityBlock {
+@@ -73,6 +_,11 @@
          if (!level.isClientSide()) {
              boolean signal = level.hasNeighborSignal(pos);
              if (signal != state.getValue(POWERED)) {

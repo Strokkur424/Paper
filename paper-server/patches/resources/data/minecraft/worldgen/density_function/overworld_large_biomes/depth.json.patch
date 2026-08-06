@@ -1,0 +1,21 @@
+--- a/data/minecraft/worldgen/density_function/overworld_large_biomes/depth.json
++++ b/data/minecraft/worldgen/density_function/overworld_large_biomes/depth.json
+@@ -1,12 +_,11 @@
+ {
+   "type": "minecraft:add",
+-  "left": {
+-    "type": "minecraft:gradient",
+-    "axis": "y",
+-    "from_coordinate": -64,
++  "argument1": {
++    "type": "minecraft:y_clamped_gradient",
+     "from_value": 1.5,
+-    "to_coordinate": 320,
+-    "to_value": -1.5
++    "from_y": -64,
++    "to_value": -1.5,
++    "to_y": 320
+   },
+-  "right": "minecraft:overworld_large_biomes/offset"
++  "argument2": "minecraft:overworld_large_biomes/offset"
+ }

@@ -1,0 +1,67 @@
+--- a/data/minecraft/villager_trade/farmer/4/emerald_suspicious_stew.json
++++ b/data/minecraft/villager_trade/farmer/4/emerald_suspicious_stew.json
+@@ -1,33 +_,35 @@
+ {
+-  "given_item_modifier": {
+-    "type": "minecraft:set_stew_effect",
+-    "effects": [
+-      {
+-        "type": "minecraft:night_vision",
+-        "duration": 5.0
+-      },
+-      {
+-        "type": "minecraft:jump_boost",
+-        "duration": 8.0
+-      },
+-      {
+-        "type": "minecraft:weakness",
+-        "duration": 7.0
+-      },
+-      {
+-        "type": "minecraft:blindness",
+-        "duration": 6.0
+-      },
+-      {
+-        "type": "minecraft:poison",
+-        "duration": 14.0
+-      },
+-      {
+-        "type": "minecraft:saturation",
+-        "duration": 7.0
+-      }
+-    ]
+-  },
++  "given_item_modifiers": [
++    {
++      "effects": [
++        {
++          "type": "minecraft:night_vision",
++          "duration": 5.0
++        },
++        {
++          "type": "minecraft:jump_boost",
++          "duration": 8.0
++        },
++        {
++          "type": "minecraft:weakness",
++          "duration": 7.0
++        },
++        {
++          "type": "minecraft:blindness",
++          "duration": 6.0
++        },
++        {
++          "type": "minecraft:poison",
++          "duration": 14.0
++        },
++        {
++          "type": "minecraft:saturation",
++          "duration": 7.0
++        }
++      ],
++      "function": "minecraft:set_stew_effect"
++    }
++  ],
+   "gives": {
+     "id": "minecraft:suspicious_stew"
+   },

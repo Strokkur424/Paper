@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/level/block/SugarCaneBlock.java b/net/minecraft/world/level/block/SugarCaneBlock.java
-index 4a68fea7533bc3e854c830bedf4ac95563c3c5d5..b7bc0151fa6b01ed4814ca2050daa63f5b5b05a1 100644
 --- a/net/minecraft/world/level/block/SugarCaneBlock.java
 +++ b/net/minecraft/world/level/block/SugarCaneBlock.java
-@@ -48,12 +48,13 @@ public class SugarCaneBlock extends Block {
+@@ -48,12 +_,13 @@
                  height++;
              }
  

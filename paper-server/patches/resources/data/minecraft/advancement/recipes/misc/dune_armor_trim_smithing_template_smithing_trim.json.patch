@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/misc/dune_armor_trim_smithing_template_smithing_trim.json
++++ b/data/minecraft/advancement/recipes/misc/dune_armor_trim_smithing_template_smithing_trim.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:dune_armor_trim_smithing_template_smithing_trim"
++        "recipe": "minecraft:dune_armor_trim_smithing_template_smithing_trim"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

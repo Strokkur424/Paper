@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/entity/ai/behavior/TransportItemsBetweenContainers.java b/net/minecraft/world/entity/ai/behavior/TransportItemsBetweenContainers.java
-index c5baabf7b8ad4d8c608325d9bab08c4ac410aeea..10ff003e12032d0d6a595e24d055e81915ea39d6 100644
 --- a/net/minecraft/world/entity/ai/behavior/TransportItemsBetweenContainers.java
 +++ b/net/minecraft/world/entity/ai/behavior/TransportItemsBetweenContainers.java
-@@ -329,7 +329,10 @@ public class TransportItemsBetweenContainers extends Behavior<PathfinderMob> {
+@@ -329,7 +_,10 @@
  
          boolean isValidTarget = this.isWantedBlock(body, transportItemTarget.state)
              && !this.isPositionAlreadyVisited(visitedPositions, unreachablePositions, transportItemTarget, level)

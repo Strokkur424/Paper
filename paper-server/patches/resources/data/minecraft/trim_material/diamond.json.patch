@@ -1,0 +1,14 @@
+--- a/data/minecraft/trim_material/diamond.json
++++ b/data/minecraft/trim_material/diamond.json
+@@ -1,7 +_,10 @@
+ {
++  "asset_name": "diamond",
+   "description": {
+     "color": "#6EECD2",
+     "translate": "trim_material.minecraft.diamond"
+   },
+-  "palette_id": "minecraft:trim/diamond"
++  "override_armor_assets": {
++    "minecraft:diamond": "diamond_darker"
++  }
+ }

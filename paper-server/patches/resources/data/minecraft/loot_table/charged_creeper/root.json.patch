@@ -1,0 +1,100 @@
+--- a/data/minecraft/loot_table/charged_creeper/root.json
++++ b/data/minecraft/loot_table/charged_creeper/root.json
+@@ -8,57 +_,67 @@
+           "children": [
+             {
+               "type": "minecraft:loot_table",
+-              "condition": {
+-                "type": "minecraft:entity_properties",
+-                "entity": "this",
+-                "predicate": {
+-                  "minecraft:entity_type": "minecraft:piglin"
++              "conditions": [
++                {
++                  "condition": "minecraft:entity_properties",
++                  "entity": "this",
++                  "predicate": {
++                    "minecraft:entity_type": "minecraft:piglin"
++                  }
+                 }
+-              },
++              ],
+               "value": "minecraft:charged_creeper/piglin"
+             },
+             {
+               "type": "minecraft:loot_table",
+-              "condition": {
+-                "type": "minecraft:entity_properties",
+-                "entity": "this",
+-                "predicate": {
+-                  "minecraft:entity_type": "minecraft:creeper"
++              "conditions": [
++                {
++                  "condition": "minecraft:entity_properties",
++                  "entity": "this",
++                  "predicate": {
++                    "minecraft:entity_type": "minecraft:creeper"
++                  }
+                 }
+-              },
++              ],
+               "value": "minecraft:charged_creeper/creeper"
+             },
+             {
+               "type": "minecraft:loot_table",
+-              "condition": {
+-                "type": "minecraft:entity_properties",
+-                "entity": "this",
+-                "predicate": {
+-                  "minecraft:entity_type": "minecraft:skeleton"
++              "conditions": [
++                {
++                  "condition": "minecraft:entity_properties",
++                  "entity": "this",
++                  "predicate": {
++                    "minecraft:entity_type": "minecraft:skeleton"
++                  }
+                 }
+-              },
++              ],
+               "value": "minecraft:charged_creeper/skeleton"
+             },
+             {
+               "type": "minecraft:loot_table",
+-              "condition": {
+-                "type": "minecraft:entity_properties",
+-                "entity": "this",
+-                "predicate": {
+-                  "minecraft:entity_type": "minecraft:wither_skeleton"
++              "conditions": [
++                {
++                  "condition": "minecraft:entity_properties",
++                  "entity": "this",
++                  "predicate": {
++                    "minecraft:entity_type": "minecraft:wither_skeleton"
++                  }
+                 }
+-              },
++              ],
+               "value": "minecraft:charged_creeper/wither_skeleton"
+             },
+             {
+               "type": "minecraft:loot_table",
+-              "condition": {
+-                "type": "minecraft:entity_properties",
+-                "entity": "this",
+-                "predicate": {
+-                  "minecraft:entity_type": "minecraft:zombie"
++              "conditions": [
++                {
++                  "condition": "minecraft:entity_properties",
++                  "entity": "this",
++                  "predicate": {
++                    "minecraft:entity_type": "minecraft:zombie"
++                  }
+                 }
+-              },
++              ],
+               "value": "minecraft:charged_creeper/zombie"
+             }
+           ]

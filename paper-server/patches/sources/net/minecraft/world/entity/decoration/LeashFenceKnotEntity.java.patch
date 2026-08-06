@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/entity/decoration/LeashFenceKnotEntity.java b/net/minecraft/world/entity/decoration/LeashFenceKnotEntity.java
-index 5b1c76d6e1c8e6bd870f9a5ed70f2857b8629151..ab44beed7767ebe73053df2b6ddd3b2f2fb391b6 100644
 --- a/net/minecraft/world/entity/decoration/LeashFenceKnotEntity.java
 +++ b/net/minecraft/world/entity/decoration/LeashFenceKnotEntity.java
-@@ -87,7 +87,7 @@ public class LeashFenceKnotEntity extends BlockAttachedEntity {
+@@ -87,7 +_,7 @@
          boolean attachedMob = false;
  
          for (Leashable leashable : Leashable.leashableLeashedTo(player)) {
@@ -17,7 +9,7 @@ index 5b1c76d6e1c8e6bd870f9a5ed70f2857b8629151..ab44beed7767ebe73053df2b6ddd3b2f
                  leashable.setLeashedTo(this, true);
                  attachedMob = true;
              }
-@@ -96,7 +96,7 @@ public class LeashFenceKnotEntity extends BlockAttachedEntity {
+@@ -96,7 +_,7 @@
          boolean anyDropped = false;
          if (!attachedMob && !player.isSecondaryUseActive()) {
              for (Leashable mob : Leashable.leashableLeashedTo(this)) {
@@ -26,7 +18,7 @@ index 5b1c76d6e1c8e6bd870f9a5ed70f2857b8629151..ab44beed7767ebe73053df2b6ddd3b2f
                      mob.setLeashedTo(player, true);
                      anyDropped = true;
                  }
-@@ -115,7 +115,7 @@ public class LeashFenceKnotEntity extends BlockAttachedEntity {
+@@ -115,7 +_,7 @@
      @Override
      public void notifyLeasheeRemoved(final Leashable entity) {
          if (Leashable.leashableLeashedTo(this).isEmpty()) {

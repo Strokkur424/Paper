@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/server/level/progress/LoggingLevelLoadListener.java b/net/minecraft/server/level/progress/LoggingLevelLoadListener.java
-index 7013ca8be9437f54b3cfd49cd9f6125dc1765afe..0b05d6d05d007962d43a2e47c8244bff2dbf1ee9 100644
 --- a/net/minecraft/server/level/progress/LoggingLevelLoadListener.java
 +++ b/net/minecraft/server/level/progress/LoggingLevelLoadListener.java
-@@ -17,17 +17,21 @@ public class LoggingLevelLoadListener implements LevelLoadListener {
+@@ -17,17 +_,21 @@
      private long startTime = Long.MAX_VALUE;
      private long nextLogTime = Long.MAX_VALUE;
  
@@ -33,7 +25,7 @@ index 7013ca8be9437f54b3cfd49cd9f6125dc1765afe..0b05d6d05d007962d43a2e47c8244bff
      }
  
      @Override
-@@ -42,10 +46,20 @@ public class LoggingLevelLoadListener implements LevelLoadListener {
+@@ -42,10 +_,20 @@
              this.progressTracker.start(stage, totalChunks);
              switch (stage) {
                  case PREPARE_GLOBAL_SPAWN:
@@ -54,7 +46,7 @@ index 7013ca8be9437f54b3cfd49cd9f6125dc1765afe..0b05d6d05d007962d43a2e47c8244bff
                      break;
                  case LOAD_PLAYER_CHUNKS:
                      LOGGER.info("Loading {} chunks for player spawn...", totalChunks);
-@@ -73,7 +87,7 @@ public class LoggingLevelLoadListener implements LevelLoadListener {
+@@ -73,7 +_,7 @@
                  ? LevelLoadListener.Stage.LOAD_PLAYER_CHUNKS
                  : LevelLoadListener.Stage.LOAD_INITIAL_CHUNKS;
              if (stage == finalStage) {

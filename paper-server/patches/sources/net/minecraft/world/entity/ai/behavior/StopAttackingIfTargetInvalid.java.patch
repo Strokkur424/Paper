@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/entity/ai/behavior/StopAttackingIfTargetInvalid.java b/net/minecraft/world/entity/ai/behavior/StopAttackingIfTargetInvalid.java
-index 0c9808ac9535345131fa72625f2e7d6b291666a4..53574a1801344cea3d9ef9b364c411c8ada608dd 100644
 --- a/net/minecraft/world/entity/ai/behavior/StopAttackingIfTargetInvalid.java
 +++ b/net/minecraft/world/entity/ai/behavior/StopAttackingIfTargetInvalid.java
-@@ -41,6 +41,30 @@ public class StopAttackingIfTargetInvalid {
+@@ -41,6 +_,30 @@
                              return true;
                          }
  

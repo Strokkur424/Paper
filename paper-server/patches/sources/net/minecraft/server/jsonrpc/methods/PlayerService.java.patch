@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/server/jsonrpc/methods/PlayerService.java b/net/minecraft/server/jsonrpc/methods/PlayerService.java
-index 78bdfb85a0156b5324b59644279c8001867370ed..2ca4861e783cc44381b42cb0476fe516be06313b 100644
 --- a/net/minecraft/server/jsonrpc/methods/PlayerService.java
 +++ b/net/minecraft/server/jsonrpc/methods/PlayerService.java
-@@ -25,7 +25,7 @@ public class PlayerService {
+@@ -25,7 +_,7 @@
              ServerPlayer serverPlayer = getServerPlayer(minecraftApi, kickDto.player());
              if (serverPlayer != null) {
                  minecraftApi.playerListService().remove(serverPlayer, clientInfo);

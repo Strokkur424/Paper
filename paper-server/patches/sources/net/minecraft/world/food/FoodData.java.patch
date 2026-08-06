@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/food/FoodData.java b/net/minecraft/world/food/FoodData.java
-index f4b7e4772457f98abee305d8bbe907a3e88c017a..38ccab90d09c92e6b70d1457931b64fb4e6ff7ec 100644
 --- a/net/minecraft/world/food/FoodData.java
 +++ b/net/minecraft/world/food/FoodData.java
-@@ -15,6 +15,11 @@ public class FoodData {
+@@ -15,6 +_,11 @@
      private float saturationLevel = FoodConstants.START_SATURATION;
      public float exhaustionLevel;
      private int tickTimer;
@@ -20,7 +12,7 @@ index f4b7e4772457f98abee305d8bbe907a3e88c017a..38ccab90d09c92e6b70d1457931b64fb
  
      private void add(final int food, final float saturation) {
          this.foodLevel = Mth.clamp(food + this.foodLevel, 0, 20);
-@@ -29,6 +34,17 @@ public class FoodData {
+@@ -29,6 +_,17 @@
          this.add(foodProperties.nutrition(), foodProperties.saturation());
      }
  
@@ -38,7 +30,7 @@ index f4b7e4772457f98abee305d8bbe907a3e88c017a..38ccab90d09c92e6b70d1457931b64fb
      public void tick(final ServerPlayer player) {
          ServerLevel level = player.level();
          Difficulty difficulty = level.getDifficulty();
-@@ -37,29 +53,39 @@ public class FoodData {
+@@ -37,29 +_,39 @@
              if (this.saturationLevel > 0.0F) {
                  this.saturationLevel = Math.max(this.saturationLevel - 1.0F, 0.0F);
              } else if (difficulty != Difficulty.PEACEFUL) {

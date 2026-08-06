@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/entity/projectile/hurtingprojectile/AbstractHurtingProjectile.java b/net/minecraft/world/entity/projectile/hurtingprojectile/AbstractHurtingProjectile.java
-index a5d536f188ed2477defa999cf5b8f682854a7167..84c07fb51e8321b32f8607a602dd1e417ce36af7 100644
 --- a/net/minecraft/world/entity/projectile/hurtingprojectile/AbstractHurtingProjectile.java
 +++ b/net/minecraft/world/entity/projectile/hurtingprojectile/AbstractHurtingProjectile.java
-@@ -22,6 +22,8 @@ public abstract class AbstractHurtingProjectile extends Projectile {
+@@ -22,6 +_,8 @@
      public static final double INITAL_ACCELERATION_POWER = 0.1;
      public static final double DEFLECTION_SCALE = 0.5;
      public double accelerationPower = 0.1;
@@ -17,7 +9,7 @@ index a5d536f188ed2477defa999cf5b8f682854a7167..84c07fb51e8321b32f8607a602dd1e41
  
      protected AbstractHurtingProjectile(final EntityType<? extends AbstractHurtingProjectile> type, final Level level) {
          super(type, level);
-@@ -92,12 +94,12 @@ public abstract class AbstractHurtingProjectile extends Projectile {
+@@ -92,12 +_,12 @@
              }
  
              if (hitResult.getType() != HitResult.Type.MISS && this.isAlive()) {

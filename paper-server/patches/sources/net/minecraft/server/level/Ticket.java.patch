@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/server/level/Ticket.java b/net/minecraft/server/level/Ticket.java
-index a815ef9bc15f683c383e30e6152f32eeebf0b386..40f97e3657a1672d3865ab915c7f36d3dbf88c6e 100644
 --- a/net/minecraft/server/level/Ticket.java
 +++ b/net/minecraft/server/level/Ticket.java
-@@ -14,17 +14,36 @@ public class Ticket {
+@@ -14,17 +_,36 @@
                  ExtraCodecs.NON_NEGATIVE_INT.fieldOf("level").forGetter(Ticket::getTicketLevel),
                  Codec.LONG.optionalFieldOf("ticks_left", 0L).forGetter(t -> t.ticksLeft)
              )

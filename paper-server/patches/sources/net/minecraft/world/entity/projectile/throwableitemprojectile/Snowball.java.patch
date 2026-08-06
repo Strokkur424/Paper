@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/entity/projectile/throwableitemprojectile/Snowball.java b/net/minecraft/world/entity/projectile/throwableitemprojectile/Snowball.java
-index 9c62dcd15196e8758d2cfe14f5a8c529c119f11e..1511c1cbde5897391f1bcb4af47a5cd12481494d 100644
 --- a/net/minecraft/world/entity/projectile/throwableitemprojectile/Snowball.java
 +++ b/net/minecraft/world/entity/projectile/throwableitemprojectile/Snowball.java
-@@ -64,7 +64,7 @@ public class Snowball extends ThrowableItemProjectile {
+@@ -64,7 +_,7 @@
          super.onHit(hitResult);
          if (!this.level().isClientSide()) {
              this.level().broadcastEntityEvent(this, EntityEvent.DEATH);

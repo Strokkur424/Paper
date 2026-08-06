@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/server/commands/ChaseCommand.java b/net/minecraft/server/commands/ChaseCommand.java
-index bb7a760eadbc4957843953c68155357a311f8c7e..e39a1e7378da7de3d81f25fc2980f61bd7bde892 100644
 --- a/net/minecraft/server/commands/ChaseCommand.java
 +++ b/net/minecraft/server/commands/ChaseCommand.java
-@@ -30,6 +30,7 @@ public class ChaseCommand {
+@@ -30,6 +_,7 @@
      public static void register(final CommandDispatcher<CommandSourceStack> dispatcher) {
          dispatcher.register(
              Commands.literal("chase")

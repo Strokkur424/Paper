@@ -1,0 +1,16 @@
+--- a/data/minecraft/worldgen/noise/offset.json
++++ b/data/minecraft/worldgen/noise/offset.json
+@@ -1,11 +_,9 @@
+ {
+-  "amplitude_modifiers": [
++  "amplitudes": [
+     1.0,
+     1.0,
+     1.0,
+     0.0
+   ],
+-  "base_amplitude": 0.9381732587751005,
+-  "base_octave": -3,
+-  "octave_count": 4
++  "firstOctave": -3
+ }

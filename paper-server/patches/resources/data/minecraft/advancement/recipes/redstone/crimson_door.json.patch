@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/redstone/crimson_door.json
++++ b/data/minecraft/advancement/recipes/redstone/crimson_door.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:crimson_door"
++        "recipe": "minecraft:crimson_door"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/level/block/EndPortalBlock.java b/net/minecraft/world/level/block/EndPortalBlock.java
-index 2b102dacc9f4d5309c51dbd0ea1bf82ddce0f072..23a3c9cd26666f909e5b512e276a2fcdcbc42c05 100644
 --- a/net/minecraft/world/level/block/EndPortalBlock.java
 +++ b/net/minecraft/world/level/block/EndPortalBlock.java
-@@ -59,8 +59,14 @@ public class EndPortalBlock extends BaseEntityBlock implements Portal {
+@@ -59,8 +_,14 @@
          final InsideBlockEffectApplier effectApplier,
          final boolean isPrecise
      ) {
@@ -23,7 +15,7 @@ index 2b102dacc9f4d5309c51dbd0ea1bf82ddce0f072..23a3c9cd26666f909e5b512e276a2fcd
                  player.showEndCredits();
              } else {
                  entity.setAsInsidePortal(this, pos);
-@@ -71,8 +77,7 @@ public class EndPortalBlock extends BaseEntityBlock implements Portal {
+@@ -71,8 +_,7 @@
      @Override
      public @Nullable TeleportTransition getPortalDestination(final ServerLevel currentLevel, final Entity entity, final BlockPos portalEntryPos) {
          LevelData.RespawnData respawnData = currentLevel.getRespawnData();
@@ -33,7 +25,7 @@ index 2b102dacc9f4d5309c51dbd0ea1bf82ddce0f072..23a3c9cd26666f909e5b512e276a2fcd
          ResourceKey<Level> newDimension = fromEnd ? respawnData.dimension() : Level.END;
          BlockPos spawnBlockPos = fromEnd ? respawnData.pos() : ServerLevel.END_SPAWN_POINT;
          ServerLevel newLevel = currentLevel.getServer().getLevel(newDimension);
-@@ -85,7 +90,7 @@ public class EndPortalBlock extends BaseEntityBlock implements Portal {
+@@ -85,7 +_,7 @@
          float xRot;
          Set<Relative> relatives;
          if (!fromEnd) {
@@ -42,7 +34,7 @@ index 2b102dacc9f4d5309c51dbd0ea1bf82ddce0f072..23a3c9cd26666f909e5b512e276a2fcd
              yRot = Direction.WEST.toYRot();
              xRot = 0.0F;
              relatives = Relative.union(Relative.DELTA, Set.of(Relative.X_ROT));
-@@ -97,15 +102,32 @@ public class EndPortalBlock extends BaseEntityBlock implements Portal {
+@@ -97,15 +_,32 @@
              xRot = respawnData.pitch();
              relatives = Relative.union(Relative.DELTA, Relative.ROTATION);
              if (entity instanceof ServerPlayer serverPlayer) {

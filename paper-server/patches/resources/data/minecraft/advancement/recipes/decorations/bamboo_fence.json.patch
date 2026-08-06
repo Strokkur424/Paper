@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/decorations/bamboo_fence.json
++++ b/data/minecraft/advancement/recipes/decorations/bamboo_fence.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:bamboo_fence"
++        "recipe": "minecraft:bamboo_fence"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

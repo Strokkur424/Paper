@@ -1,0 +1,38 @@
+--- a/data/minecraft/advancement/husbandry/repair_wolf_armor.json
++++ b/data/minecraft/advancement/husbandry/repair_wolf_armor.json
+@@ -3,21 +_,23 @@
+   "criteria": {
+     "repair_wolf_armor": {
+       "conditions": {
+-        "entity": {
+-          "type": "minecraft:entity_properties",
+-          "entity": "this",
+-          "predicate": {
+-            "minecraft:entity_type": "minecraft:wolf",
+-            "minecraft:equipment": {
+-              "body": {
+-                "components": {
+-                  "minecraft:damage": 0
+-                },
+-                "items": "minecraft:wolf_armor"
++        "entity": [
++          {
++            "condition": "minecraft:entity_properties",
++            "entity": "this",
++            "predicate": {
++              "minecraft:entity_type": "minecraft:wolf",
++              "minecraft:equipment": {
++                "body": {
++                  "components": {
++                    "minecraft:damage": 0
++                  },
++                  "items": "minecraft:wolf_armor"
++                }
+               }
+             }
+           }
+-        },
++        ],
+         "item": {
+           "items": "minecraft:armadillo_scute"
+         }

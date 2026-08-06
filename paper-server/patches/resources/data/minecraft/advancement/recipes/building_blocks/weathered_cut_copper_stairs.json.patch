@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/building_blocks/weathered_cut_copper_stairs.json
++++ b/data/minecraft/advancement/recipes/building_blocks/weathered_cut_copper_stairs.json
+@@ -3,7 +_,7 @@
+   "criteria": {
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:weathered_cut_copper_stairs"
++        "recipe": "minecraft:weathered_cut_copper_stairs"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     },

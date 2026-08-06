@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/misc/paper.json
++++ b/data/minecraft/advancement/recipes/misc/paper.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:paper"
++        "recipe": "minecraft:paper"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

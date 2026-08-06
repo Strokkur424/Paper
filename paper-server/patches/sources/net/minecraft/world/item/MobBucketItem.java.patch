@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/item/MobBucketItem.java b/net/minecraft/world/item/MobBucketItem.java
-index ca60fd05fbcef0dd3627cfcad29772cff8e8a1f9..73ebbb4e5403db903a9153a7852b3bfcea118fc0 100644
 --- a/net/minecraft/world/item/MobBucketItem.java
 +++ b/net/minecraft/world/item/MobBucketItem.java
-@@ -52,18 +52,18 @@ public class MobBucketItem extends BucketItem {
+@@ -52,18 +_,18 @@
          }
  
          if (mob != null) {

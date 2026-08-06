@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/redstone/warped_fence_gate.json
++++ b/data/minecraft/advancement/recipes/redstone/warped_fence_gate.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:warped_fence_gate"
++        "recipe": "minecraft:warped_fence_gate"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

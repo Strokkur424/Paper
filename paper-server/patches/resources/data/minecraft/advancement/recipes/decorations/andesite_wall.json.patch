@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/decorations/andesite_wall.json
++++ b/data/minecraft/advancement/recipes/decorations/andesite_wall.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:andesite_wall"
++        "recipe": "minecraft:andesite_wall"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

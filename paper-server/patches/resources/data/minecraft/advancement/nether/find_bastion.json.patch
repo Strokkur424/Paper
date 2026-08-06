@@ -1,0 +1,27 @@
+--- a/data/minecraft/advancement/nether/find_bastion.json
++++ b/data/minecraft/advancement/nether/find_bastion.json
+@@ -3,15 +_,17 @@
+   "criteria": {
+     "bastion": {
+       "conditions": {
+-        "player": {
+-          "type": "minecraft:entity_properties",
+-          "entity": "this",
+-          "predicate": {
+-            "minecraft:location": {
+-              "structures": "minecraft:bastion_remnant"
++        "player": [
++          {
++            "condition": "minecraft:entity_properties",
++            "entity": "this",
++            "predicate": {
++              "minecraft:location": {
++                "structures": "minecraft:bastion_remnant"
++              }
+             }
+           }
+-        }
++        ]
+       },
+       "trigger": "minecraft:location"
+     }

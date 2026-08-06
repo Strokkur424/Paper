@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/decorations/brown_carpet.json
++++ b/data/minecraft/advancement/recipes/decorations/brown_carpet.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:brown_carpet"
++        "recipe": "minecraft:brown_carpet"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

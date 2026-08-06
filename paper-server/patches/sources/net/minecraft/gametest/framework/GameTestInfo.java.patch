@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/gametest/framework/GameTestInfo.java b/net/minecraft/gametest/framework/GameTestInfo.java
-index 875320032f9c736cf8908c401ad4dcbfa1624933..c59b81f270c8de3ccf0d3ebbd4e7b68827701d5c 100644
 --- a/net/minecraft/gametest/framework/GameTestInfo.java
 +++ b/net/minecraft/gametest/framework/GameTestInfo.java
-@@ -246,7 +246,7 @@ public class GameTestInfo {
+@@ -246,7 +_,7 @@
              this.finish();
              AABB bounds = this.getStructureBounds();
              List<Entity> entities = this.getLevel().getEntitiesOfClass(Entity.class, bounds.inflate(1.0), mob -> !(mob instanceof Player));

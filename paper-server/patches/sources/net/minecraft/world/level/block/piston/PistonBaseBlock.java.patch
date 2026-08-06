@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/level/block/piston/PistonBaseBlock.java b/net/minecraft/world/level/block/piston/PistonBaseBlock.java
-index ec582df6757138df756d46a7c73b251b823fef65..206d542ca5e264071a4beaf6400ebbdf70ae93d5 100644
 --- a/net/minecraft/world/level/block/piston/PistonBaseBlock.java
 +++ b/net/minecraft/world/level/block/piston/PistonBaseBlock.java
-@@ -139,6 +139,12 @@ public class PistonBaseBlock extends DirectionalBlock {
+@@ -139,6 +_,12 @@
      @Override
      protected boolean triggerEvent(final BlockState state, final Level level, final BlockPos pos, final int b0, final int b1) {
          Direction direction = state.getValue(FACING);
@@ -21,7 +13,7 @@ index ec582df6757138df756d46a7c73b251b823fef65..206d542ca5e264071a4beaf6400ebbdf
          BlockState extendedState = state.setValue(EXTENDED, true);
          if (!level.isClientSide()) {
              boolean extend = this.getNeighborSignal(level, pos, direction);
-@@ -170,10 +176,17 @@ public class PistonBaseBlock extends DirectionalBlock {
+@@ -170,10 +_,17 @@
                  .defaultBlockState()
                  .setValue(MovingPistonBlock.FACING, direction)
                  .setValue(MovingPistonBlock.TYPE, this.isSticky ? PistonType.STICKY : PistonType.DEFAULT);
@@ -40,7 +32,7 @@ index ec582df6757138df756d46a7c73b251b823fef65..206d542ca5e264071a4beaf6400ebbdf
                  )
              );
              level.updateNeighborsAt(pos, movingPistonState.getBlock());
-@@ -197,13 +210,27 @@ public class PistonBaseBlock extends DirectionalBlock {
+@@ -197,13 +_,27 @@
                          || movingState.getPistonPushReaction() != PushReaction.PUSH_PULL
                              && !movingState.is(Blocks.PISTON)
                              && !movingState.is(Blocks.STICKY_PISTON)) {
@@ -69,7 +61,7 @@ index ec582df6757138df756d46a7c73b251b823fef65..206d542ca5e264071a4beaf6400ebbdf
              }
  
              level.playSound(null, pos, SoundEvents.PISTON_CONTRACT, SoundSource.BLOCKS, 0.5F, random.nextFloat() * 0.15F + 0.6F);
-@@ -221,7 +248,7 @@ public class PistonBaseBlock extends DirectionalBlock {
+@@ -221,7 +_,7 @@
          final boolean allowDestroyable,
          final Direction connectionDirection
      ) {
@@ -78,7 +70,7 @@ index ec582df6757138df756d46a7c73b251b823fef65..206d542ca5e264071a4beaf6400ebbdf
              return false;
          }
  
-@@ -286,12 +313,58 @@ public class PistonBaseBlock extends DirectionalBlock {
+@@ -286,12 +_,58 @@
          BlockState[] toUpdate = new BlockState[toPush.size() + toDestroy.size()];
          Direction pushDirection = extending ? direction : direction.getOpposite();
          int updateIndex = 0;
@@ -138,7 +130,7 @@ index ec582df6757138df756d46a7c73b251b823fef65..206d542ca5e264071a4beaf6400ebbdf
              if (!state.is(BlockTags.FIRE) && level.isClientSide()) {
                  level.levelEvent(LevelEvent.PARTICLES_AND_SOUND_DESTROY_BLOCK, pos, getId(state));
              }
-@@ -302,13 +375,28 @@ public class PistonBaseBlock extends DirectionalBlock {
+@@ -302,13 +_,28 @@
          }
  
          for (int i = toPush.size() - 1; i >= 0; i--) {

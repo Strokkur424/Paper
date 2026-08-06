@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/util/random/WeightedList.java b/net/minecraft/util/random/WeightedList.java
-index ad8a88bd8163bf91f171c72d39e59f6b1fd502e7..99ed1908e6396f73ce2c80e48cd7ac454de29e04 100644
 --- a/net/minecraft/util/random/WeightedList.java
 +++ b/net/minecraft/util/random/WeightedList.java
-@@ -16,13 +16,13 @@ import net.minecraft.network.codec.StreamCodec;
+@@ -16,13 +_,13 @@
  import net.minecraft.util.RandomSource;
  import org.jspecify.annotations.Nullable;
  
@@ -24,7 +16,7 @@ index ad8a88bd8163bf91f171c72d39e59f6b1fd502e7..99ed1908e6396f73ce2c80e48cd7ac45
          this.items = List.copyOf(items);
          this.totalWeight = WeightedRandom.getTotalWeight(items, Weighted::weight);
          if (this.totalWeight == 0) {
-@@ -150,7 +150,7 @@ public final class WeightedList<E> {
+@@ -150,7 +_,7 @@
      }
  
      public static class Builder<E> {

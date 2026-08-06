@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/CrashReport.java b/net/minecraft/CrashReport.java
-index 7cfdf111f08d4e570e90348cbea80b94defa9020..aad550288b63f7bdedab72e2c94a011a3566986d 100644
 --- a/net/minecraft/CrashReport.java
 +++ b/net/minecraft/CrashReport.java
-@@ -34,6 +34,7 @@ public class CrashReport {
+@@ -34,6 +_,7 @@
      public CrashReport(final String title, final Throwable t) {
          this.title = title;
          this.exception = t;
@@ -16,7 +8,7 @@ index 7cfdf111f08d4e570e90348cbea80b94defa9020..aad550288b63f7bdedab72e2c94a011a
      }
  
      public String getTitle() {
-@@ -235,7 +236,7 @@ public class CrashReport {
+@@ -235,7 +_,7 @@
      }
  
      public static void preload() {

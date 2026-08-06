@@ -1,0 +1,35 @@
+--- a/data/minecraft/advancement/recipes/building_blocks/brown_concrete_stairs.json
++++ /dev/null
+@@ -1,32 +_,0 @@
+-{
+-  "parent": "minecraft:recipes/root",
+-  "criteria": {
+-    "has_brown_concrete": {
+-      "conditions": {
+-        "items": [
+-          {
+-            "items": "minecraft:brown_concrete"
+-          }
+-        ]
+-      },
+-      "trigger": "minecraft:inventory_changed"
+-    },
+-    "has_the_recipe": {
+-      "conditions": {
+-        "recipes": "minecraft:brown_concrete_stairs"
+-      },
+-      "trigger": "minecraft:recipe_unlocked"
+-    }
+-  },
+-  "requirements": [
+-    [
+-      "has_the_recipe",
+-      "has_brown_concrete"
+-    ]
+-  ],
+-  "rewards": {
+-    "recipes": [
+-      "minecraft:brown_concrete_stairs"
+-    ]
+-  }
+-}

@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/server/commands/SummonCommand.java b/net/minecraft/server/commands/SummonCommand.java
-index 1c4e69fd04ba23f157098ccce52daa1334d732a3..c318f1f0a57d315786a02265d45605a69c675151 100644
 --- a/net/minecraft/server/commands/SummonCommand.java
 +++ b/net/minecraft/server/commands/SummonCommand.java
-@@ -91,6 +91,7 @@ public class SummonCommand {
+@@ -91,6 +_,7 @@
          ServerLevel level = source.getLevel();
          Entity entity = EntityType.loadEntityRecursive(entityTag, level, new EntitySpawnRequest(EntitySpawnReason.COMMAND, false), e -> {
              e.snapTo(pos.x, pos.y, pos.z, e.getYRot(), e.getXRot());
@@ -16,7 +8,7 @@ index 1c4e69fd04ba23f157098ccce52daa1334d732a3..c318f1f0a57d315786a02265d45605a6
              return e;
          });
          if (entity == null) {
-@@ -101,7 +102,7 @@ public class SummonCommand {
+@@ -101,7 +_,7 @@
              mob.finalizeSpawn(source.getLevel(), source.getLevel().getCurrentDifficultyAt(entity.blockPosition()), EntitySpawnReason.COMMAND, null);
          }
  

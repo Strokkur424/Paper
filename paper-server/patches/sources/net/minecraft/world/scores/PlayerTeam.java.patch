@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/scores/PlayerTeam.java b/net/minecraft/world/scores/PlayerTeam.java
-index fe214fb16ccc2acd388968378fffcb1081ca68c8..2bdbb8451974f0b8d6e94d390ac735f4ccffd954 100644
 --- a/net/minecraft/world/scores/PlayerTeam.java
 +++ b/net/minecraft/world/scores/PlayerTeam.java
-@@ -223,7 +223,7 @@ public class PlayerTeam extends Team {
+@@ -223,7 +_,7 @@
              i -> i.group(
                      Codec.STRING.fieldOf("Name").forGetter(PlayerTeam.Packed::name),
                      ComponentSerialization.CODEC.optionalFieldOf("DisplayName").forGetter(PlayerTeam.Packed::displayName),

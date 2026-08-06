@@ -1,0 +1,27 @@
+--- a/data/minecraft/advancement/end/find_end_city.json
++++ b/data/minecraft/advancement/end/find_end_city.json
+@@ -3,15 +_,17 @@
+   "criteria": {
+     "in_city": {
+       "conditions": {
+-        "player": {
+-          "type": "minecraft:entity_properties",
+-          "entity": "this",
+-          "predicate": {
+-            "minecraft:location": {
+-              "structures": "minecraft:end_city"
++        "player": [
++          {
++            "condition": "minecraft:entity_properties",
++            "entity": "this",
++            "predicate": {
++              "minecraft:location": {
++                "structures": "minecraft:end_city"
++              }
+             }
+           }
+-        }
++        ]
+       },
+       "trigger": "minecraft:location"
+     }

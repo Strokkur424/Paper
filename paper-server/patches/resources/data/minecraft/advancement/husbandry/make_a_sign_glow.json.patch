@@ -1,0 +1,44 @@
+--- a/data/minecraft/advancement/husbandry/make_a_sign_glow.json
++++ b/data/minecraft/advancement/husbandry/make_a_sign_glow.json
+@@ -3,25 +_,22 @@
+   "criteria": {
+     "make_a_sign_glow": {
+       "conditions": {
+-        "location": {
+-          "type": "minecraft:all_of",
+-          "terms": [
+-            {
+-              "type": "minecraft:location_check",
+-              "predicate": {
+-                "block": {
+-                  "blocks": "#minecraft:all_signs"
+-                }
+-              }
+-            },
+-            {
+-              "type": "minecraft:match_tool",
+-              "predicate": {
+-                "items": "minecraft:glow_ink_sac"
+-              }
+-            }
+-          ]
+-        }
++        "location": [
++          {
++            "condition": "minecraft:location_check",
++            "predicate": {
++              "block": {
++                "blocks": "#minecraft:all_signs"
++              }
++            }
++          },
++          {
++            "condition": "minecraft:match_tool",
++            "predicate": {
++              "items": "minecraft:glow_ink_sac"
++            }
++          }
++        ]
+       },
+       "trigger": "minecraft:item_used_on_block"
+     }

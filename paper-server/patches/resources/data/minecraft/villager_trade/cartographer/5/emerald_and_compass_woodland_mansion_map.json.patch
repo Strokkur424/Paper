@@ -1,0 +1,43 @@
+--- a/data/minecraft/villager_trade/cartographer/5/emerald_and_compass_woodland_mansion_map.json
++++ b/data/minecraft/villager_trade/cartographer/5/emerald_and_compass_woodland_mansion_map.json
+@@ -2,26 +_,34 @@
+   "additional_wants": {
+     "id": "minecraft:compass"
+   },
+-  "given_item_modifier": [
++  "given_item_modifiers": [
+     {
+-      "type": "minecraft:exploration_map",
+-      "destination": "#minecraft:on_woodland_explorer_maps",
++      "destination": "minecraft:on_woodland_explorer_maps",
++      "function": "minecraft:exploration_map",
+       "search_radius": 100
+     },
+     {
+-      "type": "minecraft:filtered",
++      "function": "minecraft:set_name",
++      "name": {
++        "translate": "filled_map.mansion"
++      },
++      "target": "item_name"
++    },
++    {
++      "function": "minecraft:filtered",
+       "item_filter": {
++        "items": "minecraft:filled_map",
+         "predicates": {
+           "minecraft:map_id": {}
+         }
+       },
+       "on_fail": {
+-        "type": "minecraft:discard"
++        "function": "minecraft:discard"
+       }
+     }
+   ],
+   "gives": {
+-    "id": "minecraft:woodland_explorer_map"
++    "id": "minecraft:map"
+   },
+   "max_uses": 12.0,
+   "reputation_discount": 0.2,

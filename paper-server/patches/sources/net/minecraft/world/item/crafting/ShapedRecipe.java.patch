@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/item/crafting/ShapedRecipe.java b/net/minecraft/world/item/crafting/ShapedRecipe.java
-index fd89b0e73ee0843b70ec1b9bf8b7b357379be1d8..f6836d6bbdff6c894b31003869d6b5b2b55e163f 100644
 --- a/net/minecraft/world/item/crafting/ShapedRecipe.java
 +++ b/net/minecraft/world/item/crafting/ShapedRecipe.java
-@@ -93,4 +93,66 @@ public class ShapedRecipe extends NormalCraftingRecipe {
+@@ -93,4 +_,66 @@
              )
          );
      }

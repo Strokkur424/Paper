@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/brewing/golden_carrot.json
++++ b/data/minecraft/advancement/recipes/brewing/golden_carrot.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:golden_carrot"
++        "recipe": "minecraft:golden_carrot"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

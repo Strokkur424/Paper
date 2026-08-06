@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/redstone/dropper.json
++++ b/data/minecraft/advancement/recipes/redstone/dropper.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:dropper"
++        "recipe": "minecraft:dropper"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

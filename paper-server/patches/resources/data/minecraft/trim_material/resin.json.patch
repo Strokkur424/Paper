@@ -1,0 +1,12 @@
+--- a/data/minecraft/trim_material/resin.json
++++ b/data/minecraft/trim_material/resin.json
+@@ -1,7 +_,7 @@
+ {
++  "asset_name": "resin",
+   "description": {
+     "color": "#FC7812",
+     "translate": "trim_material.minecraft.resin"
+-  },
+-  "palette_id": "minecraft:trim/resin"
++  }
+ }

@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/level/block/AbstractCauldronBlock.java b/net/minecraft/world/level/block/AbstractCauldronBlock.java
-index 4a43c2b929aee6ae969c8c7829f3917420338445..3b2f4f298ff8e684798ed8f95245e14a179d6d20 100644
 --- a/net/minecraft/world/level/block/AbstractCauldronBlock.java
 +++ b/net/minecraft/world/level/block/AbstractCauldronBlock.java
-@@ -59,7 +59,7 @@ public abstract class AbstractCauldronBlock extends Block {
+@@ -59,7 +_,7 @@
          final BlockHitResult hitResult
      ) {
          CauldronInteraction behavior = this.interactions.get(itemStack);

@@ -1,0 +1,10 @@
+--- a/data/minecraft/tags/item/signs.json
++++ b/data/minecraft/tags/item/signs.json
+@@ -10,7 +_,6 @@
+     "minecraft:crimson_sign",
+     "minecraft:warped_sign",
+     "minecraft:mangrove_sign",
+-    "minecraft:poplar_sign",
+     "minecraft:bamboo_sign",
+     "minecraft:cherry_sign"
+   ]

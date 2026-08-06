@@ -1,0 +1,38 @@
+--- a/data/minecraft/datapacks/trade_rebalance/data/minecraft/villager_trade/armorer/4/emerald_enchanted_iron_chestplate_plains.json
++++ b/data/minecraft/datapacks/trade_rebalance/data/minecraft/villager_trade/armorer/4/emerald_enchanted_iron_chestplate_plains.json
+@@ -1,13 +_,13 @@
+ {
+-  "given_item_modifier": [
++  "given_item_modifiers": [
+     {
+-      "type": "minecraft:set_enchantments",
+       "enchantments": {
+         "minecraft:protection": 1.0
+-      }
++      },
++      "function": "minecraft:set_enchantments"
+     },
+     {
+-      "type": "minecraft:filtered",
++      "function": "minecraft:filtered",
+       "item_filter": {
+         "items": "minecraft:iron_chestplate",
+         "predicates": {
+@@ -19,7 +_,7 @@
+         }
+       },
+       "on_fail": {
+-        "type": "minecraft:discard"
++        "function": "minecraft:discard"
+       }
+     }
+   ],
+@@ -28,7 +_,7 @@
+   },
+   "max_uses": 3.0,
+   "merchant_predicate": {
+-    "type": "minecraft:entity_properties",
++    "condition": "minecraft:entity_properties",
+     "entity": "this",
+     "predicate": {
+       "minecraft:predicates": {

@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/nbt/ByteArrayTag.java b/net/minecraft/nbt/ByteArrayTag.java
-index b6adeb8c9a64413e3cc7181650373aead2c13562..4fc0cfeabf60d4bd0dcfd9814d13858454bc39da 100644
 --- a/net/minecraft/nbt/ByteArrayTag.java
 +++ b/net/minecraft/nbt/ByteArrayTag.java
-@@ -23,6 +23,7 @@ public final class ByteArrayTag implements CollectionTag {
+@@ -23,6 +_,7 @@
          private static byte[] readAccounted(final DataInput input, final NbtAccounter accounter) throws IOException {
              accounter.accountBytes(24L);
              int length = input.readInt();

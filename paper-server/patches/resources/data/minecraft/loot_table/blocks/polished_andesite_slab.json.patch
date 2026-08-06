@@ -1,0 +1,35 @@
+--- a/data/minecraft/loot_table/blocks/polished_andesite_slab.json
++++ b/data/minecraft/loot_table/blocks/polished_andesite_slab.json
+@@ -5,20 +_,22 @@
+       "entries": [
+         {
+           "type": "minecraft:item",
+-          "modifier": [
++          "functions": [
+             {
+-              "type": "minecraft:set_count",
+-              "condition": {
+-                "type": "minecraft:match_block",
+-                "blocks": "minecraft:polished_andesite_slab",
+-                "state": {
+-                  "type": "double"
++              "conditions": [
++                {
++                  "block": "minecraft:polished_andesite_slab",
++                  "condition": "minecraft:block_state_property",
++                  "properties": {
++                    "type": "double"
++                  }
+                 }
+-              },
+-              "count": 2.0
++              ],
++              "count": 2.0,
++              "function": "minecraft:set_count"
+             },
+             {
+-              "type": "minecraft:explosion_decay"
++              "function": "minecraft:explosion_decay"
+             }
+           ],
+           "name": "minecraft:polished_andesite_slab"

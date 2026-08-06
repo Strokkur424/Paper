@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/inventory/StonecutterMenu.java b/net/minecraft/world/inventory/StonecutterMenu.java
-index 952f71c08754a28ca2d7ec4eb51d28e5dab45c1b..712020d8cd5e51617db8420f35404479028eace8 100644
 --- a/net/minecraft/world/inventory/StonecutterMenu.java
 +++ b/net/minecraft/world/inventory/StonecutterMenu.java
-@@ -26,7 +26,7 @@ public class StonecutterMenu extends AbstractContainerMenu {
+@@ -26,7 +_,7 @@
      private static final int USE_ROW_SLOT_START = 29;
      private static final int USE_ROW_SLOT_END = 38;
      private final ContainerLevelAccess access;
@@ -17,7 +9,7 @@ index 952f71c08754a28ca2d7ec4eb51d28e5dab45c1b..712020d8cd5e51617db8420f35404479
      private final Level level;
      private SelectableRecipe.SingleInputSet<StonecutterRecipe> recipesForInput = SelectableRecipe.SingleInputSet.empty();
      private ItemStack input = ItemStack.EMPTY;
-@@ -34,15 +34,23 @@ public class StonecutterMenu extends AbstractContainerMenu {
+@@ -34,15 +_,23 @@
      private final Slot inputSlot;
      private final Slot resultSlot;
      private Runnable slotUpdateListener = () -> {};
@@ -49,7 +41,7 @@ index 952f71c08754a28ca2d7ec4eb51d28e5dab45c1b..712020d8cd5e51617db8420f35404479
  
      public StonecutterMenu(final int containerId, final Inventory inventory) {
          this(containerId, inventory, ContainerLevelAccess.NULL);
-@@ -52,6 +60,23 @@ public class StonecutterMenu extends AbstractContainerMenu {
+@@ -52,6 +_,23 @@
          super(MenuType.STONECUTTER, containerId);
          this.access = access;
          this.level = inventory.player.level();
@@ -73,7 +65,7 @@ index 952f71c08754a28ca2d7ec4eb51d28e5dab45c1b..712020d8cd5e51617db8420f35404479
          this.inputSlot = this.addSlot(new Slot(this.container, 0, 20, 33));
          this.resultSlot = this.addSlot(new Slot(this.resultContainer, 1, 143, 33) {
              @Override
-@@ -84,6 +109,7 @@ public class StonecutterMenu extends AbstractContainerMenu {
+@@ -84,6 +_,7 @@
          });
          this.addStandardInventorySlots(inventory, 8, 84);
          this.addDataSlot(this.selectedRecipeIndex);
@@ -81,7 +73,7 @@ index 952f71c08754a28ca2d7ec4eb51d28e5dab45c1b..712020d8cd5e51617db8420f35404479
      }
  
      public int getSelectedRecipeIndex() {
-@@ -104,6 +130,7 @@ public class StonecutterMenu extends AbstractContainerMenu {
+@@ -104,6 +_,7 @@
  
      @Override
      public boolean stillValid(final Player player) {
@@ -89,7 +81,7 @@ index 952f71c08754a28ca2d7ec4eb51d28e5dab45c1b..712020d8cd5e51617db8420f35404479
          return stillValid(this.access, player, Blocks.STONECUTTER);
      }
  
-@@ -114,8 +141,34 @@ public class StonecutterMenu extends AbstractContainerMenu {
+@@ -114,8 +_,34 @@
          }
  
          if (this.isValidRecipeIndex(buttonId)) {
@@ -126,7 +118,7 @@ index 952f71c08754a28ca2d7ec4eb51d28e5dab45c1b..712020d8cd5e51617db8420f35404479
          }
  
          return true;
-@@ -132,6 +185,7 @@ public class StonecutterMenu extends AbstractContainerMenu {
+@@ -132,6 +_,7 @@
              this.input = input.copy();
              this.setupRecipeList(input);
          }

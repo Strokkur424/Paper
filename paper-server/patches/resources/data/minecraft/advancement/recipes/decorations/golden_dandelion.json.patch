@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/decorations/golden_dandelion.json
++++ b/data/minecraft/advancement/recipes/decorations/golden_dandelion.json
+@@ -23,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:golden_dandelion"
++        "recipe": "minecraft:golden_dandelion"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

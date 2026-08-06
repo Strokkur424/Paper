@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/redstone/redstone.json
++++ b/data/minecraft/advancement/recipes/redstone/redstone.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:redstone"
++        "recipe": "minecraft:redstone"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

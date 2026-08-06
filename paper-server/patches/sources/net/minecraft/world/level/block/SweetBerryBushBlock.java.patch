@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/level/block/SweetBerryBushBlock.java b/net/minecraft/world/level/block/SweetBerryBushBlock.java
-index 3f66c79edbf28f7d7a59085e06b85ee1eb4cfa0a..3865af609541eb29056fb1eaa915840b60f83dcb 100644
 --- a/net/minecraft/world/level/block/SweetBerryBushBlock.java
 +++ b/net/minecraft/world/level/block/SweetBerryBushBlock.java
-@@ -64,9 +64,9 @@ public class SweetBerryBushBlock extends VegetationBlock implements Bonemealable
+@@ -64,9 +_,9 @@
      @Override
      protected void randomTick(final BlockState state, final ServerLevel level, final BlockPos pos, final RandomSource random) {
          int age = state.getValue(AGE);
@@ -20,7 +12,7 @@ index 3f66c79edbf28f7d7a59085e06b85ee1eb4cfa0a..3865af609541eb29056fb1eaa915840b
              level.gameEvent(GameEvent.BLOCK_CHANGE, pos, GameEvent.Context.of(newState));
          }
      }
-@@ -80,6 +80,7 @@ public class SweetBerryBushBlock extends VegetationBlock implements Bonemealable
+@@ -80,6 +_,7 @@
          final InsideBlockEffectApplier effectApplier,
          final boolean isPrecise
      ) {
@@ -28,7 +20,7 @@ index 3f66c79edbf28f7d7a59085e06b85ee1eb4cfa0a..3865af609541eb29056fb1eaa915840b
          if (entity instanceof LivingEntity && !entity.is(EntityTypes.FOX) && !entity.is(EntityTypes.BEE)) {
              entity.makeStuckInBlock(state, new Vec3(0.8F, 0.75, 0.8F));
              if (level instanceof ServerLevel serverLevel && state.getValue(AGE) != 0) {
-@@ -88,7 +89,7 @@ public class SweetBerryBushBlock extends VegetationBlock implements Bonemealable
+@@ -88,7 +_,7 @@
                      double xs = Math.abs(movement.x());
                      double zs = Math.abs(movement.z());
                      if (xs >= 0.003F || zs >= 0.003F) {
@@ -37,7 +29,7 @@ index 3f66c79edbf28f7d7a59085e06b85ee1eb4cfa0a..3865af609541eb29056fb1eaa915840b
                      }
                  }
              }
-@@ -116,6 +117,7 @@ public class SweetBerryBushBlock extends VegetationBlock implements Bonemealable
+@@ -116,6 +_,7 @@
      ) {
          if (state.getValue(AGE) > 1) {
              if (level instanceof ServerLevel serverLevel) {
@@ -45,7 +37,7 @@ index 3f66c79edbf28f7d7a59085e06b85ee1eb4cfa0a..3865af609541eb29056fb1eaa915840b
                  Block.dropFromBlockInteractLootTable(
                      serverLevel,
                      BuiltInLootTables.HARVEST_SWEET_BERRY_BUSH,
-@@ -124,8 +126,17 @@ public class SweetBerryBushBlock extends VegetationBlock implements Bonemealable
+@@ -124,8 +_,17 @@
                      level.getBlockEntity(pos),
                      null,
                      player,

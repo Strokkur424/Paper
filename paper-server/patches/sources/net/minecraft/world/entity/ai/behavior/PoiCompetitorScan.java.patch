@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/entity/ai/behavior/PoiCompetitorScan.java b/net/minecraft/world/entity/ai/behavior/PoiCompetitorScan.java
-index e3c70d35bd9f45050d4edf1719ccea49bd126d1f..c507cbb1b0d89f8fe5a00e67eea510f7516fe040 100644
 --- a/net/minecraft/world/entity/ai/behavior/PoiCompetitorScan.java
 +++ b/net/minecraft/world/entity/ai/behavior/PoiCompetitorScan.java
-@@ -22,13 +22,32 @@ public class PoiCompetitorScan {
+@@ -22,13 +_,32 @@
                          level.getPoiManager()
                              .getType(pos.pos())
                              .ifPresent(

@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/building_blocks/dye_black_wool.json
++++ b/data/minecraft/advancement/recipes/building_blocks/dye_black_wool.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:dye_black_wool"
++        "recipe": "minecraft:dye_black_wool"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

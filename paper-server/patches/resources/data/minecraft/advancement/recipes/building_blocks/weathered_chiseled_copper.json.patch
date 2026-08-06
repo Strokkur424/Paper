@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/building_blocks/weathered_chiseled_copper.json
++++ b/data/minecraft/advancement/recipes/building_blocks/weathered_chiseled_copper.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:weathered_chiseled_copper"
++        "recipe": "minecraft:weathered_chiseled_copper"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

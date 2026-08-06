@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/building_blocks/sponge.json
++++ b/data/minecraft/advancement/recipes/building_blocks/sponge.json
+@@ -3,7 +_,7 @@
+   "criteria": {
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:sponge"
++        "recipe": "minecraft:sponge"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     },

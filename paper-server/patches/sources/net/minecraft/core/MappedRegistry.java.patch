@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/core/MappedRegistry.java b/net/minecraft/core/MappedRegistry.java
-index f05f44ab1d0efdc648fc43dcb04587f644fa6c34..098af940bf4d626c98f5e64d2aac2d9df0a9e128 100644
 --- a/net/minecraft/core/MappedRegistry.java
 +++ b/net/minecraft/core/MappedRegistry.java
-@@ -33,17 +33,25 @@ import org.jspecify.annotations.Nullable;
+@@ -33,17 +_,25 @@
  public class MappedRegistry<T> implements WritableRegistry<T> {
      private final ResourceKey<? extends Registry<T>> key;
      private final ObjectList<Holder.Reference<T>> byId = new ObjectArrayList<>(256);
@@ -39,7 +31,7 @@ index f05f44ab1d0efdc648fc43dcb04587f644fa6c34..098af940bf4d626c98f5e64d2aac2d9d
  
      @Override
      public Stream<HolderSet.Named<T>> listTags() {
-@@ -117,6 +125,7 @@ public class MappedRegistry<T> implements WritableRegistry<T> {
+@@ -117,6 +_,7 @@
          this.toId.put(value, newId);
          this.registrationInfos.put(key, registrationInfo);
          this.registryLifecycle = this.registryLifecycle.add(registrationInfo.lifecycle());
@@ -47,7 +39,7 @@ index f05f44ab1d0efdc648fc43dcb04587f644fa6c34..098af940bf4d626c98f5e64d2aac2d9d
          return holder;
      }
  
-@@ -278,6 +287,7 @@ public class MappedRegistry<T> implements WritableRegistry<T> {
+@@ -278,6 +_,7 @@
          }
  
          this.frozen = true;
@@ -55,7 +47,7 @@ index f05f44ab1d0efdc648fc43dcb04587f644fa6c34..098af940bf4d626c98f5e64d2aac2d9d
          this.byValue.forEach((value, holder) -> holder.bindValue((T)value));
          List<Identifier> unboundEntries = this.byKey
              .entrySet()
-@@ -517,4 +527,13 @@ public class MappedRegistry<T> implements WritableRegistry<T> {
+@@ -517,4 +_,13 @@
  
          Stream<HolderSet.Named<T>> getTags();
      }

@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/decorations/jungle_hanging_sign.json
++++ b/data/minecraft/advancement/recipes/decorations/jungle_hanging_sign.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:jungle_hanging_sign"
++        "recipe": "minecraft:jungle_hanging_sign"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

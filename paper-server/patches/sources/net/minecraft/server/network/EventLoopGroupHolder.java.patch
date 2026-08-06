@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/server/network/EventLoopGroupHolder.java b/net/minecraft/server/network/EventLoopGroupHolder.java
-index ca53989da80a7552bfbe22f05f5ceaa147334b81..9544eaee7e02d00226d957ea0b79cd1a1fb0c4d0 100644
 --- a/net/minecraft/server/network/EventLoopGroupHolder.java
 +++ b/net/minecraft/server/network/EventLoopGroupHolder.java
-@@ -48,19 +48,39 @@ public abstract class EventLoopGroupHolder {
+@@ -48,19 +_,39 @@
              return LocalIoHandler.newFactory();
          }
      };
@@ -49,7 +41,7 @@ index ca53989da80a7552bfbe22f05f5ceaa147334b81..9544eaee7e02d00226d957ea0b79cd1a
              }
          }
  
-@@ -78,7 +98,7 @@ public abstract class EventLoopGroupHolder {
+@@ -78,7 +_,7 @@
      }
  
      private ThreadFactory createThreadFactory() {

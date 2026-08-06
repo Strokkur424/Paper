@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/level/block/state/properties/Property.java b/net/minecraft/world/level/block/state/properties/Property.java
-index a3e2264119e098465fb674ad53d3ebb530ffe481..b95665559d646ab8de313a19dadc197a1e8be02c 100644
 --- a/net/minecraft/world/level/block/state/properties/Property.java
 +++ b/net/minecraft/world/level/block/state/properties/Property.java
-@@ -71,7 +71,7 @@ public abstract class Property<T extends Comparable<T>> {
+@@ -71,7 +_,7 @@
  
      @Override
      public boolean equals(final Object o) {

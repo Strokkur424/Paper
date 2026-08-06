@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/item/LeadItem.java b/net/minecraft/world/item/LeadItem.java
-index 8bfab0fcc3e77d8cafa71bff924dda53f254dc9c..5a03357629e1450155c816180b5954064422a7e0 100644
 --- a/net/minecraft/world/item/LeadItem.java
 +++ b/net/minecraft/world/item/LeadItem.java
-@@ -27,14 +27,14 @@ public class LeadItem extends Item {
+@@ -27,14 +_,14 @@
          if (state.is(BlockTags.FENCES)) {
              Player player = context.getPlayer();
              if (!level.isClientSide() && player != null) {
@@ -25,7 +17,7 @@ index 8bfab0fcc3e77d8cafa71bff924dda53f254dc9c..5a03357629e1450155c816180b595406
          List<Leashable> entitiesToLeash = Leashable.leashableInArea(level, Vec3.atCenterOf(pos), l -> l.getLeashHolder() == player);
          if (entitiesToLeash.isEmpty()) {
              return InteractionResult.PASS;
-@@ -42,10 +42,22 @@ public class LeadItem extends Item {
+@@ -42,10 +_,22 @@
  
          Optional<LeashFenceKnotEntity> existingKnot = LeashFenceKnotEntity.getKnot(level, pos);
          LeashFenceKnotEntity activeKnot = existingKnot.orElseGet(() -> LeashFenceKnotEntity.createKnot(level, pos));
@@ -49,7 +41,7 @@ index 8bfab0fcc3e77d8cafa71bff924dda53f254dc9c..5a03357629e1450155c816180b595406
                  leashable.setLeashedTo(activeKnot, true);
                  anyLeashed = true;
              }
-@@ -63,4 +75,10 @@ public class LeadItem extends Item {
+@@ -63,4 +_,10 @@
  
          return InteractionResult.PASS;
      }

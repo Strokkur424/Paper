@@ -1,0 +1,211 @@
+--- a/data/minecraft/advancement/husbandry/whole_pack.json
++++ b/data/minecraft/advancement/husbandry/whole_pack.json
+@@ -3,127 +_,145 @@
+   "criteria": {
+     "minecraft:ashen": {
+       "conditions": {
+-        "entity": {
+-          "type": "minecraft:entity_properties",
+-          "entity": "this",
+-          "predicate": {
+-            "minecraft:components": {
+-              "minecraft:wolf/variant": "minecraft:ashen"
++        "entity": [
++          {
++            "condition": "minecraft:entity_properties",
++            "entity": "this",
++            "predicate": {
++              "minecraft:components": {
++                "minecraft:wolf/variant": "minecraft:ashen"
++              }
+             }
+           }
+-        }
++        ]
+       },
+       "trigger": "minecraft:tame_animal"
+     },
+     "minecraft:black": {
+       "conditions": {
+-        "entity": {
+-          "type": "minecraft:entity_properties",
+-          "entity": "this",
+-          "predicate": {
+-            "minecraft:components": {
+-              "minecraft:wolf/variant": "minecraft:black"
++        "entity": [
++          {
++            "condition": "minecraft:entity_properties",
++            "entity": "this",
++            "predicate": {
++              "minecraft:components": {
++                "minecraft:wolf/variant": "minecraft:black"
++              }
+             }
+           }
+-        }
++        ]
+       },
+       "trigger": "minecraft:tame_animal"
+     },
+     "minecraft:chestnut": {
+       "conditions": {
+-        "entity": {
+-          "type": "minecraft:entity_properties",
+-          "entity": "this",
+-          "predicate": {
+-            "minecraft:components": {
+-              "minecraft:wolf/variant": "minecraft:chestnut"
++        "entity": [
++          {
++            "condition": "minecraft:entity_properties",
++            "entity": "this",
++            "predicate": {
++              "minecraft:components": {
++                "minecraft:wolf/variant": "minecraft:chestnut"
++              }
+             }
+           }
+-        }
++        ]
+       },
+       "trigger": "minecraft:tame_animal"
+     },
+     "minecraft:pale": {
+       "conditions": {
+-        "entity": {
+-          "type": "minecraft:entity_properties",
+-          "entity": "this",
+-          "predicate": {
+-            "minecraft:components": {
+-              "minecraft:wolf/variant": "minecraft:pale"
++        "entity": [
++          {
++            "condition": "minecraft:entity_properties",
++            "entity": "this",
++            "predicate": {
++              "minecraft:components": {
++                "minecraft:wolf/variant": "minecraft:pale"
++              }
+             }
+           }
+-        }
++        ]
+       },
+       "trigger": "minecraft:tame_animal"
+     },
+     "minecraft:rusty": {
+       "conditions": {
+-        "entity": {
+-          "type": "minecraft:entity_properties",
+-          "entity": "this",
+-          "predicate": {
+-            "minecraft:components": {
+-              "minecraft:wolf/variant": "minecraft:rusty"
++        "entity": [
++          {
++            "condition": "minecraft:entity_properties",
++            "entity": "this",
++            "predicate": {
++              "minecraft:components": {
++                "minecraft:wolf/variant": "minecraft:rusty"
++              }
+             }
+           }
+-        }
++        ]
+       },
+       "trigger": "minecraft:tame_animal"
+     },
+     "minecraft:snowy": {
+       "conditions": {
+-        "entity": {
+-          "type": "minecraft:entity_properties",
+-          "entity": "this",
+-          "predicate": {
+-            "minecraft:components": {
+-              "minecraft:wolf/variant": "minecraft:snowy"
++        "entity": [
++          {
++            "condition": "minecraft:entity_properties",
++            "entity": "this",
++            "predicate": {
++              "minecraft:components": {
++                "minecraft:wolf/variant": "minecraft:snowy"
++              }
+             }
+           }
+-        }
++        ]
+       },
+       "trigger": "minecraft:tame_animal"
+     },
+     "minecraft:spotted": {
+       "conditions": {
+-        "entity": {
+-          "type": "minecraft:entity_properties",
+-          "entity": "this",
+-          "predicate": {
+-            "minecraft:components": {
+-              "minecraft:wolf/variant": "minecraft:spotted"
++        "entity": [
++          {
++            "condition": "minecraft:entity_properties",
++            "entity": "this",
++            "predicate": {
++              "minecraft:components": {
++                "minecraft:wolf/variant": "minecraft:spotted"
++              }
+             }
+           }
+-        }
++        ]
+       },
+       "trigger": "minecraft:tame_animal"
+     },
+     "minecraft:striped": {
+       "conditions": {
+-        "entity": {
+-          "type": "minecraft:entity_properties",
+-          "entity": "this",
+-          "predicate": {
+-            "minecraft:components": {
+-              "minecraft:wolf/variant": "minecraft:striped"
++        "entity": [
++          {
++            "condition": "minecraft:entity_properties",
++            "entity": "this",
++            "predicate": {
++              "minecraft:components": {
++                "minecraft:wolf/variant": "minecraft:striped"
++              }
+             }
+           }
+-        }
++        ]
+       },
+       "trigger": "minecraft:tame_animal"
+     },
+     "minecraft:woods": {
+       "conditions": {
+-        "entity": {
+-          "type": "minecraft:entity_properties",
+-          "entity": "this",
+-          "predicate": {
+-            "minecraft:components": {
+-              "minecraft:wolf/variant": "minecraft:woods"
++        "entity": [
++          {
++            "condition": "minecraft:entity_properties",
++            "entity": "this",
++            "predicate": {
++              "minecraft:components": {
++                "minecraft:wolf/variant": "minecraft:woods"
++              }
+             }
+           }
+-        }
++        ]
+       },
+       "trigger": "minecraft:tame_animal"
+     }

@@ -1,0 +1,10 @@
+--- a/data/minecraft/recipe/baked_potato_from_smoking.json
++++ b/data/minecraft/recipe/baked_potato_from_smoking.json
+@@ -1,7 +_,6 @@
+ {
+   "type": "minecraft:smoking",
+   "category": "food",
+-  "cookingtime": 200,
+   "experience": 0.35,
+   "ingredient": "minecraft:potato",
+   "result": {

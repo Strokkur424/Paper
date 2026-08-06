@@ -1,0 +1,42 @@
+--- a/data/minecraft/loot_table/blocks/bookshelf.json
++++ b/data/minecraft/loot_table/blocks/bookshelf.json
+@@ -8,18 +_,34 @@
+           "children": [
+             {
+               "type": "minecraft:item",
+-              "condition": "minecraft:tool/can_silk_touch",
++              "conditions": [
++                {
++                  "condition": "minecraft:match_tool",
++                  "predicate": {
++                    "predicates": {
++                      "minecraft:enchantments": [
++                        {
++                          "enchantments": "minecraft:silk_touch",
++                          "levels": {
++                            "min": 1
++                          }
++                        }
++                      ]
++                    }
++                  }
++                }
++              ],
+               "name": "minecraft:bookshelf"
+             },
+             {
+               "type": "minecraft:item",
+-              "modifier": [
++              "functions": [
+                 {
+-                  "type": "minecraft:set_count",
+-                  "count": 3.0
++                  "count": 3.0,
++                  "function": "minecraft:set_count"
+                 },
+                 {
+-                  "type": "minecraft:explosion_decay"
++                  "function": "minecraft:explosion_decay"
+                 }
+               ],
+               "name": "minecraft:book"

@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/building_blocks/brown_terracotta.json
++++ b/data/minecraft/advancement/recipes/building_blocks/brown_terracotta.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:brown_terracotta"
++        "recipe": "minecraft:brown_terracotta"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

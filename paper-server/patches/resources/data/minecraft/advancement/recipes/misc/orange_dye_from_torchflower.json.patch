@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/misc/orange_dye_from_torchflower.json
++++ b/data/minecraft/advancement/recipes/misc/orange_dye_from_torchflower.json
+@@ -3,7 +_,7 @@
+   "criteria": {
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:orange_dye_from_torchflower"
++        "recipe": "minecraft:orange_dye_from_torchflower"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     },

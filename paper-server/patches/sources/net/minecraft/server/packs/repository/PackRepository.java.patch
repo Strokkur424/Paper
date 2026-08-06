@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/server/packs/repository/PackRepository.java b/net/minecraft/server/packs/repository/PackRepository.java
-index 9a003c2bad467acdca34e592197f5861a970c7e0..7437af063b854fcac9d6d0d95e2690a3c953af88 100644
 --- a/net/minecraft/server/packs/repository/PackRepository.java
 +++ b/net/minecraft/server/packs/repository/PackRepository.java
-@@ -21,8 +21,12 @@ public class PackRepository {
+@@ -21,8 +_,12 @@
      private final Set<RepositorySource> sources;
      private Map<String, Pack> available = ImmutableMap.of();
      private List<Pack> selected = ImmutableList.of();
@@ -22,7 +14,7 @@ index 9a003c2bad467acdca34e592197f5861a970c7e0..7437af063b854fcac9d6d0d95e2690a3
          this.sources = ImmutableSet.copyOf(sources);
      }
  
-@@ -31,9 +35,14 @@ public class PackRepository {
+@@ -31,9 +_,14 @@
      }
  
      public void reload() {
@@ -38,7 +30,7 @@ index 9a003c2bad467acdca34e592197f5861a970c7e0..7437af063b854fcac9d6d0d95e2690a3
      }
  
      private Map<String, Pack> discoverAvailable() {
-@@ -43,16 +52,23 @@ public class PackRepository {
+@@ -43,16 +_,23 @@
              source.loadPacks(pack -> discovered.put(pack.getId(), pack));
          }
  
@@ -66,7 +58,7 @@ index 9a003c2bad467acdca34e592197f5861a970c7e0..7437af063b854fcac9d6d0d95e2690a3
      }
  
      public boolean addPack(final String packId) {
-@@ -79,11 +95,11 @@ public class PackRepository {
+@@ -79,11 +_,11 @@
          }
      }
  

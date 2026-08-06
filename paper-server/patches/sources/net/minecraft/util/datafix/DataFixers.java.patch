@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/util/datafix/DataFixers.java b/net/minecraft/util/datafix/DataFixers.java
-index ebb9735dc84cea284dd9910928f4384b9b095e69..a646e4aa8e6a4024af5957b1a023bebc0cbb8159 100644
 --- a/net/minecraft/util/datafix/DataFixers.java
 +++ b/net/minecraft/util/datafix/DataFixers.java
-@@ -564,6 +564,24 @@ public class DataFixers {
+@@ -564,6 +_,24 @@
          Schema v1456 = fixerUpper.addSchema(1456, SAME_NAMESPACED);
          fixerUpper.addFixer(new EntityItemFrameDirectionFix(v1456, false));
          Schema v1458 = fixerUpper.addSchema(1458, V1458::new);

@@ -1,0 +1,36 @@
+--- a/data/minecraft/loot_table/blocks/pitcher_plant.json
++++ b/data/minecraft/loot_table/blocks/pitcher_plant.json
+@@ -1,20 +_,24 @@
+ {
+   "type": "minecraft:block",
+-  "modifier": {
+-    "type": "minecraft:explosion_decay"
+-  },
++  "functions": [
++    {
++      "function": "minecraft:explosion_decay"
++    }
++  ],
+   "pools": [
+     {
+       "entries": [
+         {
+           "type": "minecraft:item",
+-          "condition": {
+-            "type": "minecraft:match_block",
+-            "blocks": "minecraft:pitcher_plant",
+-            "state": {
+-              "half": "lower"
++          "conditions": [
++            {
++              "block": "minecraft:pitcher_plant",
++              "condition": "minecraft:block_state_property",
++              "properties": {
++                "half": "lower"
++              }
+             }
+-          },
++          ],
+           "name": "minecraft:pitcher_plant"
+         }
+       ],

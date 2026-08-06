@@ -1,0 +1,18 @@
+--- a/data/minecraft/predicate/tool/can_silk_touch.json
++++ /dev/null
+@@ -1,15 +_,0 @@
+-{
+-  "type": "minecraft:match_tool",
+-  "predicate": {
+-    "predicates": {
+-      "minecraft:enchantments": [
+-        {
+-          "enchantments": "minecraft:silk_touch",
+-          "levels": {
+-            "min": 1
+-          }
+-        }
+-      ]
+-    }
+-  }
+-}

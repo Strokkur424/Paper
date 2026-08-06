@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/commands/arguments/selector/EntitySelectorParser.java b/net/minecraft/commands/arguments/selector/EntitySelectorParser.java
-index 8f96856111f85f038c3e8af0a42df5925abaeae6..d15219cfc49d462f0b6498c67bbc5e092dc52d42 100644
 --- a/net/minecraft/commands/arguments/selector/EntitySelectorParser.java
 +++ b/net/minecraft/commands/arguments/selector/EntitySelectorParser.java
-@@ -113,6 +113,11 @@ public class EntitySelectorParser {
+@@ -113,6 +_,11 @@
      }
  
      public static <S> boolean allowSelectors(final S source) {
@@ -20,7 +12,7 @@ index 8f96856111f85f038c3e8af0a42df5925abaeae6..d15219cfc49d462f0b6498c67bbc5e09
          return source instanceof PermissionSetSupplier sender && sender.permissions().hasPermission(Permissions.COMMANDS_ENTITY_SELECTORS);
      }
  
-@@ -194,8 +199,10 @@ public class EntitySelectorParser {
+@@ -194,8 +_,10 @@
          };
      }
  
@@ -33,7 +25,7 @@ index 8f96856111f85f038c3e8af0a42df5925abaeae6..d15219cfc49d462f0b6498c67bbc5e09
          this.suggestions = this::suggestSelector;
          if (!this.reader.canRead()) {
              throw ERROR_MISSING_SELECTOR_TYPE.createWithContext(this.reader);
-@@ -457,6 +464,12 @@ public class EntitySelectorParser {
+@@ -457,6 +_,12 @@
      }
  
      public EntitySelector parse() throws CommandSyntaxException {
@@ -46,7 +38,7 @@ index 8f96856111f85f038c3e8af0a42df5925abaeae6..d15219cfc49d462f0b6498c67bbc5e09
          this.startPosition = this.reader.getCursor();
          this.suggestions = this::suggestNameOrSelector;
          if (this.reader.canRead() && this.reader.peek() == '@') {
-@@ -465,7 +478,7 @@ public class EntitySelectorParser {
+@@ -465,7 +_,7 @@
              }
  
              this.reader.skip();

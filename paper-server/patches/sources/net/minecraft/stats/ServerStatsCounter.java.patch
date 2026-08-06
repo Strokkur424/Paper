@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/stats/ServerStatsCounter.java b/net/minecraft/stats/ServerStatsCounter.java
-index 75f463a99f88d54043b2deae3b38c0c3c8e03f3c..f5beb001b938072e78c0ead7e0ad0499784ed1cf 100644
 --- a/net/minecraft/stats/ServerStatsCounter.java
 +++ b/net/minecraft/stats/ServerStatsCounter.java
-@@ -75,9 +75,21 @@ public class ServerStatsCounter extends StatsCounter {
+@@ -75,9 +_,21 @@
                  LOGGER.error("Couldn't parse statistics file {}", file, e);
              }
          }
@@ -30,7 +22,7 @@ index 75f463a99f88d54043b2deae3b38c0c3c8e03f3c..f5beb001b938072e78c0ead7e0ad0499
          try {
              FileUtil.createDirectoriesSafe(this.file.getParent());
  
-@@ -91,6 +103,8 @@ public class ServerStatsCounter extends StatsCounter {
+@@ -91,6 +_,8 @@
  
      @Override
      public void setValue(final Player player, final Stat<?> stat, final int count) {

@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/BossEvent.java b/net/minecraft/world/BossEvent.java
-index 1956bc623b1dd073d1f3d54dfcf6f520de36d173..484f8da6c1b3f93088040899196ba017fc8fb7c7 100644
 --- a/net/minecraft/world/BossEvent.java
 +++ b/net/minecraft/world/BossEvent.java
-@@ -15,6 +15,7 @@ public abstract class BossEvent {
+@@ -15,6 +_,7 @@
      protected boolean darkenScreen;
      protected boolean playBossMusic;
      protected boolean createWorldFog;
@@ -16,7 +8,7 @@ index 1956bc623b1dd073d1f3d54dfcf6f520de36d173..484f8da6c1b3f93088040899196ba017
  
      public BossEvent(final UUID id, final Component name, final BossEvent.BossBarColor color, final BossEvent.BossBarOverlay overlay) {
          this.id = id;
-@@ -29,61 +30,75 @@ public abstract class BossEvent {
+@@ -29,61 +_,75 @@
      }
  
      public Component getName() {

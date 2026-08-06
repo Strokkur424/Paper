@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/server/notifications/NotificationService.java b/net/minecraft/server/notifications/NotificationService.java
-index d176a694c9abdcbf0109c97a5b25143b210d192b..5eb848319544c8127ceb0142a4fdb0b79d7aba29 100644
 --- a/net/minecraft/server/notifications/NotificationService.java
 +++ b/net/minecraft/server/notifications/NotificationService.java
-@@ -46,7 +46,7 @@ public interface NotificationService {
+@@ -46,7 +_,7 @@
  
      void playerUnbanned(NameAndId player);
  

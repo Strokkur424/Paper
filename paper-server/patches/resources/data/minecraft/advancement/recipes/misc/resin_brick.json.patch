@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/misc/resin_brick.json
++++ b/data/minecraft/advancement/recipes/misc/resin_brick.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:resin_brick"
++        "recipe": "minecraft:resin_brick"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

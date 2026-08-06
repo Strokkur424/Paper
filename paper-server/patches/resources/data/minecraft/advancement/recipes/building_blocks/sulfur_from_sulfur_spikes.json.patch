@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/building_blocks/sulfur_from_sulfur_spikes.json
++++ b/data/minecraft/advancement/recipes/building_blocks/sulfur_from_sulfur_spikes.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:sulfur_from_sulfur_spikes"
++        "recipe": "minecraft:sulfur_from_sulfur_spikes"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

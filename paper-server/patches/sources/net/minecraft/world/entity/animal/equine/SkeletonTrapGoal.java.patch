@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/entity/animal/equine/SkeletonTrapGoal.java b/net/minecraft/world/entity/animal/equine/SkeletonTrapGoal.java
-index 9eda7e878b06ca199dcc23d6682fa3ca6678cadb..9f9e7b6b40f0cf12fd5fca848dc223553857b9a0 100644
 --- a/net/minecraft/world/entity/animal/equine/SkeletonTrapGoal.java
 +++ b/net/minecraft/world/entity/animal/equine/SkeletonTrapGoal.java
-@@ -19,6 +19,7 @@ import org.jspecify.annotations.Nullable;
+@@ -19,6 +_,7 @@
  public class SkeletonTrapGoal extends Goal {
      private static final int LIGHTNING_INVULNERABLE_TICKS = 60;
      private final SkeletonHorse horse;
@@ -16,7 +8,7 @@ index 9eda7e878b06ca199dcc23d6682fa3ca6678cadb..9f9e7b6b40f0cf12fd5fca848dc22355
  
      public SkeletonTrapGoal(final SkeletonHorse horse) {
          this.horse = horse;
-@@ -26,12 +27,13 @@ public class SkeletonTrapGoal extends Goal {
+@@ -26,12 +_,13 @@
  
      @Override
      public boolean canUse() {
@@ -31,7 +23,7 @@ index 9eda7e878b06ca199dcc23d6682fa3ca6678cadb..9f9e7b6b40f0cf12fd5fca848dc22355
          DifficultyInstance difficulty = level.getCurrentDifficultyAt(this.horse.blockPosition());
          this.horse.setTrap(false);
          this.horse.setTamed(true);
-@@ -40,11 +42,11 @@ public class SkeletonTrapGoal extends Goal {
+@@ -40,11 +_,11 @@
          if (bolt != null) {
              bolt.snapTo(this.horse.getX(), this.horse.getY(), this.horse.getZ());
              bolt.setVisualOnly(true);
@@ -45,7 +37,7 @@ index 9eda7e878b06ca199dcc23d6682fa3ca6678cadb..9f9e7b6b40f0cf12fd5fca848dc22355
  
                  for (int i = 0; i < 3; i++) {
                      AbstractHorse otherHorse = this.createHorse(difficulty);
-@@ -53,7 +55,7 @@ public class SkeletonTrapGoal extends Goal {
+@@ -53,7 +_,7 @@
                          if (otherSkeleton != null) {
                              otherSkeleton.startRiding(otherHorse);
                              otherHorse.push(this.horse.getRandom().triangle(0.0, 1.1485), 0.0, this.horse.getRandom().triangle(0.0, 1.1485));

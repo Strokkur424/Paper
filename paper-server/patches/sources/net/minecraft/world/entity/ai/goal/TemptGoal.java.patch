@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/entity/ai/goal/TemptGoal.java b/net/minecraft/world/entity/ai/goal/TemptGoal.java
-index 9eaa1ef31521691ed7c3b6859a502f13e73b5fc0..af2bd8a5cf760792a63dfb9c2370360f288beab6 100644
 --- a/net/minecraft/world/entity/ai/goal/TemptGoal.java
 +++ b/net/minecraft/world/entity/ai/goal/TemptGoal.java
-@@ -23,7 +23,7 @@ public class TemptGoal extends Goal {
+@@ -23,7 +_,7 @@
      private double pz;
      private double pRotX;
      private double pRotY;
@@ -17,7 +9,7 @@ index 9eaa1ef31521691ed7c3b6859a502f13e73b5fc0..af2bd8a5cf760792a63dfb9c2370360f
      private int calmDown;
      private boolean isRunning;
      private final Predicate<ItemStack> items;
-@@ -56,6 +56,15 @@ public class TemptGoal extends Goal {
+@@ -56,6 +_,15 @@
          } else {
              this.player = getServerLevel(this.mob)
                  .getNearestPlayer(this.targetingConditions.range(this.mob.getAttributeValue(Attributes.TEMPT_RANGE)), this.mob);
@@ -33,7 +25,7 @@ index 9eaa1ef31521691ed7c3b6859a502f13e73b5fc0..af2bd8a5cf760792a63dfb9c2370360f
              return this.player != null;
          }
      }
-@@ -122,7 +131,7 @@ public class TemptGoal extends Goal {
+@@ -122,7 +_,7 @@
          this.mob.getNavigation().stop();
      }
  
@@ -42,7 +34,7 @@ index 9eaa1ef31521691ed7c3b6859a502f13e73b5fc0..af2bd8a5cf760792a63dfb9c2370360f
          this.mob.getNavigation().moveTo(player, this.speedModifier);
      }
  
-@@ -141,7 +150,7 @@ public class TemptGoal extends Goal {
+@@ -141,7 +_,7 @@
          }
  
          @Override

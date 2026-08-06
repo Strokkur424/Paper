@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/gametest/framework/TestEnvironmentDefinition.java b/net/minecraft/gametest/framework/TestEnvironmentDefinition.java
-index 3597e72e1fcc0f83ec1d0348a05895701d8fd05d..58dd562fad900466a572e6b2fb429e338e817916 100644
 --- a/net/minecraft/gametest/framework/TestEnvironmentDefinition.java
 +++ b/net/minecraft/gametest/framework/TestEnvironmentDefinition.java
-@@ -184,13 +184,13 @@ public interface TestEnvironmentDefinition<SavedDataType> {
+@@ -184,13 +_,13 @@
          @Override
          public Difficulty setup(final ServerLevel level) {
              Difficulty oldDifficulty = level.getDifficulty();
@@ -24,7 +16,7 @@ index 3597e72e1fcc0f83ec1d0348a05895701d8fd05d..58dd562fad900466a572e6b2fb429e33
          }
  
          @Override
-@@ -210,7 +210,7 @@ public interface TestEnvironmentDefinition<SavedDataType> {
+@@ -210,7 +_,7 @@
              GameRuleMap originalState = GameRuleMap.of();
              GameRules gameRules = level.getGameRules();
              this.gameRulesMap.keySet().forEach(rule -> setFromActive(originalState, (GameRule<?>)rule, gameRules));
@@ -33,7 +25,7 @@ index 3597e72e1fcc0f83ec1d0348a05895701d8fd05d..58dd562fad900466a572e6b2fb429e33
              return originalState;
          }
  
-@@ -220,7 +220,7 @@ public interface TestEnvironmentDefinition<SavedDataType> {
+@@ -220,7 +_,7 @@
  
          @Override
          public void teardown(final ServerLevel level, final GameRuleMap saveData) {
@@ -42,7 +34,7 @@ index 3597e72e1fcc0f83ec1d0348a05895701d8fd05d..58dd562fad900466a572e6b2fb429e33
          }
  
          @Override
-@@ -312,7 +312,7 @@ public interface TestEnvironmentDefinition<SavedDataType> {
+@@ -312,7 +_,7 @@
              }
  
              public void apply(final ServerLevel level) {

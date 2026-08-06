@@ -1,0 +1,24 @@
+--- a/data/minecraft/advancement/adventure/brush_armadillo.json
++++ b/data/minecraft/advancement/adventure/brush_armadillo.json
+@@ -3,13 +_,15 @@
+   "criteria": {
+     "brush_armadillo": {
+       "conditions": {
+-        "entity": {
+-          "type": "minecraft:entity_properties",
+-          "entity": "this",
+-          "predicate": {
+-            "minecraft:entity_type": "minecraft:armadillo"
++        "entity": [
++          {
++            "condition": "minecraft:entity_properties",
++            "entity": "this",
++            "predicate": {
++              "minecraft:entity_type": "minecraft:armadillo"
++            }
+           }
+-        },
++        ],
+         "item": {
+           "items": "minecraft:brush"
+         }

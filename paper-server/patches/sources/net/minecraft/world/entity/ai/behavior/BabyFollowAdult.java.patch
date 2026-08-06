@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/entity/ai/behavior/BabyFollowAdult.java b/net/minecraft/world/entity/ai/behavior/BabyFollowAdult.java
-index 4954ffe7ddd7da8f4dd5de1d4c8f3776fc0d565b..801ba5da1fa5fb8b2fc6e76053cf150c040f455a 100644
 --- a/net/minecraft/world/entity/ai/behavior/BabyFollowAdult.java
 +++ b/net/minecraft/world/entity/ai/behavior/BabyFollowAdult.java
-@@ -28,6 +28,17 @@ public class BabyFollowAdult {
+@@ -28,6 +_,17 @@
                          } else {
                              LivingEntity adult = i.get(nearestAdult);
                              if (body.closerThan(adult, followRange.maxInclusive() + 1) && !body.closerThan(adult, followRange.minInclusive())) {

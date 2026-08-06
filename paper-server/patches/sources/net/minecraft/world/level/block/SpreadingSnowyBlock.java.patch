@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/level/block/SpreadingSnowyBlock.java b/net/minecraft/world/level/block/SpreadingSnowyBlock.java
-index cf73231ad9421e099fb2bc28085f863b5f5958e2..09e3265584a9764e4b9ee103870d6b6c48ae17e5 100644
 --- a/net/minecraft/world/level/block/SpreadingSnowyBlock.java
 +++ b/net/minecraft/world/level/block/SpreadingSnowyBlock.java
-@@ -44,10 +44,16 @@ public abstract class SpreadingSnowyBlock extends SnowyBlock {
+@@ -44,10 +_,16 @@
  
      @Override
      protected void randomTick(final BlockState state, final ServerLevel level, final BlockPos pos, final RandomSource random) {
@@ -25,7 +17,7 @@ index cf73231ad9421e099fb2bc28085f863b5f5958e2..09e3265584a9764e4b9ee103870d6b6c
                  level.setBlockAndUpdate(pos, baseBlock.get().defaultBlockState());
              } else {
                  if (level.getMaxLocalRawBrightness(pos.above()) >= 9) {
-@@ -56,7 +62,7 @@ public abstract class SpreadingSnowyBlock extends SnowyBlock {
+@@ -56,7 +_,7 @@
                      for (int i = 0; i < 4; i++) {
                          BlockPos testPos = pos.offset(random.nextInt(3) - 1, random.nextInt(5) - 3, random.nextInt(3) - 1);
                          if (level.getBlockState(testPos).is(baseBlock.get()) && canPropagate(defaultBlockState, level, testPos)) {

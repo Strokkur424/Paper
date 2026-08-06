@@ -1,0 +1,11 @@
+--- a/data/minecraft/enchantment/impaling.json
++++ b/data/minecraft/enchantment/impaling.json
+@@ -15,7 +_,7 @@
+           }
+         },
+         "requirements": {
+-          "type": "minecraft:entity_properties",
++          "condition": "minecraft:entity_properties",
+           "entity": "this",
+           "predicate": {
+             "minecraft:entity_type": "#minecraft:sensitive_to_impaling"

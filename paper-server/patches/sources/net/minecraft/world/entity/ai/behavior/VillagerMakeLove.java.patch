@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/entity/ai/behavior/VillagerMakeLove.java b/net/minecraft/world/entity/ai/behavior/VillagerMakeLove.java
-index 4bb5e95708eeb9806f1c8670cfb36a4d9dc7f866..979b537bb459898a501af86280fa313ac58510b2 100644
 --- a/net/minecraft/world/entity/ai/behavior/VillagerMakeLove.java
 +++ b/net/minecraft/world/entity/ai/behavior/VillagerMakeLove.java
-@@ -112,11 +112,17 @@ public class VillagerMakeLove extends Behavior<Villager> {
+@@ -112,11 +_,17 @@
              return Optional.empty();
          }
  

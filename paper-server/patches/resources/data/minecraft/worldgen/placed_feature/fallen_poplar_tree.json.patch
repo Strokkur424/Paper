@@ -1,0 +1,15 @@
+--- a/data/minecraft/worldgen/placed_feature/fallen_poplar_tree.json
++++ /dev/null
+@@ -1,12 +_,0 @@
+-{
+-  "feature": "minecraft:fallen_poplar_tree",
+-  "placement": [
+-    {
+-      "type": "minecraft:block_predicate_filter",
+-      "predicate": {
+-        "type": "minecraft:would_survive",
+-        "state": "minecraft:poplar_sapling"
+-      }
+-    }
+-  ]
+-}

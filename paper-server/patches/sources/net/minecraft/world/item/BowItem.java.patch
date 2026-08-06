@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/item/BowItem.java b/net/minecraft/world/item/BowItem.java
-index 9ea0f3594efc2e4c8dc23a10461a0c87b10f074e..c79f895ebc95ebbee1cfdf371f9544d351333938 100644
 --- a/net/minecraft/world/item/BowItem.java
 +++ b/net/minecraft/world/item/BowItem.java
-@@ -38,7 +38,7 @@ public class BowItem extends ProjectileWeaponItem {
+@@ -38,7 +_,7 @@
  
              List<ItemStack> firedProjectiles = draw(itemStack, projectile, player);
              if (level instanceof ServerLevel serverLevel && !firedProjectiles.isEmpty()) {

@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/entity/animal/cow/MushroomCow.java b/net/minecraft/world/entity/animal/cow/MushroomCow.java
-index 55aec6e8d1128fea70fd82e34202da8bd586f658..032aa4488e16b9ccf94bf11ec17edf98df629cb6 100644
 --- a/net/minecraft/world/entity/animal/cow/MushroomCow.java
 +++ b/net/minecraft/world/entity/animal/cow/MushroomCow.java
-@@ -124,7 +124,13 @@ public class MushroomCow extends AbstractCow implements Shearable {
+@@ -124,7 +_,13 @@
              return InteractionResult.SUCCESS;
          } else if (itemStack.is(Items.SHEARS) && this.readyForShearing()) {
              if (this.level() instanceof ServerLevel level) {
@@ -23,7 +15,7 @@ index 55aec6e8d1128fea70fd82e34202da8bd586f658..032aa4488e16b9ccf94bf11ec17edf98
                  this.gameEvent(GameEvent.SHEAR, player);
                  itemStack.hurtAndBreak(1, player, hand.asEquipmentSlot());
              }
-@@ -178,15 +184,31 @@ public class MushroomCow extends AbstractCow implements Shearable {
+@@ -178,15 +_,31 @@
  
      @Override
      public void shear(final ServerLevel level, final SoundSource soundSource, final ItemStack tool) {

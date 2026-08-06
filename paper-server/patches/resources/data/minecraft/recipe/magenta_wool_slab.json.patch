@@ -1,0 +1,18 @@
+--- a/data/minecraft/recipe/magenta_wool_slab.json
++++ /dev/null
+@@ -1,15 +_,0 @@
+-{
+-  "type": "minecraft:crafting_shaped",
+-  "category": "building",
+-  "group": "woolen_slab",
+-  "key": {
+-    "#": "minecraft:magenta_wool"
+-  },
+-  "pattern": [
+-    "###"
+-  ],
+-  "result": {
+-    "count": 6,
+-    "id": "minecraft:magenta_wool_slab"
+-  }
+-}

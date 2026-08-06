@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/server/players/UserBanListEntry.java b/net/minecraft/server/players/UserBanListEntry.java
-index 08143a729cd753c0be5c61701c778a40e3d832df..823cd9eb227c1a81119d34335de3fe60f21c9e4a 100644
 --- a/net/minecraft/server/players/UserBanListEntry.java
 +++ b/net/minecraft/server/players/UserBanListEntry.java
-@@ -23,7 +23,7 @@ public class UserBanListEntry extends BanListEntry<NameAndId> {
+@@ -23,7 +_,7 @@
      }
  
      public UserBanListEntry(final JsonObject object) {
@@ -17,7 +9,7 @@ index 08143a729cd753c0be5c61701c778a40e3d832df..823cd9eb227c1a81119d34335de3fe60
      }
  
      @Override
-@@ -39,4 +39,31 @@ public class UserBanListEntry extends BanListEntry<NameAndId> {
+@@ -39,4 +_,31 @@
          NameAndId user = this.getUser();
          return user != null ? Component.literal(user.name()) : MESSAGE_UNKNOWN_USER;
      }

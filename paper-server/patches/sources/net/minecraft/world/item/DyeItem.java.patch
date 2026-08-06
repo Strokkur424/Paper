@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/item/DyeItem.java b/net/minecraft/world/item/DyeItem.java
-index 87e47b427a4fa3f7826a25152bc5d54b4cb9f219..1876b28009bfb132bbe9723e5345828fd4461fef 100644
 --- a/net/minecraft/world/item/DyeItem.java
 +++ b/net/minecraft/world/item/DyeItem.java
-@@ -24,7 +24,17 @@ public class DyeItem extends Item implements SignApplicator {
+@@ -24,7 +_,17 @@
              if (dyeColor != null && sheep.getColor() != dyeColor) {
                  sheep.level().playSound(player, sheep, SoundEvents.DYE_USE, SoundSource.PLAYERS, 1.0F, 1.0F);
                  if (!player.level().isClientSide()) {

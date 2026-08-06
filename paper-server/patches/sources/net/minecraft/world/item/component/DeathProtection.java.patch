@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/item/component/DeathProtection.java b/net/minecraft/world/item/component/DeathProtection.java
-index 770d5b4b7a75b13354ece88fcbf29924e6d07d0c..428a0538107a1849e33ff221bb5b4018e3f56db4 100644
 --- a/net/minecraft/world/item/component/DeathProtection.java
 +++ b/net/minecraft/world/item/component/DeathProtection.java
-@@ -37,7 +37,7 @@ public record DeathProtection(List<ConsumeEffect> deathEffects) {
+@@ -37,7 +_,7 @@
  
      public void applyEffects(final ItemStack itemStack, final LivingEntity entity) {
          for (ConsumeEffect effect : this.deathEffects) {

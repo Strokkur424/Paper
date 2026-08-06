@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/level/block/BellBlock.java b/net/minecraft/world/level/block/BellBlock.java
-index 1941700678a82bf3cf44e630062c152b47dd044f..529445ea1376fe969cde377f8f2f5c1704a076b8 100644
 --- a/net/minecraft/world/level/block/BellBlock.java
 +++ b/net/minecraft/world/level/block/BellBlock.java
-@@ -67,6 +67,11 @@ public class BellBlock extends BaseEntityBlock {
+@@ -67,6 +_,11 @@
      ) {
          boolean signal = level.hasNeighborSignal(pos);
          if (signal != state.getValue(POWERED)) {
@@ -20,7 +12,7 @@ index 1941700678a82bf3cf44e630062c152b47dd044f..529445ea1376fe969cde377f8f2f5c17
              if (signal) {
                  this.attemptToRing(level, pos, null);
              }
-@@ -132,6 +137,11 @@ public class BellBlock extends BaseEntityBlock {
+@@ -132,6 +_,11 @@
                  direction = level.getBlockState(pos).getValue(FACING);
              }
  

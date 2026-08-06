@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/level/block/LiquidBlock.java b/net/minecraft/world/level/block/LiquidBlock.java
-index 2cfb0694b8fd7935be639501cd426bd66d0f0e42..68f70d191418a3c0cde55d419aef38c0df27ee69 100644
 --- a/net/minecraft/world/level/block/LiquidBlock.java
 +++ b/net/minecraft/world/level/block/LiquidBlock.java
-@@ -130,7 +130,7 @@ public class LiquidBlock extends Block implements BucketPickup {
+@@ -130,7 +_,7 @@
      @Override
      protected void onPlace(final BlockState state, final Level level, final BlockPos pos, final BlockState oldState, final boolean movedByPiston) {
          if (this.shouldSpreadLiquid(level, pos, state)) {
@@ -17,7 +9,7 @@ index 2cfb0694b8fd7935be639501cd426bd66d0f0e42..68f70d191418a3c0cde55d419aef38c0
          }
  
          if (shouldBubbleColumnOccupy(state)) {
-@@ -147,6 +147,27 @@ public class LiquidBlock extends Block implements BucketPickup {
+@@ -147,6 +_,27 @@
          }
      }
  
@@ -45,7 +37,7 @@ index 2cfb0694b8fd7935be639501cd426bd66d0f0e42..68f70d191418a3c0cde55d419aef38c0
      @Override
      protected BlockState updateShape(
          final BlockState state,
-@@ -178,7 +199,7 @@ public class LiquidBlock extends Block implements BucketPickup {
+@@ -178,7 +_,7 @@
          final BlockState state, final Level level, final BlockPos pos, final Block block, final @Nullable Orientation orientation, final boolean movedByPiston
      ) {
          if (this.shouldSpreadLiquid(level, pos, state)) {
@@ -54,7 +46,7 @@ index 2cfb0694b8fd7935be639501cd426bd66d0f0e42..68f70d191418a3c0cde55d419aef38c0
          }
  
          if (shouldBubbleColumnOccupy(state)) {
-@@ -201,14 +222,20 @@ public class LiquidBlock extends Block implements BucketPickup {
+@@ -201,14 +_,20 @@
                  BlockPos neighbourPos = pos.relative(direction.getOpposite());
                  if (level.getFluidState(neighbourPos).is(FluidTags.WATER)) {
                      Block convertToBlock = level.getFluidState(pos).isSource() ? Blocks.OBSIDIAN : Blocks.COBBLESTONE;

@@ -1,0 +1,55 @@
+--- a/data/minecraft/enchantment/channeling.json
++++ b/data/minecraft/enchantment/channeling.json
+@@ -22,21 +_,21 @@
+           ]
+         },
+         "requirements": {
+-          "type": "minecraft:all_of",
++          "condition": "minecraft:all_of",
+           "terms": [
+             {
+-              "type": "minecraft:weather_check",
++              "condition": "minecraft:weather_check",
+               "thundering": true
+             },
+             {
+-              "type": "minecraft:entity_properties",
++              "condition": "minecraft:entity_properties",
+               "entity": "this",
+               "predicate": {
+                 "minecraft:entity_type": "minecraft:trident"
+               }
+             },
+             {
+-              "type": "minecraft:location_check",
++              "condition": "minecraft:location_check",
+               "predicate": {
+                 "block": {
+                   "blocks": "#minecraft:lightning_rods"
+@@ -68,14 +_,14 @@
+         },
+         "enchanted": "attacker",
+         "requirements": {
+-          "type": "minecraft:all_of",
++          "condition": "minecraft:all_of",
+           "terms": [
+             {
+-              "type": "minecraft:weather_check",
++              "condition": "minecraft:weather_check",
+               "thundering": true
+             },
+             {
+-              "type": "minecraft:entity_properties",
++              "condition": "minecraft:entity_properties",
+               "entity": "this",
+               "predicate": {
+                 "minecraft:location": {
+@@ -84,7 +_,7 @@
+               }
+             },
+             {
+-              "type": "minecraft:entity_properties",
++              "condition": "minecraft:entity_properties",
+               "entity": "direct_attacker",
+               "predicate": {
+                 "minecraft:entity_type": "minecraft:trident"

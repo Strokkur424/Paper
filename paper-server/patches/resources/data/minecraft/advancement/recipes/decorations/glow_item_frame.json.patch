@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/decorations/glow_item_frame.json
++++ b/data/minecraft/advancement/recipes/decorations/glow_item_frame.json
+@@ -23,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:glow_item_frame"
++        "recipe": "minecraft:glow_item_frame"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

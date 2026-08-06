@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/building_blocks/smooth_quartz_slab_from_smooth_quartz_stonecutting.json
++++ b/data/minecraft/advancement/recipes/building_blocks/smooth_quartz_slab_from_smooth_quartz_stonecutting.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:smooth_quartz_slab_from_smooth_quartz_stonecutting"
++        "recipe": "minecraft:smooth_quartz_slab_from_smooth_quartz_stonecutting"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

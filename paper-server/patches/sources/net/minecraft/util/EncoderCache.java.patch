@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/util/EncoderCache.java b/net/minecraft/util/EncoderCache.java
-index 3466a38710666596f39251244cb48df85c28e3a8..6839e0017b9f4fae79ff5a910750a370e6954ed7 100644
 --- a/net/minecraft/util/EncoderCache.java
 +++ b/net/minecraft/util/EncoderCache.java
-@@ -26,6 +26,7 @@ public class EncoderCache {
+@@ -26,6 +_,7 @@
      }
  
      public <A> Codec<A> wrap(final Codec<A> codec) {
@@ -16,7 +8,7 @@ index 3466a38710666596f39251244cb48df85c28e3a8..6839e0017b9f4fae79ff5a910750a370
          return new Codec<A>() {
              @Override
              public <T> DataResult<Pair<A, T>> decode(final DynamicOps<T> ops, final T input) {
-@@ -35,13 +36,13 @@ public class EncoderCache {
+@@ -35,13 +_,13 @@
              @Override
              public <T> DataResult<T> encode(final A input, final DynamicOps<T> ops, final T prefix) {
                  return EncoderCache.this.cache
@@ -32,7 +24,7 @@ index 3466a38710666596f39251244cb48df85c28e3a8..6839e0017b9f4fae79ff5a910750a370
          public DataResult<T> resolve() {
              return this.codec.encodeStart(this.ops, this.value);
          }
-@@ -49,12 +50,13 @@ public class EncoderCache {
+@@ -49,12 +_,13 @@
          @Override
          public boolean equals(final Object obj) {
              return this == obj

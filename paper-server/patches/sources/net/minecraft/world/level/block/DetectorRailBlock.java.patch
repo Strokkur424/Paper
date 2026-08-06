@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/level/block/DetectorRailBlock.java b/net/minecraft/world/level/block/DetectorRailBlock.java
-index 6c77ff422cb3da293c8aa472a24da7422c8ef34f..157e2ee627eb3b717f532a19c2f5652928d5408f 100644
 --- a/net/minecraft/world/level/block/DetectorRailBlock.java
 +++ b/net/minecraft/world/level/block/DetectorRailBlock.java
-@@ -55,6 +55,7 @@ public class DetectorRailBlock extends BaseRailBlock {
+@@ -55,6 +_,7 @@
          final InsideBlockEffectApplier effectApplier,
          final boolean isPrecise
      ) {
@@ -16,7 +8,7 @@ index 6c77ff422cb3da293c8aa472a24da7422c8ef34f..157e2ee627eb3b717f532a19c2f56529
          if (!level.isClientSide()) {
              if (!state.getValue(POWERED)) {
                  this.checkPressed(level, pos, state);
-@@ -80,6 +81,7 @@ public class DetectorRailBlock extends BaseRailBlock {
+@@ -80,12 +_,21 @@
  
      private void checkPressed(final Level level, final BlockPos pos, final BlockState state) {
          if (this.canSurvive(state, level, pos)) {
@@ -24,10 +16,10 @@ index 6c77ff422cb3da293c8aa472a24da7422c8ef34f..157e2ee627eb3b717f532a19c2f56529
              boolean wasPressed = state.getValue(POWERED);
              boolean shouldBePressed = false;
              List<AbstractMinecart> entities = this.getInteractingMinecartOfType(level, pos, AbstractMinecart.class, e -> true);
-@@ -87,6 +89,14 @@ public class DetectorRailBlock extends BaseRailBlock {
+             if (!entities.isEmpty()) {
                  shouldBePressed = true;
              }
- 
++
 +            // Paper start - Call BlockRedstoneEvent
 +            if (wasPressed != shouldBePressed) {
 +                if (!org.bukkit.craftbukkit.event.CraftEventFactory.callBinaryRedstoneChange(level, pos, shouldBePressed)) {
@@ -35,7 +27,6 @@ index 6c77ff422cb3da293c8aa472a24da7422c8ef34f..157e2ee627eb3b717f532a19c2f56529
 +                }
 +            }
 +            // Paper end - Call BlockRedstoneEvent
-+
+ 
              if (shouldBePressed && !wasPressed) {
                  BlockState newState = state.setValue(POWERED, true);
-                 level.setBlockAndUpdate(pos, newState);

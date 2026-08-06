@@ -1,0 +1,47 @@
+--- a/data/minecraft/advancement/recipes/misc/bowl.json
++++ b/data/minecraft/advancement/recipes/misc/bowl.json
+@@ -1,11 +_,11 @@
+ {
+   "parent": "minecraft:recipes/root",
+   "criteria": {
+-    "has_mushroom": {
++    "has_brown_mushroom": {
+       "conditions": {
+         "items": [
+           {
+-            "items": "#minecraft:mushrooms"
++            "items": "minecraft:brown_mushroom"
+           }
+         ]
+       },
+@@ -21,9 +_,19 @@
+       },
+       "trigger": "minecraft:inventory_changed"
+     },
++    "has_red_mushroom": {
++      "conditions": {
++        "items": [
++          {
++            "items": "minecraft:red_mushroom"
++          }
++        ]
++      },
++      "trigger": "minecraft:inventory_changed"
++    },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:bowl"
++        "recipe": "minecraft:bowl"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }
+@@ -31,7 +_,8 @@
+   "requirements": [
+     [
+       "has_the_recipe",
+-      "has_mushroom",
++      "has_brown_mushroom",
++      "has_red_mushroom",
+       "has_mushroom_stew"
+     ]
+   ],

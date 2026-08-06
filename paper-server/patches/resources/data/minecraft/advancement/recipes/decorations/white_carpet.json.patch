@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/decorations/white_carpet.json
++++ b/data/minecraft/advancement/recipes/decorations/white_carpet.json
+@@ -3,7 +_,7 @@
+   "criteria": {
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:white_carpet"
++        "recipe": "minecraft:white_carpet"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     },

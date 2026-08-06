@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/item/enchantment/effects/ChangeItemDamage.java b/net/minecraft/world/item/enchantment/effects/ChangeItemDamage.java
-index 3d508e2ae6abdf5363d2deb3619221f485b14401..b0afbb867c3c5ac7df92bb4db5d8ba65a9c7e24c 100644
 --- a/net/minecraft/world/item/enchantment/effects/ChangeItemDamage.java
 +++ b/net/minecraft/world/item/enchantment/effects/ChangeItemDamage.java
-@@ -20,9 +20,9 @@ public record ChangeItemDamage(LevelBasedValue amount) implements EnchantmentEnt
+@@ -20,9 +_,9 @@
      public void apply(final ServerLevel serverLevel, final int enchantmentLevel, final EnchantedItemInUse item, final Entity entity, final Vec3 position) {
          ItemStack itemStack = item.itemStack();
          if (itemStack.has(DataComponents.MAX_DAMAGE) && itemStack.has(DataComponents.DAMAGE)) {

@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/combat/netherite_horse_armor_smithing.json
++++ b/data/minecraft/advancement/recipes/combat/netherite_horse_armor_smithing.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:netherite_horse_armor_smithing"
++        "recipe": "minecraft:netherite_horse_armor_smithing"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

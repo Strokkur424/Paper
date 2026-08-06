@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/entity/projectile/throwableitemprojectile/ThrownEnderpearl.java b/net/minecraft/world/entity/projectile/throwableitemprojectile/ThrownEnderpearl.java
-index ecc46a8e4b12f97b562c487c6572240536b448cf..8d3c6abd387acc4cec27a33b96bcd24255fd01ac 100644
 --- a/net/minecraft/world/entity/projectile/throwableitemprojectile/ThrownEnderpearl.java
 +++ b/net/minecraft/world/entity/projectile/throwableitemprojectile/ThrownEnderpearl.java
-@@ -104,11 +104,22 @@ public class ThrownEnderpearl extends ThrowableItemProjectile {
+@@ -104,11 +_,22 @@
                  Vec3 teleportPos = this.oldPosition();
                  if (owner instanceof ServerPlayer player) {
                      if (player.connection.isAcceptingMessages()) {
@@ -33,7 +25,7 @@ index ecc46a8e4b12f97b562c487c6572240536b448cf..8d3c6abd387acc4cec27a33b96bcd242
                              }
                          }
  
-@@ -116,15 +127,17 @@ public class ThrownEnderpearl extends ThrowableItemProjectile {
+@@ -116,15 +_,17 @@
                              owner.setPortalCooldown();
                          }
  
@@ -57,7 +49,7 @@ index ecc46a8e4b12f97b562c487c6572240536b448cf..8d3c6abd387acc4cec27a33b96bcd242
                          }
  
                          this.playSound(level, teleportPos);
-@@ -144,9 +157,9 @@ public class ThrownEnderpearl extends ThrowableItemProjectile {
+@@ -144,9 +_,9 @@
                      this.playSound(level, teleportPos);
                  }
  
@@ -69,7 +61,7 @@ index ecc46a8e4b12f97b562c487c6572240536b448cf..8d3c6abd387acc4cec27a33b96bcd242
              }
          }
      }
-@@ -169,7 +182,7 @@ public class ThrownEnderpearl extends ThrowableItemProjectile {
+@@ -169,7 +_,7 @@
                  && !owner.isAlive()
                  && !serverPlayer.wonGame
                  && serverPlayer.level().getGameRules().get(GameRules.ENDER_PEARLS_VANISH_ON_DEATH)) {
@@ -78,7 +70,7 @@ index ecc46a8e4b12f97b562c487c6572240536b448cf..8d3c6abd387acc4cec27a33b96bcd242
              } else {
                  super.tick();
              }
-@@ -198,7 +211,7 @@ public class ThrownEnderpearl extends ThrowableItemProjectile {
+@@ -198,7 +_,7 @@
      public @Nullable Entity teleport(final TeleportTransition transition) {
          Entity newEntity = super.teleport(transition);
          if (newEntity != null) {
@@ -87,7 +79,7 @@ index ecc46a8e4b12f97b562c487c6572240536b448cf..8d3c6abd387acc4cec27a33b96bcd242
          }
  
          return newEntity;
-@@ -206,7 +219,7 @@ public class ThrownEnderpearl extends ThrowableItemProjectile {
+@@ -206,7 +_,7 @@
  
      @Override
      public boolean canTeleport(final Level from, final Level to) {

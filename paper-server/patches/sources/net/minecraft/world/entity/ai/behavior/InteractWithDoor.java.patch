@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/entity/ai/behavior/InteractWithDoor.java b/net/minecraft/world/entity/ai/behavior/InteractWithDoor.java
-index 1ec957fc806389710c1647dbfdce8aef3491b0f1..8ab7f9d3ae6f4fd4dbad9a7149f0db96d19d3909 100644
 --- a/net/minecraft/world/entity/ai/behavior/InteractWithDoor.java
 +++ b/net/minecraft/world/entity/ai/behavior/InteractWithDoor.java
-@@ -56,6 +56,12 @@ public class InteractWithDoor {
+@@ -56,6 +_,12 @@
                              if (fromState.is(BlockTags.MOB_INTERACTABLE_DOORS, s -> s.getBlock() instanceof DoorBlock)) {
                                  DoorBlock fromBlock = (DoorBlock)fromState.getBlock();
                                  if (!fromBlock.isOpen(fromState)) {
@@ -21,7 +13,7 @@ index 1ec957fc806389710c1647dbfdce8aef3491b0f1..8ab7f9d3ae6f4fd4dbad9a7149f0db96
                                      fromBlock.setOpen(body, level, fromState, fromPos, true);
                                  }
  
-@@ -67,6 +73,12 @@ public class InteractWithDoor {
+@@ -67,6 +_,12 @@
                              if (toState.is(BlockTags.MOB_INTERACTABLE_DOORS, s -> s.getBlock() instanceof DoorBlock)) {
                                  DoorBlock door = (DoorBlock)toState.getBlock();
                                  if (!door.isOpen(toState)) {

@@ -1,0 +1,11 @@
+--- a/data/minecraft/datapacks/trade_rebalance/data/minecraft/villager_trade/armorer/5/diamond_block_emerald_taiga.json
++++ b/data/minecraft/datapacks/trade_rebalance/data/minecraft/villager_trade/armorer/5/diamond_block_emerald_taiga.json
+@@ -5,7 +_,7 @@
+   },
+   "max_uses": 12.0,
+   "merchant_predicate": {
+-    "type": "minecraft:entity_properties",
++    "condition": "minecraft:entity_properties",
+     "entity": "this",
+     "predicate": {
+       "minecraft:predicates": {

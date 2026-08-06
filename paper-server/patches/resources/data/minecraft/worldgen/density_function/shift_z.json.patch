@@ -1,0 +1,16 @@
+--- a/data/minecraft/worldgen/density_function/shift_z.json
++++ b/data/minecraft/worldgen/density_function/shift_z.json
+@@ -1,10 +_,10 @@
+ {
+   "type": "minecraft:flat_cache",
+-  "input": {
++  "argument": {
+     "type": "minecraft:cache_2d",
+-    "input": {
++    "argument": {
+       "type": "minecraft:shift_b",
+-      "noise": "minecraft:offset"
++      "argument": "minecraft:offset"
+     }
+   }
+ }

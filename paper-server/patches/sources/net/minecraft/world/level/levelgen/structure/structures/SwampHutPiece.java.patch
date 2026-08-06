@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/level/levelgen/structure/structures/SwampHutPiece.java b/net/minecraft/world/level/levelgen/structure/structures/SwampHutPiece.java
-index ae60f06a123ea45a8560090f17d281886a7ca308..8e5dee18a9a7d6a30132512cf9b361928595024c 100644
 --- a/net/minecraft/world/level/levelgen/structure/structures/SwampHutPiece.java
 +++ b/net/minecraft/world/level/levelgen/structure/structures/SwampHutPiece.java
-@@ -103,7 +103,7 @@ public class SwampHutPiece extends ScatteredFeaturePiece {
+@@ -103,7 +_,7 @@
                          witch.setPersistenceRequired();
                          witch.snapTo(pos.getX() + 0.5, pos.getY(), pos.getZ() + 0.5, 0.0F, 0.0F);
                          witch.finalizeSpawn(level, level.getCurrentDifficultyAt(pos), EntitySpawnReason.STRUCTURE, null);
@@ -17,7 +9,7 @@ index ae60f06a123ea45a8560090f17d281886a7ca308..8e5dee18a9a7d6a30132512cf9b36192
                      }
                  }
              }
-@@ -122,7 +122,7 @@ public class SwampHutPiece extends ScatteredFeaturePiece {
+@@ -122,7 +_,7 @@
                      cat.setPersistenceRequired();
                      cat.snapTo(pos.getX() + 0.5, pos.getY(), pos.getZ() + 0.5, 0.0F, 0.0F);
                      cat.finalizeSpawn(level, level.getCurrentDifficultyAt(pos), EntitySpawnReason.STRUCTURE, null);

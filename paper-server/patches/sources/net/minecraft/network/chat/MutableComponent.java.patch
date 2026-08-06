@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/network/chat/MutableComponent.java b/net/minecraft/network/chat/MutableComponent.java
-index 258e733bd0c7ac08a43954db248e4a067dec1986..96b25bac21eef2ed9d9cd41c012c74a808bc121f 100644
 --- a/net/minecraft/network/chat/MutableComponent.java
 +++ b/net/minecraft/network/chat/MutableComponent.java
-@@ -102,6 +102,11 @@ public final class MutableComponent implements Component {
+@@ -102,6 +_,11 @@
  
      @Override
      public boolean equals(final Object o) {

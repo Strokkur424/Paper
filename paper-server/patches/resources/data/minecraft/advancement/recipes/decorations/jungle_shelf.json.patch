@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/decorations/jungle_shelf.json
++++ b/data/minecraft/advancement/recipes/decorations/jungle_shelf.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:jungle_shelf"
++        "recipe": "minecraft:jungle_shelf"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

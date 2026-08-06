@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/decorations/green_banner.json
++++ b/data/minecraft/advancement/recipes/decorations/green_banner.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:green_banner"
++        "recipe": "minecraft:green_banner"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/building_blocks/sea_lantern.json
++++ b/data/minecraft/advancement/recipes/building_blocks/sea_lantern.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:sea_lantern"
++        "recipe": "minecraft:sea_lantern"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

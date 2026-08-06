@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/level/block/PowderSnowBlock.java b/net/minecraft/world/level/block/PowderSnowBlock.java
-index c7c5d3a6a60c9b00c35df6da7de7975c605737bd..a9313f7bda622e02024b45c1551c4fa27c96b829 100644
 --- a/net/minecraft/world/level/block/PowderSnowBlock.java
 +++ b/net/minecraft/world/level/block/PowderSnowBlock.java
-@@ -60,6 +60,14 @@ public class PowderSnowBlock extends Block implements BucketPickup {
+@@ -60,6 +_,14 @@
          final InsideBlockEffectApplier effectApplier,
          final boolean isPrecise
      ) {
@@ -23,7 +15,7 @@ index c7c5d3a6a60c9b00c35df6da7de7975c605737bd..a9313f7bda622e02024b45c1551c4fa2
          if (!(entity instanceof LivingEntity) || entity.getInBlockState().is(this)) {
              entity.makeStuckInBlock(state, new Vec3(0.9F, 1.5, 0.9F));
              if (level.isClientSide()) {
-@@ -85,8 +93,13 @@ public class PowderSnowBlock extends Block implements BucketPickup {
+@@ -85,8 +_,13 @@
              e -> {
                  if (level instanceof ServerLevel serverLevel
                      && e.isOnFire()

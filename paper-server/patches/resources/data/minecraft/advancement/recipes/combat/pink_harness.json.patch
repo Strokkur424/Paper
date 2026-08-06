@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/combat/pink_harness.json
++++ b/data/minecraft/advancement/recipes/combat/pink_harness.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:pink_harness"
++        "recipe": "minecraft:pink_harness"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

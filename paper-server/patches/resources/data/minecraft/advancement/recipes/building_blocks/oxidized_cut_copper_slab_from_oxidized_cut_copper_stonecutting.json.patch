@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/building_blocks/oxidized_cut_copper_slab_from_oxidized_cut_copper_stonecutting.json
++++ b/data/minecraft/advancement/recipes/building_blocks/oxidized_cut_copper_slab_from_oxidized_cut_copper_stonecutting.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:oxidized_cut_copper_slab_from_oxidized_cut_copper_stonecutting"
++        "recipe": "minecraft:oxidized_cut_copper_slab_from_oxidized_cut_copper_stonecutting"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

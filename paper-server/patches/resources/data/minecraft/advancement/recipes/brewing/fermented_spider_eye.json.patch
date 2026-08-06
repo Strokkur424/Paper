@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/brewing/fermented_spider_eye.json
++++ b/data/minecraft/advancement/recipes/brewing/fermented_spider_eye.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:fermented_spider_eye"
++        "recipe": "minecraft:fermented_spider_eye"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

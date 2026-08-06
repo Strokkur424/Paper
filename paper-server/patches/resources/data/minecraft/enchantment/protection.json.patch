@@ -1,0 +1,17 @@
+--- a/data/minecraft/enchantment/protection.json
++++ b/data/minecraft/enchantment/protection.json
+@@ -15,12 +_,12 @@
+           }
+         },
+         "requirements": {
+-          "type": "minecraft:damage_source_properties",
++          "condition": "minecraft:damage_source_properties",
+           "predicate": {
+             "tags": [
+               {
+                 "expected": false,
+-                "id": "#minecraft:bypasses_invulnerability"
++                "id": "minecraft:bypasses_invulnerability"
+               }
+             ]
+           }

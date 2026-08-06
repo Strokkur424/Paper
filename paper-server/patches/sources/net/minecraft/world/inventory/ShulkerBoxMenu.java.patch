@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/inventory/ShulkerBoxMenu.java b/net/minecraft/world/inventory/ShulkerBoxMenu.java
-index 6d565dd6ae347e72d0ac74e8434d86834cefb00e..cb4c8e1f42511ed91ab0fdffddd45b85da0457d8 100644
 --- a/net/minecraft/world/inventory/ShulkerBoxMenu.java
 +++ b/net/minecraft/world/inventory/ShulkerBoxMenu.java
-@@ -9,6 +9,25 @@ import net.minecraft.world.item.ItemStack;
+@@ -9,6 +_,25 @@
  public class ShulkerBoxMenu extends AbstractContainerMenu {
      private static final int CONTAINER_SIZE = 27;
      private final Container container;
@@ -34,7 +26,7 @@ index 6d565dd6ae347e72d0ac74e8434d86834cefb00e..cb4c8e1f42511ed91ab0fdffddd45b85
  
      public ShulkerBoxMenu(final int containerId, final Inventory inventory) {
          this(containerId, inventory, new SimpleContainer(27));
-@@ -18,7 +37,8 @@ public class ShulkerBoxMenu extends AbstractContainerMenu {
+@@ -18,7 +_,8 @@
          super(MenuType.SHULKER_BOX, containerId);
          checkContainerSize(container, 27);
          this.container = container;
@@ -44,7 +36,7 @@ index 6d565dd6ae347e72d0ac74e8434d86834cefb00e..cb4c8e1f42511ed91ab0fdffddd45b85
          int rows = 3;
          int columns = 9;
  
-@@ -33,6 +53,7 @@ public class ShulkerBoxMenu extends AbstractContainerMenu {
+@@ -33,6 +_,7 @@
  
      @Override
      public boolean stillValid(final Player player) {

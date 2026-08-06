@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/network/syncher/EntityDataSerializers.java b/net/minecraft/network/syncher/EntityDataSerializers.java
-index 1db95a0e72371a1765292b66cd45cabc4e9731c4..9b5e87602c80e300353f7fa18ca0de524db4b4b2 100644
 --- a/net/minecraft/network/syncher/EntityDataSerializers.java
 +++ b/net/minecraft/network/syncher/EntityDataSerializers.java
-@@ -60,10 +60,27 @@ public class EntityDataSerializers {
+@@ -60,10 +_,27 @@
      public static final EntityDataSerializer<Optional<Component>> OPTIONAL_COMPONENT = EntityDataSerializer.forValueType(
          ComponentSerialization.TRUSTED_OPTIONAL_STREAM_CODEC
      );

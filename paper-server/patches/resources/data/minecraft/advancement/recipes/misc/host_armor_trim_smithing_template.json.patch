@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/misc/host_armor_trim_smithing_template.json
++++ b/data/minecraft/advancement/recipes/misc/host_armor_trim_smithing_template.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:host_armor_trim_smithing_template"
++        "recipe": "minecraft:host_armor_trim_smithing_template"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

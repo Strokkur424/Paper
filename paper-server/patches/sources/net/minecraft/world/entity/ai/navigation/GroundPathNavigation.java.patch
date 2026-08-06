@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/entity/ai/navigation/GroundPathNavigation.java b/net/minecraft/world/entity/ai/navigation/GroundPathNavigation.java
-index 62350e4b91b7f0a982696be5b053c85d0549dc6e..de82fe68fabd0a0c1b425cb0ba7b2e244cfc8eb8 100644
 --- a/net/minecraft/world/entity/ai/navigation/GroundPathNavigation.java
 +++ b/net/minecraft/world/entity/ai/navigation/GroundPathNavigation.java
-@@ -41,7 +41,7 @@ public class GroundPathNavigation extends PathNavigation {
+@@ -41,7 +_,7 @@
      }
  
      @Override
@@ -17,7 +9,7 @@ index 62350e4b91b7f0a982696be5b053c85d0549dc6e..de82fe68fabd0a0c1b425cb0ba7b2e24
          LevelChunk chunk = this.level.getChunkSource().getChunkNow(SectionPos.blockToSectionCoord(pos.getX()), SectionPos.blockToSectionCoord(pos.getZ()));
          if (chunk == null) {
              return null;
-@@ -51,7 +51,7 @@ public class GroundPathNavigation extends PathNavigation {
+@@ -51,7 +_,7 @@
              pos = this.findSurfacePosition(chunk, pos, reachRange);
          }
  
@@ -26,7 +18,7 @@ index 62350e4b91b7f0a982696be5b053c85d0549dc6e..de82fe68fabd0a0c1b425cb0ba7b2e24
      }
  
      private BlockPos findSurfacePosition(final LevelChunk chunk, BlockPos pos, final int reachRange) {
-@@ -90,7 +90,7 @@ public class GroundPathNavigation extends PathNavigation {
+@@ -90,7 +_,7 @@
  
      @Override
      public Path createPath(final Entity target, final int reachRange) {

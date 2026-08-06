@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/decorations/pale_moss_carpet.json
++++ b/data/minecraft/advancement/recipes/decorations/pale_moss_carpet.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:pale_moss_carpet"
++        "recipe": "minecraft:pale_moss_carpet"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

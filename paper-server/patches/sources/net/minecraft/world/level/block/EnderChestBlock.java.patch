@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/level/block/EnderChestBlock.java b/net/minecraft/world/level/block/EnderChestBlock.java
-index 0cb1a6661f5b25a7418475e952022e6dce7956ba..34e6bb7d246f065698def3b1f7a0d237f304f2aa 100644
 --- a/net/minecraft/world/level/block/EnderChestBlock.java
 +++ b/net/minecraft/world/level/block/EnderChestBlock.java
-@@ -76,13 +76,16 @@ public class EnderChestBlock extends AbstractChestBlock<EnderChestBlockEntity> i
+@@ -76,13 +_,16 @@
          PlayerEnderChestContainer container = player.getEnderChestInventory();
          if (container != null && level.getBlockEntity(pos) instanceof EnderChestBlockEntity enderChest) {
              BlockPos above = pos.above();

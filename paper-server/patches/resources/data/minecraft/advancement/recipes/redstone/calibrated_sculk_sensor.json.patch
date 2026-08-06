@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/redstone/calibrated_sculk_sensor.json
++++ b/data/minecraft/advancement/recipes/redstone/calibrated_sculk_sensor.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:calibrated_sculk_sensor"
++        "recipe": "minecraft:calibrated_sculk_sensor"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

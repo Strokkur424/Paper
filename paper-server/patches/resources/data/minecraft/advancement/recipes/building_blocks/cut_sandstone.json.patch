@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/building_blocks/cut_sandstone.json
++++ b/data/minecraft/advancement/recipes/building_blocks/cut_sandstone.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:cut_sandstone"
++        "recipe": "minecraft:cut_sandstone"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

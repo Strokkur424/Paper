@@ -1,0 +1,9 @@
+--- a/data/minecraft/recipe/diamond_from_blasting_deepslate_diamond_ore.json
++++ b/data/minecraft/recipe/diamond_from_blasting_deepslate_diamond_ore.json
+@@ -1,6 +_,5 @@
+ {
+   "type": "minecraft:blasting",
+-  "cookingtime": 200,
+   "experience": 1.0,
+   "group": "diamond",
+   "ingredient": "minecraft:deepslate_diamond_ore",

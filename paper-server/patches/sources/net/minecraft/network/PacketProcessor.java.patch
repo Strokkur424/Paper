@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/network/PacketProcessor.java b/net/minecraft/network/PacketProcessor.java
-index e5fc00cacaa5ee57b215d90b99c782029785e127..408cb996fc8ff77785da8919f19baff2cf4bd789 100644
 --- a/net/minecraft/network/PacketProcessor.java
 +++ b/net/minecraft/network/PacketProcessor.java
-@@ -19,16 +19,42 @@ public class PacketProcessor implements AutoCloseable {
+@@ -19,16 +_,42 @@
          this.runningThread = runningThread;
      }
  
@@ -35,10 +27,11 @@ index e5fc00cacaa5ee57b215d90b99c782029785e127..408cb996fc8ff77785da8919f19baff2
      public <T extends PacketListener> void scheduleIfPossible(final T listener, final Packet<T> packet) {
          if (this.closed) {
 -            throw new RejectedExecutionException("Server already shutting down");
-+            throw new io.papermc.paper.util.ServerStopRejectedExecutionException("Server already shutting down"); // Paper - do not prematurely disconnect players on stop
-         }
+-        }
 -
 -        this.packetsToBeHandled.add(new PacketProcessor.ListenerAndPacket<>(listener, packet));
++            throw new io.papermc.paper.util.ServerStopRejectedExecutionException("Server already shutting down"); // Paper - do not prematurely disconnect players on stop
++        }
 +        // Paper start - improve tick loop
 +        // wake up main thread inbetween ticks to process packets
 +        final boolean isEmpty = this.packetsToBeHandled.isEmpty();
@@ -54,7 +47,7 @@ index e5fc00cacaa5ee57b215d90b99c782029785e127..408cb996fc8ff77785da8919f19baff2
      }
  
      public void processQueuedPackets() {
-@@ -44,8 +70,28 @@ public class PacketProcessor implements AutoCloseable {
+@@ -44,8 +_,28 @@
          this.closed = true;
      }
  
@@ -83,7 +76,7 @@ index e5fc00cacaa5ee57b215d90b99c782029785e127..408cb996fc8ff77785da8919f19baff2
              if (this.listener.shouldHandleMessage(this.packet)) {
                  try {
                      this.packet.handle(this.listener);
-@@ -59,6 +105,12 @@ public class PacketProcessor implements AutoCloseable {
+@@ -59,6 +_,12 @@
              } else {
                  PacketProcessor.LOGGER.debug("Ignoring packet due to disconnection: {}", this.packet);
              }

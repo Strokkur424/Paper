@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/item/enchantment/effects/ApplyMobEffect.java b/net/minecraft/world/item/enchantment/effects/ApplyMobEffect.java
-index 1b9b5a4962a3753c5270251b62fbc2d10d0650ba..c92ee6307792664fd0f3bda14ce37ca0b4943d24 100644
 --- a/net/minecraft/world/item/enchantment/effects/ApplyMobEffect.java
 +++ b/net/minecraft/world/item/enchantment/effects/ApplyMobEffect.java
-@@ -44,7 +44,7 @@ public record ApplyMobEffect(
+@@ -44,7 +_,7 @@
                  int amplifier = Math.max(
                      0, Math.round(Mth.randomBetween(random, this.minAmplifier.calculate(enchantmentLevel), this.maxAmplifier.calculate(enchantmentLevel)))
                  );

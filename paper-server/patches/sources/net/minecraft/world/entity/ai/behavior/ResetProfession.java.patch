@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/entity/ai/behavior/ResetProfession.java b/net/minecraft/world/entity/ai/behavior/ResetProfession.java
-index b3a792ec99c6c8efc20b2cfb0965f8d9aba2bdea..6291e7ccdd5d51030c2c73272eb1babe213ff7c2 100644
 --- a/net/minecraft/world/entity/ai/behavior/ResetProfession.java
 +++ b/net/minecraft/world/entity/ai/behavior/ResetProfession.java
-@@ -12,7 +12,14 @@ public class ResetProfession {
+@@ -12,7 +_,14 @@
              VillagerData bodyData = body.getVillagerData();
              boolean canBeFired = !bodyData.profession().is(VillagerProfession.NONE) && !bodyData.profession().is(VillagerProfession.NITWIT);
              if (canBeFired && body.getVillagerXp() == 0 && bodyData.level() <= 1) {

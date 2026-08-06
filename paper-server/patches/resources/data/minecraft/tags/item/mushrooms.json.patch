@@ -1,0 +1,10 @@
+--- a/data/minecraft/tags/item/mushrooms.json
++++ /dev/null
+@@ -1,7 +_,0 @@
+-{
+-  "values": [
+-    "minecraft:brown_mushroom",
+-    "minecraft:red_mushroom",
+-    "minecraft:shelf_mushroom"
+-  ]
+-}

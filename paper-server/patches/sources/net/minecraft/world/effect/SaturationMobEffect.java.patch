@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/effect/SaturationMobEffect.java b/net/minecraft/world/effect/SaturationMobEffect.java
-index e0ea4c0faebc24bdffd1ed199608bd55f6abc2e4..e02de87a739bbc315a82e0978ac6aa2e2f1d5827 100644
 --- a/net/minecraft/world/effect/SaturationMobEffect.java
 +++ b/net/minecraft/world/effect/SaturationMobEffect.java
-@@ -12,7 +12,15 @@ class SaturationMobEffect extends InstantaneousMobEffect {
+@@ -12,7 +_,15 @@
      @Override
      public boolean applyEffectTick(final ServerLevel level, final LivingEntity mob, final int amplification) {
          if (mob instanceof Player player) {

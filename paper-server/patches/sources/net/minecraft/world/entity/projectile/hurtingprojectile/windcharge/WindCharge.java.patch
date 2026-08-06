@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/entity/projectile/hurtingprojectile/windcharge/WindCharge.java b/net/minecraft/world/entity/projectile/hurtingprojectile/windcharge/WindCharge.java
-index 03b9a4b45511e7026225bda8b58193f013d08e25..c91adb74bfdc93c5e163b37f7517f530703f6ad5 100644
 --- a/net/minecraft/world/entity/projectile/hurtingprojectile/windcharge/WindCharge.java
 +++ b/net/minecraft/world/entity/projectile/hurtingprojectile/windcharge/WindCharge.java
-@@ -60,6 +60,12 @@ public class WindCharge extends AbstractWindCharge {
+@@ -60,6 +_,12 @@
  
      @Override
      public void explode(final Vec3 position) {
@@ -21,7 +13,7 @@ index 03b9a4b45511e7026225bda8b58193f013d08e25..c91adb74bfdc93c5e163b37f7517f530
          this.level()
              .explode(
                  this,
-@@ -68,8 +74,8 @@ public class WindCharge extends AbstractWindCharge {
+@@ -68,8 +_,8 @@
                  position.x(),
                  position.y(),
                  position.z(),

@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/level/block/DispenserBlock.java b/net/minecraft/world/level/block/DispenserBlock.java
-index cb4c22c5bd1c9d29610607d0522cf483041dad1e..f777b67e0d90c1bb25c3aeef8e5b1710ab8ac96e 100644
 --- a/net/minecraft/world/level/block/DispenserBlock.java
 +++ b/net/minecraft/world/level/block/DispenserBlock.java
-@@ -70,8 +70,7 @@ public class DispenserBlock extends BaseEntityBlock {
+@@ -70,8 +_,7 @@
      protected InteractionResult useWithoutItem(
          final BlockState state, final Level level, final BlockPos pos, final Player player, final BlockHitResult hitResult
      ) {
@@ -18,7 +10,7 @@ index cb4c22c5bd1c9d29610607d0522cf483041dad1e..f777b67e0d90c1bb25c3aeef8e5b1710
              player.awardStat(dispenser instanceof DropperBlockEntity ? Stats.INSPECT_DROPPER : Stats.INSPECT_DISPENSER);
          }
  
-@@ -86,18 +85,27 @@ public class DispenserBlock extends BaseEntityBlock {
+@@ -86,17 +_,26 @@
              BlockSource source = new BlockSource(level, pos, state, blockEntity);
              int slot = blockEntity.getRandomSlot(level.getRandom());
              if (slot < 0) {
@@ -36,13 +28,12 @@ index cb4c22c5bd1c9d29610607d0522cf483041dad1e..f777b67e0d90c1bb25c3aeef8e5b1710
              }
          }
      }
- 
++
 +    // Paper start - Fix NPE with equippable and items without behavior
 +    public static DispenseItemBehavior getDispenseBehavior(BlockSource pointer, ItemStack stack) {
 +        return ((DispenserBlock) pointer.state().getBlock()).getDispenseMethod(pointer.level(), stack);
 +    }
 +    // Paper end - Fix NPE with equippable and items without behavior
-+
+ 
      protected DispenseItemBehavior getDispenseMethod(final Level level, final ItemStack itemStack) {
          if (!itemStack.isItemEnabled(level.enabledFeatures())) {
-             return DEFAULT_BEHAVIOR;

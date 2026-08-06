@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/entity/EntityEquipment.java b/net/minecraft/world/entity/EntityEquipment.java
-index 2fdb7a1aff80c3def9efc467d2050a334117ec24..1aa888376784dfc9ddd9c4e2493031ff2a564b59 100644
 --- a/net/minecraft/world/entity/EntityEquipment.java
 +++ b/net/minecraft/world/entity/EntityEquipment.java
-@@ -74,4 +74,11 @@ public class EntityEquipment {
+@@ -74,4 +_,11 @@
      public void clear() {
          this.items.replaceAll((s, v) -> ItemStack.EMPTY);
      }

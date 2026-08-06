@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/misc/wolf_armor_dyed.json
++++ b/data/minecraft/advancement/recipes/misc/wolf_armor_dyed.json
+@@ -3,7 +_,7 @@
+   "criteria": {
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:wolf_armor_dyed"
++        "recipe": "minecraft:wolf_armor_dyed"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     },

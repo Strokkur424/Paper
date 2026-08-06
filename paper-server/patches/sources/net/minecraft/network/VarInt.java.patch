@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/network/VarInt.java b/net/minecraft/network/VarInt.java
-index 3e62f43edecb63921afeec4fa97c4b6ae5350d76..1428ce80e8316a24cfca7b6aafdea8588a5a790e 100644
 --- a/net/minecraft/network/VarInt.java
 +++ b/net/minecraft/network/VarInt.java
-@@ -9,6 +9,18 @@ public class VarInt {
+@@ -9,6 +_,18 @@
      private static final int DATA_BITS_PER_BYTE = 7;
  
      public static int getByteSize(final int value) {
@@ -27,7 +19,7 @@ index 3e62f43edecb63921afeec4fa97c4b6ae5350d76..1428ce80e8316a24cfca7b6aafdea858
          for (int i = 1; i < MAX_VARINT_SIZE; i++) {
              if ((value & -1 << i * DATA_BITS_PER_BYTE) == 0) {
                  return i;
-@@ -39,6 +51,21 @@ public class VarInt {
+@@ -39,6 +_,21 @@
      }
  
      public static ByteBuf write(final ByteBuf output, int value) {

@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/level/block/DoublePlantBlock.java b/net/minecraft/world/level/block/DoublePlantBlock.java
-index c2b1e8352b671c317ef4b390bee849b83b21afca..ee7e4c3fb356cfa3264e5e67d6f91b7c4ca70fa8 100644
 --- a/net/minecraft/world/level/block/DoublePlantBlock.java
 +++ b/net/minecraft/world/level/block/DoublePlantBlock.java
-@@ -107,11 +107,17 @@ public class DoublePlantBlock extends VegetationBlock {
+@@ -107,11 +_,17 @@
          final BlockState state,
          final @Nullable BlockEntity blockEntity,
          final ItemStack destroyedWith

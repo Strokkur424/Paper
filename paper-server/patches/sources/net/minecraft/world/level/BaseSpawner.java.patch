@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/level/BaseSpawner.java b/net/minecraft/world/level/BaseSpawner.java
-index 28aeb0557d4049f8c94e91b86cb3a7cce762d9e3..56f9c7906761b49c1090bd2489fe111f0d2a4a32 100644
 --- a/net/minecraft/world/level/BaseSpawner.java
 +++ b/net/minecraft/world/level/BaseSpawner.java
-@@ -59,9 +59,11 @@ public abstract class BaseSpawner {
+@@ -59,9 +_,11 @@
      public int maxNearbyEntities = 6;
      public int requiredPlayerRange = 16;
      public int spawnRange = 4;
@@ -20,7 +12,7 @@ index 28aeb0557d4049f8c94e91b86cb3a7cce762d9e3..56f9c7906761b49c1090bd2489fe111f
      }
  
      public void setEntityData(final TypedEntityData<EntityType<?>> entityData, final @Nullable Level level, final RandomSource random, final BlockPos pos) {
-@@ -70,7 +72,7 @@ public abstract class BaseSpawner {
+@@ -70,7 +_,7 @@
      }
  
      public boolean isNearPlayer(final Level level, final BlockPos pos) {
@@ -29,7 +21,7 @@ index 28aeb0557d4049f8c94e91b86cb3a7cce762d9e3..56f9c7906761b49c1090bd2489fe111f
      }
  
      public void clientTick(final Level level, final BlockPos pos) {
-@@ -93,13 +95,19 @@ public abstract class BaseSpawner {
+@@ -93,13 +_,19 @@
      }
  
      public void serverTick(final ServerLevel level, final BlockPos pos) {
@@ -51,7 +43,7 @@ index 28aeb0557d4049f8c94e91b86cb3a7cce762d9e3..56f9c7906761b49c1090bd2489fe111f
              } else {
                  boolean delay = false;
                  RandomSource random = level.getRandom();
-@@ -137,6 +145,21 @@ public abstract class BaseSpawner {
+@@ -137,6 +_,21 @@
                                  continue;
                              }
  
@@ -73,7 +65,7 @@ index 28aeb0557d4049f8c94e91b86cb3a7cce762d9e3..56f9c7906761b49c1090bd2489fe111f
                              Entity entity = EntityType.loadEntityRecursive(input, level, EntitySpawnReason.SPAWNER, e -> {
                                  e.snapTo(spawnPos.x, spawnPos.y, spawnPos.z, e.getYRot(), e.getXRot());
                                  return e;
-@@ -171,9 +194,22 @@ public abstract class BaseSpawner {
+@@ -171,9 +_,22 @@
                                  }
  
                                  nextSpawnData.getEquipment().ifPresent(mob::equip);
@@ -97,7 +89,7 @@ index 28aeb0557d4049f8c94e91b86cb3a7cce762d9e3..56f9c7906761b49c1090bd2489fe111f
                                  this.delay(level, pos);
                                  return;
                              }
-@@ -184,7 +220,7 @@ public abstract class BaseSpawner {
+@@ -184,7 +_,7 @@
                                  mob.spawnAnim();
                              }
  
@@ -106,7 +98,7 @@ index 28aeb0557d4049f8c94e91b86cb3a7cce762d9e3..56f9c7906761b49c1090bd2489fe111f
                          }
                      }
                  }
-@@ -211,12 +247,14 @@ public abstract class BaseSpawner {
+@@ -211,12 +_,14 @@
      }
  
      public void load(final @Nullable Level level, final BlockPos pos, final ValueInput input) {
@@ -124,7 +116,7 @@ index 28aeb0557d4049f8c94e91b86cb3a7cce762d9e3..56f9c7906761b49c1090bd2489fe111f
          this.spawnCount = input.getIntOr("SpawnCount", 4);
          this.maxNearbyEntities = input.getIntOr("MaxNearbyEntities", 6);
          this.requiredPlayerRange = input.getIntOr("RequiredPlayerRange", 16);
-@@ -225,9 +263,19 @@ public abstract class BaseSpawner {
+@@ -225,9 +_,19 @@
      }
  
      public void save(final ValueOutput output) {

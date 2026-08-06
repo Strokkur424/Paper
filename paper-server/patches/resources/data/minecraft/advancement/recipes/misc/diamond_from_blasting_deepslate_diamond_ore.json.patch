@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/misc/diamond_from_blasting_deepslate_diamond_ore.json
++++ b/data/minecraft/advancement/recipes/misc/diamond_from_blasting_deepslate_diamond_ore.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:diamond_from_blasting_deepslate_diamond_ore"
++        "recipe": "minecraft:diamond_from_blasting_deepslate_diamond_ore"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

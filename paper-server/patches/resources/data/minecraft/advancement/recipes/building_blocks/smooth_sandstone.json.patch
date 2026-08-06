@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/building_blocks/smooth_sandstone.json
++++ b/data/minecraft/advancement/recipes/building_blocks/smooth_sandstone.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:smooth_sandstone"
++        "recipe": "minecraft:smooth_sandstone"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

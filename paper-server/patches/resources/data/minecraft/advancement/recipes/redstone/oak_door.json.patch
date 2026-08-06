@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/redstone/oak_door.json
++++ b/data/minecraft/advancement/recipes/redstone/oak_door.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:oak_door"
++        "recipe": "minecraft:oak_door"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

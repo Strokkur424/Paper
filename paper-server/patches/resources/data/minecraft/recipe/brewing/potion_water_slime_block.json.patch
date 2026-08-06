@@ -1,0 +1,23 @@
+--- a/data/minecraft/recipe/brewing/potion_water_slime_block.json
++++ /dev/null
+@@ -1,20 +_,0 @@
+-{
+-  "type": "minecraft:brewing",
+-  "input": {
+-    "item": "minecraft:potion",
+-    "potion_contents": {
+-      "potions": "minecraft:water"
+-    }
+-  },
+-  "output": {
+-    "components": {
+-      "minecraft:potion_contents": {
+-        "potion": "minecraft:mundane"
+-      }
+-    },
+-    "id": "minecraft:potion"
+-  },
+-  "reagent": {
+-    "item": "minecraft:slime_block"
+-  }
+-}

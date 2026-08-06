@@ -1,0 +1,7 @@
+--- a/data/minecraft/worldgen/feature/iceberg_blue.json
++++ /dev/null
+@@ -1,4 +_,0 @@
+-{
+-  "type": "minecraft:iceberg",
+-  "state": "minecraft:blue_ice"
+-}

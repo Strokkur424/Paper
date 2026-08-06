@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/level/chunk/storage/RegionFile.java b/net/minecraft/world/level/chunk/storage/RegionFile.java
-index 23bc55a16fa0d87447f8659e51fea2dd72d3c28e..e6f83b493edd89fa104ab2e7ef13e0a2a4d3399f 100644
 --- a/net/minecraft/world/level/chunk/storage/RegionFile.java
 +++ b/net/minecraft/world/level/chunk/storage/RegionFile.java
-@@ -83,6 +83,14 @@ public class RegionFile implements AutoCloseable {
+@@ -83,6 +_,14 @@
                  if (offset != 0) {
                      int sectorNumber = getSectorNumber(offset);
                      int numSectors = getNumSectors(offset);
@@ -23,7 +15,7 @@ index 23bc55a16fa0d87447f8659e51fea2dd72d3c28e..e6f83b493edd89fa104ab2e7ef13e0a2
                      if (sectorNumber < 2) {
                          LOGGER.warn("Region file {} has invalid sector at index: {}; sector {} overlaps with header", path, i, sectorNumber);
                          this.offsets.put(i, 0);
-@@ -117,6 +125,13 @@ public class RegionFile implements AutoCloseable {
+@@ -117,6 +_,13 @@
  
          int sectorNumber = getSectorNumber(offset);
          int numSectors = getNumSectors(offset);
@@ -37,7 +29,7 @@ index 23bc55a16fa0d87447f8659e51fea2dd72d3c28e..e6f83b493edd89fa104ab2e7ef13e0a2
          int sectorsLength = numSectors * 4096;
          ByteBuffer buffer = ByteBuffer.allocate(sectorsLength);
          this.file.read(buffer, sectorNumber * 4096);
-@@ -258,6 +273,7 @@ public class RegionFile implements AutoCloseable {
+@@ -258,6 +_,7 @@
  
              return true;
          } catch (IOException e) {
@@ -45,7 +37,7 @@ index 23bc55a16fa0d87447f8659e51fea2dd72d3c28e..e6f83b493edd89fa104ab2e7ef13e0a2
              return false;
          }
      }
-@@ -328,6 +344,11 @@ public class RegionFile implements AutoCloseable {
+@@ -328,6 +_,11 @@
          try (FileChannel extFile = FileChannel.open(tmpPath, StandardOpenOption.CREATE, StandardOpenOption.WRITE)) {
              data.position(5);
              extFile.write(data);

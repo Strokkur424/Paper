@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/network/chat/Component.java b/net/minecraft/network/chat/Component.java
-index 572b38ad41277f108640b3829a68ed484f163f77..5bd985901923e177b042cb2a347ee46b1e56a1d8 100644
 --- a/net/minecraft/network/chat/Component.java
 +++ b/net/minecraft/network/chat/Component.java
-@@ -27,7 +27,19 @@ import net.minecraft.util.FormattedCharSequence;
+@@ -27,7 +_,19 @@
  import net.minecraft.world.level.ChunkPos;
  import org.jspecify.annotations.Nullable;
  

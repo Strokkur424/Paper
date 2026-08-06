@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/advancements/AdvancementTree.java b/net/minecraft/advancements/AdvancementTree.java
-index f531de20d7e3a860b85e460d17df5092d28deffd..3e8d68de1653c3b4b8e7c3ba3b735a98e06c1f2f 100644
 --- a/net/minecraft/advancements/AdvancementTree.java
 +++ b/net/minecraft/advancements/AdvancementTree.java
-@@ -25,7 +25,7 @@ public class AdvancementTree {
+@@ -25,7 +_,7 @@
              this.remove(child);
          }
  
@@ -17,7 +9,7 @@ index f531de20d7e3a860b85e460d17df5092d28deffd..3e8d68de1653c3b4b8e7c3ba3b735a98
          this.nodes.remove(node.holder().id());
          if (node.parent() == null) {
              this.roots.remove(node);
-@@ -61,7 +61,7 @@ public class AdvancementTree {
+@@ -61,7 +_,7 @@
              }
          }
  

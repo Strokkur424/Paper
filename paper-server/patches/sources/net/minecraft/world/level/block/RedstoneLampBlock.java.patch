@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/level/block/RedstoneLampBlock.java b/net/minecraft/world/level/block/RedstoneLampBlock.java
-index 8fc2bd56f6ab9f77318528d047e79ad092f7b1de..84d7fdd8214b6ce15bcdc76c7bee5fd34a839471 100644
 --- a/net/minecraft/world/level/block/RedstoneLampBlock.java
 +++ b/net/minecraft/world/level/block/RedstoneLampBlock.java
-@@ -35,6 +35,11 @@ public class RedstoneLampBlock extends Block {
+@@ -35,6 +_,11 @@
                  if (isLit) {
                      level.scheduleTick(pos, this, 4);
                  } else {
@@ -20,7 +12,7 @@ index 8fc2bd56f6ab9f77318528d047e79ad092f7b1de..84d7fdd8214b6ce15bcdc76c7bee5fd3
                      level.setBlock(pos, state.cycle(LIT), Block.UPDATE_CLIENTS);
                  }
              }
-@@ -44,6 +49,11 @@ public class RedstoneLampBlock extends Block {
+@@ -44,6 +_,11 @@
      @Override
      protected void tick(final BlockState state, final ServerLevel level, final BlockPos pos, final RandomSource random) {
          if (state.getValue(LIT) && !level.hasNeighborSignal(pos)) {

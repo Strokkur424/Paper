@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/entity/Shearable.java b/net/minecraft/world/entity/Shearable.java
-index 664c3c6ec27a5d57905e21079080b4cd9f73c6f0..3aa68d483fc14371b3dec2114915963946e0c600 100644
 --- a/net/minecraft/world/entity/Shearable.java
 +++ b/net/minecraft/world/entity/Shearable.java
-@@ -5,7 +5,16 @@ import net.minecraft.sounds.SoundSource;
+@@ -5,7 +_,16 @@
  import net.minecraft.world.item.ItemStack;
  
  public interface Shearable {

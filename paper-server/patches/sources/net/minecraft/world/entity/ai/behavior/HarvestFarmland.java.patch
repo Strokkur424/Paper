@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/entity/ai/behavior/HarvestFarmland.java b/net/minecraft/world/entity/ai/behavior/HarvestFarmland.java
-index e4445d42dac055c157f8140cf06d07840107a84a..5a2d006b682fd9b53d0a490828eb79b4d085db94 100644
 --- a/net/minecraft/world/entity/ai/behavior/HarvestFarmland.java
 +++ b/net/minecraft/world/entity/ai/behavior/HarvestFarmland.java
-@@ -110,7 +110,9 @@ public class HarvestFarmland extends Behavior<Villager> {
+@@ -110,7 +_,9 @@
                  Block block = blockState.getBlock();
                  Block blockBelow = level.getBlockState(this.aboveFarmlandPos.below()).getBlock();
                  if (block instanceof CropBlock cropBlock && cropBlock.isMaxAge(blockState)) {
@@ -18,7 +10,7 @@ index e4445d42dac055c157f8140cf06d07840107a84a..5a2d006b682fd9b53d0a490828eb79b4
                  }
  
                  if (blockState.isAir() && blockBelow instanceof FarmlandBlock && body.hasFarmSeeds()) {
-@@ -121,9 +123,11 @@ public class HarvestFarmland extends Behavior<Villager> {
+@@ -121,9 +_,11 @@
                          boolean ok = false;
                          if (!itemStack.isEmpty() && itemStack.is(ItemTags.VILLAGER_PLANTABLE_SEEDS) && itemStack.getItem() instanceof BlockItem blockItem) {
                              BlockState place = blockItem.getBlock().defaultBlockState();

@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/level/chunk/PalettedContainer.java b/net/minecraft/world/level/chunk/PalettedContainer.java
-index ee92b9ae8110b266ba0be723d1e228501b2c23aa..d70b291a5caafc8165bcb804063fc96ff67db303 100644
 --- a/net/minecraft/world/level/chunk/PalettedContainer.java
 +++ b/net/minecraft/world/level/chunk/PalettedContainer.java
-@@ -26,14 +26,14 @@ public class PalettedContainer<T> implements PaletteResize<T>, PalettedContainer
+@@ -26,14 +_,14 @@
      private static final int MIN_PALETTE_BITS = 0;
      private volatile PalettedContainer.Data<T> data;
      private final Strategy<T> strategy;
@@ -26,7 +18,7 @@ index ee92b9ae8110b266ba0be723d1e228501b2c23aa..d70b291a5caafc8165bcb804063fc96f
      }
  
      public static <T> Codec<PalettedContainer<T>> codecRW(final Codec<T> elementCodec, final Strategy<T> strategy, final T defaultValue) {
-@@ -94,7 +94,7 @@ public class PalettedContainer<T> implements PaletteResize<T>, PalettedContainer
+@@ -94,7 +_,7 @@
      }
  
      @Override
@@ -35,7 +27,7 @@ index ee92b9ae8110b266ba0be723d1e228501b2c23aa..d70b291a5caafc8165bcb804063fc96f
          PalettedContainer.Data<T> oldData = this.data;
          PalettedContainer.Data<T> newData = this.createOrReuseData(oldData, bits);
          newData.copyFrom(oldData.palette, oldData.storage);
-@@ -102,7 +102,7 @@ public class PalettedContainer<T> implements PaletteResize<T>, PalettedContainer
+@@ -102,7 +_,7 @@
          return newData.palette.idFor(lastAddedValue, PaletteResize.noResizeExpected());
      }
  
@@ -44,7 +36,7 @@ index ee92b9ae8110b266ba0be723d1e228501b2c23aa..d70b291a5caafc8165bcb804063fc96f
          this.acquire();
  
          try {
-@@ -122,7 +122,7 @@ public class PalettedContainer<T> implements PaletteResize<T>, PalettedContainer
+@@ -122,7 +_,7 @@
          return this.data.palette.valueFor(oldId);
      }
  
@@ -53,7 +45,7 @@ index ee92b9ae8110b266ba0be723d1e228501b2c23aa..d70b291a5caafc8165bcb804063fc96f
          this.acquire();
  
          try {
-@@ -155,7 +155,7 @@ public class PalettedContainer<T> implements PaletteResize<T>, PalettedContainer
+@@ -155,7 +_,7 @@
          allExistingEntries.forEach(state -> consumer.accept(palette.valueFor(state)));
      }
  
@@ -62,7 +54,7 @@ index ee92b9ae8110b266ba0be723d1e228501b2c23aa..d70b291a5caafc8165bcb804063fc96f
          this.acquire();
  
          try {
-@@ -170,7 +170,7 @@ public class PalettedContainer<T> implements PaletteResize<T>, PalettedContainer
+@@ -170,7 +_,7 @@
      }
  
      @Override
@@ -71,7 +63,7 @@ index ee92b9ae8110b266ba0be723d1e228501b2c23aa..d70b291a5caafc8165bcb804063fc96f
          this.acquire();
  
          try {
-@@ -224,7 +224,7 @@ public class PalettedContainer<T> implements PaletteResize<T>, PalettedContainer
+@@ -224,7 +_,7 @@
      }
  
      @Override

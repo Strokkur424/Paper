@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/nbt/CompoundTag.java b/net/minecraft/nbt/CompoundTag.java
-index 543232622a1a4bc0cc90343feaca44ab48543dba..b9f6aa790159b2df712244c44c55d6393c837d16 100644
 --- a/net/minecraft/nbt/CompoundTag.java
 +++ b/net/minecraft/nbt/CompoundTag.java
-@@ -51,7 +51,7 @@ public final class CompoundTag implements Tag {
+@@ -51,7 +_,7 @@
  
          private static CompoundTag loadCompound(final DataInput input, final NbtAccounter accounter) throws IOException {
              accounter.accountBytes(48L);
@@ -17,7 +9,7 @@ index 543232622a1a4bc0cc90343feaca44ab48543dba..b9f6aa790159b2df712244c44c55d639
  
              byte tagType;
              while ((tagType = input.readByte()) != 0) {
-@@ -165,7 +165,7 @@ public final class CompoundTag implements Tag {
+@@ -165,7 +_,7 @@
      }
  
      public CompoundTag() {
@@ -26,7 +18,7 @@ index 543232622a1a4bc0cc90343feaca44ab48543dba..b9f6aa790159b2df712244c44c55d639
      }
  
      @Override
-@@ -394,9 +394,16 @@ public final class CompoundTag implements Tag {
+@@ -394,9 +_,16 @@
  
      @Override
      public CompoundTag copy() {
@@ -46,7 +38,7 @@ index 543232622a1a4bc0cc90343feaca44ab48543dba..b9f6aa790159b2df712244c44c55d639
      }
  
      @Override
-@@ -517,22 +524,47 @@ public final class CompoundTag implements Tag {
+@@ -517,22 +_,47 @@
          this.merge((CompoundTag)codec.encoder().encodeStart(ops, value).getOrThrow());
      }
  

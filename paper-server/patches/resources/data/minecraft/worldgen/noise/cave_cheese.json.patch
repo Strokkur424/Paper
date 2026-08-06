@@ -1,0 +1,18 @@
+--- a/data/minecraft/worldgen/noise/cave_cheese.json
++++ b/data/minecraft/worldgen/noise/cave_cheese.json
+@@ -1,5 +_,5 @@
+ {
+-  "amplitude_modifiers": [
++  "amplitudes": [
+     0.5,
+     1.0,
+     2.0,
+@@ -10,7 +_,5 @@
+     2.0,
+     0.0
+   ],
+-  "base_amplitude": 0.8361300524356068,
+-  "base_octave": -8,
+-  "octave_count": 9
++  "firstOctave": -8
+ }

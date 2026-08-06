@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/server/commands/WaypointCommand.java b/net/minecraft/server/commands/WaypointCommand.java
-index 4de84045f8932acdaa597c0072499f0df00090f7..1a826c3d697ab01a84a4b182d4185b1001b8d0fa 100644
 --- a/net/minecraft/server/commands/WaypointCommand.java
 +++ b/net/minecraft/server/commands/WaypointCommand.java
-@@ -166,7 +166,7 @@ public class WaypointCommand {
+@@ -166,7 +_,7 @@
      }
  
      private static void mutateIcon(final CommandSourceStack source, final WaypointTransmitter waypoint, final Consumer<Waypoint.Icon> iconConsumer) {

@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/network/chat/contents/SelectorContents.java b/net/minecraft/network/chat/contents/SelectorContents.java
-index fe2fee1fe6abb24b57302c6c03ea84a2758e7fee..707372f90d010b87c2b57179d99176c452f71231 100644
 --- a/net/minecraft/network/chat/contents/SelectorContents.java
 +++ b/net/minecraft/network/chat/contents/SelectorContents.java
-@@ -38,7 +38,7 @@ public record SelectorContents(CompilableString<EntitySelector> selector, Option
+@@ -38,7 +_,7 @@
              return Component.empty();
          }
  

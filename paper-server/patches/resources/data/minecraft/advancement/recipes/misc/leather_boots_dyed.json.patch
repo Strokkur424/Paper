@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/misc/leather_boots_dyed.json
++++ b/data/minecraft/advancement/recipes/misc/leather_boots_dyed.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:leather_boots_dyed"
++        "recipe": "minecraft:leather_boots_dyed"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

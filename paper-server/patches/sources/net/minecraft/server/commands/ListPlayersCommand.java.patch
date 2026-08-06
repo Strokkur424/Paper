@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/server/commands/ListPlayersCommand.java b/net/minecraft/server/commands/ListPlayersCommand.java
-index a00d9a42a935064c013267fda334f87f3c3b9e50..b850c908a594f839ce124c6bd01762d31cc3aa1e 100644
 --- a/net/minecraft/server/commands/ListPlayersCommand.java
 +++ b/net/minecraft/server/commands/ListPlayersCommand.java
-@@ -32,7 +32,14 @@ public class ListPlayersCommand {
+@@ -32,7 +_,14 @@
  
      private static int format(final CommandSourceStack source, final Function<ServerPlayer, Component> formatter) {
          PlayerList playerList = source.getServer().getPlayerList();

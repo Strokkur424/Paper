@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/tools/stone_axe.json
++++ b/data/minecraft/advancement/recipes/tools/stone_axe.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:stone_axe"
++        "recipe": "minecraft:stone_axe"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/level/block/entity/BellBlockEntity.java b/net/minecraft/world/level/block/entity/BellBlockEntity.java
-index a2e7431798c431bed5dacbabeb68a16ba30fca12..d6e8e13a0f3c883bfbc930faa113b59cfc8c442b 100644
 --- a/net/minecraft/world/level/block/entity/BellBlockEntity.java
 +++ b/net/minecraft/world/level/block/entity/BellBlockEntity.java
-@@ -63,6 +63,11 @@ public class BellBlockEntity extends BlockEntity {
+@@ -63,6 +_,11 @@
  
          if (entity.ticks >= 50) {
              entity.shaking = false;
@@ -20,7 +12,7 @@ index a2e7431798c431bed5dacbabeb68a16ba30fca12..d6e8e13a0f3c883bfbc930faa113b59c
              entity.ticks = 0;
          }
  
-@@ -76,6 +81,7 @@ public class BellBlockEntity extends BlockEntity {
+@@ -76,6 +_,7 @@
                  entity.resonationTicks++;
              } else {
                  onResonationEnd.run(level, pos, entity.nearbyEntities);
@@ -28,7 +20,7 @@ index a2e7431798c431bed5dacbabeb68a16ba30fca12..d6e8e13a0f3c883bfbc930faa113b59c
                  entity.resonating = false;
              }
          }
-@@ -116,6 +122,8 @@ public class BellBlockEntity extends BlockEntity {
+@@ -116,6 +_,8 @@
                  }
              }
          }
@@ -37,7 +29,7 @@ index a2e7431798c431bed5dacbabeb68a16ba30fca12..d6e8e13a0f3c883bfbc930faa113b59c
      }
  
      private static boolean areRaidersNearby(final BlockPos bellPos, final List<LivingEntity> nearbyEntities) {
-@@ -129,7 +137,10 @@ public class BellBlockEntity extends BlockEntity {
+@@ -129,7 +_,10 @@
      }
  
      private static void makeRaidersGlow(final Level level, final BlockPos blockPos, final List<LivingEntity> nearbyEntities) {
@@ -49,7 +41,7 @@ index a2e7431798c431bed5dacbabeb68a16ba30fca12..d6e8e13a0f3c883bfbc930faa113b59c
      }
  
      private static void showBellParticles(final Level level, final BlockPos bellPos, final List<LivingEntity> nearbyEntities) {
-@@ -160,7 +171,16 @@ public class BellBlockEntity extends BlockEntity {
+@@ -160,7 +_,16 @@
          return entity.isAlive() && !entity.isRemoved() && blockPos.closerToCenterThan(entity.position(), 48.0) && entity.is(EntityTypeTags.RAIDERS);
      }
  

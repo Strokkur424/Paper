@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/level/dimension/end/DragonRespawnStage.java b/net/minecraft/world/level/dimension/end/DragonRespawnStage.java
-index 39aa02d6f7963e3e8bbd1cfc68a9d2828ab76efc..ffa813ad111f05716c658e3a66a9eeb9b70c5e4c 100644
 --- a/net/minecraft/world/level/dimension/end/DragonRespawnStage.java
 +++ b/net/minecraft/world/level/dimension/end/DragonRespawnStage.java
-@@ -84,7 +84,7 @@ public enum DragonRespawnStage implements StringRepresentable {
+@@ -84,7 +_,7 @@
                  for (EndCrystal crystal : crystals) {
                      crystal.setBeamTarget(null);
                      level.explode(crystal, crystal.getX(), crystal.getY(), crystal.getZ(), 6.0F, Level.ExplosionInteraction.NONE);

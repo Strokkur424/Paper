@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/redstone/dark_oak_button.json
++++ b/data/minecraft/advancement/recipes/redstone/dark_oak_button.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:dark_oak_button"
++        "recipe": "minecraft:dark_oak_button"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

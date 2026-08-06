@@ -1,0 +1,14 @@
+--- a/data/minecraft/worldgen/feature/mushroom_island_vegetation.json
++++ /dev/null
+@@ -1,11 +_,0 @@
+-{
+-  "type": "minecraft:random_boolean_selector",
+-  "feature_false": {
+-    "feature": "minecraft:huge_brown_mushroom",
+-    "placement": []
+-  },
+-  "feature_true": {
+-    "feature": "minecraft:huge_red_mushroom",
+-    "placement": []
+-  }
+-}

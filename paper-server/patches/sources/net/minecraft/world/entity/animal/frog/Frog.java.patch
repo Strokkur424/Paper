@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/entity/animal/frog/Frog.java b/net/minecraft/world/entity/animal/frog/Frog.java
-index 7d58a2f3cabd4808896d656c734c8f9344ed57ed..d7d8216524e8e4c66c9e5a8dd4e682f46f335ca1 100644
 --- a/net/minecraft/world/entity/animal/frog/Frog.java
 +++ b/net/minecraft/world/entity/animal/frog/Frog.java
-@@ -254,7 +254,12 @@ public class Frog extends Animal {
+@@ -254,7 +_,12 @@
  
      @Override
      public void spawnChildFromBreeding(final ServerLevel level, final Animal partner) {

@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/entity/animal/fox/Fox.java b/net/minecraft/world/entity/animal/fox/Fox.java
-index 11812c8ef79a73bdd78499ac1c9c9b617611cda1..9bc2f97a31876362f8123f5411fcd574c3e36a3a 100644
 --- a/net/minecraft/world/entity/animal/fox/Fox.java
 +++ b/net/minecraft/world/entity/animal/fox/Fox.java
-@@ -453,7 +453,7 @@ public class Fox extends Animal {
+@@ -453,7 +_,7 @@
          input.read("Trusted", TRUSTED_LIST_CODEC).orElse(List.of()).forEach(this::addTrustedEntity);
          this.setSleeping(input.getBooleanOr("Sleeping", false));
          this.setVariant(input.read("Type", Fox.Variant.CODEC).orElse(Fox.Variant.DEFAULT));
@@ -17,7 +9,7 @@ index 11812c8ef79a73bdd78499ac1c9c9b617611cda1..9bc2f97a31876362f8123f5411fcd574
          this.setIsCrouching(input.getBooleanOr("Crouching", false));
          if (this.level() instanceof ServerLevel) {
              this.setTargetGoals();
-@@ -470,6 +470,12 @@ public class Fox extends Animal {
+@@ -470,6 +_,12 @@
      }
  
      public void setSitting(final boolean value) {
@@ -30,7 +22,7 @@ index 11812c8ef79a73bdd78499ac1c9c9b617611cda1..9bc2f97a31876362f8123f5411fcd574
          this.setFlag(FLAG_SITTING, value);
      }
  
-@@ -529,19 +535,20 @@ public class Fox extends Animal {
+@@ -529,19 +_,20 @@
              thrownItem.setPickUpDelay(40);
              thrownItem.setThrower(this);
              this.playSound(SoundEvents.FOX_SPIT, 1.0F, 1.0F);
@@ -54,7 +46,7 @@ index 11812c8ef79a73bdd78499ac1c9c9b617611cda1..9bc2f97a31876362f8123f5411fcd574
              int count = itemStack.getCount();
              if (count > 1) {
                  this.dropItemStack(itemStack.split(count - 1));
-@@ -552,7 +559,7 @@ public class Fox extends Animal {
+@@ -552,7 +_,7 @@
              this.setItemSlot(EquipmentSlot.MAINHAND, itemStack.split(1));
              this.setGuaranteedDrop(EquipmentSlot.MAINHAND);
              this.take(entity, itemStack.getCount());
@@ -63,7 +55,7 @@ index 11812c8ef79a73bdd78499ac1c9c9b617611cda1..9bc2f97a31876362f8123f5411fcd574
              this.ticksSinceEaten = 0;
          }
      }
-@@ -643,12 +650,12 @@ public class Fox extends Animal {
+@@ -643,12 +_,12 @@
      }
  
      @Override
@@ -78,7 +70,7 @@ index 11812c8ef79a73bdd78499ac1c9c9b617611cda1..9bc2f97a31876362f8123f5411fcd574
      }
  
      private void wakeUp() {
-@@ -710,7 +717,13 @@ public class Fox extends Animal {
+@@ -710,7 +_,13 @@
      }
  
      @Override
@@ -93,7 +85,7 @@ index 11812c8ef79a73bdd78499ac1c9c9b617611cda1..9bc2f97a31876362f8123f5411fcd574
          ItemStack itemStack = this.getItemBySlot(EquipmentSlot.MAINHAND);
          if (!itemStack.isEmpty()) {
              this.spawnAtLocation(level, itemStack);
-@@ -890,6 +903,19 @@ public class Fox extends Animal {
+@@ -890,6 +_,19 @@
                      offspring.addTrustedEntity(partnerLoveCause);
                  }
  
@@ -113,7 +105,7 @@ index 11812c8ef79a73bdd78499ac1c9c9b617611cda1..9bc2f97a31876362f8123f5411fcd574
                  if (loveCause != null) {
                      loveCause.awardStat(Stats.ANIMALS_BRED);
                      CriteriaTriggers.BRED_ANIMALS.trigger(loveCause, this.animal, this.partner, offspring);
-@@ -899,14 +925,12 @@ public class Fox extends Animal {
+@@ -899,14 +_,12 @@
                  this.partner.setAge(6000);
                  this.animal.resetLove();
                  this.partner.resetLove();
@@ -131,7 +123,7 @@ index 11812c8ef79a73bdd78499ac1c9c9b617611cda1..9bc2f97a31876362f8123f5411fcd574
                          );
                  }
              }
-@@ -970,6 +994,7 @@ public class Fox extends Animal {
+@@ -970,6 +_,7 @@
          private void pickSweetBerries(final BlockState state) {
              int age = state.getValue(SweetBerryBushBlock.AGE);
              state.setValue(SweetBerryBushBlock.AGE, 1);

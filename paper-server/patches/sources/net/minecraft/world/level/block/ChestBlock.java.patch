@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/level/block/ChestBlock.java b/net/minecraft/world/level/block/ChestBlock.java
-index f35c255bb1e79b8550be330ab43002f363f113b3..39b5e9f8bfe070296aa7364668e40ca429d2ee08 100644
 --- a/net/minecraft/world/level/block/ChestBlock.java
 +++ b/net/minecraft/world/level/block/ChestBlock.java
-@@ -85,7 +85,7 @@ public class ChestBlock extends AbstractChestBlock<ChestBlockEntity> implements
+@@ -85,7 +_,7 @@
          @Override
          public Optional<MenuProvider> acceptDouble(final ChestBlockEntity first, final ChestBlockEntity second) {
              final Container container = new CompoundContainer(first, second);
@@ -17,7 +9,7 @@ index f35c255bb1e79b8550be330ab43002f363f113b3..39b5e9f8bfe070296aa7364668e40ca4
                  @Override
                  public @Nullable AbstractContainerMenu createMenu(final int containerId, final Inventory inventory, final Player player) {
                      if (first.canOpen(player) && second.canOpen(player)) {
-@@ -106,10 +106,10 @@ public class ChestBlock extends AbstractChestBlock<ChestBlockEntity> implements
+@@ -106,10 +_,10 @@
                      if (first.hasCustomName()) {
                          return first.getDisplayName();
                      } else {
@@ -30,7 +22,7 @@ index f35c255bb1e79b8550be330ab43002f363f113b3..39b5e9f8bfe070296aa7364668e40ca4
          }
  
          @Override
-@@ -247,8 +247,7 @@ public class ChestBlock extends AbstractChestBlock<ChestBlockEntity> implements
+@@ -247,8 +_,7 @@
      ) {
          if (level instanceof ServerLevel serverLevel) {
              MenuProvider menuProvider = this.getMenuProvider(state, level, pos);
@@ -40,7 +32,7 @@ index f35c255bb1e79b8550be330ab43002f363f113b3..39b5e9f8bfe070296aa7364668e40ca4
                  player.awardStat(this.getOpenChestStat());
                  PiglinAi.angerNearbyPiglins(serverLevel, player, true);
              }
-@@ -289,7 +288,13 @@ public class ChestBlock extends AbstractChestBlock<ChestBlockEntity> implements
+@@ -289,7 +_,13 @@
  
      @Override
      public @Nullable MenuProvider getMenuProvider(final BlockState state, final Level level, final BlockPos pos) {
@@ -55,7 +47,7 @@ index f35c255bb1e79b8550be330ab43002f363f113b3..39b5e9f8bfe070296aa7364668e40ca4
      }
  
      public static DoubleBlockCombiner.Combiner<ChestBlockEntity, Float2FloatFunction> opennessCombiner(final LidBlockEntity entity) {
-@@ -331,6 +336,11 @@ public class ChestBlock extends AbstractChestBlock<ChestBlockEntity> implements
+@@ -331,6 +_,11 @@
      }
  
      private static boolean isCatSittingOnChest(final LevelAccessor level, final BlockPos pos) {

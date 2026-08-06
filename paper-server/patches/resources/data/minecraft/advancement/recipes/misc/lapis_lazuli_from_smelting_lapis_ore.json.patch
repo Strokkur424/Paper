@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/misc/lapis_lazuli_from_smelting_lapis_ore.json
++++ b/data/minecraft/advancement/recipes/misc/lapis_lazuli_from_smelting_lapis_ore.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:lapis_lazuli_from_smelting_lapis_ore"
++        "recipe": "minecraft:lapis_lazuli_from_smelting_lapis_ore"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

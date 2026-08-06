@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/item/component/TypedEntityData.java b/net/minecraft/world/item/component/TypedEntityData.java
-index 4b6d9340ad5305dabdb3dfa77a9f1cb04f1a34a5..be49d9fd10ea7536346d80c968c4c3498d67b0e5 100644
 --- a/net/minecraft/world/item/component/TypedEntityData.java
 +++ b/net/minecraft/world/item/component/TypedEntityData.java
-@@ -86,6 +86,32 @@ public final class TypedEntityData<IdType> implements TooltipProvider {
+@@ -86,6 +_,32 @@
          this.tag = stripId(data);
      }
  

@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/level/gamerules/GameRule.java b/net/minecraft/world/level/gamerules/GameRule.java
-index 4daa68a1fad5a318ad3f5372e0b6162a01510fb6..f700df29d86359d8ddc3e5855a46c8234c31ddcb 100644
 --- a/net/minecraft/world/level/gamerules/GameRule.java
 +++ b/net/minecraft/world/level/gamerules/GameRule.java
-@@ -41,7 +41,13 @@ public final class GameRule<T> implements FeatureElement {
+@@ -41,7 +_,13 @@
          this.commandResultFunction = commandResultFunction;
          this.defaultValue = defaultValue;
          this.requiredFeatures = requiredFeatures;

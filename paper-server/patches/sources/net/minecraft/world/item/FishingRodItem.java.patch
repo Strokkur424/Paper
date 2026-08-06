@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/item/FishingRodItem.java b/net/minecraft/world/item/FishingRodItem.java
-index 3e8c36f7807c5f2beb8fbb949402a72833c023f7..33d0dae9a1e132d220148b24b508795b6b13ec77 100644
 --- a/net/minecraft/world/item/FishingRodItem.java
 +++ b/net/minecraft/world/item/FishingRodItem.java
-@@ -23,7 +23,7 @@ public class FishingRodItem extends Item {
+@@ -23,7 +_,7 @@
          ItemStack itemStack = player.getItemInHand(hand);
          if (player.fishing != null) {
              if (!level.isClientSide()) {
@@ -17,7 +9,7 @@ index 3e8c36f7807c5f2beb8fbb949402a72833c023f7..33d0dae9a1e132d220148b24b508795b
                  itemStack.hurtAndBreak(dmg, player, hand.asEquipmentSlot());
              }
  
-@@ -39,20 +39,31 @@ public class FishingRodItem extends Item {
+@@ -39,20 +_,31 @@
              );
              itemStack.causeUseVibration(player, GameEvent.ITEM_INTERACT_FINISH);
          } else {

@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/level/entity/PersistentEntitySectionManager.java b/net/minecraft/world/level/entity/PersistentEntitySectionManager.java
-index 9a59450c336548ea08823211a311036c5178a166..d02ea8f2aef0bf855efa9a7954d80c777d174276 100644
 --- a/net/minecraft/world/level/entity/PersistentEntitySectionManager.java
 +++ b/net/minecraft/world/level/entity/PersistentEntitySectionManager.java
-@@ -52,6 +52,16 @@ public class PersistentEntitySectionManager<T extends EntityAccess> implements A
+@@ -52,6 +_,16 @@
          this.entityGetter = new LevelEntityGetterAdapter<>(this.visibleEntityStorage, this.sectionStorage);
      }
  
@@ -25,7 +17,7 @@ index 9a59450c336548ea08823211a311036c5178a166..d02ea8f2aef0bf855efa9a7954d80c77
      private void removeSectionIfEmpty(final long sectionPos, final EntitySection<T> section) {
          if (section.isEmpty()) {
              this.sectionStorage.remove(sectionPos);
-@@ -59,6 +69,7 @@ public class PersistentEntitySectionManager<T extends EntityAccess> implements A
+@@ -59,6 +_,7 @@
      }
  
      private boolean addEntityUuid(final T entity) {
@@ -33,7 +25,7 @@ index 9a59450c336548ea08823211a311036c5178a166..d02ea8f2aef0bf855efa9a7954d80c77
          if (!this.knownUuids.add(entity.getUUID())) {
              LOGGER.warn("UUID of added entity already exists: {}", entity);
              return false;
-@@ -72,6 +83,17 @@ public class PersistentEntitySectionManager<T extends EntityAccess> implements A
+@@ -72,6 +_,17 @@
      }
  
      private boolean addEntity(final T entity, final boolean loaded) {
@@ -51,7 +43,7 @@ index 9a59450c336548ea08823211a311036c5178a166..d02ea8f2aef0bf855efa9a7954d80c77
          if (!this.addEntityUuid(entity)) {
              return false;
          }
-@@ -113,19 +135,23 @@ public class PersistentEntitySectionManager<T extends EntityAccess> implements A
+@@ -113,19 +_,23 @@
      }
  
      private void startTicking(final T entity) {
@@ -75,7 +67,7 @@ index 9a59450c336548ea08823211a311036c5178a166..d02ea8f2aef0bf855efa9a7954d80c77
          this.callbacks.onTrackingEnd(entity);
          this.visibleEntityStorage.remove(entity);
      }
-@@ -136,6 +162,7 @@ public class PersistentEntitySectionManager<T extends EntityAccess> implements A
+@@ -136,6 +_,7 @@
      }
  
      public void updateChunkStatus(final ChunkPos pos, final Visibility chunkStatus) {
@@ -83,7 +75,7 @@ index 9a59450c336548ea08823211a311036c5178a166..d02ea8f2aef0bf855efa9a7954d80c77
          long chunkPosKey = pos.pack();
          if (chunkStatus == Visibility.HIDDEN) {
              this.chunkVisibility.remove(chunkPosKey);
-@@ -169,6 +196,7 @@ public class PersistentEntitySectionManager<T extends EntityAccess> implements A
+@@ -169,6 +_,7 @@
      }
  
      public void ensureChunkQueuedForLoad(final long chunkPos) {
@@ -91,7 +83,7 @@ index 9a59450c336548ea08823211a311036c5178a166..d02ea8f2aef0bf855efa9a7954d80c77
          PersistentEntitySectionManager.ChunkLoadStatus chunkLoadStatus = this.chunkLoadStatuses.get(chunkPos);
          if (chunkLoadStatus == PersistentEntitySectionManager.ChunkLoadStatus.FRESH) {
              this.requestChunkLoad(chunkPos);
-@@ -176,6 +204,11 @@ public class PersistentEntitySectionManager<T extends EntityAccess> implements A
+@@ -176,6 +_,11 @@
      }
  
      private boolean storeChunkSections(final long chunkPos, final Consumer<T> savedEntityVisitor) {
@@ -103,7 +95,7 @@ index 9a59450c336548ea08823211a311036c5178a166..d02ea8f2aef0bf855efa9a7954d80c77
          PersistentEntitySectionManager.ChunkLoadStatus chunkLoadStatus = this.chunkLoadStatuses.get(chunkPos);
          if (chunkLoadStatus == PersistentEntitySectionManager.ChunkLoadStatus.PENDING) {
              return false;
-@@ -187,6 +220,7 @@ public class PersistentEntitySectionManager<T extends EntityAccess> implements A
+@@ -187,6 +_,7 @@
              .collect(Collectors.toList());
          if (rootEntitiesToSave.isEmpty()) {
              if (chunkLoadStatus == PersistentEntitySectionManager.ChunkLoadStatus.LOADED) {
@@ -111,7 +103,7 @@ index 9a59450c336548ea08823211a311036c5178a166..d02ea8f2aef0bf855efa9a7954d80c77
                  this.permanentStorage.storeEntities(new ChunkEntities<>(ChunkPos.unpack(chunkPos), ImmutableList.of()));
              }
  
-@@ -195,6 +229,7 @@ public class PersistentEntitySectionManager<T extends EntityAccess> implements A
+@@ -195,6 +_,7 @@
              this.requestChunkLoad(chunkPos);
              return false;
          } else {
@@ -119,7 +111,7 @@ index 9a59450c336548ea08823211a311036c5178a166..d02ea8f2aef0bf855efa9a7954d80c77
              this.permanentStorage.storeEntities(new ChunkEntities<>(ChunkPos.unpack(chunkPos), rootEntitiesToSave));
              rootEntitiesToSave.forEach(savedEntityVisitor);
              return true;
-@@ -202,6 +237,7 @@ public class PersistentEntitySectionManager<T extends EntityAccess> implements A
+@@ -202,6 +_,7 @@
      }
  
      private void requestChunkLoad(final long chunkKey) {
@@ -127,7 +119,7 @@ index 9a59450c336548ea08823211a311036c5178a166..d02ea8f2aef0bf855efa9a7954d80c77
          this.chunkLoadStatuses.put(chunkKey, PersistentEntitySectionManager.ChunkLoadStatus.PENDING);
          ChunkPos pos = ChunkPos.unpack(chunkKey);
          this.permanentStorage.loadEntities(pos).thenAccept(this.loadingInbox::add).exceptionally(t -> {
-@@ -211,7 +247,8 @@ public class PersistentEntitySectionManager<T extends EntityAccess> implements A
+@@ -211,7 +_,8 @@
      }
  
      private boolean processChunkUnload(final long chunkKey) {
@@ -137,7 +129,7 @@ index 9a59450c336548ea08823211a311036c5178a166..d02ea8f2aef0bf855efa9a7954d80c77
          if (!storeSuccessful) {
              return false;
          }
-@@ -221,7 +258,7 @@ public class PersistentEntitySectionManager<T extends EntityAccess> implements A
+@@ -221,7 +_,7 @@
      }
  
      private void unloadEntity(final EntityAccess e) {
@@ -146,7 +138,7 @@ index 9a59450c336548ea08823211a311036c5178a166..d02ea8f2aef0bf855efa9a7954d80c77
          e.setLevelCallback(EntityInLevelCallback.NULL);
      }
  
-@@ -230,14 +267,20 @@ public class PersistentEntitySectionManager<T extends EntityAccess> implements A
+@@ -230,14 +_,20 @@
      }
  
      public void processPendingLoads() {
@@ -167,7 +159,7 @@ index 9a59450c336548ea08823211a311036c5178a166..d02ea8f2aef0bf855efa9a7954d80c77
          this.processPendingLoads();
          this.processUnloads();
      }
-@@ -255,6 +298,7 @@ public class PersistentEntitySectionManager<T extends EntityAccess> implements A
+@@ -255,6 +_,7 @@
      }
  
      public void autoSave() {
@@ -175,7 +167,7 @@ index 9a59450c336548ea08823211a311036c5178a166..d02ea8f2aef0bf855efa9a7954d80c77
          this.getAllChunksToSave().forEach(chunkKey -> {
              boolean shouldUnload = this.chunkVisibility.get(chunkKey) == Visibility.HIDDEN;
              if (shouldUnload) {
-@@ -266,6 +310,7 @@ public class PersistentEntitySectionManager<T extends EntityAccess> implements A
+@@ -266,6 +_,7 @@
      }
  
      public void saveAll() {
@@ -183,7 +175,7 @@ index 9a59450c336548ea08823211a311036c5178a166..d02ea8f2aef0bf855efa9a7954d80c77
          LongSet chunksToSave = this.getAllChunksToSave();
  
          while (!chunksToSave.isEmpty()) {
-@@ -282,7 +327,13 @@ public class PersistentEntitySectionManager<T extends EntityAccess> implements A
+@@ -282,7 +_,13 @@
  
      @Override
      public void close() throws IOException {
@@ -198,7 +190,7 @@ index 9a59450c336548ea08823211a311036c5178a166..d02ea8f2aef0bf855efa9a7954d80c77
          this.permanentStorage.close();
      }
  
-@@ -383,6 +434,7 @@ public class PersistentEntitySectionManager<T extends EntityAccess> implements A
+@@ -383,6 +_,7 @@
              BlockPos pos = this.entity.blockPosition();
              long newSectionPos = SectionPos.asLong(pos);
              if (newSectionPos != this.currentSectionKey) {
@@ -206,7 +198,7 @@ index 9a59450c336548ea08823211a311036c5178a166..d02ea8f2aef0bf855efa9a7954d80c77
                  Visibility previousStatus = this.currentSection.getStatus();
                  if (!this.currentSection.remove(this.entity)) {
                      PersistentEntitySectionManager.LOGGER
-@@ -430,6 +482,7 @@ public class PersistentEntitySectionManager<T extends EntityAccess> implements A
+@@ -430,6 +_,7 @@
  
          @Override
          public void onRemove(final Entity.RemovalReason reason) {

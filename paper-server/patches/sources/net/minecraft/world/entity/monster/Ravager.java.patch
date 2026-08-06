@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/entity/monster/Ravager.java b/net/minecraft/world/entity/monster/Ravager.java
-index 952ffdd5fbc45ea414ca1bfe2aaa40275b8cbfbe..55c69abf902aa400c38fc62a7a9037e071a9349e 100644
 --- a/net/minecraft/world/entity/monster/Ravager.java
 +++ b/net/minecraft/world/entity/monster/Ravager.java
-@@ -154,12 +154,19 @@ public class Ravager extends Raider {
+@@ -154,12 +_,19 @@
                      BlockState state = serverLevel.getBlockState(pos);
                      Block block = state.getBlock();
                      if (block instanceof LeavesBlock) {
@@ -28,7 +20,7 @@ index 952ffdd5fbc45ea414ca1bfe2aaa40275b8cbfbe..55c69abf902aa400c38fc62a7a9037e0
                  }
              }
  
-@@ -250,7 +257,7 @@ public class Ravager extends Raider {
+@@ -250,7 +_,7 @@
          double xd = entity.getX() - this.getX();
          double zd = entity.getZ() - this.getZ();
          double dd = Math.max(xd * xd + zd * zd, 0.001);

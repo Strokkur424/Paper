@@ -1,0 +1,29 @@
+--- a/data/minecraft/advancement/nether/uneasy_alliance.json
++++ b/data/minecraft/advancement/nether/uneasy_alliance.json
+@@ -3,16 +_,18 @@
+   "criteria": {
+     "killed_ghast": {
+       "conditions": {
+-        "entity": {
+-          "type": "minecraft:entity_properties",
+-          "entity": "this",
+-          "predicate": {
+-            "minecraft:entity_type": "minecraft:ghast",
+-            "minecraft:location": {
+-              "dimension": "minecraft:overworld"
++        "entity": [
++          {
++            "condition": "minecraft:entity_properties",
++            "entity": "this",
++            "predicate": {
++              "minecraft:entity_type": "minecraft:ghast",
++              "minecraft:location": {
++                "dimension": "minecraft:overworld"
++              }
+             }
+           }
+-        }
++        ]
+       },
+       "trigger": "minecraft:player_killed_entity"
+     }

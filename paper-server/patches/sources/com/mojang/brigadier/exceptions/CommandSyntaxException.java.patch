@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/com/mojang/brigadier/exceptions/CommandSyntaxException.java b/com/mojang/brigadier/exceptions/CommandSyntaxException.java
-index 3370731ee064d2693b972a0765c13dd4fd69f66a..585e0396c899eb909ffd4fd8c5241daf1e3b2816 100644
 --- a/com/mojang/brigadier/exceptions/CommandSyntaxException.java
 +++ b/com/mojang/brigadier/exceptions/CommandSyntaxException.java
-@@ -5,7 +5,7 @@ package com.mojang.brigadier.exceptions;
+@@ -5,7 +_,7 @@
  
  import com.mojang.brigadier.Message;
  
@@ -17,7 +9,7 @@ index 3370731ee064d2693b972a0765c13dd4fd69f66a..585e0396c899eb909ffd4fd8c5241daf
      public static final int CONTEXT_AMOUNT = 10;
      public static boolean ENABLE_COMMAND_STACK_TRACES = true;
      public static BuiltInExceptionProvider BUILT_IN_EXCEPTIONS = new BuiltInExceptions();
-@@ -73,4 +73,11 @@ public class CommandSyntaxException extends Exception {
+@@ -73,4 +_,11 @@
      public int getCursor() {
          return cursor;
      }

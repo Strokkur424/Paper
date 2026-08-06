@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/adventure/crafters_crafting_crafters.json
++++ b/data/minecraft/advancement/adventure/crafters_crafting_crafters.json
+@@ -3,7 +_,7 @@
+   "criteria": {
+     "crafter_crafted_crafter": {
+       "conditions": {
+-        "recipes": "minecraft:crafter"
++        "recipe_id": "minecraft:crafter"
+       },
+       "trigger": "minecraft:crafter_recipe_crafted"
+     }

@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/entity/ai/behavior/BehaviorUtils.java b/net/minecraft/world/entity/ai/behavior/BehaviorUtils.java
-index d5b7f39d785a92f06b24306522e1898d7a4a846c..f744ecd20dc70786311a7162b52aa4ceca0717db 100644
 --- a/net/minecraft/world/entity/ai/behavior/BehaviorUtils.java
 +++ b/net/minecraft/world/entity/ai/behavior/BehaviorUtils.java
-@@ -94,6 +94,7 @@ public class BehaviorUtils {
+@@ -94,6 +_,7 @@
      public static void throwItem(
          final LivingEntity thrower, final ItemStack item, final Vec3 targetPos, final Vec3 throwVelocity, final float handYDistanceFromEye
      ) {
@@ -16,7 +8,7 @@ index d5b7f39d785a92f06b24306522e1898d7a4a846c..f744ecd20dc70786311a7162b52aa4ce
          double yHandPos = thrower.getEyeY() - handYDistanceFromEye;
          ItemEntity itemEntity = new ItemEntity(thrower.level(), thrower.getX(), yHandPos, thrower.getZ(), item);
          itemEntity.setThrower(thrower);
-@@ -101,6 +102,13 @@ public class BehaviorUtils {
+@@ -101,6 +_,13 @@
          throwVector = throwVector.normalize().multiply(throwVelocity.x, throwVelocity.y, throwVelocity.z);
          itemEntity.setDeltaMovement(throwVector);
          itemEntity.setDefaultPickUpDelay();

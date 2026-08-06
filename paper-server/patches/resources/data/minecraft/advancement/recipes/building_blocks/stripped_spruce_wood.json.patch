@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/building_blocks/stripped_spruce_wood.json
++++ b/data/minecraft/advancement/recipes/building_blocks/stripped_spruce_wood.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:stripped_spruce_wood"
++        "recipe": "minecraft:stripped_spruce_wood"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

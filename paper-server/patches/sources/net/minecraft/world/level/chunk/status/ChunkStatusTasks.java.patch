@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/level/chunk/status/ChunkStatusTasks.java b/net/minecraft/world/level/chunk/status/ChunkStatusTasks.java
-index bf5026fe8a964d8e15c19c12757a6cad4a5e8d8d..6babf01c7cb12adebf70816bc852b406e1cacae9 100644
 --- a/net/minecraft/world/level/chunk/status/ChunkStatusTasks.java
 +++ b/net/minecraft/world/level/chunk/status/ChunkStatusTasks.java
-@@ -42,7 +42,7 @@ public class ChunkStatusTasks {
+@@ -42,7 +_,7 @@
          final WorldGenContext context, final ChunkStep step, final StaticCache2D<GenerationChunkHolder> chunks, final ChunkAccess chunk
      ) {
          ServerLevel level = context.level();
@@ -17,18 +9,20 @@ index bf5026fe8a964d8e15c19c12757a6cad4a5e8d8d..6babf01c7cb12adebf70816bc852b406
              context.generator()
                  .createStructures(
                      level.registryAccess(),
-@@ -209,7 +209,51 @@ public class ChunkStatusTasks {
+@@ -209,7 +_,51 @@
  
      public static void postLoadProtoChunk(final ServerLevel level, final ValueInput.ValueInputList entities) {
          if (!entities.isEmpty()) {
 -            level.addWorldGenChunkEntities(EntityType.loadEntitiesRecursive(entities, level, EntitySpawnReason.LOAD));
+-        }
+-    }
 +            // Paper start - duplicate uuid resolving
 +            level.addWorldGenChunkEntities(EntityType.loadEntitiesRecursive(entities, level, EntitySpawnReason.LOAD).filter((entity) -> {
 +                return !checkDupeUUID(level, entity);
 +            }));
 +            // Paper end - duplicate uuid resolving
-         }
-     }
++        }
++    }
 +
 +    // Paper start - duplicate uuid resolving
 +    // rets true if to prevent the entity from being added

@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/item/BoneMealItem.java b/net/minecraft/world/item/BoneMealItem.java
-index 3316adc7b9a04ca9a8b1ec4829c5db2a17af8635..12c63bbe2d25566746a6903e6cf61aac96f10173 100644
 --- a/net/minecraft/world/item/BoneMealItem.java
 +++ b/net/minecraft/world/item/BoneMealItem.java
-@@ -35,13 +35,18 @@ public class BoneMealItem extends Item {
+@@ -35,13 +_,18 @@
  
      @Override
      public InteractionResult useOn(final UseOnContext context) {
@@ -28,7 +20,7 @@ index 3316adc7b9a04ca9a8b1ec4829c5db2a17af8635..12c63bbe2d25566746a6903e6cf61aac
                  level.levelEvent(LevelEvent.PARTICLES_AND_SOUND_PLANT_GROWTH, pos, 15);
                  return InteractionResult.SUCCESS_SERVER;
              } else {
-@@ -52,7 +57,7 @@ public class BoneMealItem extends Item {
+@@ -52,7 +_,7 @@
              boolean solidBlockFace = clickedState.isFaceSturdy(level, pos, context.getClickedFace());
              if (solidBlockFace && growWaterPlant(boneMealStack, level, relative, context.getClickedFace())) {
                  if (!level.isClientSide()) {

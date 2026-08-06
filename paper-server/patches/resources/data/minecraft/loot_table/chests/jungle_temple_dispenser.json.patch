@@ -1,0 +1,26 @@
+--- a/data/minecraft/loot_table/chests/jungle_temple_dispenser.json
++++ b/data/minecraft/loot_table/chests/jungle_temple_dispenser.json
+@@ -5,14 +_,16 @@
+       "entries": [
+         {
+           "type": "minecraft:item",
+-          "modifier": {
+-            "type": "minecraft:set_count",
+-            "count": {
+-              "type": "minecraft:uniform",
+-              "max": 7.0,
+-              "min": 2.0
++          "functions": [
++            {
++              "count": {
++                "type": "minecraft:uniform",
++                "max": 7.0,
++                "min": 2.0
++              },
++              "function": "minecraft:set_count"
+             }
+-          },
++          ],
+           "name": "minecraft:arrow",
+           "weight": 30
+         }

@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/redstone/lectern.json
++++ b/data/minecraft/advancement/recipes/redstone/lectern.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:lectern"
++        "recipe": "minecraft:lectern"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

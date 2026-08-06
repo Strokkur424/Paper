@@ -1,0 +1,21 @@
+--- a/data/minecraft/loot_table/blocks/red_shrub.json
++++ /dev/null
+@@ -1,18 +_,0 @@
+-{
+-  "type": "minecraft:block",
+-  "pools": [
+-    {
+-      "condition": {
+-        "type": "minecraft:survives_explosion"
+-      },
+-      "entries": [
+-        {
+-          "type": "minecraft:item",
+-          "name": "minecraft:red_shrub"
+-        }
+-      ],
+-      "rolls": 1.0
+-    }
+-  ],
+-  "random_sequence": "minecraft:blocks/red_shrub"
+-}

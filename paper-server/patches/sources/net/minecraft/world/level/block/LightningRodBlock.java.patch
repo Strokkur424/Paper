@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/level/block/LightningRodBlock.java b/net/minecraft/world/level/block/LightningRodBlock.java
-index 15b36d214ce502c11f8b040acec7c8ffdea4e7d9..baa1b147f79a7c93d8cac557318a69a2afe1acbf 100644
 --- a/net/minecraft/world/level/block/LightningRodBlock.java
 +++ b/net/minecraft/world/level/block/LightningRodBlock.java
-@@ -76,6 +76,13 @@ public class LightningRodBlock extends RodBlock implements SimpleWaterloggedBloc
+@@ -76,6 +_,13 @@
      }
  
      public void onLightningStrike(final BlockState state, final Level level, final BlockPos pos) {
@@ -22,7 +14,7 @@ index 15b36d214ce502c11f8b040acec7c8ffdea4e7d9..baa1b147f79a7c93d8cac557318a69a2
          level.setBlockAndUpdate(pos, state.setValue(POWERED, true));
          this.updateNeighbours(state, level, pos);
          level.scheduleTick(pos, this, 8);
-@@ -89,6 +96,13 @@ public class LightningRodBlock extends RodBlock implements SimpleWaterloggedBloc
+@@ -89,6 +_,13 @@
  
      @Override
      protected void tick(final BlockState state, final ServerLevel level, final BlockPos pos, final RandomSource random) {

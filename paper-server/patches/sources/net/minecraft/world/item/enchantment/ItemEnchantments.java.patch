@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/item/enchantment/ItemEnchantments.java b/net/minecraft/world/item/enchantment/ItemEnchantments.java
-index 51e650527fe392f719ea8f2e0c4177fba18d2202..6d2d9b0718368760977fdb8c072e8cbafdf6fe2e 100644
 --- a/net/minecraft/world/item/enchantment/ItemEnchantments.java
 +++ b/net/minecraft/world/item/enchantment/ItemEnchantments.java
-@@ -28,19 +28,22 @@ import net.minecraft.world.item.component.TooltipProvider;
+@@ -28,19 +_,22 @@
  import org.jspecify.annotations.Nullable;
  
  public class ItemEnchantments implements TooltipProvider {
@@ -36,7 +28,7 @@ index 51e650527fe392f719ea8f2e0c4177fba18d2202..6d2d9b0718368760977fdb8c072e8cba
          this.enchantments = enchantments;
  
          for (Entry<Holder<Enchantment>> entry : enchantments.object2IntEntrySet()) {
-@@ -122,7 +125,7 @@ public class ItemEnchantments implements TooltipProvider {
+@@ -122,7 +_,7 @@
      }
  
      public static class Mutable {

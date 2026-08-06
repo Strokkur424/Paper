@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/decorations/white_bed.json
++++ b/data/minecraft/advancement/recipes/decorations/white_bed.json
+@@ -3,7 +_,7 @@
+   "criteria": {
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:white_bed"
++        "recipe": "minecraft:white_bed"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     },

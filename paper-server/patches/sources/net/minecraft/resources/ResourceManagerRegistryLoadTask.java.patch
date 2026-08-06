@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/resources/ResourceManagerRegistryLoadTask.java b/net/minecraft/resources/ResourceManagerRegistryLoadTask.java
-index 5e5fa486065732ce3af14aa789721a4b9dab4f60..80e24dae92712a9ce5ec7f5d5a762d6d8d10bfbf 100644
 --- a/net/minecraft/resources/ResourceManagerRegistryLoadTask.java
 +++ b/net/minecraft/resources/ResourceManagerRegistryLoadTask.java
-@@ -40,6 +40,7 @@ public class ResourceManagerRegistryLoadTask<T> extends RegistryLoadTask<T> {
+@@ -40,6 +_,7 @@
      @Override
      public CompletableFuture<?> load(final RegistryOps.RegistryInfoLookup context, final Executor executor) {
          FileToIdConverter lister = FileToIdConverter.registry(this.registryKey());
@@ -16,7 +8,7 @@ index 5e5fa486065732ce3af14aa789721a4b9dab4f60..80e24dae92712a9ce5ec7f5d5a762d6d
          return CompletableFuture.<Map<Identifier, Resource>>supplyAsync(() -> lister.listMatchingResources(this.resourceManager), executor)
              .thenCompose(
                  registryResources -> {
-@@ -61,11 +62,13 @@ public class ResourceManagerRegistryLoadTask<T> extends RegistryLoadTask<T> {
+@@ -61,11 +_,13 @@
              )
              .thenAcceptAsync(
                  loadedEntries -> {

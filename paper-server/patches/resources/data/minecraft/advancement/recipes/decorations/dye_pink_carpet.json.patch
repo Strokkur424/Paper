@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/decorations/dye_pink_carpet.json
++++ b/data/minecraft/advancement/recipes/decorations/dye_pink_carpet.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:dye_pink_carpet"
++        "recipe": "minecraft:dye_pink_carpet"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

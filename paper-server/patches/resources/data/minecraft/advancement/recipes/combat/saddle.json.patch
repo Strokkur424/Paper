@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/combat/saddle.json
++++ b/data/minecraft/advancement/recipes/combat/saddle.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:saddle"
++        "recipe": "minecraft:saddle"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/redstone/repeater.json
++++ b/data/minecraft/advancement/recipes/redstone/repeater.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:repeater"
++        "recipe": "minecraft:repeater"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

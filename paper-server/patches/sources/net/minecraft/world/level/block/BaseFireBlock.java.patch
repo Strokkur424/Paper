@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/level/block/BaseFireBlock.java b/net/minecraft/world/level/block/BaseFireBlock.java
-index d21a620f6f15ed58c9d8c6942e798e3a99d77616..7fb301f5201f3a20a34eee5acb0314ec6e08ed7b 100644
 --- a/net/minecraft/world/level/block/BaseFireBlock.java
 +++ b/net/minecraft/world/level/block/BaseFireBlock.java
-@@ -133,12 +133,13 @@ public abstract class BaseFireBlock extends Block {
+@@ -133,12 +_,13 @@
          final InsideBlockEffectApplier effectApplier,
          final boolean isPrecise
      ) {
@@ -23,7 +15,7 @@ index d21a620f6f15ed58c9d8c6942e798e3a99d77616..7fb301f5201f3a20a34eee5acb0314ec
          if (!entity.fireImmune()) {
              if (entity.getRemainingFireTicks() < 0) {
                  entity.setRemainingFireTicks(entity.getRemainingFireTicks() + 1);
-@@ -148,30 +149,41 @@ public abstract class BaseFireBlock extends Block {
+@@ -148,30 +_,41 @@
              }
  
              if (entity.getRemainingFireTicks() >= 0) {
@@ -70,7 +62,7 @@ index d21a620f6f15ed58c9d8c6942e798e3a99d77616..7fb301f5201f3a20a34eee5acb0314ec
      }
  
      @Override
-@@ -216,4 +228,12 @@ public abstract class BaseFireBlock extends Block {
+@@ -216,4 +_,12 @@
              : Direction.Plane.HORIZONTAL.getRandomAxis(level.getRandom());
          return PortalShape.findEmptyPortalShape(level, pos, preferredAxis).isPresent();
      }

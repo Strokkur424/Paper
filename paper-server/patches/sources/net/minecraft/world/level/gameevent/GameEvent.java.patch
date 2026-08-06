@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/level/gameevent/GameEvent.java b/net/minecraft/world/level/gameevent/GameEvent.java
-index cc8988ee5d6e7fd252999277a4fb9e49b202117d..5a761371e82e9366171a98c09acf96744d6bf17c 100644
 --- a/net/minecraft/world/level/gameevent/GameEvent.java
 +++ b/net/minecraft/world/level/gameevent/GameEvent.java
-@@ -86,7 +86,7 @@ public record GameEvent(int notificationRadius) {
+@@ -86,7 +_,7 @@
      }
  
      private static Holder.Reference<GameEvent> register(final String name, final int notificationRadius) {

@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/level/storage/PrimaryLevelData.java b/net/minecraft/world/level/storage/PrimaryLevelData.java
-index d362d4dc8879ccf7a3515a2f0f071fcf3feb8f42..efecfead76e995b0473f5a4dc86e98973d6ec4bc 100644
 --- a/net/minecraft/world/level/storage/PrimaryLevelData.java
 +++ b/net/minecraft/world/level/storage/PrimaryLevelData.java
-@@ -37,6 +37,8 @@ public class PrimaryLevelData implements ServerLevelData, WorldData {
+@@ -37,6 +_,8 @@
      private final PrimaryLevelData.SpecialWorldProperty specialWorldProperty;
      private final Lifecycle worldGenSettingsLifecycle;
      private LevelData.RespawnData respawnData;
@@ -17,7 +9,7 @@ index d362d4dc8879ccf7a3515a2f0f071fcf3feb8f42..efecfead76e995b0473f5a4dc86e9897
      private long gameTime;
      private final @Nullable UUID singlePlayerUUID;
      private final int version;
-@@ -99,7 +101,7 @@ public class PrimaryLevelData implements ServerLevelData, WorldData {
+@@ -99,7 +_,7 @@
      ) {
          long gameTime = input.get("Time").asLong(0L);
          LevelVersion levelVersion = LevelVersion.parse(input);
@@ -26,7 +18,7 @@ index d362d4dc8879ccf7a3515a2f0f071fcf3feb8f42..efecfead76e995b0473f5a4dc86e9897
              input.get("singleplayer_uuid").flatMap(UUIDUtil.CODEC::parse).result().orElse(null),
              input.get("WasModded").asBoolean(false),
              input.get("spawn").read(LevelData.RespawnData.CODEC).result().orElse(LevelData.RespawnData.DEFAULT),
-@@ -113,6 +115,13 @@ public class PrimaryLevelData implements ServerLevelData, WorldData {
+@@ -113,6 +_,13 @@
              worldGenSettingsLifecycle,
              input.get("version_history").orElseEmptyList().asList(d -> d.asInt(-1))
          );
@@ -40,7 +32,7 @@ index d362d4dc8879ccf7a3515a2f0f071fcf3feb8f42..efecfead76e995b0473f5a4dc86e9897
      }
  
      @Override
-@@ -136,20 +145,22 @@ public class PrimaryLevelData implements ServerLevelData, WorldData {
+@@ -136,20 +_,22 @@
          writeVersionTag(tag);
          this.writeVersionHistory(tag);
          NbtUtils.addCurrentDataVersion(tag);
@@ -68,10 +60,11 @@ index d362d4dc8879ccf7a3515a2f0f071fcf3feb8f42..efecfead76e995b0473f5a4dc86e9897
      }
  
      public static void writeLastPlayed(final CompoundTag tag) {
-@@ -347,6 +358,14 @@ public class PrimaryLevelData implements ServerLevelData, WorldData {
+@@ -346,6 +_,14 @@
+     public LevelSettings getLevelSettings() {
          return this.settings.copy();
      }
- 
++
 +    // CraftBukkit start - Check if the name stored in NBT is the correct one
 +    public void checkName(String name) {
 +        if (!this.settings.levelName().equals(name)) {
@@ -79,7 +72,6 @@ index d362d4dc8879ccf7a3515a2f0f071fcf3feb8f42..efecfead76e995b0473f5a4dc86e9897
 +        }
 +    }
 +    // CraftBukkit end
-+
+ 
      @Deprecated
      public enum SpecialWorldProperty {
-         NONE,

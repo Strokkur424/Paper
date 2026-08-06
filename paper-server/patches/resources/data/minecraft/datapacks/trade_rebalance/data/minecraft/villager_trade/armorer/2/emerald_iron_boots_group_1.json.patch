@@ -1,0 +1,11 @@
+--- a/data/minecraft/datapacks/trade_rebalance/data/minecraft/villager_trade/armorer/2/emerald_iron_boots_group_1.json
++++ b/data/minecraft/datapacks/trade_rebalance/data/minecraft/villager_trade/armorer/2/emerald_iron_boots_group_1.json
+@@ -4,7 +_,7 @@
+   },
+   "max_uses": 12.0,
+   "merchant_predicate": {
+-    "type": "minecraft:entity_properties",
++    "condition": "minecraft:entity_properties",
+     "entity": "this",
+     "predicate": {
+       "minecraft:predicates": {

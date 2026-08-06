@@ -1,0 +1,11 @@
+--- a/data/minecraft/tags/item/wooden_fences.json
++++ b/data/minecraft/tags/item/wooden_fences.json
+@@ -11,7 +_,6 @@
+     "minecraft:warped_fence",
+     "minecraft:mangrove_fence",
+     "minecraft:bamboo_fence",
+-    "minecraft:cherry_fence",
+-    "minecraft:poplar_fence"
++    "minecraft:cherry_fence"
+   ]
+ }

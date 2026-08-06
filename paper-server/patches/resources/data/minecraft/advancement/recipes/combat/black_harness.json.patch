@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/combat/black_harness.json
++++ b/data/minecraft/advancement/recipes/combat/black_harness.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:black_harness"
++        "recipe": "minecraft:black_harness"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

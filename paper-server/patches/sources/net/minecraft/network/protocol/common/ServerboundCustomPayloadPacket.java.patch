@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/network/protocol/common/ServerboundCustomPayloadPacket.java b/net/minecraft/network/protocol/common/ServerboundCustomPayloadPacket.java
-index 316aefdf264c7130b99d5e243f5034180d02c0ab..3f629880f3180e821405865f78ba11d51fe97c24 100644
 --- a/net/minecraft/network/protocol/common/ServerboundCustomPayloadPacket.java
 +++ b/net/minecraft/network/protocol/common/ServerboundCustomPayloadPacket.java
-@@ -14,7 +14,7 @@ public record ServerboundCustomPayloadPacket(CustomPacketPayload payload) implem
+@@ -14,7 +_,7 @@
      private static final int MAX_PAYLOAD_SIZE = 32767;
      public static final StreamCodec<FriendlyByteBuf, ServerboundCustomPayloadPacket> STREAM_CODEC = CustomPacketPayload.<FriendlyByteBuf>codec(
              id -> DiscardedPayload.codec(id, 32767),

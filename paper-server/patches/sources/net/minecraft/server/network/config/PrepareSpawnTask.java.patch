@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/server/network/config/PrepareSpawnTask.java b/net/minecraft/server/network/config/PrepareSpawnTask.java
-index 5fa612e512d8a1f58734f9fe9c638618e05e8f08..3271c83bd103bea9b9ffcd6882b52896ea4da770 100644
 --- a/net/minecraft/server/network/config/PrepareSpawnTask.java
 +++ b/net/minecraft/server/network/config/PrepareSpawnTask.java
-@@ -36,10 +36,18 @@ public class PrepareSpawnTask implements ConfigurationTask {
+@@ -36,10 +_,18 @@
      private final LevelLoadListener loadListener;
      private PrepareSpawnTask.@Nullable State state;
  
@@ -30,7 +22,7 @@ index 5fa612e512d8a1f58734f9fe9c638618e05e8f08..3271c83bd103bea9b9ffcd6882b52896
      }
  
      @Override
-@@ -49,16 +57,58 @@ public class PrepareSpawnTask implements ConfigurationTask {
+@@ -49,16 +_,58 @@
                  .getPlayerList()
                  .loadPlayerData(this.nameAndId)
                  .map(tag -> TagValueInput.create(reporter, this.server.registryAccess(), tag));
@@ -94,7 +86,7 @@ index 5fa612e512d8a1f58734f9fe9c638618e05e8f08..3271c83bd103bea9b9ffcd6882b52896
              Vec2 spawnAngle = loadedPosition.rotation().orElse(new Vec2(respawnData.yaw(), respawnData.pitch()));
              this.state = new PrepareSpawnTask.Preparing(spawnLevel, spawnPosition, spawnAngle);
          }
-@@ -110,10 +160,11 @@ public class PrepareSpawnTask implements ConfigurationTask {
+@@ -110,10 +_,11 @@
      }
  
      private final class Preparing implements PrepareSpawnTask.State {
@@ -109,7 +101,7 @@ index 5fa612e512d8a1f58734f9fe9c638618e05e8f08..3271c83bd103bea9b9ffcd6882b52896
          private final ChunkLoadCounter chunkLoadCounter = new ChunkLoadCounter();
  
          private Preparing(final ServerLevel spawnLevel, final CompletableFuture<Vec3> spawnPosition, final Vec2 spawnAngle) {
-@@ -133,6 +184,54 @@ public class PrepareSpawnTask implements ConfigurationTask {
+@@ -133,6 +_,54 @@
  
              Vec3 spawnPosition = this.spawnPosition.join();
              if (this.chunkLoadFuture == null) {
@@ -164,7 +156,7 @@ index 5fa612e512d8a1f58734f9fe9c638618e05e8f08..3271c83bd103bea9b9ffcd6882b52896
                  ChunkPos spawnChunk = ChunkPos.containing(BlockPos.containing(spawnPosition));
                  this.chunkLoadCounter
                      .track(
-@@ -172,14 +271,48 @@ public class PrepareSpawnTask implements ConfigurationTask {
+@@ -172,14 +_,48 @@
          public ServerPlayer spawn(final Connection connection, final CommonListenerCookie cookie) {
              ChunkPos spawnChunk = ChunkPos.containing(BlockPos.containing(this.spawnPosition));
              this.spawnLevel.waitForEntities(spawnChunk, 3);

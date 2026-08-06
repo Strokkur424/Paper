@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/commands/Commands.java b/net/minecraft/commands/Commands.java
-index a48425c5733e000f52de5191942f03a3b2be5674..a1379a71ab7859d9404fab5dfe2e1793404dd0f1 100644
 --- a/net/minecraft/commands/Commands.java
 +++ b/net/minecraft/commands/Commands.java
-@@ -158,6 +158,7 @@ import org.jspecify.annotations.Nullable;
+@@ -158,6 +_,7 @@
  import org.slf4j.Logger;
  
  public class Commands {
@@ -16,7 +8,7 @@ index a48425c5733e000f52de5191942f03a3b2be5674..a1379a71ab7859d9404fab5dfe2e1793
      public static final String COMMAND_PREFIX = "/";
      private static final ThreadLocal<@Nullable ExecutionContext<CommandSourceStack>> CURRENT_EXECUTION_CONTEXT = new ThreadLocal<>();
      private static final Logger LOGGER = LogUtils.getLogger();
-@@ -182,6 +183,7 @@ public class Commands {
+@@ -182,6 +_,7 @@
  
          @Override
          public boolean isRestricted(final CommandNode<CommandSourceStack> node) {
@@ -24,7 +16,7 @@ index a48425c5733e000f52de5191942f03a3b2be5674..a1379a71ab7859d9404fab5dfe2e1793
              Predicate<CommandSourceStack> requirement = node.getRequirement();
              return !requirement.test(this.noPermissionSource);
          }
-@@ -189,6 +191,11 @@ public class Commands {
+@@ -189,6 +_,11 @@
      private final CommandDispatcher<CommandSourceStack> dispatcher = new CommandDispatcher<>();
  
      public Commands(final Commands.CommandSelection commandSelection, final CommandBuildContext context) {
@@ -36,7 +28,7 @@ index a48425c5733e000f52de5191942f03a3b2be5674..a1379a71ab7859d9404fab5dfe2e1793
          AdvancementCommands.register(this.dispatcher);
          AttributeCommand.register(this.dispatcher, context);
          ExecuteCommand.register(this.dispatcher, context);
-@@ -302,6 +309,42 @@ public class Commands {
+@@ -302,6 +_,42 @@
              UnpublishCommand.register(this.dispatcher);
          }
  
@@ -79,7 +71,7 @@ index a48425c5733e000f52de5191942f03a3b2be5674..a1379a71ab7859d9404fab5dfe2e1793
          this.dispatcher.setConsumer(ExecutionCommandSource.resultConsumer());
      }
  
-@@ -321,6 +364,13 @@ public class Commands {
+@@ -321,6 +_,13 @@
      }
  
      public void performCommand(final ParseResults<CommandSourceStack> command, final String commandString) {
@@ -93,7 +85,7 @@ index a48425c5733e000f52de5191942f03a3b2be5674..a1379a71ab7859d9404fab5dfe2e1793
          CommandSourceStack sender = command.getContext().getSource();
          Profiler.get().push(() -> "/" + commandString);
          ContextChain<CommandSourceStack> commandChain = finishParsing(command, commandString, sender);
-@@ -334,10 +384,12 @@ public class Commands {
+@@ -334,10 +_,12 @@
                      )
                  );
              }
@@ -109,7 +101,7 @@ index a48425c5733e000f52de5191942f03a3b2be5674..a1379a71ab7859d9404fab5dfe2e1793
                  StackTraceElement[] stackTrace = e.getStackTrace();
  
                  for (int i = 0; i < Math.min(stackTrace.length, 3); i++) {
-@@ -368,12 +420,16 @@ public class Commands {
+@@ -368,12 +_,16 @@
              return ContextChain.tryFlatten(command.getContext().build(commandString))
                  .orElseThrow(() -> CommandSyntaxException.BUILT_IN_EXCEPTIONS.dispatcherUnknownCommand().createWithContext(command.getReader()));
          } catch (CommandSyntaxException e) {
@@ -128,7 +120,7 @@ index a48425c5733e000f52de5191942f03a3b2be5674..a1379a71ab7859d9404fab5dfe2e1793
                  if (cursor > 10) {
                      context.append(CommonComponents.ELLIPSIS);
                  }
-@@ -385,7 +441,17 @@ public class Commands {
+@@ -385,7 +_,17 @@
                  }
  
                  context.append(Component.translatable("command.context.here").withStyle(ChatFormatting.RED, ChatFormatting.ITALIC));
@@ -147,7 +139,7 @@ index a48425c5733e000f52de5191942f03a3b2be5674..a1379a71ab7859d9404fab5dfe2e1793
              }
  
              return null;
-@@ -413,19 +479,112 @@ public class Commands {
+@@ -413,19 +_,112 @@
      }
  
      public void sendCommands(final ServerPlayer player) {
@@ -263,7 +255,7 @@ index a48425c5733e000f52de5191942f03a3b2be5674..a1379a71ab7859d9404fab5dfe2e1793
                  if (builder.getRedirect() != null) {
                      builder.redirect(converted.get(builder.getRedirect()));
                  }
-@@ -434,7 +593,7 @@ public class Commands {
+@@ -434,7 +_,7 @@
                  converted.put(child, node);
                  target.addChild(node);
                  if (!child.getChildren().isEmpty()) {

@@ -1,0 +1,16 @@
+--- a/data/minecraft/worldgen/template_pool/abandoned_camp/trees/fancy_oak.json
++++ /dev/null
+@@ -1,13 +_,0 @@
+-{
+-  "elements": [
+-    {
+-      "element": {
+-        "element_type": "minecraft:feature_pool_element",
+-        "feature": "minecraft:fancy_oak_checked",
+-        "projection": "rigid"
+-      },
+-      "weight": 1
+-    }
+-  ],
+-  "fallback": "minecraft:empty"
+-}

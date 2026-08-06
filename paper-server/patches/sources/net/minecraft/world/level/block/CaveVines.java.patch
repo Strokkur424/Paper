@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/level/block/CaveVines.java b/net/minecraft/world/level/block/CaveVines.java
-index 0a508a3878936424966051afc7865ae5f7195d32..1abd35cdc260ad1cc0f491e002475cd547ba8fc2 100644
 --- a/net/minecraft/world/level/block/CaveVines.java
 +++ b/net/minecraft/world/level/block/CaveVines.java
-@@ -23,6 +23,12 @@ public interface CaveVines {
+@@ -23,6 +_,12 @@
      static InteractionResult use(final Entity sourceEntity, final BlockState state, final Level level, final BlockPos pos) {
          if (state.getValue(BERRIES)) {
              if (level instanceof ServerLevel serverLevel) {
@@ -21,7 +13,7 @@ index 0a508a3878936424966051afc7865ae5f7195d32..1abd35cdc260ad1cc0f491e002475cd5
                  Block.dropFromBlockInteractLootTable(
                      serverLevel,
                      BuiltInLootTables.HARVEST_CAVE_VINE,
-@@ -31,8 +37,25 @@ public interface CaveVines {
+@@ -31,8 +_,25 @@
                      level.getBlockEntity(pos),
                      null,
                      sourceEntity,

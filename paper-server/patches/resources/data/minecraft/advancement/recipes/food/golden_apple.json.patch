@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/food/golden_apple.json
++++ b/data/minecraft/advancement/recipes/food/golden_apple.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:golden_apple"
++        "recipe": "minecraft:golden_apple"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

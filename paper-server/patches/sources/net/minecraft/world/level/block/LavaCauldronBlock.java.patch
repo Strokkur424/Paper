@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/level/block/LavaCauldronBlock.java b/net/minecraft/world/level/block/LavaCauldronBlock.java
-index 4c3b7db899b6c14ab8ce6a3418d3fdbff57ab21c..b61841798d1add88b246027680d60443a98a3e6b 100644
 --- a/net/minecraft/world/level/block/LavaCauldronBlock.java
 +++ b/net/minecraft/world/level/block/LavaCauldronBlock.java
-@@ -45,9 +45,11 @@ public class LavaCauldronBlock extends AbstractCauldronBlock {
+@@ -45,9 +_,11 @@
          final InsideBlockEffectApplier effectApplier,
          final boolean isPrecise
      ) {

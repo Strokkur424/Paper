@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/commands/arguments/MessageArgument.java b/net/minecraft/commands/arguments/MessageArgument.java
-index b484cf0a35e1d5e706d9b8226c7e2bb738ced6fc..01c8f12555cf34618145d3dd0b4a0058449801fd 100644
 --- a/net/minecraft/commands/arguments/MessageArgument.java
 +++ b/net/minecraft/commands/arguments/MessageArgument.java
-@@ -41,6 +41,12 @@ public class MessageArgument implements SignedArgument<MessageArgument.Message>
+@@ -41,6 +_,12 @@
  
      public static void resolveChatMessage(final CommandContext<CommandSourceStack> context, final String name, final Consumer<PlayerChatMessage> task) throws CommandSyntaxException {
          MessageArgument.Message message = context.getArgument(name, MessageArgument.Message.class);
@@ -21,7 +13,7 @@ index b484cf0a35e1d5e706d9b8226c7e2bb738ced6fc..01c8f12555cf34618145d3dd0b4a0058
          CommandSourceStack sender = context.getSource();
          Component formatted = message.resolveComponent(sender);
          CommandSigningContext signingContext = sender.getSigningContext();
-@@ -55,17 +61,21 @@ public class MessageArgument implements SignedArgument<MessageArgument.Message>
+@@ -55,17 +_,21 @@
      private static void resolveSignedMessage(final Consumer<PlayerChatMessage> task, final CommandSourceStack sender, final PlayerChatMessage signedArgument) {
          MinecraftServer server = sender.getServer();
          CompletableFuture<FilteredText> filteredFuture = filterPlainText(sender, signedArgument);

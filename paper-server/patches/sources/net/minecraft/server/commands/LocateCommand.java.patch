@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/server/commands/LocateCommand.java b/net/minecraft/server/commands/LocateCommand.java
-index 3a4358f5efab8b76761416bd0fc3f8e80d394ecc..d018ec1c7876ddc883223d548fbe6a513e14bcfe 100644
 --- a/net/minecraft/server/commands/LocateCommand.java
 +++ b/net/minecraft/server/commands/LocateCommand.java
-@@ -191,6 +191,6 @@ public class LocateCommand {
+@@ -191,6 +_,6 @@
      private static float dist(final int x1, final int z1, final int x2, final int z2) {
          int dx = x2 - x1;
          int dz = z2 - z1;

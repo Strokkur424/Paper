@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/level/block/SaplingBlock.java b/net/minecraft/world/level/block/SaplingBlock.java
-index 21ff62b7a1413d9648c1af6998b80750500fe336..5564a54f23aab158b9506325953ec70cab55c961 100644
 --- a/net/minecraft/world/level/block/SaplingBlock.java
 +++ b/net/minecraft/world/level/block/SaplingBlock.java
-@@ -21,6 +21,7 @@ public class SaplingBlock extends VegetationBlock implements BonemealableBlock {
+@@ -21,6 +_,7 @@
      public static final int TICK_CHANCE_FOR_SAPLING_GROWTH = 7;
      private static final VoxelShape SHAPE = Block.column(12.0, 0.0, 12.0);
      protected final TreeGrower treeGrower;
@@ -16,7 +8,7 @@ index 21ff62b7a1413d9648c1af6998b80750500fe336..5564a54f23aab158b9506325953ec70c
  
      protected SaplingBlock(final TreeGrower treeGrower, final BlockBehaviour.Properties properties) {
          super(properties);
-@@ -35,7 +36,7 @@ public class SaplingBlock extends VegetationBlock implements BonemealableBlock {
+@@ -35,7 +_,7 @@
  
      @Override
      protected void randomTick(final BlockState state, final ServerLevel level, final BlockPos pos, final RandomSource random) {
@@ -25,7 +17,7 @@ index 21ff62b7a1413d9648c1af6998b80750500fe336..5564a54f23aab158b9506325953ec70c
              this.advanceTree(level, pos, state, random);
          }
      }
-@@ -44,7 +45,40 @@ public class SaplingBlock extends VegetationBlock implements BonemealableBlock {
+@@ -44,7 +_,40 @@
          if (state.getValue(STAGE) == 0) {
              level.setBlock(pos, state.cycle(STAGE), Block.UPDATE_NONE);
          } else {

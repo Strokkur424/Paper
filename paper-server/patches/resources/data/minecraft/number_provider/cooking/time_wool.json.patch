@@ -1,0 +1,9 @@
+--- a/data/minecraft/number_provider/cooking/time_wool.json
++++ /dev/null
+@@ -1,6 +_,0 @@
+-{
+-  "type": "minecraft:conditional",
+-  "condition": "minecraft:block/fast_cooking",
+-  "on_false": 100.0,
+-  "on_true": 50.0
+-}

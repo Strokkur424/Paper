@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/network/chat/OutgoingChatMessage.java b/net/minecraft/network/chat/OutgoingChatMessage.java
-index 899a0d9aac12e491e456fe96aa4cb660335b3666..259cbcbdd3cd47907629772dc7565212bb434729 100644
 --- a/net/minecraft/network/chat/OutgoingChatMessage.java
 +++ b/net/minecraft/network/chat/OutgoingChatMessage.java
-@@ -7,6 +7,12 @@ public interface OutgoingChatMessage {
+@@ -7,6 +_,12 @@
  
      void sendToPlayer(ServerPlayer player, boolean filtered, ChatType.Bound chatType);
  
@@ -21,7 +13,7 @@ index 899a0d9aac12e491e456fe96aa4cb660335b3666..259cbcbdd3cd47907629772dc7565212
      static OutgoingChatMessage create(final PlayerChatMessage message) {
          return message.isSystem() ? new OutgoingChatMessage.Disguised(message.decoratedContent()) : new OutgoingChatMessage.Player(message);
      }
-@@ -14,7 +20,13 @@ public interface OutgoingChatMessage {
+@@ -14,7 +_,13 @@
      record Disguised(@Override Component content) implements OutgoingChatMessage {
          @Override
          public void sendToPlayer(final ServerPlayer player, final boolean filtered, final ChatType.Bound chatType) {
@@ -36,7 +28,7 @@ index 899a0d9aac12e491e456fe96aa4cb660335b3666..259cbcbdd3cd47907629772dc7565212
          }
      }
  
-@@ -26,7 +38,14 @@ public interface OutgoingChatMessage {
+@@ -26,7 +_,14 @@
  
          @Override
          public void sendToPlayer(final ServerPlayer player, final boolean filtered, final ChatType.Bound chatType) {

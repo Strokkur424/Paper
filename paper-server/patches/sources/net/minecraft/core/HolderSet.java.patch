@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/core/HolderSet.java b/net/minecraft/core/HolderSet.java
-index 3fb93b8724ab9d9e7b388b80d9a8a1048f1e1cad..863f011a9d96dc059659ccd0c0cfc2c09a52ac56 100644
 --- a/net/minecraft/core/HolderSet.java
 +++ b/net/minecraft/core/HolderSet.java
-@@ -164,6 +164,7 @@ public interface HolderSet<T> extends Iterable<Holder<T>> {
+@@ -164,6 +_,7 @@
          private final HolderOwner<T> owner;
          private final TagKey<T> key;
          private @Nullable List<Holder<T>> contents;
@@ -16,7 +8,7 @@ index 3fb93b8724ab9d9e7b388b80d9a8a1048f1e1cad..863f011a9d96dc059659ccd0c0cfc2c0
  
          Named(final HolderOwner<T> owner, final TagKey<T> key) {
              this.owner = owner;
-@@ -172,6 +173,7 @@ public interface HolderSet<T> extends Iterable<Holder<T>> {
+@@ -172,6 +_,7 @@
  
          void bind(final List<Holder<T>> contents) {
              this.contents = List.copyOf(contents);
@@ -24,7 +16,7 @@ index 3fb93b8724ab9d9e7b388b80d9a8a1048f1e1cad..863f011a9d96dc059659ccd0c0cfc2c0
          }
  
          public TagKey<T> key() {
-@@ -216,5 +218,15 @@ public interface HolderSet<T> extends Iterable<Holder<T>> {
+@@ -216,5 +_,15 @@
          public boolean canSerializeIn(final HolderOwner<T> context) {
              return context.canSerialize(this.owner);
          }

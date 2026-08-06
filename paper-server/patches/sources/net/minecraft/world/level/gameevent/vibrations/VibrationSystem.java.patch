@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/level/gameevent/vibrations/VibrationSystem.java b/net/minecraft/world/level/gameevent/vibrations/VibrationSystem.java
-index dd0abf0c8bb7c4ca6e0e0681477313a28822b333..7364d6ae99772912bf353f7a004dd26f00fa80ae 100644
 --- a/net/minecraft/world/level/gameevent/vibrations/VibrationSystem.java
 +++ b/net/minecraft/world/level/gameevent/vibrations/VibrationSystem.java
-@@ -124,7 +124,7 @@ public interface VibrationSystem {
+@@ -124,7 +_,7 @@
          public static final Codec<VibrationSystem.Data> CODEC = RecordCodecBuilder.create(
              i -> i.group(
                      VibrationInfo.CODEC.lenientOptionalFieldOf("event").forGetter(o -> Optional.ofNullable(o.currentVibration)),
@@ -17,7 +9,7 @@ index dd0abf0c8bb7c4ca6e0e0681477313a28822b333..7364d6ae99772912bf353f7a004dd26f
                      ExtraCodecs.optionalAlwaysPresentFieldOf(ExtraCodecs.NON_NEGATIVE_INT, "event_delay", 0)
                          .forGetter(VibrationSystem.Data::getTravelTimeInTicks)
                  )
-@@ -225,7 +225,14 @@ public interface VibrationSystem {
+@@ -225,7 +_,14 @@
              }
  
              Vec3 destination = listenerSourcePos.get();

@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/server/dedicated/DedicatedServer.java b/net/minecraft/server/dedicated/DedicatedServer.java
-index 7610538c3fb5ac802c118e4d9a248d7fb4216ab0..602042c367260f7cb2c6c14938285d5df4056158 100644
 --- a/net/minecraft/server/dedicated/DedicatedServer.java
 +++ b/net/minecraft/server/dedicated/DedicatedServer.java
-@@ -76,9 +76,9 @@ public class DedicatedServer extends MinecraftServer implements ServerInterface
+@@ -76,9 +_,9 @@
      private static final Logger LOGGER = LogUtils.getLogger();
      private static final int CONVERSION_RETRY_DELAY_MS = 5000;
      private static final int CONVERSION_RETRIES = 2;
@@ -20,7 +12,7 @@ index 7610538c3fb5ac802c118e4d9a248d7fb4216ab0..602042c367260f7cb2c6c14938285d5d
      private @Nullable RconThread rconThread;
      public DedicatedServerSettings settings;
      private @Nullable MinecraftServerGui gui;
-@@ -90,6 +90,7 @@ public class DedicatedServer extends MinecraftServer implements ServerInterface
+@@ -90,6 +_,7 @@
      private final @Nullable ManagementServer jsonRpcServer;
  
      public DedicatedServer(
@@ -28,7 +20,7 @@ index 7610538c3fb5ac802c118e4d9a248d7fb4216ab0..602042c367260f7cb2c6c14938285d5d
          final Thread serverThread,
          final LevelStorageSource.LevelStorageAccess levelStorageSource,
          final PackRepository packRepository,
-@@ -102,6 +103,7 @@ public class DedicatedServer extends MinecraftServer implements ServerInterface
+@@ -102,6 +_,7 @@
          final NotificationManager notificationManager
      ) {
          super(
@@ -36,7 +28,7 @@ index 7610538c3fb5ac802c118e4d9a248d7fb4216ab0..602042c367260f7cb2c6c14938285d5d
              serverThread,
              levelStorageSource,
              packRepository,
-@@ -115,7 +117,8 @@ public class DedicatedServer extends MinecraftServer implements ServerInterface
+@@ -115,7 +_,8 @@
              notificationManager
          );
          this.settings = settings;
@@ -46,7 +38,7 @@ index 7610538c3fb5ac802c118e4d9a248d7fb4216ab0..602042c367260f7cb2c6c14938285d5d
          this.serverTextFilter = ServerTextFilter.createFromConfig(settings.getProperties());
          this.jsonRpcServer = jsonRpcServer;
          this.serverLinks = createServerLinks(settings);
-@@ -167,6 +170,10 @@ public class DedicatedServer extends MinecraftServer implements ServerInterface
+@@ -167,6 +_,10 @@
          Thread consoleThread = new Thread("Server console handler") {
              @Override
              public void run() {
@@ -57,7 +49,7 @@ index 7610538c3fb5ac802c118e4d9a248d7fb4216ab0..602042c367260f7cb2c6c14938285d5d
                  BufferedReader reader = new BufferedReader(new InputStreamReader(System.in, StandardCharsets.UTF_8));
  
                  String line;
-@@ -177,16 +184,41 @@ public class DedicatedServer extends MinecraftServer implements ServerInterface
+@@ -177,16 +_,41 @@
                  } catch (IOException e) {
                      DedicatedServer.LOGGER.error("Exception handling console input", e);
                  }
@@ -100,7 +92,7 @@ index 7610538c3fb5ac802c118e4d9a248d7fb4216ab0..602042c367260f7cb2c6c14938285d5d
          LOGGER.info("Loading properties");
          DedicatedServerProperties properties = this.settings.getProperties();
          if (this.isSingleplayer()) {
-@@ -197,8 +229,45 @@ public class DedicatedServer extends MinecraftServer implements ServerInterface
+@@ -197,8 +_,45 @@
              this.setLocalIp(properties.serverIp);
          }
  
@@ -147,7 +139,7 @@ index 7610538c3fb5ac802c118e4d9a248d7fb4216ab0..602042c367260f7cb2c6c14938285d5d
          InetAddress localAddress = null;
          if (!this.getLocalIp().isEmpty()) {
              localAddress = InetAddress.getByName(this.getLocalIp());
-@@ -207,47 +276,73 @@ public class DedicatedServer extends MinecraftServer implements ServerInterface
+@@ -207,47 +_,73 @@
          if (this.getPort() < 0) {
              this.setPort(properties.serverPort);
          }
@@ -229,7 +221,7 @@ index 7610538c3fb5ac802c118e4d9a248d7fb4216ab0..602042c367260f7cb2c6c14938285d5d
          }
  
          if (properties.enableQuery) {
-@@ -260,7 +355,7 @@ public class DedicatedServer extends MinecraftServer implements ServerInterface
+@@ -260,7 +_,7 @@
              this.rconThread = RconThread.create(this);
          }
  
@@ -238,7 +230,7 @@ index 7610538c3fb5ac802c118e4d9a248d7fb4216ab0..602042c367260f7cb2c6c14938285d5d
              Thread watchdog = new Thread(new ServerWatchdog(this), "Server Watchdog");
              watchdog.setUncaughtExceptionHandler(new DefaultUncaughtExceptionHandlerWithName(LOGGER));
              watchdog.setDaemon(true);
-@@ -277,6 +372,12 @@ public class DedicatedServer extends MinecraftServer implements ServerInterface
+@@ -277,6 +_,12 @@
          return true;
      }
  
@@ -251,7 +243,7 @@ index 7610538c3fb5ac802c118e4d9a248d7fb4216ab0..602042c367260f7cb2c6c14938285d5d
      @Override
      public boolean isEnforceWhitelist() {
          return this.settings.getProperties().enforceWhitelist.get();
-@@ -294,6 +395,7 @@ public class DedicatedServer extends MinecraftServer implements ServerInterface
+@@ -294,6 +_,7 @@
  
      @Override
      public void setUsingWhitelist(final boolean usingWhitelist) {
@@ -259,7 +251,7 @@ index 7610538c3fb5ac802c118e4d9a248d7fb4216ab0..602042c367260f7cb2c6c14938285d5d
          this.settings.update(p -> p.whiteList.update(this.registryAccess(), usingWhitelist));
      }
  
-@@ -345,7 +447,7 @@ public class DedicatedServer extends MinecraftServer implements ServerInterface
+@@ -345,7 +_,7 @@
  
      @Override
      protected void forceDifficulty() {
@@ -268,7 +260,7 @@ index 7610538c3fb5ac802c118e4d9a248d7fb4216ab0..602042c367260f7cb2c6c14938285d5d
      }
  
      public int viewDistance() {
-@@ -403,11 +505,11 @@ public class DedicatedServer extends MinecraftServer implements ServerInterface
+@@ -403,11 +_,11 @@
          }
  
          if (this.rconThread != null) {
@@ -282,7 +274,7 @@ index 7610538c3fb5ac802c118e4d9a248d7fb4216ab0..602042c367260f7cb2c6c14938285d5d
          }
  
          if (this.jsonRpcServer != null) {
-@@ -417,6 +519,9 @@ public class DedicatedServer extends MinecraftServer implements ServerInterface
+@@ -417,6 +_,9 @@
                  LOGGER.error("Interrupted while stopping the management server", e);
              }
          }
@@ -292,7 +284,7 @@ index 7610538c3fb5ac802c118e4d9a248d7fb4216ab0..602042c367260f7cb2c6c14938285d5d
      }
  
      @Override
-@@ -426,12 +531,20 @@ public class DedicatedServer extends MinecraftServer implements ServerInterface
+@@ -426,12 +_,20 @@
      }
  
      public void handleConsoleInput(final String msg, final CommandSourceStack source) {
@@ -316,7 +308,7 @@ index 7610538c3fb5ac802c118e4d9a248d7fb4216ab0..602042c367260f7cb2c6c14938285d5d
              this.getCommands().performPrefixedCommand(input.source, input.msg);
          }
      }
-@@ -592,12 +705,15 @@ public class DedicatedServer extends MinecraftServer implements ServerInterface
+@@ -592,12 +_,15 @@
  
      @Override
      public String getMotd() {
@@ -334,7 +326,7 @@ index 7610538c3fb5ac802c118e4d9a248d7fb4216ab0..602042c367260f7cb2c6c14938285d5d
      }
  
      @Override
-@@ -623,7 +739,11 @@ public class DedicatedServer extends MinecraftServer implements ServerInterface
+@@ -623,7 +_,11 @@
      @Override
      public boolean enforceSecureProfile() {
          DedicatedServerProperties properties = this.getProperties();
@@ -347,7 +339,7 @@ index 7610538c3fb5ac802c118e4d9a248d7fb4216ab0..602042c367260f7cb2c6c14938285d5d
      }
  
      @Override
-@@ -708,21 +828,60 @@ public class DedicatedServer extends MinecraftServer implements ServerInterface
+@@ -708,21 +_,60 @@
  
      @Override
      public String getPluginNames() {
@@ -413,7 +405,7 @@ index 7610538c3fb5ac802c118e4d9a248d7fb4216ab0..602042c367260f7cb2c6c14938285d5d
      }
  
      @Override
-@@ -850,4 +1009,15 @@ public class DedicatedServer extends MinecraftServer implements ServerInterface
+@@ -850,4 +_,15 @@
      public Map<String, String> getCodeOfConducts() {
          return this.codeOfConductTexts;
      }

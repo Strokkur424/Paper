@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/level/block/PumpkinBlock.java b/net/minecraft/world/level/block/PumpkinBlock.java
-index 20fb54a77d55916a85b158f3c1d0aac712c56f95..4b63db204bb1f8e0355f4d7eda33ec23e7ae9528 100644
 --- a/net/minecraft/world/level/block/PumpkinBlock.java
 +++ b/net/minecraft/world/level/block/PumpkinBlock.java
-@@ -40,6 +40,7 @@ public class PumpkinBlock extends Block {
+@@ -40,6 +_,7 @@
          } else if (level instanceof ServerLevel serverLevel) {
              Direction clickedDirection = hitResult.getDirection();
              Direction direction = clickedDirection.getAxis() == Direction.Axis.Y ? player.getDirection().getOpposite() : clickedDirection;
@@ -16,7 +8,7 @@ index 20fb54a77d55916a85b158f3c1d0aac712c56f95..4b63db204bb1f8e0355f4d7eda33ec23
              dropFromBlockInteractLootTable(
                  serverLevel,
                  BuiltInLootTables.CARVE_PUMPKIN,
-@@ -49,16 +50,27 @@ public class PumpkinBlock extends Block {
+@@ -49,16 +_,27 @@
                  itemStack,
                  player,
                  (ignored, pumpkinSeeds) -> {

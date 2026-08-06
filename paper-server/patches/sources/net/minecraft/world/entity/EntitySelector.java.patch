@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/entity/EntitySelector.java b/net/minecraft/world/entity/EntitySelector.java
-index 61fc625262933ada9f2d93c0b2d5c3857d0ef3ac..a3c13e421768f5e1a703b5b1167fa1c912b6f126 100644
 --- a/net/minecraft/world/entity/EntitySelector.java
 +++ b/net/minecraft/world/entity/EntitySelector.java
-@@ -17,6 +17,22 @@ public final class EntitySelector {
+@@ -17,6 +_,22 @@
      public static final Predicate<Entity> NO_SPECTATORS = entity -> !entity.isSpectator();
      public static final Predicate<Entity> CAN_BE_COLLIDED_WITH = NO_SPECTATORS.and(entity -> entity.canBeCollidedWith(null));
      public static final Predicate<Entity> CAN_BE_PICKED = Entity::isPickable;
@@ -31,7 +23,7 @@ index 61fc625262933ada9f2d93c0b2d5c3857d0ef3ac..a3c13e421768f5e1a703b5b1167fa1c9
  
      private EntitySelector() {
      }
-@@ -33,14 +49,14 @@ public final class EntitySelector {
+@@ -33,14 +_,14 @@
              ? Predicates.alwaysFalse()
              : NO_SPECTATORS.and(
                  input -> {

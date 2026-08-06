@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/entity/projectile/throwableitemprojectile/ThrownEgg.java b/net/minecraft/world/entity/projectile/throwableitemprojectile/ThrownEgg.java
-index f979c8b3562259d498099bb13a85d5e3365a202a..1d5449090d0649cb03cf87a0175aebedded20132 100644
 --- a/net/minecraft/world/entity/projectile/throwableitemprojectile/ThrownEgg.java
 +++ b/net/minecraft/world/entity/projectile/throwableitemprojectile/ThrownEgg.java
-@@ -67,29 +67,64 @@ public class ThrownEgg extends ThrowableItemProjectile {
+@@ -67,29 +_,64 @@
      protected void onHit(final HitResult hitResult) {
          super.onHit(hitResult);
          if (!this.level().isClientSide()) {

@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/building_blocks/blackstone_slab.json
++++ b/data/minecraft/advancement/recipes/building_blocks/blackstone_slab.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:blackstone_slab"
++        "recipe": "minecraft:blackstone_slab"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

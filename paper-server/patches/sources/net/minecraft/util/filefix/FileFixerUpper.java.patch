@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/util/filefix/FileFixerUpper.java b/net/minecraft/util/filefix/FileFixerUpper.java
-index e749eec3756cd2bb38f4e0c01a4741510c33552a..a1d6452931ecc5ed1a165cb2e24fccc1cb32329c 100644
 --- a/net/minecraft/util/filefix/FileFixerUpper.java
 +++ b/net/minecraft/util/filefix/FileFixerUpper.java
-@@ -82,6 +82,7 @@ public class FileFixerUpper {
+@@ -82,6 +_,7 @@
      ) throws FileFixException {
          int loadedVersion = NbtUtils.getDataVersion(levelDataTag);
          if (this.requiresFileFixing(loadedVersion)) {
@@ -16,7 +8,7 @@ index e749eec3756cd2bb38f4e0c01a4741510c33552a..a1d6452931ecc5ed1a165cb2e24fccc1
              LOGGER.info("Starting upgrade for world \"{}\"", worldAccess.getLevelId());
              upgradeProgress.notifications().worldUpgradeStarted();
              Path worldFolder = worldAccess.getLevelDirectory().path();
-@@ -323,7 +324,7 @@ public class FileFixerUpper {
+@@ -323,7 +_,7 @@
                      try {
                          Files.deleteIfExists(movesFile);
                      } catch (IOException e2) {
@@ -25,7 +17,7 @@ index e749eec3756cd2bb38f4e0c01a4741510c33552a..a1d6452931ecc5ed1a165cb2e24fccc1
                      }
                  }
  
-@@ -362,8 +363,8 @@ public class FileFixerUpper {
+@@ -362,8 +_,8 @@
                      try {
                          deleteDirectory(worldFolder);
                      } catch (Exception e2) {

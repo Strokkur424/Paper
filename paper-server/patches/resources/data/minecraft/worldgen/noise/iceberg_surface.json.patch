@@ -1,0 +1,14 @@
+--- a/data/minecraft/worldgen/noise/iceberg_surface.json
++++ b/data/minecraft/worldgen/noise/iceberg_surface.json
+@@ -1,5 +_,8 @@
+ {
+-  "base_amplitude": 0.9381732587751008,
+-  "base_octave": -6,
+-  "octave_count": 3
++  "amplitudes": [
++    1.0,
++    1.0,
++    1.0
++  ],
++  "firstOctave": -6
+ }

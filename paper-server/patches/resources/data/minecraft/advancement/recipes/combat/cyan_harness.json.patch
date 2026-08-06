@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/combat/cyan_harness.json
++++ b/data/minecraft/advancement/recipes/combat/cyan_harness.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:cyan_harness"
++        "recipe": "minecraft:cyan_harness"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

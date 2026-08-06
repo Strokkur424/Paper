@@ -1,0 +1,10 @@
+--- a/data/minecraft/recipe/pink_carpet.json
++++ b/data/minecraft/recipe/pink_carpet.json
+@@ -1,6 +_,6 @@
+ {
+   "type": "minecraft:crafting_shaped",
+-  "group": "woolen_carpet",
++  "group": "carpet",
+   "key": {
+     "#": "minecraft:pink_wool"
+   },

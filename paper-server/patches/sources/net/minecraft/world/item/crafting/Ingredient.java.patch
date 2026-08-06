@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/item/crafting/Ingredient.java b/net/minecraft/world/item/crafting/Ingredient.java
-index fac106b319bb764fdf69e5eeba092c29e87988a4..f65ce3fbae919ba75347e66f2641996bbeff828a 100644
 --- a/net/minecraft/world/item/crafting/Ingredient.java
 +++ b/net/minecraft/world/item/crafting/Ingredient.java
-@@ -33,6 +33,23 @@ public final class Ingredient implements Predicate<ItemStack>, StackedContents.I
+@@ -33,6 +_,23 @@
      public static final Codec<HolderSet<Item>> NON_AIR_HOLDER_SET_CODEC = HolderSetCodec.create(Registries.ITEM, Item.CODEC, false);
      public static final Codec<Ingredient> CODEC = ExtraCodecs.nonEmptyHolderSet(NON_AIR_HOLDER_SET_CODEC).xmap(Ingredient::new, i -> i.values);
      public final HolderSet<Item> values;
@@ -32,7 +24,7 @@ index fac106b319bb764fdf69e5eeba092c29e87988a4..f65ce3fbae919ba75347e66f2641996b
  
      private Ingredient(final HolderSet<Item> values) {
          values.unwrap().ifRight(directValues -> {
-@@ -62,6 +79,17 @@ public final class Ingredient implements Predicate<ItemStack>, StackedContents.I
+@@ -62,6 +_,17 @@
  
      @Override
      public boolean test(final ItemStack input) {
@@ -50,7 +42,7 @@ index fac106b319bb764fdf69e5eeba092c29e87988a4..f65ce3fbae919ba75347e66f2641996b
          return input.is(this.values);
      }
  
-@@ -72,7 +100,7 @@ public final class Ingredient implements Predicate<ItemStack>, StackedContents.I
+@@ -72,7 +_,7 @@
  
      @Override
      public boolean equals(final Object o) {

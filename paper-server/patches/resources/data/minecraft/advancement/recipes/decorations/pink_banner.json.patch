@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/decorations/pink_banner.json
++++ b/data/minecraft/advancement/recipes/decorations/pink_banner.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:pink_banner"
++        "recipe": "minecraft:pink_banner"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

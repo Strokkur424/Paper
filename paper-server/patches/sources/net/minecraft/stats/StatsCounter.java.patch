@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/stats/StatsCounter.java b/net/minecraft/stats/StatsCounter.java
-index 578b0b1f449a4f24925e97685977e83835a1a6c5..d617739becbad0611974138a2f8f9ff0e17d05c0 100644
 --- a/net/minecraft/stats/StatsCounter.java
 +++ b/net/minecraft/stats/StatsCounter.java
-@@ -14,6 +14,12 @@ public class StatsCounter {
+@@ -14,6 +_,12 @@
  
      public void increment(final Player player, final Stat<?> stat, final int count) {
          int result = (int)Math.min((long)this.getValue(stat) + count, 2147483647L);

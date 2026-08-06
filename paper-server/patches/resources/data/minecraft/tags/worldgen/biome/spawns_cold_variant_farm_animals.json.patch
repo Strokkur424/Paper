@@ -1,0 +1,11 @@
+--- a/data/minecraft/tags/worldgen/biome/spawns_cold_variant_farm_animals.json
++++ b/data/minecraft/tags/worldgen/biome/spawns_cold_variant_farm_animals.json
+@@ -21,7 +_,6 @@
+     "minecraft:windswept_forest",
+     "minecraft:windswept_gravelly_hills",
+     "minecraft:windswept_hills",
+-    "minecraft:stony_peaks",
+-    "minecraft:dappled_forest"
++    "minecraft:stony_peaks"
+   ]
+ }

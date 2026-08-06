@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/decorations/cyan_glazed_terracotta.json
++++ b/data/minecraft/advancement/recipes/decorations/cyan_glazed_terracotta.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:cyan_glazed_terracotta"
++        "recipe": "minecraft:cyan_glazed_terracotta"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/level/block/SpongeBlock.java b/net/minecraft/world/level/block/SpongeBlock.java
-index 5af4afa40e30095cf7fd1b6d29334646578e77a6..73922914a7291faed21bbf85eae268c1f9e35730 100644
 --- a/net/minecraft/world/level/block/SpongeBlock.java
 +++ b/net/minecraft/world/level/block/SpongeBlock.java
-@@ -45,7 +45,8 @@ public class SpongeBlock extends Block {
+@@ -45,7 +_,8 @@
      }
  
      private boolean removeWaterBreadthFirstSearch(final Level level, final BlockPos startPos) {
@@ -18,7 +10,7 @@ index 5af4afa40e30095cf7fd1b6d29334646578e77a6..73922914a7291faed21bbf85eae268c1
              for (Direction direction : ALL_DIRECTIONS) {
                  consumer.accept(pos.relative(direction));
              }
-@@ -53,28 +54,65 @@ public class SpongeBlock extends Block {
+@@ -53,28 +_,65 @@
              if (pos.equals(startPos)) {
                  return BlockPos.TraversalNodeStatus.ACCEPT;
              } else {

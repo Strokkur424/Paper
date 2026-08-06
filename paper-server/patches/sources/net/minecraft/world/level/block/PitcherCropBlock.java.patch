@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/level/block/PitcherCropBlock.java b/net/minecraft/world/level/block/PitcherCropBlock.java
-index e07549fa9eeb1344ef77024a45930d0e841cd268..946816dd8fc145eeb300f6b23a80821e533a05bd 100644
 --- a/net/minecraft/world/level/block/PitcherCropBlock.java
 +++ b/net/minecraft/world/level/block/PitcherCropBlock.java
-@@ -118,6 +118,7 @@ public class PitcherCropBlock extends DoublePlantBlock implements BonemealableBl
+@@ -118,6 +_,7 @@
          final InsideBlockEffectApplier effectApplier,
          final boolean isPrecise
      ) {
@@ -16,7 +8,7 @@ index e07549fa9eeb1344ef77024a45930d0e841cd268..946816dd8fc145eeb300f6b23a80821e
          if (level instanceof ServerLevel serverLevel && entity instanceof Ravager && serverLevel.getGameRules().get(GameRules.MOB_GRIEFING)) {
              serverLevel.destroyBlock(pos, true, entity);
          }
-@@ -140,7 +141,7 @@ public class PitcherCropBlock extends DoublePlantBlock implements BonemealableBl
+@@ -140,7 +_,7 @@
      @Override
      public void randomTick(final BlockState state, final ServerLevel level, final BlockPos pos, final RandomSource random) {
          float growthSpeed = CropBlock.getGrowthSpeed(this, level, pos);
@@ -25,7 +17,7 @@ index e07549fa9eeb1344ef77024a45930d0e841cd268..946816dd8fc145eeb300f6b23a80821e
          if (shouldProgressGrowth) {
              this.grow(level, state, pos, 1);
          }
-@@ -150,7 +151,7 @@ public class PitcherCropBlock extends DoublePlantBlock implements BonemealableBl
+@@ -150,7 +_,7 @@
          int updatedAge = Math.min(lowerState.getValue(AGE) + increase, 4);
          if (this.canGrow(level, lowerPos, lowerState, updatedAge)) {
              BlockState newLowerState = lowerState.setValue(AGE, updatedAge);

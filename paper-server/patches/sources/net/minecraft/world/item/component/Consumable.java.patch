@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/item/component/Consumable.java b/net/minecraft/world/item/component/Consumable.java
-index bc86781f488a4c87241521a1affa8f28afcb362e..3a2f69ad690f50e6f6afb88ee25a3ebc77075a69 100644
 --- a/net/minecraft/world/item/component/Consumable.java
 +++ b/net/minecraft/world/item/component/Consumable.java
-@@ -84,7 +84,18 @@ public record Consumable(
+@@ -84,13 +_,35 @@
  
          stack.getAllOfType(ConsumableListener.class).forEach(component -> component.onConsume(level, user, stack, this));
          if (!level.isClientSide()) {
@@ -28,10 +20,10 @@ index bc86781f488a4c87241521a1affa8f28afcb362e..3a2f69ad690f50e6f6afb88ee25a3ebc
          }
  
          user.gameEvent(this.animation == ItemUseAnimation.DRINK ? GameEvent.DRINK : GameEvent.EAT);
-@@ -92,6 +103,17 @@ public record Consumable(
+         stack.consume(1, user);
          return stack;
      }
- 
++
 +    // CraftBukkit start
 +    public void cancelUsingItem(ServerPlayer player, ItemStack stack) {
 +        final java.util.List<net.minecraft.network.protocol.Packet<? super net.minecraft.network.protocol.game.ClientGamePacketListener>> packets = new it.unimi.dsi.fastutil.objects.ObjectArrayList<>(); // Paper - properly resend entities - collect packets for bundle
@@ -42,7 +34,6 @@ index bc86781f488a4c87241521a1affa8f28afcb362e..3a2f69ad690f50e6f6afb88ee25a3ebc
 +        player.connection.send(new net.minecraft.network.protocol.game.ClientboundBundlePacket(packets));
 +    }
 +    // CraftBukkit end
-+
+ 
      public boolean canConsume(final LivingEntity user, final ItemStack stack) {
          FoodProperties foodProperties = stack.get(DataComponents.FOOD);
-         return !(foodProperties != null && user instanceof Player player) || player.canEat(foodProperties.canAlwaysEat());

@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/level/block/DiodeBlock.java b/net/minecraft/world/level/block/DiodeBlock.java
-index 9534664070229aef689ccc488f142ce3791f6798..3b7cd8798497bcafcba04bbf482e2fe422174a1e 100644
 --- a/net/minecraft/world/level/block/DiodeBlock.java
 +++ b/net/minecraft/world/level/block/DiodeBlock.java
-@@ -53,8 +53,18 @@ public abstract class DiodeBlock extends HorizontalDirectionalBlock {
+@@ -53,8 +_,18 @@
              boolean on = state.getValue(POWERED);
              boolean shouldTurnOn = this.shouldTurnOn(level, pos, state);
              if (on && !shouldTurnOn) {

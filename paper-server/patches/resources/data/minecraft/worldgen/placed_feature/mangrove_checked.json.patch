@@ -1,0 +1,19 @@
+--- a/data/minecraft/worldgen/placed_feature/mangrove_checked.json
++++ b/data/minecraft/worldgen/placed_feature/mangrove_checked.json
+@@ -5,7 +_,15 @@
+       "type": "minecraft:block_predicate_filter",
+       "predicate": {
+         "type": "minecraft:would_survive",
+-        "state": "minecraft:mangrove_propagule"
++        "state": {
++          "Name": "minecraft:mangrove_propagule",
++          "Properties": {
++            "age": "0",
++            "hanging": "false",
++            "stage": "0",
++            "waterlogged": "false"
++          }
++        }
+       }
+     }
+   ]

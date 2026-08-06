@@ -1,0 +1,11 @@
+--- a/data/minecraft/tags/block/overworld_natural_logs.json
++++ b/data/minecraft/tags/block/overworld_natural_logs.json
+@@ -8,7 +_,6 @@
+     "minecraft:dark_oak_log",
+     "minecraft:pale_oak_log",
+     "minecraft:mangrove_log",
+-    "minecraft:cherry_log",
+-    "minecraft:poplar_log"
++    "minecraft:cherry_log"
+   ]
+ }

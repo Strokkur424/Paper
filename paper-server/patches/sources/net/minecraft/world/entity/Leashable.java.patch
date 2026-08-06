@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/entity/Leashable.java b/net/minecraft/world/entity/Leashable.java
-index 0fcf89af815546c89b0c5e52efa3c60ed7371b29..98034a4c96bf2972316078d3b3a49140921aab50 100644
 --- a/net/minecraft/world/entity/Leashable.java
 +++ b/net/minecraft/world/entity/Leashable.java
-@@ -80,6 +80,11 @@ public interface Leashable {
+@@ -80,6 +_,11 @@
      }
  
      default void writeLeashData(final ValueOutput output, final Leashable.@Nullable LeashData leashData) {
@@ -20,7 +12,7 @@ index 0fcf89af815546c89b0c5e52efa3c60ed7371b29..98034a4c96bf2972316078d3b3a49140
          output.storeNullable("leash", Leashable.LeashData.CODEC, leashData);
      }
  
-@@ -143,7 +148,15 @@ public interface Leashable {
+@@ -143,7 +_,15 @@
  
          if (leashData != null && leashData.leashHolder != null) {
              if (!entity.canInteractWithLevel() || !leashData.leashHolder.canInteractWithLevel()) {
@@ -37,7 +29,7 @@ index 0fcf89af815546c89b0c5e52efa3c60ed7371b29..98034a4c96bf2972316078d3b3a49140
                      entity.dropLeash();
                  } else {
                      entity.removeLeash();
-@@ -154,8 +167,7 @@ public interface Leashable {
+@@ -154,8 +_,7 @@
              if (leashHolder != null && leashHolder.level() == entity.level()) {
                  double distanceTo = entity.leashDistanceTo(leashHolder);
                  entity.whenLeashedTo(leashHolder);
@@ -47,7 +39,7 @@ index 0fcf89af815546c89b0c5e52efa3c60ed7371b29..98034a4c96bf2972316078d3b3a49140
                      entity.leashTooFarBehaviour();
                  } else if (distanceTo > entity.leashElasticDistance() - leashHolder.getBbWidth() - entity.getBbWidth()
                      && entity.checkElasticInteractions(leashHolder, leashData)) {
-@@ -175,6 +187,12 @@ public interface Leashable {
+@@ -175,6 +_,12 @@
          entity.checkFallDistanceAccumulation();
      }
  
@@ -60,7 +52,7 @@ index 0fcf89af815546c89b0c5e52efa3c60ed7371b29..98034a4c96bf2972316078d3b3a49140
      default double leashSnapDistance() {
          return 12.0;
      }
-@@ -196,7 +214,26 @@ public interface Leashable {
+@@ -196,7 +_,26 @@
      }
  
      default void leashTooFarBehaviour() {

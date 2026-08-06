@@ -1,0 +1,11 @@
+--- a/data/minecraft/advancement/recipes/decorations/jungle_fence.json
++++ b/data/minecraft/advancement/recipes/decorations/jungle_fence.json
+@@ -13,7 +_,7 @@
+     },
+     "has_the_recipe": {
+       "conditions": {
+-        "recipes": "minecraft:jungle_fence"
++        "recipe": "minecraft:jungle_fence"
+       },
+       "trigger": "minecraft:recipe_unlocked"
+     }

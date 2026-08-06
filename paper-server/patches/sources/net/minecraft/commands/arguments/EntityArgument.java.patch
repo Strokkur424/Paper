@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/commands/arguments/EntityArgument.java b/net/minecraft/commands/arguments/EntityArgument.java
-index 3a90eb01983f9bcee1691d523893394262a6fc97..2d20317d50c9b5602ab547ab1217a5fe3c26b381 100644
 --- a/net/minecraft/commands/arguments/EntityArgument.java
 +++ b/net/minecraft/commands/arguments/EntityArgument.java
-@@ -106,9 +106,14 @@ public class EntityArgument implements ArgumentType<EntitySelector> {
+@@ -106,9 +_,14 @@
      }
  
      private EntitySelector parse(final StringReader reader, final boolean allowSelectors) throws CommandSyntaxException {
@@ -24,7 +16,7 @@ index 3a90eb01983f9bcee1691d523893394262a6fc97..2d20317d50c9b5602ab547ab1217a5fe
          if (selector.getMaxResults() > 1 && this.single) {
              if (this.playersOnly) {
                  reader.setCursor(0);
-@@ -130,7 +135,13 @@ public class EntityArgument implements ArgumentType<EntitySelector> {
+@@ -130,7 +_,13 @@
          if (contextBuilder.getSource() instanceof SharedSuggestionProvider source) {
              StringReader reader = new StringReader(builder.getInput());
              reader.setCursor(builder.getStart());

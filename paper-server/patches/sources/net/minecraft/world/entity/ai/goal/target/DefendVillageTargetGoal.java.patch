@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/entity/ai/goal/target/DefendVillageTargetGoal.java b/net/minecraft/world/entity/ai/goal/target/DefendVillageTargetGoal.java
-index 16e47104b1a98380dbe314b9da1915663b1e57fa..83ce3e3e5b289f5d5dfb9589a16102b0607ab8eb 100644
 --- a/net/minecraft/world/entity/ai/goal/target/DefendVillageTargetGoal.java
 +++ b/net/minecraft/world/entity/ai/goal/target/DefendVillageTargetGoal.java
-@@ -46,7 +46,7 @@ public class DefendVillageTargetGoal extends TargetGoal {
+@@ -46,7 +_,7 @@
  
      @Override
      public void start() {

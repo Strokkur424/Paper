@@ -1,14 +1,6 @@
-From f632b9eb8d5c757eaffb596f5fe062258ab24e42 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/world/entity/animal/nautilus/AbstractNautilus.java b/net/minecraft/world/entity/animal/nautilus/AbstractNautilus.java
-index 47e4535e7ae13e2cfd321aa7e59ba1be97ad1826..790befcf8eb25df797386c9dd9d262c17fcc0d15 100644
 --- a/net/minecraft/world/entity/animal/nautilus/AbstractNautilus.java
 +++ b/net/minecraft/world/entity/animal/nautilus/AbstractNautilus.java
-@@ -141,8 +141,12 @@ public abstract class AbstractNautilus extends TamableAnimal implements PlayerRi
+@@ -141,8 +_,12 @@
      ) {
          int seaLevel = level.getSeaLevel();
          int minSpawnLevel = seaLevel - 25;
@@ -22,7 +14,7 @@ index 47e4535e7ae13e2cfd321aa7e59ba1be97ad1826..790befcf8eb25df797386c9dd9d262c1
              && level.getFluidState(pos.below()).is(FluidTags.WATER)
              && level.getBlockState(pos.above()).is(Blocks.WATER);
      }
-@@ -263,7 +267,7 @@ public abstract class AbstractNautilus extends TamableAnimal implements PlayerRi
+@@ -263,7 +_,7 @@
              boolean hasEffect = player.hasEffect(MobEffects.BREATH_OF_THE_NAUTILUS);
              boolean shouldRefresh = level.getGameTime() % 40L == 0L;
              if (!hasEffect || shouldRefresh) {
@@ -31,7 +23,7 @@ index 47e4535e7ae13e2cfd321aa7e59ba1be97ad1826..790befcf8eb25df797386c9dd9d262c1
              }
          }
      }
-@@ -433,7 +437,7 @@ public abstract class AbstractNautilus extends TamableAnimal implements PlayerRi
+@@ -433,7 +_,7 @@
      }
  
      private void tryToTame(final Player player) {
@@ -40,7 +32,7 @@ index 47e4535e7ae13e2cfd321aa7e59ba1be97ad1826..790befcf8eb25df797386c9dd9d262c1
              this.tame(player);
              this.navigation.stop();
              this.level().broadcastEntityEvent(this, EntityEvent.TAMING_SUCCEEDED);
-@@ -488,7 +492,7 @@ public abstract class AbstractNautilus extends TamableAnimal implements PlayerRi
+@@ -488,7 +_,7 @@
  
      protected void createInventory() {
          SimpleContainer old = this.inventory;
