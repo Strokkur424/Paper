@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/world/level/block/LecternBlock.java b/net/minecraft/world/level/block/LecternBlock.java
+index 0efb8473a45fe6a57803c686c5684b3f65396d47..b5ac0a094d7c67afe59716857cef425e11545054 100644
 --- a/net/minecraft/world/level/block/LecternBlock.java
 +++ b/net/minecraft/world/level/block/LecternBlock.java
-@@ -142,7 +_,24 @@
+@@ -142,7 +142,24 @@ public class LecternBlock extends BaseEntityBlock {
          final @Nullable LivingEntity sourceEntity, final Level level, final BlockPos pos, final BlockState state, final ItemStack book
      ) {
          if (level.getBlockEntity(pos) instanceof LecternBlockEntity lectern) {
@@ -26,7 +34,7 @@
              resetBookState(sourceEntity, level, pos, state, true);
              level.playSound(null, pos, SoundEvents.BOOK_PUT, SoundSource.BLOCKS, 1.0F, 1.0F);
          }
-@@ -162,6 +_,13 @@
+@@ -162,6 +179,13 @@ public class LecternBlock extends BaseEntityBlock {
      }
  
      private static void changePowered(final Level level, final BlockPos pos, final BlockState state, final boolean isPowered) {
@@ -40,7 +48,7 @@
          level.setBlock(pos, state.setValue(POWERED, isPowered), Block.UPDATE_ALL);
          updateBelow(level, pos, state);
      }
-@@ -250,8 +_,7 @@
+@@ -250,8 +274,7 @@ public class LecternBlock extends BaseEntityBlock {
      }
  
      private void openScreen(final Level level, final BlockPos pos, final Player player) {

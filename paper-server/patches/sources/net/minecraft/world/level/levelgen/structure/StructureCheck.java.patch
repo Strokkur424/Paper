@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/world/level/levelgen/structure/StructureCheck.java b/net/minecraft/world/level/levelgen/structure/StructureCheck.java
+index 270545bf8db9e45a57d2f9c8064b3586fc49a3fd..2c0e0a2402a76196e74d249308fb5c628741ef0a 100644
 --- a/net/minecraft/world/level/levelgen/structure/StructureCheck.java
 +++ b/net/minecraft/world/level/levelgen/structure/StructureCheck.java
-@@ -52,8 +_,12 @@
+@@ -52,8 +52,12 @@ public class StructureCheck {
      private final DataFixer fixerUpper;
      private final Long2ObjectMap<Object2IntMap<Structure>> loadedChunks = new Long2ObjectOpenHashMap<>();
      private final Map<Structure, Long2BooleanMap> featureChecks = new HashMap<>();
@@ -13,14 +21,13 @@
          final ChunkScanAccess storageAccess,
          final RegistryAccess registryAccess,
          final StructureTemplateManager structureTemplateManager,
-@@ -75,7 +_,22 @@
+@@ -75,8 +79,23 @@ public class StructureCheck {
          this.biomeSource = biomeSource;
          this.seed = seed;
          this.fixerUpper = fixerUpper;
--    }
 +        this.levelStem = levelStem; // Paper - also store level stem
-+    }
-+
+     }
+ 
 +    // Paper start - add missing structure salt configs
 +    @Nullable
 +    private Integer getSaltOverride(Structure type) {
@@ -34,10 +41,11 @@
 +        return null;
 +    }
 +    // Paper end - add missing structure seed configs
- 
++
      public StructureCheckResult checkStart(final ChunkPos pos, final Structure structure, final StructurePlacement placement, final boolean requireUnreferenced) {
          long posKey = pos.pack();
-@@ -89,7 +_,7 @@
+         Object2IntMap<Structure> cachedResult = this.loadedChunks.get(posKey);
+@@ -89,7 +108,7 @@ public class StructureCheck {
              return storageCheckResult;
          }
  
@@ -46,7 +54,7 @@
              return StructureCheckResult.START_NOT_PRESENT;
          }
  
-@@ -135,7 +_,7 @@
+@@ -135,7 +154,7 @@ public class StructureCheck {
          if (collectFields.getResult() instanceof CompoundTag chunkTag) {
              int version = NbtUtils.getDataVersion(chunkTag);
              SimpleRegionStorage.injectDatafixingContext(

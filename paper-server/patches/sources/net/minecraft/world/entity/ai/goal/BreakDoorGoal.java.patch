@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/world/entity/ai/goal/BreakDoorGoal.java b/net/minecraft/world/entity/ai/goal/BreakDoorGoal.java
+index 438192ecfc80bca5359149e9d57669d3db1aa0e2..e33598c3ea748f81c7efcaa06d9d0597624a852b 100644
 --- a/net/minecraft/world/entity/ai/goal/BreakDoorGoal.java
 +++ b/net/minecraft/world/entity/ai/goal/BreakDoorGoal.java
-@@ -74,9 +_,16 @@
+@@ -74,9 +74,16 @@ public class BreakDoorGoal extends DoorInteractGoal {
          }
  
          if (this.breakTime == this.getDoorBreakTime() && this.isValidDifficulty(this.mob.level().getDifficulty())) {

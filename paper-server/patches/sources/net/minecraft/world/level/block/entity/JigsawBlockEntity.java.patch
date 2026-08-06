@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/world/level/block/entity/JigsawBlockEntity.java b/net/minecraft/world/level/block/entity/JigsawBlockEntity.java
+index aca182cf565d76c5495ee84cae5f2bec8f88401e..bcad783f3fc82d9bae6f7aa8279ed07e05147b94 100644
 --- a/net/minecraft/world/level/block/entity/JigsawBlockEntity.java
 +++ b/net/minecraft/world/level/block/entity/JigsawBlockEntity.java
-@@ -140,7 +_,12 @@
+@@ -140,7 +140,12 @@ public class JigsawBlockEntity extends BlockEntity {
      public void generate(final ServerLevel level, final int levels, final boolean keepJigsaws) {
          BlockPos position = this.getBlockPos().relative(this.getBlockState().getValue(JigsawBlock.ORIENTATION).front());
          Registry<StructureTemplatePool> poolRegistry = level.registryAccess().lookupOrThrow(Registries.TEMPLATE_POOL);

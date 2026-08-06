@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/world/level/block/entity/vault/VaultBlockEntity.java b/net/minecraft/world/level/block/entity/vault/VaultBlockEntity.java
+index d1fe82fa70064ef9f02fc122b871bdea25a4d033..e2e5f54b903719604ca025c78981fbaef6169fd0 100644
 --- a/net/minecraft/world/level/block/entity/vault/VaultBlockEntity.java
 +++ b/net/minecraft/world/level/block/entity/vault/VaultBlockEntity.java
-@@ -280,7 +_,13 @@
+@@ -280,7 +280,13 @@ public class VaultBlockEntity extends BlockEntity {
                      if (!itemsToEject.isEmpty()) {
                          player.awardStat(Stats.ITEM_USED.get(stackToInsert.getItem()));
                          stackToInsert.consume(config.keyItem().getCount(), player);
@@ -15,10 +23,11 @@
                          serverData.addToRewardedPlayers(player);
                          sharedData.updateConnectedPlayersWithinRange(serverLevel, pos, serverData, config, config.deactivationRange());
                      }
-@@ -296,8 +_,39 @@
+@@ -295,9 +301,40 @@ public class VaultBlockEntity extends BlockEntity {
+             final BlockState newBlockState,
              final VaultConfig config,
              final VaultSharedData sharedData
-         ) {
++        ) {
 +            // Paper start - Vault API
 +            setVaultState(serverLevel, pos, currentBlockState, newBlockState, config, sharedData, null);
 +        }
@@ -31,7 +40,7 @@
 +            final VaultConfig config,
 +            final VaultSharedData sharedData,
 +            final @Nullable Player associatedPlayer
-+        ) {
+         ) {
              VaultState currentVaultState = currentBlockState.getValue(VaultBlock.STATE);
              VaultState newVaultState = newBlockState.getValue(VaultBlock.STATE);
 +            final VaultState oldVaultState = currentVaultState;
@@ -55,7 +64,7 @@
              serverLevel.setBlock(pos, newBlockState, Block.UPDATE_ALL);
              currentVaultState.onTransition(serverLevel, pos, newVaultState, config, sharedData, newBlockState.getValue(VaultBlock.OMINOUS));
          }
-@@ -309,6 +_,11 @@
+@@ -309,6 +346,11 @@ public class VaultBlockEntity extends BlockEntity {
                  sharedData.setDisplayItem(ItemStack.EMPTY);
              } else {
                  ItemStack displayItem = getRandomDisplayItemFromLootTable(serverLevel, pos, config.overrideLootTableToDisplay().orElse(config.lootTable()));
@@ -67,7 +76,7 @@
                  sharedData.setDisplayItem(displayItem);
              }
          }
-@@ -331,10 +_,25 @@
+@@ -331,10 +373,25 @@ public class VaultBlockEntity extends BlockEntity {
              final VaultSharedData sharedData,
              final List<ItemStack> itemsToEject
          ) {

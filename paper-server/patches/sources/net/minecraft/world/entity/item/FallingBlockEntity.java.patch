@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/world/entity/item/FallingBlockEntity.java b/net/minecraft/world/entity/item/FallingBlockEntity.java
+index f8e8edab0ae221c7c57d307645a77d4b46d58ed7..899f4ac76ae1397146bf15c4e5b9f5996451c2b5 100644
 --- a/net/minecraft/world/entity/item/FallingBlockEntity.java
 +++ b/net/minecraft/world/entity/item/FallingBlockEntity.java
-@@ -72,6 +_,7 @@
+@@ -72,6 +72,7 @@ public class FallingBlockEntity extends Entity {
      public @Nullable CompoundTag blockData;
      public boolean forceTickAfterTeleportToDuplicate;
      protected static final EntityDataAccessor<BlockPos> DATA_START_POS = SynchedEntityData.defineId(FallingBlockEntity.class, EntityDataSerializers.BLOCK_POS);
@@ -8,7 +16,7 @@
  
      public FallingBlockEntity(final EntityType<? extends FallingBlockEntity> type, final Level level) {
          super(type, level);
-@@ -97,6 +_,7 @@
+@@ -97,6 +98,7 @@ public class FallingBlockEntity extends Entity {
              pos.getZ() + 0.5,
              state.hasProperty(BlockStateProperties.WATERLOGGED) ? state.setValue(BlockStateProperties.WATERLOGGED, false) : state
          );
@@ -16,7 +24,7 @@
          level.setBlock(pos, state.getFluidState().createLegacyBlock(), Block.UPDATE_ALL);
          level.addFreshEntity(entity);
          return entity;
-@@ -147,13 +_,22 @@
+@@ -147,13 +149,22 @@ public class FallingBlockEntity extends Entity {
      @Override
      public void tick() {
          if (this.blockState.isAir()) {
@@ -40,7 +48,7 @@
              this.handlePortal();
              if (this.level() instanceof ServerLevel serverLevel && (this.isAlive() || this.forceTickAfterTeleportToDuplicate)) {
                  BlockPos pos = this.blockPosition();
-@@ -174,12 +_,12 @@
+@@ -174,12 +185,12 @@ public class FallingBlockEntity extends Entity {
                  }
  
                  if (!this.onGround() && !isStuckInWater) {
@@ -55,7 +63,7 @@
                      }
                  } else {
                      BlockState currentState = this.level().getBlockState(pos);
-@@ -196,11 +_,17 @@
+@@ -196,11 +207,17 @@ public class FallingBlockEntity extends Entity {
                                      this.blockState = this.blockState.setValue(BlockStateProperties.WATERLOGGED, true);
                                  }
  
@@ -74,7 +82,7 @@
                                      if (block instanceof Fallable fallable) {
                                          fallable.onLand(this.level(), pos, this.blockState, currentState, this);
                                      }
-@@ -225,19 +_,19 @@
+@@ -225,19 +242,19 @@ public class FallingBlockEntity extends Entity {
                                          }
                                      }
                                  } else if (this.dropItem && serverLevel.getGameRules().get(GameRules.ENTITY_DROPS)) {
@@ -97,7 +105,7 @@
                              this.callOnBrokenAfterFall(block, pos);
                          }
                      }
-@@ -297,6 +_,7 @@
+@@ -297,6 +314,7 @@ public class FallingBlockEntity extends Entity {
          }
  
          output.putBoolean("CancelDrop", this.cancelDrop);
@@ -105,7 +113,7 @@
      }
  
      @Override
-@@ -308,8 +_,9 @@
+@@ -308,8 +326,9 @@ public class FallingBlockEntity extends Entity {
          this.fallDamagePerDistance = input.getFloatOr("FallHurtAmount", 0.0F);
          this.fallDamageMax = input.getIntOr("FallHurtMax", 40);
          this.dropItem = input.getBooleanOr("DropItem", true);
@@ -116,7 +124,7 @@
      }
  
      public void setHurtsEntities(final float damagePerDistance, final int damageMax) {
-@@ -365,7 +_,7 @@
+@@ -365,7 +384,7 @@ public class FallingBlockEntity extends Entity {
          ResourceKey<Level> oldDimension = this.level().dimension();
          boolean fromOrToEnd = (oldDimension == Level.END || newDimension == Level.END) && oldDimension != newDimension;
          Entity newEntity = super.teleport(transition);

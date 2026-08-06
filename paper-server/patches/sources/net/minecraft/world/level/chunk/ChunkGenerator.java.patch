@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/world/level/chunk/ChunkGenerator.java b/net/minecraft/world/level/chunk/ChunkGenerator.java
+index 860808840c8070e33a5f32127488ecb78bb0c944..315c35d516eca40bef4cd05167792823f3be1654 100644
 --- a/net/minecraft/world/level/chunk/ChunkGenerator.java
 +++ b/net/minecraft/world/level/chunk/ChunkGenerator.java
-@@ -105,8 +_,8 @@
+@@ -105,8 +105,8 @@ public abstract class ChunkGenerator {
  
      protected abstract MapCodec<? extends ChunkGenerator> codec();
  
@@ -11,7 +19,7 @@
      }
  
      public Optional<Identifier> getTypeNameForDataFixer() {
-@@ -127,16 +_,34 @@
+@@ -127,16 +127,34 @@ public abstract class ChunkGenerator {
      );
  
      public @Nullable Pair<BlockPos, Holder<Structure>> findNearestMapStructure(
@@ -48,7 +56,7 @@
          ChunkGeneratorStructureState generatorState = level.getChunkSource().getGeneratorState();
          Map<StructurePlacement, Set<Holder<Structure>>> placementScans = new Object2ObjectArrayMap<>();
  
-@@ -231,6 +_,7 @@
+@@ -231,6 +249,7 @@ public abstract class ChunkGenerator {
          BlockPos.MutableBlockPos structurePos = new BlockPos.MutableBlockPos();
  
          for (ChunkPos chunkPos : positions) {
@@ -56,7 +64,7 @@
              structurePos.set(SectionPos.sectionToBlockCoord(chunkPos.x(), 8), 32, SectionPos.sectionToBlockCoord(chunkPos.z(), 8));
              double distSqr = structurePos.distSqr(pos);
              boolean isClosest = closestPos == null || distSqr < closest;
-@@ -262,9 +_,12 @@
+@@ -262,9 +281,12 @@ public abstract class ChunkGenerator {
          for (int x = -radius; x <= radius; x++) {
              boolean xEdge = x == -radius || x == radius;
  
@@ -72,7 +80,7 @@
                      int sectorX = chunkOriginX + spacing * x;
                      int sectorZ = chunkOriginZ + spacing * z;
                      ChunkPos chunkTarget = config.getPotentialStructureChunk(seed, sectorX, sectorZ);
-@@ -316,7 +_,7 @@
+@@ -316,7 +338,7 @@ public abstract class ChunkGenerator {
          }
      }
  
@@ -81,7 +89,7 @@
          ChunkPos centerPos = chunk.getPos();
          if (!SharedConstants.debugVoidTerrain(centerPos)) {
              SectionPos sectionPos = SectionPos.of(centerPos, level.getMinSectionY());
-@@ -390,7 +_,14 @@
+@@ -390,7 +412,14 @@ public abstract class ChunkGenerator {
                              Supplier<String> currentlyGenerating = () -> featureRegistry.getResourceKey(feature)
                                  .map(Object::toString)
                                  .orElseGet(feature::toString);
@@ -97,7 +105,7 @@
  
                              try {
                                  level.setCurrentlyGenerating(currentlyGenerating);
-@@ -418,6 +_,34 @@
+@@ -418,6 +447,34 @@ public abstract class ChunkGenerator {
              }
          }
      }
@@ -132,7 +140,7 @@
  
      private static BoundingBox getWritableArea(final ChunkAccess chunk) {
          ChunkPos chunkPos = chunk.getPos();
-@@ -497,7 +_,7 @@
+@@ -497,7 +554,7 @@ public abstract class ChunkGenerator {
                              }
                          }
  
@@ -141,7 +149,7 @@
                              if (structures.size() == 1) {
                                  this.tryGenerateStructure(
                                      structures.get(0),
-@@ -592,6 +_,14 @@
+@@ -592,6 +649,14 @@ public abstract class ChunkGenerator {
              biomePredicate
          );
          if (start.isValid()) {

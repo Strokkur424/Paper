@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/world/level/gamerules/GameRuleMap.java b/net/minecraft/world/level/gamerules/GameRuleMap.java
+index 46964a3cf196bad1040ed7630ee26c7ac961b8ef..25dff45d0ee231fc525b50b7b4efa3cd1afc3936 100644
 --- a/net/minecraft/world/level/gamerules/GameRuleMap.java
 +++ b/net/minecraft/world/level/gamerules/GameRuleMap.java
-@@ -22,9 +_,16 @@
+@@ -22,9 +22,16 @@ public final class GameRuleMap extends SavedData {
          Identifier.withDefaultNamespace("game_rules"), GameRuleMap::of, CODEC, DataFixTypes.SAVED_DATA_GAME_RULES
      );
      private final Reference2ObjectMap<GameRule<?>, Object> map;
@@ -17,7 +25,7 @@
      }
  
      private static GameRuleMap ofTrusted(final Map<GameRule<?>, Object> map) {
-@@ -46,16 +_,17 @@
+@@ -46,16 +53,17 @@ public final class GameRuleMap extends SavedData {
      }
  
      public boolean has(final GameRule<?> gameRule) {
@@ -37,7 +45,7 @@
      }
  
      public <T> void reset(final GameRule<T> gameRule) {
-@@ -64,6 +_,7 @@
+@@ -64,6 +72,7 @@ public final class GameRuleMap extends SavedData {
  
      public <T> @Nullable T remove(final GameRule<T> gameRule) {
          this.setDirty();

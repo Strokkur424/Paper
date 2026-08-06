@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/com/mojang/authlib/yggdrasil/YggdrasilGameProfileRepository.java b/com/mojang/authlib/yggdrasil/YggdrasilGameProfileRepository.java
+index 2c84b2f8650ba58e617dd758e8c9c21fdff1ef47..74a2b3dfd0dcc40727ad0bd13b08dede1e81a55d 100644
 --- a/com/mojang/authlib/yggdrasil/YggdrasilGameProfileRepository.java
 +++ b/com/mojang/authlib/yggdrasil/YggdrasilGameProfileRepository.java
-@@ -48,6 +_,7 @@
+@@ -48,6 +48,7 @@ public class YggdrasilGameProfileRepository implements GameProfileRepository {
              .collect(Collectors.toSet());
  
          final int page = 0;
@@ -8,7 +16,7 @@
  
          for (final List<String> request : Iterables.partition(criteria, ENTRIES_PER_PAGE)) {
              final List<String> normalizedRequest = request.stream().map(YggdrasilGameProfileRepository::normalizeName).toList();
-@@ -79,6 +_,12 @@
+@@ -79,6 +80,12 @@ public class YggdrasilGameProfileRepository implements GameProfileRepository {
                          LOGGER.debug("Couldn't find profile {}", name);
                          callback.onProfileLookupFailed(name, new ProfileNotFoundException("Server did not find the requested profile"));
                      }
@@ -21,7 +29,7 @@
  
                      try {
                          Thread.sleep(DELAY_BETWEEN_PAGES);
-@@ -109,7 +_,15 @@
+@@ -109,7 +116,15 @@ public class YggdrasilGameProfileRepository implements GameProfileRepository {
          try {
              return Optional.ofNullable(client.get(HttpAuthenticationService.constantURL(nameLookupUrl + normalizeName(name)), NameAndId.class));
          } catch (final MinecraftClientException e) {

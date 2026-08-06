@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/server/dedicated/DedicatedServerProperties.java b/net/minecraft/server/dedicated/DedicatedServerProperties.java
+index 91f0ae80ab21ff330b10d8ee99fd3f32ffb006e9..639a5400499266f83cf8b7c1251483cd8fb699a4 100644
 --- a/net/minecraft/server/dedicated/DedicatedServerProperties.java
 +++ b/net/minecraft/server/dedicated/DedicatedServerProperties.java
-@@ -50,6 +_,7 @@
+@@ -50,6 +50,7 @@ public class DedicatedServerProperties extends Settings<DedicatedServerPropertie
      private static final Logger LOGGER = LogUtils.getLogger();
      private static final Pattern SHA1 = Pattern.compile("^[a-fA-F0-9]{40}$");
      private static final Splitter COMMA_SPLITTER = Splitter.on(',').trimResults();
@@ -8,7 +16,7 @@
      public static final String MANAGEMENT_SERVER_TLS_ENABLED_KEY = "management-server-tls-enabled";
      public static final String MANAGEMENT_SERVER_TLS_KEYSTORE_KEY = "management-server-tls-keystore";
      public static final String MANAGEMENT_SERVER_TLS_KEYSTORE_PASSWORD_KEY = "management-server-tls-keystore-password";
-@@ -108,7 +_,7 @@
+@@ -108,7 +109,7 @@ public class DedicatedServerProperties extends Settings<DedicatedServerPropertie
      public final boolean broadcastRconToOps = this.get("broadcast-rcon-to-ops", true);
      public final boolean broadcastConsoleToOps = this.get("broadcast-console-to-ops", true);
      public final int maxWorldSize = this.get("max-world-size", v -> Mth.clamp(v, 1, 29999984), 29999984);
@@ -17,7 +25,7 @@
      public final String regionFileComression = this.get("region-file-compression", "deflate");
      public final boolean enableJmxMonitoring = this.get("enable-jmx-monitoring", false);
      public final Settings<DedicatedServerProperties>.MutableValue<Boolean> enableStatus = this.getMutable("enable-status", true);
-@@ -125,13 +_,16 @@
+@@ -125,13 +126,16 @@ public class DedicatedServerProperties extends Settings<DedicatedServerPropertie
      public final Settings<DedicatedServerProperties>.MutableValue<Boolean> whiteList = this.getMutable("white-list", false);
      public final boolean enforceSecureProfile = this.get("enforce-secure-profile", true);
      public final boolean logIPs = this.get("log-ips", true);
@@ -37,7 +45,7 @@
          String levelSeed = this.get("level-seed", "");
          boolean generateStructures = this.get("generate-structures", true);
          long seed = WorldOptions.parseSeed(levelSeed).orElse(WorldOptions.randomSeed());
-@@ -152,15 +_,23 @@
+@@ -152,15 +156,23 @@ public class DedicatedServerProperties extends Settings<DedicatedServerPropertie
              this.get("initial-enabled-packs", String.join(",", WorldDataConfiguration.DEFAULT.dataPacks().getEnabled())),
              this.get("initial-disabled-packs", String.join(",", WorldDataConfiguration.DEFAULT.dataPacks().getDisabled()))
          );

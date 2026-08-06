@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/server/dialog/body/ItemBody.java b/net/minecraft/server/dialog/body/ItemBody.java
+index 81fde16c64fa9e0ba07ca3c42903c317150eea73..ae89b4f42f4a52d98f26a20468e0d19d6c5828ef 100644
 --- a/net/minecraft/server/dialog/body/ItemBody.java
 +++ b/net/minecraft/server/dialog/body/ItemBody.java
-@@ -15,8 +_,8 @@
+@@ -15,8 +15,8 @@ public record ItemBody(ItemStackTemplate item, Optional<PlainMessage> descriptio
                  PlainMessage.CODEC.optionalFieldOf("description").forGetter(ItemBody::description),
                  Codec.BOOL.optionalFieldOf("show_decorations", true).forGetter(ItemBody::showDecorations),
                  Codec.BOOL.optionalFieldOf("show_tooltip", true).forGetter(ItemBody::showTooltip),

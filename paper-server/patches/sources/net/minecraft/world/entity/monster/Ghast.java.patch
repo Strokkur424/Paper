@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/world/entity/monster/Ghast.java b/net/minecraft/world/entity/monster/Ghast.java
+index 57b4419b87b7c7a96bd9f421afa710b6b4ac3622..04f7b2b5900b03df1e012335c4100b8e8bdac28c 100644
 --- a/net/minecraft/world/entity/monster/Ghast.java
 +++ b/net/minecraft/world/entity/monster/Ghast.java
-@@ -74,6 +_,12 @@
+@@ -74,6 +74,12 @@ public class Ghast extends Mob implements Enemy {
          return this.explosionPower;
      }
  
@@ -13,7 +21,7 @@
      private static boolean isReflectedFireball(final DamageSource source) {
          return source.getDirectEntity() instanceof LargeFireball && source.getEntity() instanceof Player;
      }
-@@ -375,6 +_,7 @@
+@@ -375,6 +381,7 @@ public class Ghast extends Mob implements Enemy {
                          }
  
                          LargeFireball entity = new LargeFireball(level, this.ghast, direction.normalize(), this.ghast.getExplosionPower());

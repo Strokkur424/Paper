@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/world/level/block/Block.java b/net/minecraft/world/level/block/Block.java
+index c141eb27d6760f71235c84dab94501960f4ffed3..5d09a36718bb22022348a9ce8efe8a4767c21a8c 100644
 --- a/net/minecraft/world/level/block/Block.java
 +++ b/net/minecraft/world/level/block/Block.java
-@@ -89,25 +_,43 @@
+@@ -89,25 +89,43 @@ public class Block extends BlockBehaviour implements ItemLike {
                  return !Shapes.joinIsNotEmpty(Shapes.block(), shape, BooleanOp.NOT_SAME);
              }
          });
@@ -58,7 +66,7 @@
      private @Nullable Item item;
      private static final int CACHE_SIZE = 256;
      private static final ThreadLocal<Object2ByteLinkedOpenHashMap<Block.ShapePairKey>> OCCLUSION_CACHE = ThreadLocal.withInitial(() -> {
-@@ -382,6 +_,27 @@
+@@ -382,6 +400,27 @@ public class Block extends BlockBehaviour implements ItemLike {
          return state.getDrops(params);
      }
  
@@ -86,7 +94,7 @@
      public static void dropResources(final BlockState state, final Level level, final BlockPos pos) {
          if (level instanceof ServerLevel serverLevel) {
              getDrops(state, serverLevel, pos, null).forEach(stack -> popResource(level, pos, stack));
-@@ -396,6 +_,12 @@
+@@ -396,6 +435,12 @@ public class Block extends BlockBehaviour implements ItemLike {
          }
      }
  
@@ -99,7 +107,7 @@
      public static void dropResources(
          final BlockState state,
          final Level level,
-@@ -403,10 +_,11 @@
+@@ -403,10 +448,11 @@ public class Block extends BlockBehaviour implements ItemLike {
          final @Nullable BlockEntity blockEntity,
          final @Nullable Entity breaker,
          final ItemStack tool
@@ -112,7 +120,7 @@
          }
      }
  
-@@ -439,13 +_,25 @@
+@@ -439,13 +485,25 @@ public class Block extends BlockBehaviour implements ItemLike {
          if (level instanceof ServerLevel serverLevel && !itemStack.isEmpty() && serverLevel.getGameRules().get(GameRules.BLOCK_DROPS)) {
              ItemEntity entity = entityFactory.get();
              entity.setDefaultPickUpDelay();
@@ -140,7 +148,7 @@
          }
      }
  
-@@ -463,6 +_,13 @@
+@@ -463,6 +521,13 @@ public class Block extends BlockBehaviour implements ItemLike {
          return this.defaultBlockState();
      }
  
@@ -154,7 +162,7 @@
      public void playerDestroy(
          final Level level,
          final Player player,
-@@ -470,10 +_,13 @@
+@@ -470,10 +535,13 @@ public class Block extends BlockBehaviour implements ItemLike {
          final BlockState state,
          final @Nullable BlockEntity blockEntity,
          final ItemStack destroyedWith
@@ -170,7 +178,7 @@
      }
  
      public void setPlacedBy(final Level level, final BlockPos pos, final BlockState state, final @Nullable LivingEntity by, final ItemStack itemStack) {
-@@ -613,12 +_,20 @@
+@@ -613,12 +681,20 @@ public class Block extends BlockBehaviour implements ItemLike {
          return this.builtInRegistryHolder;
      }
  
@@ -183,18 +191,17 @@
 +            // this.popExperience(level, pos, experience);
 +            return experience;
          }
--    }
 +        return 0;
 +    }
 +
 +    public int getExpDrop(final BlockState state, final ServerLevel level, final BlockPos pos, final ItemStack tool, final boolean dropExperience) {
 +        return 0;
-+    }
+     }
 +    // CraftBukkit end
  
      private record ShapePairKey(VoxelShape first, VoxelShape second) {
          @Override
-@@ -634,6 +_,7 @@
+@@ -634,6 +710,7 @@ public class Block extends BlockBehaviour implements ItemLike {
  
      @Retention(RetentionPolicy.CLASS)
      @Target(ElementType.TYPE_USE)

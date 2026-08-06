@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/server/WorldLoader.java b/net/minecraft/server/WorldLoader.java
+index 71c4743dd0d3f76ac540b9b7dc6650ecaccade78..8de1c9f630e86be0214bb18d40c65cc2a2ab1ced 100644
 --- a/net/minecraft/server/WorldLoader.java
 +++ b/net/minecraft/server/WorldLoader.java
-@@ -35,7 +_,7 @@
+@@ -35,7 +35,7 @@ public class WorldLoader {
                      CloseableResourceManager resources = packsAndResourceManager.getSecond();
                      LayeredRegistryAccess<RegistryLayer> initialLayers = RegistryLayer.createRegistryAccess();
                      List<Registry.PendingTags<?>> staticLayerTags = TagLoader.loadTagsForExistingRegistries(

@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/world/item/consume_effects/ApplyStatusEffectsConsumeEffect.java b/net/minecraft/world/item/consume_effects/ApplyStatusEffectsConsumeEffect.java
+index 47dc92b57967db85d2121263f2fdbf00f09c2c7f..8b67e85893b21f1b2752e24691cf1a46d9d99381 100644
 --- a/net/minecraft/world/item/consume_effects/ApplyStatusEffectsConsumeEffect.java
 +++ b/net/minecraft/world/item/consume_effects/ApplyStatusEffectsConsumeEffect.java
-@@ -46,7 +_,7 @@
+@@ -46,7 +46,7 @@ public record ApplyStatusEffectsConsumeEffect(List<MobEffectInstance> effects, f
      }
  
      @Override
@@ -9,7 +17,7 @@
          if (user.getRandom().nextFloat() >= this.probability) {
              return false;
          }
-@@ -54,7 +_,7 @@
+@@ -54,7 +54,7 @@ public record ApplyStatusEffectsConsumeEffect(List<MobEffectInstance> effects, f
          boolean anyApplied = false;
  
          for (MobEffectInstance effect : this.effects) {

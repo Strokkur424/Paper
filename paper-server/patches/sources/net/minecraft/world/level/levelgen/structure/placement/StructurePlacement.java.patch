@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/world/level/levelgen/structure/placement/StructurePlacement.java b/net/minecraft/world/level/levelgen/structure/placement/StructurePlacement.java
+index c29bde113430cf61842a62d0d1763bdede731dee..646df0237a5a2863f75e6c5f9dfe9ddf512c540f 100644
 --- a/net/minecraft/world/level/levelgen/structure/placement/StructurePlacement.java
 +++ b/net/minecraft/world/level/levelgen/structure/placement/StructurePlacement.java
-@@ -79,14 +_,31 @@
+@@ -79,14 +79,31 @@ public abstract class StructurePlacement {
          return this.exclusionZone;
      }
  
@@ -35,7 +43,7 @@
      }
  
      public boolean applyInteractionsWithOtherStructures(final ChunkGeneratorStructureState state, final int sourceX, final int sourceZ) {
-@@ -101,25 +_,31 @@
+@@ -101,25 +118,31 @@ public abstract class StructurePlacement {
  
      public abstract StructurePlacementType<?> type();
  
@@ -72,7 +80,7 @@
          int cx = sourceX >> 4;
          int cz = sourceZ >> 4;
          WorldgenRandom random = new WorldgenRandom(new LegacyRandomSource(0L));
-@@ -147,7 +_,7 @@
+@@ -147,7 +170,7 @@ public abstract class StructurePlacement {
  
      @FunctionalInterface
      public interface FrequencyReducer {
@@ -81,7 +89,7 @@
      }
  
      public enum FrequencyReductionMethod implements StringRepresentable {
-@@ -167,8 +_,8 @@
+@@ -167,8 +190,8 @@ public abstract class StructurePlacement {
              this.reducer = reducer;
          }
  

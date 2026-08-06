@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/world/level/block/entity/DecoratedPotBlockEntity.java b/net/minecraft/world/level/block/entity/DecoratedPotBlockEntity.java
+index 55a8c1151a806324b3f002458ea5be565bb9f28f..2d743278ea3bba6844599e89c005ec016715432b 100644
 --- a/net/minecraft/world/level/block/entity/DecoratedPotBlockEntity.java
 +++ b/net/minecraft/world/level/block/entity/DecoratedPotBlockEntity.java
-@@ -25,6 +_,48 @@
+@@ -25,6 +25,48 @@ import net.minecraft.world.ticks.ContainerSingleItem;
  import org.jspecify.annotations.Nullable;
  
  public class DecoratedPotBlockEntity extends BlockEntity implements ContainerSingleItem.BlockContainerSingleItem, RandomizableContainer {
@@ -49,7 +57,7 @@
      public static final String TAG_SHERDS = "sherds";
      public static final String TAG_ITEM = "item";
      public static final int EVENT_POT_WOBBLES = 1;
-@@ -47,8 +_,8 @@
+@@ -47,8 +89,8 @@ public class DecoratedPotBlockEntity extends BlockEntity implements ContainerSin
              output.store("sherds", PotDecorations.CODEC, this.decorations);
          }
  
@@ -60,7 +68,7 @@
          }
      }
  
-@@ -70,7 +_,14 @@
+@@ -70,7 +112,14 @@ public class DecoratedPotBlockEntity extends BlockEntity implements ContainerSin
  
      @Override
      public CompoundTag getUpdateTag(final HolderLookup.Provider registries) {

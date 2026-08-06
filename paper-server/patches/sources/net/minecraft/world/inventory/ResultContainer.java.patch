@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/world/inventory/ResultContainer.java b/net/minecraft/world/inventory/ResultContainer.java
+index c47c93c9ed80890e6ae13b592a393f1d01ceb505..cdd7380aae8e7828a1af296fe801a40864406e23 100644
 --- a/net/minecraft/world/inventory/ResultContainer.java
 +++ b/net/minecraft/world/inventory/ResultContainer.java
-@@ -11,6 +_,55 @@
+@@ -11,6 +11,55 @@ import org.jspecify.annotations.Nullable;
  public class ResultContainer implements Container, RecipeCraftingHolder {
      private final NonNullList<ItemStack> itemStacks = NonNullList.withSize(1, ItemStack.EMPTY);
      private @Nullable RecipeHolder<?> recipeUsed;

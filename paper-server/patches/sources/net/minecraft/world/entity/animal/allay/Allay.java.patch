@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/world/entity/animal/allay/Allay.java b/net/minecraft/world/entity/animal/allay/Allay.java
+index ed11686c3b5be6db3637bd60c8f7fd2dcb41a057..69d8a10f524dd4db683a00f194e8d1a26c996f43 100644
 --- a/net/minecraft/world/entity/animal/allay/Allay.java
 +++ b/net/minecraft/world/entity/animal/allay/Allay.java
-@@ -100,6 +_,7 @@
+@@ -100,6 +100,7 @@ public class Allay extends PathfinderMob implements InventoryCarrier, VibrationS
      private float dancingAnimationTicks;
      private float spinningAnimationTicks;
      private float spinningAnimationTicks0;
@@ -8,7 +16,7 @@
  
      public Allay(final EntityType<? extends Allay> type, final Level level) {
          super(type, level);
-@@ -113,6 +_,12 @@
+@@ -113,6 +114,12 @@ public class Allay extends PathfinderMob implements InventoryCarrier, VibrationS
          );
      }
  
@@ -21,7 +29,7 @@
      @Override
      protected Brain<Allay> makeBrain(final Brain.Packed packedBrain) {
          return BRAIN_PROVIDER.makeBrain(this, packedBrain);
-@@ -215,7 +_,7 @@
+@@ -215,7 +222,7 @@ public class Allay extends PathfinderMob implements InventoryCarrier, VibrationS
      public void aiStep() {
          super.aiStep();
          if (!this.level().isClientSide() && this.isAlive() && this.tickCount % 10 == 0) {
@@ -30,7 +38,7 @@
          }
  
          if (this.isDancing() && this.shouldStopDancing() && this.tickCount % 20 == 0) {
-@@ -283,7 +_,12 @@
+@@ -283,7 +290,12 @@ public class Allay extends PathfinderMob implements InventoryCarrier, VibrationS
          ItemStack interactionItem = player.getItemInHand(hand);
          ItemStack itemInHand = this.getItemInHand(InteractionHand.MAIN_HAND);
          if (this.isDancing() && interactionItem.is(ItemTags.DUPLICATES_ALLAYS) && this.canDuplicate()) {
@@ -44,7 +52,7 @@
              this.level().broadcastEntityEvent(this, EntityEvent.IN_LOVE_HEARTS);
              this.level().playSound(player, this, SoundEvents.AMETHYST_BLOCK_CHIME, SoundSource.NEUTRAL, 2.0F, 1.0F);
              this.removeInteractionItem(player, interactionItem);
-@@ -386,6 +_,7 @@
+@@ -386,6 +398,7 @@ public class Allay extends PathfinderMob implements InventoryCarrier, VibrationS
      }
  
      private boolean shouldStopDancing() {
@@ -52,7 +60,7 @@
          return this.jukeboxPos == null
              || !this.jukeboxPos.closerToCenterThan(this.position(), GameEvent.JUKEBOX_PLAY.value().notificationRadius())
              || !this.level().getBlockState(this.jukeboxPos).is(Blocks.JUKEBOX);
-@@ -412,11 +_,12 @@
+@@ -412,11 +425,12 @@ public class Allay extends PathfinderMob implements InventoryCarrier, VibrationS
      @Override
      protected void dropEquipment(final ServerLevel level) {
          super.dropEquipment(level);
@@ -67,7 +75,7 @@
          }
      }
  
-@@ -438,7 +_,7 @@
+@@ -438,7 +452,7 @@ public class Allay extends PathfinderMob implements InventoryCarrier, VibrationS
          super.readAdditionalSaveData(input);
          this.readInventoryFromTag(input);
          this.vibrationData = input.read("listener", VibrationSystem.Data.CODEC).orElseGet(VibrationSystem.Data::new);
@@ -76,7 +84,7 @@
      }
  
      @Override
-@@ -457,15 +_,17 @@
+@@ -457,15 +471,17 @@ public class Allay extends PathfinderMob implements InventoryCarrier, VibrationS
          this.entityData.set(DATA_CAN_DUPLICATE, duplicationCooldown == 0L);
      }
  

@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/world/inventory/EnchantmentMenu.java b/net/minecraft/world/inventory/EnchantmentMenu.java
+index 2fa4446557ce6dff5015624030a4dac0a9804ea5..61fa76d67c56615639122582243bb9b455fb96ac 100644
 --- a/net/minecraft/world/inventory/EnchantmentMenu.java
 +++ b/net/minecraft/world/inventory/EnchantmentMenu.java
-@@ -31,19 +_,17 @@
+@@ -31,19 +31,17 @@ import net.minecraft.world.level.block.EnchantingTableBlock;
  
  public class EnchantmentMenu extends AbstractContainerMenu {
      private static final Identifier EMPTY_SLOT_LAPIS_LAZULI = Identifier.withDefaultNamespace("container/slot/lapis_lazuli");
@@ -25,7 +33,7 @@
  
      public EnchantmentMenu(final int containerId, final Inventory inventory) {
          this(containerId, inventory, ContainerLevelAccess.NULL);
-@@ -51,6 +_,22 @@
+@@ -51,6 +49,22 @@ public class EnchantmentMenu extends AbstractContainerMenu {
  
      public EnchantmentMenu(final int containerId, final Inventory inventory, final ContainerLevelAccess access) {
          super(MenuType.ENCHANTMENT, containerId);
@@ -48,7 +56,7 @@
          this.access = access;
          this.addSlot(new Slot(this.enchantSlots, 0, 15, 47) {
              @Override
-@@ -80,13 +_,14 @@
+@@ -80,13 +94,14 @@ public class EnchantmentMenu extends AbstractContainerMenu {
          this.addDataSlot(DataSlot.shared(this.levelClue, 0));
          this.addDataSlot(DataSlot.shared(this.levelClue, 1));
          this.addDataSlot(DataSlot.shared(this.levelClue, 2));
@@ -64,7 +72,7 @@
                  this.access.execute((level, pos) -> {
                      IdMap<Holder<Enchantment>> holders = level.registryAccess().lookupOrThrow(Registries.ENCHANTMENT).asHolderIdMap();
                      int bookcases = 0;
-@@ -119,6 +_,42 @@
+@@ -119,6 +134,42 @@ public class EnchantmentMenu extends AbstractContainerMenu {
                          }
                      }
  
@@ -107,7 +115,7 @@
                      this.broadcastChanges();
                  });
              } else {
-@@ -148,19 +_,52 @@
+@@ -148,19 +199,52 @@ public class EnchantmentMenu extends AbstractContainerMenu {
              }
  
              this.access.execute((level, pos) -> {
@@ -146,9 +154,6 @@
 +                        enchantmentItem = enchantmentItem.transmuteCopy(Items.ENCHANTED_BOOK);
                          this.enchantSlots.setItem(0, enchantmentItem);
                      }
--
--                    for (EnchantmentInstance enchantment : newEnchantment) {
--                        enchantmentItem.enchant(enchantment.enchantment(), enchantment.level());
 +                    // Paper end
 +
 +                    // CraftBukkit start
@@ -157,7 +162,9 @@
 +                        if (enchantment == null) {
 +                            continue;
 +                        }
-+
+ 
+-                    for (EnchantmentInstance enchantment : newEnchantment) {
+-                        enchantmentItem.enchant(enchantment.enchantment(), enchantment.level());
 +                        enchantmentItem.enchant(enchantment, entry.getValue());
                      }
 +                    player.onEnchantmentPerformed(enchantmentItem, enchantmentCost);
@@ -167,7 +174,7 @@
                      currency.consume(enchantmentCost, player);
                      if (currency.isEmpty()) {
                          this.enchantSlots.setItem(1, ItemStack.EMPTY);
-@@ -204,6 +_,12 @@
+@@ -204,6 +288,12 @@ public class EnchantmentMenu extends AbstractContainerMenu {
          return goldStack.isEmpty() ? 0 : goldStack.getCount();
      }
  
@@ -180,7 +187,7 @@
      public int getEnchantmentSeed() {
          return this.enchantmentSeed.get();
      }
-@@ -216,6 +_,7 @@
+@@ -216,6 +306,7 @@ public class EnchantmentMenu extends AbstractContainerMenu {
  
      @Override
      public boolean stillValid(final Player player) {
@@ -188,7 +195,7 @@
          return stillValid(this.access, player, Blocks.ENCHANTING_TABLE);
      }
  
-@@ -263,4 +_,17 @@
+@@ -263,4 +354,17 @@ public class EnchantmentMenu extends AbstractContainerMenu {
  
          return clicked;
      }

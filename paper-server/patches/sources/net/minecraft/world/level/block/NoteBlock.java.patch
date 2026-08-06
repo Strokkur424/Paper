@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/world/level/block/NoteBlock.java b/net/minecraft/world/level/block/NoteBlock.java
+index d41f1e750affad2610ea9527d9d062303acd7f8d..47d00e302f49193ea95128c0d6d2176b77006203 100644
 --- a/net/minecraft/world/level/block/NoteBlock.java
 +++ b/net/minecraft/world/level/block/NoteBlock.java
-@@ -64,6 +_,7 @@
+@@ -64,6 +64,7 @@ public class NoteBlock extends Block {
  
      @Override
      public BlockState getStateForPlacement(final BlockPlaceContext context) {
@@ -8,7 +16,7 @@
          return this.setInstrument(context.getLevel(), context.getClickedPos(), this.defaultBlockState());
      }
  
-@@ -78,6 +_,7 @@
+@@ -78,6 +79,7 @@ public class NoteBlock extends Block {
          final BlockState neighbourState,
          final RandomSource random
      ) {
@@ -16,7 +24,7 @@
          boolean neighborDirectionSetsInstrument = directionToNeighbour.getAxis() == Direction.Axis.Y;
          return neighborDirectionSetsInstrument
              ? this.setInstrument(level, pos, state)
-@@ -86,12 +_,19 @@
+@@ -86,12 +88,19 @@ public class NoteBlock extends Block {
  
      @Override
      protected void neighborChanged(
@@ -37,7 +45,7 @@
              }
  
              level.setBlock(pos, state.setValue(POWERED, signal), Block.UPDATE_ALL);
-@@ -123,7 +_,7 @@
+@@ -123,7 +132,7 @@ public class NoteBlock extends Block {
      @Override
      protected InteractionResult useWithoutItem(BlockState state, final Level level, final BlockPos pos, final Player player, final BlockHitResult hitResult) {
          if (!level.isClientSide()) {
@@ -46,7 +54,7 @@
              level.setBlock(pos, state, Block.UPDATE_ALL);
              this.playNote(player, state, level, pos);
              player.awardStat(Stats.TUNE_NOTEBLOCK);
-@@ -147,9 +_,13 @@
+@@ -147,9 +156,13 @@ public class NoteBlock extends Block {
      @Override
      protected boolean triggerEvent(final BlockState state, final Level level, final BlockPos pos, final int b0, final int b1) {
          NoteBlockInstrument instrument = state.getValue(INSTRUMENT);
@@ -61,7 +69,7 @@
              pitch = getPitchFromNote(note);
              level.addParticle(ParticleTypes.NOTE, pos.getX() + 0.5, pos.getY() + 1.2, pos.getZ() + 0.5, note / 24.0, 0.0, 0.0);
          } else {
-@@ -165,7 +_,7 @@
+@@ -165,7 +178,7 @@ public class NoteBlock extends Block {
  
              soundEvent = Holder.direct(SoundEvent.createVariableRangeEvent(soundId));
          } else {

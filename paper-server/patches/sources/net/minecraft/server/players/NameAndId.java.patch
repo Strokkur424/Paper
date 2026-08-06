@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/server/players/NameAndId.java b/net/minecraft/server/players/NameAndId.java
+index a028e471c9c4d079f450084f6730b8dc11ad98af..12190f2a2856b0d0cf95144d0b1622f1b9600bf6 100644
 --- a/net/minecraft/server/players/NameAndId.java
 +++ b/net/minecraft/server/players/NameAndId.java
-@@ -48,4 +_,10 @@
+@@ -48,4 +48,10 @@ public record NameAndId(UUID id, String name) {
          UUID id = UUIDUtil.createOfflinePlayerUUID(name);
          return new NameAndId(id, name);
      }

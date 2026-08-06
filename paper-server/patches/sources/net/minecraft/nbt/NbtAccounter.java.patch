@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/nbt/NbtAccounter.java b/net/minecraft/nbt/NbtAccounter.java
+index ac30c66cc762e9e7d2bd12aeb6d85f0b4743e3ed..47628e375ae9e1004a74f3e19247139973c7e4cb 100644
 --- a/net/minecraft/nbt/NbtAccounter.java
 +++ b/net/minecraft/nbt/NbtAccounter.java
-@@ -50,6 +_,16 @@
+@@ -50,6 +50,16 @@ public class NbtAccounter {
          this.usage += size;
      }
  

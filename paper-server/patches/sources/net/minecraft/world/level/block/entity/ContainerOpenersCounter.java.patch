@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/world/level/block/entity/ContainerOpenersCounter.java b/net/minecraft/world/level/block/entity/ContainerOpenersCounter.java
+index 3605321a3ac935f2016d53cb35c429fd9aae2f85..baa8b5aba0500981a191626553d66650c7304b88 100644
 --- a/net/minecraft/world/level/block/entity/ContainerOpenersCounter.java
 +++ b/net/minecraft/world/level/block/entity/ContainerOpenersCounter.java
-@@ -16,6 +_,20 @@
+@@ -16,6 +16,20 @@ public abstract class ContainerOpenersCounter {
      private static final int CHECK_TICK_DELAY = 5;
      private int openCount;
      private double maxInteractionRange;
@@ -21,7 +29,7 @@
  
      protected abstract void onOpen(final Level level, final BlockPos pos, final BlockState blockState);
  
-@@ -29,6 +_,18 @@
+@@ -29,6 +43,18 @@ public abstract class ContainerOpenersCounter {
          final LivingEntity entity, final Level level, final BlockPos pos, final BlockState blockState, final double maxInteractionRange
      ) {
          int previous = this.openCount++;
@@ -40,7 +48,7 @@
          if (previous == 0) {
              this.onOpen(level, pos, blockState);
              level.gameEvent(entity, GameEvent.CONTAINER_OPEN, pos);
-@@ -40,7 +_,20 @@
+@@ -40,7 +66,20 @@ public abstract class ContainerOpenersCounter {
      }
  
      public void decrementOpeners(final LivingEntity entity, final Level level, final BlockPos pos, final BlockState blockState) {
@@ -61,7 +69,7 @@
          if (this.openCount == 0) {
              this.onClose(level, pos, blockState);
              level.gameEvent(entity, GameEvent.CONTAINER_CLOSE, pos);
-@@ -74,8 +_,20 @@
+@@ -74,8 +113,20 @@ public abstract class ContainerOpenersCounter {
          }
  
          int openCount = containerUsers.size();

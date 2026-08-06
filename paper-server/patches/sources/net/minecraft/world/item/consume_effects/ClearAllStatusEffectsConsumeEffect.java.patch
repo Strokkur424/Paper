@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/world/item/consume_effects/ClearAllStatusEffectsConsumeEffect.java b/net/minecraft/world/item/consume_effects/ClearAllStatusEffectsConsumeEffect.java
+index 6a793ff221fdfb5cfa1cc5bd92471bbb7407f865..eb2ce238d949951f0e92a3160fbe36e2c6af5041 100644
 --- a/net/minecraft/world/item/consume_effects/ClearAllStatusEffectsConsumeEffect.java
 +++ b/net/minecraft/world/item/consume_effects/ClearAllStatusEffectsConsumeEffect.java
-@@ -18,7 +_,9 @@
+@@ -18,7 +18,9 @@ public record ClearAllStatusEffectsConsumeEffect() implements ConsumeEffect {
      }
  
      @Override

@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/network/codec/ByteBufCodecs.java b/net/minecraft/network/codec/ByteBufCodecs.java
+index ab4fbfe9ea8bf76e619b321cf0432cd43b694026..0620bbf1fd5f06c726b0f4c75a46070f577f4743 100644
 --- a/net/minecraft/network/codec/ByteBufCodecs.java
 +++ b/net/minecraft/network/codec/ByteBufCodecs.java
-@@ -334,7 +_,13 @@
+@@ -334,7 +334,13 @@ public interface ByteBufCodecs {
          return new StreamCodec<ByteBuf, Tag>() {
              @Override
              public Tag decode(final ByteBuf input) {
@@ -15,7 +23,7 @@
                  if (result == null) {
                      throw new DecoderException("Expected non-null compound tag");
                  } else {
-@@ -418,6 +_,48 @@
+@@ -418,6 +424,48 @@ public interface ByteBufCodecs {
          };
      }
  
@@ -64,7 +72,7 @@
      static <B extends ByteBuf, V> StreamCodec<B, Optional<V>> optional(final StreamCodec<? super B, V> original) {
          return new StreamCodec<B, Optional<V>>() {
              @Override
-@@ -598,7 +_,7 @@
+@@ -598,7 +646,7 @@ public interface ByteBufCodecs {
      }
  
      static <V> StreamCodec.CodecOperation<RegistryFriendlyByteBuf, V, V> registryFriendlyLengthPrefixed(final int maxSize) {

@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/world/level/saveddata/WeatherData.java b/net/minecraft/world/level/saveddata/WeatherData.java
+index 4d88ef32d90340131d16bb29e314c2a88377351d..93adfc0e79dc52c602f5b9f258b4ee1d8b852eb8 100644
 --- a/net/minecraft/world/level/saveddata/WeatherData.java
 +++ b/net/minecraft/world/level/saveddata/WeatherData.java
-@@ -50,6 +_,25 @@
+@@ -50,6 +50,25 @@ public final class WeatherData extends SavedData {
      }
  
      public void setThundering(final boolean thundering) {
@@ -26,7 +34,7 @@
          this.thundering = thundering;
          this.setDirty();
      }
-@@ -68,6 +_,26 @@
+@@ -68,6 +87,26 @@ public final class WeatherData extends SavedData {
      }
  
      public void setRaining(final boolean raining) {
@@ -53,7 +61,7 @@
          this.raining = raining;
          this.setDirty();
      }
-@@ -80,4 +_,11 @@
+@@ -80,4 +119,11 @@ public final class WeatherData extends SavedData {
          this.rainTime = rainTime;
          this.setDirty();
      }

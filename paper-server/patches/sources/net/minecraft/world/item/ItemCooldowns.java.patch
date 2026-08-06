@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/world/item/ItemCooldowns.java b/net/minecraft/world/item/ItemCooldowns.java
+index 54d2dbd89a363d58f9848664952e082708e26416..9f1285c172b4c3a19587da287c3336d0f49d0172 100644
 --- a/net/minecraft/world/item/ItemCooldowns.java
 +++ b/net/minecraft/world/item/ItemCooldowns.java
-@@ -56,6 +_,13 @@
+@@ -56,6 +56,13 @@ public class ItemCooldowns {
      }
  
      public void addCooldown(final Identifier cooldownGroup, final int time) {
@@ -14,7 +22,7 @@
          this.cooldowns.put(cooldownGroup, new ItemCooldowns.CooldownInstance(this.tickCount, this.tickCount + time));
          this.onCooldownStarted(cooldownGroup, time);
      }
-@@ -73,4 +_,14 @@
+@@ -73,4 +80,14 @@ public class ItemCooldowns {
  
      private record CooldownInstance(int startTime, int endTime) {
      }

@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/world/item/EnderEyeItem.java b/net/minecraft/world/item/EnderEyeItem.java
+index 76063c520ddf5e66da35d5e1c80f7d05ff9d335f..ab0239a9d32bd937fb8eef9696b8b7d32e89406c 100644
 --- a/net/minecraft/world/item/EnderEyeItem.java
 +++ b/net/minecraft/world/item/EnderEyeItem.java
-@@ -47,6 +_,11 @@
+@@ -47,6 +47,11 @@ public class EnderEyeItem extends Item {
          }
  
          BlockState newState = targetState.setValue(EndPortalFrameBlock.HAS_EYE, true);
@@ -12,7 +20,7 @@
          Block.pushEntitiesUp(targetState, newState, level, pos);
          level.setBlock(pos, newState, Block.UPDATE_CLIENTS);
          level.updateNeighbourForOutputSignal(pos, Blocks.END_PORTAL_FRAME);
-@@ -64,7 +_,27 @@
+@@ -64,7 +69,27 @@ public class EnderEyeItem extends Item {
                  }
              }
  
@@ -41,7 +49,7 @@
          }
  
          return InteractionResult.SUCCESS;
-@@ -94,7 +_,11 @@
+@@ -94,7 +119,11 @@ public class EnderEyeItem extends Item {
              eyeOfEnder.setItem(itemStack);
              eyeOfEnder.signalTo(Vec3.atLowerCornerOf(nearestMapFeature));
              level.gameEvent(GameEvent.PROJECTILE_SHOOT, eyeOfEnder.position(), GameEvent.Context.of(player));

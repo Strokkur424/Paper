@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/world/level/block/ChorusFlowerBlock.java b/net/minecraft/world/level/block/ChorusFlowerBlock.java
+index ff86c61a2bf90a385c91c9764296c39e0ae24e97..76dbad4969f8e7e39c78eec782579362203ca6bc 100644
 --- a/net/minecraft/world/level/block/ChorusFlowerBlock.java
 +++ b/net/minecraft/world/level/block/ChorusFlowerBlock.java
-@@ -94,8 +_,10 @@
+@@ -94,8 +94,10 @@ public class ChorusFlowerBlock extends Block {
                  }
  
                  if (growUpwards && allNeighborsEmpty(level, above, null) && level.isEmptyBlock(pos.above(2))) {
@@ -11,7 +19,7 @@
                  } else if (currentAge < 4) {
                      int numBranchAttempts = random.nextInt(4);
                      if (pillarOnSupportBlock) {
-@@ -108,30 +_,36 @@
+@@ -108,30 +110,36 @@ public class ChorusFlowerBlock extends Block {
                          Direction direction = Direction.Plane.HORIZONTAL.getRandomDirection(random);
                          BlockPos target = pos.relative(direction);
                          if (level.isEmptyBlock(target) && level.isEmptyBlock(target.below()) && allNeighborsEmpty(level, target, direction.getOpposite())) {
@@ -50,7 +58,7 @@
          level.levelEvent(LevelEvent.SOUND_CHORUS_DEATH, pos, 0);
      }
  
-@@ -257,6 +_,11 @@
+@@ -257,6 +265,11 @@ public class ChorusFlowerBlock extends Block {
      protected void onProjectileHit(final Level level, final BlockState state, final BlockHitResult blockHit, final Projectile projectile) {
          BlockPos pos = blockHit.getBlockPos();
          if (level instanceof ServerLevel serverLevel && projectile.mayInteract(serverLevel, pos) && projectile.mayBreak(serverLevel)) {

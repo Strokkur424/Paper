@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/world/entity/npc/CatSpawner.java b/net/minecraft/world/entity/npc/CatSpawner.java
+index 48b7fdcb5b7e87d71428bd137e4f124262606614..aedd0a9b7dcfe15d0230ba09a1baf386563c71c6 100644
 --- a/net/minecraft/world/entity/npc/CatSpawner.java
 +++ b/net/minecraft/world/entity/npc/CatSpawner.java
-@@ -65,12 +_,12 @@
+@@ -65,12 +65,12 @@ public class CatSpawner implements CustomSpawner {
      private void spawnCat(final BlockPos spawnPos, final ServerLevel level, final boolean makePersistent) {
          Cat cat = EntityTypes.CAT.create(level, EntitySpawnReason.NATURAL);
          if (cat != null) {

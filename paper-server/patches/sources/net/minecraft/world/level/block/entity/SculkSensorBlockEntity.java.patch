@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/world/level/block/entity/SculkSensorBlockEntity.java b/net/minecraft/world/level/block/entity/SculkSensorBlockEntity.java
+index 4aaa0e34ac905dd0bd11c60500efd3cac7d7b087..7903289b01c652226b58d1f22f25cfabcbb10274 100644
 --- a/net/minecraft/world/level/block/entity/SculkSensorBlockEntity.java
 +++ b/net/minecraft/world/level/block/entity/SculkSensorBlockEntity.java
-@@ -21,6 +_,7 @@
+@@ -21,6 +21,7 @@ public class SculkSensorBlockEntity extends BlockEntity implements GameEventList
      private final VibrationSystem.Listener vibrationListener;
      private final VibrationSystem.User vibrationUser;
      private int lastVibrationFrequency = 0;
@@ -8,7 +16,7 @@
  
      protected SculkSensorBlockEntity(final BlockEntityType<?> type, final BlockPos worldPosition, final BlockState blockState) {
          super(type, worldPosition, blockState);
-@@ -42,14 +_,22 @@
+@@ -42,14 +43,22 @@ public class SculkSensorBlockEntity extends BlockEntity implements GameEventList
          super.loadAdditional(input);
          this.lastVibrationFrequency = input.getIntOr("last_vibration_frequency", 0);
          this.vibrationData = input.read("listener", VibrationSystem.Data.CODEC).orElseGet(VibrationSystem.Data::new);
@@ -21,9 +29,8 @@
          super.saveAdditional(output);
          output.putInt("last_vibration_frequency", this.lastVibrationFrequency);
          output.store("listener", VibrationSystem.Data.CODEC, this.vibrationData);
--    }
 +        this.saveRangeOverride(output); // Paper - Configurable sculk sensor listener range
-+    }
+     }
 +    // Paper start - Configurable sculk sensor listener range
 +    protected void saveRangeOverride(ValueOutput output) {
 +        if (this.rangeOverride != null && this.rangeOverride != VibrationUser.LISTENER_RANGE) output.putInt(PAPER_LISTENER_RANGE_NBT_KEY, this.rangeOverride); // only save if it's different from the default
@@ -32,7 +39,7 @@
  
      @Override
      public VibrationSystem.Data getVibrationData() {
-@@ -86,6 +_,7 @@
+@@ -86,6 +95,7 @@ public class SculkSensorBlockEntity extends BlockEntity implements GameEventList
  
          @Override
          public int getListenerRadius() {

@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/world/entity/monster/Phantom.java b/net/minecraft/world/entity/monster/Phantom.java
+index 9212e6fdbe05debf4e498238256afdf2e07473d3..6130c477349096d5912dce859b616661e2f43b36 100644
 --- a/net/minecraft/world/entity/monster/Phantom.java
 +++ b/net/minecraft/world/entity/monster/Phantom.java
-@@ -49,6 +_,10 @@
+@@ -49,6 +49,10 @@ public class Phantom extends Mob implements Enemy {
      private Vec3 moveTargetPoint = Vec3.ZERO;
      public @Nullable BlockPos anchorPoint;
      private Phantom.AttackPhase attackPhase = Phantom.AttackPhase.CIRCLE;
@@ -11,7 +19,7 @@
  
      public Phantom(final EntityType<? extends Phantom> type, final Level level) {
          super(type, level);
-@@ -136,6 +_,13 @@
+@@ -136,6 +140,13 @@ public class Phantom extends Mob implements Enemy {
          }
      }
  
@@ -25,7 +33,7 @@
      @Override
      protected void checkFallDamage(final double ya, final boolean onGround, final BlockState onState, final BlockPos pos) {
      }
-@@ -164,6 +_,10 @@
+@@ -164,6 +175,10 @@ public class Phantom extends Mob implements Enemy {
          super.readAdditionalSaveData(input);
          this.anchorPoint = input.read("anchor_pos", BlockPos.CODEC).orElse(null);
          this.setPhantomSize(input.getIntOr("size", 0));
@@ -36,7 +44,7 @@
      }
  
      @Override
-@@ -171,6 +_,10 @@
+@@ -171,6 +186,10 @@ public class Phantom extends Mob implements Enemy {
          super.addAdditionalSaveData(output);
          output.storeNullable("anchor_pos", BlockPos.CODEC, this.anchorPoint);
          output.putInt("size", this.getPhantomSize());
@@ -47,7 +55,7 @@
      }
  
      @Override
-@@ -233,8 +_,10 @@
+@@ -233,8 +252,10 @@ public class Phantom extends Mob implements Enemy {
  
                  for (Player player : players) {
                      if (Phantom.this.canAttack(level, player, TargetingConditions.DEFAULT)) {

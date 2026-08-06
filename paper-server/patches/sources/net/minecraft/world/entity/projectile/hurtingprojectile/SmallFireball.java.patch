@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/world/entity/projectile/hurtingprojectile/SmallFireball.java b/net/minecraft/world/entity/projectile/hurtingprojectile/SmallFireball.java
+index 57a3996e2523a6156ed344610a1dd46d92bbaefe..a2aab8db9826e0b4607f54914af43918a7e35512 100644
 --- a/net/minecraft/world/entity/projectile/hurtingprojectile/SmallFireball.java
 +++ b/net/minecraft/world/entity/projectile/hurtingprojectile/SmallFireball.java
-@@ -24,6 +_,11 @@
+@@ -24,6 +24,11 @@ public class SmallFireball extends Fireball {
  
      public SmallFireball(final Level level, final LivingEntity mob, final Vec3 direction) {
          super(EntityTypes.SMALL_FIREBALL, mob, direction, level);
@@ -12,7 +20,7 @@
      }
  
      public SmallFireball(final Level level, final double x, final double y, final double z, final Vec3 direction) {
-@@ -37,7 +_,14 @@
+@@ -37,7 +42,14 @@ public class SmallFireball extends Fireball {
              Entity var7 = hitResult.getEntity();
              Entity owner = this.getOwner();
              int remainingFireTicks = var7.getRemainingFireTicks();
@@ -28,7 +36,7 @@
              DamageSource damageSource = this.damageSources().fireball(this, owner);
              if (!var7.hurtServer(serverLevel, damageSource, 5.0F)) {
                  var7.setRemainingFireTicks(remainingFireTicks);
-@@ -52,9 +_,9 @@
+@@ -52,9 +64,9 @@ public class SmallFireball extends Fireball {
          super.onHitBlock(hitResult);
          if (this.level() instanceof ServerLevel serverLevel) {
              Entity owner = this.getOwner();
@@ -40,7 +48,7 @@
                      this.level().setBlockAndUpdate(pos, BaseFireBlock.getState(this.level(), pos));
                  }
              }
-@@ -65,7 +_,7 @@
+@@ -65,7 +77,7 @@ public class SmallFireball extends Fireball {
      protected void onHit(final HitResult hitResult) {
          super.onHit(hitResult);
          if (!this.level().isClientSide()) {

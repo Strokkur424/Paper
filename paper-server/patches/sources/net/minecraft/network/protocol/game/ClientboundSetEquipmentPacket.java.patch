@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/network/protocol/game/ClientboundSetEquipmentPacket.java b/net/minecraft/network/protocol/game/ClientboundSetEquipmentPacket.java
+index b7d2e7b0fc6a2cd78d5428b69b4e76cf518aa5ce..05baba9103362ce3bd840867695a76c323785180 100644
 --- a/net/minecraft/network/protocol/game/ClientboundSetEquipmentPacket.java
 +++ b/net/minecraft/network/protocol/game/ClientboundSetEquipmentPacket.java
-@@ -19,6 +_,13 @@
+@@ -19,6 +19,13 @@ public class ClientboundSetEquipmentPacket implements Packet<ClientGamePacketLis
      private final List<Pair<EquipmentSlot, ItemStack>> slots;
  
      public ClientboundSetEquipmentPacket(final int entity, final List<Pair<EquipmentSlot, ItemStack>> slots) {
@@ -14,7 +22,7 @@
          this.entity = entity;
          this.slots = slots;
      }
-@@ -40,6 +_,7 @@
+@@ -40,6 +47,7 @@ public class ClientboundSetEquipmentPacket implements Packet<ClientGamePacketLis
          output.writeVarInt(this.entity);
          int size = this.slots.size();
  
@@ -22,7 +30,7 @@
          for (int i = 0; i < size; i++) {
              Pair<EquipmentSlot, ItemStack> e = this.slots.get(i);
              EquipmentSlot slotType = e.getFirst();
-@@ -48,6 +_,7 @@
+@@ -48,6 +56,7 @@ public class ClientboundSetEquipmentPacket implements Packet<ClientGamePacketLis
              output.writeByte(shouldContinue ? slotId | -128 : slotId);
              ItemStack.OPTIONAL_STREAM_CODEC.encode(output, e.getSecond());
          }

@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/gametest/framework/GameTestServer.java b/net/minecraft/gametest/framework/GameTestServer.java
+index 57d46e27d7fddf66677dd8c8ae806a38aa56522d..90fa64310ec08604420d755bbdf7dc5a0191680a 100644
 --- a/net/minecraft/gametest/framework/GameTestServer.java
 +++ b/net/minecraft/gametest/framework/GameTestServer.java
-@@ -156,6 +_,8 @@
+@@ -156,6 +156,8 @@ public class GameTestServer extends MinecraftServer {
          final int repeatCount
      ) {
          super(
@@ -9,7 +17,7 @@
              serverThread,
              levelStorageSource,
              packRepository,
-@@ -175,9 +_,17 @@
+@@ -175,9 +177,17 @@ public class GameTestServer extends MinecraftServer {
  
      @Override
      protected boolean initServer() {
@@ -29,7 +37,7 @@
          ServerLevel level = this.overworld();
          this.testBatches = this.evaluateTestsToRun(level);
          LOGGER.info("Started game test server");
-@@ -393,6 +_,13 @@
+@@ -393,6 +403,13 @@ public class GameTestServer extends MinecraftServer {
          return false;
      }
  
@@ -43,7 +51,7 @@
      @Override
      public boolean isSingleplayerOwner(final NameAndId nameAndId) {
          return false;
-@@ -440,5 +_,16 @@
+@@ -440,5 +457,16 @@ public class GameTestServer extends MinecraftServer {
          @Override
          public void save() {
          }

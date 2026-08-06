@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/world/level/block/entity/AbstractFurnaceBlockEntity.java b/net/minecraft/world/level/block/entity/AbstractFurnaceBlockEntity.java
+index d4e8ad73edeefb77e8df8a5bcc1d4b22bae3f8d5..78dbdf43ac9095eb3cf0b0653bab2603d5527ff4 100644
 --- a/net/minecraft/world/level/block/entity/AbstractFurnaceBlockEntity.java
 +++ b/net/minecraft/world/level/block/entity/AbstractFurnaceBlockEntity.java
-@@ -104,13 +_,51 @@
+@@ -104,14 +104,52 @@ public abstract class AbstractFurnaceBlockEntity extends BaseContainerBlockEntit
      };
      public final Reference2IntOpenHashMap<ResourceKey<Recipe<?>>> recipesUsed = new Reference2IntOpenHashMap<>();
      private final RecipeManager.CachedCheck<SingleRecipeInput, ? extends AbstractCookingRecipe> quickCheck;
@@ -12,7 +20,6 @@
      ) {
          super(type, worldPosition, blockState);
          this.quickCheck = RecipeManager.createCheck(recipeType);
--    }
 +        this.recipeType = recipeType; // Paper - cook speed multiplier API
 +    }
 +
@@ -38,8 +45,8 @@
 +    @Override
 +    public List<org.bukkit.entity.HumanEntity> getViewers() {
 +        return this.transaction;
-+    }
-+
+     }
+ 
 +    @Override
 +    public int getMaxStackSize() {
 +        return this.maxStack;
@@ -50,10 +57,11 @@
 +        this.maxStack = size;
 +    }
 +    // CraftBukkit end
- 
++
      @Override
      protected void loadAdditional(final ValueInput input) {
-@@ -123,6 +_,7 @@
+         super.loadAdditional(input);
+@@ -123,6 +161,7 @@ public abstract class AbstractFurnaceBlockEntity extends BaseContainerBlockEntit
          this.litTotalTime = input.getShortOr("lit_total_time", (short)0);
          this.recipesUsed.clear();
          this.recipesUsed.putAll(input.read("RecipesUsed", RECIPES_USED_CODEC).orElse(Map.of()));
@@ -61,7 +69,7 @@
      }
  
      @Override
-@@ -132,6 +_,7 @@
+@@ -132,6 +171,7 @@ public abstract class AbstractFurnaceBlockEntity extends BaseContainerBlockEntit
          output.putShort("cooking_total_time", (short)this.cookingTotalTime);
          output.putShort("lit_time_remaining", (short)this.litTimeRemaining);
          output.putShort("lit_total_time", (short)this.litTotalTime);
@@ -69,7 +77,7 @@
          ContainerHelper.saveAllItems(output, this.items);
          output.store("RecipesUsed", RECIPES_USED_CODEC, this.recipesUsed);
      }
-@@ -163,22 +_,47 @@
+@@ -163,22 +203,47 @@ public abstract class AbstractFurnaceBlockEntity extends BaseContainerBlockEntit
                      if (!burnResult.isEmpty() && canBurn(entity.items, maxStackSize, burnResult)) {
                          if (!isLit) {
                              int newLitTime = entity.getBurnDuration(level.fuelValues(), fuel);
@@ -121,7 +129,7 @@
                                  changed = true;
                              }
                          } else {
-@@ -230,28 +_,63 @@
+@@ -230,28 +295,63 @@ public abstract class AbstractFurnaceBlockEntity extends BaseContainerBlockEntit
          return resultCount <= maxResultCount;
      }
  
@@ -188,7 +196,7 @@
      }
  
      @Override
-@@ -295,7 +_,7 @@
+@@ -295,7 +395,7 @@ public abstract class AbstractFurnaceBlockEntity extends BaseContainerBlockEntit
          this.items.set(slot, itemStack);
          itemStack.limitSize(this.getMaxStackSize(itemStack));
          if (slot == 0 && !same && this.level instanceof ServerLevel serverLevel) {
@@ -197,7 +205,7 @@
              this.cookingTimer = 0;
              this.setChanged();
          }
-@@ -332,8 +_,8 @@
+@@ -332,8 +432,8 @@ public abstract class AbstractFurnaceBlockEntity extends BaseContainerBlockEntit
      public void awardUsedRecipes(final Player player, final List<ItemStack> itemStacks) {
      }
  
@@ -208,7 +216,7 @@
          player.awardRecipes(recipesToAward);
  
          for (RecipeHolder<?> recipe : recipesToAward) {
-@@ -344,30 +_,60 @@
+@@ -344,30 +444,60 @@ public abstract class AbstractFurnaceBlockEntity extends BaseContainerBlockEntit
      }
  
      public List<RecipeHolder<?>> getRecipesToAwardAndPopExperience(final ServerLevel level, final Vec3 position) {

@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/world/level/block/entity/LecternBlockEntity.java b/net/minecraft/world/level/block/entity/LecternBlockEntity.java
+index 15f26855edfe924eeaa5115e3333b6dd5ba60e51..94aab1b47d044f6e310e564b32bb3d7002cb7c7d 100644
 --- a/net/minecraft/world/level/block/entity/LecternBlockEntity.java
 +++ b/net/minecraft/world/level/block/entity/LecternBlockEntity.java
-@@ -35,7 +_,52 @@
+@@ -35,7 +35,52 @@ public class LecternBlockEntity extends BlockEntity implements Clearable, MenuPr
      public static final int NUM_DATA = 1;
      public static final int SLOT_BOOK = 0;
      public static final int NUM_SLOTS = 1;
@@ -54,7 +62,7 @@
          @Override
          public int getContainerSize() {
              return 1;
-@@ -79,11 +_,19 @@
+@@ -79,11 +124,19 @@ public class LecternBlockEntity extends BlockEntity implements Clearable, MenuPr
  
          @Override
          public void setItem(final int slot, final ItemStack itemStack) {
@@ -75,7 +83,7 @@
          }
  
          @Override
-@@ -161,7 +_,7 @@
+@@ -161,7 +214,7 @@ public class LecternBlockEntity extends BlockEntity implements Clearable, MenuPr
          if (newPage != this.page) {
              this.page = newPage;
              this.setChanged();
@@ -84,7 +92,7 @@
          }
      }
  
-@@ -183,6 +_,36 @@
+@@ -183,6 +236,36 @@ public class LecternBlockEntity extends BlockEntity implements Clearable, MenuPr
          return book;
      }
  
@@ -121,7 +129,7 @@
      private CommandSourceStack createCommandSourceStack(final @Nullable Player player, final ServerLevel level) {
          String textName;
          Component displayName;
-@@ -196,7 +_,7 @@
+@@ -196,7 +279,7 @@ public class LecternBlockEntity extends BlockEntity implements Clearable, MenuPr
  
          Vec3 pos = Vec3.atCenterOf(this.worldPosition);
          return new CommandSourceStack(
@@ -130,7 +138,7 @@
          );
      }
  
-@@ -237,7 +_,7 @@
+@@ -237,7 +320,7 @@ public class LecternBlockEntity extends BlockEntity implements Clearable, MenuPr
  
      @Override
      public AbstractContainerMenu createMenu(final int containerId, final Inventory inventory, final Player player) {

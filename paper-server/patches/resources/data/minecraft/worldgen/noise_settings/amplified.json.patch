@@ -1,6 +1,14 @@
+From 11b7f145bbc9efa8236ac93d8dcb0142c5492580 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/data/minecraft/worldgen/noise_settings/amplified.json b/data/minecraft/worldgen/noise_settings/amplified.json
+index e0409ccac242ffe8ae4863cb4c1fcfef33c239c1..9b6e35aab1a4cd6f3577fba5fa648ed5b09b4aef 100644
 --- a/data/minecraft/worldgen/noise_settings/amplified.json
 +++ b/data/minecraft/worldgen/noise_settings/amplified.json
-@@ -455,7 +_,8 @@
+@@ -455,7 +455,8 @@
        {
          "type": "minecraft:condition",
          "if_true": {

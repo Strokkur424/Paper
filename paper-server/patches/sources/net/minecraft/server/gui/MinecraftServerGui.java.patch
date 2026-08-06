@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/server/gui/MinecraftServerGui.java b/net/minecraft/server/gui/MinecraftServerGui.java
+index a2578abbb6d61e37638c47626fd4cc7674aff258..023cca49c6dd0f2961cf30f02c7cd74601f73f8b 100644
 --- a/net/minecraft/server/gui/MinecraftServerGui.java
 +++ b/net/minecraft/server/gui/MinecraftServerGui.java
-@@ -55,6 +_,13 @@
+@@ -55,6 +55,13 @@ public class MinecraftServerGui extends JComponent {
          frame.pack();
          frame.setLocationRelativeTo(null);
          frame.setVisible(true);
@@ -14,7 +22,7 @@
          frame.addWindowListener(new WindowAdapter() {
              @Override
              public void windowClosing(final WindowEvent event) {
-@@ -76,6 +_,7 @@
+@@ -76,6 +83,7 @@ public class MinecraftServerGui extends JComponent {
          this.setLayout(new BorderLayout());
  
          try {
@@ -22,7 +30,7 @@
              this.add(this.buildChatPanel(), "Center");
              this.add(this.buildInfoPanel(), "West");
          } catch (Exception e) {
-@@ -89,7 +_,7 @@
+@@ -89,7 +97,7 @@ public class MinecraftServerGui extends JComponent {
  
      private JComponent buildInfoPanel() {
          JPanel panel = new JPanel(new BorderLayout());
@@ -31,7 +39,7 @@
          this.finalizers.add(comp::close);
          panel.add(comp, "North");
          panel.add(this.buildPlayerPanel(), "Center");
-@@ -152,6 +_,7 @@
+@@ -152,6 +160,7 @@ public class MinecraftServerGui extends JComponent {
          this.finalizers.forEach(Runnable::run);
      }
  
@@ -39,7 +47,7 @@
      public void print(final JTextArea console, final JScrollPane scrollPane, final String line) {
          if (!SwingUtilities.isEventDispatchThread()) {
              SwingUtilities.invokeLater(() -> this.print(console, scrollPane, line));
-@@ -164,7 +_,7 @@
+@@ -164,7 +173,7 @@ public class MinecraftServerGui extends JComponent {
              }
  
              try {
@@ -48,7 +56,7 @@
              } catch (BadLocationException var8) {
              }
  
-@@ -173,4 +_,37 @@
+@@ -173,4 +182,37 @@ public class MinecraftServerGui extends JComponent {
              }
          }
      }

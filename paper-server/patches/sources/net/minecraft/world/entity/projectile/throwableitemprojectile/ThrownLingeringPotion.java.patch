@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/world/entity/projectile/throwableitemprojectile/ThrownLingeringPotion.java b/net/minecraft/world/entity/projectile/throwableitemprojectile/ThrownLingeringPotion.java
+index 0026fb2e321fe53aab2e9b960e2db514181fd680..67f7f9a75186f240e59f8664b7190ea70258a3d3 100644
 --- a/net/minecraft/world/entity/projectile/throwableitemprojectile/ThrownLingeringPotion.java
 +++ b/net/minecraft/world/entity/projectile/throwableitemprojectile/ThrownLingeringPotion.java
-@@ -30,7 +_,7 @@
+@@ -30,7 +30,7 @@ public class ThrownLingeringPotion extends AbstractThrownPotion {
      }
  
      @Override
@@ -9,7 +17,7 @@
          AreaEffectCloud cloud = new AreaEffectCloud(this.level(), this.getX(), this.getY(), this.getZ());
          if (this.getOwner() instanceof LivingEntity owner) {
              cloud.setOwner(owner);
-@@ -42,6 +_,15 @@
+@@ -42,6 +42,15 @@ public class ThrownLingeringPotion extends AbstractThrownPotion {
          cloud.setWaitTime(10);
          cloud.setRadiusPerTick(-cloud.getRadius() / cloud.getDuration());
          cloud.applyComponentsFromItemStack(potionItem);

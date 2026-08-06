@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/world/level/storage/TagValueOutput.java b/net/minecraft/world/level/storage/TagValueOutput.java
+index c7dc0bc2f727c2c9e977bde8035c6ad1e54a479a..007bd7addfe854f28fcf53cb638f51b7601b1c92 100644
 --- a/net/minecraft/world/level/storage/TagValueOutput.java
 +++ b/net/minecraft/world/level/storage/TagValueOutput.java
-@@ -24,6 +_,23 @@
+@@ -24,6 +24,23 @@ public class TagValueOutput implements ValueOutput {
          this.output = output;
      }
  

@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/world/entity/ai/goal/FollowOwnerGoal.java b/net/minecraft/world/entity/ai/goal/FollowOwnerGoal.java
+index 4dcb49045071a24187812089407c989539cf1899..bebccbfcd65a8f5b9984684272368bbe11766c87 100644
 --- a/net/minecraft/world/entity/ai/goal/FollowOwnerGoal.java
 +++ b/net/minecraft/world/entity/ai/goal/FollowOwnerGoal.java
-@@ -75,7 +_,7 @@
+@@ -75,7 +75,7 @@ public class FollowOwnerGoal extends Goal {
      public void tick() {
          boolean isOwnerFarAway = this.tamable.shouldTryTeleportToOwner();
          if (!isOwnerFarAway) {

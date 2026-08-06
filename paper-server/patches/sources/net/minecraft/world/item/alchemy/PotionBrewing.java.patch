@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/world/item/alchemy/PotionBrewing.java b/net/minecraft/world/item/alchemy/PotionBrewing.java
+index 5880a5cdc561e019666c857902ee8abfd91d49b3..4503aab456a90e3bdd077a5d94b45dd7c597935e 100644
 --- a/net/minecraft/world/item/alchemy/PotionBrewing.java
 +++ b/net/minecraft/world/item/alchemy/PotionBrewing.java
-@@ -19,6 +_,7 @@
+@@ -19,6 +19,7 @@ public class PotionBrewing {
      private final List<Ingredient> containers;
      private final List<PotionBrewing.Mix<Potion>> potionMixes;
      private final List<PotionBrewing.Mix<Item>> containerMixes;
@@ -8,7 +16,7 @@
  
      private PotionBrewing(
          final List<Ingredient> containers, final List<PotionBrewing.Mix<Potion>> potionMixes, final List<PotionBrewing.Mix<Item>> containerMixes
-@@ -29,7 +_,7 @@
+@@ -29,7 +30,7 @@ public class PotionBrewing {
      }
  
      public boolean isIngredient(final ItemStack ingredient) {
@@ -17,7 +25,7 @@
      }
  
      private boolean isContainer(final ItemStack input) {
-@@ -73,6 +_,11 @@
+@@ -73,6 +74,11 @@ public class PotionBrewing {
      }
  
      public boolean hasMix(final ItemStack source, final ItemStack ingredient) {
@@ -29,7 +37,7 @@
          return this.isContainer(source) && (this.hasContainerMix(source, ingredient) || this.hasPotionMix(source, ingredient));
      }
  
-@@ -111,6 +_,13 @@
+@@ -111,6 +117,13 @@ public class PotionBrewing {
              return source;
          }
  
@@ -43,11 +51,10 @@
          for (PotionBrewing.Mix<Item> mix : this.containerMixes) {
              if (source.is(mix.from) && mix.ingredient.test(ingredient)) {
                  return PotionContents.createItemStack(mix.to.value(), potion.get());
-@@ -191,6 +_,50 @@
-         builder.addMix(Potions.AWKWARD, Items.PHANTOM_MEMBRANE, Potions.SLOW_FALLING);
+@@ -192,6 +205,50 @@ public class PotionBrewing {
          builder.addMix(Potions.SLOW_FALLING, Items.REDSTONE, Potions.LONG_SLOW_FALLING);
      }
-+
+ 
 +    // Paper start - Custom Potion Mixes
 +    public boolean isCustomIngredient(ItemStack stack) {
 +        for (io.papermc.paper.potion.PaperPotionMix mix : this.customMixes.values()) {
@@ -91,6 +98,7 @@
 +        return bootstrap(flags);
 +    }
 +    // Paper end - Custom Potion Mixes
- 
++
      public static class Builder {
          private final List<Ingredient> containers = new ArrayList<>();
+         private final List<PotionBrewing.Mix<Potion>> potionMixes = new ArrayList<>();

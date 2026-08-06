@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/world/level/block/entity/CampfireBlockEntity.java b/net/minecraft/world/level/block/entity/CampfireBlockEntity.java
+index 9997623194b8e2e81eb04c242094f13c52d9bec6..64d0d60d9025de2b5eb16b31c6437372d4c20c5e 100644
 --- a/net/minecraft/world/level/block/entity/CampfireBlockEntity.java
 +++ b/net/minecraft/world/level/block/entity/CampfireBlockEntity.java
-@@ -46,6 +_,7 @@
+@@ -46,6 +46,7 @@ public class CampfireBlockEntity extends BlockEntity implements Clearable {
      private final NonNullList<ItemStack> items = NonNullList.withSize(4, ItemStack.EMPTY);
      public final int[] cookingProgress = new int[4];
      public final int[] cookingTime = new int[4];
@@ -8,7 +16,7 @@
  
      public CampfireBlockEntity(final BlockPos worldPosition, final BlockState blockState) {
          super(BlockEntityTypes.CAMPFIRE, worldPosition, blockState);
-@@ -64,12 +_,42 @@
+@@ -64,12 +65,42 @@ public class CampfireBlockEntity extends BlockEntity implements Clearable {
              ItemStack itemStack = entity.items.get(slot);
              if (!itemStack.isEmpty()) {
                  changed = true;
@@ -53,7 +61,7 @@
                          entity.items.set(slot, ItemStack.EMPTY);
                          level.sendBlockUpdated(pos, state, state, Block.UPDATE_ALL);
                          level.gameEvent(GameEvent.BLOCK_CHANGE, pos, GameEvent.Context.of(state));
-@@ -142,6 +_,16 @@
+@@ -142,6 +173,16 @@ public class CampfireBlockEntity extends BlockEntity implements Clearable {
                  cookingTimes -> System.arraycopy(cookingTimes, 0, this.cookingTime, 0, Math.min(this.cookingTime.length, cookingTimes.length)),
                  () -> Arrays.fill(this.cookingTime, 0)
              );
@@ -70,7 +78,7 @@
      }
  
      @Override
-@@ -150,6 +_,13 @@
+@@ -150,6 +191,13 @@ public class CampfireBlockEntity extends BlockEntity implements Clearable {
          ContainerHelper.saveAllItems(output, this.items, true);
          output.putIntArray("CookingTimes", this.cookingProgress);
          output.putIntArray("CookingTotalTimes", this.cookingTime);
@@ -84,7 +92,7 @@
      }
  
      @Override
-@@ -176,7 +_,15 @@
+@@ -176,7 +224,15 @@ public class CampfireBlockEntity extends BlockEntity implements Clearable {
                      return false;
                  }
  

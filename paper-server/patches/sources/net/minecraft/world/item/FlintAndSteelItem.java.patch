@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/world/item/FlintAndSteelItem.java b/net/minecraft/world/item/FlintAndSteelItem.java
+index 310765f5a89382b5376585d58d05b5a9dada5625..39b43b87985e324d0fa5017a1baa4c8b8373ac58 100644
 --- a/net/minecraft/world/item/FlintAndSteelItem.java
 +++ b/net/minecraft/world/item/FlintAndSteelItem.java
-@@ -32,6 +_,12 @@
+@@ -32,6 +32,12 @@ public class FlintAndSteelItem extends Item {
          if (!CampfireBlock.canLight(state) && !CandleBlock.canLight(state) && !CandleCakeBlock.canLight(state)) {
              BlockPos relativePos = pos.relative(context.getClickedFace());
              if (BaseFireBlock.canBePlacedAt(level, relativePos, context.getHorizontalDirection())) {
@@ -13,7 +21,7 @@
                  level.playSound(player, relativePos, SoundEvents.FLINTANDSTEEL_USE, SoundSource.BLOCKS, 1.0F, level.getRandom().nextFloat() * 0.4F + 0.8F);
                  BlockState fireState = BaseFireBlock.getState(level, relativePos);
                  level.setBlock(relativePos, fireState, Block.UPDATE_ALL_IMMEDIATE);
-@@ -47,6 +_,12 @@
+@@ -47,6 +53,12 @@ public class FlintAndSteelItem extends Item {
                  return InteractionResult.FAIL;
              }
          } else {

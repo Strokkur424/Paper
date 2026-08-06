@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/world/entity/projectile/hurtingprojectile/DragonFireball.java b/net/minecraft/world/entity/projectile/hurtingprojectile/DragonFireball.java
+index a6b7887a5908925e366b5af1634fe78503ebee76..891ae74d34274c41ca44a614d7a2c62a588490ec 100644
 --- a/net/minecraft/world/entity/projectile/hurtingprojectile/DragonFireball.java
 +++ b/net/minecraft/world/entity/projectile/hurtingprojectile/DragonFireball.java
-@@ -54,9 +_,11 @@
+@@ -54,9 +54,11 @@ public class DragonFireball extends AbstractHurtingProjectile {
                      }
                  }
  

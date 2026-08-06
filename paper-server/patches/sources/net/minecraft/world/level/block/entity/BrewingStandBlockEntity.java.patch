@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/world/level/block/entity/BrewingStandBlockEntity.java b/net/minecraft/world/level/block/entity/BrewingStandBlockEntity.java
+index 882c7b3ff6b2cad1e66670890cc26770faec0e80..5d26efb1feb1fd7d0f3bcc0fd7678b303518312a 100644
 --- a/net/minecraft/world/level/block/entity/BrewingStandBlockEntity.java
 +++ b/net/minecraft/world/level/block/entity/BrewingStandBlockEntity.java
-@@ -42,6 +_,7 @@
+@@ -42,6 +42,7 @@ public class BrewingStandBlockEntity extends BaseContainerBlockEntity implements
      private static final Component DEFAULT_NAME = Component.translatable("container.brewing");
      private NonNullList<ItemStack> items = NonNullList.withSize(5, ItemStack.EMPTY);
      public int brewTime;
@@ -8,7 +16,7 @@
      private boolean[] lastPotionCount;
      private Item ingredient;
      public int fuel;
-@@ -51,6 +_,7 @@
+@@ -51,6 +52,7 @@ public class BrewingStandBlockEntity extends BaseContainerBlockEntity implements
              return switch (dataId) {
                  case 0 -> BrewingStandBlockEntity.this.brewTime;
                  case 1 -> BrewingStandBlockEntity.this.fuel;
@@ -16,7 +24,7 @@
                  default -> 0;
              };
          }
-@@ -63,14 +_,54 @@
+@@ -63,14 +65,54 @@ public class BrewingStandBlockEntity extends BaseContainerBlockEntity implements
                      break;
                  case 1:
                      BrewingStandBlockEntity.this.fuel = value;
@@ -72,7 +80,7 @@
  
      public BrewingStandBlockEntity(final BlockPos worldPosition, final BlockState blockState) {
          super(BlockEntityTypes.BREWING_STAND, worldPosition, blockState);
-@@ -99,8 +_,21 @@
+@@ -99,8 +141,21 @@ public class BrewingStandBlockEntity extends BaseContainerBlockEntity implements
      public static void serverTick(final Level level, final BlockPos pos, final BlockState selfState, final BrewingStandBlockEntity entity) {
          ItemStack fuel = entity.items.get(4);
          if (entity.fuel <= 0 && fuel.is(ItemTags.BREWING_FUEL)) {
@@ -96,7 +104,7 @@
              setChanged(level, pos, selfState);
          }
  
-@@ -111,7 +_,7 @@
+@@ -111,7 +166,7 @@ public class BrewingStandBlockEntity extends BaseContainerBlockEntity implements
              entity.brewTime--;
              boolean isDoneBrewing = entity.brewTime == 0;
              if (isDoneBrewing && brewable) {
@@ -105,7 +113,7 @@
              } else if (!brewable || !ingredient.is(entity.ingredient)) {
                  entity.brewTime = 0;
              }
-@@ -119,7 +_,14 @@
+@@ -119,7 +174,14 @@ public class BrewingStandBlockEntity extends BaseContainerBlockEntity implements
              setChanged(level, pos, selfState);
          } else if (brewable && entity.fuel > 0) {
              entity.fuel--;
@@ -121,7 +129,7 @@
              entity.ingredient = ingredient.getItem();
              setChanged(level, pos, selfState);
          }
-@@ -172,13 +_,37 @@
+@@ -172,13 +234,37 @@ public class BrewingStandBlockEntity extends BaseContainerBlockEntity implements
          return false;
      }
  
@@ -135,7 +143,6 @@
 +        java.util.List<org.bukkit.inventory.ItemStack> brewResults = new java.util.ArrayList<>(3);
          for (int dest = 0; dest < 3; dest++) {
 -            items.set(dest, potionBrewing.mix(ingredient, items.get(dest)));
--        }
 +            brewResults.add(dest, org.bukkit.craftbukkit.inventory.CraftItemStack.asCraftMirror(potionBrewing.mix(ingredient, items.get(dest))));
 +        }
 +
@@ -157,12 +164,12 @@
 +                    items.set(dest, ItemStack.EMPTY);
 +                }
 +            }
-+        }
+         }
 +        // CraftBukkit end
  
          ingredient.shrink(1);
          ItemStackTemplate remainder = ingredient.getItem().getCraftingRemainder();
-@@ -217,13 +_,13 @@
+@@ -217,13 +303,13 @@ public class BrewingStandBlockEntity extends BaseContainerBlockEntity implements
  
      @Override
      public boolean canPlaceItem(final int slot, final ItemStack itemStack) {

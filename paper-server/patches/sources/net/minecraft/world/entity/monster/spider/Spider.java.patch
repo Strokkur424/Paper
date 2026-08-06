@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/world/entity/monster/spider/Spider.java b/net/minecraft/world/entity/monster/spider/Spider.java
+index 3463b92e34463e85113492582bee58e04aa8cb67..820a257e3cb43cbda930b5512b63eecfc6e37fa8 100644
 --- a/net/minecraft/world/entity/monster/spider/Spider.java
 +++ b/net/minecraft/world/entity/monster/spider/Spider.java
-@@ -82,7 +_,7 @@
+@@ -82,7 +82,7 @@ public class Spider extends Monster {
      public void tick() {
          super.tick();
          if (!this.level().isClientSide()) {
@@ -9,7 +17,7 @@
          }
      }
  
-@@ -124,7 +_,7 @@
+@@ -124,7 +124,7 @@ public class Spider extends Monster {
  
      @Override
      public boolean canBeAffected(final MobEffectInstance newEffect) {
@@ -18,7 +26,7 @@
      }
  
      public boolean isClimbing() {
-@@ -167,7 +_,7 @@
+@@ -167,7 +167,7 @@ public class Spider extends Monster {
          if (groupData instanceof Spider.SpiderEffectsGroupData spiderEffectsGroupData) {
              Holder<MobEffect> effect = spiderEffectsGroupData.effect;
              if (effect != null) {

@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/world/level/gameevent/DynamicGameEventListener.java b/net/minecraft/world/level/gameevent/DynamicGameEventListener.java
+index 1782d81834268e2659ff209236c1862cfcaa7175..c31f66710036cb68500ed936b8a4b89a2cf57574 100644
 --- a/net/minecraft/world/level/gameevent/DynamicGameEventListener.java
 +++ b/net/minecraft/world/level/gameevent/DynamicGameEventListener.java
-@@ -40,7 +_,7 @@
+@@ -40,7 +40,7 @@ public class DynamicGameEventListener<T extends GameEventListener> {
  
      private static void ifChunkExists(final LevelReader level, final @Nullable SectionPos sectionPos, final Consumer<GameEventListenerRegistry> action) {
          if (sectionPos != null) {

@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/world/level/block/HugeMushroomBlock.java b/net/minecraft/world/level/block/HugeMushroomBlock.java
+index 6162fe5a32c6c3a46385baecd50b09f1c6f805b6..da99d0f62d1679204987645fbd5be1b5cec238ca 100644
 --- a/net/minecraft/world/level/block/HugeMushroomBlock.java
 +++ b/net/minecraft/world/level/block/HugeMushroomBlock.java
-@@ -45,6 +_,7 @@
+@@ -45,6 +45,7 @@ public class HugeMushroomBlock extends Block {
  
      @Override
      public BlockState getStateForPlacement(final BlockPlaceContext context) {
@@ -8,7 +16,7 @@
          BlockGetter level = context.getLevel();
          BlockPos pos = context.getClickedPos();
          return this.defaultBlockState()
-@@ -67,6 +_,7 @@
+@@ -67,6 +68,7 @@ public class HugeMushroomBlock extends Block {
          final BlockState neighbourState,
          final RandomSource random
      ) {
@@ -16,7 +24,7 @@
          return neighbourState.is(this)
              ? state.setValue(PROPERTY_BY_DIRECTION.get(directionToNeighbour), false)
              : super.updateShape(state, level, ticks, pos, directionToNeighbour, neighbourPos, neighbourState, random);
-@@ -74,6 +_,7 @@
+@@ -74,6 +76,7 @@ public class HugeMushroomBlock extends Block {
  
      @Override
      protected BlockState rotate(final BlockState state, final Rotation rotation) {
@@ -24,7 +32,7 @@
          return state.setValue(PROPERTY_BY_DIRECTION.get(rotation.rotate(Direction.NORTH)), state.getValue(NORTH))
              .setValue(PROPERTY_BY_DIRECTION.get(rotation.rotate(Direction.SOUTH)), state.getValue(SOUTH))
              .setValue(PROPERTY_BY_DIRECTION.get(rotation.rotate(Direction.EAST)), state.getValue(EAST))
-@@ -84,6 +_,7 @@
+@@ -84,6 +87,7 @@ public class HugeMushroomBlock extends Block {
  
      @Override
      protected BlockState mirror(final BlockState state, final Mirror mirror) {

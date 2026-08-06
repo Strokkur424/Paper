@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/server/rcon/RconConsoleSource.java b/net/minecraft/server/rcon/RconConsoleSource.java
+index 5f1c1dbc2eca02325f3d2f23c62ed596320c9400..7422b29719df2c7615fb894c52e426da608f20f7 100644
 --- a/net/minecraft/server/rcon/RconConsoleSource.java
 +++ b/net/minecraft/server/rcon/RconConsoleSource.java
-@@ -14,8 +_,13 @@
+@@ -14,8 +14,13 @@ public class RconConsoleSource implements CommandSource {
      private static final Component RCON_COMPONENT = Component.literal("Rcon");
      private final StringBuffer buffer = new StringBuffer();
      private final MinecraftServer server;
@@ -15,11 +23,10 @@
          this.server = server;
      }
  
-@@ -41,6 +_,17 @@
-             null
+@@ -42,6 +47,17 @@ public class RconConsoleSource implements CommandSource {
          );
      }
-+
+ 
 +    // CraftBukkit start - Send a String
 +    public void sendMessage(String message) {
 +        this.buffer.append(message);
@@ -30,6 +37,7 @@
 +        return this.remoteConsole;
 +    }
 +    // CraftBukkit end
- 
++
      @Override
      public void sendSystemMessage(final Component message) {
+         this.buffer.append(message.getString());

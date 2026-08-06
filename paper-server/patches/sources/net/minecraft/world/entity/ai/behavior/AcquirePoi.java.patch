@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/world/entity/ai/behavior/AcquirePoi.java b/net/minecraft/world/entity/ai/behavior/AcquirePoi.java
+index 28712ceba738bb26932c4b1141b3535528974020..81ad9099d2325a07b0b853b99e1d67b0caebd951 100644
 --- a/net/minecraft/world/entity/ai/behavior/AcquirePoi.java
 +++ b/net/minecraft/world/entity/ai/behavior/AcquirePoi.java
-@@ -78,6 +_,7 @@
+@@ -78,6 +78,7 @@ public class AcquirePoi {
                          }
  
                          nextScheduledStart.setValue(timestamp + 20L + random.nextInt(20));

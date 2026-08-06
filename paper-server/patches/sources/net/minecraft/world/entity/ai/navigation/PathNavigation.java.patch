@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/world/entity/ai/navigation/PathNavigation.java b/net/minecraft/world/entity/ai/navigation/PathNavigation.java
+index e86e4cfdea2e833d911470d6a8a211ee74b09bff..862224dfc003bf02ee0d7c1d804549210d6c8ffa 100644
 --- a/net/minecraft/world/entity/ai/navigation/PathNavigation.java
 +++ b/net/minecraft/world/entity/ai/navigation/PathNavigation.java
-@@ -122,7 +_,12 @@
+@@ -122,7 +122,12 @@ public abstract class PathNavigation {
      }
  
      public @Nullable Path createPath(final BlockPos pos, final int reachRange) {
@@ -14,7 +22,7 @@
      }
  
      public @Nullable Path createPath(final BlockPos pos, final int reachRange, final int maxPathLength) {
-@@ -130,7 +_,7 @@
+@@ -130,7 +135,7 @@ public abstract class PathNavigation {
      }
  
      public @Nullable Path createPath(final Entity target, final int reachRange) {
@@ -23,7 +31,7 @@
      }
  
      protected @Nullable Path createPath(final Set<BlockPos> targets, final int radiusOffset, final boolean above, final int reachRange) {
-@@ -140,6 +_,16 @@
+@@ -140,6 +145,16 @@ public abstract class PathNavigation {
      protected @Nullable Path createPath(
          final Set<BlockPos> targets, final int radiusOffset, final boolean above, final int reachRange, final float maxPathLength
      ) {
@@ -40,7 +48,7 @@
          if (targets.isEmpty()) {
              return null;
          }
-@@ -156,6 +_,23 @@
+@@ -156,6 +171,23 @@ public abstract class PathNavigation {
              return this.path;
          }
  
@@ -64,7 +72,7 @@
          ProfilerFiller profiler = Profiler.get();
          profiler.push("pathfind");
          BlockPos fromPos = above ? this.mob.blockPosition().above() : this.mob.blockPosition();
-@@ -172,6 +_,11 @@
+@@ -172,6 +204,11 @@ public abstract class PathNavigation {
          return path;
      }
  
@@ -76,7 +84,7 @@
      public boolean moveTo(final double x, final double y, final double z, final double speedModifier) {
          return this.moveTo(this.createPath(x, y, z, 1), speedModifier);
      }
-@@ -181,8 +_,23 @@
+@@ -181,8 +218,23 @@ public abstract class PathNavigation {
      }
  
      public boolean moveTo(final Entity target, final double speedModifier) {

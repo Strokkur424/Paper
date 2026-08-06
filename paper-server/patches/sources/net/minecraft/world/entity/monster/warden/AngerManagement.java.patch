@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/world/entity/monster/warden/AngerManagement.java b/net/minecraft/world/entity/monster/warden/AngerManagement.java
+index c598d694e3bce61dfa296813c572ecb419396520..163e92ec0e970e74627873e7a5ab05b4b45c9402 100644
 --- a/net/minecraft/world/entity/monster/warden/AngerManagement.java
 +++ b/net/minecraft/world/entity/monster/warden/AngerManagement.java
-@@ -141,7 +_,7 @@
+@@ -141,7 +141,7 @@ public class AngerManagement {
  
      public int increaseAnger(final Entity entity, final int increment) {
          boolean newSuspect = !this.angerBySuspect.containsKey(entity);

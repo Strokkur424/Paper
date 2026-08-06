@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/world/entity/player/Inventory.java b/net/minecraft/world/entity/player/Inventory.java
+index f00b4bf962b87f7b50fd2e605bb78616757ee92c..5c083f2ec110c388be951014d8e5a6eb64ded371 100644
 --- a/net/minecraft/world/entity/player/Inventory.java
 +++ b/net/minecraft/world/entity/player/Inventory.java
-@@ -57,6 +_,80 @@
+@@ -57,6 +57,80 @@ public class Inventory implements Container, Nameable {
      public final Player player;
      public final EntityEquipment equipment;
      private int timesChanged;
@@ -81,14 +89,13 @@
  
      public Inventory(final Player player, final EntityEquipment equipment) {
          this.player = player;
-@@ -93,10 +_,39 @@
+@@ -93,10 +167,39 @@ public class Inventory implements Container, Nameable {
  
      private boolean hasRemainingSpaceForItem(final ItemStack slotItemStack, final ItemStack newItemStack) {
          return !slotItemStack.isEmpty()
 -            && ItemStack.isSameItemSameComponents(slotItemStack, newItemStack)
              && slotItemStack.isStackable()
 -            && slotItemStack.getCount() < this.getMaxStackSize(slotItemStack);
--    }
 +            && slotItemStack.getCount() < this.getMaxStackSize(slotItemStack)
 +            && ItemStack.isSameItemSameComponents(slotItemStack, newItemStack); // Paper - check if itemstack is stackable first
 +    }
@@ -119,12 +126,12 @@
 +        }
 +
 +        return itemStack.getCount() - remains;
-+    }
+     }
 +    // CraftBukkit end
  
      public int getFreeSlot() {
          for (int i = 0; i < this.items.size(); i++) {
-@@ -108,8 +_,10 @@
+@@ -108,8 +211,10 @@ public class Inventory implements Container, Nameable {
          return NOT_FOUND_INDEX;
      }
  
@@ -137,7 +144,7 @@
          if (!this.items.get(this.selected).isEmpty()) {
              int freeSlot = this.getFreeSlot();
              if (freeSlot != NOT_FOUND_INDEX) {
-@@ -120,8 +_,10 @@
+@@ -120,8 +225,10 @@ public class Inventory implements Container, Nameable {
          this.items.set(this.selected, itemStack);
      }
  

@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/world/entity/monster/piglin/PiglinAi.java b/net/minecraft/world/entity/monster/piglin/PiglinAi.java
+index 42de093b7047ff8f15ee0d92bf92c88751715ce0..7d0494dc56bf6dd43e303798c25887e9e0b7e279 100644
 --- a/net/minecraft/world/entity/monster/piglin/PiglinAi.java
 +++ b/net/minecraft/world/entity/monster/piglin/PiglinAi.java
-@@ -336,16 +_,18 @@
+@@ -336,16 +336,18 @@ public class PiglinAi {
      protected static void pickUpItem(final ServerLevel level, final Piglin body, final ItemEntity itemEntity) {
          stopWalking(body);
          ItemStack taken;
@@ -21,7 +29,7 @@
              body.getBrain().eraseMemory(MemoryModuleType.TIME_TRYING_TO_REACH_ADMIRE_ITEM);
              holdInOffhand(level, body, taken);
              admireGoldItem(body);
-@@ -371,7 +_,7 @@
+@@ -371,7 +373,7 @@ public class PiglinAi {
          ItemStack sourceStack = itemEntity.getItem();
          ItemStack removedStack = sourceStack.split(1);
          if (sourceStack.isEmpty()) {
@@ -30,7 +38,7 @@
          } else {
              itemEntity.setItem(sourceStack);
          }
-@@ -383,9 +_,14 @@
+@@ -383,9 +385,14 @@ public class PiglinAi {
          ItemStack itemStack = body.getItemInHand(InteractionHand.OFF_HAND);
          body.setItemInHand(InteractionHand.OFF_HAND, ItemStack.EMPTY);
          if (body.isAdult()) {
@@ -47,7 +55,7 @@
              } else if (!barterCurrency) {
                  boolean equipped = !body.equipItemIfPossible(level, itemStack).isEmpty();
                  if (!equipped) {
-@@ -396,7 +_,7 @@
+@@ -396,7 +403,7 @@ public class PiglinAi {
              boolean equipped = !body.equipItemIfPossible(level, itemStack).isEmpty();
              if (!equipped) {
                  ItemStack mainHandItem = body.getMainHandItem();
@@ -56,7 +64,7 @@
                      putInInventory(body, mainHandItem);
                  } else {
                      throwItems(body, Collections.singletonList(mainHandItem));
-@@ -464,7 +_,7 @@
+@@ -464,7 +471,7 @@ public class PiglinAi {
              return false;
          } else if (isAdmiringDisabled(body) && body.getBrain().hasMemoryValue(MemoryModuleType.ATTACK_TARGET)) {
              return false;
@@ -65,7 +73,7 @@
              return isNotHoldingLovedItemInOffHand(body);
          } else {
              boolean hasSpace = body.canAddToInventory(itemStack);
-@@ -473,11 +_,16 @@
+@@ -473,11 +480,16 @@ public class PiglinAi {
              } else if (isFood(itemStack)) {
                  return !hasEatenRecently(body) && hasSpace;
              } else {
@@ -83,7 +91,7 @@
      protected static boolean isLovedItem(final ItemStack itemStack) {
          return itemStack.is(ItemTags.PIGLIN_LOVED);
      }
-@@ -535,6 +_,7 @@
+@@ -535,6 +547,7 @@ public class PiglinAi {
      }
  
      public static void angerNearbyPiglins(final ServerLevel level, final Player player, final boolean onlyIfTheySeeThePlayer) {
@@ -91,7 +99,7 @@
          List<Piglin> nearbyPiglins = player.level().getEntitiesOfClass(Piglin.class, player.getBoundingBox().inflate(16.0));
          nearbyPiglins.stream().filter(PiglinAi::isIdle).filter(piglin -> !onlyIfTheySeeThePlayer || BehaviorUtils.canSee(piglin, player)).forEach(piglin -> {
              if (level.getGameRules().get(GameRules.UNIVERSAL_ANGER)) {
-@@ -559,7 +_,7 @@
+@@ -559,7 +572,7 @@ public class PiglinAi {
      }
  
      protected static boolean canAdmire(final Piglin body, final ItemStack playerHeldItemStack) {
@@ -100,7 +108,7 @@
      }
  
      protected static void wasHurtBy(final ServerLevel level, final Piglin body, final LivingEntity attacker) {
-@@ -809,6 +_,11 @@
+@@ -809,6 +822,11 @@ public class PiglinAi {
          return body.getBrain().hasMemoryValue(MemoryModuleType.ADMIRING_ITEM);
      }
  
@@ -112,7 +120,7 @@
      private static boolean isBarterCurrency(final ItemStack itemStack) {
          return itemStack.is(BARTERING_ITEM);
      }
-@@ -846,7 +_,7 @@
+@@ -846,7 +864,7 @@ public class PiglinAi {
      }
  
      private static boolean isNotHoldingLovedItemInOffHand(final Piglin body) {

@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/network/protocol/game/ClientboundLevelChunkPacketData.java b/net/minecraft/network/protocol/game/ClientboundLevelChunkPacketData.java
+index 5980cbc1e8aa682bca6cfe3096a637e454258e46..ab0653c49aabf520a186e2df217aebbb91d2a06c 100644
 --- a/net/minecraft/network/protocol/game/ClientboundLevelChunkPacketData.java
 +++ b/net/minecraft/network/protocol/game/ClientboundLevelChunkPacketData.java
-@@ -28,7 +_,7 @@
+@@ -28,7 +28,7 @@ public class ClientboundLevelChunkPacketData {
      private static final StreamCodec<ByteBuf, Map<Heightmap.Types, long[]>> HEIGHTMAPS_STREAM_CODEC = ByteBufCodecs.map(
          size -> new EnumMap<>(Heightmap.Types.class), Heightmap.Types.STREAM_CODEC, ByteBufCodecs.LONG_ARRAY
      );
@@ -9,7 +17,7 @@
      private final Map<Heightmap.Types, long[]> heightmaps;
      private final byte[] buffer;
      private final List<ClientboundLevelChunkPacketData.BlockEntityInfo> blockEntitiesData;
-@@ -154,6 +_,7 @@
+@@ -154,6 +154,7 @@ public class ClientboundLevelChunkPacketData {
              CompoundTag tag = blockEntity.getUpdateTag(blockEntity.getLevel().registryAccess());
              BlockPos pos = blockEntity.getBlockPos();
              int xz = SectionPos.sectionRelative(pos.getX()) << 4 | SectionPos.sectionRelative(pos.getZ());

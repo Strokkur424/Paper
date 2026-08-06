@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/world/entity/Bucketable.java b/net/minecraft/world/entity/Bucketable.java
+index c25c44d1ce051656e8a6ddff7622f50e2401a5d6..c0a931526bf663da06949fbe0a4a19ba5ecc5838 100644
 --- a/net/minecraft/world/entity/Bucketable.java
 +++ b/net/minecraft/world/entity/Bucketable.java
-@@ -80,9 +_,25 @@
+@@ -80,9 +80,25 @@ public interface Bucketable {
      ) {
          ItemStack itemStack = player.getItemInHand(hand);
          if (pickupEntity.canBePickedUpWithBucket(itemStack) && pickupEntity.isAlive()) {
@@ -27,7 +35,7 @@
              ItemStack result = ItemUtils.createFilledResult(itemStack, player, bucket, false);
              player.setItemInHand(hand, result);
              Level level = pickupEntity.level();
-@@ -94,7 +_,7 @@
+@@ -94,7 +110,7 @@ public interface Bucketable {
                  leashable.dropLeash();
              }
  

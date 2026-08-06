@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/server/network/ServerConfigurationPacketListenerImpl.java b/net/minecraft/server/network/ServerConfigurationPacketListenerImpl.java
+index 8b82513083396185c2924d742b3baa745953d4f9..6baa9d2a8af7901d47964e6d7ad53ea7963ceeef 100644
 --- a/net/minecraft/server/network/ServerConfigurationPacketListenerImpl.java
 +++ b/net/minecraft/server/network/ServerConfigurationPacketListenerImpl.java
-@@ -52,12 +_,26 @@
+@@ -52,13 +52,27 @@ public class ServerConfigurationPacketListenerImpl extends ServerCommonPacketLis
      public ClientInformation clientInformation;
      private @Nullable SynchronizeRegistriesTask synchronizeRegistriesTask;
      private @Nullable PrepareSpawnTask prepareSpawnTask;
@@ -10,10 +18,9 @@
          super(server, connection, cookie);
          this.gameProfile = cookie.gameProfile();
          this.clientInformation = cookie.clientInformation();
--    }
 +        this.paperConnection = new io.papermc.paper.connection.PaperPlayerConfigurationConnection(this); // Paper
-+    }
-+
+     }
+ 
 +    // Paper start - configuration phase API
 +    @Override
 +    public io.papermc.paper.connection.PlayerCommonConnection getApiConnection() {
@@ -25,10 +32,11 @@
 +        return this.paperConnection.getAudience();
 +    }
 +    // Paper end - configuration phase API
- 
++
      @Override
      protected GameProfile playerProfile() {
-@@ -66,6 +_,11 @@
+         return this.gameProfile;
+@@ -66,6 +80,11 @@ public class ServerConfigurationPacketListenerImpl extends ServerCommonPacketLis
  
      @Override
      public void onDisconnect(final DisconnectionDetails details) {
@@ -40,7 +48,7 @@
          LOGGER.info("{} ({}) lost connection: {}", this.gameProfile.name(), this.gameProfile.id(), details.reason().getString());
          if (this.prepareSpawnTask != null) {
              this.prepareSpawnTask.close();
-@@ -81,10 +_,15 @@
+@@ -81,10 +100,15 @@ public class ServerConfigurationPacketListenerImpl extends ServerCommonPacketLis
      }
  
      public void startConfiguration() {
@@ -58,7 +66,7 @@
          }
  
          LayeredRegistryAccess<RegistryLayer> registries = this.server.registries();
-@@ -97,11 +_,12 @@
+@@ -97,11 +121,12 @@ public class ServerConfigurationPacketListenerImpl extends ServerCommonPacketLis
          this.synchronizeRegistriesTask = new SynchronizeRegistriesTask(knownPacks, registries);
          this.configurationTasks.add(this.synchronizeRegistriesTask);
          this.addOptionalTasks();
@@ -72,7 +80,7 @@
          this.configurationTasks.add(this.prepareSpawnTask);
          this.configurationTasks.add(new JoinWorldTask());
          this.startNextTask();
-@@ -109,17 +_,26 @@
+@@ -109,17 +134,26 @@ public class ServerConfigurationPacketListenerImpl extends ServerCommonPacketLis
  
      private void addOptionalTasks() {
          Map<String, String> codeOfConducts = this.server.getCodeOfConducts();
@@ -101,7 +109,7 @@
                  return codeOfConduct;
              }));
          }
-@@ -130,12 +_,14 @@
+@@ -130,12 +164,14 @@ public class ServerConfigurationPacketListenerImpl extends ServerCommonPacketLis
      @Override
      public void handleClientInformation(final ServerboundClientInformationPacket packet) {
          this.clientInformation = packet.information();
@@ -117,7 +125,7 @@
              this.finishCurrentTask(ServerResourcePackConfigurationTask.TYPE);
          }
      }
-@@ -169,7 +_,7 @@
+@@ -169,7 +205,7 @@ public class ServerConfigurationPacketListenerImpl extends ServerCommonPacketLis
                  return;
              }
  
@@ -126,7 +134,7 @@
              if (loginError != null) {
                  this.disconnect(loginError);
                  return;
-@@ -231,4 +_,29 @@
+@@ -231,4 +267,29 @@ public class ServerConfigurationPacketListenerImpl extends ServerCommonPacketLis
          this.currentTask = null;
          this.startNextTask();
      }

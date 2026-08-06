@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/world/entity/animal/equine/AbstractHorse.java b/net/minecraft/world/entity/animal/equine/AbstractHorse.java
+index eaa6eab9bea3c61d7f70d29992e6eab992d3cf65..847fcecc4046d9fe880aaa7eb2a3c55c5bc61faf 100644
 --- a/net/minecraft/world/entity/animal/equine/AbstractHorse.java
 +++ b/net/minecraft/world/entity/animal/equine/AbstractHorse.java
-@@ -124,6 +_,7 @@
+@@ -124,6 +124,7 @@ public abstract class AbstractHorse extends Animal implements PlayerRideableJump
      protected boolean canGallop = true;
      protected int gallopSoundCounter;
      public @Nullable EntityReference<LivingEntity> owner;
@@ -8,7 +16,7 @@
  
      protected AbstractHorse(final EntityType<? extends AbstractHorse> type, final Level level) {
          super(type, level);
-@@ -252,7 +_,7 @@
+@@ -252,7 +253,7 @@ public abstract class AbstractHorse extends Animal implements PlayerRideableJump
      }
  
      @Override
@@ -17,7 +25,7 @@
          return !this.isVehicle();
      }
  
-@@ -299,7 +_,7 @@
+@@ -299,7 +300,7 @@ public abstract class AbstractHorse extends Animal implements PlayerRideableJump
  
      public void createInventory() {
          SimpleContainer old = this.inventory;
@@ -26,7 +34,7 @@
          if (old != null) {
              int max = Math.min(old.getContainerSize(), this.inventory.getContainerSize());
  
-@@ -391,7 +_,7 @@
+@@ -391,7 +392,7 @@ public abstract class AbstractHorse extends Animal implements PlayerRideableJump
      }
  
      public int getMaxTemper() {
@@ -35,7 +43,7 @@
      }
  
      @Override
-@@ -454,7 +_,7 @@
+@@ -454,7 +455,7 @@ public abstract class AbstractHorse extends Animal implements PlayerRideableJump
              temper = 5;
              if (!this.level().isClientSide() && this.isTamed() && this.getAge() == 0 && !this.isInLove()) {
                  itemUsed = true;
@@ -44,7 +52,7 @@
              }
          } else if (itemStack.is(Items.GOLDEN_APPLE) || itemStack.is(Items.ENCHANTED_GOLDEN_APPLE)) {
              heal = 10.0F;
-@@ -462,12 +_,12 @@
+@@ -462,12 +463,12 @@ public abstract class AbstractHorse extends Animal implements PlayerRideableJump
              temper = 10;
              if (!this.level().isClientSide() && this.isTamed() && this.getAge() == 0 && !this.isInLove()) {
                  itemUsed = true;
@@ -59,7 +67,7 @@
              itemUsed = true;
          }
  
-@@ -538,7 +_,7 @@
+@@ -538,7 +539,7 @@ public abstract class AbstractHorse extends Animal implements PlayerRideableJump
          super.aiStep();
          if (this.level() instanceof ServerLevel level && this.isAlive()) {
              if (this.random.nextInt(900) == 0 && this.deathTime == 0) {
@@ -68,7 +76,7 @@
              }
  
              if (this.canEatGrass()) {
-@@ -640,6 +_,16 @@
+@@ -640,6 +641,16 @@ public abstract class AbstractHorse extends Animal implements PlayerRideableJump
          }
      }
  
@@ -85,7 +93,7 @@
      @Override
      public InteractionResult mobInteract(final Player player, final InteractionHand hand) {
          if (this.isVehicle() || this.isBaby()) {
-@@ -793,6 +_,7 @@
+@@ -793,6 +804,7 @@ public abstract class AbstractHorse extends Animal implements PlayerRideableJump
          output.putInt("Temper", this.getTemper());
          output.putBoolean("Tame", this.isTamed());
          EntityReference.store(this.owner, output, "Owner");
@@ -93,7 +101,7 @@
      }
  
      @Override
-@@ -803,6 +_,7 @@
+@@ -803,6 +815,7 @@ public abstract class AbstractHorse extends Animal implements PlayerRideableJump
          this.setTemper(input.getIntOr("Temper", 0));
          this.setTamed(input.getBooleanOr("Tame", false));
          this.owner = EntityReference.readWithOldOwnerConversion(input, "Owner", this.level());
@@ -101,7 +109,7 @@
      }
  
      @Override
-@@ -896,6 +_,17 @@
+@@ -896,6 +909,17 @@ public abstract class AbstractHorse extends Animal implements PlayerRideableJump
  
      @Override
      public void handleStartJump(final int jumpScale) {

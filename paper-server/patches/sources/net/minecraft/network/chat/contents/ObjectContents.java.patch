@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/network/chat/contents/ObjectContents.java b/net/minecraft/network/chat/contents/ObjectContents.java
+index d21a2359215f496b957a2c00168a80d9a7ef28fc..4f04b0dff91a0c39836bf5d306e74dd9fa4b3690 100644
 --- a/net/minecraft/network/chat/contents/ObjectContents.java
 +++ b/net/minecraft/network/chat/contents/ObjectContents.java
-@@ -32,7 +_,7 @@
+@@ -32,7 +32,7 @@ public record ObjectContents(ObjectInfo contents, Optional<Component> fallback)
  
      @Override
      public MutableComponent resolve(final ResolutionContext context, final int recursionDepth) throws CommandSyntaxException {

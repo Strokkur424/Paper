@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/server/players/CachedUserNameToIdResolver.java b/net/minecraft/server/players/CachedUserNameToIdResolver.java
+index 882d553bc410f33a60474e3121e5b65a09c3926a..7443744e3f256983e52a1cefcaf66082e4a46a7b 100644
 --- a/net/minecraft/server/players/CachedUserNameToIdResolver.java
 +++ b/net/minecraft/server/players/CachedUserNameToIdResolver.java
-@@ -46,6 +_,10 @@
+@@ -46,6 +46,10 @@ public class CachedUserNameToIdResolver implements UserNameToIdResolver {
      private final Gson gson = new GsonBuilder().create();
      private final File file;
      private final AtomicLong operationCount = new AtomicLong();
@@ -11,7 +19,7 @@
  
      public CachedUserNameToIdResolver(final GameProfileRepository profileRepository, final File file) {
          this.profileRepository = profileRepository;
-@@ -54,10 +_,12 @@
+@@ -54,10 +58,12 @@ public class CachedUserNameToIdResolver implements UserNameToIdResolver {
      }
  
      private void safeAdd(final CachedUserNameToIdResolver.GameProfileInfo profileInfo) {
@@ -24,7 +32,7 @@
      }
  
      private Optional<NameAndId> lookupGameProfile(final GameProfileRepository profileRepository, final String name) {
-@@ -65,12 +_,14 @@
+@@ -65,12 +71,14 @@ public class CachedUserNameToIdResolver implements UserNameToIdResolver {
              return this.createUnknownProfile(name);
          }
  
@@ -41,7 +49,7 @@
      }
  
      @Override
-@@ -90,7 +_,7 @@
+@@ -90,7 +98,7 @@ public class CachedUserNameToIdResolver implements UserNameToIdResolver {
          Date expirationDate = c.getTime();
          CachedUserNameToIdResolver.GameProfileInfo profileInfo = new CachedUserNameToIdResolver.GameProfileInfo(profile, expirationDate);
          this.safeAdd(profileInfo);
@@ -50,7 +58,7 @@
          return profileInfo;
      }
  
-@@ -98,9 +_,24 @@
+@@ -98,9 +106,24 @@ public class CachedUserNameToIdResolver implements UserNameToIdResolver {
          return this.operationCount.incrementAndGet();
      }
  
@@ -75,7 +83,7 @@
          CachedUserNameToIdResolver.GameProfileInfo profileInfo = this.profilesByName.get(userName);
          boolean needsSave = false;
          if (profileInfo != null && new Date().getTime() >= profileInfo.expirationDate.getTime()) {
-@@ -114,8 +_,13 @@
+@@ -114,8 +137,13 @@ public class CachedUserNameToIdResolver implements UserNameToIdResolver {
          if (profileInfo != null) {
              profileInfo.setLastAccess(this.getNextOperation());
              result = Optional.of(profileInfo.nameAndId());
@@ -90,7 +98,7 @@
              if (profile.isPresent()) {
                  result = Optional.of(this.addInternal(profile.get()).nameAndId());
                  needsSave = false;
-@@ -124,15 +_,17 @@
+@@ -124,15 +152,17 @@ public class CachedUserNameToIdResolver implements UserNameToIdResolver {
              }
          }
  
@@ -110,7 +118,7 @@
          CachedUserNameToIdResolver.GameProfileInfo profileInfo = this.profilesByUUID.get(id);
          if (profileInfo == null) {
              return Optional.empty();
-@@ -140,6 +_,7 @@
+@@ -140,6 +170,7 @@ public class CachedUserNameToIdResolver implements UserNameToIdResolver {
  
          profileInfo.setLastAccess(this.getNextOperation());
          return Optional.of(profileInfo.nameAndId());
@@ -118,7 +126,7 @@
      }
  
      private static DateFormat createDateFormat() {
-@@ -158,6 +_,11 @@
+@@ -158,6 +189,11 @@ public class CachedUserNameToIdResolver implements UserNameToIdResolver {
              DateFormat dateFormat = createDateFormat();
              entryList.forEach(element -> readGameProfile(element, dateFormat).ifPresent(result::add));
          } catch (FileNotFoundException var7) {
@@ -130,7 +138,7 @@
          } catch (IOException | JsonParseException e) {
              LOGGER.warn("Failed to load profile cache {}", this.file, e);
          }
-@@ -167,23 +_,51 @@
+@@ -167,23 +203,51 @@ public class CachedUserNameToIdResolver implements UserNameToIdResolver {
  
      @Override
      public void save() {
@@ -167,7 +175,6 @@
 -            .stream()
 -            .sorted(Comparator.comparing(CachedUserNameToIdResolver.GameProfileInfo::lastAccess).reversed())
 -            .limit(limit);
--    }
 +        // Paper start - Fix GameProfileCache concurrency
 +        return this.listTopMRUProfiles(limit).stream();
 +    }
@@ -183,7 +190,7 @@
 +        } finally {
 +            this.stateLock.unlock();
 +        }
-+    }
+     }
 +    // Paper end - Fix GameProfileCache concurrency
  
      private static JsonElement writeGameProfile(final CachedUserNameToIdResolver.GameProfileInfo src, final DateFormat dateFormat) {

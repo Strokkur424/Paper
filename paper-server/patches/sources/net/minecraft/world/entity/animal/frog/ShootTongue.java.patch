@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/world/entity/animal/frog/ShootTongue.java b/net/minecraft/world/entity/animal/frog/ShootTongue.java
+index 93bf4c536afb46e851073108cbe8c32abef259ef..86bb1e78912d9b2e5ccb0cd60388ccbcb8ea4e6d 100644
 --- a/net/minecraft/world/entity/animal/frog/ShootTongue.java
 +++ b/net/minecraft/world/entity/animal/frog/ShootTongue.java
-@@ -94,7 +_,7 @@
+@@ -94,7 +94,7 @@ public class ShootTongue extends Behavior<Frog> {
              if (target.isAlive()) {
                  body.doHurtTarget(level, target);
                  if (!target.isAlive()) {

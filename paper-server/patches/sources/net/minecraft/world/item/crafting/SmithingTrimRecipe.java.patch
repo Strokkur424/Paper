@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/world/item/crafting/SmithingTrimRecipe.java b/net/minecraft/world/item/crafting/SmithingTrimRecipe.java
+index c5ab70d38d3fd040aef2005a726cb7f37e570377..93347bd9fbab41888c5d63eb40e7928e74a1f9af 100644
 --- a/net/minecraft/world/item/crafting/SmithingTrimRecipe.java
 +++ b/net/minecraft/world/item/crafting/SmithingTrimRecipe.java
-@@ -47,11 +_,20 @@
+@@ -47,11 +47,20 @@ public class SmithingTrimRecipe extends SimpleSmithingRecipe {
      private final Ingredient base;
      private final Ingredient addition;
      private final Holder<TrimPattern> pattern;
@@ -21,7 +29,7 @@
          this.template = template;
          this.base = base;
          this.addition = addition;
-@@ -60,10 +_,15 @@
+@@ -60,10 +69,15 @@ public class SmithingTrimRecipe extends SimpleSmithingRecipe {
  
      @Override
      public ItemStack assemble(final SmithingRecipeInput input) {
@@ -38,7 +46,7 @@
          Holder<TrimMaterial> material = materialItem.get(DataComponents.PROVIDES_TRIM_MATERIAL);
          if (material != null) {
              ArmorTrim existingTrim = baseItem.get(DataComponents.TRIM);
-@@ -72,7 +_,7 @@
+@@ -72,7 +86,7 @@ public class SmithingTrimRecipe extends SimpleSmithingRecipe {
                  return ItemStack.EMPTY;
              }
  
@@ -47,7 +55,7 @@
              trimmedItem.set(DataComponents.TRIM, newTrim);
              return trimmedItem;
          } else {
-@@ -120,4 +_,10 @@
+@@ -120,4 +134,10 @@ public class SmithingTrimRecipe extends SimpleSmithingRecipe {
              )
          );
      }

@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/server/network/PlayerChunkSender.java b/net/minecraft/server/network/PlayerChunkSender.java
+index cc5c970a4839b59b14b069ed0ce3a34d3283336a..a46b89895a9ce86b6f5fabd373a4e91919d88033 100644
 --- a/net/minecraft/server/network/PlayerChunkSender.java
 +++ b/net/minecraft/server/network/PlayerChunkSender.java
-@@ -44,6 +_,11 @@
+@@ -44,6 +44,11 @@ public class PlayerChunkSender {
      public void dropChunk(final ServerPlayer player, final ChunkPos pos) {
          if (!this.pendingChunks.remove(pos.pack()) && player.isAlive()) {
              player.connection.send(new ClientboundForgetLevelChunkPacket(pos));
@@ -12,7 +20,7 @@
          }
      }
  
-@@ -75,6 +_,11 @@
+@@ -75,6 +80,11 @@ public class PlayerChunkSender {
  
      private static void sendChunk(final ServerGamePacketListenerImpl connection, final ServerLevel level, final LevelChunk chunk) {
          connection.send(new ClientboundLevelChunkWithLightPacket(chunk, level.getLightEngine(), null, null));

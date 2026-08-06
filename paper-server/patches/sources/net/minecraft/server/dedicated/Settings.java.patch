@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/server/dedicated/Settings.java b/net/minecraft/server/dedicated/Settings.java
+index f9d2c708fe7a68440a46ea0f26b0521b52ebc3a9..178f750c114afe26c98ff3434e6837f0b5f40f65 100644
 --- a/net/minecraft/server/dedicated/Settings.java
 +++ b/net/minecraft/server/dedicated/Settings.java
-@@ -26,12 +_,26 @@
+@@ -26,12 +26,26 @@ import org.slf4j.Logger;
  public abstract class Settings<T extends Settings<T>> {
      private static final Logger LOGGER = LogUtils.getLogger();
      public final Properties properties;
@@ -28,7 +36,7 @@
          try {
              try (InputStream is = Files.newInputStream(file)) {
                  CharsetDecoder reportingUtf8Decoder = StandardCharsets.UTF_8
-@@ -57,7 +_,53 @@
+@@ -57,7 +71,53 @@ public abstract class Settings<T extends Settings<T>> {
      }
  
      public void store(final Path output) {
@@ -83,7 +91,7 @@
              this.properties.store(os, "Minecraft server properties");
          } catch (IOException e) {
              LOGGER.error("Failed to store properties to file: {}", output);
-@@ -87,7 +_,7 @@
+@@ -87,7 +147,7 @@ public abstract class Settings<T extends Settings<T>> {
      }
  
      public @Nullable String getStringRaw(final String key) {
@@ -92,7 +100,7 @@
      }
  
      protected <V> @Nullable V getLegacy(final String key, final Function<String, V> deserializer) {
-@@ -101,6 +_,16 @@
+@@ -101,6 +161,16 @@ public abstract class Settings<T extends Settings<T>> {
      }
  
      protected <V> V get(final String key, final Function<String, @Nullable V> deserializer, final Function<V, String> serializer, final V defaultValue) {
@@ -109,7 +117,7 @@
          String value = this.getStringRaw(key);
          V result = MoreObjects.firstNonNull(value != null ? deserializer.apply(value) : null, defaultValue);
          this.properties.put(key, serializer.apply(result));
-@@ -183,7 +_,7 @@
+@@ -183,7 +253,7 @@ public abstract class Settings<T extends Settings<T>> {
          return result;
      }
  
@@ -118,7 +126,7 @@
  
      public class MutableValue<V> implements Supplier<V> {
          private final String key;
-@@ -204,7 +_,7 @@
+@@ -204,7 +274,7 @@ public abstract class Settings<T extends Settings<T>> {
          public T update(final RegistryAccess registryAccess, final V value) {
              Properties properties = Settings.this.cloneProperties();
              properties.put(this.key, this.serializer.apply(value));

@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/world/entity/projectile/hurtingprojectile/LargeFireball.java b/net/minecraft/world/entity/projectile/hurtingprojectile/LargeFireball.java
+index 0c468cd852ff75febf727d08c4af3374389d2804..8195ab561d12abb33f4359a68b3c1579ce284242 100644
 --- a/net/minecraft/world/entity/projectile/hurtingprojectile/LargeFireball.java
 +++ b/net/minecraft/world/entity/projectile/hurtingprojectile/LargeFireball.java
-@@ -21,20 +_,27 @@
+@@ -21,20 +21,27 @@ public class LargeFireball extends Fireball {
  
      public LargeFireball(final EntityType<? extends LargeFireball> type, final Level level) {
          super(type, level);
@@ -31,7 +39,7 @@
          }
      }
  
-@@ -59,6 +_,6 @@
+@@ -59,6 +66,6 @@ public class LargeFireball extends Fireball {
      @Override
      protected void readAdditionalSaveData(final ValueInput input) {
          super.readAdditionalSaveData(input);

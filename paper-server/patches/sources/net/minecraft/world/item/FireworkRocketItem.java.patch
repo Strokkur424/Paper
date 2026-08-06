@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/world/item/FireworkRocketItem.java b/net/minecraft/world/item/FireworkRocketItem.java
+index b7a35df343f775ae8c3b3560b6c27d5a27e57254..b3443ff2d06af328493046e723efc11d299a2824 100644
 --- a/net/minecraft/world/item/FireworkRocketItem.java
 +++ b/net/minecraft/world/item/FireworkRocketItem.java
-@@ -37,7 +_,7 @@
+@@ -37,7 +37,7 @@ public class FireworkRocketItem extends Item implements ProjectileItem {
              ItemStack itemStack = context.getItemInHand();
              Vec3 clickLocation = context.getClickLocation();
              Direction direction = context.getClickedFace();
@@ -9,7 +17,7 @@
                  new FireworkRocketEntity(
                      level,
                      context.getPlayer(),
-@@ -47,9 +_,14 @@
+@@ -47,9 +47,14 @@ public class FireworkRocketItem extends Item implements ProjectileItem {
                      itemStack
                  ),
                  serverLevel,
@@ -26,7 +34,7 @@
          }
  
          return InteractionResult.SUCCESS;
-@@ -60,13 +_,24 @@
+@@ -60,13 +65,24 @@ public class FireworkRocketItem extends Item implements ProjectileItem {
          if (player.isFallFlying()) {
              ItemStack itemStack = player.getItemInHand(hand);
              if (level instanceof ServerLevel serverLevel) {

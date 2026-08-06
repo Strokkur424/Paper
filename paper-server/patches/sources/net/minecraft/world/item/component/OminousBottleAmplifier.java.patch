@@ -1,20 +1,28 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/world/item/component/OminousBottleAmplifier.java b/net/minecraft/world/item/component/OminousBottleAmplifier.java
+index c9aea6ba16ea80b97240a32c1532e8d8655c0a5c..8a97ac5b80c626744cac3e8b02d39c9974ee8697 100644
 --- a/net/minecraft/world/item/component/OminousBottleAmplifier.java
 +++ b/net/minecraft/world/item/component/OminousBottleAmplifier.java
-@@ -29,8 +_,15 @@
+@@ -29,9 +29,16 @@ public record OminousBottleAmplifier(int value) implements ConsumableListener, T
  
      @Override
      public void onConsume(final Level level, final LivingEntity user, final ItemStack stack, final Consumable consumable) {
 -        user.addEffect(new MobEffectInstance(MobEffects.BAD_OMEN, EFFECT_DURATION, this.value, false, false, true));
--    }
 +        user.addEffect(new MobEffectInstance(MobEffects.BAD_OMEN, EFFECT_DURATION, this.value, false, false, true)); // Paper - properly resend entities - diff on change for below
-+    }
-+
+     }
+ 
 +    // Paper start - properly resend entities - collect packets for bundle
 +    @Override
 +    public void cancelUsingItem(net.minecraft.server.level.ServerPlayer player, ItemStack stack, List<net.minecraft.network.protocol.Packet<? super net.minecraft.network.protocol.game.ClientGamePacketListener>> collectedPackets) {
 +        collectedPackets.add(new net.minecraft.network.protocol.game.ClientboundRemoveMobEffectPacket(player.getId(), MobEffects.BAD_OMEN));
 +    }
 +    // Paper end - properly resend entities - collect packets for bundle
- 
++
      @Override
      public void addToTooltip(
+         final Item.TooltipContext context, final Consumer<Component> consumer, final TooltipFlag flag, final DataComponentGetter components

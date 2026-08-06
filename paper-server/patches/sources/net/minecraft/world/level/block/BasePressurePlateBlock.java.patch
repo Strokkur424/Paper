@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/world/level/block/BasePressurePlateBlock.java b/net/minecraft/world/level/block/BasePressurePlateBlock.java
+index f6f685ba9f584f65414931b3376d63a75f5e5a38..f2d7c5fc0339a62c4fc56aa5871cd999e1136ca6 100644
 --- a/net/minecraft/world/level/block/BasePressurePlateBlock.java
 +++ b/net/minecraft/world/level/block/BasePressurePlateBlock.java
-@@ -90,6 +_,7 @@
+@@ -90,6 +90,7 @@ public abstract class BasePressurePlateBlock extends Block {
          final InsideBlockEffectApplier effectApplier,
          final boolean isPrecise
      ) {
@@ -8,7 +16,7 @@
          if (!level.isClientSide()) {
              int signal = this.getSignalForState(state);
              if (signal == 0) {
-@@ -102,6 +_,16 @@
+@@ -102,6 +103,16 @@ public abstract class BasePressurePlateBlock extends Block {
          int signal = this.getSignalStrength(level, pos);
          boolean wasPressed = oldSignal > 0;
          boolean isPressed = signal > 0;
@@ -25,7 +33,7 @@
          if (oldSignal != signal) {
              BlockState newState = this.setSignalForState(state, signal);
              level.setBlock(pos, newState, Block.UPDATE_CLIENTS);
-@@ -150,7 +_,13 @@
+@@ -150,7 +161,13 @@ public abstract class BasePressurePlateBlock extends Block {
      }
  
      protected static int getEntityCount(final Level level, final AABB entityDetectionBox, final Class<? extends Entity> entityClass) {

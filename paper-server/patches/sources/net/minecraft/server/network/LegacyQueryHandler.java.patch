@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/server/network/LegacyQueryHandler.java b/net/minecraft/server/network/LegacyQueryHandler.java
+index ae00fda333e23daac4ab8256992bd2fc5b544f30..a17ee0e63b34f3adadc3ae3d09da13c8a37b65c1 100644
 --- a/net/minecraft/server/network/LegacyQueryHandler.java
 +++ b/net/minecraft/server/network/LegacyQueryHandler.java
-@@ -14,6 +_,7 @@
+@@ -14,6 +14,7 @@ import org.slf4j.Logger;
  public class LegacyQueryHandler extends ChannelInboundHandlerAdapter {
      private static final Logger LOGGER = LogUtils.getLogger();
      private final ServerInfo server;
@@ -8,7 +16,7 @@
  
      public LegacyQueryHandler(final ServerInfo server) {
          this.server = server;
-@@ -22,6 +_,17 @@
+@@ -22,6 +23,17 @@ public class LegacyQueryHandler extends ChannelInboundHandlerAdapter {
      @Override
      public void channelRead(final ChannelHandlerContext ctx, final Object msg) {
          ByteBuf in = (ByteBuf)msg;
@@ -26,7 +34,7 @@
          in.markReaderIndex();
          boolean connectNormally = true;
  
-@@ -33,9 +_,19 @@
+@@ -33,9 +45,19 @@ public class LegacyQueryHandler extends ChannelInboundHandlerAdapter {
  
                  SocketAddress socket = ctx.channel().remoteAddress();
                  int length = in.readableBytes();
@@ -48,7 +56,7 @@
                      sendFlushAndClose(ctx, createLegacyDisconnectPacket(ctx.alloc(), body));
                  } else {
                      if (in.readUnsignedByte() != 1) {
-@@ -43,16 +_,39 @@
+@@ -43,16 +65,39 @@ public class LegacyQueryHandler extends ChannelInboundHandlerAdapter {
                      }
  
                      if (in.isReadable()) {
@@ -66,12 +74,10 @@
 +                        // Paper end - Replace below
                      } else {
 -                        LOGGER.debug("Ping: (1.4-1.5.x) from {}", socket);
--                    }
--
--                    String body = createVersion1Response(this.server);
 +                        LOGGER.debug("Ping: (1.4-1.5.x) from {}", net.minecraft.server.MinecraftServer.getServer().logIPs() ? socket : "<ip address withheld>"); // Paper - Respect logIPs option
-+                    }
-+
+                     }
+ 
+-                    String body = createVersion1Response(this.server);
 +                    // Paper start - Call PaperServerListPingEvent and use results
 +                    if (body == null) {
 +                        com.destroystokyo.paper.event.server.PaperServerListPingEvent event = com.destroystokyo.paper.network.PaperLegacyStatusClient.processRequest(net.minecraft.server.MinecraftServer.getServer(), (java.net.InetSocketAddress) socket, 127, null); // Paper
@@ -96,11 +102,10 @@
                      sendFlushAndClose(ctx, createLegacyDisconnectPacket(ctx.alloc(), body));
                  }
  
-@@ -110,6 +_,96 @@
-             server.getMaxPlayers()
+@@ -111,6 +156,96 @@ public class LegacyQueryHandler extends ChannelInboundHandlerAdapter {
          );
      }
-+
+ 
 +    // Paper start
 +    private static @org.jspecify.annotations.Nullable String readLegacyString(final ByteBuf buf) {
 +        int size = buf.readShort() * Character.BYTES;
@@ -190,6 +195,7 @@
 +        }
 +    }
 +    // Paper end
- 
++
      private static void sendFlushAndClose(final ChannelHandlerContext ctx, final ByteBuf out) {
          ctx.pipeline().firstContext().writeAndFlush(out).addListener(ChannelFutureListener.CLOSE);
+     }

@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/world/entity/ai/village/VillageSiege.java b/net/minecraft/world/entity/ai/village/VillageSiege.java
+index 0edbbbb738f067e477578850a5b939b5105b9b4b..eca08fd41469b09aced3f3a5ccb316930e90e4be 100644
 --- a/net/minecraft/world/entity/ai/village/VillageSiege.java
 +++ b/net/minecraft/world/entity/ai/village/VillageSiege.java
-@@ -102,11 +_,12 @@
+@@ -102,11 +102,12 @@ public class VillageSiege implements CustomSpawner {
                  zombie.finalizeSpawn(level, level.getCurrentDifficultyAt(zombie.blockPosition()), EntitySpawnReason.EVENT, null);
              } catch (Exception e) {
                  LOGGER.warn("Failed to create zombie for village siege at {}", spawnPos, e);

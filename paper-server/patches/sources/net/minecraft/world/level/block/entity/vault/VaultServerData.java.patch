@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/world/level/block/entity/vault/VaultServerData.java b/net/minecraft/world/level/block/entity/vault/VaultServerData.java
+index ff96b489201860bde5ded2b4e8632a3fa2c0544d..fe482c2f1c56e6575318ea796c67c4cedaa9638d 100644
 --- a/net/minecraft/world/level/block/entity/vault/VaultServerData.java
 +++ b/net/minecraft/world/level/block/entity/vault/VaultServerData.java
-@@ -64,7 +_,12 @@
+@@ -64,7 +64,12 @@ public class VaultServerData {
  
      @VisibleForTesting
      public void addToRewardedPlayers(final Player player) {
@@ -14,7 +22,7 @@
          if (this.rewardedPlayers.size() > 128) {
              Iterator<UUID> iterator = this.rewardedPlayers.iterator();
              if (iterator.hasNext()) {
-@@ -74,6 +_,7 @@
+@@ -74,6 +79,7 @@ public class VaultServerData {
          }
  
          this.markChanged();
@@ -22,7 +30,7 @@
      }
  
      public long stateUpdatingResumesAt() {
-@@ -129,4 +_,15 @@
+@@ -129,4 +135,15 @@ public class VaultServerData {
      public float ejectionProgress() {
          return this.totalEjectionsNeeded == 1 ? 1.0F : 1.0F - Mth.inverseLerp(this.getItemsToEject().size(), 1.0F, this.totalEjectionsNeeded);
      }

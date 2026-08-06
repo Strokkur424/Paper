@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/world/entity/animal/turtle/Turtle.java b/net/minecraft/world/entity/animal/turtle/Turtle.java
+index 5839420d937738175a3efd927127211a052c5a7e..7ee9d2f25178ac97b74d0f2c3619ddfaf2004bea 100644
 --- a/net/minecraft/world/entity/animal/turtle/Turtle.java
 +++ b/net/minecraft/world/entity/animal/turtle/Turtle.java
-@@ -282,7 +_,7 @@
+@@ -282,7 +282,7 @@ public class Turtle extends Animal {
  
      @Override
      public void thunderHit(final ServerLevel level, final LightningBolt lightningBolt) {
@@ -9,7 +17,7 @@
      }
  
      @Override
-@@ -309,6 +_,10 @@
+@@ -309,6 +309,10 @@ public class Turtle extends Animal {
              if (loveCause == null && this.partner.getLoveCause() != null) {
                  loveCause = this.partner.getLoveCause();
              }
@@ -20,7 +28,7 @@
  
              if (loveCause != null) {
                  loveCause.awardStat(Stats.ANIMALS_BRED);
-@@ -322,7 +_,7 @@
+@@ -322,7 +326,7 @@ public class Turtle extends Animal {
              this.partner.resetLove();
              RandomSource random = this.animal.getRandom();
              if (getServerLevel(this.level).getGameRules().get(GameRules.MOB_DROPS)) {
@@ -29,7 +37,7 @@
              }
          }
      }
-@@ -345,7 +_,7 @@
+@@ -345,7 +349,7 @@ public class Turtle extends Animal {
                  && (
                      this.turtle.hasEgg()
                          || this.turtle.getRandom().nextInt(reducedTickDelay(700)) == 0 && !this.turtle.homePos.closerToCenterThan(this.turtle.position(), 64.0)
@@ -38,7 +46,7 @@
          }
  
          @Override
-@@ -453,14 +_,20 @@
+@@ -453,14 +457,20 @@ public class Turtle extends Animal {
              BlockPos turtlePos = this.turtle.blockPosition();
              if (!this.turtle.isInWater() && this.isReachedTarget()) {
                  if (this.turtle.layEggCounter < 1) {

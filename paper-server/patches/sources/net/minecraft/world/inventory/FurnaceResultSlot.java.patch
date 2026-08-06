@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/world/inventory/FurnaceResultSlot.java b/net/minecraft/world/inventory/FurnaceResultSlot.java
+index 0abb50b4d80c8d034e130b78cb0950ecb97fd84f..11c708ce13d087aa42cf308fba675dc760e03cbf 100644
 --- a/net/minecraft/world/inventory/FurnaceResultSlot.java
 +++ b/net/minecraft/world/inventory/FurnaceResultSlot.java
-@@ -45,7 +_,7 @@
+@@ -45,7 +45,7 @@ public class FurnaceResultSlot extends Slot {
      protected void checkTakeAchievements(final ItemStack carried) {
          carried.onCraftedBy(this.player, this.removeCount);
          if (this.player instanceof ServerPlayer serverPlayer && this.container instanceof AbstractFurnaceBlockEntity abstractFurnaceBlockEntity) {

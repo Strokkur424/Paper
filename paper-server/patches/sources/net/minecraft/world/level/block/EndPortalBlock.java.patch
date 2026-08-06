@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/world/level/block/EndPortalBlock.java b/net/minecraft/world/level/block/EndPortalBlock.java
+index 3c5f0c279d299d86c66c3afd0fbda28fcc6efdf7..2d48b70e18547330078e49c8f01f2f39b08d274c 100644
 --- a/net/minecraft/world/level/block/EndPortalBlock.java
 +++ b/net/minecraft/world/level/block/EndPortalBlock.java
-@@ -66,8 +_,14 @@
+@@ -66,8 +66,14 @@ public class EndPortalBlock extends BaseEntityBlock implements Portal {
          final InsideBlockEffectApplier effectApplier,
          final boolean isPrecise
      ) {
@@ -15,7 +23,7 @@
                  player.showEndCredits();
              } else {
                  entity.setAsInsidePortal(this, pos);
-@@ -78,8 +_,7 @@
+@@ -78,8 +84,7 @@ public class EndPortalBlock extends BaseEntityBlock implements Portal {
      @Override
      public @Nullable TeleportTransition getPortalDestination(final ServerLevel currentLevel, final Entity entity, final BlockPos portalEntryPos) {
          LevelData.RespawnData respawnData = currentLevel.getRespawnData();
@@ -25,7 +33,7 @@
          ResourceKey<Level> newDimension = fromEnd ? respawnData.dimension() : Level.END;
          BlockPos spawnBlockPos = fromEnd ? respawnData.pos() : ServerLevel.END_SPAWN_POINT;
          ServerLevel newLevel = currentLevel.getServer().getLevel(newDimension);
-@@ -92,7 +_,7 @@
+@@ -92,7 +97,7 @@ public class EndPortalBlock extends BaseEntityBlock implements Portal {
          float xRot;
          Set<Relative> relatives;
          if (!fromEnd) {
@@ -34,7 +42,7 @@
              yRot = Direction.WEST.toYRot();
              xRot = 0.0F;
              relatives = Relative.union(Relative.DELTA, Set.of(Relative.X_ROT));
-@@ -104,15 +_,32 @@
+@@ -104,15 +109,32 @@ public class EndPortalBlock extends BaseEntityBlock implements Portal {
              xRot = respawnData.pitch();
              relatives = Relative.union(Relative.DELTA, Relative.ROTATION);
              if (entity instanceof ServerPlayer serverPlayer) {

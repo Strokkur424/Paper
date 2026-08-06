@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/world/level/storage/loot/functions/ExplorationMapFunction.java b/net/minecraft/world/level/storage/loot/functions/ExplorationMapFunction.java
+index db7dbf2055561e4efc8e67f165f43194b71b6de6..d53fdb29623802f3001706bd750da1ca88a694a9 100644
 --- a/net/minecraft/world/level/storage/loot/functions/ExplorationMapFunction.java
 +++ b/net/minecraft/world/level/storage/loot/functions/ExplorationMapFunction.java
-@@ -84,8 +_,25 @@
+@@ -84,8 +84,25 @@ public class ExplorationMapFunction extends LootItemConditionalFunction {
          Vec3 lootPos = context.getOptionalParameter(LootContextParams.ORIGIN);
          if (lootPos != null) {
              ServerLevel level = context.getLevel();

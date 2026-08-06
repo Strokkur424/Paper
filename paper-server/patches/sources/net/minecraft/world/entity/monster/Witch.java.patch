@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/world/entity/monster/Witch.java b/net/minecraft/world/entity/monster/Witch.java
+index 27d138af6859f6e91cffee92953259884c734d75..b259b84556f0759dff1e1587b09995cbf80480e3 100644
 --- a/net/minecraft/world/entity/monster/Witch.java
 +++ b/net/minecraft/world/entity/monster/Witch.java
-@@ -124,8 +_,14 @@
+@@ -124,8 +124,14 @@ public class Witch extends Raider implements RangedAttackMob {
                      ItemStack itemStack = this.getMainHandItem();
                      this.setItemSlot(EquipmentSlot.MAINHAND, ItemStack.EMPTY);
                      PotionContents potion = itemStack.get(DataComponents.POTION_CONTENTS);
@@ -16,7 +24,7 @@
                      }
  
                      this.gameEvent(GameEvent.DRINK);
-@@ -149,26 +_,7 @@
+@@ -149,26 +155,7 @@ public class Witch extends Raider implements RangedAttackMob {
                  }
  
                  if (potion != null) {
@@ -44,7 +52,7 @@
                  }
              }
  
-@@ -180,6 +_,23 @@
+@@ -180,6 +167,23 @@ public class Witch extends Raider implements RangedAttackMob {
          super.aiStep();
      }
  
@@ -68,7 +76,7 @@
      @Override
      public SoundEvent getCelebrateSound() {
          return SoundEvents.WITCH_CELEBRATE;
-@@ -246,6 +_,13 @@
+@@ -246,6 +250,13 @@ public class Witch extends Raider implements RangedAttackMob {
  
              if (this.level() instanceof ServerLevel serverLevel) {
                  ItemStack itemStack = PotionContents.createItemStack(Items.SPLASH_POTION, potion);

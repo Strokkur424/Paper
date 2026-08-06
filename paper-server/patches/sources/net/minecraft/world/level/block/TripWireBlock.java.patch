@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/world/level/block/TripWireBlock.java b/net/minecraft/world/level/block/TripWireBlock.java
+index 0a131d61f3bef8ca33d9d26a3a196a17d382fc2a..49510dc0ef82621953be8e485708872bd8b2b88b 100644
 --- a/net/minecraft/world/level/block/TripWireBlock.java
 +++ b/net/minecraft/world/level/block/TripWireBlock.java
-@@ -72,6 +_,7 @@
+@@ -72,6 +72,7 @@ public class TripWireBlock extends Block {
  
      @Override
      public BlockState getStateForPlacement(final BlockPlaceContext context) {
@@ -8,7 +16,7 @@
          BlockGetter level = context.getLevel();
          BlockPos pos = context.getClickedPos();
          return this.defaultBlockState()
-@@ -92,6 +_,7 @@
+@@ -92,6 +93,7 @@ public class TripWireBlock extends Block {
          final BlockState neighbourState,
          final RandomSource random
      ) {
@@ -16,7 +24,7 @@
          return directionToNeighbour.getAxis().isHorizontal()
              ? state.setValue(PROPERTY_BY_DIRECTION.get(directionToNeighbour), this.shouldConnectTo(neighbourState, directionToNeighbour))
              : super.updateShape(state, level, ticks, pos, directionToNeighbour, neighbourPos, neighbourState, random);
-@@ -99,6 +_,7 @@
+@@ -99,6 +101,7 @@ public class TripWireBlock extends Block {
  
      @Override
      protected void onPlace(final BlockState state, final Level level, final BlockPos pos, final BlockState oldState, final boolean movedByPiston) {
@@ -24,7 +32,7 @@
          if (!oldState.is(state.getBlock())) {
              this.updateSource(level, pos, state);
          }
-@@ -106,6 +_,7 @@
+@@ -106,6 +109,7 @@ public class TripWireBlock extends Block {
  
      @Override
      protected void affectNeighborsAfterRemoval(final BlockState state, final ServerLevel level, final BlockPos pos, final boolean movedByPiston) {
@@ -32,7 +40,7 @@
          if (!movedByPiston) {
              this.updateSource(level, pos, state.setValue(POWERED, true));
          }
-@@ -113,6 +_,7 @@
+@@ -113,6 +117,7 @@ public class TripWireBlock extends Block {
  
      @Override
      public BlockState playerWillDestroy(final Level level, final BlockPos pos, final BlockState state, final Player player) {
@@ -40,7 +48,7 @@
          if (!level.isClientSide() && !player.getMainHandItem().isEmpty() && player.getMainHandItem().is(Items.SHEARS)) {
              level.setBlock(pos, state.setValue(DISARMED, true), Block.UPDATE_NONE);
              level.gameEvent(player, GameEvent.SHEAR, pos);
-@@ -122,6 +_,7 @@
+@@ -122,6 +127,7 @@ public class TripWireBlock extends Block {
      }
  
      private void updateSource(final Level level, final BlockPos pos, final BlockState state) {
@@ -48,7 +56,7 @@
          for (Direction direction : new Direction[]{Direction.SOUTH, Direction.WEST}) {
              for (int i = 1; i < 42; i++) {
                  BlockPos testPos = pos.relative(direction, i);
-@@ -154,6 +_,8 @@
+@@ -154,6 +160,8 @@ public class TripWireBlock extends Block {
          final InsideBlockEffectApplier effectApplier,
          final boolean isPrecise
      ) {
@@ -57,7 +65,7 @@
          if (!level.isClientSide()) {
              if (!state.getValue(POWERED) && !level.getBlockTicks().hasScheduledTick(pos, this)) {
                  this.checkPressed(level, pos, List.of(entity));
-@@ -163,6 +_,7 @@
+@@ -163,6 +171,7 @@ public class TripWireBlock extends Block {
  
      @Override
      protected void tick(final BlockState state, final ServerLevel level, final BlockPos pos, final RandomSource random) {
@@ -65,11 +73,10 @@
          if (level.getBlockState(pos).getValue(POWERED)) {
              this.checkPressed(level, pos);
          }
-@@ -186,6 +_,39 @@
-                 }
+@@ -187,6 +196,39 @@ public class TripWireBlock extends Block {
              }
          }
-+
+ 
 +        // CraftBukkit start - Call interact even when triggering connected tripwire
 +        if (wasPressed != shouldBePressed && shouldBePressed && state.getValue(TripWireBlock.ATTACHED)) {
 +            org.bukkit.plugin.PluginManager manager = level.getCraftServer().getPluginManager();
@@ -102,6 +109,7 @@
 +            }
 +        }
 +        // CraftBukkit end
- 
++
          if (shouldBePressed != wasPressed) {
              state = state.setValue(POWERED, shouldBePressed);
+             level.setBlock(pos, state, Block.UPDATE_ALL);

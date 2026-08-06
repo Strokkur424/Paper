@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/world/entity/animal/happyghast/HappyGhast.java b/net/minecraft/world/entity/animal/happyghast/HappyGhast.java
+index 30a65161fedbc9e70067797f06b598c0324455fa..ee400d1bfd24cc738ca02c1ec50332d7cfc9c266 100644
 --- a/net/minecraft/world/entity/animal/happyghast/HappyGhast.java
 +++ b/net/minecraft/world/entity/animal/happyghast/HappyGhast.java
-@@ -308,7 +_,7 @@
+@@ -308,7 +308,7 @@ public class HappyGhast extends Animal {
      @Override
      protected void addPassenger(final Entity passenger) {
          if (!this.isVehicle()) {
@@ -9,7 +17,7 @@
          }
  
          super.addPassenger(passenger);
-@@ -322,16 +_,21 @@
+@@ -322,16 +322,21 @@ public class HappyGhast extends Animal {
      }
  
      @Override

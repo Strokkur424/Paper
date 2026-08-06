@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/world/item/EnderpearlItem.java b/net/minecraft/world/item/EnderpearlItem.java
+index 95b4e6207a60bf5ccecf70263d0b1479c4d64a99..17a005321601b0fef71604e4468134f1e98cd974 100644
 --- a/net/minecraft/world/item/EnderpearlItem.java
 +++ b/net/minecraft/world/item/EnderpearlItem.java
-@@ -21,22 +_,42 @@
+@@ -21,22 +21,42 @@ public class EnderpearlItem extends Item {
      @Override
      public InteractionResult use(final Level level, final Player player, final InteractionHand hand) {
          ItemStack itemStack = player.getItemInHand(hand);

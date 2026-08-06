@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/core/RegistrySetBuilder.java b/net/minecraft/core/RegistrySetBuilder.java
+index c46ca4a1a458114a8714717a063d673d8e9155f1..f15fb39d6736506875d08b5e44734d65d94787d1 100644
 --- a/net/minecraft/core/RegistrySetBuilder.java
 +++ b/net/minecraft/core/RegistrySetBuilder.java
-@@ -41,6 +_,13 @@
+@@ -41,6 +41,13 @@ public class RegistrySetBuilder {
          final Map<ResourceKey<T>, Holder.Reference<T>> entries
      ) {
          return new RegistrySetBuilder.EmptyTagRegistryLookup<T>(owner) {
@@ -14,7 +22,7 @@
              @Override
              public ResourceKey<? extends Registry<? extends T>> key() {
                  return key;
-@@ -123,6 +_,13 @@
+@@ -123,6 +130,13 @@ public class RegistrySetBuilder {
                      public <T> Optional<RegistryOps.RegistryInfo<T>> lookup(final ResourceKey<? extends Registry<? extends T>> registryKey) {
                          return getEntry(registryKey).map(Entry::opsInfo);
                      }

@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/server/ReloadableServerResources.java b/net/minecraft/server/ReloadableServerResources.java
+index f378ac8ced931990907cebe7cd909eb05be8a2c4..8921b17a2caf39ae4b892238e926066c1ebe0330 100644
 --- a/net/minecraft/server/ReloadableServerResources.java
 +++ b/net/minecraft/server/ReloadableServerResources.java
-@@ -44,7 +_,9 @@
+@@ -44,7 +44,9 @@ public class ReloadableServerResources {
          this.postponedTags = postponedTags;
          this.newComponents = newComponents;
          this.recipes = new RecipeManager(loadingContext);
@@ -11,7 +19,7 @@
          this.advancements = new ServerAdvancementManager(loadingContext);
          this.functionLibrary = new ServerFunctionLibrary(functionCompilationPermissions, this.commands.getDispatcher());
      }
-@@ -99,6 +_,14 @@
+@@ -99,6 +101,14 @@ public class ReloadableServerResources {
                                  functionCompilationPermissions,
                                  (List<DataComponentInitializers.PendingComponents<?>>)pendingComponents
                              );

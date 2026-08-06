@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/world/level/block/LayeredCauldronBlock.java b/net/minecraft/world/level/block/LayeredCauldronBlock.java
+index 0d58c1bdeb1a95300751cffd689873c413189f0c..49781ad04cbcc861f4e5fbf04a6213c43b4bb544 100644
 --- a/net/minecraft/world/level/block/LayeredCauldronBlock.java
 +++ b/net/minecraft/world/level/block/LayeredCauldronBlock.java
-@@ -90,38 +_,57 @@
+@@ -90,38 +90,57 @@ public class LayeredCauldronBlock extends AbstractCauldronBlock {
          final InsideBlockEffectApplier effectApplier,
          final boolean isPrecise
      ) {
@@ -67,7 +75,7 @@
              level.gameEvent(GameEvent.BLOCK_CHANGE, pos, GameEvent.Context.of(newState));
          }
      }
-@@ -140,7 +_,11 @@
+@@ -140,7 +159,11 @@ public class LayeredCauldronBlock extends AbstractCauldronBlock {
      protected void receiveStalactiteDrip(final BlockState state, final Level level, final BlockPos pos, final Fluid fluid) {
          if (!this.isFull(state)) {
              BlockState newState = state.setValue(LEVEL, state.getValue(LEVEL) + 1);

@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/world/item/component/ChargedProjectiles.java b/net/minecraft/world/item/component/ChargedProjectiles.java
+index cff556eebea4ee3c6291ab144e084485a7e39a79..86acd69568b89b6f080d4326df0991fd9c78eb40 100644
 --- a/net/minecraft/world/item/component/ChargedProjectiles.java
 +++ b/net/minecraft/world/item/component/ChargedProjectiles.java
-@@ -27,6 +_,7 @@
+@@ -27,6 +27,7 @@ public record ChargedProjectiles(List<ItemStackTemplate> items) implements Toolt
          .xmap(ChargedProjectiles::new, projectiles -> projectiles.items);
      public static final StreamCodec<RegistryFriendlyByteBuf, ChargedProjectiles> STREAM_CODEC = ItemStackTemplate.STREAM_CODEC
          .apply(ByteBufCodecs.list(1024))

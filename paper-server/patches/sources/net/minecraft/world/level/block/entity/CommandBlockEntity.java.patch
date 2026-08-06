@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/world/level/block/entity/CommandBlockEntity.java b/net/minecraft/world/level/block/entity/CommandBlockEntity.java
+index b0d14b9d311bccbbc46e29f628fb02b9770122c9..e4d041d3a78ed7bea262efe36982cebbd0971684 100644
 --- a/net/minecraft/world/level/block/entity/CommandBlockEntity.java
 +++ b/net/minecraft/world/level/block/entity/CommandBlockEntity.java
-@@ -27,6 +_,18 @@
+@@ -27,6 +27,18 @@ public class CommandBlockEntity extends BlockEntity {
      private boolean auto = false;
      private boolean conditionMet = false;
      private final BaseCommandBlock commandBlock = new BaseCommandBlock() {
@@ -19,7 +27,7 @@
          @Override
          public void setCommand(final String command) {
              super.setCommand(command);
-@@ -47,7 +_,7 @@
+@@ -47,7 +59,7 @@ public class CommandBlockEntity extends BlockEntity {
                  Vec3.atCenterOf(CommandBlockEntity.this.worldPosition),
                  new Vec2(0.0F, facing.toYRot()),
                  level,

@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/world/level/block/BeehiveBlock.java b/net/minecraft/world/level/block/BeehiveBlock.java
+index 1d46ff3dfc45d0885f816b6aaf656f1062ba7561..e071dae775a5dc95eb0d5d6c080e623aeaa97385 100644
 --- a/net/minecraft/world/level/block/BeehiveBlock.java
 +++ b/net/minecraft/world/level/block/BeehiveBlock.java
-@@ -95,8 +_,9 @@
+@@ -95,8 +95,9 @@ public class BeehiveBlock extends BaseEntityBlock {
          final BlockState state,
          final @Nullable BlockEntity blockEntity,
          final ItemStack destroyedWith
@@ -11,7 +19,7 @@
          if (!level.isClientSide() && blockEntity instanceof BeehiveBlockEntity beehiveBlockEntity) {
              if (!EnchantmentHelper.hasTag(destroyedWith, EnchantmentTags.PREVENTS_BEE_SPAWNS_WHEN_MINING)) {
                  beehiveBlockEntity.emptyAllLivingFromHive(player, state, BeehiveBlockEntity.BeeReleaseStatus.EMERGENCY);
-@@ -104,7 +_,7 @@
+@@ -104,7 +105,7 @@ public class BeehiveBlock extends BaseEntityBlock {
                  this.angerNearbyBees(level, pos);
              }
  
@@ -20,7 +28,7 @@
          }
      }
  
-@@ -128,7 +_,7 @@
+@@ -128,7 +129,7 @@ public class BeehiveBlock extends BaseEntityBlock {
              for (Bee bee : beesToAnger) {
                  if (bee.getTarget() == null) {
                      Player angerTarget = Util.getRandom(playersToBeAngryAt, level.getRandom());
@@ -29,7 +37,7 @@
                  }
              }
          }
-@@ -143,7 +_,7 @@
+@@ -143,7 +144,7 @@ public class BeehiveBlock extends BaseEntityBlock {
          final BlockPos pos
      ) {
          dropFromBlockInteractLootTable(
@@ -38,7 +46,7 @@
          );
      }
  
-@@ -162,7 +_,19 @@
+@@ -162,7 +163,19 @@ public class BeehiveBlock extends BaseEntityBlock {
          if (honeyLevel >= 5) {
              Item item = itemStack.getItem();
              if (level instanceof ServerLevel serverLevel && itemStack.is(Items.SHEARS)) {

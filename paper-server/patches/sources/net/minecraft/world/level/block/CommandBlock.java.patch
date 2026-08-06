@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/world/level/block/CommandBlock.java b/net/minecraft/world/level/block/CommandBlock.java
+index e37a74ee9bf4f1fbaee40400ab1436adbfb923f7..8cf4410a41ccd2f7e253e5400ca679a498aea4db 100644
 --- a/net/minecraft/world/level/block/CommandBlock.java
 +++ b/net/minecraft/world/level/block/CommandBlock.java
-@@ -69,9 +_,14 @@
+@@ -69,9 +69,14 @@ public class CommandBlock extends BaseEntityBlock implements GameMasterBlock {
          }
      }
  
@@ -16,7 +24,7 @@
              commandBlock.setPowered(isPowered);
              if (isPowered) {
                  if (commandBlock.isAutomatic() || commandBlock.getMode() == CommandBlockEntity.Mode.SEQUENCE) {
-@@ -128,7 +_,7 @@
+@@ -128,7 +133,7 @@ public class CommandBlock extends BaseEntityBlock implements GameMasterBlock {
      protected InteractionResult useWithoutItem(
          final BlockState state, final Level level, final BlockPos pos, final Player player, final BlockHitResult hitResult
      ) {

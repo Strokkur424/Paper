@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/world/level/levelgen/structure/structures/OceanRuinPieces.java b/net/minecraft/world/level/levelgen/structure/structures/OceanRuinPieces.java
+index 5e91817a99478a5da91b96f3f056240fd52d9516..922ff49039689dea8d9b939cc26fe3899a442779 100644
 --- a/net/minecraft/world/level/levelgen/structure/structures/OceanRuinPieces.java
 +++ b/net/minecraft/world/level/levelgen/structure/structures/OceanRuinPieces.java
-@@ -321,16 +_,22 @@
+@@ -321,16 +321,22 @@ public class OceanRuinPieces {
              final String markerId, final BlockPos position, final ServerLevelAccessor level, final RandomSource random, final BoundingBox chunkBB
          ) {
              if ("chest".equals(markerId)) {

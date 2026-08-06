@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/core/cauldron/CauldronInteraction.java b/net/minecraft/core/cauldron/CauldronInteraction.java
+index 79d54dc4a7131f9393041d9356ad96db5fb59dc9..e84b4a3561df23dbf288efff9f36fd1ef985c11f 100644
 --- a/net/minecraft/core/cauldron/CauldronInteraction.java
 +++ b/net/minecraft/core/cauldron/CauldronInteraction.java
-@@ -15,9 +_,9 @@
+@@ -15,9 +15,9 @@ import net.minecraft.world.level.block.state.BlockState;
  
  @FunctionalInterface
  public interface CauldronInteraction {

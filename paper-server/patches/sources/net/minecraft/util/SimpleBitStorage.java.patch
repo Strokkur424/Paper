@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/util/SimpleBitStorage.java b/net/minecraft/util/SimpleBitStorage.java
+index c2a6c01d16c6c562a1fdee2eec2c838fc1355dca..74dcdbb1f701c600cb5aca247a5a832fd05d7f03 100644
 --- a/net/minecraft/util/SimpleBitStorage.java
 +++ b/net/minecraft/util/SimpleBitStorage.java
-@@ -204,8 +_,8 @@
+@@ -204,8 +204,8 @@ public class SimpleBitStorage implements BitStorage {
      private final long mask;
      private final int size;
      private final int valuesPerLong;
@@ -11,7 +19,7 @@
      private final int divideShift;
  
      public SimpleBitStorage(final int bits, final int size, final int[] values) {
-@@ -248,8 +_,8 @@
+@@ -248,8 +248,8 @@ public class SimpleBitStorage implements BitStorage {
          this.mask = (1L << bits) - 1L;
          this.valuesPerLong = (char)(64 / bits);
          int row = 3 * (this.valuesPerLong - 1);
@@ -22,7 +30,7 @@
          this.divideShift = MAGIC[row + 2];
          int requiredLength = (size + this.valuesPerLong - 1) / this.valuesPerLong;
          if (data != null) {
-@@ -264,15 +_,11 @@
+@@ -264,15 +264,11 @@ public class SimpleBitStorage implements BitStorage {
      }
  
      private int cellIndex(final int bitIndex) {
@@ -40,7 +48,7 @@
          int cellIndex = this.cellIndex(index);
          long cellValue = this.data[cellIndex];
          int bitIndex = (index - cellIndex * this.valuesPerLong) * this.bits;
-@@ -282,9 +_,7 @@
+@@ -282,9 +278,7 @@ public class SimpleBitStorage implements BitStorage {
      }
  
      @Override
@@ -51,7 +59,7 @@
          int cellIndex = this.cellIndex(index);
          long cellValue = this.data[cellIndex];
          int bitIndex = (index - cellIndex * this.valuesPerLong) * this.bits;
-@@ -292,8 +_,7 @@
+@@ -292,8 +286,7 @@ public class SimpleBitStorage implements BitStorage {
      }
  
      @Override

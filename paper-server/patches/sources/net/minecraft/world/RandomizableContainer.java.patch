@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/world/RandomizableContainer.java b/net/minecraft/world/RandomizableContainer.java
+index 4d7af8c1c4026d570f457e8f9c33764a0d76f589..de8e3a0961f76b882eeaad8f69295d6ee860e988 100644
 --- a/net/minecraft/world/RandomizableContainer.java
 +++ b/net/minecraft/world/RandomizableContainer.java
-@@ -26,7 +_,7 @@
+@@ -26,7 +26,7 @@ public interface RandomizableContainer extends Container {
  
      void setLootTable(final @Nullable ResourceKey<LootTable> lootTable);
  
@@ -9,7 +17,7 @@
          this.setLootTable(lootTable);
          this.setLootTableSeed(seed);
      }
-@@ -50,8 +_,9 @@
+@@ -50,8 +50,9 @@ public interface RandomizableContainer extends Container {
      default boolean tryLoadLootTable(final ValueInput base) {
          ResourceKey<LootTable> lootTable = base.read("LootTable", LootTable.KEY_CODEC).orElse(null);
          this.setLootTable(lootTable);
@@ -20,7 +28,7 @@
      }
  
      default boolean trySaveLootTable(final ValueOutput base) {
-@@ -61,25 +_,41 @@
+@@ -61,25 +62,41 @@ public interface RandomizableContainer extends Container {
          }
  
          base.store("LootTable", LootTable.KEY_CODEC, lootTable);
@@ -64,7 +72,7 @@
              LootParams.Builder params = new LootParams.Builder((ServerLevel)level).withParameter(LootContextParams.ORIGIN, Vec3.atCenterOf(worldPosition));
              if (player != null) {
                  params.withLuck(player.getLuck()).withParameter(LootContextParams.THIS_ENTITY, player);
-@@ -88,4 +_,16 @@
+@@ -88,4 +105,16 @@ public interface RandomizableContainer extends Container {
              lootTable.fill(this, params.create(LootContextParamSets.CHEST), this.getLootTableSeed());
          }
      }

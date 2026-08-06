@@ -1,14 +1,21 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/world/level/ServerLevelAccessor.java b/net/minecraft/world/level/ServerLevelAccessor.java
+index 6b794f59d7dbe5a28e8b70d49d262873fd00df3d..ead3592d6c9529b5315a81962164b531734bd5be 100644
 --- a/net/minecraft/world/level/ServerLevelAccessor.java
 +++ b/net/minecraft/world/level/ServerLevelAccessor.java
-@@ -11,6 +_,17 @@
+@@ -11,6 +11,17 @@ public interface ServerLevelAccessor extends LevelAccessor {
      DifficultyInstance getCurrentDifficultyAt(BlockPos pos);
  
      default void addFreshEntityWithPassengers(final Entity entity) {
 -        entity.getSelfAndPassengers().forEach(this::addFreshEntity);
--    }
 +        // CraftBukkit start
 +        this.addFreshEntityWithPassengers(entity, org.bukkit.event.entity.CreatureSpawnEvent.SpawnReason.DEFAULT);
-+    }
+     }
 +
 +    default void addFreshEntityWithPassengers(Entity entity, org.bukkit.event.entity.CreatureSpawnEvent.SpawnReason reason) {
 +        entity.getSelfAndPassengers().forEach((e) -> this.addFreshEntity(e, reason));

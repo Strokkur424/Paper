@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/world/item/MinecartItem.java b/net/minecraft/world/item/MinecartItem.java
+index 384cbb316f97432721cf2bb6b7f8757ff120d838..2ce6aecf5e34528c9601ce2f071bebd6c2f47243 100644
 --- a/net/minecraft/world/item/MinecartItem.java
 +++ b/net/minecraft/world/item/MinecartItem.java
-@@ -59,7 +_,13 @@
+@@ -59,7 +59,13 @@ public class MinecartItem extends Item {
          }
  
          if (level instanceof ServerLevel serverLevel) {

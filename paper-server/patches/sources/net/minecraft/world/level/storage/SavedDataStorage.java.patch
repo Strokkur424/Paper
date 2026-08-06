@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/world/level/storage/SavedDataStorage.java b/net/minecraft/world/level/storage/SavedDataStorage.java
+index 5449e823f841c5e48a4dfd26892d10fee5815118..f359e53024019f35aaa5cd8477da708bda2fc57a 100644
 --- a/net/minecraft/world/level/storage/SavedDataStorage.java
 +++ b/net/minecraft/world/level/storage/SavedDataStorage.java
-@@ -155,7 +_,7 @@
+@@ -155,7 +155,7 @@ public class SavedDataStorage implements AutoCloseable {
  
          int threads = Util.maxAllowedExecutorThreads();
          int taskCount = tagsToSave.size();
@@ -9,7 +17,7 @@
              this.pendingWriteFuture = this.pendingWriteFuture.thenCompose(ignored -> {
                  List<CompletableFuture<?>> tasks = new ArrayList<>(threads);
                  int bucketSize = Mth.positiveCeilDiv(taskCount, threads);
-@@ -176,7 +_,7 @@
+@@ -176,7 +176,7 @@ public class SavedDataStorage implements AutoCloseable {
                      ignored -> CompletableFuture.allOf(
                          tagsToSave.entrySet()
                              .stream()

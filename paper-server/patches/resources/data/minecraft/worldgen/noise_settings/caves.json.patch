@@ -1,6 +1,14 @@
+From 11b7f145bbc9efa8236ac93d8dcb0142c5492580 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/data/minecraft/worldgen/noise_settings/caves.json b/data/minecraft/worldgen/noise_settings/caves.json
+index 1cb3db66547140f53d81d67304e7efd9d4f87faa..d25ca16f515dbd8d71a18881d22c12cf12697bfc 100644
 --- a/data/minecraft/worldgen/noise_settings/caves.json
 +++ b/data/minecraft/worldgen/noise_settings/caves.json
-@@ -94,7 +_,8 @@
+@@ -94,7 +94,8 @@
          "if_true": {
            "type": "minecraft:not",
            "invert": {
@@ -10,7 +18,7 @@
              "false_at_and_above": {
                "below_top": 0
              },
-@@ -114,7 +_,8 @@
+@@ -114,7 +115,8 @@
        {
          "type": "minecraft:condition",
          "if_true": {

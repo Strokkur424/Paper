@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/world/item/enchantment/effects/ReplaceBlock.java b/net/minecraft/world/item/enchantment/effects/ReplaceBlock.java
+index e6da69fbfba0e4ff9d84276b1893f3647319cbdd..6e9e80a7bf144b9da124986bfabd55291d2c9562 100644
 --- a/net/minecraft/world/item/enchantment/effects/ReplaceBlock.java
 +++ b/net/minecraft/world/item/enchantment/effects/ReplaceBlock.java
-@@ -30,7 +_,7 @@
+@@ -30,7 +30,7 @@ public record ReplaceBlock(Vec3i offset, Optional<BlockPredicate> predicate, Blo
      public void apply(final ServerLevel serverLevel, final int enchantmentLevel, final EnchantedItemInUse item, final Entity entity, final Vec3 position) {
          BlockPos pos = BlockPos.containing(position).offset(this.offset);
          if (this.predicate.map(p -> p.test(serverLevel, pos)).orElse(true)

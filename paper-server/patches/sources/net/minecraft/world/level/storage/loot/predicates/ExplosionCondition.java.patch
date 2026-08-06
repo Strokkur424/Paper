@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/world/level/storage/loot/predicates/ExplosionCondition.java b/net/minecraft/world/level/storage/loot/predicates/ExplosionCondition.java
+index 96e824600f0e33fc7cd4db74edba45172c12eb48..e3dcc8dfb2d393d886fe49fb08023d1533f2b3e0 100644
 --- a/net/minecraft/world/level/storage/loot/predicates/ExplosionCondition.java
 +++ b/net/minecraft/world/level/storage/loot/predicates/ExplosionCondition.java
-@@ -30,7 +_,8 @@
+@@ -30,7 +30,8 @@ public class ExplosionCondition implements LootItemCondition {
          if (explosionRadius != null) {
              RandomSource random = context.getRandom();
              float probability = 1.0F / explosionRadius;

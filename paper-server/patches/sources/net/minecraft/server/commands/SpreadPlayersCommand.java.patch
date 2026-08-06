@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/server/commands/SpreadPlayersCommand.java b/net/minecraft/server/commands/SpreadPlayersCommand.java
+index a63d3874086b31c4491a197a0867bfaddd949385..f6f7d738ceecab197607a2017616b03bac8b4de7 100644
 --- a/net/minecraft/server/commands/SpreadPlayersCommand.java
 +++ b/net/minecraft/server/commands/SpreadPlayersCommand.java
-@@ -265,6 +_,7 @@
+@@ -265,6 +265,7 @@ public class SpreadPlayersCommand {
                  entity.getYRot(),
                  entity.getXRot(),
                  true

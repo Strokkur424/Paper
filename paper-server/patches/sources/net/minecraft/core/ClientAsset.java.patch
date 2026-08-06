@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/core/ClientAsset.java b/net/minecraft/core/ClientAsset.java
+index 7d9a94c87a6a37196e6f9511dd165e40fdd6176f..8840654f989b93c61efe41f5890fc5448c46f981 100644
 --- a/net/minecraft/core/ClientAsset.java
 +++ b/net/minecraft/core/ClientAsset.java
-@@ -23,7 +_,7 @@
+@@ -23,7 +23,7 @@ public interface ClientAsset {
              .map(ClientAsset.ResourceTexture::new, ClientAsset.ResourceTexture::id);
  
          public ResourceTexture(final Identifier texture) {

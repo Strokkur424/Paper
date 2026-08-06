@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/world/entity/monster/EnderMan.java b/net/minecraft/world/entity/monster/EnderMan.java
+index 38e1012ece4a4b36c8ce00a4a36614c65ad66d01..9b4ae8afda1f2202761cb49bc4f1181ce4eb55d5 100644
 --- a/net/minecraft/world/entity/monster/EnderMan.java
 +++ b/net/minecraft/world/entity/monster/EnderMan.java
-@@ -119,9 +_,20 @@
+@@ -119,9 +119,20 @@ public class EnderMan extends Monster implements NeutralMob {
              .add(Attributes.STEP_HEIGHT, 1.0);
      }
  
@@ -23,7 +31,7 @@
          AttributeInstance movementSpeed = this.getAttribute(Attributes.MOVEMENT_SPEED);
          if (target == null) {
              this.targetChangeTime = 0;
-@@ -135,6 +_,7 @@
+@@ -135,6 +146,7 @@ public class EnderMan extends Monster implements NeutralMob {
                  movementSpeed.addTransientModifier(SPEED_MODIFIER_ATTACKING);
              }
          }
@@ -31,7 +39,7 @@
      }
  
      @Override
-@@ -207,6 +_,15 @@
+@@ -207,6 +219,15 @@ public class EnderMan extends Monster implements NeutralMob {
      }
  
      private boolean isBeingStaredBy(final Player player) {
@@ -47,7 +55,7 @@
          return LivingEntity.PLAYER_NOT_WEARING_DISGUISE_ITEM.test(player) && this.isLookingAtMe(player, 0.025, true, false, this.getEyeY());
      }
  
-@@ -244,7 +_,7 @@
+@@ -244,7 +265,7 @@ public class EnderMan extends Monster implements NeutralMob {
      protected void customServerAiStep(final ServerLevel level) {
          if (level.isBrightOutside() && this.tickCount >= this.targetChangeTime + 600) {
              float br = this.getLightLevelDependentMagicValue();
@@ -56,7 +64,7 @@
                  this.setTarget(null);
                  this.teleport();
              }
-@@ -355,21 +_,25 @@
+@@ -355,21 +376,25 @@ public class EnderMan extends Monster implements NeutralMob {
          }
  
          AbstractThrownPotion thrownPotion = source.getDirectEntity() instanceof AbstractThrownPotion potion ? potion : null;
@@ -83,7 +91,7 @@
  
              return hurtWithCleanWater;
          }
-@@ -393,6 +_,16 @@
+@@ -393,6 +418,16 @@ public class EnderMan extends Monster implements NeutralMob {
          this.entityData.set(DATA_STARED_AT, true);
      }
  
@@ -100,7 +108,7 @@
      @Override
      public boolean requiresCustomPersistence() {
          return super.requiresCustomPersistence() || this.getCarriedBlock() != null;
-@@ -451,16 +_,19 @@
+@@ -451,16 +486,19 @@ public class EnderMan extends Monster implements NeutralMob {
              int yt = Mth.floor(this.enderman.getY() + random.nextDouble() * 2.0);
              int zt = Mth.floor(this.enderman.getZ() - 1.0 + random.nextDouble() * 2.0);
              BlockPos pos = new BlockPos(xt, yt, zt);
@@ -121,7 +129,7 @@
                  }
              }
          }
-@@ -552,7 +_,7 @@
+@@ -552,7 +590,7 @@ public class EnderMan extends Monster implements NeutralMob {
              } else {
                  if (this.target != null && !this.enderman.isPassenger()) {
                      if (this.enderman.isBeingStaredBy((Player)this.target)) {
@@ -130,7 +138,7 @@
                              this.enderman.teleport();
                          }
  
-@@ -591,15 +_,18 @@
+@@ -591,15 +629,18 @@ public class EnderMan extends Monster implements NeutralMob {
              int yt = Mth.floor(this.enderman.getY() + random.nextDouble() * 3.0);
              int zt = Mth.floor(this.enderman.getZ() - 2.0 + random.nextDouble() * 4.0);
              BlockPos pos = new BlockPos(xt, yt, zt);

@@ -39,7 +39,7 @@ repositories {
 }
 
 dependencies {
-    compileOnly("io.papermc.paper:paper-api:26.2.build.+")
+    compileOnly("io.papermc.paper:paper-api:26.3-snapshot-7.build.+")
 }
 
 java {
@@ -59,7 +59,7 @@ java {
 <dependency>
     <groupId>io.papermc.paper</groupId>
     <artifactId>paper-api</artifactId>
-    <version>[26.2.build,)</version>
+    <version>[26.3-snapshot-7.build,)</version>
     <scope>provided</scope>
 </dependency>
 ```

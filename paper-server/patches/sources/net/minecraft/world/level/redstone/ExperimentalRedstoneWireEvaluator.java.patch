@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/world/level/redstone/ExperimentalRedstoneWireEvaluator.java b/net/minecraft/world/level/redstone/ExperimentalRedstoneWireEvaluator.java
+index 6f6461139f32b85482121d9ddea03a18c47497cb..7bbfa84ed3a148d9307d3637c99f5b1f7abd96f3 100644
 --- a/net/minecraft/world/level/redstone/ExperimentalRedstoneWireEvaluator.java
 +++ b/net/minecraft/world/level/redstone/ExperimentalRedstoneWireEvaluator.java
-@@ -45,6 +_,11 @@
+@@ -45,6 +45,11 @@ public class ExperimentalRedstoneWireEvaluator extends RedstoneWireEvaluator {
              int packed = next.getIntValue();
              int newLevel = unpackPower(packed);
              BlockState state = level.getBlockState(pos);

@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/server/commands/BanIpCommands.java b/net/minecraft/server/commands/BanIpCommands.java
+index e7a868214844377cee2a5df6da4ed28c007bed3b..dee5e12db878c13392083a46496de88d0b5924c3 100644
 --- a/net/minecraft/server/commands/BanIpCommands.java
 +++ b/net/minecraft/server/commands/BanIpCommands.java
-@@ -63,7 +_,7 @@
+@@ -63,7 +63,7 @@ public class BanIpCommands {
          }
  
          for (ServerPlayer player : players) {

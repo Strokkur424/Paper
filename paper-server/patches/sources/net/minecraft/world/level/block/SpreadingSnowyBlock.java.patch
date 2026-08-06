@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/world/level/block/SpreadingSnowyBlock.java b/net/minecraft/world/level/block/SpreadingSnowyBlock.java
+index 18c9c64127c729a9d0e32c720b86c873858662ce..24b0ace935f3eab31163f0dff772b5def82b8ae0 100644
 --- a/net/minecraft/world/level/block/SpreadingSnowyBlock.java
 +++ b/net/minecraft/world/level/block/SpreadingSnowyBlock.java
-@@ -48,10 +_,16 @@
+@@ -48,10 +48,16 @@ public abstract class SpreadingSnowyBlock extends SnowyBlock {
  
      @Override
      protected void randomTick(final BlockState state, final ServerLevel level, final BlockPos pos, final RandomSource random) {
@@ -17,7 +25,7 @@
                  level.setBlockAndUpdate(pos, baseBlock.get().defaultBlockState());
              } else {
                  if (level.getMaxLocalRawBrightness(pos.above()) >= 9) {
-@@ -60,7 +_,7 @@
+@@ -60,7 +66,7 @@ public abstract class SpreadingSnowyBlock extends SnowyBlock {
                      for (int i = 0; i < 4; i++) {
                          BlockPos testPos = pos.offset(random.nextInt(3) - 1, random.nextInt(5) - 3, random.nextInt(3) - 1);
                          if (level.getBlockState(testPos).is(baseBlock.get()) && canPropagate(defaultBlockState, level, testPos)) {

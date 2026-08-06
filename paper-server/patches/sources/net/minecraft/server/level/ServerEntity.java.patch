@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/server/level/ServerEntity.java b/net/minecraft/server/level/ServerEntity.java
+index 6f76f522fd4799da918cd5a51738b8e6c6fae6fd..f11c5ea1ee9381e7bf65305b959bd7da67423ece 100644
 --- a/net/minecraft/server/level/ServerEntity.java
 +++ b/net/minecraft/server/level/ServerEntity.java
-@@ -65,14 +_,16 @@
+@@ -65,14 +65,16 @@ public class ServerEntity {
      private Vec3 lastSentMovement;
      private int tickCount;
      private int teleportDelay;
@@ -19,7 +27,7 @@
          this.level = level;
          this.synchronizer = synchronizer;
          this.entity = entity;
-@@ -95,16 +_,22 @@
+@@ -95,16 +97,22 @@ public class ServerEntity {
                  .sendToTrackingPlayersFiltered(
                      new ClientboundSetPassengersPacket(this.entity), player -> passengers.contains(player) == this.lastPassengers.contains(player)
                  );
@@ -46,7 +54,7 @@
                          data.tickCarriedBy(player, itemStack, frame);
                          Packet<?> packet = data.getUpdatePacket(id, player);
                          if (packet != null) {
-@@ -141,7 +_,13 @@
+@@ -141,7 +149,13 @@ public class ServerEntity {
              } else {
                  this.teleportDelay++;
                  Vec3 currentPosition = this.entity.trackingPosition();
@@ -61,7 +69,7 @@
                  Packet<ClientGamePacketListener> packet = null;
                  boolean pos = positionChanged || this.tickCount % 60 == 0;
                  boolean sentPosition = false;
-@@ -223,6 +_,25 @@
+@@ -223,6 +237,25 @@ public class ServerEntity {
  
          this.tickCount++;
          if (this.entity.hurtMarked) {
@@ -87,7 +95,7 @@
              this.entity.hurtMarked = false;
              this.synchronizer.sendToTrackingPlayersAndSelf(new ClientboundSetEntityMotionPacket(this.entity));
          }
-@@ -274,7 +_,10 @@
+@@ -274,7 +307,10 @@ public class ServerEntity {
      public void sendPairingData(final ServerPlayer player, final Consumer<Packet<ClientGamePacketListener>> broadcast) {
          this.entity.updateDataBeforeSync();
          if (this.entity.isRemoved()) {
@@ -99,7 +107,7 @@
          }
  
          Packet<ClientGamePacketListener> packet = this.entity.getAddEntityPacket(this);
-@@ -286,6 +_,11 @@
+@@ -286,6 +322,11 @@ public class ServerEntity {
          if (this.entity instanceof LivingEntity livingEntity) {
              Collection<AttributeInstance> attributes = livingEntity.getAttributes().getSyncableAttributes();
              if (!attributes.isEmpty()) {
@@ -111,7 +119,7 @@
                  broadcast.accept(new ClientboundUpdateAttributesPacket(this.entity.getId(), attributes));
              }
          }
-@@ -301,8 +_,9 @@
+@@ -301,8 +342,9 @@ public class ServerEntity {
              }
  
              if (!slots.isEmpty()) {
@@ -122,7 +130,7 @@
          }
  
          if (!this.entity.getPassengers().isEmpty()) {
-@@ -349,6 +_,11 @@
+@@ -349,6 +391,11 @@ public class ServerEntity {
          if (this.entity instanceof LivingEntity livingEntity) {
              Set<AttributeInstance> attributes = livingEntity.getAttributes().getAttributesToSync();
              if (!attributes.isEmpty()) {

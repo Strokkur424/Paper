@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/world/item/crafting/SmeltingRecipe.java b/net/minecraft/world/item/crafting/SmeltingRecipe.java
+index 21d5b20e34fa235a0b35bd92347fdc912af50874..6608fe9655e3dbe75bb6cedfda37ff7a86699795 100644
 --- a/net/minecraft/world/item/crafting/SmeltingRecipe.java
 +++ b/net/minecraft/world/item/crafting/SmeltingRecipe.java
-@@ -46,4 +_,17 @@
+@@ -46,4 +46,17 @@ public class SmeltingRecipe extends AbstractCookingRecipe {
              case MISC -> RecipeBookCategories.FURNACE_MISC;
          };
      }

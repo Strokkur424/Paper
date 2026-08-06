@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/world/level/gameevent/GameEventDispatcher.java b/net/minecraft/world/level/gameevent/GameEventDispatcher.java
+index 0bc1be792d62ea025e1e578b54ecaa6ede7fb8a2..f8c4b24e603abb85c804cccec2c34c47f2670aba 100644
 --- a/net/minecraft/world/level/gameevent/GameEventDispatcher.java
 +++ b/net/minecraft/world/level/gameevent/GameEventDispatcher.java
-@@ -22,6 +_,15 @@
+@@ -22,6 +22,15 @@ public class GameEventDispatcher {
      public void post(final Holder<GameEvent> gameEvent, final Vec3 position, final GameEvent.Context context) {
          int radius = gameEvent.value().notificationRadius();
          BlockPos center = BlockPos.containing(position);
@@ -16,7 +24,7 @@
          int sectionMinX = SectionPos.blockToSectionCoord(center.getX() - radius);
          int sectionMinY = SectionPos.blockToSectionCoord(center.getY() - radius);
          int sectionMinZ = SectionPos.blockToSectionCoord(center.getZ() - radius);
-@@ -40,7 +_,7 @@
+@@ -40,7 +49,7 @@ public class GameEventDispatcher {
  
          for (int chunkX = sectionMinX; chunkX <= sectionMaxX; chunkX++) {
              for (int chunkZ = sectionMinZ; chunkZ <= sectionMaxZ; chunkZ++) {

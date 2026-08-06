@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/world/level/block/FurnaceBlock.java b/net/minecraft/world/level/block/FurnaceBlock.java
+index 14281c05a98226231a650cb110b4fc55e03f6747..c9f9cd684416dc04cfa332525dfecf1c4efe56a8 100644
 --- a/net/minecraft/world/level/block/FurnaceBlock.java
 +++ b/net/minecraft/world/level/block/FurnaceBlock.java
-@@ -45,8 +_,7 @@
+@@ -45,8 +45,7 @@ public class FurnaceBlock extends AbstractFurnaceBlock {
      @Override
      protected void openContainer(final Level level, final BlockPos pos, final Player player) {
          BlockEntity blockEntity = level.getBlockEntity(pos);

@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/commands/CommandSourceStack.java b/net/minecraft/commands/CommandSourceStack.java
+index 1998a722173bc8339f92698f0c8bf3dd6e6346df..89b9d1a4122d502437d516f8affc5ba72f421f5f 100644
 --- a/net/minecraft/commands/CommandSourceStack.java
 +++ b/net/minecraft/commands/CommandSourceStack.java
-@@ -48,7 +_,7 @@
+@@ -48,7 +48,7 @@ import net.minecraft.world.phys.Vec2;
  import net.minecraft.world.phys.Vec3;
  import org.jspecify.annotations.Nullable;
  
@@ -9,7 +17,7 @@
      public static final SimpleCommandExceptionType ERROR_NOT_PLAYER = new SimpleCommandExceptionType(Component.translatable("permissions.requires.player"));
      public static final SimpleCommandExceptionType ERROR_NOT_ENTITY = new SimpleCommandExceptionType(Component.translatable("permissions.requires.entity"));
      public final CommandSource source;
-@@ -65,6 +_,7 @@
+@@ -65,6 +65,7 @@ public class CommandSourceStack implements SharedSuggestionProvider, ExecutionCo
      private final Vec2 rotation;
      private final CommandSigningContext signingContext;
      private final TaskChainer chatMessageChainer;
@@ -17,7 +25,7 @@
  
      public CommandSourceStack(
          final CommandSource source,
-@@ -190,6 +_,30 @@
+@@ -190,6 +191,30 @@ public class CommandSourceStack implements SharedSuggestionProvider, ExecutionCo
              );
      }
  
@@ -48,7 +56,7 @@
      public CommandSourceStack withRotation(final Vec2 rotation) {
          return this.rotation.equals(rotation)
              ? this
-@@ -379,6 +_,32 @@
+@@ -379,6 +404,32 @@ public class CommandSourceStack implements SharedSuggestionProvider, ExecutionCo
          return this.permissions;
      }
  
@@ -81,7 +89,7 @@
      public Vec3 getPosition() {
          return this.worldPosition;
      }
-@@ -482,20 +_,25 @@
+@@ -482,20 +533,25 @@ public class CommandSourceStack implements SharedSuggestionProvider, ExecutionCo
          GameRules gameRules = this.level.getGameRules();
          if (gameRules.get(GameRules.SEND_COMMAND_FEEDBACK)) {
              for (ServerPlayer player : this.server.getPlayerList().getPlayers()) {
@@ -110,7 +118,7 @@
          }
      }
  
-@@ -506,7 +_,7 @@
+@@ -506,7 +562,7 @@ public class CommandSourceStack implements SharedSuggestionProvider, ExecutionCo
  
      @Override
      public Collection<String> getOnlinePlayerNames() {
@@ -119,7 +127,7 @@
      }
  
      @Override
-@@ -584,4 +_,16 @@
+@@ -584,4 +640,16 @@ public class CommandSourceStack implements SharedSuggestionProvider, ExecutionCo
      public boolean isSilent() {
          return this.silent;
      }

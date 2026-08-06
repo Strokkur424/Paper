@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/world/entity/monster/spider/CaveSpider.java b/net/minecraft/world/entity/monster/spider/CaveSpider.java
+index 6b19b4d2148899b10f3cc943aa33f097ecf93c39..5e1f910303895a6ce5332894491a7203769321e2 100644
 --- a/net/minecraft/world/entity/monster/spider/CaveSpider.java
 +++ b/net/minecraft/world/entity/monster/spider/CaveSpider.java
-@@ -38,7 +_,7 @@
+@@ -38,7 +38,7 @@ public class CaveSpider extends Spider {
                  }
  
                  if (poisonTime > 0) {

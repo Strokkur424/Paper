@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/world/level/levelgen/structure/structures/ShipwreckPieces.java b/net/minecraft/world/level/levelgen/structure/structures/ShipwreckPieces.java
+index 36cdf66761df2a6c6923bcfb90827a01127bf3f5..672dc19e8b92f2830c56f2732e1870e0b8841ca7 100644
 --- a/net/minecraft/world/level/levelgen/structure/structures/ShipwreckPieces.java
 +++ b/net/minecraft/world/level/levelgen/structure/structures/ShipwreckPieces.java
-@@ -145,7 +_,10 @@
+@@ -145,7 +145,10 @@ public class ShipwreckPieces {
          ) {
              ResourceKey<LootTable> lootTable = ShipwreckPieces.MARKERS_TO_LOOT.get(markerId);
              if (lootTable != null) {

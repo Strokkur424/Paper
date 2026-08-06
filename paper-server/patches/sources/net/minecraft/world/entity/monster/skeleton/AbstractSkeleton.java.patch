@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/world/entity/monster/skeleton/AbstractSkeleton.java b/net/minecraft/world/entity/monster/skeleton/AbstractSkeleton.java
+index f432495b135c617e5c9e037f04e6a29959fc20da..995779b43f3cd1ef5dee363f447ebd446538f029 100644
 --- a/net/minecraft/world/entity/monster/skeleton/AbstractSkeleton.java
 +++ b/net/minecraft/world/entity/monster/skeleton/AbstractSkeleton.java
-@@ -66,6 +_,7 @@
+@@ -66,6 +66,7 @@ public abstract class AbstractSkeleton extends Monster implements RangedAttackMo
              AbstractSkeleton.this.setAggressive(true);
          }
      };
@@ -8,7 +16,7 @@
  
      protected AbstractSkeleton(final EntityType<? extends AbstractSkeleton> type, final Level level) {
          super(type, level);
-@@ -90,6 +_,21 @@
+@@ -90,6 +91,21 @@ public abstract class AbstractSkeleton extends Monster implements RangedAttackMo
          return Monster.createMonsterAttributes().add(Attributes.MOVEMENT_SPEED, 0.25);
      }
  
@@ -30,7 +38,7 @@
      @Override
      protected void playStepSound(final BlockPos pos, final BlockState blockState) {
          this.playSound(this.getStepSound(), 0.15F, 1.0F);
-@@ -120,7 +_,7 @@
+@@ -120,7 +136,7 @@ public abstract class AbstractSkeleton extends Monster implements RangedAttackMo
          this.populateDefaultEquipmentSlots(random, difficulty);
          this.populateDefaultEquipmentEnchantments(level, random, difficulty);
          this.reassessWeaponGoal();
@@ -39,7 +47,7 @@
          if (this.getItemBySlot(EquipmentSlot.HEAD).isEmpty() && SpecialDates.isHalloween() && random.nextFloat() < 0.25F) {
              this.setItemSlot(EquipmentSlot.HEAD, new ItemStack(random.nextFloat() < 0.1F ? Blocks.JACK_O_LANTERN : Blocks.CARVED_PUMPKIN));
              this.setDropChance(EquipmentSlot.HEAD, 0.0F);
-@@ -158,7 +_,8 @@
+@@ -158,7 +174,8 @@ public abstract class AbstractSkeleton extends Monster implements RangedAttackMo
  
      @Override
      public void performRangedAttack(final LivingEntity target, final float power) {
@@ -49,7 +57,7 @@
          ItemStack projectile = this.getProjectile(bowItem);
          AbstractArrow arrow = this.getArrow(projectile, power, bowItem);
          double xd = target.getX() - this.getX();
-@@ -166,9 +_,21 @@
+@@ -166,9 +183,21 @@ public abstract class AbstractSkeleton extends Monster implements RangedAttackMo
          double zd = target.getZ() - this.getZ();
          double distanceToTarget = Math.sqrt(xd * xd + zd * zd);
          if (this.level() instanceof ServerLevel serverLevel) {
@@ -72,7 +80,7 @@
          }
  
          this.playSound(SoundEvents.SKELETON_SHOOT, 1.0F, 1.0F / (this.getRandom().nextFloat() * 0.4F + 0.8F));
-@@ -192,11 +_,14 @@
+@@ -192,11 +221,14 @@ public abstract class AbstractSkeleton extends Monster implements RangedAttackMo
      protected void readAdditionalSaveData(final ValueInput input) {
          super.readAdditionalSaveData(input);
          this.reassessWeaponGoal();
@@ -89,7 +97,7 @@
          if (!this.level().isClientSide()) {
              this.reassessWeaponGoal();
          }
-@@ -210,4 +_,12 @@
+@@ -210,4 +242,12 @@ public abstract class AbstractSkeleton extends Monster implements RangedAttackMo
      public boolean wantsToPickUp(final ServerLevel level, final ItemStack itemStack) {
          return !itemStack.is(ItemTags.SPEARS) && super.wantsToPickUp(level, itemStack);
      }

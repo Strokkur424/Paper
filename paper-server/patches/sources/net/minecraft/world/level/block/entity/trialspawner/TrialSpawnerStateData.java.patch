@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/world/level/block/entity/trialspawner/TrialSpawnerStateData.java b/net/minecraft/world/level/block/entity/trialspawner/TrialSpawnerStateData.java
+index 7281df44a50347fea96e53f3a64295c92c1004b0..ef82eb01cd6d86f55d0edf7aeafa95fe959c7ada 100644
 --- a/net/minecraft/world/level/block/entity/trialspawner/TrialSpawnerStateData.java
 +++ b/net/minecraft/world/level/block/entity/trialspawner/TrialSpawnerStateData.java
-@@ -188,7 +_,7 @@
+@@ -188,7 +188,7 @@ public class TrialSpawnerStateData {
                      mob.dropPreservedEquipment(level);
                  }
  

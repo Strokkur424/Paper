@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/core/registries/BuiltInRegistries.java b/net/minecraft/core/registries/BuiltInRegistries.java
+index c47748b11702ef005a1271242fd7f15599589be2..79b9bc27f39a8b39198c45b3016ed072fd2dbabc 100644
 --- a/net/minecraft/core/registries/BuiltInRegistries.java
 +++ b/net/minecraft/core/registries/BuiltInRegistries.java
-@@ -365,6 +_,11 @@
+@@ -365,6 +365,11 @@ public class BuiltInRegistries {
      public static final Registry<MapCodec<? extends SlotSource>> SLOT_SOURCE_TYPE = registerSimple(Registries.SLOT_SOURCE_TYPE, SlotSources::bootstrap);
      public static final Registry<Consumer<GameTestHelper>> TEST_FUNCTION = registerSimple(Registries.TEST_FUNCTION, BuiltinTestFunctions::bootstrap);
      public static final Registry<? extends Registry<?>> REGISTRY = WRITABLE_REGISTRY;
@@ -12,7 +20,7 @@
  
      private static <T> Registry<T> registerSimple(final ResourceKey<? extends Registry<T>> name, final BuiltInRegistries.RegistryBootstrap<T> loader) {
          return internalRegister(name, new MappedRegistry<>(name, Lifecycle.stable(), false), loader);
-@@ -392,6 +_,7 @@
+@@ -392,6 +397,7 @@ public class BuiltInRegistries {
          final ResourceKey<? extends Registry<T>> name, final R registry, final BuiltInRegistries.RegistryBootstrap<T> loader
      ) {
          Bootstrap.checkBootstrapCalled(() -> "registry " + name.identifier());
@@ -20,7 +28,7 @@
          Identifier key = name.identifier();
          LOADERS.put(key, () -> loader.run(registry));
          WRITABLE_REGISTRY.register((ResourceKey)name, registry, RegistrationInfo.BUILT_IN);
-@@ -399,16 +_,34 @@
+@@ -399,16 +405,34 @@ public class BuiltInRegistries {
      }
  
      public static void bootStrap() {
@@ -55,7 +63,7 @@
          });
      }
  
-@@ -417,6 +_,7 @@
+@@ -417,6 +441,7 @@ public class BuiltInRegistries {
  
          for (Registry<?> registry : REGISTRY) {
              bindBootstrappedTagsToEmpty(registry);

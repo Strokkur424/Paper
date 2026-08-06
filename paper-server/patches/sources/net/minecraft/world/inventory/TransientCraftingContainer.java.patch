@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/world/inventory/TransientCraftingContainer.java b/net/minecraft/world/inventory/TransientCraftingContainer.java
+index f93cbb28afa989f90c0fc1543971a639ac108828..7263663bf06178d3eeed16155aef6acaa8726281 100644
 --- a/net/minecraft/world/inventory/TransientCraftingContainer.java
 +++ b/net/minecraft/world/inventory/TransientCraftingContainer.java
-@@ -13,6 +_,70 @@
+@@ -13,6 +13,70 @@ public class TransientCraftingContainer implements CraftingContainer {
      private final int height;
      private final AbstractContainerMenu menu;
  

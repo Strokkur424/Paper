@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/network/protocol/login/ClientboundLoginDisconnectPacket.java b/net/minecraft/network/protocol/login/ClientboundLoginDisconnectPacket.java
+index 239b7fa504652d2644cff35b521191fe42311e49..0c0228b7e6b50f43cc546e5cb30a48141988a6b4 100644
 --- a/net/minecraft/network/protocol/login/ClientboundLoginDisconnectPacket.java
 +++ b/net/minecraft/network/protocol/login/ClientboundLoginDisconnectPacket.java
-@@ -14,8 +_,25 @@
+@@ -14,8 +14,25 @@ import net.minecraft.resources.RegistryOps;
  
  public record ClientboundLoginDisconnectPacket(Component reason) implements Packet<ClientLoginPacketListener> {
      private static final RegistryOps<JsonElement> OPS = RegistryAccess.EMPTY.createSerializationContext(JsonOps.INSTANCE);

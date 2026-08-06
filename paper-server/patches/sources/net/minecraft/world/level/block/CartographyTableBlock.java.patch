@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/world/level/block/CartographyTableBlock.java b/net/minecraft/world/level/block/CartographyTableBlock.java
+index 6da7bbe4aadc372fcc48a0a8aeff6b97091b09e8..6e0f96cf1ec50f39222e0705db2c3ef0540b7a39 100644
 --- a/net/minecraft/world/level/block/CartographyTableBlock.java
 +++ b/net/minecraft/world/level/block/CartographyTableBlock.java
-@@ -34,8 +_,9 @@
+@@ -34,8 +34,9 @@ public class CartographyTableBlock extends Block {
          final BlockState state, final Level level, final BlockPos pos, final Player player, final BlockHitResult hitResult
      ) {
          if (!level.isClientSide()) {

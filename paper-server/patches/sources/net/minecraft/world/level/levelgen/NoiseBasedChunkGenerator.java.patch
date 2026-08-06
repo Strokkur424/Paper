@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/world/level/levelgen/NoiseBasedChunkGenerator.java b/net/minecraft/world/level/levelgen/NoiseBasedChunkGenerator.java
+index 94d9cf158b42acfdb121bbf66a95d88fe4d179ea..e7e65ae464aab7e4caf0925a69d658e422203aa4 100644
 --- a/net/minecraft/world/level/levelgen/NoiseBasedChunkGenerator.java
 +++ b/net/minecraft/world/level/levelgen/NoiseBasedChunkGenerator.java
-@@ -265,7 +_,7 @@
+@@ -265,7 +265,7 @@ public final class NoiseBasedChunkGenerator extends ChunkGenerator {
      @Override
      public void buildSurface(final WorldGenRegion region, final StructureManager structureManager, final RandomState randomState, final ChunkAccess protoChunk) {
          if (!SharedConstants.debugVoidTerrain(protoChunk.getPos()) && !SharedConstants.DEBUG_DISABLE_SURFACE) {
@@ -9,7 +17,7 @@
              Set<Holder<Biome>> possibleBiomes = collectPossibleBiomes(region, 1);
              this.buildSurface(protoChunk, context, randomState, structureManager, region.getBiomeManager(), Blender.of(region), possibleBiomes);
          }
-@@ -319,7 +_,7 @@
+@@ -319,7 +319,7 @@ public final class NoiseBasedChunkGenerator extends ChunkGenerator {
              NoiseChunk noiseChunk = chunk.getOrCreateNoiseChunk(c -> this.createNoiseChunk(c, structureManager, Blender.of(region), randomState));
              Aquifer aquifer = noiseChunk.aquifer();
              CarvingContext context = new CarvingContext(

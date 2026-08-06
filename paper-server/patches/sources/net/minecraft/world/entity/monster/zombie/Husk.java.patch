@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/world/entity/monster/zombie/Husk.java b/net/minecraft/world/entity/monster/zombie/Husk.java
+index be1a77b59e8f09b6bc4965c991fb8cf2c4d37d75..b3ba75be06325db01b97a35b0e91bbcb61faa41c 100644
 --- a/net/minecraft/world/entity/monster/zombie/Husk.java
 +++ b/net/minecraft/world/entity/monster/zombie/Husk.java
-@@ -68,7 +_,7 @@
+@@ -68,7 +68,7 @@ public class Husk extends Zombie {
          boolean result = super.doHurtTarget(level, target);
          if (result && this.getMainHandItem().isEmpty() && target instanceof LivingEntity livingEntity) {
              float difficulty = level.getCurrentDifficultyAt(this.blockPosition()).getEffectiveDifficulty();
@@ -9,7 +17,7 @@
          }
  
          return result;
-@@ -95,7 +_,7 @@
+@@ -95,7 +95,7 @@ public class Husk extends Zombie {
          groupData = super.finalizeSpawn(level, difficulty, spawnReason, groupData);
          float difficultyModifier = difficulty.getSpecialMultiplier();
          if (spawnReason != EntitySpawnReason.CONVERSION) {

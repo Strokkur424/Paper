@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/server/jsonrpc/internalapi/MinecraftGameRuleServiceImpl.java b/net/minecraft/server/jsonrpc/internalapi/MinecraftGameRuleServiceImpl.java
+index b6cb065a2c420b315b8b17047dc25ff50eb997aa..3082cb0b335a42c816fed9bf82c19b6d1d1ab5b8 100644
 --- a/net/minecraft/server/jsonrpc/internalapi/MinecraftGameRuleServiceImpl.java
 +++ b/net/minecraft/server/jsonrpc/internalapi/MinecraftGameRuleServiceImpl.java
-@@ -14,11 +_,22 @@
+@@ -14,12 +14,23 @@ import net.minecraft.world.level.gamerules.GameRules;
  public class MinecraftGameRuleServiceImpl implements MinecraftGameRuleService {
      private final NotificationManager notificationManager;
      private final JsonRpcLogger jsonrpcLogger;
@@ -9,10 +17,9 @@
      public MinecraftGameRuleServiceImpl(final NotificationManager notificationManager, final JsonRpcLogger jsonrpcLogger) {
          this.notificationManager = notificationManager;
          this.jsonrpcLogger = jsonrpcLogger;
--    }
 +        this.gameRules = null; // Paper - per-world game rules - cannot get game rules until server is started
-+    }
-+
+     }
+ 
 +    // Paper start - per-world game rules
 +    public GameRules getGameRules() {
 +        if (this.gameRules == null) {
@@ -21,10 +28,11 @@
 +        return this.gameRules;
 +    }
 +    // Paper end
- 
++
      private DedicatedServer server() {
          return Objects.requireNonNull(this.notificationManager.server());
-@@ -28,10 +_,10 @@
+     }
+@@ -28,10 +39,10 @@ public class MinecraftGameRuleServiceImpl implements MinecraftGameRuleService {
      public <T> GameRulesService.GameRuleUpdate<T> updateGameRule(final GameRulesService.GameRuleUpdate<T> update, final ClientInfo clientInfo) {
          GameRule<T> gameRule = update.gameRule();
          MinecraftServer server = this.server();
@@ -37,7 +45,7 @@
          this.jsonrpcLogger
              .log(clientInfo, "Game rule '{}' updated from '{}' to '{}'", gameRule.id(), gameRule.serialize(oldValue), gameRule.serialize(newValue));
          return update;
-@@ -44,11 +_,11 @@
+@@ -44,11 +55,11 @@ public class MinecraftGameRuleServiceImpl implements MinecraftGameRuleService {
  
      @Override
      public Stream<GameRule<?>> getAvailableGameRules() {

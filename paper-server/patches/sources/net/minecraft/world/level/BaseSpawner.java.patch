@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/world/level/BaseSpawner.java b/net/minecraft/world/level/BaseSpawner.java
+index d2ed04e7c01abd39a4b8f2615f9bbab4a45a90a8..2f89a9145902e514089924462003709f256ac3f4 100644
 --- a/net/minecraft/world/level/BaseSpawner.java
 +++ b/net/minecraft/world/level/BaseSpawner.java
-@@ -58,13 +_,15 @@
+@@ -58,13 +58,15 @@ public abstract class BaseSpawner {
      public int maxNearbyEntities = 6;
      public int requiredPlayerRange = 16;
      public int spawnRange = 4;
@@ -17,7 +25,7 @@
      }
  
      public void clientTick(final Level level, final BlockPos pos) {
-@@ -87,13 +_,19 @@
+@@ -87,13 +89,19 @@ public abstract class BaseSpawner {
      }
  
      public void serverTick(final ServerLevel level, final BlockPos pos) {
@@ -39,7 +47,7 @@
              } else {
                  boolean delay = false;
                  RandomSource random = level.getRandom();
-@@ -131,6 +_,21 @@
+@@ -131,6 +139,21 @@ public abstract class BaseSpawner {
                                  continue;
                              }
  
@@ -61,7 +69,7 @@
                              Entity entity = EntityType.loadEntityRecursive(input, level, EntitySpawnReason.SPAWNER, e -> {
                                  e.snapTo(spawnPos.x, spawnPos.y, spawnPos.z, e.getYRot(), e.getXRot());
                                  return e;
-@@ -165,9 +_,22 @@
+@@ -165,9 +188,22 @@ public abstract class BaseSpawner {
                                  }
  
                                  nextSpawnData.getEquipment().ifPresent(mob::equip);
@@ -85,7 +93,7 @@
                                  this.delay(level, pos);
                                  return;
                              }
-@@ -178,7 +_,7 @@
+@@ -178,7 +214,7 @@ public abstract class BaseSpawner {
                                  mob.spawnAnim();
                              }
  
@@ -94,7 +102,7 @@
                          }
                      }
                  }
-@@ -205,12 +_,14 @@
+@@ -205,12 +241,14 @@ public abstract class BaseSpawner {
      }
  
      public void load(final @Nullable Level level, final BlockPos pos, final ValueInput input) {
@@ -112,7 +120,7 @@
          this.spawnCount = input.getIntOr("SpawnCount", 4);
          this.maxNearbyEntities = input.getIntOr("MaxNearbyEntities", 6);
          this.requiredPlayerRange = input.getIntOr("RequiredPlayerRange", 16);
-@@ -219,9 +_,19 @@
+@@ -219,9 +257,19 @@ public abstract class BaseSpawner {
      }
  
      public void save(final ValueOutput output) {

@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/world/item/enchantment/effects/Ignite.java b/net/minecraft/world/item/enchantment/effects/Ignite.java
+index 03f801aea7d260193215dd1fcd8bf9ce139bbff1..94cb3d1e130568a0d0792b3dde797b78867a7282 100644
 --- a/net/minecraft/world/item/enchantment/effects/Ignite.java
 +++ b/net/minecraft/world/item/enchantment/effects/Ignite.java
-@@ -15,7 +_,21 @@
+@@ -15,7 +15,21 @@ public record Ignite(LevelBasedValue duration) implements EnchantmentEntityEffec
  
      @Override
      public void apply(final ServerLevel serverLevel, final int enchantmentLevel, final EnchantedItemInUse item, final Entity entity, final Vec3 position) {

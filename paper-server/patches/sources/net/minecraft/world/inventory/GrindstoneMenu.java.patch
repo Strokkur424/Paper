@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/world/inventory/GrindstoneMenu.java b/net/minecraft/world/inventory/GrindstoneMenu.java
+index f427f916be86b2799daf395236f6da14a225182d..fd4478d174ab3debaeb15d01f292b7fc870dc0df 100644
 --- a/net/minecraft/world/inventory/GrindstoneMenu.java
 +++ b/net/minecraft/world/inventory/GrindstoneMenu.java
-@@ -21,6 +_,21 @@
+@@ -21,6 +21,21 @@ import net.minecraft.world.level.block.LevelEvent;
  import net.minecraft.world.phys.Vec3;
  
  public class GrindstoneMenu extends AbstractContainerMenu {
@@ -22,7 +30,7 @@
      public static final int MAX_NAME_LENGTH = 35;
      public static final int INPUT_SLOT = 0;
      public static final int ADDITIONAL_SLOT = 1;
-@@ -29,14 +_,8 @@
+@@ -29,14 +44,8 @@ public class GrindstoneMenu extends AbstractContainerMenu {
      private static final int INV_SLOT_END = 30;
      private static final int USE_ROW_SLOT_START = 30;
      private static final int USE_ROW_SLOT_END = 39;
@@ -39,7 +47,7 @@
      private final ContainerLevelAccess access;
  
      public GrindstoneMenu(final int containerId, final Inventory inventory) {
-@@ -45,6 +_,22 @@
+@@ -45,6 +54,22 @@ public class GrindstoneMenu extends AbstractContainerMenu {
  
      public GrindstoneMenu(final int containerId, final Inventory inventory, final ContainerLevelAccess access) {
          super(MenuType.GRINDSTONE, containerId);
@@ -62,7 +70,7 @@
          this.access = access;
          this.addSlot(new Slot(this.repairSlots, 0, 49, 19) {
              @Override
-@@ -68,7 +_,11 @@
+@@ -68,7 +93,11 @@ public class GrindstoneMenu extends AbstractContainerMenu {
              public void onTake(final Player player, final ItemStack carried) {
                  access.execute((level, pos) -> {
                      if (level instanceof ServerLevel serverLevel) {
@@ -75,7 +83,7 @@
                      }
  
                      level.levelEvent(LevelEvent.SOUND_GRINDSTONE_USED, pos, 0);
-@@ -105,6 +_,7 @@
+@@ -105,6 +134,7 @@ public class GrindstoneMenu extends AbstractContainerMenu {
              }
          });
          this.addStandardInventorySlots(inventory, 8, 84);
@@ -83,7 +91,7 @@
      }
  
      @Override
-@@ -112,11 +_,13 @@
+@@ -112,11 +142,13 @@ public class GrindstoneMenu extends AbstractContainerMenu {
          super.slotsChanged(container);
          if (container == this.repairSlots) {
              this.createResult();
@@ -98,7 +106,7 @@
          this.broadcastChanges();
      }
  
-@@ -206,6 +_,7 @@
+@@ -206,6 +238,7 @@ public class GrindstoneMenu extends AbstractContainerMenu {
  
      @Override
      public boolean stillValid(final Player player) {

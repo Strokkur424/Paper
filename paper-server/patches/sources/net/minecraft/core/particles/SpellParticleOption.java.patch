@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/core/particles/SpellParticleOption.java b/net/minecraft/core/particles/SpellParticleOption.java
+index c9e7fe47a27ca5fc0a62923f7932432e244abb89..386908be9bce94ae703e697b72548d5fa4a40e98 100644
 --- a/net/minecraft/core/particles/SpellParticleOption.java
 +++ b/net/minecraft/core/particles/SpellParticleOption.java
-@@ -11,7 +_,7 @@
+@@ -11,7 +11,7 @@ import net.minecraft.util.ExtraCodecs;
  
  public class SpellParticleOption implements ParticleOptions {
      private final ParticleType<SpellParticleOption> type;

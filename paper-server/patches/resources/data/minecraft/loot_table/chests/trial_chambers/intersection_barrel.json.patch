@@ -1,6 +1,14 @@
+From 11b7f145bbc9efa8236ac93d8dcb0142c5492580 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/data/minecraft/loot_table/chests/trial_chambers/intersection_barrel.json b/data/minecraft/loot_table/chests/trial_chambers/intersection_barrel.json
+index 0e4c8a100b028be2debbeb45abc7ffb4d1e41f40..86a66cf3ce2d95cb47582759b523010b1361f098 100644
 --- a/data/minecraft/loot_table/chests/trial_chambers/intersection_barrel.json
 +++ b/data/minecraft/loot_table/chests/trial_chambers/intersection_barrel.json
-@@ -63,14 +_,6 @@
+@@ -63,14 +63,6 @@
              {
                "count": 1.0,
                "function": "minecraft:set_count"

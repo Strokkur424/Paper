@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/world/level/block/entity/BrushableBlockEntity.java b/net/minecraft/world/level/block/entity/BrushableBlockEntity.java
+index 30b478b4f941848caa281ef46d61fad6be6c116a..61fbf02f1dcbf020fdd0c071c2179cecead61565 100644
 --- a/net/minecraft/world/level/block/entity/BrushableBlockEntity.java
 +++ b/net/minecraft/world/level/block/entity/BrushableBlockEntity.java
-@@ -68,9 +_,26 @@
+@@ -68,9 +68,26 @@ public class BrushableBlockEntity extends BlockEntity {
          }
  
          this.coolDownEndsAtTick = gameTime + 10L;
@@ -29,7 +37,7 @@
              this.brushingCompleted(level, user, brush);
              return true;
          }
-@@ -79,7 +_,7 @@
+@@ -79,7 +96,7 @@ public class BrushableBlockEntity extends BlockEntity {
          int completionState = this.getCompletionState();
          if (previousCompletionState != completionState) {
              BlockState previousState = this.getBlockState();
@@ -38,7 +46,7 @@
              level.setBlock(this.getBlockPos(), state, Block.UPDATE_ALL);
          }
  
-@@ -118,6 +_,12 @@
+@@ -118,6 +135,12 @@ public class BrushableBlockEntity extends BlockEntity {
          this.dropContent(level, user, brush);
          BlockState blockState = this.getBlockState();
          level.levelEvent(LevelEvent.PARTICLES_AND_SOUND_BRUSH_BLOCK_COMPLETE, this.getBlockPos(), Block.getId(blockState));
@@ -51,7 +59,7 @@
          Block turnsInto;
          if (this.getBlockState().getBlock() instanceof BrushableBlock brushableBlock) {
              turnsInto = brushableBlock.getTurnsInto();
-@@ -125,6 +_,12 @@
+@@ -125,6 +148,12 @@ public class BrushableBlockEntity extends BlockEntity {
              turnsInto = Blocks.AIR;
          }
  
@@ -64,7 +72,7 @@
          level.setBlock(this.worldPosition, turnsInto.defaultBlockState(), Block.UPDATE_ALL);
      }
  
-@@ -141,7 +_,12 @@
+@@ -141,7 +170,12 @@ public class BrushableBlockEntity extends BlockEntity {
              double zo = dropPos.getZ() + 0.5 * centerRange + halfSize;
              ItemEntity entity = new ItemEntity(level, xo, yo, zo, this.item.split(level.getRandom().nextInt(21) + 10));
              entity.setDeltaMovement(Vec3.ZERO);

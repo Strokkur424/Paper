@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/world/level/material/FlowingFluid.java b/net/minecraft/world/level/material/FlowingFluid.java
+index a585292e3170bc75dc1609a5afc92419875a96c9..ee960c0b1e7f510b77949db2a57a53357a00f62d 100644
 --- a/net/minecraft/world/level/material/FlowingFluid.java
 +++ b/net/minecraft/world/level/material/FlowingFluid.java
-@@ -120,6 +_,15 @@
+@@ -120,6 +120,15 @@ public abstract class FlowingFluid extends Fluid {
                  Fluid newBelowFluidType = newBelowFluid.getType();
                  if (belowFluid.canBeReplacedWith(level, belowPos, newBelowFluidType, Direction.DOWN)
                      && canHoldSpecificFluid(level, belowPos, belowState, newBelowFluidType)) {
@@ -16,7 +24,7 @@
                      this.spreadTo(level, belowPos, belowState, Direction.DOWN, newBelowFluid);
                      if (this.sourceNeighborCount(level, pos) >= 3) {
                          this.spreadToSides(level, pos, fluidState, state);
-@@ -148,7 +_,18 @@
+@@ -148,7 +157,18 @@ public abstract class FlowingFluid extends Fluid {
                  Direction spread = entry.getKey();
                  FluidState newNeighborFluid = entry.getValue();
                  BlockPos neighborPos = pos.relative(spread);
@@ -36,7 +44,7 @@
              }
          }
      }
-@@ -160,7 +_,8 @@
+@@ -160,7 +180,8 @@ public abstract class FlowingFluid extends Fluid {
  
          for (Direction direction : Direction.Plane.HORIZONTAL) {
              BlockPos relativePos = mutablePos.setWithOffset(pos, direction);
@@ -46,7 +54,7 @@
              FluidState fluidState = blockState.getFluidState();
              if (fluidState.getType().isSame(this) && canPassThroughWall(direction, level, pos, state, relativePos, blockState)) {
                  if (fluidState.isSource()) {
-@@ -265,13 +_,15 @@
+@@ -265,13 +286,15 @@ public abstract class FlowingFluid extends Fluid {
              container.placeLiquid(level, pos, state, target);
          } else {
              if (!state.isAir()) {
@@ -63,7 +71,7 @@
      protected abstract void beforeDestroyingBlock(LevelAccessor level, BlockPos pos, BlockState state);
  
      protected int getSlopeDistance(
-@@ -282,7 +_,8 @@
+@@ -282,7 +305,8 @@ public abstract class FlowingFluid extends Fluid {
          for (Direction direction : Direction.Plane.HORIZONTAL) {
              if (direction != from) {
                  BlockPos testPos = pos.relative(direction);
@@ -73,7 +81,7 @@
                  FluidState testFluidState = testState.getFluidState();
                  if (this.canPassThrough(level, this.getFlowing(), pos, state, direction, testPos, testState, testFluidState)) {
                      if (context.isHole(testPos)) {
-@@ -364,7 +_,8 @@
+@@ -364,7 +388,8 @@ public abstract class FlowingFluid extends Fluid {
  
          for (Direction direction : Direction.Plane.HORIZONTAL) {
              BlockPos testPos = pos.relative(direction);
@@ -83,7 +91,7 @@
              FluidState testFluidState = testState.getFluidState();
              if (this.canMaybePassThrough(level, pos, state, direction, testPos, testState, testFluidState)) {
                  FluidState newFluid = this.getNewLiquid(level, testPos, testState);
-@@ -435,10 +_,24 @@
+@@ -435,10 +460,24 @@ public abstract class FlowingFluid extends Fluid {
              if (newFluidState.isEmpty()) {
                  fluidState = newFluidState;
                  blockState = Blocks.AIR.defaultBlockState();
@@ -108,7 +116,7 @@
                  level.setBlock(pos, blockState, Block.UPDATE_ALL);
                  level.scheduleTick(pos, fluidState.getType(), tickDelay);
              }
-@@ -507,8 +_,27 @@
+@@ -507,8 +546,27 @@ public abstract class FlowingFluid extends Fluid {
              return this.getBlockState(pos, this.getCacheKey(pos));
          }
  

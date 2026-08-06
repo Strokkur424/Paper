@@ -1,14 +1,21 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/world/inventory/PlayerEnderChestContainer.java b/net/minecraft/world/inventory/PlayerEnderChestContainer.java
+index 5e9a10f047ae75f9db9b9ce7ea2220220d09fce1..4df3a32faf85595372f4b250482d852c985ea3ab 100644
 --- a/net/minecraft/world/inventory/PlayerEnderChestContainer.java
 +++ b/net/minecraft/world/inventory/PlayerEnderChestContainer.java
-@@ -12,9 +_,23 @@
+@@ -12,9 +12,23 @@ import org.jspecify.annotations.Nullable;
  
  public class PlayerEnderChestContainer extends SimpleContainer {
      private @Nullable EnderChestBlockEntity activeChest;
--
--    public PlayerEnderChestContainer() {
 +    // CraftBukkit start
 +    private final Player owner;
-+
+ 
+-    public PlayerEnderChestContainer() {
 +    @Override
 +    public org.bukkit.inventory.InventoryHolder getOwner() {
 +        return this.owner.getBukkitEntity();

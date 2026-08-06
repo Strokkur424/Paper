@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/world/entity/ai/behavior/warden/SonicBoom.java b/net/minecraft/world/entity/ai/behavior/warden/SonicBoom.java
+index bf5ec716f7acf8a848c5523c9f66cbe705ed4d16..2b4edd0cf371b164306d36dac920ea1a80791a57 100644
 --- a/net/minecraft/world/entity/ai/behavior/warden/SonicBoom.java
 +++ b/net/minecraft/world/entity/ai/behavior/warden/SonicBoom.java
-@@ -84,7 +_,7 @@
+@@ -84,7 +84,7 @@ public class SonicBoom extends Behavior<Warden> {
                      if (target.hurtServer(level, level.damageSources().sonicBoom(body), 10.0F)) {
                          double knockbackVertical = 0.5 * (1.0 - target.getAttributeValue(Attributes.KNOCKBACK_RESISTANCE));
                          double knockbackHorizontal = 2.5 * (1.0 - target.getAttributeValue(Attributes.KNOCKBACK_RESISTANCE));

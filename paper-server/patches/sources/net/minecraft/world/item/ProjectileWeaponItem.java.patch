@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/world/item/ProjectileWeaponItem.java b/net/minecraft/world/item/ProjectileWeaponItem.java
+index e9b3240bcf5db9739134c4a85d4527eb7375bd3d..9832ee1762efdd96d50fd2fa38a1119099204c1f 100644
 --- a/net/minecraft/world/item/ProjectileWeaponItem.java
 +++ b/net/minecraft/world/item/ProjectileWeaponItem.java
-@@ -50,6 +_,7 @@
+@@ -50,6 +50,7 @@ public abstract class ProjectileWeaponItem extends Item {
          final float uncertainty,
          final boolean isCrit,
          final @Nullable LivingEntity targetOverride
@@ -8,7 +16,7 @@
      ) {
          float maxAngle = EnchantmentHelper.processProjectileSpread(level, weapon, shooter, 0.0F);
          float angleStep = projectiles.size() == 1 ? 0.0F : 2.0F * maxAngle / (projectiles.size() - 1);
-@@ -62,12 +_,26 @@
+@@ -62,12 +63,26 @@ public abstract class ProjectileWeaponItem extends Item {
                  float angle = angleOffset + direction * ((i + 1) / 2) * angleStep;
                  direction = -direction;
                  int index = i;
@@ -41,7 +49,7 @@
                  weapon.hurtAndBreak(this.getDurabilityUse(projectile), shooter, hand.asEquipmentSlot());
                  if (weapon.isEmpty()) {
                      break;
-@@ -103,6 +_,12 @@
+@@ -103,6 +118,12 @@ public abstract class ProjectileWeaponItem extends Item {
      }
  
      protected static List<ItemStack> draw(final ItemStack weapon, final ItemStack projectile, final LivingEntity shooter) {
@@ -54,7 +62,7 @@
          if (projectile.isEmpty()) {
              return List.of();
          }
-@@ -112,7 +_,7 @@
+@@ -112,7 +133,7 @@ public abstract class ProjectileWeaponItem extends Item {
          ItemStack projectileCopy = projectile.copy();
  
          for (int i = 0; i < numProjectiles; i++) {

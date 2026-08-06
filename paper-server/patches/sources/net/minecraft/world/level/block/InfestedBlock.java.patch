@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/world/level/block/InfestedBlock.java b/net/minecraft/world/level/block/InfestedBlock.java
+index 604ac8beb0df4e0f278fc55e0d1bb77bb9f36a9b..9ca7b44b23f6c91a10143cdf67931cb41aee518b 100644
 --- a/net/minecraft/world/level/block/InfestedBlock.java
 +++ b/net/minecraft/world/level/block/InfestedBlock.java
-@@ -52,7 +_,7 @@
+@@ -52,7 +52,7 @@ public class InfestedBlock extends Block {
          Silverfish silverfish = EntityTypes.SILVERFISH.create(level, EntitySpawnReason.TRIGGERED);
          if (silverfish != null) {
              silverfish.snapTo(pos.getX() + 0.5, pos.getY(), pos.getZ() + 0.5, 0.0F, 0.0F);

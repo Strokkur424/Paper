@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/world/level/block/RedstoneTorchBlock.java b/net/minecraft/world/level/block/RedstoneTorchBlock.java
+index a0c5370fe3f5c1f1d44f274e173d14a44fe224a9..e51c99908d95069da1e9746d50396bb275e2ff2b 100644
 --- a/net/minecraft/world/level/block/RedstoneTorchBlock.java
 +++ b/net/minecraft/world/level/block/RedstoneTorchBlock.java
-@@ -25,7 +_,7 @@
+@@ -25,7 +25,7 @@ import org.jspecify.annotations.Nullable;
  public class RedstoneTorchBlock extends BaseTorchBlock {
      public static final MapCodec<RedstoneTorchBlock> CODEC = simpleCodec(RedstoneTorchBlock::new);
      public static final BooleanProperty LIT = BlockStateProperties.LIT;
@@ -9,7 +17,7 @@
      public static final int RECENT_TOGGLE_TIMER = 60;
      public static final int MAX_RECENT_TOGGLES = 8;
      public static final int RESTART_DELAY = 160;
-@@ -68,14 +_,23 @@
+@@ -68,14 +68,23 @@ public class RedstoneTorchBlock extends BaseTorchBlock {
      @Override
      protected void tick(final BlockState state, final ServerLevel level, final BlockPos pos, final RandomSource random) {
          boolean neighborSignal = this.hasNeighborSignal(level, pos, state);
@@ -37,7 +45,7 @@
                  level.setBlock(pos, state.setValue(LIT, false), Block.UPDATE_ALL);
                  if (isToggledTooFrequently(level, pos, true)) {
                      level.levelEvent(LevelEvent.REDSTONE_TORCH_BURNOUT, pos, 0);
-@@ -83,6 +_,11 @@
+@@ -83,6 +92,11 @@ public class RedstoneTorchBlock extends BaseTorchBlock {
                  }
              }
          } else if (!neighborSignal && !isToggledTooFrequently(level, pos, false)) {
@@ -49,7 +57,7 @@
              level.setBlock(pos, state.setValue(LIT, true), Block.UPDATE_ALL);
          }
      }
-@@ -132,7 +_,12 @@
+@@ -132,7 +146,12 @@ public class RedstoneTorchBlock extends BaseTorchBlock {
      }
  
      private static boolean isToggledTooFrequently(final Level level, final BlockPos pos, final boolean add) {

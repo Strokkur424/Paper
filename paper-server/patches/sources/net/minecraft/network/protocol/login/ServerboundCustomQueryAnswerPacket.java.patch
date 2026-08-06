@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/network/protocol/login/ServerboundCustomQueryAnswerPacket.java b/net/minecraft/network/protocol/login/ServerboundCustomQueryAnswerPacket.java
+index 07ff6a797ac5b968e2d2d5be71a0d5d960577c54..1f1a1c2aceb9bd4e7da33d745bd776fe769460c9 100644
 --- a/net/minecraft/network/protocol/login/ServerboundCustomQueryAnswerPacket.java
 +++ b/net/minecraft/network/protocol/login/ServerboundCustomQueryAnswerPacket.java
-@@ -20,7 +_,17 @@
+@@ -20,7 +20,17 @@ public record ServerboundCustomQueryAnswerPacket(int transactionId, @Nullable Cu
      }
  
      private static CustomQueryAnswerPayload readPayload(final int transactionId, final FriendlyByteBuf input) {
@@ -19,7 +27,7 @@
      }
  
      private static CustomQueryAnswerPayload readUnknownPayload(final FriendlyByteBuf input) {
-@@ -47,4 +_,19 @@
+@@ -47,4 +57,19 @@ public record ServerboundCustomQueryAnswerPacket(int transactionId, @Nullable Cu
      public void handle(final ServerLoginPacketListener listener) {
          listener.handleCustomQueryPacket(this);
      }

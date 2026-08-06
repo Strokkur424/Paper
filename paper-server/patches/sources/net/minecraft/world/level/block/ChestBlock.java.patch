@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/world/level/block/ChestBlock.java b/net/minecraft/world/level/block/ChestBlock.java
+index c498927682a8019f1a5d7803cda49738d776e3c2..4bd84b80199c7f625475ca62da02266d871a8639 100644
 --- a/net/minecraft/world/level/block/ChestBlock.java
 +++ b/net/minecraft/world/level/block/ChestBlock.java
-@@ -97,7 +_,7 @@
+@@ -97,7 +97,7 @@ public class ChestBlock extends AbstractChestBlock<ChestBlockEntity> implements
          @Override
          public Optional<MenuProvider> acceptDouble(final ChestBlockEntity first, final ChestBlockEntity second) {
              final Container container = new CompoundContainer(first, second);
@@ -9,7 +17,7 @@
                  @Override
                  public @Nullable AbstractContainerMenu createMenu(final int containerId, final Inventory inventory, final Player player) {
                      if (first.canOpen(player) && second.canOpen(player)) {
-@@ -118,10 +_,10 @@
+@@ -118,10 +118,10 @@ public class ChestBlock extends AbstractChestBlock<ChestBlockEntity> implements
                      if (first.hasCustomName()) {
                          return first.getDisplayName();
                      } else {
@@ -22,7 +30,7 @@
          }
  
          @Override
-@@ -264,8 +_,7 @@
+@@ -264,8 +264,7 @@ public class ChestBlock extends AbstractChestBlock<ChestBlockEntity> implements
      ) {
          if (level instanceof ServerLevel serverLevel) {
              MenuProvider menuProvider = this.getMenuProvider(state, level, pos);
@@ -32,7 +40,7 @@
                  player.awardStat(this.getOpenChestStat());
                  PiglinAi.angerNearbyPiglins(serverLevel, player, true);
              }
-@@ -306,7 +_,13 @@
+@@ -306,7 +305,13 @@ public class ChestBlock extends AbstractChestBlock<ChestBlockEntity> implements
  
      @Override
      public @Nullable MenuProvider getMenuProvider(final BlockState state, final Level level, final BlockPos pos) {
@@ -47,7 +55,7 @@
      }
  
      public static DoubleBlockCombiner.Combiner<ChestBlockEntity, Float2FloatFunction> opennessCombiner(final LidBlockEntity entity) {
-@@ -348,6 +_,11 @@
+@@ -348,6 +353,11 @@ public class ChestBlock extends AbstractChestBlock<ChestBlockEntity> implements
      }
  
      private static boolean isCatSittingOnChest(final LevelAccessor level, final BlockPos pos) {

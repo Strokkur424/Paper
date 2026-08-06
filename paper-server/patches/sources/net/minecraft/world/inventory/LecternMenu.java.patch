@@ -1,19 +1,23 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/world/inventory/LecternMenu.java b/net/minecraft/world/inventory/LecternMenu.java
+index a1cddaaa6697b2e77fa80ce92b213b6628a71d9a..4286d228cb4190c41c4c23efe24ad4132e8ce62b 100644
 --- a/net/minecraft/world/inventory/LecternMenu.java
 +++ b/net/minecraft/world/inventory/LecternMenu.java
-@@ -14,12 +_,29 @@
+@@ -14,12 +14,29 @@ public class LecternMenu extends AbstractContainerMenu {
      public static final int BUTTON_PAGE_JUMP_RANGE_START = 100;
      private final Container lectern;
      private final ContainerData lecternData;
--
--    public LecternMenu(final int containerId) {
--        this(containerId, new SimpleContainer(1), new SimpleContainerData(1));
--    }
--
--    public LecternMenu(final int containerId, final Container lectern, final ContainerData lecternData) {
 +    // CraftBukkit start
 +    private org.bukkit.craftbukkit.inventory.view.@org.jspecify.annotations.Nullable CraftLecternView view = null;
 +    private final org.bukkit.entity.Player player;
-+
+ 
+-    public LecternMenu(final int containerId) {
+-        this(containerId, new SimpleContainer(1), new SimpleContainerData(1));
 +    @Override
 +    public org.bukkit.craftbukkit.inventory.view.CraftLecternView getBukkitView() {
 +        if (this.view != null) {
@@ -23,9 +27,10 @@
 +        org.bukkit.craftbukkit.inventory.CraftInventoryLectern inventory = new org.bukkit.craftbukkit.inventory.CraftInventoryLectern(this.lectern);
 +        this.view = new org.bukkit.craftbukkit.inventory.view.CraftLecternView(this.player, inventory, this);
 +        return this.view;
-+    }
+     }
 +    // CraftBukkit end
-+
+ 
+-    public LecternMenu(final int containerId, final Container lectern, final ContainerData lecternData) {
 +    // CraftBukkit start - add player inventory
 +    public LecternMenu(final int containerId, final net.minecraft.world.entity.player.Inventory inventory) {
 +        this(containerId, new SimpleContainer(1), new SimpleContainerData(1), inventory);
@@ -36,7 +41,7 @@
          super(MenuType.LECTERN, containerId);
          checkContainerSize(lectern, 1);
          checkContainerDataCount(lecternData, 1);
-@@ -33,10 +_,12 @@
+@@ -33,10 +50,12 @@ public class LecternMenu extends AbstractContainerMenu {
              }
          });
          this.addDataSlots(lecternData);
@@ -49,7 +54,7 @@
          if (buttonId >= 100) {
              int pageToSet = buttonId - 100;
              this.setData(0, pageToSet);
-@@ -46,12 +_,26 @@
+@@ -46,12 +65,26 @@ public class LecternMenu extends AbstractContainerMenu {
          switch (buttonId) {
              case 1: {
                  int currentPage = this.lecternData.get(0);
@@ -78,7 +83,7 @@
                  return true;
              }
              case 3:
-@@ -59,6 +_,12 @@
+@@ -59,6 +92,12 @@ public class LecternMenu extends AbstractContainerMenu {
                      return false;
                  }
  
@@ -91,7 +96,7 @@
                  ItemStack book = this.lectern.removeItemNoUpdate(0);
                  this.lectern.setChanged();
                  if (!player.getInventory().add(book)) {
-@@ -84,6 +_,8 @@
+@@ -84,6 +123,8 @@ public class LecternMenu extends AbstractContainerMenu {
  
      @Override
      public boolean stillValid(final Player player) {

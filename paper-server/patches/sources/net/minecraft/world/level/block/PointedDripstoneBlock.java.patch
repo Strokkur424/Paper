@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/world/level/block/PointedDripstoneBlock.java b/net/minecraft/world/level/block/PointedDripstoneBlock.java
+index e8955e22abb4c6103717f3f9de9c1dd7c52a7e87..4040e7a5638665f4cef808667f07c30ff7cc85d5 100644
 --- a/net/minecraft/world/level/block/PointedDripstoneBlock.java
 +++ b/net/minecraft/world/level/block/PointedDripstoneBlock.java
-@@ -63,7 +_,7 @@
+@@ -63,7 +63,7 @@ public class PointedDripstoneBlock extends SpeleothemBlock {
      @Override
      public void fallOn(final Level level, final BlockState state, final BlockPos pos, final Entity entity, final double fallDistance) {
          if (state.getValue(TIP_DIRECTION) == Direction.UP && state.getValue(THICKNESS) == SpeleothemThickness.TIP) {
@@ -9,7 +17,7 @@
          } else {
              super.fallOn(level, state, pos, entity, fallDistance);
          }
-@@ -110,10 +_,11 @@
+@@ -110,10 +110,11 @@ public class PointedDripstoneBlock extends SpeleothemBlock {
                          if (stalactiteTipPos != null) {
                              if (fluidInfo.get().sourceState.is(Blocks.MUD) && fluid == Fluids.WATER) {
                                  BlockState newState = Blocks.CLAY.defaultBlockState();

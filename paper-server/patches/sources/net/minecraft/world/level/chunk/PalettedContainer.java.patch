@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/world/level/chunk/PalettedContainer.java b/net/minecraft/world/level/chunk/PalettedContainer.java
+index ee92b9ae8110b266ba0be723d1e228501b2c23aa..d70b291a5caafc8165bcb804063fc96ff67db303 100644
 --- a/net/minecraft/world/level/chunk/PalettedContainer.java
 +++ b/net/minecraft/world/level/chunk/PalettedContainer.java
-@@ -26,14 +_,14 @@
+@@ -26,14 +26,14 @@ public class PalettedContainer<T> implements PaletteResize<T>, PalettedContainer
      private static final int MIN_PALETTE_BITS = 0;
      private volatile PalettedContainer.Data<T> data;
      private final Strategy<T> strategy;
@@ -18,7 +26,7 @@
      }
  
      public static <T> Codec<PalettedContainer<T>> codecRW(final Codec<T> elementCodec, final Strategy<T> strategy, final T defaultValue) {
-@@ -94,7 +_,7 @@
+@@ -94,7 +94,7 @@ public class PalettedContainer<T> implements PaletteResize<T>, PalettedContainer
      }
  
      @Override
@@ -27,7 +35,7 @@
          PalettedContainer.Data<T> oldData = this.data;
          PalettedContainer.Data<T> newData = this.createOrReuseData(oldData, bits);
          newData.copyFrom(oldData.palette, oldData.storage);
-@@ -102,7 +_,7 @@
+@@ -102,7 +102,7 @@ public class PalettedContainer<T> implements PaletteResize<T>, PalettedContainer
          return newData.palette.idFor(lastAddedValue, PaletteResize.noResizeExpected());
      }
  
@@ -36,7 +44,7 @@
          this.acquire();
  
          try {
-@@ -122,7 +_,7 @@
+@@ -122,7 +122,7 @@ public class PalettedContainer<T> implements PaletteResize<T>, PalettedContainer
          return this.data.palette.valueFor(oldId);
      }
  
@@ -45,7 +53,7 @@
          this.acquire();
  
          try {
-@@ -155,7 +_,7 @@
+@@ -155,7 +155,7 @@ public class PalettedContainer<T> implements PaletteResize<T>, PalettedContainer
          allExistingEntries.forEach(state -> consumer.accept(palette.valueFor(state)));
      }
  
@@ -54,7 +62,7 @@
          this.acquire();
  
          try {
-@@ -170,7 +_,7 @@
+@@ -170,7 +170,7 @@ public class PalettedContainer<T> implements PaletteResize<T>, PalettedContainer
      }
  
      @Override
@@ -63,7 +71,7 @@
          this.acquire();
  
          try {
-@@ -224,7 +_,7 @@
+@@ -224,7 +224,7 @@ public class PalettedContainer<T> implements PaletteResize<T>, PalettedContainer
      }
  
      @Override

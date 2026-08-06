@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/world/entity/animal/golem/SnowGolem.java b/net/minecraft/world/entity/animal/golem/SnowGolem.java
+index a2d3bb09daae4682af6705940e91e72e360f92c4..288c31f5d2f41f602b6e6fb00e8692ab483c1775 100644
 --- a/net/minecraft/world/entity/animal/golem/SnowGolem.java
 +++ b/net/minecraft/world/entity/animal/golem/SnowGolem.java
-@@ -92,7 +_,7 @@
+@@ -92,7 +92,7 @@ public class SnowGolem extends AbstractGolem implements RangedAttackMob, Shearab
          super.aiStep();
          if (this.level() instanceof ServerLevel serverLevel) {
              if (serverLevel.environmentAttributes().getValue(EnvironmentAttributes.SNOW_GOLEM_MELTS, this.position())) {
@@ -9,7 +17,7 @@
              }
  
              if (!serverLevel.getGameRules().get(GameRules.MOB_GRIEFING)) {
-@@ -107,7 +_,7 @@
+@@ -107,7 +107,7 @@ public class SnowGolem extends AbstractGolem implements RangedAttackMob, Shearab
                  int zz = Mth.floor(this.getZ() + (i / 2 % 2 * 2 - 1) * 0.25F);
                  BlockPos snowPos = new BlockPos(xx, yy, zz);
                  if (this.level().getBlockState(snowPos).isAir() && snow.canSurvive(this.level(), snowPos)) {
@@ -18,7 +26,7 @@
                      this.level().gameEvent(GameEvent.BLOCK_PLACE, snowPos, GameEvent.Context.of(this, snow));
                  }
              }
-@@ -138,7 +_,15 @@
+@@ -138,7 +138,15 @@ public class SnowGolem extends AbstractGolem implements RangedAttackMob, Shearab
          ItemStack itemStack = player.getItemInHand(hand);
          if (itemStack.is(Items.SHEARS) && this.readyForShearing()) {
              if (this.level() instanceof ServerLevel level) {
@@ -35,7 +43,7 @@
                  this.gameEvent(GameEvent.SHEAR, player);
                  itemStack.hurtAndBreak(1, player, hand.asEquipmentSlot());
              }
-@@ -151,9 +_,29 @@
+@@ -151,9 +159,29 @@ public class SnowGolem extends AbstractGolem implements RangedAttackMob, Shearab
  
      @Override
      public void shear(final ServerLevel level, final SoundSource soundSource, final ItemStack tool) {

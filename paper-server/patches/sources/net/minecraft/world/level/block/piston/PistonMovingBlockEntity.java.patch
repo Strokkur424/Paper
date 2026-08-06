@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/world/level/block/piston/PistonMovingBlockEntity.java b/net/minecraft/world/level/block/piston/PistonMovingBlockEntity.java
+index 415c038d519b1f81d0e943da6b2e3b872c8ebd09..089401dbd221cdf865eea04e5529024d53c6e963 100644
 --- a/net/minecraft/world/level/block/piston/PistonMovingBlockEntity.java
 +++ b/net/minecraft/world/level/block/piston/PistonMovingBlockEntity.java
-@@ -38,7 +_,7 @@
+@@ -38,7 +38,7 @@ public class PistonMovingBlockEntity extends BlockEntity {
      private static final boolean DEFAULT_EXTENDING = false;
      private static final boolean DEFAULT_SOURCE = false;
      private BlockState movedState = DEFAULT_BLOCK_STATE;
@@ -9,7 +17,7 @@
      private boolean extending = false;
      private boolean isSourcePiston = false;
      private static final ThreadLocal<Direction> NOCLIP = ThreadLocal.withInitial(() -> null);
-@@ -319,7 +_,7 @@
+@@ -319,7 +319,7 @@ public class PistonMovingBlockEntity extends BlockEntity {
                  if (level.getBlockState(pos).is(Blocks.MOVING_PISTON)) {
                      BlockState newState = Block.updateFromNeighbourShapes(entity.movedState, level, pos);
                      if (newState.isAir()) {

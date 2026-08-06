@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/world/entity/projectile/FishingHook.java b/net/minecraft/world/entity/projectile/FishingHook.java
+index b4512ba0c56fda4b4d88418266c97e0c42c72bb2..c0bb1b62dfcdebbd34a8e8423fa36eb4924a55e5 100644
 --- a/net/minecraft/world/entity/projectile/FishingHook.java
 +++ b/net/minecraft/world/entity/projectile/FishingHook.java
-@@ -70,10 +_,26 @@
+@@ -70,10 +70,26 @@ public class FishingHook extends Projectile {
      private final int lureSpeed;
      private final InterpolationHandler interpolationHandler = new InterpolationHandler(this);
  
@@ -27,7 +35,7 @@
      }
  
      public FishingHook(final EntityType<? extends FishingHook> type, final Level level) {
-@@ -153,12 +_,12 @@
+@@ -153,12 +169,12 @@ public class FishingHook extends Projectile {
          super.tick();
          Player owner = this.getPlayerOwner();
          if (owner == null) {
@@ -42,7 +50,7 @@
                      return;
                  }
              } else {
-@@ -176,12 +_,14 @@
+@@ -176,12 +192,14 @@ public class FishingHook extends Projectile {
              if (this.currentState == FishingHook.FishHookState.FLYING) {
                  if (this.hookedIn != null) {
                      this.setDeltaMovement(Vec3.ZERO);
@@ -57,7 +65,7 @@
                      this.currentState = FishingHook.FishHookState.BOBBING;
                      return;
                  }
-@@ -196,6 +_,7 @@
+@@ -196,6 +214,7 @@ public class FishingHook extends Projectile {
                              this.setPos(this.hookedIn.getX(), this.hookedIn.getY(0.8), this.hookedIn.getZ());
                          } else {
                              this.setHookedEntity(null);
@@ -65,7 +73,7 @@
                              this.currentState = FishingHook.FishHookState.FLYING;
                          }
                      }
-@@ -262,13 +_,13 @@
+@@ -262,13 +281,13 @@ public class FishingHook extends Projectile {
              }
          }
  
@@ -81,7 +89,7 @@
      }
  
      @Override
-@@ -299,11 +_,11 @@
+@@ -299,11 +318,11 @@ public class FishingHook extends Projectile {
          ServerLevel serverLevel = (ServerLevel)this.level();
          int fishingSpeed = 1;
          BlockPos above = blockPos.above();
@@ -95,7 +103,7 @@
              fishingSpeed--;
          }
  
-@@ -313,6 +_,10 @@
+@@ -313,6 +332,10 @@ public class FishingHook extends Projectile {
                  this.timeUntilLured = 0;
                  this.timeUntilHooked = 0;
                  this.getEntityData().set(DATA_BITING, false);
@@ -106,7 +114,7 @@
              }
          } else if (this.timeUntilHooked > 0) {
              this.timeUntilHooked -= fishingSpeed;
-@@ -336,6 +_,12 @@
+@@ -336,6 +359,12 @@ public class FishingHook extends Projectile {
                      serverLevel.sendParticles(ParticleTypes.FISHING, fishX, fishY, fishZ, 0, -particleZMovement, 0.01, particleXMovement, 1.0);
                  }
              } else {
@@ -119,7 +127,7 @@
                  this.playSound(SoundEvents.FISHING_BOBBER_SPLASH, 0.25F, 1.0F + (this.random.nextFloat() - this.random.nextFloat()) * 0.4F);
                  double y = this.getY() + 0.5;
                  serverLevel.sendParticles(
-@@ -379,14 +_,31 @@
+@@ -379,15 +408,32 @@ public class FishingHook extends Projectile {
              }
  
              if (this.timeUntilLured <= 0) {
@@ -145,17 +153,18 @@
 +            this.resetTimeUntilLured(); // Paper - more projectile api - extract time until lured reset logic
          }
      }
-+
+ 
 +    // Paper start - more projectile api - extract time until lured reset logic
 +    public void resetTimeUntilLured() {
 +        this.timeUntilLured = Mth.nextInt(this.random, this.minWaitTime, this.maxWaitTime);
 +        this.timeUntilLured -= (this.applyLure) ? (this.lureSpeed >= this.maxWaitTime ? this.timeUntilLured - 1 : this.lureSpeed ) : 0; // Paper - Fix Lure infinite loop
 +    }
 +    // Paper end - more projectile api - extract time until lured reset logic
- 
++
      public boolean calculateOpenWater(final BlockPos blockPos) {
          FishingHook.OpenWaterType previousLayer = FishingHook.OpenWaterType.INVALID;
-@@ -445,15 +_,30 @@
+ 
+@@ -445,15 +491,30 @@ public class FishingHook extends Projectile {
      protected void readAdditionalSaveData(final ValueInput input) {
      }
  
@@ -186,7 +195,7 @@
              } else if (this.nibble > 0) {
                  LootParams params = new LootParams.Builder((ServerLevel)this.level())
                      .withParameter(LootContextParams.ORIGIN, this.position())
-@@ -467,14 +_,27 @@
+@@ -467,14 +528,27 @@ public class FishingHook extends Projectile {
  
                  for (ItemStack itemStack : items) {
                      ItemEntity entity = new ItemEntity(this.level(), this.getX(), this.getY(), this.getZ(), itemStack);
@@ -216,7 +225,7 @@
                      if (itemStack.is(ItemTags.FISHES)) {
                          owner.awardStat(Stats.FISH_CAUGHT, 1);
                      }
-@@ -484,10 +_,24 @@
+@@ -484,10 +558,24 @@ public class FishingHook extends Projectile {
              }
  
              if (this.onGround()) {
@@ -242,7 +251,7 @@
              return dmg;
          } else {
              return 0;
-@@ -517,9 +_,9 @@
+@@ -517,9 +605,9 @@ public class FishingHook extends Projectile {
      }
  
      @Override
@@ -254,7 +263,7 @@
      }
  
      @Override
-@@ -565,7 +_,7 @@
+@@ -565,7 +653,7 @@ public class FishingHook extends Projectile {
          if (this.getPlayerOwner() == null) {
              int ownerId = packet.getData();
              LOGGER.error("Failed to recreate fishing hook on client. {} (id: {}) is not a valid owner.", this.level().getEntity(ownerId), ownerId);

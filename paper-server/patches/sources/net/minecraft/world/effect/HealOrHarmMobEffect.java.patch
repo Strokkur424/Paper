@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/world/effect/HealOrHarmMobEffect.java b/net/minecraft/world/effect/HealOrHarmMobEffect.java
+index ef31d92c1158ba67f780182eaeb1cea17fb99bd1..f5e89c81a4aae3cbbe85e0ebb0ac1adfc51f0de3 100644
 --- a/net/minecraft/world/effect/HealOrHarmMobEffect.java
 +++ b/net/minecraft/world/effect/HealOrHarmMobEffect.java
-@@ -16,7 +_,7 @@
+@@ -16,7 +16,7 @@ class HealOrHarmMobEffect extends InstantaneousMobEffect {
      @Override
      public boolean applyEffectTick(final ServerLevel level, final LivingEntity mob, final int amplification) {
          if (this.isHarm == mob.isInvertedHealAndHarm()) {
@@ -9,7 +17,7 @@
          } else {
              mob.hurtServer(level, mob.damageSources().magic(), 6 << amplification);
          }
-@@ -33,9 +_,10 @@
+@@ -33,9 +33,10 @@ class HealOrHarmMobEffect extends InstantaneousMobEffect {
          final int amplification,
          final double scale
      ) {

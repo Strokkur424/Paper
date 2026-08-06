@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/world/level/block/entity/CrafterBlockEntity.java b/net/minecraft/world/level/block/entity/CrafterBlockEntity.java
+index 736d2a501d520d5fc271e5aa08956a91c10680b6..02d86d0675de22546a225dd6eaac5875eba0ce54 100644
 --- a/net/minecraft/world/level/block/entity/CrafterBlockEntity.java
 +++ b/net/minecraft/world/level/block/entity/CrafterBlockEntity.java
-@@ -60,6 +_,47 @@
+@@ -60,6 +60,47 @@ public class CrafterBlockEntity extends RandomizableContainerBlockEntity impleme
          }
      };
  

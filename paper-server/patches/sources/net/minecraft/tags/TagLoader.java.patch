@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/tags/TagLoader.java b/net/minecraft/tags/TagLoader.java
+index f4745dc152a81e7404732a3c180ffcbf5fa89977..2b83b140cda478f70ee19e6c7a8d30f10eee2578 100644
 --- a/net/minecraft/tags/TagLoader.java
 +++ b/net/minecraft/tags/TagLoader.java
-@@ -86,7 +_,10 @@
+@@ -86,7 +86,10 @@ public class TagLoader<T> {
          return missingElements.isEmpty() ? Either.right(List.copyOf(values)) : Either.left(missingElements);
      }
  
@@ -12,7 +20,7 @@
          final Map<Identifier, List<T>> newTags = new HashMap<>();
          TagEntry.Lookup<T> lookup = new TagEntry.Lookup<T>() {
              @Override
-@@ -112,7 +_,7 @@
+@@ -112,7 +115,7 @@ public class TagLoader<T> {
                  )
                  .ifRight(tag -> newTags.put(id, (List<T>)tag))
          );
@@ -21,7 +29,7 @@
      }
  
      public static <T> Map<TagKey<T>, List<Holder<T>>> loadTagsFromNetwork(final TagNetworkSerialization.NetworkPayload tags, final Registry<T> registry) {
-@@ -120,18 +_,39 @@
+@@ -120,18 +123,39 @@ public class TagLoader<T> {
      }
  
      public static List<Registry.PendingTags<?>> loadTagsForExistingRegistries(final ResourceManager manager, final RegistryAccess layer) {
@@ -64,7 +72,7 @@
      }
  
      private static <T> Map<TagKey<T>, List<Holder<T>>> wrapTags(
-@@ -140,12 +_,12 @@
+@@ -140,12 +164,12 @@ public class TagLoader<T> {
          return tags.entrySet().stream().collect(Collectors.toUnmodifiableMap(e -> TagKey.create(registryKey, e.getKey()), Entry::getValue));
      }
  

@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/world/level/levelgen/structure/templatesystem/StructureTemplate.java b/net/minecraft/world/level/levelgen/structure/templatesystem/StructureTemplate.java
+index fe1cd9ba6ea81dbf212f669d9b2c638b8b0109f2..49df8221216d5af4fd3101109a1f5231e3d1a68c 100644
 --- a/net/minecraft/world/level/levelgen/structure/templatesystem/StructureTemplate.java
 +++ b/net/minecraft/world/level/levelgen/structure/templatesystem/StructureTemplate.java
-@@ -81,6 +_,10 @@
+@@ -81,6 +81,10 @@ public class StructureTemplate {
      public final List<StructureTemplate.StructureEntityInfo> entityInfoList = Lists.newArrayList();
      private Vec3i size = Vec3i.ZERO;
      private String author = "?";
@@ -11,7 +19,7 @@
  
      public Vec3i getSize() {
          return this.size;
-@@ -250,7 +_,7 @@
+@@ -250,7 +254,7 @@ public class StructureTemplate {
      }
  
      public boolean placeInWorld(
@@ -20,7 +28,7 @@
          final BlockPos position,
          final BlockPos referencePos,
          final StructurePlaceSettings settings,
-@@ -261,6 +_,19 @@
+@@ -261,6 +265,19 @@ public class StructureTemplate {
              return false;
          }
  
@@ -40,7 +48,7 @@
          List<StructureTemplate.StructureBlockInfo> blockInfoList = settings.getRandomPalette(this.palettes, position).blocks();
          if ((!blockInfoList.isEmpty() || !settings.isIgnoreEntities() && !this.entityInfoList.isEmpty())
              && this.size.getX() >= 1
-@@ -288,6 +_,20 @@
+@@ -288,6 +305,20 @@ public class StructureTemplate {
                              level.setBlock(blockPos, Blocks.BARRIER.defaultBlockState(), Block.UPDATE_SKIP_ALL_SIDEEFFECTS | Block.UPDATE_NONE);
                          }
  
@@ -61,7 +69,7 @@
                          if (level.setBlock(blockPos, state, updateMode)) {
                              minX = Math.min(minX, blockPos.getX());
                              minY = Math.min(minY, blockPos.getY());
-@@ -299,7 +_,7 @@
+@@ -299,7 +330,7 @@ public class StructureTemplate {
                              if (blockInfo.nbt != null) {
                                  BlockEntity blockEntity = level.getBlockEntity(blockPos);
                                  if (blockEntity != null) {
@@ -70,7 +78,7 @@
                                          blockInfo.nbt.putLong("LootTableSeed", random.nextLong());
                                      }
  
-@@ -383,7 +_,9 @@
+@@ -383,7 +414,9 @@ public class StructureTemplate {
                          if (blockInfo.getSecond() != null) {
                              BlockEntity blockEntity = level.getBlockEntity(blockPos);
                              if (blockEntity != null) {
@@ -80,7 +88,7 @@
                              }
                          }
                      }
-@@ -391,7 +_,7 @@
+@@ -391,7 +424,7 @@ public class StructureTemplate {
  
                  if (!settings.isIgnoreEntities()) {
                      this.placeEntities(
@@ -89,7 +97,7 @@
                          position,
                          settings.getMirror(),
                          settings.getRotation(),
-@@ -522,16 +_,17 @@
+@@ -522,16 +555,17 @@ public class StructureTemplate {
                  });
              }
          }
@@ -114,7 +122,7 @@
      }
  
      public Vec3i getSize(final Rotation rotation) {
-@@ -704,6 +_,11 @@
+@@ -704,6 +738,11 @@ public class StructureTemplate {
  
          tag.put("entities", entityList);
          tag.put("size", this.newIntegerList(this.size.getX(), this.size.getY(), this.size.getZ()));
@@ -126,7 +134,7 @@
          return NbtUtils.addCurrentDataVersion(tag);
      }
  
-@@ -729,6 +_,11 @@
+@@ -729,6 +768,11 @@ public class StructureTemplate {
              BlockPos blockPos = new BlockPos(blockPosTag.getIntOr(0, 0), blockPosTag.getIntOr(1, 0), blockPosTag.getIntOr(2, 0));
              entityTag.getCompound("nbt").ifPresent(nbt -> this.entityInfoList.add(new StructureTemplate.StructureEntityInfo(pos, blockPos, nbt)));
          });
@@ -138,7 +146,7 @@
      }
  
      private void loadPalette(final HolderGetter<Block> blockLookup, final ListTag paletteList, final ListTag blockList) {
-@@ -828,7 +_,7 @@
+@@ -828,7 +872,7 @@ public class StructureTemplate {
  
      public static final class Palette {
          private final List<StructureTemplate.StructureBlockInfo> blocks;

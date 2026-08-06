@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/world/level/levelgen/PatrolSpawner.java b/net/minecraft/world/level/levelgen/PatrolSpawner.java
+index 6944f09128684ca00ee7176b914720e83fe72f11..002b721958e2b990d6bd902a562338e55ceb2f54 100644
 --- a/net/minecraft/world/level/levelgen/PatrolSpawner.java
 +++ b/net/minecraft/world/level/levelgen/PatrolSpawner.java
-@@ -18,17 +_,51 @@
+@@ -18,17 +18,51 @@ public class PatrolSpawner implements CustomSpawner {
  
      @Override
      public void tick(final ServerLevel level, final boolean spawnEnemies) {
@@ -59,7 +67,7 @@
                                  if (!player.isSpectator()) {
                                      if (!level.isCloseToVillage(player.blockPosition(), 2)) {
                                          int x = (24 + random.nextInt(24)) * (random.nextBoolean() ? -1 : 1);
-@@ -83,7 +_,7 @@
+@@ -83,7 +117,7 @@ public class PatrolSpawner implements CustomSpawner {
  
              mob.setPos(pos.getX(), pos.getY(), pos.getZ());
              mob.finalizeSpawn(level, level.getCurrentDifficultyAt(pos), EntitySpawnReason.PATROL, null);

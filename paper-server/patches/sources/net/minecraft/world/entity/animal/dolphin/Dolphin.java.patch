@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/world/entity/animal/dolphin/Dolphin.java b/net/minecraft/world/entity/animal/dolphin/Dolphin.java
+index 6a43fd4f203b56355d231416991ee97a0ca7b684..de7c9a123721f3667bbe5027b560dc94c152070c 100644
 --- a/net/minecraft/world/entity/animal/dolphin/Dolphin.java
 +++ b/net/minecraft/world/entity/animal/dolphin/Dolphin.java
-@@ -109,6 +_,13 @@
+@@ -109,6 +109,13 @@ public class Dolphin extends AgeableWaterCreature {
          return EntityTypes.DOLPHIN.create(level, EntitySpawnReason.BREEDING);
      }
  
@@ -14,7 +22,7 @@
      @Override
      public float getAgeScale() {
          return this.isBaby() ? 0.65F : 1.0F;
-@@ -194,7 +_,7 @@
+@@ -194,7 +201,7 @@ public class Dolphin extends AgeableWaterCreature {
  
      @Override
      public int getMaxAirSupply() {
@@ -23,7 +31,7 @@
      }
  
      @Override
-@@ -222,11 +_,15 @@
+@@ -222,11 +229,15 @@ public class Dolphin extends AgeableWaterCreature {
          if (this.getItemBySlot(EquipmentSlot.MAINHAND).isEmpty()) {
              ItemStack itemStack = entity.getItem();
              if (this.canHoldItem(itemStack)) {
@@ -40,7 +48,7 @@
              }
          }
      }
-@@ -489,7 +_,7 @@
+@@ -489,7 +500,7 @@ public class Dolphin extends AgeableWaterCreature {
  
          @Override
          public void start() {
@@ -49,7 +57,7 @@
          }
  
          @Override
-@@ -508,7 +_,7 @@
+@@ -508,7 +519,7 @@ public class Dolphin extends AgeableWaterCreature {
              }
  
              if (this.player.isSwimming() && this.player.level().getRandom().nextInt(6) == 0) {
@@ -58,7 +66,7 @@
              }
          }
      }
-@@ -580,7 +_,7 @@
+@@ -580,7 +591,7 @@ public class Dolphin extends AgeableWaterCreature {
                      0.3F * Mth.sin(Dolphin.this.getXRot() * Mth.DEG_TO_RAD) * 1.5F,
                      0.3F * Mth.cos(Dolphin.this.getYRot() * Mth.DEG_TO_RAD) * Mth.cos(Dolphin.this.getXRot() * Mth.DEG_TO_RAD) + Mth.sin(dir) * pow2
                  );

@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/world/entity/animal/armadillo/Armadillo.java b/net/minecraft/world/entity/animal/armadillo/Armadillo.java
+index 34beea4897bce898014424ca3a30bee96284b4c0..c8c50683597a2314a3c0e72888d5d75dc73fb94a 100644
 --- a/net/minecraft/world/entity/animal/armadillo/Armadillo.java
 +++ b/net/minecraft/world/entity/animal/armadillo/Armadillo.java
-@@ -293,8 +_,11 @@
+@@ -293,8 +293,11 @@ public class Armadillo extends Animal {
      }
  
      @Override
@@ -14,7 +22,7 @@
          if (!this.isNoAi() && !this.isDeadOrDying()) {
              if (source.getEntity() instanceof LivingEntity) {
                  this.getBrain().setMemoryWithExpiry(MemoryModuleType.DANGER_DETECTED_RECENTLY, true, 80L);
-@@ -305,6 +_,7 @@
+@@ -305,6 +308,7 @@ public class Armadillo extends Animal {
                  this.rollOut();
              }
          }

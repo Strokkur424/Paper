@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/network/protocol/game/ClientboundContainerSetContentPacket.java b/net/minecraft/network/protocol/game/ClientboundContainerSetContentPacket.java
+index 00eb5d91afc6f337f68d91d3a5545c279332d418..cc308997c4a53e84ec5218dd428b2454d2502a52 100644
 --- a/net/minecraft/network/protocol/game/ClientboundContainerSetContentPacket.java
 +++ b/net/minecraft/network/protocol/game/ClientboundContainerSetContentPacket.java
-@@ -22,6 +_,21 @@
+@@ -22,6 +22,21 @@ public record ClientboundContainerSetContentPacket(int containerId, int stateId,
          ClientboundContainerSetContentPacket::new
      );
  

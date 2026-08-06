@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/util/worldupdate/WorldUpgrader.java b/net/minecraft/util/worldupdate/WorldUpgrader.java
+index 646f0906e6936c1135d422a6bc68e3aaf0cd5750..a855a47dbad1770c5409e6d6c5840b0cf2cf5d27 100644
 --- a/net/minecraft/util/worldupdate/WorldUpgrader.java
 +++ b/net/minecraft/util/worldupdate/WorldUpgrader.java
-@@ -68,7 +_,7 @@
+@@ -68,7 +68,7 @@ public class WorldUpgrader implements AutoCloseable {
  
      public static CompoundTag getDataFixContextTag(final Registry<LevelStem> dimensions, final ResourceKey<Level> dimension) {
          ChunkGenerator generator = dimensions.getValueOrThrow(Registries.levelToLevelStem(dimension)).generator();

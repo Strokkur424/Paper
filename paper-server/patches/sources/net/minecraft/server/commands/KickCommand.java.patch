@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/server/commands/KickCommand.java b/net/minecraft/server/commands/KickCommand.java
+index 12d00034a296cc14205825828484da148c1ac79d..bf361ef4cbf2a55b8bba5a75111257fb2d6d471f 100644
 --- a/net/minecraft/server/commands/KickCommand.java
 +++ b/net/minecraft/server/commands/KickCommand.java
-@@ -43,7 +_,7 @@
+@@ -43,7 +43,7 @@ public class KickCommand {
  
          for (ServerPlayer player : players) {
              if (!source.getServer().isSingleplayerOwner(player.nameAndId())) {

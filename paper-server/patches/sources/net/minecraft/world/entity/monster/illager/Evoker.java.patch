@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/world/entity/monster/illager/Evoker.java b/net/minecraft/world/entity/monster/illager/Evoker.java
+index 78b52d102eb21a250c99e064ad04945214328f67..44a3f5a2f5fef29c542e7820acb2b7d36cfc63d4 100644
 --- a/net/minecraft/world/entity/monster/illager/Evoker.java
 +++ b/net/minecraft/world/entity/monster/illager/Evoker.java
-@@ -268,7 +_,7 @@
+@@ -268,7 +268,7 @@ public class Evoker extends SpellcasterIllager {
                          serverLevel.getScoreboard().addPlayerToTeam(vex.getScoreboardName(), evokerTeam);
                      }
  

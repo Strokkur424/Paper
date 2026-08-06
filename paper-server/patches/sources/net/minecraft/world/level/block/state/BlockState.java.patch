@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/world/level/block/state/BlockState.java b/net/minecraft/world/level/block/state/BlockState.java
+index f5eb469d6bfbc4ee32f9d9d6ce5980279eb2f6e4..3373add14f704cb70d5e01f38351603743a9de22 100644
 --- a/net/minecraft/world/level/block/state/BlockState.java
 +++ b/net/minecraft/world/level/block/state/BlockState.java
-@@ -8,6 +_,17 @@
+@@ -8,6 +8,17 @@ import net.minecraft.world.level.block.state.properties.Property;
  public class BlockState extends BlockBehaviour.BlockStateBase {
      public static final Codec<BlockState> CODEC = codec(BuiltInRegistries.BLOCK.byNameCodec(), Block::defaultBlockState, Block::getStateDefinition).stable();
  

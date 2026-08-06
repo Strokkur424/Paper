@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/network/protocol/game/ClientboundSectionBlocksUpdatePacket.java b/net/minecraft/network/protocol/game/ClientboundSectionBlocksUpdatePacket.java
+index d6b570b8ceb70bf2b1f2f5a20586a27ed7f16d0c..a66d8fe21b7c162340ea2f6ac0b02de6093ad3b8 100644
 --- a/net/minecraft/network/protocol/game/ClientboundSectionBlocksUpdatePacket.java
 +++ b/net/minecraft/network/protocol/game/ClientboundSectionBlocksUpdatePacket.java
-@@ -30,12 +_,25 @@
+@@ -30,12 +30,25 @@ public class ClientboundSectionBlocksUpdatePacket implements Packet<ClientGamePa
  
          for (short packedPos : changes) {
              this.positions[i] = packedPos;

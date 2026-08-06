@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/world/level/block/TrapDoorBlock.java b/net/minecraft/world/level/block/TrapDoorBlock.java
+index f1b50ab3c4f8901677890e30550adc9d8eb07836..614f70a520d13f6fe422ac7e42808c813fb3506d 100644
 --- a/net/minecraft/world/level/block/TrapDoorBlock.java
 +++ b/net/minecraft/world/level/block/TrapDoorBlock.java
-@@ -129,7 +_,31 @@
+@@ -129,7 +129,31 @@ public class TrapDoorBlock extends HorizontalDirectionalBlock implements SimpleW
          if (!level.isClientSide()) {
              boolean signal = level.hasNeighborSignal(pos);
              if (signal != state.getValue(POWERED)) {

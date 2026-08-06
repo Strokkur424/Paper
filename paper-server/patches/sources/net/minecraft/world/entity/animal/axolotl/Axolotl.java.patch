@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/world/entity/animal/axolotl/Axolotl.java b/net/minecraft/world/entity/animal/axolotl/Axolotl.java
+index 4bc47243b0610fc49d70c996c5b0888d76351b97..fa774ac8f3eea281c9b684c76dd12d4e66d3ee24 100644
 --- a/net/minecraft/world/entity/animal/axolotl/Axolotl.java
 +++ b/net/minecraft/world/entity/animal/axolotl/Axolotl.java
-@@ -274,7 +_,7 @@
+@@ -274,7 +274,7 @@ public class Axolotl extends Animal implements Bucketable {
  
      @Override
      public int getMaxAirSupply() {
@@ -9,7 +17,7 @@
      }
  
      public Axolotl.Variant getVariant() {
-@@ -488,10 +_,10 @@
+@@ -488,10 +488,10 @@ public class Axolotl extends Animal implements Bucketable {
          if (regenEffect == null || regenEffect.endsWithin(2399)) {
              int previousDuration = regenEffect != null ? regenEffect.getDuration() : 0;
              int regenDuration = Math.min(2400, 100 + previousDuration);
@@ -22,17 +30,17 @@
      }
  
      @Override
-@@ -569,6 +_,13 @@
-     ) {
+@@ -570,6 +570,13 @@ public class Axolotl extends Animal implements Bucketable {
          return level.getBlockState(pos.below()).is(BlockTags.AXOLOTLS_SPAWNABLE_ON);
      }
-+
+ 
 +    // CraftBukkit start - SPIGOT-6907: re-implement LivingEntity#setMaximumAir()
 +    @Override
 +    public int getDefaultMaxAirSupply() {
 +        return AXOLOTL_TOTAL_AIR_SUPPLY;
 +    }
 +    // CraftBukkit end
- 
++
      @Override
      public EntityDimensions getDefaultDimensions(final Pose pose) {
+         return this.isBaby() ? BABY_DIMENSIONS : super.getDefaultDimensions(pose);

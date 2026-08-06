@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/world/item/BlockItem.java b/net/minecraft/world/item/BlockItem.java
+index fa0ddf67ca4b08f708397075d3cee9b34e9b2790..b94c4f0a6908a37d8a07dba6ff3ece7193aca1b5 100644
 --- a/net/minecraft/world/item/BlockItem.java
 +++ b/net/minecraft/world/item/BlockItem.java
-@@ -60,6 +_,7 @@
+@@ -60,6 +60,7 @@ public class BlockItem extends Item {
          }
  
          BlockState placementState = this.getPlacementState(updatedPlaceContext);
@@ -8,7 +16,7 @@
          if (placementState == null) {
              return InteractionResult.FAIL;
          }
-@@ -73,21 +_,47 @@
+@@ -73,21 +74,47 @@ public class BlockItem extends Item {
          Player player = updatedPlaceContext.getPlayer();
          ItemStack itemStack = updatedPlaceContext.getItemInHand();
          BlockState placedState = level.getBlockState(pos);
@@ -59,7 +67,7 @@
      }
  
      protected SoundEvent getPlaceSound(final BlockState blockState) {
-@@ -133,8 +_,20 @@
+@@ -133,8 +160,20 @@ public class BlockItem extends Item {
  
      protected boolean canPlace(final BlockPlaceContext context, final BlockState stateForPlacement) {
          Player player = context.getPlayer();
@@ -82,7 +90,7 @@
      }
  
      protected boolean mustSurvive() {
-@@ -159,7 +_,7 @@
+@@ -159,7 +198,7 @@ public class BlockItem extends Item {
                      return false;
                  }
  

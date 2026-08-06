@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/world/entity/animal/parrot/Parrot.java b/net/minecraft/world/entity/animal/parrot/Parrot.java
+index 18f12371445e13d5b3fb3a145ec8452a003819b7..58bb6b8fa561033f0083cd405cedb75826cfc5d9 100644
 --- a/net/minecraft/world/entity/animal/parrot/Parrot.java
 +++ b/net/minecraft/world/entity/animal/parrot/Parrot.java
-@@ -270,7 +_,7 @@
+@@ -270,7 +270,7 @@ public class Parrot extends ShoulderRidingEntity {
              }
  
              if (!this.level().isClientSide()) {
@@ -9,7 +17,7 @@
                      this.tame(player);
                      this.level().broadcastEntityEvent(this, EntityEvent.TAMING_SUCCEEDED);
                  } else {
-@@ -291,7 +_,7 @@
+@@ -291,7 +291,7 @@ public class Parrot extends ShoulderRidingEntity {
              }
          } else {
              this.usePlayerItem(player, hand, itemStack);
@@ -18,7 +26,7 @@
              if (player.isCreative() || !this.isInvulnerable()) {
                  this.hurt(this.damageSources().playerAttack(player), Float.MAX_VALUE);
              }
-@@ -384,8 +_,8 @@
+@@ -384,8 +384,8 @@ public class Parrot extends ShoulderRidingEntity {
      }
  
      @Override
@@ -29,7 +37,7 @@
      }
  
      @Override
-@@ -401,8 +_,13 @@
+@@ -401,8 +401,13 @@ public class Parrot extends ShoulderRidingEntity {
              return false;
          }
  

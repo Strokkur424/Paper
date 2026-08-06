@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/world/level/block/DropperBlock.java b/net/minecraft/world/level/block/DropperBlock.java
+index 2955df6076eede75613cb911dc8046d75d2c002c..bdc8de231de7525a4bfb249fc6f5077b6112a2d7 100644
 --- a/net/minecraft/world/level/block/DropperBlock.java
 +++ b/net/minecraft/world/level/block/DropperBlock.java
-@@ -53,6 +_,7 @@
+@@ -53,6 +53,7 @@ public class DropperBlock extends DispenserBlock {
              BlockSource source = new BlockSource(level, pos, state, blockEntity);
              int slot = blockEntity.getRandomSlot(level.getRandom());
              if (slot < 0) {
@@ -8,7 +16,7 @@
                  level.levelEvent(LevelEvent.SOUND_DISPENSER_FAIL, pos, 0);
              } else {
                  ItemStack itemStack = blockEntity.getItem(slot);
-@@ -61,10 +_,27 @@
+@@ -61,10 +62,27 @@ public class DropperBlock extends DispenserBlock {
                      Container into = HopperBlockEntity.getContainerAt(level, pos.relative(direction));
                      ItemStack remaining;
                      if (into == null) {

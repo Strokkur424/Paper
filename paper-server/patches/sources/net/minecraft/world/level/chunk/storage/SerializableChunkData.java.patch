@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/world/level/chunk/storage/SerializableChunkData.java b/net/minecraft/world/level/chunk/storage/SerializableChunkData.java
+index 3447da057f800de67d9daaa457b316fbbe34e41c..760eda9e45a3f31a68a3b2b2dc13479c7db0d3cc 100644
 --- a/net/minecraft/world/level/chunk/storage/SerializableChunkData.java
 +++ b/net/minecraft/world/level/chunk/storage/SerializableChunkData.java
-@@ -92,6 +_,7 @@
+@@ -92,6 +92,7 @@ public record SerializableChunkData(
      List<CompoundTag> entities,
      List<CompoundTag> blockEntities,
      CompoundTag structureData
@@ -8,7 +16,7 @@
  ) {
      private static final Codec<List<SavedTick<Block>>> BLOCK_TICKS_CODEC = SavedTick.codec(BuiltInRegistries.BLOCK.byNameCodec()).listOf();
      private static final Codec<List<SavedTick<Fluid>>> FLUID_TICKS_CODEC = SavedTick.codec(BuiltInRegistries.FLUID.byNameCodec()).listOf();
-@@ -107,6 +_,24 @@
+@@ -107,6 +108,24 @@ public record SerializableChunkData(
      public static final String BLOCK_LIGHT_TAG = "BlockLight";
      public static final String SKY_LIGHT_TAG = "SkyLight";
  
@@ -33,7 +41,7 @@
      public static SerializableChunkData parse(
          final LevelHeightAccessor levelHeight, final PalettedContainerFactory containerFactory, final CompoundTag chunkData
      ) {
-@@ -114,7 +_,15 @@
+@@ -114,7 +133,15 @@ public record SerializableChunkData(
              return null;
          }
  
@@ -50,7 +58,7 @@
          long lastUpdateTime = chunkData.getLongOr("LastUpdate", 0L);
          long inhabitedTime = chunkData.getLongOr("InhabitedTime", 0L);
          ChunkStatus status = chunkData.read("Status", ChunkStatus.CODEC).orElse(ChunkStatus.EMPTY);
-@@ -153,7 +_,7 @@
+@@ -153,7 +180,7 @@ public record SerializableChunkData(
          CompoundTag structureData = chunkData.getCompoundOrEmpty("structures");
          ListTag sectionTags = chunkData.getListOrEmpty("sections");
          List<SerializableChunkData.SectionData> sectionData = new ArrayList<>(sectionTags.size());
@@ -59,7 +67,7 @@
          Codec<PalettedContainer<BlockState>> blockStatesCodec = containerFactory.blockStatesContainerCodec();
  
          for (int i = 0; i < sectionTags.size(); i++) {
-@@ -170,7 +_,7 @@
+@@ -170,7 +197,7 @@ public record SerializableChunkData(
                                  .getOrThrow(SerializableChunkData.ChunkReadException::new)
                          )
                          .orElseGet(containerFactory::createForBlockStates);
@@ -68,7 +76,7 @@
                          .map(
                              container -> biomesCodec.parse(NbtOps.INSTANCE, container)
                                  .promotePartial(msg -> logErrors(chunkPos, y, msg))
-@@ -207,6 +_,7 @@
+@@ -207,6 +234,7 @@ public record SerializableChunkData(
              entities,
              blockEntities,
              structureData
@@ -76,7 +84,7 @@
          );
      }
  
-@@ -283,6 +_,12 @@
+@@ -283,6 +311,12 @@ public record SerializableChunkData(
              }
          }
  
@@ -89,7 +97,7 @@
          chunk.setLightCorrect(this.lightCorrect);
          EnumSet<Heightmap.Types> toPrime = EnumSet.noneOf(Heightmap.Types.class);
  
-@@ -388,6 +_,12 @@
+@@ -388,6 +422,12 @@ public record SerializableChunkData(
              .map(shorts -> shorts != null && !shorts.isEmpty() ? new ShortArrayList(shorts) : null)
              .toArray(ShortList[]::new);
          CompoundTag structureData = packStructureData(StructurePieceSerializationContext.fromLevel(level), pos, chunk.getAllStarts(), chunk.getAllReferences());
@@ -102,7 +110,7 @@
          return new SerializableChunkData(
              level.palettedContainerFactory(),
              pos,
-@@ -407,6 +_,7 @@
+@@ -407,6 +447,7 @@ public record SerializableChunkData(
              entities,
              blockEntities,
              structureData
@@ -110,7 +118,7 @@
          );
      }
  
-@@ -473,6 +_,11 @@
+@@ -473,6 +514,11 @@ public record SerializableChunkData(
          this.heightmaps.forEach((type, data) -> heightmapsTag.put(type.getSerializationKey(), new LongArrayTag(data)));
          tag.put("Heightmaps", heightmapsTag);
          tag.put("structures", this.structureData);
@@ -122,7 +130,7 @@
          return tag;
      }
  
-@@ -556,6 +_,12 @@
+@@ -556,6 +602,12 @@ public record SerializableChunkData(
              } else {
                  StructureStart start = StructureStart.loadStaticStart(context, startsTag.getCompoundOrEmpty(key), seed);
                  if (start != null) {

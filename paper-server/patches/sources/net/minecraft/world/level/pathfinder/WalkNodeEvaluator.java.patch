@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/world/level/pathfinder/WalkNodeEvaluator.java b/net/minecraft/world/level/pathfinder/WalkNodeEvaluator.java
+index 6773e12138f255e756fa2af031efbbabb04b7f89..4f91849366ea4c6a28a42d4b0916e9b340c2cb31 100644
 --- a/net/minecraft/world/level/pathfinder/WalkNodeEvaluator.java
 +++ b/net/minecraft/world/level/pathfinder/WalkNodeEvaluator.java
-@@ -514,7 +_,12 @@
+@@ -514,7 +514,12 @@ public class WalkNodeEvaluator extends NodeEvaluator {
      }
  
      protected static PathType getPathTypeFromState(final BlockGetter level, final BlockPos pos) {

@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/world/entity/projectile/throwableitemprojectile/ThrownEnderpearl.java b/net/minecraft/world/entity/projectile/throwableitemprojectile/ThrownEnderpearl.java
+index ecc46a8e4b12f97b562c487c6572240536b448cf..8d3c6abd387acc4cec27a33b96bcd24255fd01ac 100644
 --- a/net/minecraft/world/entity/projectile/throwableitemprojectile/ThrownEnderpearl.java
 +++ b/net/minecraft/world/entity/projectile/throwableitemprojectile/ThrownEnderpearl.java
-@@ -104,11 +_,22 @@
+@@ -104,11 +104,22 @@ public class ThrownEnderpearl extends ThrowableItemProjectile {
                  Vec3 teleportPos = this.oldPosition();
                  if (owner instanceof ServerPlayer player) {
                      if (player.connection.isAcceptingMessages()) {
@@ -25,7 +33,7 @@
                              }
                          }
  
-@@ -116,15 +_,17 @@
+@@ -116,15 +127,17 @@ public class ThrownEnderpearl extends ThrowableItemProjectile {
                              owner.setPortalCooldown();
                          }
  
@@ -49,7 +57,7 @@
                          }
  
                          this.playSound(level, teleportPos);
-@@ -144,9 +_,9 @@
+@@ -144,9 +157,9 @@ public class ThrownEnderpearl extends ThrowableItemProjectile {
                      this.playSound(level, teleportPos);
                  }
  
@@ -61,7 +69,7 @@
              }
          }
      }
-@@ -169,7 +_,7 @@
+@@ -169,7 +182,7 @@ public class ThrownEnderpearl extends ThrowableItemProjectile {
                  && !owner.isAlive()
                  && !serverPlayer.wonGame
                  && serverPlayer.level().getGameRules().get(GameRules.ENDER_PEARLS_VANISH_ON_DEATH)) {
@@ -70,7 +78,7 @@
              } else {
                  super.tick();
              }
-@@ -198,7 +_,7 @@
+@@ -198,7 +211,7 @@ public class ThrownEnderpearl extends ThrowableItemProjectile {
      public @Nullable Entity teleport(final TeleportTransition transition) {
          Entity newEntity = super.teleport(transition);
          if (newEntity != null) {
@@ -79,7 +87,7 @@
          }
  
          return newEntity;
-@@ -206,7 +_,7 @@
+@@ -206,7 +219,7 @@ public class ThrownEnderpearl extends ThrowableItemProjectile {
  
      @Override
      public boolean canTeleport(final Level from, final Level to) {

@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/world/level/block/SculkShriekerBlock.java b/net/minecraft/world/level/block/SculkShriekerBlock.java
+index ccf7ba7c2bd941ce52dc55bc57cc821de024a91e..5a15671202a0129b1ce97fae5515ddefa5b3fb01 100644
 --- a/net/minecraft/world/level/block/SculkShriekerBlock.java
 +++ b/net/minecraft/world/level/block/SculkShriekerBlock.java
-@@ -61,6 +_,7 @@
+@@ -61,6 +61,7 @@ public class SculkShriekerBlock extends BaseEntityBlock implements SimpleWaterlo
          if (level instanceof ServerLevel serverLevel) {
              ServerPlayer player = SculkShriekerBlockEntity.tryGetPlayer(entity);
              if (player != null) {
@@ -8,7 +16,7 @@
                  serverLevel.getBlockEntity(pos, BlockEntityTypes.SCULK_SHRIEKER).ifPresent(shrieker -> shrieker.tryShriek(serverLevel, player));
              }
          }
-@@ -127,9 +_,16 @@
+@@ -127,9 +128,16 @@ public class SculkShriekerBlock extends BaseEntityBlock implements SimpleWaterlo
      @Override
      protected void spawnAfterBreak(final BlockState state, final ServerLevel level, final BlockPos pos, final ItemStack tool, final boolean dropExperience) {
          super.spawnAfterBreak(state, level, pos, tool, dropExperience);

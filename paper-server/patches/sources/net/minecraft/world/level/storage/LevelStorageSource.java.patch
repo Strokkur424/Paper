@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/world/level/storage/LevelStorageSource.java b/net/minecraft/world/level/storage/LevelStorageSource.java
+index 7b247f89b3fd0cb8719acb27f00564611b576595..6f24eb34e0ecc2b03371c585a9538e9337a2295a 100644
 --- a/net/minecraft/world/level/storage/LevelStorageSource.java
 +++ b/net/minecraft/world/level/storage/LevelStorageSource.java
-@@ -145,13 +_,14 @@
+@@ -145,13 +145,14 @@ public class LevelStorageSource {
          final WorldDataConfiguration dataConfiguration,
          final Registry<LevelStem> datapackDimensions,
          final HolderLookup.Provider registryAccess
@@ -16,7 +24,7 @@
              .mapOrElse(
                  Function.identity(),
                  error -> {
-@@ -170,9 +_,9 @@
+@@ -170,9 +171,9 @@ public class LevelStorageSource {
      }
  
      public static <T extends SavedData> DataResult<T> readExistingSavedData(
@@ -28,7 +36,7 @@
  
          CompoundTag fileContents;
          try {
-@@ -393,7 +_,7 @@
+@@ -393,7 +394,7 @@ public class LevelStorageSource {
  
      public LevelStorageSource.LevelStorageAccess validateAndCreateAccess(final String levelId) throws IOException, ContentValidationException {
          Path levelPath = this.getLevelPath(levelId);

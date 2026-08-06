@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/core/HolderSet.java b/net/minecraft/core/HolderSet.java
+index c978b88fbf5033174ba83473addaba1f97163ef1..5c725d1c39373a50555ce7f404ea5065d07ac599 100644
 --- a/net/minecraft/core/HolderSet.java
 +++ b/net/minecraft/core/HolderSet.java
-@@ -164,6 +_,7 @@
+@@ -164,6 +164,7 @@ public interface HolderSet<T> extends Iterable<Holder<T>> {
          private final HolderOwner<T> owner;
          private final TagKey<T> key;
          private @Nullable List<Holder<T>> contents;
@@ -8,7 +16,7 @@
  
          Named(final HolderOwner<T> owner, final TagKey<T> key) {
              this.owner = owner;
-@@ -172,6 +_,7 @@
+@@ -172,6 +173,7 @@ public interface HolderSet<T> extends Iterable<Holder<T>> {
  
          void bind(final List<Holder<T>> contents) {
              this.contents = List.copyOf(contents);
@@ -16,7 +24,7 @@
          }
  
          public TagKey<T> key() {
-@@ -216,5 +_,15 @@
+@@ -216,5 +218,15 @@ public interface HolderSet<T> extends Iterable<Holder<T>> {
          public boolean canSerializeIn(final HolderOwner<T> context) {
              return this.owner.canSerializeIn(context);
          }

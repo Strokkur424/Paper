@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/resources/Identifier.java b/net/minecraft/resources/Identifier.java
+index fdf16c275f63d721144e84ce86ba5a24df16997c..29013261116fc2f6d88e7e32d1f25d99d46edb2e 100644
 --- a/net/minecraft/resources/Identifier.java
 +++ b/net/minecraft/resources/Identifier.java
-@@ -23,12 +_,20 @@
+@@ -23,12 +23,20 @@ public final class Identifier implements Comparable<Identifier> {
      public static final String DEFAULT_NAMESPACE = "minecraft";
      public static final String REALMS_NAMESPACE = "realms";
      public static final String ALLOWED_NAMESPACE_CHARACTERS = "[a-z0-9_.-]";
@@ -21,7 +29,7 @@
          this.namespace = namespace;
          this.path = path;
      }
-@@ -250,7 +_,7 @@
+@@ -250,7 +258,7 @@ public final class Identifier implements Comparable<Identifier> {
  
      private static String assertValidNamespace(final String namespace, final String path) {
          if (!isValidNamespace(namespace)) {
@@ -30,7 +38,7 @@
          } else {
              return namespace;
          }
-@@ -266,7 +_,7 @@
+@@ -266,7 +274,7 @@ public final class Identifier implements Comparable<Identifier> {
  
      private static String assertValidPath(final String namespace, final String path) {
          if (!isValidPath(path)) {

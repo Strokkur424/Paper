@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/server/commands/TeleportCommand.java b/net/minecraft/server/commands/TeleportCommand.java
+index 4c7723f53048bc46933085c02285cbf2568c86ab..290547abf7037c5c88736c66765b2ee8f575c53b 100644
 --- a/net/minecraft/server/commands/TeleportCommand.java
 +++ b/net/minecraft/server/commands/TeleportCommand.java
-@@ -256,7 +_,7 @@
+@@ -256,7 +256,7 @@ public class TeleportCommand {
          float relativeOrAbsoluteXRot = relatives.contains(Relative.X_ROT) ? xRot - victim.getXRot() : xRot;
          float newYRot = Mth.wrapDegrees(relativeOrAbsoluteYRot);
          float newXRot = Mth.wrapDegrees(relativeOrAbsoluteXRot);

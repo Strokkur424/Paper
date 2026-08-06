@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/world/level/block/SmokerBlock.java b/net/minecraft/world/level/block/SmokerBlock.java
+index 9d5b40013bc1c72e9ab67cadd8e91dc8de5d3a52..be13db13c2cb79c6f2421ccd49191cf50f691034 100644
 --- a/net/minecraft/world/level/block/SmokerBlock.java
 +++ b/net/minecraft/world/level/block/SmokerBlock.java
-@@ -44,8 +_,7 @@
+@@ -44,8 +44,7 @@ public class SmokerBlock extends AbstractFurnaceBlock {
      @Override
      protected void openContainer(final Level level, final BlockPos pos, final Player player) {
          BlockEntity blockEntity = level.getBlockEntity(pos);

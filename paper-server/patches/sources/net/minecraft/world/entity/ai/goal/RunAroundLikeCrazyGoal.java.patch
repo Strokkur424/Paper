@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/world/entity/ai/goal/RunAroundLikeCrazyGoal.java b/net/minecraft/world/entity/ai/goal/RunAroundLikeCrazyGoal.java
+index 639d4c47c1ff9b819707087bcc0b17d07470bb90..3645f1a669bf18cf66fbeebf437b8846753b7fd9 100644
 --- a/net/minecraft/world/entity/ai/goal/RunAroundLikeCrazyGoal.java
 +++ b/net/minecraft/world/entity/ai/goal/RunAroundLikeCrazyGoal.java
-@@ -59,7 +_,7 @@
+@@ -59,7 +59,7 @@ public class RunAroundLikeCrazyGoal extends Goal {
              if (passenger instanceof Player player) {
                  int temper = this.horse.getTemper();
                  int maxTemper = this.horse.getMaxTemper();

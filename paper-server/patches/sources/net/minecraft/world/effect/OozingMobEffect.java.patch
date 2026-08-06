@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/world/effect/OozingMobEffect.java b/net/minecraft/world/effect/OozingMobEffect.java
+index 23f49191610e9c99b1b2f5ac8c76a9f7d22865de..a1bf6f11218b84d82377d8e9c3796b6b320d56c1 100644
 --- a/net/minecraft/world/effect/OozingMobEffect.java
 +++ b/net/minecraft/world/effect/OozingMobEffect.java
-@@ -49,7 +_,7 @@
+@@ -49,7 +49,7 @@ class OozingMobEffect extends MobEffect {
          if (slime != null) {
              slime.setSize(2, true);
              slime.snapTo(x, y, z, level.getRandom().nextFloat() * 360.0F, 0.0F);

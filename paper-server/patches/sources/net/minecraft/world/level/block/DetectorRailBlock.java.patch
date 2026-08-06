@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/world/level/block/DetectorRailBlock.java b/net/minecraft/world/level/block/DetectorRailBlock.java
+index 9fa2ccafb5cbf652f70b475db1ddf3b9b5eefcfb..0caf401ef2e4f8646e429a476993ba06ee405445 100644
 --- a/net/minecraft/world/level/block/DetectorRailBlock.java
 +++ b/net/minecraft/world/level/block/DetectorRailBlock.java
-@@ -62,6 +_,7 @@
+@@ -62,6 +62,7 @@ public class DetectorRailBlock extends BaseRailBlock {
          final InsideBlockEffectApplier effectApplier,
          final boolean isPrecise
      ) {
@@ -8,7 +16,7 @@
          if (!level.isClientSide()) {
              if (!state.getValue(POWERED)) {
                  this.checkPressed(level, pos, state);
-@@ -87,12 +_,21 @@
+@@ -87,6 +88,7 @@ public class DetectorRailBlock extends BaseRailBlock {
  
      private void checkPressed(final Level level, final BlockPos pos, final BlockState state) {
          if (this.canSurvive(state, level, pos)) {
@@ -16,10 +24,10 @@
              boolean wasPressed = state.getValue(POWERED);
              boolean shouldBePressed = false;
              List<AbstractMinecart> entities = this.getInteractingMinecartOfType(level, pos, AbstractMinecart.class, e -> true);
-             if (!entities.isEmpty()) {
+@@ -94,6 +96,14 @@ public class DetectorRailBlock extends BaseRailBlock {
                  shouldBePressed = true;
              }
-+
+ 
 +            // Paper start - Call BlockRedstoneEvent
 +            if (wasPressed != shouldBePressed) {
 +                if (!org.bukkit.craftbukkit.event.CraftEventFactory.callBinaryRedstoneChange(level, pos, shouldBePressed)) {
@@ -27,6 +35,7 @@
 +                }
 +            }
 +            // Paper end - Call BlockRedstoneEvent
- 
++
              if (shouldBePressed && !wasPressed) {
                  BlockState newState = state.setValue(POWERED, true);
+                 level.setBlock(pos, newState, Block.UPDATE_ALL);

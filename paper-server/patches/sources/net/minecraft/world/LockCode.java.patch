@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/world/LockCode.java b/net/minecraft/world/LockCode.java
+index e824970cc7136c4d73290bcac941ac6251c99787..fd35f1859031d25af0641c1e8aa93e7acc72845e 100644
 --- a/net/minecraft/world/LockCode.java
 +++ b/net/minecraft/world/LockCode.java
-@@ -22,8 +_,14 @@
+@@ -22,8 +22,14 @@ public record LockCode(ItemPredicate predicate) {
          }
      }
  

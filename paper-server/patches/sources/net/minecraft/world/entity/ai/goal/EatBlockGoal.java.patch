@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/world/entity/ai/goal/EatBlockGoal.java b/net/minecraft/world/entity/ai/goal/EatBlockGoal.java
+index 5f2ad341ad9a066c341fb3a2c5df1451c7587ffb..c2a1b2b79c4b55dc09558cf6d998f09308196cb2 100644
 --- a/net/minecraft/world/entity/ai/goal/EatBlockGoal.java
 +++ b/net/minecraft/world/entity/ai/goal/EatBlockGoal.java
-@@ -62,8 +_,9 @@
+@@ -62,8 +62,9 @@ public class EatBlockGoal extends Goal {
          this.eatAnimationTick = Math.max(0, this.eatAnimationTick - 1);
          if (this.eatAnimationTick == this.adjustedTickDelay(4)) {
              BlockPos pos = this.mob.blockPosition();
@@ -12,7 +20,7 @@
                      this.level.destroyBlock(pos, false);
                  }
  
-@@ -71,7 +_,7 @@
+@@ -71,7 +72,7 @@ public class EatBlockGoal extends Goal {
              } else {
                  BlockPos below = pos.below();
                  if (this.level.getBlockState(below).is(Blocks.GRASS_BLOCK)) {

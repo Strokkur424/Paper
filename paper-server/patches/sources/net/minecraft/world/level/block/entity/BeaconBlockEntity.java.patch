@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/world/level/block/entity/BeaconBlockEntity.java b/net/minecraft/world/level/block/entity/BeaconBlockEntity.java
+index d8801d19a58ec95a220d337e3338a8bd8fab2ea2..43baa8b632d01ab1ceb6cc6967aaa0b8f95450ac 100644
 --- a/net/minecraft/world/level/block/entity/BeaconBlockEntity.java
 +++ b/net/minecraft/world/level/block/entity/BeaconBlockEntity.java
-@@ -109,6 +_,51 @@
+@@ -109,6 +109,51 @@ public class BeaconBlockEntity extends BlockEntity implements MenuProvider, Name
              return 3;
          }
      };
@@ -52,7 +60,7 @@
  
      private static @Nullable Holder<MobEffect> filterEffect(final @Nullable Holder<MobEffect> effect) {
          return VALID_EFFECTS.contains(effect) ? effect : null;
-@@ -172,10 +_,19 @@
+@@ -172,10 +217,19 @@ public class BeaconBlockEntity extends BlockEntity implements MenuProvider, Name
              }
  
              if (entity.levels > 0 && !entity.beamSections.isEmpty()) {
@@ -73,7 +81,7 @@
  
          if (entity.lastCheckY >= lastSetBlock) {
              entity.lastCheckY = level.getMinY() - 1;
-@@ -226,7 +_,15 @@
+@@ -226,7 +280,15 @@ public class BeaconBlockEntity extends BlockEntity implements MenuProvider, Name
  
      @Override
      public void setRemoved() {
@@ -89,7 +97,7 @@
          super.setRemoved();
      }
  
-@@ -264,29 +_,78 @@
+@@ -264,29 +326,78 @@ public class BeaconBlockEntity extends BlockEntity implements MenuProvider, Name
          final int levels,
          final @Nullable Holder<MobEffect> primaryPower,
          final @Nullable Holder<MobEffect> secondaryPower
@@ -101,29 +109,22 @@
 -            if (levels >= 4 && Objects.equals(primaryPower, secondaryPower)) {
 -                baseAmp = 1;
 -            }
--
--            int durationTicks = (9 + levels * 2) * 20;
--            AABB bb = new AABB(worldPosition).inflate(range).expandTowards(0.0, level.getHeight(), 0.0);
--            List<Player> players = level.getEntitiesOfClass(Player.class, bb);
--
--            for (Player player : players) {
--                player.addEffect(new MobEffectInstance(primaryPower, durationTicks, baseAmp, true, true));
--            }
--
--            if (levels >= 4 && !Objects.equals(primaryPower, secondaryPower) && secondaryPower != null) {
--                for (Player player : players) {
--                    player.addEffect(new MobEffectInstance(secondaryPower, durationTicks, 0, true, true));
 +            double range = computeBeaconRange(levels); // Paper - diff out applyEffects logic components - see below
 +            int baseAmp = computeEffectAmplifier(levels, primaryPower, secondaryPower); // Paper - diff out applyEffects logic components - see below
 +
 +            int durationTicks = computeEffectDuration(levels); // Paper - diff out applyEffects logic components - see below
 +            List<Player> players = getHumansInRange(level, worldPosition, levels, entity); // Paper - diff out applyEffects logic components - see below
-+
+ 
+-            int durationTicks = (9 + levels * 2) * 20;
+-            AABB bb = new AABB(worldPosition).inflate(range).expandTowards(0.0, level.getHeight(), 0.0);
+-            List<Player> players = level.getEntitiesOfClass(Player.class, bb);
 +            applyEffectsAndCallEvent(level, worldPosition, players, new MobEffectInstance(primaryPower, durationTicks, baseAmp, true, true), true); // Paper - BeaconEffectEvent
-+
+ 
+-            for (Player player : players) {
+-                player.addEffect(new MobEffectInstance(primaryPower, durationTicks, baseAmp, true, true));
 +            if (hasSecondaryEffect(levels, primaryPower, secondaryPower)) { // Paper - diff out applyEffects logic components - see below
 +                applyEffectsAndCallEvent(level, worldPosition, players, new MobEffectInstance(secondaryPower, durationTicks, 0, true, true), false); // Paper - BeaconEffectEvent
-+            }
+             }
 +        }
 +    }
 +
@@ -140,7 +141,10 @@
 +        }
 +        return baseAmp;
 +    }
-+
+ 
+-            if (levels >= 4 && !Objects.equals(primaryPower, secondaryPower) && secondaryPower != null) {
+-                for (Player player : players) {
+-                    player.addEffect(new MobEffectInstance(secondaryPower, durationTicks, 0, true, true));
 +    private static double computeBeaconRange(final int beaconLevel) {
 +        return beaconLevel * 10 + 10; // Diff from applyEffects
 +    }
@@ -161,7 +165,6 @@
                  }
              }
          }
--    }
 +        return list;
 +    }
 +
@@ -181,12 +184,12 @@
 +            if (!event.callEvent()) continue;
 +            player.addEffect(org.bukkit.craftbukkit.potion.CraftPotionUtil.fromBukkit(event.getEffect()), org.bukkit.event.entity.EntityPotionEffectEvent.Cause.BEACON);
 +        }
-+    }
+     }
 +    // Paper end - BeaconEffectEvent
  
      public static void playSound(final Level level, final BlockPos worldPosition, final SoundEvent event) {
          level.playSound(null, worldPosition, event, SoundSource.BLOCKS, 1.0F, 1.0F);
-@@ -314,7 +_,7 @@
+@@ -314,7 +425,7 @@ public class BeaconBlockEntity extends BlockEntity implements MenuProvider, Name
      }
  
      private static @Nullable Holder<MobEffect> loadEffect(final ValueInput input, final String field) {
@@ -195,7 +198,7 @@
      }
  
      @Override
-@@ -322,8 +_,10 @@
+@@ -322,8 +433,10 @@ public class BeaconBlockEntity extends BlockEntity implements MenuProvider, Name
          super.loadAdditional(input);
          this.primaryPower = loadEffect(input, "primary_effect");
          this.secondaryPower = loadEffect(input, "secondary_effect");
@@ -206,7 +209,7 @@
      }
  
      @Override
-@@ -334,6 +_,7 @@
+@@ -334,6 +447,7 @@ public class BeaconBlockEntity extends BlockEntity implements MenuProvider, Name
          output.putInt("Levels", this.levels);
          output.storeNullable("CustomName", ComponentSerialization.CODEC, this.name);
          this.lockKey.addToTag(output);
@@ -214,7 +217,7 @@
      }
  
      public void setCustomName(final @Nullable Component name) {
-@@ -347,7 +_,7 @@
+@@ -347,7 +461,7 @@ public class BeaconBlockEntity extends BlockEntity implements MenuProvider, Name
  
      @Override
      public @Nullable AbstractContainerMenu createMenu(final int containerId, final Inventory inventory, final Player player) {

@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/server/level/TicketType.java b/net/minecraft/server/level/TicketType.java
+index 11f3ff58c97a71d00733f1f92bdb38f3b48779f8..7460b6071a59530719769b6d3ec6736a73b69e95 100644
 --- a/net/minecraft/server/level/TicketType.java
 +++ b/net/minecraft/server/level/TicketType.java
-@@ -9,11 +_,13 @@
+@@ -9,11 +9,13 @@ import net.minecraft.core.registries.BuiltInRegistries;
  
  public record TicketType(long timeout, @TicketType.Flags int flags) {
      public static final long NO_TIMEOUT = 0L;
@@ -19,7 +27,7 @@
      public static final TicketType PLAYER_SPAWN = register("player_spawn", 20L, FLAG_LOADING);
      public static final TicketType SPAWN_SEARCH = register("spawn_search", 1L, FLAG_LOADING);
      public static final TicketType DRAGON = register("dragon", NO_TIMEOUT, FLAG_LOADING | FLAG_SIMULATION);
-@@ -23,6 +_,11 @@
+@@ -23,6 +25,11 @@ public record TicketType(long timeout, @TicketType.Flags int flags) {
      public static final TicketType PORTAL = register("portal", 300L, FLAG_PERSIST | FLAG_LOADING | FLAG_SIMULATION | FLAG_KEEP_DIMENSION_ACTIVE);
      public static final TicketType ENDER_PEARL = register("ender_pearl", 40L, FLAG_LOADING | FLAG_SIMULATION | FLAG_KEEP_DIMENSION_ACTIVE);
      public static final TicketType UNKNOWN = register("unknown", 1L, FLAG_CAN_EXPIRE_IF_UNLOADED | FLAG_LOADING);
@@ -31,7 +39,7 @@
  
      private static TicketType register(final String name, final long timeout, final @TicketType.Flags int flags) {
          return Registry.register(BuiltInRegistries.TICKET_TYPE, name, new TicketType(timeout, flags));
-@@ -48,12 +_,21 @@
+@@ -48,12 +55,21 @@ public record TicketType(long timeout, @TicketType.Flags int flags) {
          return (this.flags & FLAG_CAN_EXPIRE_IF_UNLOADED) != 0;
      }
  

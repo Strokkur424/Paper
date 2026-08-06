@@ -1,5 +1,6 @@
 import io.papermc.fill.model.BuildChannel
 import io.papermc.paperweight.attribute.DevBundleOutput
+import io.papermc.paperweight.core.tasks.patchroulette.AbstractPatchRouletteTask
 import io.papermc.paperweight.util.*
 import java.time.Instant
 
@@ -13,17 +14,28 @@ plugins {
 
 val paperMavenPublicUrl = "https://repo.papermc.io/repository/maven-public/"
 
+repositories {
+    mavenLocal()
+}
+
 dependencies {
-    mache("io.papermc:mache:26.2+build.1")
+    mache("io.papermc:mache:26.3-snapshot-7+build.local-SNAPSHOT")
     paperclip("io.papermc:paperclip:3.0.4")
 }
 
 paperweight {
     minecraftVersion = providers.gradleProperty("mcVersion")
-    gitFilePatches = false
+    gitFilePatches = true
 
     updatingMinecraft {
-        // oldPaperCommit = "d4fe85375af18bfa88f44d7c1e6a61904ae550cc"
+        oldPaperCommit = "a40947c0acc780cebf578c6ab0f38b6948c3f86e"
+    }
+}
+
+tasks {
+    withType(AbstractPatchRouletteTask::class).configureEach {
+        endpoint = "http://localhost:8080/api"
+        authToken = "c3Ryb2trOnN0cm9raw=="
     }
 }
 

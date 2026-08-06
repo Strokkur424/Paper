@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/world/entity/animal/AgeableWaterCreature.java b/net/minecraft/world/entity/animal/AgeableWaterCreature.java
+index ab7bd3040f03ebe821befa6a7212ed740c89320d..61919a7e354b53d1f380a59924b4168217a50291 100644
 --- a/net/minecraft/world/entity/animal/AgeableWaterCreature.java
 +++ b/net/minecraft/world/entity/animal/AgeableWaterCreature.java
-@@ -39,7 +_,7 @@
+@@ -39,7 +39,7 @@ public abstract class AgeableWaterCreature extends AgeableMob {
              this.setAirSupply(preTickAirSupply - 1);
              if (this.shouldTakeDrowningDamage()) {
                  this.setAirSupply(0);
@@ -9,7 +17,7 @@
              }
          } else {
              this.setAirSupply(300);
-@@ -72,6 +_,10 @@
+@@ -72,6 +72,10 @@ public abstract class AgeableWaterCreature extends AgeableMob {
      ) {
          int seaLevel = level.getSeaLevel();
          int minSpawnLevel = seaLevel - 13;

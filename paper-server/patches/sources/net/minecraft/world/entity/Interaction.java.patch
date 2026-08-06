@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/world/entity/Interaction.java b/net/minecraft/world/entity/Interaction.java
+index e98fd4b39b84076cb6d41f0515d70e0a145e4d43..df6608348da538aab8cb0f365dcdb4e9a40475c3 100644
 --- a/net/minecraft/world/entity/Interaction.java
 +++ b/net/minecraft/world/entity/Interaction.java
-@@ -99,9 +_,16 @@
+@@ -99,9 +99,16 @@ public class Interaction extends Entity implements Attackable, Targeting {
      @Override
      public boolean skipAttackInteraction(final Entity source) {
          if (source instanceof Player player) {

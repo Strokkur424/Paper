@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/world/level/block/VineBlock.java b/net/minecraft/world/level/block/VineBlock.java
+index 74aad190e12ba84783dba94a730bea66636e6be3..a8f0915590b9dfbde106b12e9c93ac4226243546 100644
 --- a/net/minecraft/world/level/block/VineBlock.java
 +++ b/net/minecraft/world/level/block/VineBlock.java
-@@ -168,7 +_,7 @@
+@@ -168,7 +168,7 @@ public class VineBlock extends Block {
      @Override
      protected void randomTick(final BlockState state, final ServerLevel level, final BlockPos pos, final RandomSource random) {
          if (level.getGameRules().get(GameRules.SPREAD_VINES)) {
@@ -9,7 +17,7 @@
                  Direction testDirection = Direction.getRandom(random);
                  BlockPos abovePos = pos.above();
                  if (testDirection.getAxis().isHorizontal() && !state.getValue(getPropertyForFace(testDirection))) {
-@@ -182,30 +_,33 @@
+@@ -182,30 +182,33 @@ public class VineBlock extends Block {
                              boolean ccwHasConnectingFace = state.getValue(getPropertyForFace(ccwDirection));
                              BlockPos cwTestPos = testPos.relative(cwDirection);
                              BlockPos ccwTestPos = testPos.relative(ccwDirection);
@@ -50,7 +58,7 @@
                              return;
                          }
  
-@@ -223,7 +_,7 @@
+@@ -223,7 +226,7 @@ public class VineBlock extends Block {
                              }
  
                              if (this.hasHorizontalConnection(aboveState)) {
@@ -59,7 +67,7 @@
                              }
  
                              return;
-@@ -237,7 +_,7 @@
+@@ -237,7 +240,7 @@ public class VineBlock extends Block {
                              BlockState before = belowState.isAir() ? this.defaultBlockState() : belowState;
                              BlockState after = this.copyRandomFaces(state, before, random);
                              if (before != after && this.hasHorizontalConnection(after)) {

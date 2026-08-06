@@ -1,13 +1,20 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/world/entity/animal/nautilus/Nautilus.java b/net/minecraft/world/entity/animal/nautilus/Nautilus.java
+index d95e4e9f3cffddf9f19573e738e8d9576432d137..d6ba5f201314148a382ce71e2c570f336c5d7d40 100644
 --- a/net/minecraft/world/entity/animal/nautilus/Nautilus.java
 +++ b/net/minecraft/world/entity/animal/nautilus/Nautilus.java
-@@ -125,8 +_,14 @@
+@@ -125,8 +125,14 @@ public class Nautilus extends AbstractNautilus {
  
      @Override
      public int getMaxAirSupply() {
 -        return 300;
--    }
 +        return this.maxAirTicks; // CraftBukkit - SPIGOT-6907: re-implement LivingEntity#setMaximumAir()
-+    }
+     }
 +    // CraftBukkit start - SPIGOT-6907: re-implement LivingEntity#setMaximumAir()
 +    @Override
 +    public int getDefaultMaxAirSupply() {
@@ -17,7 +24,7 @@
  
      protected void handleAirSupply(final ServerLevel level, final int preTickAirSupply) {
          if (this.isAlive() && !this.isInWater()) {
-@@ -136,7 +_,7 @@
+@@ -136,7 +142,7 @@ public class Nautilus extends AbstractNautilus {
                  this.hurtServer(level, this.damageSources().dryOut(), 2.0F);
              }
          } else {

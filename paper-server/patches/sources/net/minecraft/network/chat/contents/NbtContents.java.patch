@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/network/chat/contents/NbtContents.java b/net/minecraft/network/chat/contents/NbtContents.java
+index d93fe2d19cdb96f5e537dc8f09471acf78014adf..69c414b6d24300a96ee43fcb8e1fdebfd374e780 100644
 --- a/net/minecraft/network/chat/contents/NbtContents.java
 +++ b/net/minecraft/network/chat/contents/NbtContents.java
-@@ -70,7 +_,7 @@
+@@ -70,7 +70,7 @@ public record NbtContents(
                  }
              });
              Component resolvedSeparator = DataFixUtils.orElse(

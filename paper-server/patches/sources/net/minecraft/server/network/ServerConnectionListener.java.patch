@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/server/network/ServerConnectionListener.java b/net/minecraft/server/network/ServerConnectionListener.java
+index a52d1c5890d39dc9240adeb196ea8efaa1604cfb..b7476ff3f5570b92e9e4ca8fc756f3a8098b1385 100644
 --- a/net/minecraft/server/network/ServerConnectionListener.java
 +++ b/net/minecraft/server/network/ServerConnectionListener.java
-@@ -53,9 +_,31 @@
+@@ -53,9 +53,31 @@ public class ServerConnectionListener {
          this.running = true;
      }
  
@@ -33,7 +41,7 @@
              this.channels
                  .add(
                      new ServerBootstrap()
-@@ -79,22 +_,64 @@
+@@ -79,22 +101,64 @@ public class ServerConnectionListener {
                                      Connection connection = rateLimitPacketsPerSecond > 0
                                          ? new RateKickingConnection(rateLimitPacketsPerSecond)
                                          : new Connection(PacketFlow.SERVERBOUND);
@@ -100,7 +108,7 @@
      public SocketAddress startMemoryChannel() {
          ChannelFuture newChannel;
          synchronized (this.channels) {
-@@ -187,12 +_,26 @@
+@@ -187,12 +251,26 @@ public class ServerConnectionListener {
  
      public void tick() {
          synchronized (this.connections) {
@@ -127,7 +135,7 @@
                          try {
                              connection.tick();
                          } catch (Exception e) {
-@@ -206,6 +_,7 @@
+@@ -206,6 +284,7 @@ public class ServerConnectionListener {
                              connection.setReadOnly();
                          }
                      } else {
@@ -135,7 +143,7 @@
                          iterator.remove();
                          connection.handleDisconnection();
                      }
-@@ -219,6 +_,16 @@
+@@ -219,6 +298,16 @@ public class ServerConnectionListener {
              }
          }
      }

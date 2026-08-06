@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/world/inventory/BrewingStandMenu.java b/net/minecraft/world/inventory/BrewingStandMenu.java
+index a8c0ff5a79e9a777eff7487c994b9dd82cc48228..31a0ee7490350091eb93a50391dc4240369d0c8f 100644
 --- a/net/minecraft/world/inventory/BrewingStandMenu.java
 +++ b/net/minecraft/world/inventory/BrewingStandMenu.java
-@@ -33,29 +_,50 @@
+@@ -33,29 +33,50 @@ public class BrewingStandMenu extends AbstractContainerMenu {
      private final Container brewingStand;
      public final ContainerData brewingStandData;
      private final Slot ingredientSlot;
@@ -57,7 +65,7 @@
          return this.brewingStand.stillValid(player);
      }
  
-@@ -75,7 +_,7 @@
+@@ -75,7 +96,7 @@ public class BrewingStandMenu extends AbstractContainerMenu {
                      if (!this.moveItemStackTo(stack, 3, 4, false)) {
                          return ItemStack.EMPTY;
                      }
@@ -66,7 +74,7 @@
                      if (!this.moveItemStackTo(stack, 0, 3, false)) {
                          return ItemStack.EMPTY;
                      }
-@@ -157,13 +_,15 @@
+@@ -157,13 +178,15 @@ public class BrewingStandMenu extends AbstractContainerMenu {
      }
  
      private static class PotionSlot extends Slot {
@@ -84,7 +92,7 @@
          }
  
          @Override
-@@ -181,8 +_,8 @@
+@@ -181,8 +204,8 @@ public class BrewingStandMenu extends AbstractContainerMenu {
              super.onTake(player, carried);
          }
  
@@ -95,7 +103,7 @@
          }
  
          @Override
-@@ -190,4 +_,16 @@
+@@ -190,4 +213,16 @@ public class BrewingStandMenu extends AbstractContainerMenu {
              return BrewingStandMenu.EMPTY_SLOT_POTION;
          }
      }

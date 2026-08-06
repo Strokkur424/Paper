@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/server/Main.java b/net/minecraft/server/Main.java
+index 3c5dbc4873102d4fe5a5da17d8a20f2d0fa4f2a8..6ee2239f388c0a9d08a9b0e402839c8ca7d6e268 100644
 --- a/net/minecraft/server/Main.java
 +++ b/net/minecraft/server/Main.java
-@@ -66,8 +_,10 @@
+@@ -66,8 +66,10 @@ public class Main {
      private static final Logger LOGGER = LogUtils.getLogger();
  
      @SuppressForbidden(reason = "System.out needed before bootstrap")
@@ -12,7 +20,7 @@
          OptionParser parser = new OptionParser();
          OptionSpec<Void> nogui = parser.accepts("nogui");
          OptionSpec<Void> initSettings = parser.accepts("initSettings", "Initializes 'server.properties' and 'eula.txt', then quits");
-@@ -92,41 +_,97 @@
+@@ -92,41 +94,97 @@ public class Main {
                  parser.printHelpOn(System.err);
                  return;
              }
@@ -118,7 +126,7 @@
              LevelStorageSource levelStorageSource = LevelStorageSource.createDefault(universePath.toPath());
              LevelStorageSource.LevelStorageAccess access = levelStorageSource.validateAndCreateAccess(levelName);
              Dynamic<?> levelDataTag;
-@@ -154,13 +_,20 @@
+@@ -154,13 +212,20 @@ public class Main {
              } else {
                  levelDataTag = null;
              }
@@ -140,7 +148,7 @@
  
              WorldStem worldStem;
              try {
-@@ -169,17 +_,31 @@
+@@ -169,17 +234,31 @@ public class Main {
                          executor -> WorldLoader.load(
                              worldLoadConfig,
                              context -> {
@@ -174,7 +182,7 @@
                                  }
                              },
                              WorldStem::new,
-@@ -195,6 +_,7 @@
+@@ -195,6 +274,7 @@ public class Main {
                  return;
              }
  
@@ -182,7 +190,7 @@
              RegistryAccess.Frozen registryHolder = worldStem.registries().compositeAccess();
              WorldData data = worldStem.worldDataAndGenSettings().data();
              boolean recreateRegionFilesValue = options.has(recreateRegionFiles);
-@@ -203,9 +_,12 @@
+@@ -203,9 +283,12 @@ public class Main {
              }
  
              access.saveDataTag(data);
@@ -195,7 +203,7 @@
                          thread,
                          access,
                          packRepository,
-@@ -218,17 +_,35 @@
+@@ -218,17 +301,35 @@ public class Main {
                          notificationManager
                      );
                      notificationManager.setServer(server);
@@ -233,7 +241,7 @@
              Thread shutdownThread = new Thread("Server Shutdown Thread") {
                  @Override
                  public void run() {
-@@ -237,12 +_,13 @@
+@@ -237,12 +338,13 @@ public class Main {
              };
              shutdownThread.setUncaughtExceptionHandler(new DefaultUncaughtExceptionHandler(LOGGER));
              Runtime.getRuntime().addShutdownHook(shutdownThread);
@@ -248,7 +256,7 @@
          final DedicatedServerSettings settings,
          final WorldLoader.DataLoadContext context,
          final Registry<LevelStem> datapackDimensions,
-@@ -313,7 +_,11 @@
+@@ -313,7 +415,11 @@ public class Main {
          final RegistryAccess registryAccess,
          final boolean recreateRegionFiles
      ) {
@@ -261,7 +269,7 @@
  
          try (WorldUpgrader upgrader = new WorldUpgrader(storageSource, fixerUpper, registryAccess, eraseCache, recreateRegionFiles)) {
              Component lastStatus = null;
-@@ -341,5 +_,6 @@
+@@ -341,5 +447,6 @@ public class Main {
                  }
              }
          }

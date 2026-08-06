@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/server/dedicated/DedicatedServer.java b/net/minecraft/server/dedicated/DedicatedServer.java
+index 7610538c3fb5ac802c118e4d9a248d7fb4216ab0..602042c367260f7cb2c6c14938285d5df4056158 100644
 --- a/net/minecraft/server/dedicated/DedicatedServer.java
 +++ b/net/minecraft/server/dedicated/DedicatedServer.java
-@@ -76,9 +_,9 @@
+@@ -76,9 +76,9 @@ public class DedicatedServer extends MinecraftServer implements ServerInterface
      private static final Logger LOGGER = LogUtils.getLogger();
      private static final int CONVERSION_RETRY_DELAY_MS = 5000;
      private static final int CONVERSION_RETRIES = 2;
@@ -12,7 +20,7 @@
      private @Nullable RconThread rconThread;
      public DedicatedServerSettings settings;
      private @Nullable MinecraftServerGui gui;
-@@ -90,6 +_,7 @@
+@@ -90,6 +90,7 @@ public class DedicatedServer extends MinecraftServer implements ServerInterface
      private final @Nullable ManagementServer jsonRpcServer;
  
      public DedicatedServer(
@@ -20,7 +28,7 @@
          final Thread serverThread,
          final LevelStorageSource.LevelStorageAccess levelStorageSource,
          final PackRepository packRepository,
-@@ -102,6 +_,7 @@
+@@ -102,6 +103,7 @@ public class DedicatedServer extends MinecraftServer implements ServerInterface
          final NotificationManager notificationManager
      ) {
          super(
@@ -28,7 +36,7 @@
              serverThread,
              levelStorageSource,
              packRepository,
-@@ -115,7 +_,8 @@
+@@ -115,7 +117,8 @@ public class DedicatedServer extends MinecraftServer implements ServerInterface
              notificationManager
          );
          this.settings = settings;
@@ -38,7 +46,7 @@
          this.serverTextFilter = ServerTextFilter.createFromConfig(settings.getProperties());
          this.jsonRpcServer = jsonRpcServer;
          this.serverLinks = createServerLinks(settings);
-@@ -167,6 +_,10 @@
+@@ -167,6 +170,10 @@ public class DedicatedServer extends MinecraftServer implements ServerInterface
          Thread consoleThread = new Thread("Server console handler") {
              @Override
              public void run() {
@@ -49,7 +57,7 @@
                  BufferedReader reader = new BufferedReader(new InputStreamReader(System.in, StandardCharsets.UTF_8));
  
                  String line;
-@@ -177,16 +_,41 @@
+@@ -177,16 +184,41 @@ public class DedicatedServer extends MinecraftServer implements ServerInterface
                  } catch (IOException e) {
                      DedicatedServer.LOGGER.error("Exception handling console input", e);
                  }
@@ -92,7 +100,7 @@
          LOGGER.info("Loading properties");
          DedicatedServerProperties properties = this.settings.getProperties();
          if (this.isSingleplayer()) {
-@@ -197,8 +_,45 @@
+@@ -197,8 +229,45 @@ public class DedicatedServer extends MinecraftServer implements ServerInterface
              this.setLocalIp(properties.serverIp);
          }
  
@@ -139,7 +147,7 @@
          InetAddress localAddress = null;
          if (!this.getLocalIp().isEmpty()) {
              localAddress = InetAddress.getByName(this.getLocalIp());
-@@ -207,47 +_,73 @@
+@@ -207,47 +276,73 @@ public class DedicatedServer extends MinecraftServer implements ServerInterface
          if (this.getPort() < 0) {
              this.setPort(properties.serverPort);
          }
@@ -221,7 +229,7 @@
          }
  
          if (properties.enableQuery) {
-@@ -260,7 +_,7 @@
+@@ -260,7 +355,7 @@ public class DedicatedServer extends MinecraftServer implements ServerInterface
              this.rconThread = RconThread.create(this);
          }
  
@@ -230,7 +238,7 @@
              Thread watchdog = new Thread(new ServerWatchdog(this), "Server Watchdog");
              watchdog.setUncaughtExceptionHandler(new DefaultUncaughtExceptionHandlerWithName(LOGGER));
              watchdog.setDaemon(true);
-@@ -277,6 +_,12 @@
+@@ -277,6 +372,12 @@ public class DedicatedServer extends MinecraftServer implements ServerInterface
          return true;
      }
  
@@ -243,7 +251,7 @@
      @Override
      public boolean isEnforceWhitelist() {
          return this.settings.getProperties().enforceWhitelist.get();
-@@ -294,6 +_,7 @@
+@@ -294,6 +395,7 @@ public class DedicatedServer extends MinecraftServer implements ServerInterface
  
      @Override
      public void setUsingWhitelist(final boolean usingWhitelist) {
@@ -251,7 +259,7 @@
          this.settings.update(p -> p.whiteList.update(this.registryAccess(), usingWhitelist));
      }
  
-@@ -345,7 +_,7 @@
+@@ -345,7 +447,7 @@ public class DedicatedServer extends MinecraftServer implements ServerInterface
  
      @Override
      protected void forceDifficulty() {
@@ -260,7 +268,7 @@
      }
  
      public int viewDistance() {
-@@ -403,11 +_,11 @@
+@@ -403,11 +505,11 @@ public class DedicatedServer extends MinecraftServer implements ServerInterface
          }
  
          if (this.rconThread != null) {
@@ -274,7 +282,7 @@
          }
  
          if (this.jsonRpcServer != null) {
-@@ -417,6 +_,9 @@
+@@ -417,6 +519,9 @@ public class DedicatedServer extends MinecraftServer implements ServerInterface
                  LOGGER.error("Interrupted while stopping the management server", e);
              }
          }
@@ -284,7 +292,7 @@
      }
  
      @Override
-@@ -426,12 +_,20 @@
+@@ -426,12 +531,20 @@ public class DedicatedServer extends MinecraftServer implements ServerInterface
      }
  
      public void handleConsoleInput(final String msg, final CommandSourceStack source) {
@@ -308,7 +316,7 @@
              this.getCommands().performPrefixedCommand(input.source, input.msg);
          }
      }
-@@ -592,12 +_,15 @@
+@@ -592,12 +705,15 @@ public class DedicatedServer extends MinecraftServer implements ServerInterface
  
      @Override
      public String getMotd() {
@@ -326,7 +334,7 @@
      }
  
      @Override
-@@ -623,7 +_,11 @@
+@@ -623,7 +739,11 @@ public class DedicatedServer extends MinecraftServer implements ServerInterface
      @Override
      public boolean enforceSecureProfile() {
          DedicatedServerProperties properties = this.getProperties();
@@ -339,7 +347,7 @@
      }
  
      @Override
-@@ -708,21 +_,60 @@
+@@ -708,21 +828,60 @@ public class DedicatedServer extends MinecraftServer implements ServerInterface
  
      @Override
      public String getPluginNames() {
@@ -405,7 +413,7 @@
      }
  
      @Override
-@@ -850,4 +_,15 @@
+@@ -850,4 +1009,15 @@ public class DedicatedServer extends MinecraftServer implements ServerInterface
      public Map<String, String> getCodeOfConducts() {
          return this.codeOfConductTexts;
      }

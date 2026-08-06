@@ -1,6 +1,14 @@
+From 11b7f145bbc9efa8236ac93d8dcb0142c5492580 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/data/minecraft/worldgen/noise_settings/overworld.json b/data/minecraft/worldgen/noise_settings/overworld.json
+index 062b9f9ce65ad51ca05a11a967169e1de1f6ff77..131ac89d77f30f703cc314cbc3213ed2a44a771e 100644
 --- a/data/minecraft/worldgen/noise_settings/overworld.json
 +++ b/data/minecraft/worldgen/noise_settings/overworld.json
-@@ -455,7 +_,8 @@
+@@ -455,7 +455,8 @@
        {
          "type": "minecraft:condition",
          "if_true": {

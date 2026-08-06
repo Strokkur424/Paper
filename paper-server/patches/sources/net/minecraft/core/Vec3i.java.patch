@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/core/Vec3i.java b/net/minecraft/core/Vec3i.java
+index c926e764b7057807ddcaefc0caff320c5a0b714c..b81a61a7b05e11cbd9fdfa704937abd18d32070e 100644
 --- a/net/minecraft/core/Vec3i.java
 +++ b/net/minecraft/core/Vec3i.java
-@@ -22,9 +_,9 @@
+@@ -22,9 +22,9 @@ public class Vec3i implements Comparable<Vec3i> {
          ByteBufCodecs.VAR_INT, Vec3i::getX, ByteBufCodecs.VAR_INT, Vec3i::getY, ByteBufCodecs.VAR_INT, Vec3i::getZ, Vec3i::new
      );
      public static final Vec3i ZERO = new Vec3i(0, 0, 0);
@@ -13,7 +21,7 @@
  
      public static Codec<Vec3i> offsetCodec(final int maxOffsetPerAxis) {
          return CODEC.validate(
-@@ -41,12 +_,12 @@
+@@ -41,12 +41,12 @@ public class Vec3i implements Comparable<Vec3i> {
      }
  
      @Override
@@ -28,7 +36,7 @@
          return (this.getY() + this.getZ() * 31) * 31 + this.getX();
      }
  
-@@ -59,15 +_,15 @@
+@@ -59,15 +59,15 @@ public class Vec3i implements Comparable<Vec3i> {
          }
      }
  
@@ -47,7 +55,7 @@
          return this.z;
      }
  
-@@ -247,4 +_,11 @@
+@@ -247,4 +247,11 @@ public class Vec3i implements Comparable<Vec3i> {
      public String toShortString() {
          return this.getX() + ", " + this.getY() + ", " + this.getZ();
      }

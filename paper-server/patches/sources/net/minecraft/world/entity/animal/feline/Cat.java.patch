@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/world/entity/animal/feline/Cat.java b/net/minecraft/world/entity/animal/feline/Cat.java
+index d090ba5702f29a097bd08ecae021da026b04bc25..d810202ba190091b17a5a68fd17a0d86cf6588cd 100644
 --- a/net/minecraft/world/entity/animal/feline/Cat.java
 +++ b/net/minecraft/world/entity/animal/feline/Cat.java
-@@ -412,6 +_,11 @@
+@@ -412,6 +412,11 @@ public class Cat extends TamableAnimal {
                  if (itemStack.is(ItemTags.CAT_COLLAR_DYES)) {
                      DyeColor color = itemStack.get(DataComponents.DYE);
                      if (color != null && color != this.getCollarColor()) {
@@ -12,7 +20,7 @@
                          if (!this.level().isClientSide()) {
                              this.setCollarColor(color);
                              itemStack.consume(1, player);
-@@ -483,7 +_,7 @@
+@@ -483,7 +488,7 @@ public class Cat extends TamableAnimal {
      }
  
      private void tryToTame(final Player player) {
@@ -21,7 +29,7 @@
              this.tame(player);
              this.setOrderedToSit(true);
              this.level().broadcastEntityEvent(this, EntityEvent.TAMING_SUCCEEDED);
-@@ -615,15 +_,20 @@
+@@ -615,15 +620,20 @@ public class Cat extends TamableAnimal {
                  .dropFromGiftLootTable(
                      getServerLevel(this.cat),
                      BuiltInLootTables.CAT_MORNING_GIFT,
@@ -46,7 +54,7 @@
                  );
          }
  
-@@ -649,7 +_,7 @@
+@@ -649,7 +659,7 @@ public class Cat extends TamableAnimal {
      }
  
      private static class CatTemptGoal extends TemptGoal {

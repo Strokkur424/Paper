@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/world/item/ItemStack.java b/net/minecraft/world/item/ItemStack.java
+index 76183f5e077b52d66c83bd7819f50457e9f5ab9e..a8da0c5b2f9b75216d6b93addabff744c6b10431 100644
 --- a/net/minecraft/world/item/ItemStack.java
 +++ b/net/minecraft/world/item/ItemStack.java
-@@ -189,9 +_,17 @@
+@@ -189,9 +189,17 @@ public final class ItemStack implements DataComponentHolder, ItemInstance {
                  if (itemStack.isEmpty()) {
                      output.writeVarInt(0);
                  } else {
@@ -19,7 +27,7 @@
                  }
              }
          };
-@@ -203,7 +_,7 @@
+@@ -203,7 +211,7 @@ public final class ItemStack implements DataComponentHolder, ItemInstance {
              public ItemStack decode(final RegistryFriendlyByteBuf input) {
                  ItemStack itemStack = codec.decode(input);
                  if (!itemStack.isEmpty()) {
@@ -28,7 +36,7 @@
                      ItemStack.CODEC.encodeStart(ops, itemStack).getOrThrow(DecoderException::new);
                  }
  
-@@ -368,10 +_,138 @@
+@@ -368,10 +376,138 @@ public final class ItemStack implements DataComponentHolder, ItemInstance {
          }
  
          Item usedItem = this.getItem();
@@ -169,7 +177,7 @@
  
          return result;
      }
-@@ -447,31 +_,67 @@
+@@ -447,31 +583,67 @@ public final class ItemStack implements DataComponentHolder, ItemInstance {
          return this.isDamageableItem() && this.getDamageValue() >= this.getMaxDamage() - 1;
      }
  
@@ -245,7 +253,7 @@
              this.shrink(1);
              onBreak.accept(item);
          }
-@@ -484,7 +_,26 @@
+@@ -484,7 +656,26 @@ public final class ItemStack implements DataComponentHolder, ItemInstance {
                  return;
              }
  
@@ -273,7 +281,7 @@
              this.applyDamage(newDamage, serverPlayer, i -> {});
          }
      }
-@@ -494,9 +_,14 @@
+@@ -494,9 +685,14 @@ public final class ItemStack implements DataComponentHolder, ItemInstance {
      }
  
      public void hurtAndBreak(final int amount, final LivingEntity owner, final EquipmentSlot slot) {
@@ -289,7 +297,7 @@
              );
          }
      }
-@@ -755,6 +_,12 @@
+@@ -755,6 +951,12 @@ public final class ItemStack implements DataComponentHolder, ItemInstance {
          return this.getItem().useOnRelease(this);
      }
  
@@ -302,7 +310,7 @@
      public <T> @Nullable T set(final DataComponentType<T> type, final @Nullable T value) {
          return this.components.set(type, value);
      }
-@@ -798,6 +_,28 @@
+@@ -798,6 +1000,28 @@ public final class ItemStack implements DataComponentHolder, ItemInstance {
          this.components.setAll(components);
      }
  
@@ -331,7 +339,7 @@
      public Component getHoverName() {
          Component customName = this.getCustomName();
          return customName != null ? customName : this.getItemName();
-@@ -1014,6 +_,19 @@
+@@ -1014,6 +1238,19 @@ public final class ItemStack implements DataComponentHolder, ItemInstance {
          EnchantmentHelper.forEachModifier(this, slot, consumer);
      }
  
@@ -351,7 +359,7 @@
      public Component getDisplayName() {
          MutableComponent hoverName = Component.empty().append(this.getHoverName());
          if (this.has(DataComponents.CUSTOM_NAME)) {
-@@ -1078,7 +_,7 @@
+@@ -1078,7 +1315,7 @@ public final class ItemStack implements DataComponentHolder, ItemInstance {
      }
  
      public void consume(final int amount, final @Nullable LivingEntity owner) {

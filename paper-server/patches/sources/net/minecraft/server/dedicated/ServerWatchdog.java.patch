@@ -1,6 +1,14 @@
+From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
+From: File <noreply+automated@papermc.io>
+Date: Sun, 20 Apr 1997 15:37:42 +0200
+Subject: [PATCH] paper File Patches
+
+
+diff --git a/net/minecraft/server/dedicated/ServerWatchdog.java b/net/minecraft/server/dedicated/ServerWatchdog.java
+index 31705276206ff73bd887e56db3bde8d39e2d1f04..dfab2ade5c37e310cbafed83a014247ab43aee95 100644
 --- a/net/minecraft/server/dedicated/ServerWatchdog.java
 +++ b/net/minecraft/server/dedicated/ServerWatchdog.java
-@@ -51,7 +_,7 @@
+@@ -51,7 +51,7 @@ public class ServerWatchdog implements Runnable {
                  CrashReport report = createWatchdogCrashReport("Watching Server", this.server.getRunningThread().threadId());
                  this.server.fillSystemReport(report.getSystemReport());
                  CrashReportCategory serverStats = report.addCategory("Performance stats");
