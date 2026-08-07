@@ -43,7 +43,8 @@ public record OptionallyFlatBedrockConditionSource(Identifier randomName, Vertic
 
     @Override
     public SurfaceRules.Condition apply(final SurfaceRules.Context ruleContext) {
-        boolean hasFlatBedrock = ruleContext.context.level().paperConfig().environment.generateFlatBedrock;
+        final net.minecraft.world.level.Level level = ruleContext.context.levelOrNull();
+        boolean hasFlatBedrock = level != null && level.paperConfig().environment.generateFlatBedrock;
         int tempTrueAtAndBelowY = this.trueAtAndBelow().resolveY(ruleContext.context);
         int tempFalseAtAndAboveY = this.falseAtAndAbove().resolveY(ruleContext.context);
 

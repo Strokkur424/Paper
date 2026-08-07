@@ -10,13 +10,10 @@ import java.util.function.Supplier;
 import net.minecraft.core.Holder;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.server.MinecraftServer;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStackTemplate;
 import net.minecraft.world.item.component.ItemAttributeModifiers;
-import net.minecraft.world.level.block.ComposterBlock;
-import net.minecraft.world.level.block.entity.FuelValues;
 import org.bukkit.Material;
 import org.bukkit.Registry;
 import org.bukkit.World;
@@ -167,14 +164,16 @@ public class CraftItemType<M extends ItemMeta> extends HolderableBase<Item> impl
 
     @Override
     public int getBurnDuration() {
-        FuelValues fuelValues = MinecraftServer.getServer().fuelValues();
         net.minecraft.world.item.ItemStack stack = new net.minecraft.world.item.ItemStack(this.getHandle());
-
-        if (!fuelValues.isFuel(stack)) {
+        net.minecraft.world.item.component.CookingFuel fuel = stack.get(DataComponents.COOKING_FUEL);
+        if (fuel == null) {
             return 0;
         }
-
-        return fuelValues.burnDuration(stack);
+        // Paper - burn_time is a data-driven ResolvableNumber now; only constant values can be resolved without a live loot context
+        if (fuel.burnTime() instanceof net.minecraft.world.level.storage.loot.providers.number.ResolvableNumber.Constant constant) {
+            return Math.round(constant.value());
+        }
+        throw new UnsupportedOperationException("This item's burn duration is defined by a datapack-provided number provider and cannot be resolved without a live loot context");
     }
 
     @Override
@@ -185,7 +184,9 @@ public class CraftItemType<M extends ItemMeta> extends HolderableBase<Item> impl
     @Override
     public float getCompostChance() {
         Preconditions.checkArgument(this.isCompostable(), "The item type " + this.getKey() + " is not compostable");
-        return ComposterBlock.COMPOSTABLES.getFloat(this.getHandle());
+        // Paper - composting is no longer chance-based; it now adds a data-driven number of layers to the composter,
+        // which is not the same concept as the old 0-1 success chance and cannot be safely converted to one
+        throw new UnsupportedOperationException("Composting is no longer chance-based in this version and cannot be represented as a 0-1 chance");
     }
 
     @Override

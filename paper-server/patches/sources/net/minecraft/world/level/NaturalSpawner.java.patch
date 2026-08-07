@@ -173,15 +173,14 @@
          }
  
          return null;
-@@ -393,7 +_,7 @@
+@@ -393,6 +_,7 @@
                                          entity = spawnerData.type().create(level.getLevel(), EntitySpawnReason.NATURAL);
                                      } catch (Exception e) {
                                          LOGGER.warn("Failed to create mob", e);
--                                        continue;
-+                                        com.destroystokyo.paper.exception.ServerInternalException.reportInternalException(e); // Paper - ServerExceptionEventcontinue;
++                                        com.destroystokyo.paper.exception.ServerInternalException.reportInternalException(e); // Paper - ServerExceptionEvent
+                                         continue;
                                      }
  
-                                     if (entity == null) {
 @@ -407,7 +_,7 @@
                                          groupSpawnData = mob.finalizeSpawn(
                                              level, level.getCurrentDifficultyAt(mob.blockPosition()), EntitySpawnReason.CHUNK_GENERATION, groupSpawnData

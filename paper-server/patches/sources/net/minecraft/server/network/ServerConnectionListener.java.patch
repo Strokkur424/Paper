@@ -1,6 +1,13 @@
 --- a/net/minecraft/server/network/ServerConnectionListener.java
 +++ b/net/minecraft/server/network/ServerConnectionListener.java
-@@ -56,9 +_,31 @@
+@@ -49,16 +_,37 @@
+     private volatile @Nullable UUID sessionId;
+     private final List<ChannelFuture> channels = Collections.synchronizedList(Lists.newArrayList());
+     private final List<Connection> connections = Collections.synchronizedList(Lists.newArrayList());
+-    private final Queue<Connection> pendingConnections = new ConcurrentLinkedQueue<>();
+ 
+     public ServerConnectionListener(final MinecraftServer server) {
+         this.server = server;
          this.running = true;
      }
  
@@ -100,7 +107,7 @@
      public SocketAddress startMemoryChannel() {
          ChannelFuture newChannel;
          synchronized (this.channels) {
-@@ -169,12 +_,24 @@
+@@ -169,12 +_,29 @@
      public void tick() {
          synchronized (this.connections) {
              this.addPendingConnections();
@@ -113,6 +120,11 @@
  
              while (iterator.hasNext()) {
                  Connection connection = iterator.next();
++                if (connection.getPacketListener() instanceof net.minecraft.server.network.ServerLoginPacketListenerImpl loginListener
++                    && loginListener.state == net.minecraft.server.network.ServerLoginPacketListenerImpl.State.VERIFYING) {
++                    LOGGER.info("DIAG: SCL.tick() loop: isConnecting={}, isConnected={}, handleConnectionDisconnectOnNextTick={}, preparing={}",
++                        connection.isConnecting(), connection.isConnected(), connection.handleConnectionDisconnectOnNextTick, connection.preparing);
++                }
                  if (!connection.isConnecting()) {
                      if (connection.isConnected()) {
 +                        // Paper start - Force kill connection ticking
@@ -150,3 +162,12 @@
  
      public MinecraftServer getServer() {
          return this.server;
+@@ -208,7 +_,7 @@
+ 
+     private void addPendingConnections() {
+         Connection connection;
+-        while ((connection = this.pendingConnections.poll()) != null) {
++        while ((connection = this.pending.poll()) != null) {
+             this.connections.add(connection);
+         }
+     }

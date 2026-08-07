@@ -19,7 +19,7 @@ public class CraftEntityType {
         Preconditions.checkArgument(minecraft != null);
 
         EntityType bukkit = Registry.ENTITY_TYPE.get(CraftNamespacedKey.fromMinecraft(net.minecraft.world.entity.EntityType.getKey(minecraft)));
-        Preconditions.checkArgument(bukkit != null);
+        // Preconditions.checkArgument(bukkit != null);
         return bukkit;
     }
 

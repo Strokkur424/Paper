@@ -1,13 +1,16 @@
 --- a/net/minecraft/world/item/crafting/TransmuteRecipe.java
 +++ b/net/minecraft/world/item/crafting/TransmuteRecipe.java
-@@ -213,6 +_,13 @@
+@@ -213,6 +_,16 @@
          return this.materialCount.max().orElse(8);
      }
  
 +    // CraftBukkit start
 +    @Override
 +    public org.bukkit.inventory.Recipe toBukkitRecipe(org.bukkit.NamespacedKey id) {
-+        return new org.bukkit.craftbukkit.inventory.CraftTransmuteRecipe(id, org.bukkit.craftbukkit.inventory.CraftItemType.minecraftToBukkit(this.result.item().value()), org.bukkit.craftbukkit.inventory.CraftRecipe.toChoice(this.input), org.bukkit.craftbukkit.inventory.CraftRecipe.toChoice(this.material));
++        // Paper - a "keep input item" transmute recipe (empty result item) has no single static result item type to report to Bukkit
++        net.minecraft.world.item.Item resultItem = this.result.item().map(net.minecraft.core.Holder::value)
++            .orElseThrow(() -> new UnsupportedOperationException("Transmute recipe " + id + " keeps the input item type, which cannot be represented as a single Bukkit Material"));
++        return new org.bukkit.craftbukkit.inventory.CraftTransmuteRecipe(id, org.bukkit.craftbukkit.inventory.CraftItemType.minecraftToBukkit(resultItem), org.bukkit.craftbukkit.inventory.CraftRecipe.toChoice(this.input), org.bukkit.craftbukkit.inventory.CraftRecipe.toChoice(this.material));
 +    }
 +    // CraftBukkit end
 +

@@ -7,10 +7,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.JsonParser;
 import com.mojang.authlib.properties.Property;
-import com.mojang.authlib.yggdrasil.ServicesKeySet;
-import com.mojang.authlib.yggdrasil.ServicesKeyType;
-import com.mojang.authlib.yggdrasil.YggdrasilAuthenticationService;
-import java.net.Proxy;
+import com.mojang.authlib.services.ServicesKeyType;
 import java.nio.charset.StandardCharsets;
 import java.util.Base64;
 import java.util.LinkedHashMap;
@@ -44,18 +41,8 @@ public final class CraftProfileProperty {
         String format(JsonElement jsonElement);
     }
 
-    private static final ServicesKeySet PUBLIC_KEYS;
-
-    static {
-        try {
-            PUBLIC_KEYS = new YggdrasilAuthenticationService(Proxy.NO_PROXY).getServicesKeySet();
-        } catch (Exception e) {
-            throw new Error("Could not load yggdrasil_session_pubkey.der! This indicates a bug.");
-        }
-    }
-
     public static boolean hasValidSignature(Property property) {
-        return property.hasSignature() && CraftProfileProperty.PUBLIC_KEYS.keys(ServicesKeyType.PROFILE_PROPERTY).stream().anyMatch((key) -> key.validateProperty(property));
+        return property.hasSignature() && net.minecraft.server.MinecraftServer.getServer().services().servicesKeySet().keys(ServicesKeyType.PROFILE_PROPERTY).stream().anyMatch((key) -> key.validateProperty(property));
     }
 
     private static @Nullable String decodeBase64(String encoded) {

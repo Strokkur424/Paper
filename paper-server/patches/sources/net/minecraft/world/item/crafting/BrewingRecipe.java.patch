@@ -1,0 +1,17 @@
+--- a/net/minecraft/world/item/crafting/BrewingRecipe.java
++++ b/net/minecraft/world/item/crafting/BrewingRecipe.java
+@@ -98,6 +_,14 @@
+         return SERIALIZER;
+     }
+ 
++    // CraftBukkit start
++    @Override
++    public org.bukkit.inventory.Recipe toBukkitRecipe(final org.bukkit.NamespacedKey id) {
++        org.bukkit.craftbukkit.inventory.CraftItemStack result = org.bukkit.craftbukkit.inventory.CraftItemStack.asCraftMirror(this.output.create());
++        return new org.bukkit.craftbukkit.inventory.CraftBrewingRecipe(id, result);
++    }
++    // CraftBukkit end
++
+     @FunctionalInterface
+     public interface Factory<T extends BrewingRecipe> {
+         T create(final Recipe.CommonInfo commonInfo, final PotionIngredient input, final PotionIngredient reagent, final ItemStackTemplate output);

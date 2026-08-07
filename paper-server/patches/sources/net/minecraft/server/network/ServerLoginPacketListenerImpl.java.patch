@@ -34,7 +34,7 @@
  
      public ServerLoginPacketListenerImpl(final MinecraftServer minecraftserver, final Connection connection, final boolean transferred) {
          this.server = minecraftserver;
-@@ -66,10 +_,19 @@
+@@ -66,12 +_,26 @@
          this.serverActivityMonitor = this.server.getServerActivityMonitor();
          this.challenge = Ints.toByteArray(RandomSource.create().nextInt());
          this.transferred = transferred;
@@ -43,6 +43,9 @@
  
      @Override
      public void tick() {
++        if (this.state == ServerLoginPacketListenerImpl.State.VERIFYING || this.state == ServerLoginPacketListenerImpl.State.PROTOCOL_SWITCHING) {
++            LOGGER.info("DIAG: tick() called, state={}, awaitingCookies={}, connected={}", this.state, this.paperLoginConnection.isAwaitingCookies(), this.connection.isConnected());
++        }
 +        // Paper start - login cookie API
 +        // Don't block the connection
 +        if (this.paperLoginConnection.isAwaitingCookies()) {
@@ -52,8 +55,12 @@
 +        // Paper end - login cookie API
 +
          if (this.state == ServerLoginPacketListenerImpl.State.VERIFYING) {
++            LOGGER.info("DIAG: tick() entering verifyLoginAndFinishConnectionSetup");
              this.verifyLoginAndFinishConnectionSetup(Objects.requireNonNull(this.authenticatedProfile));
++            LOGGER.info("DIAG: tick() returned from verifyLoginAndFinishConnectionSetup, state={}", this.state);
          }
+ 
+         if (this.state == ServerLoginPacketListenerImpl.State.WAITING_FOR_DUPE_DISCONNECT
 @@ -79,16 +_,39 @@
              this.finishLoginAndWaitForClient(this.authenticatedProfile);
          }
@@ -111,7 +118,7 @@
          this.requestedUsername = packet.name();
          GameProfile singleplayerProfile = this.server.getSingleplayerProfile();
          if (singleplayerProfile != null && this.requestedUsername.equalsIgnoreCase(singleplayerProfile.name())) {
-@@ -126,7 +_,30 @@
+@@ -126,19 +_,45 @@
                  this.state = ServerLoginPacketListenerImpl.State.KEY;
                  this.connection.send(new ClientboundHelloPacket("", this.server.getKeyPair().getPublic().getEncoded(), this.challenge, true));
              } else {
@@ -143,12 +150,19 @@
              }
          }
      }
-@@ -138,7 +_,7 @@
+ 
+     private void startClientVerification(final GameProfile profile) {
++        LOGGER.info("DIAG: startClientVerification called, setting state=VERIFYING");
+         this.authenticatedProfile = profile;
+         this.state = ServerLoginPacketListenerImpl.State.VERIFYING;
+     }
  
      private void verifyLoginAndFinishConnectionSetup(final GameProfile profile) {
++        LOGGER.info("DIAG: verifyLoginAndFinishConnectionSetup entered");
          PlayerList playerList = this.server.getPlayerList();
 -        Component error = playerList.canPlayerLogin(this.connection.getRemoteAddress(), new NameAndId(profile));
 +        Component error = org.bukkit.craftbukkit.event.CraftEventFactory.handleLoginResult(playerList.canPlayerLogin(this.connection.getRemoteAddress(), new NameAndId(profile)), this.paperLoginConnection, this.connection, profile, this.server, true); // Paper
++        LOGGER.info("DIAG: handleLoginResult returned error={}", error);
          if (error != null) {
              this.disconnect(error);
          } else {
@@ -161,10 +175,14 @@
              if (waitForDisconnection) {
                  this.state = ServerLoginPacketListenerImpl.State.WAITING_FOR_DUPE_DISCONNECT;
              } else {
-@@ -162,6 +_,7 @@
+@@ -160,8 +_,11 @@
+     }
+ 
      private void finishLoginAndWaitForClient(final GameProfile gameProfile) {
++        LOGGER.info("DIAG: finishLoginAndWaitForClient sending ClientboundLoginFinishedPacket, sessionId={}", this.server.getConnection().getSessionId());
          this.state = ServerLoginPacketListenerImpl.State.PROTOCOL_SWITCHING;
          this.connection.send(new ClientboundLoginFinishedPacket(gameProfile, this.server.getConnection().getSessionId()));
++        LOGGER.info("DIAG: ClientboundLoginFinishedPacket send() call returned (queued)");
 +        this.server.services().paper().filledProfileCache().add(gameProfile); // Paper - update profile cache
      }
  
@@ -218,7 +236,7 @@
                  }
              }
  
-@@ -224,18 +_,123 @@
+@@ -224,18 +_,124 @@
                      ? inetSocketAddress.getAddress()
                      : null;
              }
@@ -342,6 +360,7 @@
  
      @Override
      public void handleLoginAcknowledgement(final ServerboundLoginAcknowledgedPacket packet) {
++        LOGGER.info("DIAG: handleLoginAcknowledgement received from client");
 +        net.minecraft.network.protocol.PacketUtils.ensureRunningOnSameThread(packet, this, this.server.packetProcessor()); // CraftBukkit
          Validate.validState(this.state == ServerLoginPacketListenerImpl.State.PROTOCOL_SWITCHING, "Unexpected login acknowledgement packet");
          this.connection.setupOutboundProtocol(ConfigurationProtocols.CLIENTBOUND);

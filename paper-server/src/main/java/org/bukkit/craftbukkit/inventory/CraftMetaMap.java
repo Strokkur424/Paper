@@ -6,7 +6,6 @@ import java.util.Map;
 import java.util.Objects;
 import net.minecraft.core.component.DataComponentPatch;
 import net.minecraft.core.component.DataComponents;
-import net.minecraft.world.item.component.MapItemColor;
 import net.minecraft.world.item.component.MapPostProcessing;
 import net.minecraft.world.level.saveddata.maps.MapId;
 import org.bukkit.Bukkit;
@@ -23,7 +22,7 @@ public class CraftMetaMap extends CraftMetaItem implements MapMeta {
     static final ItemMetaKey MAP_SCALING = new ItemMetaKey("scaling");
     @Deprecated // SPIGOT-6308
     static final ItemMetaKey MAP_LOC_NAME = new ItemMetaKey("display-loc-name");
-    static final ItemMetaKeyType<MapItemColor> MAP_COLOR = new ItemMetaKeyType<>(DataComponents.MAP_COLOR, "display-map-color");
+    static final ItemMetaKey MAP_COLOR = new ItemMetaKey("display-map-color"); // Paper - the map_color data component no longer exists in vanilla; Bukkit-side metadata only
     static final ItemMetaKeyType<MapId> MAP_ID = new ItemMetaKeyType<>(DataComponents.MAP_ID, "map-id");
 
     static final byte SCALING_EMPTY = (byte) 0;
@@ -56,14 +55,7 @@ public class CraftMetaMap extends CraftMetaItem implements MapMeta {
         getOrEmpty(patch, CraftMetaMap.MAP_POST_PROCESSING).ifPresent((mapPostProcessing) -> {
             this.scaling = (mapPostProcessing == MapPostProcessing.SCALE) ? CraftMetaMap.SCALING_TRUE : CraftMetaMap.SCALING_FALSE;
         });
-
-        getOrEmpty(patch, CraftMetaMap.MAP_COLOR).ifPresent((color) -> {
-            try {
-                this.color = color.rgb();
-            } catch (IllegalArgumentException ex) {
-                // Invalid colour
-            }
-        });
+        // Paper - the map_color data component no longer exists in vanilla, so it can no longer be read from an item
     }
 
     CraftMetaMap(Map<String, Object> map) {
@@ -101,10 +93,7 @@ public class CraftMetaMap extends CraftMetaItem implements MapMeta {
         if (this.hasScaling()) {
             tag.put(CraftMetaMap.MAP_POST_PROCESSING, (this.isScaling()) ? MapPostProcessing.SCALE : MapPostProcessing.LOCK);
         }
-
-        if (this.hasColor()) {
-            tag.put(CraftMetaMap.MAP_COLOR, new MapItemColor(this.color));
-        }
+        // Paper - the map_color data component no longer exists in vanilla, so it can no longer be written to an item
     }
 
     @Override

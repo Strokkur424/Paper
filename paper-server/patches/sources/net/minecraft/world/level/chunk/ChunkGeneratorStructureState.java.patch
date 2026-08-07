@@ -159,7 +159,7 @@
          for (int testX = sourceX - range; testX <= sourceX + range; testX++) {
              for (int testZ = sourceZ - range; testZ <= sourceZ + range; testZ++) {
 -                if (placement.isStructureChunk(this, testX, testZ)) {
-+                if (placement.isStructureChunk(this, testX, testZ, placement instanceof KeyedRandomSpreadStructurePlacement keyed ? keyed.key : null)) { // Paper - Add missing structure set seed configs
++                if (placement.isStructureChunk(this, testX, testZ)) { // Paper - legacy per-structure-type Spigot seed overrides removed
                      return true;
                  }
              }

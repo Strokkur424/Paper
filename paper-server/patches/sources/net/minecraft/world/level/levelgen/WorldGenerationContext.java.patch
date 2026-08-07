@@ -28,7 +28,7 @@
          this.minY = level.getMinY();
          this.height = level.getHeight();
          this.seaLevel = level.getSeaLevel();
-@@ -39,4 +_,13 @@
+@@ -39,4 +_,17 @@
      public int seaLevel() {
          return this.seaLevel;
      }
@@ -38,6 +38,10 @@
 +        if (this.level == null) {
 +            throw new NullPointerException("WorldGenerationContext was initialized without a Level, but WorldGenerationContext#level was called");
 +        }
++        return this.level;
++    }
++
++    public net.minecraft.world.level.@org.jspecify.annotations.Nullable Level levelOrNull() {
 +        return this.level;
 +    }
 +    // Paper end - Flat bedrock generator settings

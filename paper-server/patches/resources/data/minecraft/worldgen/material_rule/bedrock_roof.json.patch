@@ -1,23 +1,12 @@
 --- a/data/minecraft/worldgen/material_rule/bedrock_roof.json
-+++ /dev/null
-@@ -1,20 +_,0 @@
--{
--  "type": "minecraft:condition",
--  "if_true": {
--    "type": "minecraft:not",
--    "invert": {
++++ b/data/minecraft/worldgen/material_rule/bedrock_roof.json
+@@ -3,7 +_,8 @@
+   "if_true": {
+     "type": "minecraft:not",
+     "invert": {
 -      "type": "minecraft:vertical_gradient",
--      "false_at_and_above": {
--        "below_top": 0
--      },
--      "random_name": "minecraft:bedrock_roof",
--      "true_at_and_below": {
--        "below_top": 5
--      }
--    }
--  },
--  "then_run": {
--    "type": "minecraft:block",
--    "result_state": "minecraft:bedrock"
--  }
--}
++      "type": "paper:optionally_flat_bedrock_condition_source",
++      "is_roof": true,
+       "false_at_and_above": {
+         "below_top": 0
+       },

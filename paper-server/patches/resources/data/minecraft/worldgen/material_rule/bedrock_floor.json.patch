@@ -1,20 +1,12 @@
 --- a/data/minecraft/worldgen/material_rule/bedrock_floor.json
-+++ /dev/null
-@@ -1,17 +_,0 @@
--{
--  "type": "minecraft:condition",
--  "if_true": {
++++ b/data/minecraft/worldgen/material_rule/bedrock_floor.json
+@@ -1,7 +_,8 @@
+ {
+   "type": "minecraft:condition",
+   "if_true": {
 -    "type": "minecraft:vertical_gradient",
--    "false_at_and_above": {
--      "above_bottom": 5
--    },
--    "random_name": "minecraft:bedrock_floor",
--    "true_at_and_below": {
--      "above_bottom": 0
--    }
--  },
--  "then_run": {
--    "type": "minecraft:block",
--    "result_state": "minecraft:bedrock"
--  }
--}
++    "type": "paper:optionally_flat_bedrock_condition_source",
++    "is_roof": false,
+     "false_at_and_above": {
+       "above_bottom": 5
+     },

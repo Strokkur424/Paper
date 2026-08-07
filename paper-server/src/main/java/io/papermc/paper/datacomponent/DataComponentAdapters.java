@@ -28,7 +28,6 @@ import io.papermc.paper.datacomponent.item.PaperKineticWeapon;
 import io.papermc.paper.datacomponent.item.PaperLodestoneTracker;
 import io.papermc.paper.datacomponent.item.PaperMapDecorations;
 import io.papermc.paper.datacomponent.item.PaperMapId;
-import io.papermc.paper.datacomponent.item.PaperMapItemColor;
 import io.papermc.paper.datacomponent.item.PaperOminousBottleAmplifier;
 import io.papermc.paper.datacomponent.item.PaperPiercingWeapon;
 import io.papermc.paper.datacomponent.item.PaperPotDecorations;
@@ -138,7 +137,7 @@ public final class DataComponentAdapters {
         register(DataComponents.STORED_ENCHANTMENTS, PaperItemEnchantments::new);
         register(DataComponents.DYE, nms -> DyeColor.getByWoolData((byte) nms.getId()), api -> net.minecraft.world.item.DyeColor.byId(api.getWoolData()));
         register(DataComponents.DYED_COLOR, PaperDyedItemColor::new);
-        register(DataComponents.MAP_COLOR, PaperMapItemColor::new);
+        // Paper - the map_color data component no longer exists in vanilla; DataComponentTypes.MAP_COLOR has no adapter and will always be empty
         register(DataComponents.MAP_ID, PaperMapId::new);
         register(DataComponents.MAP_DECORATIONS, PaperMapDecorations::new);
         register(DataComponents.MAP_POST_PROCESSING, nms -> io.papermc.paper.item.MapPostProcessing.valueOf(nms.name()), api -> MapPostProcessing.valueOf(api.name()));
@@ -184,7 +183,8 @@ public final class DataComponentAdapters {
         register(DataComponents.PIERCING_WEAPON, PaperPiercingWeapon::new);
         register(DataComponents.KINETIC_WEAPON, PaperKineticWeapon::new);
         register(DataComponents.ATTACK_RANGE, PaperAttackRange::new);
-        register(DataComponents.SWING_ANIMATION, PaperSwingAnimation::new);
+        // Paper - swing_animation was split into attack_animation/interact_animation; map the API's single SWING_ANIMATION component to the attack one
+        register(DataComponents.ATTACK_ANIMATION, PaperSwingAnimation::new);
         // registerIdentity(DataComponents.ADDITIONAL_TRADE_COST);
         register(DataComponents.VILLAGER_VARIANT, CraftVillager.CraftType::minecraftHolderToBukkit, CraftVillager.CraftType::bukkitToMinecraftHolder);
         register(DataComponents.WOLF_VARIANT, CraftWolf.CraftVariant::minecraftHolderToBukkit, CraftWolf.CraftVariant::bukkitToMinecraftHolder);

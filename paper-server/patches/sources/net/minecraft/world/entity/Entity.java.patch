@@ -873,7 +873,7 @@
 +
 +            // CraftBukkit start
 +            // Paper - move world parsing/loading to PlayerList#placeNewPlayer
-+            this.getBukkitEntity().readBukkitValues(input);
++            // this.getBukkitEntity().readBukkitValues(input);
 +            input.read("Bukkit.invisible", Codec.BOOL).ifPresent(bukkitInvisible -> {
 +                this.setInvisible(bukkitInvisible);
 +                this.persistentInvisibility = bukkitInvisible;
@@ -1839,7 +1839,7 @@
          if (this.removalReason == null) {
              this.removalReason = reason;
          }
-@@ -4044,12 +_,28 @@
+@@ -4044,12 +_,29 @@
          this.getPassengers().forEach(Entity::stopRiding);
          this.levelCallback.onRemove(reason);
          this.onRemoval(reason);
@@ -1861,7 +1861,8 @@
 +     */
 +    public final void retireScheduler() {
 +        // we need to force create the bukkit entity so that the scheduler can be retired...
-+        this.getBukkitEntity().taskScheduler.retire();
++        if (this.getBukkitEntity() != null)
++            this.getBukkitEntity().taskScheduler.retire();
 +    }
 +    // Paper end - Folia schedulers
 +

@@ -32,7 +32,7 @@
          @Override
          public boolean mayPlace(final ItemStack itemStack) {
 -            return this.propertySet.test(itemStack);
-+            return this.propertySet.test(itemStack, this.potionBrewing); // Paper - custom potion mixes
++            return this.propertySet.test(itemStack); // Paper - custom potion mixes; now handled entirely via the recipe manager
          }
  
          @Override

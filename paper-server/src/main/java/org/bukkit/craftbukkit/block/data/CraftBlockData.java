@@ -334,6 +334,7 @@ public class CraftBlockData implements BlockData {
         register(net.minecraft.world.level.block.LanternBlock.class, org.bukkit.craftbukkit.block.impl.CraftLantern::new);
         register(net.minecraft.world.level.block.LayeredCauldronBlock.class, org.bukkit.craftbukkit.block.impl.CraftLayeredCauldron::new);
         register(net.minecraft.world.level.block.LeafLitterBlock.class, org.bukkit.craftbukkit.block.impl.CraftLeafLitter::new);
+        register(net.minecraft.world.level.block.LeavesBlock.class, org.bukkit.craftbukkit.block.impl.CraftLeaves::new);
         register(net.minecraft.world.level.block.LecternBlock.class, org.bukkit.craftbukkit.block.impl.CraftLectern::new);
         register(net.minecraft.world.level.block.LeverBlock.class, org.bukkit.craftbukkit.block.impl.CraftLever::new);
         register(net.minecraft.world.level.block.LightBlock.class, org.bukkit.craftbukkit.block.impl.CraftLight::new);
@@ -376,6 +377,7 @@ public class CraftBlockData implements BlockData {
         register(net.minecraft.world.level.block.SculkVeinBlock.class, org.bukkit.craftbukkit.block.impl.CraftSculkVein::new);
         register(net.minecraft.world.level.block.SeaPickleBlock.class, org.bukkit.craftbukkit.block.impl.CraftSeaPickle::new);
         register(net.minecraft.world.level.block.ShelfBlock.class, org.bukkit.craftbukkit.block.impl.CraftShelf::new);
+        register(net.minecraft.world.level.block.ShelfMushroomBlock.class, org.bukkit.craftbukkit.block.impl.CraftShelfMushroom::new);
         register(net.minecraft.world.level.block.ShulkerBoxBlock.class, org.bukkit.craftbukkit.block.impl.CraftShulkerBox::new);
         register(net.minecraft.world.level.block.SkullBlock.class, org.bukkit.craftbukkit.block.impl.CraftSkull::new);
         register(net.minecraft.world.level.block.SlabBlock.class, org.bukkit.craftbukkit.block.impl.CraftSlab::new);
@@ -389,6 +391,7 @@ public class CraftBlockData implements BlockData {
         register(net.minecraft.world.level.block.StandingSignBlock.class, org.bukkit.craftbukkit.block.impl.CraftStandingSign::new);
         register(net.minecraft.world.level.block.StemBlock.class, org.bukkit.craftbukkit.block.impl.CraftStem::new);
         register(net.minecraft.world.level.block.StonecutterBlock.class, org.bukkit.craftbukkit.block.impl.CraftStonecutter::new);
+        register(net.minecraft.world.level.block.StrawBedBlock.class, org.bukkit.craftbukkit.block.impl.CraftStrawBed::new);
         register(net.minecraft.world.level.block.StructureBlock.class, org.bukkit.craftbukkit.block.impl.CraftStructureBlock::new);
         register(net.minecraft.world.level.block.SugarCaneBlock.class, org.bukkit.craftbukkit.block.impl.CraftSugarCane::new);
         register(net.minecraft.world.level.block.SulfurSpikeBlock.class, org.bukkit.craftbukkit.block.impl.CraftSulfurSpike::new);

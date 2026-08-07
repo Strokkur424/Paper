@@ -1,9 +1,0 @@
---- a/data/minecraft/number_provider/cooking/time_blaze_rod.json
-+++ /dev/null
-@@ -1,6 +_,0 @@
--{
--  "type": "minecraft:conditional",
--  "condition": "minecraft:block/fast_cooking",
--  "on_false": 2400.0,
--  "on_true": 1200.0
--}

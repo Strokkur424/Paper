@@ -77,7 +77,16 @@ public final class ApiVersion implements Comparable<ApiVersion>, Serializable {
     }
 
     private static int parseNumber(String number) {
-        return Integer.parseInt(number);
+        // Paper - newer Minecraft snapshot versions can suffix a version component with "-snapshot-N"
+        // (e.g. "3-snapshot-7"); only the leading numeric part is meaningful for comparison purposes.
+        int end = 0;
+        while (end < number.length() && Character.isDigit(number.charAt(end))) {
+            end++;
+        }
+        if (end == 0) {
+            throw new NumberFormatException("For input string: \"" + number + "\"");
+        }
+        return Integer.parseInt(number.substring(0, end));
     }
 
     private static String toVersionString(int major, int minor, int patch) {

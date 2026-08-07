@@ -2035,12 +2035,19 @@ public class CraftEventFactory {
     }
 
     public static void callEntitiesLoadEvent(Level level, ChunkPos pos, List<Entity> entities) {
+        if (true) {
+            return;
+        }
         List<org.bukkit.entity.Entity> bukkitEntities = entities.stream().map(Entity::getBukkitEntity).collect(Collectors.toUnmodifiableList());
         EntitiesLoadEvent event = new EntitiesLoadEvent(new CraftChunk((ServerLevel) level, pos.x(), pos.z()), bukkitEntities);
         Bukkit.getPluginManager().callEvent(event);
     }
 
     public static void callEntitiesUnloadEvent(Level level, ChunkPos pos, List<Entity> entities) {
+        if (true) {
+            return;
+        }
+
         List<org.bukkit.entity.Entity> bukkitEntities = entities.stream().map(Entity::getBukkitEntity).collect(Collectors.toUnmodifiableList());
         EntitiesUnloadEvent event = new EntitiesUnloadEvent(new CraftChunk((ServerLevel) level, pos.x(), pos.z()), bukkitEntities);
         Bukkit.getPluginManager().callEvent(event);

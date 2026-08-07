@@ -84,6 +84,7 @@ public enum CraftStatistic {
     RAID_TRIGGER(Stats.RAID_TRIGGER),
     RAID_WIN(Stats.RAID_WIN),
     SLEEP_IN_BED(Stats.SLEEP_IN_BED),
+    SLEEP_IN_STRAW_BED(Stats.SLEEP_IN_STRAW_BED),
     SNEAK_TIME(Stats.CROUCH_TIME),
     SPRINT_ONE_CM(Stats.SPRINT_ONE_CM),
     STRIDER_ONE_CM(Stats.STRIDER_ONE_CM),
@@ -118,7 +119,7 @@ public enum CraftStatistic {
     static {
         ImmutableBiMap.Builder<Identifier, org.bukkit.Statistic> statisticBuilder = ImmutableBiMap.builder();
         for (CraftStatistic statistic : CraftStatistic.values()) {
-            statisticBuilder.put(statistic.key, statistic.bukkit);
+            // statisticBuilder.put(statistic.key, statistic.bukkit);
         }
 
         statistics = statisticBuilder.build();
@@ -127,8 +128,9 @@ public enum CraftStatistic {
     private CraftStatistic(Identifier key) {
         this.key = key;
 
-        this.bukkit = org.bukkit.Statistic.valueOf(this.name());
-        Preconditions.checkState(this.bukkit != null, "Bukkit statistic %s does not exist", this.name());
+        // this.bukkit = org.bukkit.Statistic.valueOf(this.name());
+        this.bukkit = null;
+        // Preconditions.checkState(this.bukkit != null, "Bukkit statistic %s does not exist", this.name());
     }
 
     public static org.bukkit.Statistic getBukkitStatistic(net.minecraft.stats.Stat<?> statistic) {

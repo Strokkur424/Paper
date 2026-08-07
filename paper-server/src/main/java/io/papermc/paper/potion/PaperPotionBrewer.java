@@ -2,8 +2,21 @@ package io.papermc.paper.potion;
 
 import com.google.common.base.Preconditions;
 import java.util.Collection;
+import java.util.Optional;
+import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.server.MinecraftServer;
+import net.minecraft.world.item.ItemStackTemplate;
+import net.minecraft.world.item.crafting.BrewingRecipe;
+import net.minecraft.world.item.crafting.PotionIngredient;
+import net.minecraft.world.item.crafting.RecipeHolder;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.world.item.crafting.Recipe;
 import org.bukkit.NamespacedKey;
+import org.bukkit.craftbukkit.inventory.CraftItemStack;
+import org.bukkit.craftbukkit.inventory.CraftRecipe;
+import org.bukkit.craftbukkit.util.CraftNamespacedKey;
 import org.bukkit.potion.PotionBrewer;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionType;
@@ -14,6 +27,10 @@ import org.checkerframework.framework.qual.DefaultQualifier;
 public class PaperPotionBrewer implements PotionBrewer {
 
     private final MinecraftServer minecraftServer;
+    // Paper - potion mixes are now plain data-driven brewing recipes registered directly with the
+    // RecipeManager (there is no longer a separate PotionBrewing registry). Track the keys added
+    // through this API so resetPotionMixes() can undo exactly those, without touching other recipes.
+    private final Set<ResourceKey<Recipe<?>>> addedPotionMixes = ConcurrentHashMap.newKeySet();
 
     public PaperPotionBrewer(final MinecraftServer minecraftServer) {
         this.minecraftServer = minecraftServer;
@@ -41,16 +58,27 @@ public class PaperPotionBrewer implements PotionBrewer {
 
     @Override
     public void addPotionMix(final PotionMix potionMix) {
-        this.minecraftServer.potionBrewing().addPotionMix(potionMix);
+        PotionIngredient input = new PotionIngredient(CraftRecipe.toIngredient(potionMix.getInput(), true), Optional.empty());
+        PotionIngredient reagent = new PotionIngredient(CraftRecipe.toIngredient(potionMix.getIngredient(), true), Optional.empty());
+        ItemStackTemplate output = CraftItemStack.asTemplate(potionMix.getResult());
+        BrewingRecipe recipe = new BrewingRecipe(input, reagent, output);
+        ResourceKey<Recipe<?>> key = CraftNamespacedKey.toResourceKey(Registries.RECIPE, potionMix.getKey());
+        this.minecraftServer.getRecipeManager().addRecipe(new RecipeHolder<>(key, recipe));
+        this.addedPotionMixes.add(key);
     }
 
     @Override
     public void removePotionMix(final NamespacedKey key) {
-        this.minecraftServer.potionBrewing().removePotionMix(key);
+        ResourceKey<Recipe<?>> resourceKey = CraftNamespacedKey.toResourceKey(Registries.RECIPE, key);
+        this.minecraftServer.getRecipeManager().removeRecipe(resourceKey);
+        this.addedPotionMixes.remove(resourceKey);
     }
 
     @Override
     public void resetPotionMixes() {
-        this.minecraftServer.potionBrewing = this.minecraftServer.potionBrewing().reload(this.minecraftServer.getWorldData().enabledFeatures());
+        for (final ResourceKey<Recipe<?>> key : this.addedPotionMixes) {
+            this.minecraftServer.getRecipeManager().removeRecipe(key);
+        }
+        this.addedPotionMixes.clear();
     }
 }

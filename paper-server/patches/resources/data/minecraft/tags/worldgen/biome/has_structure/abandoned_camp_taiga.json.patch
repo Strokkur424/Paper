@@ -1,8 +1,0 @@
---- a/data/minecraft/tags/worldgen/biome/has_structure/abandoned_camp_taiga.json
-+++ /dev/null
-@@ -1,5 +_,0 @@
--{
--  "values": [
--    "minecraft:taiga"
--  ]
--}

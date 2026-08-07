@@ -2065,6 +2065,9 @@ public class CraftPlayer extends CraftHumanEntity implements Player, PluginMessa
 
     @Override
     public boolean canSee(org.bukkit.entity.Entity entity) {
+        if (entity == null) {
+            return true;
+        }
         return this.equals(entity) || entity.isVisibleByDefault() ^ this.invertedVisibilityEntities.containsKey(entity.getUniqueId()); // SPIGOT-7312: Can always see self
     }
 

@@ -137,7 +137,7 @@
                          }
  
 -                        if (featurePlacement.isStructureChunk(state, sourceChunkPos.x(), sourceChunkPos.z())) {
-+                        if (featurePlacement.isStructureChunk(state, sourceChunkPos.x(), sourceChunkPos.z(), featurePlacement instanceof net.minecraft.world.level.chunk.ChunkGeneratorStructureState.KeyedRandomSpreadStructurePlacement keyed ? keyed.key : null)) { // Paper - Add missing structure set seed configs
++                        if (featurePlacement.isStructureChunk(state, sourceChunkPos.x(), sourceChunkPos.z())) { // Paper - legacy per-structure-type Spigot seed overrides removed; vanilla structure set salts are used instead
                              if (structures.size() == 1) {
                                  this.tryGenerateStructure(
                                      structures.get(0),

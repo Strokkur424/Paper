@@ -42,6 +42,7 @@ public class CraftSkeleton extends CraftAbstractSkeleton implements Skeleton {
 
     @Override
     public int inPowderedSnowTime() {
-        return this.getHandle().inPowderSnowTime;
+        // Paper - vanilla no longer tracks a powder snow tick counter, only a boolean in/was-in-powder-snow flag
+        throw new UnsupportedOperationException("inPowderedSnowTime is no longer tracked by the server");
     }
 }

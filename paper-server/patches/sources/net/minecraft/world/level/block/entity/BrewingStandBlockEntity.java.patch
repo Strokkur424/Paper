@@ -1,5 +1,14 @@
 --- a/net/minecraft/world/level/block/entity/BrewingStandBlockEntity.java
 +++ b/net/minecraft/world/level/block/entity/BrewingStandBlockEntity.java
+@@ -54,7 +_,7 @@
+     private static final Component DEFAULT_NAME = Component.translatable("container.brewing");
+     private NonNullList<ItemStack> items = NonNullList.withSize(5, ItemStack.EMPTY);
+     public int brewTime;
+-    private int totalBrewTime;
++    public int totalBrewTime; // Paper - public for CraftBrewingStand#get/setRecipeBrewTime
+     private boolean[] lastPotionCount;
+     private Item ingredient;
+     public int fuel;
 @@ -95,6 +_,40 @@
          }
      };

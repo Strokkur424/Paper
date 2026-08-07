@@ -23,6 +23,11 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 @AllFeatures
 public class StructureSeedConfigTest {
 
+    // Paper - the salt field moved from StructurePlacement to AbstractSpreadingStructurePlacement
+    private static int salt(final StructurePlacement placement) {
+        return ((net.minecraft.world.level.levelgen.structure.placement.AbstractSpreadingStructurePlacement) placement).salt();
+    }
+
     @Test
     public void checkStructureSeedDefaults() throws ReflectiveOperationException {
         SpigotConfig.config = new YamlConfiguration() {
@@ -39,7 +44,7 @@ public class StructureSeedConfigTest {
             assertEquals(Identifier.DEFAULT_NAMESPACE, setKey.identifier().getNamespace());
             final StructureSet set = structureSets.getValueOrThrow(setKey);
             if (setKey == BuiltinStructureSets.STRONGHOLDS) { // special case due to seed matching world seed
-                assertEquals(0, set.placement().salt);
+                assertEquals(0, salt(set.placement()));
                 continue;
             }
             int salt = switch (setKey.identifier().getPath()) {
@@ -65,13 +70,13 @@ public class StructureSeedConfigTest {
                 default -> throw new AssertionError("Missing structure set seed in SpigotWorldConfig for " + setKey);
             };
             if (setKey == BuiltinStructureSets.BURIED_TREASURES) {
-                final Field field = StructurePlacement.class.getDeclaredField("HIGHLY_ARBITRARY_RANDOM_SALT");
+                final Field field = net.minecraft.world.level.levelgen.structure.placement.AbstractSpreadingStructurePlacement.class.getDeclaredField("HIGHLY_ARBITRARY_RANDOM_SALT"); // Paper - moved from StructurePlacement
                 field.trySetAccessible();
-                assertEquals(0, set.placement().salt);
+                assertEquals(0, salt(set.placement()));
                 assertEquals(field.get(null), salt, "Mismatched default seed for " + setKey + ". Should be " + field.get(null));
                 continue;
             }
-            assertEquals(set.placement().salt, salt, "Mismatched default seed for " + setKey + ". Should be " + set.placement().salt);
+            assertEquals(salt(set.placement()), salt, "Mismatched default seed for " + setKey + ". Should be " + salt(set.placement()));
         }
     }
 }

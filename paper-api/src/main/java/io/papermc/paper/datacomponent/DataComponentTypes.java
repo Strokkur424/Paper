@@ -27,7 +27,6 @@ import io.papermc.paper.datacomponent.item.KineticWeapon;
 import io.papermc.paper.datacomponent.item.LodestoneTracker;
 import io.papermc.paper.datacomponent.item.MapDecorations;
 import io.papermc.paper.datacomponent.item.MapId;
-import io.papermc.paper.datacomponent.item.MapItemColor;
 import io.papermc.paper.datacomponent.item.OminousBottleAmplifier;
 import io.papermc.paper.datacomponent.item.PiercingWeapon;
 import io.papermc.paper.datacomponent.item.PotDecorations;
@@ -223,7 +222,7 @@ public final class DataComponentTypes {
     public static final DataComponentType.Valued<PiercingWeapon> PIERCING_WEAPON = valued("piercing_weapon");
     public static final DataComponentType.Valued<KineticWeapon> KINETIC_WEAPON = valued("kinetic_weapon");
     public static final DataComponentType.Valued<AttackRange> ATTACK_RANGE = valued("attack_range");
-    public static final DataComponentType.Valued<SwingAnimation> SWING_ANIMATION = valued("swing_animation");
+    public static final DataComponentType.Valued<SwingAnimation> SWING_ANIMATION = valued("attack_animation"); // Paper - swing_animation was split into attack_animation/interact_animation server-side; this maps to the attack one
     /**
      * Stores list of enchantments and their levels for an Enchanted Book.
      * Unlike {@link #ENCHANTMENTS}, the effects provided by enchantments
@@ -243,10 +242,7 @@ public final class DataComponentTypes {
      * Represents a color applied to a dyeable item.
      */
     public static final DataComponentType.Valued<DyedItemColor> DYED_COLOR = valued("dyed_color");
-    /**
-     * Represents the tint of the decorations on the {@link org.bukkit.inventory.ItemType#FILLED_MAP} item.
-     */
-    public static final DataComponentType.Valued<MapItemColor> MAP_COLOR = valued("map_color");
+    // Paper - the map_color data component no longer exists in vanilla
     /**
      * References the shared map state holding map contents and markers for a {@link org.bukkit.inventory.ItemType#FILLED_MAP}.
      */

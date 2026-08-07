@@ -85,7 +85,9 @@ public class CraftWorldInfo implements WorldInfo {
                 registryAccess.lookupOrThrow(net.minecraft.core.registries.Registries.NOISE), getSeed(), noiseBasedChunkGenerator.generatorSettings().value());
         } else {
             randomState = net.minecraft.world.level.levelgen.RandomState.create(
-                registryAccess.lookupOrThrow(net.minecraft.core.registries.Registries.NOISE), getSeed(), net.minecraft.world.level.levelgen.NoiseGeneratorSettings.dummy());
+                registryAccess.lookupOrThrow(net.minecraft.core.registries.Registries.NOISE), getSeed(),
+                // Paper - NoiseGeneratorSettings#dummy() no longer exists; fall back to the overworld settings for non-noise-based generators
+                registryAccess.lookupOrThrow(net.minecraft.core.registries.Registries.NOISE_SETTINGS).getOrThrow(net.minecraft.world.level.levelgen.NoiseGeneratorSettings.OVERWORLD).value());
         }
 
         final java.util.List<org.bukkit.block.Biome> possibleBiomes = CraftWorldInfo.this.vanillaChunkGenerator.getBiomeSource().possibleBiomes().stream()

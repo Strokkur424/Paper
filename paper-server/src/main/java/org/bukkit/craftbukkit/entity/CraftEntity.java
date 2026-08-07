@@ -141,7 +141,8 @@ public abstract class CraftEntity implements org.bukkit.entity.Entity {
             return (CraftEntity) entityTypeData.convertFunction().apply(server, entity);
         }
 
-        throw new AssertionError("Unknown entity " + (entity == null ? null : entity.getClass()));
+        // throw new AssertionError("Unknown entity " + (entity == null ? null : entity.getClass()));
+        return null;
     }
 
     public Entity getHandle() {

@@ -1348,7 +1348,7 @@
                  this.resources.managers.updateComponentsAndStaticRegistryTags();
                  this.resources.managers.getRecipeManager().finalizeRecipeLoading(this.worldData.enabledFeatures());
 -                this.getPlayerList().saveAll();
-+                this.potionBrewing = this.potionBrewing.reload(this.worldData.enabledFeatures()); // Paper - Custom Potion Mixes
++                // Paper - Custom Potion Mixes; brewing recipes are now regular datapack-driven recipes and are already reloaded above
 +                if (Thread.currentThread() != this.serverThread) return; // Paper
 +                // Paper start - we don't need to save everything, just advancements
 +                // this.getPlayerList().saveAll();
