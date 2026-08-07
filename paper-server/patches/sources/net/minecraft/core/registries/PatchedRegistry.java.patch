@@ -1,0 +1,14 @@
+--- a/net/minecraft/core/registries/PatchedRegistry.java
++++ b/net/minecraft/core/registries/PatchedRegistry.java
+@@ -51,6 +_,11 @@
+     }
+ 
+     @Override
++    public Optional<T> getValueForCopying(final ResourceKey<T> resourceKey) {
++        return this.get(resourceKey).map(Holder.Reference::value);
++    }
++
++    @Override
+     public Stream<HolderSet.Named<T>> listTags() {
+         throw new UnsupportedOperationException("Tags cloning is not supported");
+     }

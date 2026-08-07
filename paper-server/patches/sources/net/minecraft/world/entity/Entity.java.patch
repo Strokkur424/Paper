@@ -1868,6 +1868,17 @@
      @Override
      public void setLevelCallback(final EntityInLevelCallback levelCallback) {
          this.levelCallback = levelCallback;
+@@ -4190,6 +_,10 @@
+         return box;
+     }
+ 
++    public int getInvulnerableTime() {
++        return this.invulnerableTime;
++    }
++
+     public void setInvulnerableTime(final int invulnerableTime) {
+         this.invulnerableTime = invulnerableTime;
+     }
 @@ -4275,4 +_,10 @@
              return this.save;
          }

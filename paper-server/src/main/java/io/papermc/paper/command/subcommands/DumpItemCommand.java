@@ -68,7 +68,9 @@ public final class DumpItemCommand implements PaperSubcommand {
 
         final Set<DataComponentType<?>> remainingComponents = Collections.newSetFromMap(new IdentityHashMap<>());
         final DataComponentPatch patch = item.getComponentsPatch();
-        remainingComponents.addAll(patch.entrySet().stream().map(Map.Entry::getKey).toList());
+        final DataComponentPatch.SplitResult splitPatch = patch.split();
+        remainingComponents.addAll(splitPatch.added().stream().map(net.minecraft.core.component.TypedDataComponent::type).toList());
+        remainingComponents.addAll(splitPatch.removed());
         final DataComponentMap prototype = item.getPrototype();
         if (includeAllComponents) {
             remainingComponents.addAll(prototype.keySet());
@@ -78,18 +80,19 @@ public final class DumpItemCommand implements PaperSubcommand {
         final RegistryOps<Tag> ops = CraftRegistry.getMinecraftRegistry().createSerializationContext(NbtOps.INSTANCE);
         final List<ComponentLike> writtenComponents = new ArrayList<>();
         final List<String> componentsToCopy = new ArrayList<>();
-        for (final Map.Entry<DataComponentType<?>, Optional<?>> entry : patch.entrySet()) { // patch
-            final DataComponentType<?> type = entry.getKey();
+        for (final net.minecraft.core.component.TypedDataComponent<?> component : splitPatch.added()) { // patch
+            final DataComponentType<?> type = component.type();
             if (remainingComponents.remove(type)) {
                 final String path = requireNonNull(BuiltInRegistries.DATA_COMPONENT_TYPE.getKey(type)).getPath();
-                final Optional<?> patchedValue = entry.getValue();
-                if (patchedValue.isEmpty()) {
-                    writtenComponents.add(text().append(text('!', RED), text(path, AQUA)));
-                    componentsToCopy.add("!" + path);
-                } else {
-                    final Tag serialized = (Tag) ((DataComponentType) type).codecOrThrow().encodeStart(ops, patchedValue.get()).getOrThrow();
-                    writeComponentValue(writtenComponents::add, componentsToCopy::add, path, serialized);
-                }
+                final Tag serialized = (Tag) ((DataComponentType) type).codecOrThrow().encodeStart(ops, component.value()).getOrThrow();
+                writeComponentValue(writtenComponents::add, componentsToCopy::add, path, serialized);
+            }
+        }
+        for (final DataComponentType<?> type : splitPatch.removed()) { // patch
+            if (remainingComponents.remove(type)) {
+                final String path = requireNonNull(BuiltInRegistries.DATA_COMPONENT_TYPE.getKey(type)).getPath();
+                writtenComponents.add(text().append(text('!', RED), text(path, AQUA)));
+                componentsToCopy.add("!" + path);
             }
         }
 

@@ -37,7 +37,7 @@
 -    public void addTicks(final Holder<WorldClock> clock, final int ticks) {
 +    // Paper start - time skip event
 +    public java.util.OptionalLong getTotalTicksToTimeMarker(final Holder<WorldClock> clock, final ResourceKey<ClockTimeMarker> timeMarkerId) {
-+        final ServerClockManager.ClockInstance instance = this.getInstance(clock);
++        final ServerClockManager.ServerClockInstance instance = this.getInstance(clock);
 +        final ClockTimeMarker timeMarker = instance.timeMarkers.get(timeMarkerId);
 +
 +        return timeMarker != null ? java.util.OptionalLong.of(timeMarker.resolveTimeToMoveTo(instance.totalTicks)) : java.util.OptionalLong.empty();
@@ -88,7 +88,7 @@
 +    }
 +
 +    // Paper start - per-world time; per-player time
-+    private void broadcastUpdates(final Holder<WorldClock> clock, final ServerClockManager.ClockInstance instance) {
++    private void broadcastUpdates(final Holder<WorldClock> clock, final ServerClockManager.ServerClockInstance instance) {
 +        for (final net.minecraft.server.level.ServerPlayer player : this.level != null ? this.level.players() : this.server.getPlayerList().getPlayers()) {
 +            final var packet = new net.minecraft.network.protocol.game.ClientboundSetTimePacket(
 +                this.getGameTime(),
@@ -100,12 +100,12 @@
 +
 +    private ClockNetworkState packNetworkState(
 +        final Holder<WorldClock> clock,
-+        final ServerClockManager.ClockInstance instance,
++        final ServerClockManager.ServerClockInstance instance,
 +        final net.minecraft.server.level.ServerPlayer player
 +    ) {
 +        if (player != null && player.level().dimensionType().defaultClock().filter(clock::equals).isPresent()) {
-+            final boolean paused = !player.relativeTime || instance.paused || !this.advanceTime();
-+            return new ClockNetworkState(player.getPlayerTime(), instance.partialTick, paused ? 0.0F : instance.rate);
++            final boolean paused = !player.relativeTime || instance.isPaused() || !this.advanceTime();
++            return new ClockNetworkState(player.getPlayerTime(), instance.partialTick(), paused ? 0.0F : instance.rate());
 +        }
 +        return instance.packNetworkState(this.advanceTime());
 +    }

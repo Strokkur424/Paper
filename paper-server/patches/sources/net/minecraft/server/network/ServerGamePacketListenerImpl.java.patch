@@ -1,9 +1,10 @@
 --- a/net/minecraft/server/network/ServerGamePacketListenerImpl.java
 +++ b/net/minecraft/server/network/ServerGamePacketListenerImpl.java
-@@ -5,6 +_,7 @@
+@@ -5,6 +_,8 @@
  import com.mojang.authlib.GameProfile;
  import com.mojang.brigadier.CommandDispatcher;
  import com.mojang.brigadier.ParseResults;
++import com.mojang.brigadier.StringReader;
 +import com.mojang.brigadier.suggestion.Suggestions;
  import com.mojang.logging.LogUtils;
  import it.unimi.dsi.fastutil.ints.Int2ObjectMaps;
@@ -89,15 +90,14 @@
  
      public ServerGamePacketListenerImpl(final MinecraftServer server, final Connection connection, final ServerPlayer player, final CommonListenerCookie cookie) {
          super(server, connection, cookie);
-@@ -287,9 +_,24 @@
+@@ -287,9 +_,23 @@
          player.connection = this;
          player.getTextFilter().join();
          this.signedMessageDecoder = SignedMessageChain.Decoder.unsigned(player.getUUID(), server::enforceSecureProfile);
 -        this.chatMessageChain = new FutureChain(server);
--        this.commandSuggestionsProvider = new ServerCommandSuggestionsProvider(player);
--    }
 +        this.chatMessageChain = new FutureChain(server.chatExecutor); // CraftBukkit - async chat
-+        this.commandSuggestionsProvider = new ServerCommandSuggestionsProvider(player);
+         this.commandSuggestionsProvider = new ServerCommandSuggestionsProvider(player);
+-    }
 +        this.tickEndEvent = new io.papermc.paper.event.packet.ClientTickEndEvent(player.getBukkitEntity()); // Paper - add client tick end event
 +        this.playerGameConnection = new io.papermc.paper.connection.PaperPlayerGameConnection(this); // Paper
 +    }
@@ -106,7 +106,6 @@
 +    @Override
 +    public io.papermc.paper.connection.PlayerCommonConnection getApiConnection() {
 +        return this.playerGameConnection;
-+        this.commandSuggestionsProvider = new ServerCommandSuggestionsProvider(player);
 +    }
 +
 +    @Override
@@ -399,11 +398,12 @@
          this.player.getRecipeBook().setBookSetting(packet.getBookType(), packet.isOpen(), packet.isFiltering());
      }
  
-@@ -594,18 +_,116 @@
+@@ -594,18 +_,117 @@
          }
      }
  
 +    // Paper start - AsyncTabCompleteEvent
++    private static final int MAX_COMMAND_SUGGESTIONS = 1000;
 +    private static final java.util.concurrent.ExecutorService TAB_COMPLETE_EXECUTOR = java.util.concurrent.Executors.newFixedThreadPool(4,
 +        new com.google.common.util.concurrent.ThreadFactoryBuilder().setDaemon(true).setNameFormat("Async Tab Complete Thread - #%d").setUncaughtExceptionHandler(new net.minecraft.DefaultUncaughtExceptionHandlerWithName(MinecraftServer.LOGGER)).build());
 +    // Paper end - AsyncTabCompleteEvent
@@ -428,7 +428,7 @@
 +        // Paper end - Don't suggest if tab-complete is disabled
 +        // Paper start
 +        final int index;
-+        if (packet.getCommand().length() > 64 && ((index = packet.getCommand().indexOf(' ')) == -1 || index >= 64)) {
++        if (packet.command().length() > 64 && ((index = packet.command().indexOf(' ')) == -1 || index >= 64)) {
 +            this.disconnectAsync(Component.translatable("disconnect.spam"), org.bukkit.event.player.PlayerKickEvent.Cause.SPAM); // Paper - add proper async disconnect
 +            return;
 +        }
@@ -439,13 +439,13 @@
 +
 +    private void handleCustomCommandSuggestions0(final ServerboundCommandSuggestionPacket packet) {
 +        // Paper end - AsyncTabCompleteEvent
-+        StringReader command = new StringReader(packet.getCommand());
++        StringReader command = new StringReader(packet.command());
 +        if (command.canRead() && command.peek() == '/') {
 +            command.skip();
 +        }
 +
 +        // Paper start - AsyncTabCompleteEvent
-+        final com.destroystokyo.paper.event.server.AsyncTabCompleteEvent event = new com.destroystokyo.paper.event.server.AsyncTabCompleteEvent(this.getCraftPlayer(), packet.getCommand(), true, null);
++        final com.destroystokyo.paper.event.server.AsyncTabCompleteEvent event = new com.destroystokyo.paper.event.server.AsyncTabCompleteEvent(this.getCraftPlayer(), packet.command(), true, null);
 +        event.callEvent();
 +        final List<com.destroystokyo.paper.event.server.AsyncTabCompleteEvent.Completion> completions = event.isCancelled() ? com.google.common.collect.ImmutableList.of() : event.completions();
 +        // If the event isn't handled, we can assume that we have no completions, and so we'll ask the server
@@ -457,7 +457,7 @@
 +            // This needs to be on main
 +            this.server.scheduleOnMain(() -> this.sendServerSuggestions(packet, command));
 +        } else if (!completions.isEmpty()) {
-+            final com.mojang.brigadier.suggestion.SuggestionsBuilder builder0 = new com.mojang.brigadier.suggestion.SuggestionsBuilder(packet.getCommand(), command.getTotalLength());
++            final com.mojang.brigadier.suggestion.SuggestionsBuilder builder0 = new com.mojang.brigadier.suggestion.SuggestionsBuilder(packet.command(), command.getTotalLength());
 +            final com.mojang.brigadier.suggestion.SuggestionsBuilder builder = builder0.createOffset(builder0.getInput().lastIndexOf(' ') + 1);
 +            for (final com.destroystokyo.paper.event.server.AsyncTabCompleteEvent.Completion completion : completions) {
 +                final Integer intSuggestion = com.google.common.primitives.Ints.tryParse(completion.suggestion());
@@ -469,10 +469,10 @@
 +            }
 +            // Paper start - Brigadier API
 +            Suggestions suggestions = builder.buildFuture().join();
-+            com.destroystokyo.paper.event.brigadier.AsyncPlayerSendSuggestionsEvent suggestEvent = new com.destroystokyo.paper.event.brigadier.AsyncPlayerSendSuggestionsEvent(this.getCraftPlayer(), suggestions, packet.getCommand());
++            com.destroystokyo.paper.event.brigadier.AsyncPlayerSendSuggestionsEvent suggestEvent = new com.destroystokyo.paper.event.brigadier.AsyncPlayerSendSuggestionsEvent(this.getCraftPlayer(), suggestions, packet.command());
 +            suggestEvent.setCancelled(suggestions.isEmpty());
 +            if (suggestEvent.callEvent()) {
-+                this.connection.send(new ClientboundCommandSuggestionsPacket(packet.getId(), limitTo(suggestEvent.getSuggestions(), ServerGamePacketListenerImpl.MAX_COMMAND_SUGGESTIONS)));
++                this.connection.send(new ClientboundCommandSuggestionsPacket(packet.id(), limitTo(suggestEvent.getSuggestions(), ServerGamePacketListenerImpl.MAX_COMMAND_SUGGESTIONS)));
 +            }
 +            // Paper end - Brigadier API
 +        }
@@ -500,10 +500,10 @@
 +            }
 +            // Paper end - Don't tab-complete namespaced commands if send-namespaced is false
 +            // Paper start - Brigadier API
-+            com.destroystokyo.paper.event.brigadier.AsyncPlayerSendSuggestionsEvent suggestEvent = new com.destroystokyo.paper.event.brigadier.AsyncPlayerSendSuggestionsEvent(this.getCraftPlayer(), results, packet.getCommand());
++            com.destroystokyo.paper.event.brigadier.AsyncPlayerSendSuggestionsEvent suggestEvent = new com.destroystokyo.paper.event.brigadier.AsyncPlayerSendSuggestionsEvent(this.getCraftPlayer(), results, packet.command());
 +            suggestEvent.setCancelled(results.isEmpty());
 +            if (suggestEvent.callEvent()) {
-+                this.send(new ClientboundCommandSuggestionsPacket(packet.getId(), limitTo(suggestEvent.getSuggestions(), ServerGamePacketListenerImpl.MAX_COMMAND_SUGGESTIONS)));
++                this.send(new ClientboundCommandSuggestionsPacket(packet.id(), limitTo(suggestEvent.getSuggestions(), ServerGamePacketListenerImpl.MAX_COMMAND_SUGGESTIONS)));
 +            }
 +            // Paper end - Brigadier API
 +        });
@@ -1708,12 +1708,12 @@
 +        } // Paper end - Call interact event
 +
 +        // Arm swing animation
-+        io.papermc.paper.event.player.PlayerArmSwingEvent event = new io.papermc.paper.event.player.PlayerArmSwingEvent(this.getCraftPlayer(), org.bukkit.craftbukkit.CraftEquipmentSlot.getHand(packet.getHand())); // Paper - Add PlayerArmSwingEvent
++        io.papermc.paper.event.player.PlayerArmSwingEvent event = new io.papermc.paper.event.player.PlayerArmSwingEvent(this.getCraftPlayer(), org.bukkit.craftbukkit.CraftEquipmentSlot.getHand(InteractionHand.MAIN_HAND)); // Paper - Add PlayerArmSwingEvent
 +        this.cserver.getPluginManager().callEvent(event);
 +
 +        if (event.isCancelled()) return;
 +        // CraftBukkit end
-+        this.player.swing(packet.getHand());
++        this.player.swing(InteractionHand.MAIN_HAND, net.minecraft.world.item.component.SwingAnimation.DEFAULT, true);
      }
  
      @Override
@@ -2454,7 +2454,7 @@
 +            if (!new io.papermc.paper.event.packet.UncheckedSignChangeEvent(
 +                this.player.getBukkitEntity(),
 +                io.papermc.paper.util.MCUtil.toPosition(pos),
-+                packet.isFrontText() ? org.bukkit.block.sign.Side.FRONT : org.bukkit.block.sign.Side.BACK,
++                packet.slot() == net.minecraft.world.level.block.entity.SignTextSlot.FRONT ? org.bukkit.block.sign.Side.FRONT : org.bukkit.block.sign.Side.BACK,
 +                lines.stream().<net.kyori.adventure.text.Component>map(line -> net.kyori.adventure.text.Component.text(line.raw())).toList())
 +                .callEvent()) {
 +                return;

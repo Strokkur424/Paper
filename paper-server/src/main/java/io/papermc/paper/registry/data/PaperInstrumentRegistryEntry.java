@@ -111,6 +111,7 @@ public class PaperInstrumentRegistryEntry implements InstrumentRegistryEntry {
                 asConfigured(this.soundEvent, "soundEvent"),
                 this.duration(),
                 this.range(),
+                0,
                 asConfigured(this.description, "description")
             );
         }

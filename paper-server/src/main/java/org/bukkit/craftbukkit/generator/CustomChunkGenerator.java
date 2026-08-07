@@ -232,14 +232,14 @@ public class CustomChunkGenerator extends InternalChunkGenerator {
     }
 
     @Override
-    public void applyCarvers(WorldGenRegion region, long seed, RandomState randomState, BiomeManager biomeManager, StructureManager structureManager, ChunkAccess chunk) {
+    public void applyCarvers(WorldGenRegion region, long seed, RandomState randomState, BiomeManager biomeManager, StructureManager structureManager, ChunkAccess chunk, net.minecraft.world.level.chunk.CarvingMask.@org.jspecify.annotations.Nullable Filter filter) {
         WorldgenRandom random = getSeededRandom();
         int x = chunk.getPos().x();
         int z = chunk.getPos().z();
 
         random.setSeed(Mth.getSeed(x, "should-caves".hashCode(), z) ^ region.getSeed());
         if (this.generator.shouldGenerateCaves(this.world.getWorld(), new RandomSourceWrapper.RandomWrapper(random), x, z)) {
-            this.delegate.applyCarvers(region, seed, randomState, biomeManager, structureManager, chunk);
+            this.delegate.applyCarvers(region, seed, randomState, biomeManager, structureManager, chunk, filter);
         }
 
         // Minecraft removed the LIQUID_CARVERS stage from world generation, without removing the LIQUID Carving enum.
@@ -292,8 +292,8 @@ public class CustomChunkGenerator extends InternalChunkGenerator {
     }
 
     @Override
-    public WeightedList<MobSpawnSettings.SpawnerData> getMobsAt(Holder<net.minecraft.world.level.biome.Biome> biome, StructureManager structureManager, MobCategory mobCategory, BlockPos pos) {
-        return this.delegate.getMobsAt(biome, structureManager, mobCategory, pos);
+    public WeightedList<MobSpawnSettings.SpawnerData> getMobsAt(Level level, StructureManager structureManager, MobCategory mobCategory, BlockPos pos) {
+        return this.delegate.getMobsAt(level, structureManager, mobCategory, pos);
     }
 
     @Override

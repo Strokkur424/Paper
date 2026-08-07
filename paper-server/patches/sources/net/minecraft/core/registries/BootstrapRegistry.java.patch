@@ -1,0 +1,14 @@
+--- a/net/minecraft/core/registries/BootstrapRegistry.java
++++ b/net/minecraft/core/registries/BootstrapRegistry.java
+@@ -49,6 +_,11 @@
+     }
+ 
+     @Override
++    public Optional<T> getValueForCopying(final ResourceKey<T> resourceKey) {
++        return this.get(resourceKey).map(Holder.Reference::value);
++    }
++
++    @Override
+     public Stream<Holder.Reference<T>> listElements() {
+         return this.storage.listElements().stream();
+     }

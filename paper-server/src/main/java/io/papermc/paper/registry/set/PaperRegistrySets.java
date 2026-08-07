@@ -20,9 +20,9 @@ public final class PaperRegistrySets {
         if (registryKeySet instanceof NamedRegistryKeySetImpl<A, ?>) {
             return ((NamedRegistryKeySetImpl<A, M>) registryKeySet).namedSet();
         } else {
-            final RegistryOps.RegistryInfo<M> registryInfo = lookup.lookup(resourceKey).orElseThrow();
+            final net.minecraft.core.HolderGetter<M> holderGetter = lookup.lookup(resourceKey).orElseThrow();
             return HolderSet.direct(key -> {
-                return registryInfo.getter().getOrThrow(PaperRegistries.toNms(key));
+                return holderGetter.getOrThrow(PaperRegistries.toNms(key));
             }, registryKeySet.values());
         }
     }
@@ -42,9 +42,9 @@ public final class PaperRegistrySets {
             }
             return HolderSet.direct(directs);
         } else if (registrySet instanceof final RegistryKeySet<A> keySet) {
-            final RegistryOps.RegistryInfo<M> registryInfo = lookup.lookup(resourceKey).orElseThrow();
+            final net.minecraft.core.HolderGetter<M> holderGetter = lookup.lookup(resourceKey).orElseThrow();
             return HolderSet.direct(key -> {
-                return registryInfo.getter().getOrThrow(PaperRegistries.toNms(key));
+                return holderGetter.getOrThrow(PaperRegistries.toNms(key));
             }, keySet.values());
         } else {
             throw new UnsupportedOperationException("Cannot convert a registry set of type " + registrySet.getClass().getName());

@@ -64,7 +64,7 @@
              boolean isDoneBrewing = entity.brewTime == 0;
              if (isDoneBrewing && brewable) {
 -                doBrew(level, pos, entity);
-+                doBrew(level, pos, entity.items, entity); // CraftBukkit
++                doBrew(level, pos, entity); // CraftBukkit
              } else if (!brewable || !ingredient.is(entity.ingredient)) {
                  entity.brewTime = 0;
              }

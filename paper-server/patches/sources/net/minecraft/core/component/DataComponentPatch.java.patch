@@ -21,11 +21,16 @@
                          } else {
                              negativeCount++;
                          }
-@@ -115,6 +_,7 @@
+@@ -115,6 +_,12 @@
  
                      for (it.unimi.dsi.fastutil.objects.Reference2ObjectMap.Entry<DataComponentType<?>, Object> entry : fastEntries) {
                          Object value = entry.getValue();
-+                        value = io.papermc.paper.util.sanitizer.ItemComponentSanitizer.override(itemObfuscationSession, entry.getKey(), entry.getValue()); // Paper - data sanitization for items
++                        // Paper start - data sanitization for items
++                        java.util.Optional<?> overridden = io.papermc.paper.util.sanitizer.ItemComponentSanitizer.override(
++                            itemObfuscationSession, entry.getKey(), Removed.isRemoved(value) ? java.util.Optional.empty() : java.util.Optional.of(value)
++                        );
++                        value = overridden.isPresent() ? overridden.get() : Removed.INSTANCE;
++                        // Paper end - data sanitization for items
                          if (Removed.isNotRemoved(value)) {
                              DataComponentType<?> type = entry.getKey();
                              DataComponentType.STREAM_CODEC.encode(output, type);

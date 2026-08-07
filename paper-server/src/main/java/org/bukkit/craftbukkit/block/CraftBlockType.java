@@ -174,7 +174,7 @@ public class CraftBlockType<B extends @NonNull BlockData> extends HolderableBase
 
     @Override
     public boolean isSolid() {
-        return this.getHandle().defaultBlockState().blocksMotion();
+        return this.getHandle().defaultBlockState().isSolid();
     }
 
     @Override

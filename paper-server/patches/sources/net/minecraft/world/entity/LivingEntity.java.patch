@@ -18,7 +18,7 @@
  public abstract class LivingEntity extends Entity implements Attackable, WaypointTransmitter {
      private static final Logger LOGGER = LogUtils.getLogger();
      private static final String TAG_ACTIVE_EFFECTS = "active_effects";
-@@ -282,11 +_,25 @@
+@@ -282,11 +_,26 @@
      protected final EntityEquipment equipment;
      private Waypoint.Icon locatorBarIcon = new Waypoint.Icon();
      public @Nullable Vec3 currentImpulseImpactPos;
@@ -32,6 +32,7 @@
 +    public org.bukkit.craftbukkit.entity.CraftLivingEntity getBukkitLivingEntity() { return (org.bukkit.craftbukkit.entity.CraftLivingEntity) super.getBukkitEntity(); } // Paper
 +    public boolean silentDeath = true; // Paper - mark entity as dying silently for cancellable death event
 +    public net.kyori.adventure.util.TriState frictionState = net.kyori.adventure.util.TriState.NOT_SET; // Paper - Friction API
++    public static final int INVULNERABLE_DURATION = 20; // Paper - configurable invulnerable duration
 +    public int invulnerableDuration = LivingEntity.INVULNERABLE_DURATION; // Paper - configurable invulnerable duration
 +    // CraftBukkit end
  
@@ -127,14 +128,19 @@
          output.putFloat("Health", this.getHealth());
          output.putShort("HurtTime", (short)this.hurtTime);
          output.putShort("DeathTime", (short)this.deathTime);
-@@ -781,7 +_,12 @@
+@@ -781,7 +_,18 @@
          }
      }
  
--    public @Nullable ItemEntity drop(final ItemStack itemStack, final boolean thrownFromHand, final Prediction prediction) {
 +    // Paper start - Extend dropItem API
+     public @Nullable ItemEntity drop(final ItemStack itemStack, final boolean thrownFromHand, final Prediction prediction) {
++        return this.drop(itemStack, false, thrownFromHand, prediction);
++    }
 +    public @Nullable ItemEntity drop(final ItemStack itemStack, final boolean randomly, final boolean thrownFromHand, final Prediction prediction) {
 +        return this.drop(itemStack, randomly, thrownFromHand, prediction, true, null);
++    }
++    public @Nullable ItemEntity drop(final ItemStack itemStack, final boolean randomly, final boolean thrownFromHand, final boolean callEvent, final java.util.function.@Nullable Consumer<org.bukkit.entity.Item> entityOperation) {
++        return this.drop(itemStack, randomly, thrownFromHand, Prediction.SERVER_ONLY, callEvent, entityOperation);
 +    }
 +    public @Nullable ItemEntity drop(final ItemStack itemStack, final boolean randomly, final boolean thrownFromHand, final Prediction prediction, final boolean callEvent, final java.util.function.@Nullable Consumer<org.bukkit.entity.Item> entityOperation) {
 +        // Paper end - Extend dropItem API
@@ -273,7 +279,7 @@
          if (this.level().isClientSide()) {
              return false;
          }
-@@ -979,17 +_,30 @@
+@@ -979,10 +_,23 @@
              return false;
          }
  
@@ -301,14 +307,6 @@
      }
  
      public Collection<MobEffectInstance> getActiveEffects() {
-         return this.activeEffects.values();
-     }
- 
--    public Map<Holder<MobEffect>, MobEffectInstance> getActiveEffectsMap() {
-+    public Map<Holder<MobEffectreadAdditionalSaveData>, MobEffectInstance> getActiveEffectsMap() {
-         return this.activeEffects;
-     }
- 
 @@ -1007,24 +_,69 @@
      }
  

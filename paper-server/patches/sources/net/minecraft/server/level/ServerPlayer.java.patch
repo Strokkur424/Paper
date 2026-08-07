@@ -841,6 +841,20 @@
      }
  
      @Override
+@@ -1231,6 +_,13 @@
+     public Either<Player.BedSleepingProblem, Unit> startSleepInBed(
+         final AbstractBedBlock bedBlock, final BlockState bedBlockState, final BedRule rule, final BlockPos pos
+     ) {
++        // Paper - Add PlayerBedEnterEvent; route through the (pos, force) overload so this also fires the event
++        return this.startSleepInBed(pos, false);
++    }
++
++    private Either<Player.BedSleepingProblem, Unit> getBedResult(
++        final AbstractBedBlock bedBlock, final BlockState bedBlockState, final BedRule rule, final BlockPos pos
++    ) {
+         Direction direction = bedBlockState.getValue(HorizontalDirectionalBlock.FACING);
+         if (!this.isSleeping() && this.isAlive()) {
+             boolean canSleep = rule.canSleep(this.level());
 @@ -1245,7 +_,7 @@
  
              if (canSetSpawn) {
@@ -850,11 +864,10 @@
                  );
              }
  
-@@ -1268,7 +_,33 @@
+@@ -1268,7 +_,38 @@
                  }
              }
  
--            Either<Player.BedSleepingProblem, Unit> result = super.startSleepInBed(bedBlock, bedBlockState, rule, pos).ifRight(unit -> {
 +            // CraftBukkit start
 +            return Either.right(Unit.INSTANCE);
 +        } else {
@@ -864,8 +877,12 @@
 +
 +    @Override
 +    public Either<net.minecraft.world.entity.player.Player.BedSleepingProblem, Unit> startSleepInBed(BlockPos pos, boolean force) {
-+        Direction direction = this.level().getBlockState(pos).getValue(HorizontalDirectionalBlock.FACING);
-+        Either<net.minecraft.world.entity.player.Player.BedSleepingProblem, Unit> bedResult = this.getBedResult(pos, direction);
++        BlockState bedBlockState = this.level().getBlockState(pos);
++        if (!(bedBlockState.getBlock() instanceof AbstractBedBlock bedBlock)) {
++            return Either.left(Player.BedSleepingProblem.OTHER_PROBLEM);
++        }
++        BedRule rule = bedBlock.getBedRule(this.level(), pos);
++        Either<net.minecraft.world.entity.player.Player.BedSleepingProblem, Unit> bedResult = this.getBedResult(bedBlock, bedBlockState, rule, pos);
 +
 +        if (bedResult.left().orElse(null) == net.minecraft.world.entity.player.Player.BedSleepingProblem.OTHER_PROBLEM) {
 +            return bedResult; // return immediately if the result is not bypassable by plugins
@@ -880,7 +897,8 @@
 +            return bedResult;
 +        }
 +        {
-+            Either<Player.BedSleepingProblem, Unit> result = super.startSleepInBed(bedBlock, bedBlockState, rule, pos, force).ifRight(unit -> {
++            boolean canSetSpawn = rule.canSetSpawn(this.level());
+             Either<Player.BedSleepingProblem, Unit> result = super.startSleepInBed(bedBlock, bedBlockState, rule, pos).ifRight(unit -> {
 +                // CraftBukkit end
                  this.awardStat(bedBlock.getSleptInBedStatType());
                  if (canSetSpawn) {
@@ -1440,9 +1458,9 @@
      @Override
 -    public @Nullable ItemEntity drop(final ItemStack itemStack, final boolean thrownFromHand, final Prediction prediction) {
 -        ItemEntity entity = super.drop(itemStack, thrownFromHand, prediction);
-+    public @Nullable ItemEntity drop(final ItemStack itemStack, final boolean thrownFromHand, final Prediction prediction, final boolean callEvent, final java.util.function.@Nullable Consumer<org.bukkit.entity.Item> entityOperation) { // Paper - Extend dropItem API
-+        // TODO look into this.
-+        ItemEntity entity = super.drop(itemStack, randomly, thrownFromHand);
++    public @Nullable ItemEntity drop(final ItemStack itemStack, final boolean randomly, final boolean thrownFromHand, final Prediction prediction, final boolean callEvent, final java.util.function.@Nullable Consumer<org.bukkit.entity.Item> entityOperation) { // Paper - Extend dropItem API
++        ItemEntity entity = super.drop(itemStack, randomly, thrownFromHand, prediction, callEvent, entityOperation);
++        ItemStack droppedItemStack = entity != null ? entity.getItem() : ItemStack.EMPTY;
          if (thrownFromHand) {
 -            ItemStack droppedItemStack = entity != null ? entity.getItem() : ItemStack.EMPTY;
              if (!droppedItemStack.isEmpty()) {
@@ -1472,14 +1490,14 @@
          Inventory inventory = this.getInventory();
          ItemStack removed = inventory.removeFromSelected(all);
          this.containerMenu
-@@ -2134,8 +_,8 @@
+@@ -2134,8 +_,9 @@
              this.stopUsingItem();
          }
  
 -        this.drop(removed, true, Prediction.PREDICTED);
--        this.resetAttackStrengthTicker();
-+        return this.drop(removed, true, Prediction.PREDICTED);
-+        this.resetAttackStrengthTicker() != null; // Paper - add back success return
++        ItemEntity dropped = this.drop(removed, true, Prediction.PREDICTED);
+         this.resetAttackStrengthTicker();
++        return dropped != null; // Paper - add back success return
      }
  
      @Override

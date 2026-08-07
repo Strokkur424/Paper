@@ -167,16 +167,15 @@
              }
          } else {
              entity.setRemainingFireTicks(remainingFireTicks);
-@@ -515,8 +_,7 @@
+@@ -515,7 +_,7 @@
                          this.spawnAtLocation(level, this.getPickupItem(), 0.1F);
                      }
  
 -                    this.discard();
--                }
 +                this.discard(org.bukkit.event.entity.EntityRemoveEvent.Cause.HIT); // CraftBukkit - add Bukkit remove cause
+                 }
              }
          }
-     }
 @@ -529,7 +_,7 @@
              double knockbackResistance = Math.max(0.0, 1.0 - mob.getAttributeValue(Attributes.KNOCKBACK_RESISTANCE));
              Vec3 movement = this.getDeltaMovement().multiply(1.0, 0.0, 1.0).normalize().scale(knockback * 0.6 * knockbackResistance);

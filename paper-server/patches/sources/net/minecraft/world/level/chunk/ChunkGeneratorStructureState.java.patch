@@ -37,7 +37,7 @@
 +    // Paper start - Add missing structure set seed configs; horrible hack because spigot creates a ton of direct Holders which lose track of the identifying key
 +    public static final class KeyedRandomSpreadStructurePlacement extends net.minecraft.world.level.levelgen.structure.placement.RandomSpreadStructurePlacement {
 +        public final net.minecraft.resources.ResourceKey<StructureSet> key;
-+        public KeyedRandomSpreadStructurePlacement(net.minecraft.resources.ResourceKey<StructureSet> key, net.minecraft.core.Vec3i locateOffset, FrequencyReductionMethod frequencyReductionMethod, float frequency, int salt, java.util.Optional<StructurePlacement.ExclusionZone> exclusionZone, int spacing, int separation, net.minecraft.world.level.levelgen.structure.placement.RandomSpreadType spreadType) {
++        public KeyedRandomSpreadStructurePlacement(net.minecraft.resources.ResourceKey<StructureSet> key, net.minecraft.core.Vec3i locateOffset, FrequencyReductionMethod frequencyReductionMethod, float frequency, int salt, java.util.Optional<net.minecraft.world.level.levelgen.structure.placement.AbstractSpreadingStructurePlacement.ExclusionZone> exclusionZone, int spacing, int separation, net.minecraft.world.level.levelgen.structure.placement.RandomSpreadType spreadType) {
 +            super(locateOffset, frequencyReductionMethod, frequency, salt, exclusionZone, spacing, separation, spreadType);
 +            this.key = key;
 +        }
@@ -51,7 +51,7 @@
 +            final Holder<StructureSet> newHolder; // Paper - Add missing structure set seed configs
 +            if (structureset.placement() instanceof net.minecraft.world.level.levelgen.structure.placement.RandomSpreadStructurePlacement randomConfig && holder.unwrapKey().orElseThrow().identifier().getNamespace().equals(net.minecraft.resources.Identifier.DEFAULT_NAMESPACE)) { // Paper - Add missing structure set seed configs; check namespace cause datapacks could add structure sets with the same path
 +                String name = holder.unwrapKey().orElseThrow().identifier().getPath();
-+                int seed = randomConfig.salt;
++                int seed = randomConfig.salt();
 +
 +                switch (name) {
 +                    case "desert_pyramids":
@@ -110,7 +110,7 @@
 +                }
 +
 +            // Paper start - Add missing structure set seed configs
-+                structureset = new StructureSet(structureset.structures(), new KeyedRandomSpreadStructurePlacement(holder.unwrapKey().orElseThrow(), randomConfig.locateOffset, randomConfig.frequencyReductionMethod, randomConfig.frequency, seed, randomConfig.exclusionZone, randomConfig.spacing(), randomConfig.separation(), randomConfig.spreadType()));
++                structureset = new StructureSet(structureset.structures(), new KeyedRandomSpreadStructurePlacement(holder.unwrapKey().orElseThrow(), randomConfig.locateOffset(), randomConfig.frequencyReductionMethod(), randomConfig.frequency(), seed, randomConfig.exclusionZone(), randomConfig.spacing(), randomConfig.separation(), randomConfig.spreadType()));
 +                newHolder = Holder.direct(structureset); // I really wish we didn't have to do this here
 +            } else {
 +                newHolder = holder;

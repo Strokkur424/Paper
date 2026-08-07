@@ -213,7 +213,7 @@
                          }
                      }
                  }
-@@ -493,7 +_,7 @@
+@@ -493,13 +_,17 @@
      protected void onOffspringSpawnedFromEgg(final Player spawner, final Mob offspring) {
          if (this.level() instanceof ServerLevel serverLevel) {
              float difficultyModifier = serverLevel.getCurrentDifficultyAt(offspring.blockPosition()).getSpecialMultiplier();
@@ -222,3 +222,13 @@
          }
      }
  
+     @VisibleForTesting
+     public void setInWaterTime(final int inWaterTime) {
+         this.drowningTracker.setAfflictionTime(inWaterTime);
++    }
++
++    public int getConversionTime() {
++        return this.drowningTracker.getConversionTime();
+     }
+ 
+     @VisibleForTesting

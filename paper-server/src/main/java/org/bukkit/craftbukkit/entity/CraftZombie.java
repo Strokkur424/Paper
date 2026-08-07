@@ -56,7 +56,7 @@ public class CraftZombie extends CraftMonster implements Zombie {
     public int getConversionTime() {
         Preconditions.checkState(this.isConverting(), "Entity not converting");
 
-        return this.getHandle().conversionTime;
+        return this.getHandle().getConversionTime();
     }
 
     @Override

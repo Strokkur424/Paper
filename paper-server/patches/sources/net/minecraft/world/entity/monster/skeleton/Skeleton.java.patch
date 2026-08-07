@@ -10,3 +10,22 @@
      );
  
      public Skeleton(final EntityType<? extends Skeleton> type, final Level level) {
+@@ -56,6 +_,18 @@
+     @VisibleForTesting
+     public void startFreezeConversion(final int time) {
+         this.freezingTracker.startConversion(time);
++    }
++
++    public boolean isFreezeConverting() {
++        return this.freezingTracker.isConverting();
++    }
++
++    public void setFreezeConverting(final boolean freezeConverting) {
++        this.getEntityData().set(DATA_STRAY_CONVERSION_ID, freezeConverting);
++    }
++
++    public int getConversionTime() {
++        return this.freezingTracker.getConversionTime();
+     }
+ 
+     @Override

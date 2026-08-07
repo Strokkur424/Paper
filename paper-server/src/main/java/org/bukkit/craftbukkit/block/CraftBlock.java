@@ -438,7 +438,7 @@ public class CraftBlock implements Block {
 
     @Override
     public boolean isSolid() {
-        return this.getBlockState().blocksMotion();
+        return this.getBlockState().isSolid();
     }
 
     @Override

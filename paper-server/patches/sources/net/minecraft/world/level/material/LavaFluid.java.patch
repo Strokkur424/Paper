@@ -1,5 +1,13 @@
 --- a/net/minecraft/world/level/material/LavaFluid.java
 +++ b/net/minecraft/world/level/material/LavaFluid.java
+@@ -23,6 +_,7 @@
+ import net.minecraft.world.level.LevelAccessor;
+ import net.minecraft.world.level.LevelReader;
+ import net.minecraft.world.level.block.BaseFireBlock;
++import net.minecraft.world.level.block.Block;
+ import net.minecraft.world.level.block.Blocks;
+ import net.minecraft.world.level.block.LevelEvent;
+ import net.minecraft.world.level.block.LiquidBlock;
 @@ -95,6 +_,13 @@
                      BlockState blockState = level.getBlockState(testPos);
                      if (blockState.isAir()) {

@@ -43,8 +43,7 @@ public class CraftInventoryFurnace extends CraftInventory implements FurnaceInve
     // Paper start
     @Override
     public boolean isFuel(ItemStack stack) {
-        net.minecraft.server.level.ServerLevel world = ((org.bukkit.craftbukkit.CraftWorld) org.bukkit.Bukkit.getWorlds().get(0)).getHandle();
-        return stack != null && !stack.getType().isEmpty() && world.fuelValues().isFuel(CraftItemStack.asNMSCopy(stack));
+        return stack != null && !stack.getType().isEmpty() && CraftItemStack.asNMSCopy(stack).has(net.minecraft.core.component.DataComponents.COOKING_FUEL);
     }
 
     @Override

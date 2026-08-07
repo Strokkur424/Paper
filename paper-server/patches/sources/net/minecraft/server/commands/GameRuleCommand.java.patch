@@ -1,6 +1,6 @@
 --- a/net/minecraft/server/commands/GameRuleCommand.java
 +++ b/net/minecraft/server/commands/GameRuleCommand.java
-@@ -40,7 +_,7 @@
+@@ -40,14 +_,14 @@
  
      private static <T> int setRule(final CommandContext<CommandSourceStack> context, final GameRule<T> gameRule) throws CommandSyntaxException {
          CommandSourceStack source = context.getSource();
@@ -9,3 +9,11 @@
          GameRules gameRules = source.getLevel().getGameRules();
          String seralizedValue = gameRule.serialize(value);
          if (gameRules.get(gameRule).equals(value)) {
+             throw ERROR_GAME_RULE_NOT_SET.create(gameRule, seralizedValue);
+         }
+ 
+-        gameRules.set(gameRule, value, context.getSource().getServer());
++        gameRules.set(gameRule, value, source.getLevel());
+         source.sendSuccess(() -> Component.translatable("commands.gamerule.set", gameRule.id(), seralizedValue), true);
+         return gameRule.getCommandResult(value);
+     }

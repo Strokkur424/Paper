@@ -7,7 +7,7 @@
 -            target.setRespawnPosition(respawnConfig, false);
 -            tracker.track(target);
 +            // Paper start - Add PlayerSetSpawnEvent
-+            if (target.setRespawnPosition(respawnConfig, false)) {
++            if (target.setRespawnPosition(respawnConfig, false, com.destroystokyo.paper.event.player.PlayerSetSpawnEvent.Cause.COMMAND)) {
 +                tracker.track(target);
 +            }
          }

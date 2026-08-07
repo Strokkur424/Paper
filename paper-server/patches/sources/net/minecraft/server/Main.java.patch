@@ -151,7 +151,7 @@
 +                                    try {
 +                                        io.papermc.paper.world.migration.WorldFolderMigration.migrateStartupWorld(
 +                                            access,
-+                                            context.datapackWorldgen(),
++                                            context.datapackWorldRegistries(),
 +                                            levelName,
 +                                            LevelStem.OVERWORLD,
 +                                            Registries.levelStemToLevel(LevelStem.OVERWORLD)

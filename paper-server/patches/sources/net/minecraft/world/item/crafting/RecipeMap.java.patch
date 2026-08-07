@@ -1,6 +1,6 @@
 --- a/net/minecraft/world/item/crafting/RecipeMap.java
 +++ b/net/minecraft/world/item/crafting/RecipeMap.java
-@@ -30,8 +_,32 @@
+@@ -30,8 +_,37 @@
              byType.put(recipe.value().getType(), legacyRecipeHolder);
              byKey.put(recipe.key(), legacyRecipeHolder);
          });
@@ -19,6 +19,11 @@
 +            recipes.add(holder);
 +            this.byKey.put(holder.id(), holder);
 +        }
++    }
++
++    public void clear() {
++        this.byType.clear();
++        this.byKey.clear();
 +    }
 +    // CraftBukkit end
 +

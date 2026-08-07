@@ -467,12 +467,12 @@ public class CraftLivingEntity extends CraftEntity implements LivingEntity {
 
     @Override
     public int getNoDamageTicks() {
-        return this.getHandle().invulnerableTime;
+        return this.getHandle().getInvulnerableTime();
     }
 
     @Override
     public void setNoDamageTicks(int ticks) {
-        this.getHandle().invulnerableTime = ticks;
+        this.getHandle().setInvulnerableTime(ticks);
     }
 
     @Override
@@ -819,14 +819,14 @@ public class CraftLivingEntity extends CraftEntity implements LivingEntity {
     public void swingMainHand() {
         Preconditions.checkState(!this.getHandle().generation, "Cannot swing hand during world generation");
 
-        this.getHandle().swing(InteractionHand.MAIN_HAND, true);
+        this.getHandle().swing(InteractionHand.MAIN_HAND, net.minecraft.world.item.component.SwingAnimation.DEFAULT, true);
     }
 
     @Override
     public void swingOffHand() {
         Preconditions.checkState(!this.getHandle().generation, "Cannot swing hand during world generation");
 
-        this.getHandle().swing(InteractionHand.OFF_HAND, true);
+        this.getHandle().swing(InteractionHand.OFF_HAND, net.minecraft.world.item.component.SwingAnimation.DEFAULT, true);
     }
 
     @Override

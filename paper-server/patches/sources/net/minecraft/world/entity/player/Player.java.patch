@@ -364,6 +364,36 @@
          this.inventoryMenu.removed(this);
          if (this.hasContainerOpen()) {
              this.doCloseContainer();
+@@ -1317,6 +_,18 @@
+         return Either.right(Unit.INSTANCE);
+     }
+ 
++    // Paper start - Add PlayerBedEnterEvent
++    public Either<Player.BedSleepingProblem, Unit> startSleepInBed(final BlockPos pos, final boolean force) {
++        BlockState bedBlockState = this.level().getBlockState(pos);
++        if (!(bedBlockState.getBlock() instanceof AbstractBedBlock bedBlock)) {
++            return Either.left(Player.BedSleepingProblem.OTHER_PROBLEM);
++        }
++
++        BedRule rule = bedBlock.getBedRule(this.level(), pos);
++        return this.startSleepInBed(bedBlock, bedBlockState, rule, pos);
++    }
++    // Paper end - Add PlayerBedEnterEvent
++
+     public void stopSleepInBed(final boolean forcefulWakeUp, final boolean updateLevelList) {
+         super.stopSleeping();
+         if (this.level() instanceof ServerLevel && updateLevelList) {
+@@ -1367,6 +_,10 @@
+         return 0;
+     }
+ 
++    public int resetRecipes(final Collection<RecipeHolder<?>> recipes) {
++        return 0;
++    }
++
+     public void triggerRecipeCrafted(final RecipeHolder<?> recipe, final List<ItemStack> itemStacks) {
+     }
+ 
 @@ -1421,7 +_,7 @@
  
      @Override

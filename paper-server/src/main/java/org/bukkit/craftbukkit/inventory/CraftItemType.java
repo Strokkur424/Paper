@@ -162,7 +162,7 @@ public class CraftItemType<M extends ItemMeta> extends HolderableBase<Item> impl
 
     @Override
     public boolean isFuel() {
-        return MinecraftServer.getServer().fuelValues().isFuel(new net.minecraft.world.item.ItemStack(this.getHandle()));
+        return new net.minecraft.world.item.ItemStack(this.getHandle()).has(DataComponents.COOKING_FUEL);
     }
 
     @Override
@@ -179,7 +179,7 @@ public class CraftItemType<M extends ItemMeta> extends HolderableBase<Item> impl
 
     @Override
     public boolean isCompostable() {
-        return ComposterBlock.COMPOSTABLES.containsKey(this.getHandle());
+        return new net.minecraft.world.item.ItemStack(this.getHandle()).has(DataComponents.COMPOSTABLE);
     }
 
     @Override

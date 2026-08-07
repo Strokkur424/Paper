@@ -361,14 +361,16 @@ public final class PaperAdventure {
             return Collections.emptyMap();
         }
         final Map<Key, DataComponentValue> map = new HashMap<>();
-        for (final Map.Entry<DataComponentType<?>, Optional<?>> entry : patch.entrySet()) {
-            if (entry.getKey().isTransient()) continue;
-            @Subst("key:value") final String typeKey = requireNonNull(BuiltInRegistries.DATA_COMPONENT_TYPE.getKey(entry.getKey())).toString();
-            if (entry.getValue().isEmpty()) {
-                   map.put(Key.key(typeKey), DataComponentValue.removed());
-            } else {
-                map.put(Key.key(typeKey), new DataComponentValueImpl(entry.getKey().codec(), entry.getValue().get()));
-            }
+        final DataComponentPatch.SplitResult splitPatch = patch.split();
+        for (final net.minecraft.core.component.TypedDataComponent<?> component : splitPatch.added()) {
+            if (component.type().isTransient()) continue;
+            @Subst("key:value") final String typeKey = requireNonNull(BuiltInRegistries.DATA_COMPONENT_TYPE.getKey(component.type())).toString();
+            map.put(Key.key(typeKey), new DataComponentValueImpl(component.type().codec(), component.value()));
+        }
+        for (final DataComponentType<?> type : splitPatch.removed()) {
+            if (type.isTransient()) continue;
+            @Subst("key:value") final String typeKey = requireNonNull(BuiltInRegistries.DATA_COMPONENT_TYPE.getKey(type)).toString();
+            map.put(Key.key(typeKey), DataComponentValue.removed());
         }
         return map;
     }

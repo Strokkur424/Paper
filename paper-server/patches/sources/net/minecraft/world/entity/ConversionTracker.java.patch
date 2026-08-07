@@ -59,3 +59,14 @@
      }
  
      public void startConversion(final int time) {
+@@ -113,6 +_,10 @@
+ 
+     public void setAfflictionTime(final int afflictionTime) {
+         this.afflictionTime = afflictionTime;
++    }
++
++    public int getConversionTime() {
++        return this.conversionTime;
+     }
+ 
+     public void setConversionTime(final int conversionTime) {

@@ -61,7 +61,7 @@ public class CraftInventoryView<T extends AbstractContainerMenu, I extends Inven
         if (slot >= 0) {
             this.container.getSlot(slot).set(stack);
         } else {
-            this.player.getHandle().drop(stack, false);
+            this.player.getHandle().drop(stack, false, net.minecraft.util.Prediction.SERVER_ONLY);
         }
     }
 

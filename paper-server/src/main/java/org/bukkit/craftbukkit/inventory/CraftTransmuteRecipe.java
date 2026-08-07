@@ -33,9 +33,13 @@ public class CraftTransmuteRecipe extends TransmuteRecipe implements CraftRecipe
             CraftRecipe.toIngredient(this.getInput(), true),
             CraftRecipe.toIngredient(this.getMaterial(), true),
             net.minecraft.world.item.crafting.TransmuteRecipe.DEFAULT_MATERIAL_COUNT,
-            CraftItemStack.asTemplate(this.getResult()),
+            toTransmuteResult(CraftItemStack.asTemplate(this.getResult())),
             false
         );
         MinecraftServer.getServer().getRecipeManager().addRecipe(new RecipeHolder<>(CraftNamespacedKey.toResourceKey(Registries.RECIPE, this.getKey()), recipe));
+    }
+
+    private static net.minecraft.world.item.crafting.TransmuteResult toTransmuteResult(final net.minecraft.world.item.ItemStackTemplate template) {
+        return new net.minecraft.world.item.crafting.TransmuteResult(java.util.Optional.of(template.item()), template.count(), template.components());
     }
 }

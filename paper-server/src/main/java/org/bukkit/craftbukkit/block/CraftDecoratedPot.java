@@ -6,7 +6,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import java.util.stream.Collectors;
+import net.minecraft.core.component.DataComponentPatch;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStackTemplate;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.entity.DecoratedPotBlockEntity;
 import net.minecraft.world.level.block.entity.PotDecorations;
@@ -76,7 +78,8 @@ public class CraftDecoratedPot extends CraftBlockEntityState<DecoratedPotBlockEn
         Preconditions.checkArgument(face != null, "face must not be null");
         Preconditions.checkArgument(sherd == null || sherd == Material.BRICK || Tag.ITEMS_DECORATED_POT_SHERDS.isTagged(sherd), "sherd is not a valid sherd material: %s", sherd);
 
-        Optional<Item> sherdItem = (sherd != null) ? Optional.of(CraftItemType.bukkitToMinecraft(sherd)) : Optional.of(Items.BRICK);
+        Item sherdItemType = (sherd != null) ? CraftItemType.bukkitToMinecraft(sherd) : Items.BRICK;
+        Optional<ItemStackTemplate> sherdItem = Optional.of(new ItemStackTemplate(sherdItemType.builtInRegistryHolder(), 1, DataComponentPatch.EMPTY));
         PotDecorations decorations = this.getSnapshot().getDecorations();
 
         switch (face) {
@@ -93,7 +96,7 @@ public class CraftDecoratedPot extends CraftBlockEntityState<DecoratedPotBlockEn
         Preconditions.checkArgument(face != null, "face must not be null");
 
         PotDecorations decorations = this.getSnapshot().getDecorations();
-        Optional<Item> sherdItem = switch (face) {
+        Optional<ItemStackTemplate> sherdItem = switch (face) {
             case BACK -> decorations.back();
             case LEFT -> decorations.left();
             case RIGHT -> decorations.right();
@@ -101,7 +104,7 @@ public class CraftDecoratedPot extends CraftBlockEntityState<DecoratedPotBlockEn
             default -> throw new IllegalArgumentException("Unexpected value: " + face);
         };
 
-        return CraftItemType.minecraftToBukkit(sherdItem.orElse(Items.BRICK));
+        return CraftItemType.minecraftToBukkit(sherdItem.map(template -> template.item().value()).orElse(Items.BRICK));
     }
 
     @Override
@@ -109,16 +112,20 @@ public class CraftDecoratedPot extends CraftBlockEntityState<DecoratedPotBlockEn
         PotDecorations decorations = this.getSnapshot().getDecorations();
 
         Map<Side, Material> sherds = new EnumMap<>(Side.class);
-        sherds.put(Side.BACK, CraftItemType.minecraftToBukkit(decorations.back().orElse(Items.BRICK)));
-        sherds.put(Side.LEFT, CraftItemType.minecraftToBukkit(decorations.left().orElse(Items.BRICK)));
-        sherds.put(Side.RIGHT, CraftItemType.minecraftToBukkit(decorations.right().orElse(Items.BRICK)));
-        sherds.put(Side.FRONT, CraftItemType.minecraftToBukkit(decorations.front().orElse(Items.BRICK)));
+        sherds.put(Side.BACK, CraftItemType.minecraftToBukkit(decorations.back().map(template -> template.item().value()).orElse(Items.BRICK)));
+        sherds.put(Side.LEFT, CraftItemType.minecraftToBukkit(decorations.left().map(template -> template.item().value()).orElse(Items.BRICK)));
+        sherds.put(Side.RIGHT, CraftItemType.minecraftToBukkit(decorations.right().map(template -> template.item().value()).orElse(Items.BRICK)));
+        sherds.put(Side.FRONT, CraftItemType.minecraftToBukkit(decorations.front().map(template -> template.item().value()).orElse(Items.BRICK)));
         return sherds;
     }
 
     @Override
     public List<Material> getShards() {
-        return this.getSnapshot().getDecorations().ordered().stream().map(CraftItemType::minecraftToBukkit).collect(Collectors.toUnmodifiableList());
+        PotDecorations decorations = this.getSnapshot().getDecorations();
+        return java.util.stream.Stream.of(decorations.back(), decorations.left(), decorations.right(), decorations.front())
+            .map(template -> template.map(t -> t.item().value()).orElse(Items.BRICK))
+            .map(CraftItemType::minecraftToBukkit)
+            .collect(Collectors.toUnmodifiableList());
     }
 
     @Override

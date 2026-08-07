@@ -20,8 +20,8 @@ public record RegistryComposeEventImpl<T, B extends RegistryBuilder<T>>(
 
     @Override
     public <V extends Keyed> Tag<V> getOrCreateTag(final TagKey<V> tagKey) {
-        final RegistryOps.RegistryInfo<Object> registryInfo = this.conversions.lookup().lookup(PaperRegistries.registryToNms(tagKey.registryKey())).orElseThrow();
-        final HolderSet.Named<?> tagSet = registryInfo.getter().getOrThrow(PaperRegistries.toNms(tagKey));
+        final net.minecraft.core.HolderGetter<Object> holderGetter = this.conversions.lookup().lookup(PaperRegistries.registryToNms(tagKey.registryKey())).orElseThrow();
+        final HolderSet.Named<?> tagSet = holderGetter.getOrThrow(PaperRegistries.toNms(tagKey));
         return new NamedRegistryKeySetImpl<>(tagKey, tagSet);
     }
 }

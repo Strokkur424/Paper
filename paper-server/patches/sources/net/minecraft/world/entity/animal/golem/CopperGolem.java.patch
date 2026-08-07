@@ -1,5 +1,13 @@
 --- a/net/minecraft/world/entity/animal/golem/CopperGolem.java
 +++ b/net/minecraft/world/entity/animal/golem/CopperGolem.java
+@@ -39,6 +_,7 @@
+ import net.minecraft.world.item.Items;
+ import net.minecraft.world.level.Level;
+ import net.minecraft.world.level.ServerLevelAccessor;
++import net.minecraft.world.level.block.Block;
+ import net.minecraft.world.level.block.Blocks;
+ import net.minecraft.world.level.block.ChestBlock;
+ import net.minecraft.world.level.block.CopperGolemStatueBlock;
 @@ -57,8 +_,8 @@
  import org.jspecify.annotations.Nullable;
  

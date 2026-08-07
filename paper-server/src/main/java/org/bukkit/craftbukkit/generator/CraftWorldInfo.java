@@ -81,11 +81,11 @@ public class CraftWorldInfo implements WorldInfo {
     public org.bukkit.generator.BiomeProvider vanillaBiomeProvider() {
         final net.minecraft.world.level.levelgen.RandomState randomState;
         if (vanillaChunkGenerator instanceof net.minecraft.world.level.levelgen.NoiseBasedChunkGenerator noiseBasedChunkGenerator) {
-            randomState = net.minecraft.world.level.levelgen.RandomState.create(noiseBasedChunkGenerator.generatorSettings().value(),
-                registryAccess.lookupOrThrow(net.minecraft.core.registries.Registries.NOISE), getSeed());
+            randomState = net.minecraft.world.level.levelgen.RandomState.create(
+                registryAccess.lookupOrThrow(net.minecraft.core.registries.Registries.NOISE), getSeed(), noiseBasedChunkGenerator.generatorSettings().value());
         } else {
-            randomState = net.minecraft.world.level.levelgen.RandomState.create(net.minecraft.world.level.levelgen.NoiseGeneratorSettings.dummy(),
-                registryAccess.lookupOrThrow(net.minecraft.core.registries.Registries.NOISE), getSeed());
+            randomState = net.minecraft.world.level.levelgen.RandomState.create(
+                registryAccess.lookupOrThrow(net.minecraft.core.registries.Registries.NOISE), getSeed(), net.minecraft.world.level.levelgen.NoiseGeneratorSettings.dummy());
         }
 
         final java.util.List<org.bukkit.block.Biome> possibleBiomes = CraftWorldInfo.this.vanillaChunkGenerator.getBiomeSource().possibleBiomes().stream()

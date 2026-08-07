@@ -1,0 +1,26 @@
+--- a/net/minecraft/world/level/levelgen/structure/placement/AbstractSpreadingStructurePlacement.java
++++ b/net/minecraft/world/level/levelgen/structure/placement/AbstractSpreadingStructurePlacement.java
+@@ -64,19 +_,19 @@
+         return this.locateOffset;
+     }
+ 
+-    protected AbstractSpreadingStructurePlacement.FrequencyReductionMethod frequencyReductionMethod() {
++    public AbstractSpreadingStructurePlacement.FrequencyReductionMethod frequencyReductionMethod() {
+         return this.frequencyReductionMethod;
+     }
+ 
+-    protected float frequency() {
++    public float frequency() {
+         return this.frequency;
+     }
+ 
+-    protected int salt() {
++    public int salt() {
+         return this.salt;
+     }
+ 
+-    protected Optional<AbstractSpreadingStructurePlacement.ExclusionZone> exclusionZone() {
++    public Optional<AbstractSpreadingStructurePlacement.ExclusionZone> exclusionZone() {
+         return this.exclusionZone;
+     }
+ 

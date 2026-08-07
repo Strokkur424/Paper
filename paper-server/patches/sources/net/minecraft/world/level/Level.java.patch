@@ -388,12 +388,13 @@
          BlockState blockState = this.getBlockState(pos);
          if (blockState.isAir()) {
              return false;
-@@ -281,7 +_,8 @@
+@@ -281,7 +_,9 @@
          blockState.getBlock().spawnDestroyParticles(this, pos, blockState);
          if (dropResources) {
              BlockEntity blockEntity = blockState.hasBlockEntity() ? this.getBlockEntity(pos) : null;
 -            Block.dropResources(blockState, this, pos, blockEntity, breaker, ItemStack.EMPTY);
 +            Block.dropResources(blockState, this, pos, blockEntity, breaker, ItemStack.EMPTY, false); // Paper - Properly handle xp dropping
++            int xp = blockState.getBlock().getExpDrop(blockState, (ServerLevel) this, pos, ItemStack.EMPTY, true); // Paper - Properly handle xp dropping
 +            blockState.getBlock().popExperience((ServerLevel) this, pos, xp, breaker); // Paper - Properly handle xp dropping; custom amount
          }
  

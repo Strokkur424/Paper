@@ -1023,7 +1023,7 @@ public class CraftEventFactory {
         victim.expToDrop = event.getDroppedExp();
         victim.newExp = event.getNewExp();
 
-        dropAllItems(drops, item -> victim.drop(item, true, false));
+        dropAllItems(drops, item -> victim.drop(item, true, net.minecraft.util.Prediction.SERVER_ONLY));
 
         return event;
     }

@@ -23,13 +23,12 @@ public class CraftSkeleton extends CraftAbstractSkeleton implements Skeleton {
     @Override
     public int getConversionTime() {
         Preconditions.checkState(this.isConverting(), "Entity is not converting");
-        return this.getHandle().conversionTime;
+        return this.getHandle().getConversionTime();
     }
 
     @Override
     public void setConversionTime(int time) {
         if (time < 0) {
-            this.getHandle().conversionTime = -1;
             this.getHandle().setFreezeConverting(false);
         } else {
             this.getHandle().startFreezeConversion(time);

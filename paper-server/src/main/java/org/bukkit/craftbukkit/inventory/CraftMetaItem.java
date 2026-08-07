@@ -544,17 +544,14 @@ public class CraftMetaItem implements ItemMeta, Damageable, Repairable, BlockDat
             extraHandledComponents.addAll(handledComponents);
             handledComponents = extraHandledComponents;
         }
-        Set<Map.Entry<DataComponentType<?>, Optional<?>>> keys = patch.entrySet();
-        for (Map.Entry<DataComponentType<?>, Optional<?>> key : keys) {
-            if (!handledComponents.contains(key.getKey())) {
-                key.getValue().ifPresent((value) -> {
-                    this.unhandledTags.set((DataComponentType) key.getKey(), value);
-                });
+        DataComponentPatch.SplitResult splitPatch = patch.split();
+        for (net.minecraft.core.component.TypedDataComponent<?> component : splitPatch.added()) {
+            if (!handledComponents.contains(component.type())) {
+                this.unhandledTags.set((DataComponentType) component.type(), component.value());
             }
-
-            if (key.getValue().isEmpty()) {
-                this.removedTags.add(key.getKey());
-            }
+        }
+        for (DataComponentType<?> removedType : splitPatch.removed()) {
+            this.removedTags.add(removedType);
         }
     }
 
@@ -772,14 +769,10 @@ public class CraftMetaItem implements ItemMeta, Damageable, Repairable, BlockDat
                 });
                 this.unhandledTags.copy(unhandledPatch.forget(type -> type == CraftMetaItem.CAN_PLACE_ON.TYPE || type == CraftMetaItem.CAN_BREAK.TYPE));
 
-                for (Entry<DataComponentType<?>, Optional<?>> entry : unhandledPatch.entrySet()) {
-                    // Move removed unhandled tags to dedicated removedTags
-                    if (entry.getValue().isEmpty()) {
-                        DataComponentType<?> key = entry.getKey();
-
-                        this.unhandledTags.clear(key);
-                        this.removedTags.add(key);
-                    }
+                // Move removed unhandled tags to dedicated removedTags
+                for (DataComponentType<?> key : unhandledPatch.split().removed()) {
+                    this.unhandledTags.clear(key);
+                    this.removedTags.add(key);
                 }
             } catch (IOException ex) {
                 LOGGER.error("Failed to read unhandled tag for item", ex);
@@ -1049,10 +1042,8 @@ public class CraftMetaItem implements ItemMeta, Damageable, Repairable, BlockDat
             tag.put(CraftMetaItem.CAN_BREAK, new net.minecraft.world.item.AdventureModePredicate(this.canBreakPredicates));
         }
 
-        for (Map.Entry<DataComponentType<?>, Optional<?>> e : this.unhandledTags.build().entrySet()) {
-            e.getValue().ifPresent((value) -> {
-                tag.builder.set((DataComponentType) e.getKey(), value);
-            });
+        for (net.minecraft.core.component.TypedDataComponent<?> component : this.unhandledTags.build().split().added()) {
+            tag.builder.set((DataComponentType) component.type(), component.value());
         }
 
         for (DataComponentType<?> removed : this.removedTags) {
@@ -1872,22 +1863,25 @@ public class CraftMetaItem implements ItemMeta, Damageable, Repairable, BlockDat
         DynamicOps<net.minecraft.nbt.Tag> ops = CraftRegistry.getMinecraftRegistry().createSerializationContext(NbtOps.INSTANCE);
         StringJoiner componentString = new StringJoiner(",", "[", "]");
 
-        for (Entry<DataComponentType<?>, Optional<?>> entry : patch.entrySet()) {
-            DataComponentType<?> type = entry.getKey();
+        DataComponentPatch.SplitResult splitPatch = patch.split();
+        for (net.minecraft.core.component.TypedDataComponent<?> component : splitPatch.added()) {
+            DataComponentType<?> type = component.type();
             if (type.isTransient()) {
                 continue;
             }
 
-            Optional<?> componentValue = entry.getValue();
             String componentKey = requireNonNull(BuiltInRegistries.DATA_COMPONENT_TYPE.getKey(type)).toString();
-
-            if (componentValue.isPresent()) {
-                net.minecraft.nbt.Tag componentValueAsNBT = (net.minecraft.nbt.Tag) ((DataComponentType) type).codecOrThrow().encodeStart(ops, componentValue.get()).getOrThrow();
-                String componentValueAsNBTString = new SnbtPrinterTagVisitor("", 0, new ArrayList<>()).visit(componentValueAsNBT);
-                componentString.add(componentKey + "=" + componentValueAsNBTString);
-            } else {
-                componentString.add("!" + componentKey);
+            net.minecraft.nbt.Tag componentValueAsNBT = (net.minecraft.nbt.Tag) ((DataComponentType) type).codecOrThrow().encodeStart(ops, component.value()).getOrThrow();
+            String componentValueAsNBTString = new SnbtPrinterTagVisitor("", 0, new ArrayList<>()).visit(componentValueAsNBT);
+            componentString.add(componentKey + "=" + componentValueAsNBTString);
+        }
+        for (DataComponentType<?> type : splitPatch.removed()) {
+            if (type.isTransient()) {
+                continue;
             }
+
+            String componentKey = requireNonNull(BuiltInRegistries.DATA_COMPONENT_TYPE.getKey(type)).toString();
+            componentString.add("!" + componentKey);
         }
 
         return componentString.toString();

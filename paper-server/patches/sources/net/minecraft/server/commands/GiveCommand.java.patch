@@ -5,7 +5,7 @@
                  boolean added = player.getInventory().add(copyToDrop);
                  if (added && copyToDrop.isEmpty()) {
 -                    ItemEntity drop = player.createItemStackToDrop(prototypeItemStack.copy(), false, false);
-+                    ItemEntity drop = player.createItemStackToDrop(prototypeItemStack.copy(), false, false, false, null); // Paper - do not fire PlayerDropItemEvent for /give command
++                    ItemEntity drop = player.createItemStackToDrop(prototypeItemStack.copy(), false, false); // Paper - do not fire PlayerDropItemEvent for /give command
                      if (drop != null) {
                          drop.makeFakeItem();
                          drop.level().addFreshEntity(drop);
@@ -14,7 +14,7 @@
                      player.containerMenu.broadcastChanges();
                  } else {
 -                    ItemEntity drop = player.createItemStackToDrop(copyToDrop, false, false);
-+                    ItemEntity drop = player.createItemStackToDrop(copyToDrop, false, false, false, null); // Paper - do not fire PlayerDropItemEvent for /give command
++                    ItemEntity drop = player.createItemStackToDrop(copyToDrop, false, false); // Paper - do not fire PlayerDropItemEvent for /give command
                      if (drop != null) {
                          drop.setNoPickUpDelay();
                          drop.setTarget(player.getUUID());

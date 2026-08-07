@@ -5,18 +5,18 @@
                      && player.mayBuild()
                      && sign.getText(textSlot).hasEditableText(player.isTextFilteringEnabled())) {
 -                    this.openTextEdit(player, sign, textSlot);
-+                    this.openTextEdit(player, sign, isFrontText, io.papermc.paper.event.player.PlayerOpenSignEvent.Cause.INTERACT); // Paper - Add PlayerOpenSignEvent
++                    this.openTextEdit(player, sign, textSlot == SignTextSlot.FRONT, io.papermc.paper.event.player.PlayerOpenSignEvent.Cause.INTERACT); // Paper - Add PlayerOpenSignEvent
                      return InteractionResult.SUCCESS_SERVER;
                  } else {
                      return InteractionResult.PASS;
-@@ -168,7 +_,34 @@
+@@ -168,9 +_,36 @@
          return block instanceof SignBlock signBlock ? signBlock.type() : WoodType.OAK;
      }
  
 +    @Deprecated @io.papermc.paper.annotation.DoNotUse // Paper - Add PlayerOpenSignEvent
      public void openTextEdit(final Player player, final SignBlockEntity sign, final SignTextSlot slot) {
 +        // Paper start - Add PlayerOpenSignEvent
-+        this.openTextEdit(player, sign, isFrontText, io.papermc.paper.event.player.PlayerOpenSignEvent.Cause.UNKNOWN);
++        this.openTextEdit(player, sign, slot == SignTextSlot.FRONT, io.papermc.paper.event.player.PlayerOpenSignEvent.Cause.UNKNOWN);
 +    }
 +
 +    public void openTextEdit(Player player, SignBlockEntity sign, boolean isFrontText, io.papermc.paper.event.player.PlayerOpenSignEvent.Cause cause) {
@@ -42,8 +42,11 @@
 +        }
 +        } // Paper - Add PlayerOpenSignEvent
          sign.setAllowedPlayerEditor(player.getUUID());
-         player.openTextEdit(sign, slot);
+-        player.openTextEdit(sign, slot);
++        player.openTextEdit(sign, isFrontText ? SignTextSlot.FRONT : SignTextSlot.BACK);
      }
+ 
+     private boolean otherPlayerIsEditingSign(final Player player, final SignBlockEntity sign) {
 @@ -180,7 +_,7 @@
  
      @Override

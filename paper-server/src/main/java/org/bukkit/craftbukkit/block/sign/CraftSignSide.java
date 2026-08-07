@@ -74,7 +74,7 @@ public class CraftSignSide implements SignSide {
 
     @Override
     public void setGlowingText(boolean glowing) {
-        this.signText = this.signText.setHasGlowingText(glowing);
+        this.signText = this.signText.withGlowingText(glowing);
     }
 
     @Nullable
@@ -85,7 +85,7 @@ public class CraftSignSide implements SignSide {
 
     @Override
     public void setColor(@NotNull DyeColor color) {
-        this.signText = this.signText.setColor(net.minecraft.world.item.DyeColor.byId(color.getWoolData()));
+        this.signText = this.signText.withColor(net.minecraft.world.item.DyeColor.byId(color.getWoolData()));
     }
 
     public SignText applyLegacyStringToSignSide() {
@@ -96,7 +96,7 @@ public class CraftSignSide implements SignSide {
                 if (component.equals(origComp)) {
                     continue; // The line contents are still the same, skip.
                 }
-                this.signText = this.signText.setMessage(i, io.papermc.paper.adventure.PaperAdventure.asVanilla(component));
+                this.signText = this.signText.asMutable().setLine(i, io.papermc.paper.adventure.PaperAdventure.asVanilla(component)).asImmutable();
             }
         }
 

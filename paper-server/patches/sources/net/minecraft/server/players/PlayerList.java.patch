@@ -1,5 +1,13 @@
 --- a/net/minecraft/server/players/PlayerList.java
 +++ b/net/minecraft/server/players/PlayerList.java
+@@ -79,6 +_,7 @@
+ import net.minecraft.stats.Stats;
+ import net.minecraft.tags.TagNetworkSerialization;
+ import net.minecraft.util.FileUtil;
++import net.minecraft.util.Prediction;
+ import net.minecraft.world.effect.MobEffectInstance;
+ import net.minecraft.world.entity.Entity;
+ import net.minecraft.world.entity.EntityEvent;
 @@ -115,27 +_,37 @@
      private static final int SEND_PLAYER_INFO_INTERVAL = 600;
      private static final SimpleDateFormat BAN_DATE_FORMAT = new SimpleDateFormat("yyyy-MM-dd 'at' HH:mm:ss z", Locale.ROOT);
@@ -323,7 +331,7 @@
 +        if (!player.containerMenu.getCarried().isEmpty()) {
 +            net.minecraft.world.item.ItemStack carried = player.containerMenu.getCarried();
 +            player.containerMenu.setCarried(net.minecraft.world.item.ItemStack.EMPTY);
-+            player.drop(carried, false);
++            player.drop(carried, false, Prediction.SERVER_ONLY);
 +        }
 +        // Paper end - Drop carried item when player has disconnected
          this.save(player);

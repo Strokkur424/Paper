@@ -5,7 +5,7 @@
      private static final Logger LOGGER = LogUtils.getLogger();
      private static final int CHECK_INTERVAL = 100;
 -    private int ticksSinceLastCheck;
-+    private int ticksSinceLastCheck; { this.checkInterval = this.getId() % this.level().spigotConfig.hangingTickFrequency; } // Paper - Perf: offset item frame ticking
++    private int ticksSinceLastCheck; { this.ticksSinceLastCheck = this.getId() % this.level().spigotConfig.hangingTickFrequency; } // Paper - Perf: offset item frame ticking
      protected BlockPos pos;
  
      protected BlockAttachedEntity(final EntityType<? extends BlockAttachedEntity> type, final Level level) {
