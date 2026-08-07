@@ -12,6 +12,9 @@ import java.util.Map;
 import java.util.Set;
 import java.util.function.BiConsumer;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
+import net.minecraft.core.Holder;
+import net.minecraft.core.HolderLookup;
 import net.minecraft.core.Registry;
 import net.minecraft.core.RegistryAccess;
 import net.minecraft.core.RegistrySetBuilder;
@@ -33,45 +36,56 @@ public final class ExperimentalCollector {
 
     private static final Logger LOGGER = LogUtils.getLogger();
 
-    private static final Map<ResourceKey<? extends Registry<?>>, RegistrySetBuilder.RegistryBootstrap<?>> VANILLA_REGISTRY_ENTRIES = VanillaRegistries.BUILDER.entries.stream()
-        .collect(Collectors.toMap(RegistrySetBuilder.RegistryStub::key, RegistrySetBuilder.RegistryStub::bootstrap));
+    // Paper - the vanilla RegistrySetBuilder no longer exposes the raw bootstrap function of a
+    // RegistryStub (it only exposes RegistryStub#apply(BuildState), which is opaque), so instead of
+    // re-running the bootstrap against a fake recording BootstrapContext, each stub is built in
+    // isolation via the real RegistrySetBuilder#build and the resulting registry's key set is read back.
+    private static final Map<ResourceKey<? extends Registry<?>>, RegistrySetBuilder.RegistryStub> VANILLA_REGISTRY_ENTRIES = Stream.concat(
+            VanillaRegistries.WORLD_BUILDER.entries.stream(), VanillaRegistries.RELOADABLE_BUILDER.entries.stream()
+        )
+        .collect(Collectors.toMap(stub -> stub.requiredRegistries().findFirst().orElseThrow(), stub -> stub));
 
     private static final Map<RegistrySetBuilder, SingleFlagHolder> EXPERIMENTAL_REGISTRY_FLAGS = Map.of(
         // Update for Experimental API
-        TradeRebalanceRegistries.BUILDER, FlagHolders.TRADE_REBALANCE
+        TradeRebalanceRegistries.WORLD_BUILDER, FlagHolders.TRADE_REBALANCE,
+        TradeRebalanceRegistries.RELOADABLE_BUILDER, FlagHolders.TRADE_REBALANCE
     );
 
-    private static final Multimap<ResourceKey<? extends Registry<?>>, Map.Entry<SingleFlagHolder, RegistrySetBuilder.RegistryBootstrap<?>>> EXPERIMENTAL_REGISTRY_ENTRIES;
+    private static final Multimap<ResourceKey<? extends Registry<?>>, Map.Entry<SingleFlagHolder, RegistrySetBuilder.RegistryStub>> EXPERIMENTAL_REGISTRY_ENTRIES;
     static {
         EXPERIMENTAL_REGISTRY_ENTRIES = HashMultimap.create();
         for (Map.Entry<RegistrySetBuilder, SingleFlagHolder> entry : EXPERIMENTAL_REGISTRY_FLAGS.entrySet()) {
-            for (RegistrySetBuilder.RegistryStub<?> stub : entry.getKey().entries) {
-                EXPERIMENTAL_REGISTRY_ENTRIES.put(stub.key(), Map.entry(entry.getValue(), stub.bootstrap()));
+            for (RegistrySetBuilder.RegistryStub stub : entry.getKey().entries) {
+                stub.requiredRegistries().forEach(key -> EXPERIMENTAL_REGISTRY_ENTRIES.put(key, Map.entry(entry.getValue(), stub)));
             }
         }
     }
 
-    @SuppressWarnings("unchecked")
+    // Builds the given stub in isolation (against the fully-built Main.REGISTRY_ACCESS as context for
+    // any cross-registry lookups the bootstrap needs) and reads back the set of keys it registered.
+    private static <T> Set<ResourceKey<T>> collectRegisteredKeys(RegistrySetBuilder.RegistryStub stub, ResourceKey<? extends Registry<T>> registryKey) {
+        RegistrySetBuilder isolatedBuilder = new RegistrySetBuilder();
+        isolatedBuilder.entries.add(stub);
+        HolderLookup.Provider built = isolatedBuilder.build(Main.REGISTRY_ACCESS);
+        return built.lookupOrThrow(registryKey).listElements().map(Holder.Reference::key).collect(Collectors.toSet());
+    }
+
     public static <T> Map<ResourceKey<T>, SingleFlagHolder> collectDataDrivenElementIds(Registry<T> registry) {
-        Collection<Map.Entry<SingleFlagHolder, RegistrySetBuilder.RegistryBootstrap<?>>> experimentalEntries = EXPERIMENTAL_REGISTRY_ENTRIES.get(registry.key());
+        ResourceKey<? extends Registry<T>> registryKey = registry.key();
+        Collection<Map.Entry<SingleFlagHolder, RegistrySetBuilder.RegistryStub>> experimentalEntries = EXPERIMENTAL_REGISTRY_ENTRIES.get(registryKey);
         if (experimentalEntries.isEmpty()) {
             return Collections.emptyMap();
         }
 
         Map<ResourceKey<T>, SingleFlagHolder> result = new IdentityHashMap<>();
-        for (Map.Entry<SingleFlagHolder, RegistrySetBuilder.RegistryBootstrap<?>> experimentalEntry : experimentalEntries) {
-            RegistrySetBuilder.RegistryBootstrap<T> experimentalBootstrap = (RegistrySetBuilder.RegistryBootstrap<T>) experimentalEntry.getValue();
-            Set<ResourceKey<T>> experimental = Collections.newSetFromMap(new IdentityHashMap<>());
-            CollectingContext<T> experimentalCollector = new CollectingContext<>(experimental, registry);
-            experimentalBootstrap.run(experimentalCollector);
+        for (Map.Entry<SingleFlagHolder, RegistrySetBuilder.RegistryStub> experimentalEntry : experimentalEntries) {
+            Set<ResourceKey<T>> experimental = collectRegisteredKeys(experimentalEntry.getValue(), registryKey);
             result.putAll(experimental.stream().collect(Collectors.toMap(key -> key, key -> experimentalEntry.getKey())));
         }
 
-        RegistrySetBuilder.@Nullable RegistryBootstrap<T> vanillaBootstrap = (RegistrySetBuilder.RegistryBootstrap<T>) VANILLA_REGISTRY_ENTRIES.get(registry.key());
-        if (vanillaBootstrap != null) {
-            Set<ResourceKey<T>> vanilla = Collections.newSetFromMap(new IdentityHashMap<>());
-            CollectingContext<T> vanillaCollector = new CollectingContext<>(vanilla, registry);
-            vanillaBootstrap.run(vanillaCollector);
+        RegistrySetBuilder.@Nullable RegistryStub vanillaStub = VANILLA_REGISTRY_ENTRIES.get(registryKey);
+        if (vanillaStub != null) {
+            Set<ResourceKey<T>> vanilla = collectRegisteredKeys(vanillaStub, registryKey);
             result.keySet().removeAll(vanilla);
         }
         return result;

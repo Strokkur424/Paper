@@ -14,6 +14,10 @@ val serverRuntimeClasspath by configurations.registering { // resolvable?
     isCanBeResolved = true
 }
 
+repositories {
+    mavenLocal()
+}
+
 dependencies {
     minecraftJar(project(":paper-server", "mappedJarOutgoing"))
     implementation(project(":paper-server", "macheMinecraftLibraries"))
