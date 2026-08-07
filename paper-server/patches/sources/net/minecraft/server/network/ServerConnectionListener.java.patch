@@ -1,14 +1,6 @@
-From dcaabe6525c573bbd390ff8f3f593c5e0ad6de87 Mon Sep 17 00:00:00 2001
-From: File <noreply+automated@papermc.io>
-Date: Sun, 20 Apr 1997 15:37:42 +0200
-Subject: [PATCH] paper File Patches
-
-
-diff --git a/net/minecraft/server/network/ServerConnectionListener.java b/net/minecraft/server/network/ServerConnectionListener.java
-index a52d1c5890d39dc9240adeb196ea8efaa1604cfb..b7476ff3f5570b92e9e4ca8fc756f3a8098b1385 100644
 --- a/net/minecraft/server/network/ServerConnectionListener.java
 +++ b/net/minecraft/server/network/ServerConnectionListener.java
-@@ -53,9 +53,31 @@ public class ServerConnectionListener {
+@@ -56,9 +_,31 @@
          this.running = true;
      }
  
@@ -41,11 +33,11 @@ index a52d1c5890d39dc9240adeb196ea8efaa1604cfb..b7476ff3f5570b92e9e4ca8fc756f3a8
              this.channels
                  .add(
                      new ServerBootstrap()
-@@ -79,22 +101,64 @@ public class ServerConnectionListener {
+@@ -82,22 +_,64 @@
                                      Connection connection = rateLimitPacketsPerSecond > 0
                                          ? new RateKickingConnection(rateLimitPacketsPerSecond)
                                          : new Connection(PacketFlow.SERVERBOUND);
--                                    ServerConnectionListener.this.connections.add(connection);
+-                                    ServerConnectionListener.this.pendingConnections.add(connection);
 +                                    // Paper start - Add support for Proxy Protocol
 +                                    if (io.papermc.paper.configuration.GlobalConfiguration.get().proxies.proxyProtocol) {
 +                                        channel.pipeline().addAfter(HandlerNames.TIMEOUT, "haproxy-decoder", new io.netty.handler.codec.haproxy.HAProxyMessageDecoder());
@@ -75,7 +67,7 @@ index a52d1c5890d39dc9240adeb196ea8efaa1604cfb..b7476ff3f5570b92e9e4ca8fc756f3a8
 +                                        });
 +                                    }
 +                                    // Paper end - Add support for proxy protocol
-+                                    // ServerConnectionListener.this.connections.add(connection); // Paper - prevent blocking on adding a new connection while the server is ticking
++                                    // ServerConnectionListener.this.pendingConnections.add(connection); // Paper - prevent blocking on adding a new connection while the server is ticking
 +                                    ServerConnectionListener.this.pending.add(connection); // Paper - prevent blocking on adding a new connection while the server is ticking
                                      connection.configurePacketHandler(pipeline);
                                      connection.setListenerForServerboundHandshake(
@@ -108,12 +100,10 @@ index a52d1c5890d39dc9240adeb196ea8efaa1604cfb..b7476ff3f5570b92e9e4ca8fc756f3a8
      public SocketAddress startMemoryChannel() {
          ChannelFuture newChannel;
          synchronized (this.channels) {
-@@ -187,12 +251,26 @@ public class ServerConnectionListener {
- 
+@@ -169,12 +_,24 @@
      public void tick() {
          synchronized (this.connections) {
-+            // Spigot start
-+            this.addPending(); // Paper - prevent blocking on adding a new connection while the server is ticking
+             this.addPendingConnections();
 +            // This prevents players from 'gaming' the server, and strategically relogging to increase their position in the tick order
 +            if (org.spigotmc.SpigotConfig.playerShuffle > 0 && MinecraftServer.currentTick % org.spigotmc.SpigotConfig.playerShuffle == 0) {
 +                Collections.shuffle(this.connections);
@@ -135,7 +125,7 @@ index a52d1c5890d39dc9240adeb196ea8efaa1604cfb..b7476ff3f5570b92e9e4ca8fc756f3a8
                          try {
                              connection.tick();
                          } catch (Exception e) {
-@@ -206,6 +284,7 @@ public class ServerConnectionListener {
+@@ -188,6 +_,7 @@
                              connection.setReadOnly();
                          }
                      } else {
@@ -143,7 +133,7 @@ index a52d1c5890d39dc9240adeb196ea8efaa1604cfb..b7476ff3f5570b92e9e4ca8fc756f3a8
                          iterator.remove();
                          connection.handleDisconnection();
                      }
-@@ -219,6 +298,16 @@ public class ServerConnectionListener {
+@@ -201,6 +_,16 @@
              }
          }
      }

@@ -1,0 +1,15 @@
+--- a/net/minecraft/core/RegistrySetBuilder.java
++++ b/net/minecraft/core/RegistrySetBuilder.java
+@@ -24,6 +_,12 @@
+ 
+     private static RegistrySetBuilder.RegistryStub placeholderStub(final ResourceKey<? extends Registry<?>> key) {
+         return new RegistrySetBuilder.RegistryStub() {
++            // Paper start - add getValueForCopying method
++            @Override
++            public Optional<T> getValueForCopying(final ResourceKey<T> resourceKey) {
++                return this.get(resourceKey).map(Holder.Reference::value);
++            }
++            // Paper end - add getValueForCopying method
+             @Override
+             public Stream<ResourceKey<? extends Registry<?>>> requiredRegistries() {
+                 return Stream.of(key);
